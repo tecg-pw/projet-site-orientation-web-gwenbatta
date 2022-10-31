@@ -1,9 +1,9 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="mt-20 flex justify-center mb-36">
+    <section class="mt-20 flex justify-center mb-36" aria-labelledby="contact">
         <div class="px-36">
             <div class="flex flex-col">
-                <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6">
+                <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6" role="heading" aria-level="2" id="contact">
                     {{__('Contactez-nous !')}}
                 </h2>
                 <a class="text-green-500 font-sans font-light underline mt-8" href="/">{{__('Contact > Étudiant')}}</a>

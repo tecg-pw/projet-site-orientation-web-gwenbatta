@@ -1,22 +1,9 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{__('TecWeb')}}</title>
-</head>
-<body>
-<header class="px-36">
-    <h1>{{__('TecWeb, le site de l\'option Web de la HEPL')}}</h1>
-    <x-commons.navigation></x-commons.navigation>
-</header>
+<x-commons.navigation/>
 <main>
-    <section class="mt-20 flex justify-center">
+    <section class="mt-20 flex justify-center" aria-labelledby="contact">
         <div class="px-36">
             <div class="flex flex-col">
-            <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6">
+            <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6" id="contact" role="heading" aria-level="2">
                 {{__('Contactez-nous !')}}
             </h2>
             <a class="text-green-500 text-2xl font-sans font-light underline mt-8" href="/">{{__('Contact > Étudiant')}}</a>

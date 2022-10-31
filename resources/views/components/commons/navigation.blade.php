@@ -8,11 +8,11 @@
     @vite('resources/css/app.css')
     <title>{{__('TecWeb')}}</title>
 </head>
-<body class="bg-white-100">
+<body class="bg-white-100" aria-labelledby="body">
 <header>
-    <h1 class="sr-only">{{__('TecWeb, le site de l\'option Web de la HEPL')}}</h1>
-    <nav class="flex flex-col">
-        <h2 class="sr-only" >{{__('Navigation de TecWeb')}}</h2>
+    <h1 class="sr-only" aria-level="1" role="heading" id="body">{{__('TecWeb, le site de l\'option Web de la HEPL')}}</h1>
+    <nav class="flex flex-col" aria-labelledby="navigation">
+        <h2 class="sr-only" id="navigation" role="heading" aria-level="2">{{__('Navigation de TecWeb')}}</h2>
         <div class="flex flex-1 items-center order-2 bg-yellow-100 px-36 gap-x-10 py-10">
             <label class="hidden" for="burger">{{__('Checkbox Burger Menu')}}</label>
             <input type="checkbox" name="burger" id="burger">

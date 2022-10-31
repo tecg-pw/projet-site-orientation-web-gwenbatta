@@ -5,8 +5,8 @@
         <img class="rounded-3xl order-2" src="https://placehold.jp/216x256.png" alt="">
         <img class="rounded-3xl order-3" src="https://placehold.jp/216x256.png" alt="">
     </figure>
-    <section class="bg-yellow-600 mb-36 px-36">
-        <h3 class="font-sans text-xl mt-16 mb-12">{{__('Coordonnées')}}</h3>
+    <section class="bg-yellow-600 mb-36 px-36" aria-labelledby="coordinate">
+        <h3 class="font-sans text-xl mt-16 mb-12" role="heading" aria-level="3" id="coordinate">{{__('Coordonnées')}}</h3>
         <div class="flex justify-between mb-24">
             <div itemscope itemtype="https://schema.org/Organization" class="border-r border-orange-500 pr-32 mr-36">
                 <p itemprop="legalName" class="mb-5 uppercase font-sans">{{__('HEPL')}}</p>

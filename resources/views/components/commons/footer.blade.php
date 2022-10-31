@@ -93,8 +93,8 @@
                 </div>
             </div>
         </div>
-        <nav>
-            <h2>{{__('Navigation')}}</h2>
+        <nav aria-labelledby="navigation">
+            <h2 role="heading" aria-level="2" id="navigation">{{__('Navigation')}}</h2>
             <ul class="flex">
                 <ul>
                     <li><a href="forum/index.blade.php">{{__('Forum')}}</a></li>
@@ -110,8 +110,8 @@
                 </ul>
             </ul>
         </nav>
-        <section>
-            <h2 class="text-green-500 font-medium text-2xl">
+        <section aria-labelledby="socials">
+            <h2 class="text-green-500 font-medium text-2xl" id="socials" role="heading" aria-level="2">
                 {{__('Réseaux sociaux')}}
             </h2>
             <ul>

@@ -1,23 +1,10 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{__('TecWeb')}}</title>
-</head>
-<body>
-<header>
-    <h1>{{__('TecWeb, le site de l\'option Web de la HEPL')}}</h1>
-    <x-commons.navigation></x-commons.navigation>
-</header>
+<x-commons.navigation/>
 <main>
-    <section class="mt-20 mb-36 flex justify-center">
+    <section class="mt-20 mb-36 flex justify-center" aria-labelledby="question">
         <div class="px-36">
             <div class="flex flex-col mb-28">
                 <div class="flex order-1">
-                    <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-12 font-sans mt-6">
+                    <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-12 font-sans mt-6" aria-level="2" role="heading" id="question">
                         {{__('Poser une question')}}
                     </h2>
                     <a class="font-sans text-end text-green-700 text-3xl font-semibold underline flex-1"
