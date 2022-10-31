@@ -1,4 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
+
 <main class="text-2xl">
     <section class="flex mt-20 px-36 items-center justify-center">
         <div class="mr-40 ">
