@@ -14,16 +14,16 @@
                 <a class="font-sans text-green-700 self-center text-3xl font-semibold underline flex-1"
                    href="/contact/agency">{{__('Entreprises')}}</a>
             </div>
-            <div class="flex mt-14">
-                <form action="/" method="post">
-                    <div class="flex">
-                        <fieldset class="flex flex-col mr-10 mb-8">
+            <div class="flex  mt-14">
+                <form action="/" method="post" class="flex-1">
+                    <div class="flex flex-1">
+                        <fieldset class="flex flex-col flex-1 mr-10 mb-8">
                             <label class="text-green-500 text-2xl" for="name">{{__('Nom')}}</label>
                             <input
                                 class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 placeholder="Caron" name="name" id="name" type="text">
                         </fieldset>
-                        <fieldset class="flex flex-col mb-8">
+                        <fieldset class="flex flex-col flex-1 mb-8">
                             <label class="text-green-500 text-2xl" for="surname">{{__('Prénom')}}</label>
                             <input
                                 class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

@@ -4,17 +4,17 @@
         <div class="px-36">
             <div class="flex flex-col mb-28">
                 <div class="flex order-1">
-                    <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-12 font-sans mt-6" aria-level="2" role="heading" id="question">
+                    <h2 class="text-4xl uppercase font-bold text-yellow-800 font-sans mt-6" aria-level="2" role="heading" id="question">
                         {{__('Poser une question')}}
                     </h2>
-                    <a class="font-sans text-end text-green-700 text-3xl font-semibold underline flex-1"
+                    <a class="font-sans mt-6 text-end text-green-700 text-3xl font-semibold underline flex-1"
                        href="/forum/index">{{__('Retour au forum')}}</a>
                 </div>
                 <a class="text-green-500 font-sans font-light underline mt-8"
                    href="/">{{__('Techniques > Forum > Poser une question')}}</a>
             </div>
-            <div class="flex mt-14">
-                <form action="/" method="post" class="min-w-full">
+            <div class="grid grid-cols-5 mt-14 items-center">
+                <form action="/" method="post" class="col-span-3 items-center mr-20">
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="questions">{{__('Question')}}</label>
                         <input
@@ -35,9 +35,10 @@
                             type="submit" value="{{__('Poser ma question')}}">
                     </div>
                 </form>
+                <x-login.commons.aside class="col-span-2"></x-login.commons.aside>
             </div>
         </div>
-        <x-login.commons.aside></x-login.commons.aside>
+
     </section>
 </main>
 <x-commons.footer></x-commons.footer>

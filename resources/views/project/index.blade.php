@@ -1,19 +1,11 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
     <article class="px-36" aria-labelledby="projects">
-        <div class="flex justify-between">
-            <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-12 font-sans" role="heading" aria-level="2" id="projects">
+        <div class="flex justify-between mb-12 mt-36">
+            <h2 class="text-4xl uppercase font-bold text-yellow-800  font-sans" role="heading" aria-level="2" id="projects">
                 {{__('Projets de nos étudiants')}}
             </h2>
-            <div>
-                <form action="/" method="GET">
-                    <label for="search">{{__('Rechercher un projet')}}</label>
-                    <input type="search" name="search" id="search"
-                           placeholder="{{__('Rechercher un projet')}}"/>
-                    <label for="s">Send</label>
-                    <input type="submit" id="s" name="s" value="search"/>
-                </form>
-            </div>
+            <x-search_bar/>
         </div>
         {{--        @foreach()--}}
         <div class="flex flex-wrap gap-8 justify-center">

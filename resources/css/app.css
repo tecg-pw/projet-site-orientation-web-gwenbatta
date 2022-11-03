@@ -7,4 +7,11 @@
         font-family: Hind, sans-serif;
         font-weight: 200;
     }
+    .more {
+        color: pink;
+        text-indent: -9999px;
+        height: 100px;                        /* be sure to set height & width */
+        width: 600px;
+        white-space: nowrap;            /* because only the first line is indented */
+    }
 }

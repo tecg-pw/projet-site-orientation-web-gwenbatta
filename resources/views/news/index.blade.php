@@ -2,15 +2,7 @@
 <main>
     <article aria-labelledby="actus">
         <h2 role="heading" id="actus" aria-level="2">{{__('Liste des actualités')}}</h2>
-        <div>
-            <form action="/" method="GET">
-                <label for="search">{{__('Rechercher un projet')}}</label>
-                <input type="search" name="search" id="search"
-                       placeholder="{{__('Rechercher un projet')}}"/>
-                <label for="s">Send</label>
-                <input type="submit" id="s" name="s" value="search"/>
-            </form>
-        </div>
+        <x-search_bar/>
             {{--        @foreach()--}}
             <article aria-labelledby="slug">
                 <h3 role="heading" id="slug" aria-level="3">{{__('Titre')}}</h3>

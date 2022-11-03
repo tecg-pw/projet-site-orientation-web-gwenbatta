@@ -22,7 +22,7 @@
                 <span></span>
             </div>
             <div>
-                <a href="home.blade.php" class="">
+                <a href="/" class="">
                     <? xml version = "1.0" encoding = "UTF-8" ?>
                     <svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 244.31 56.68">
@@ -116,17 +116,7 @@
                 <li><a href="/news/index"> {{__('Actualité')}}</a></li>
                 <li><a href="/contact/student"> {{__('Contact')}}</a></li>
             </ul>
-            <div class="self-end justify-self-end">
-                <form action="/" method="GET" class="flex flex-col">
-                    <label class="hidden" for="search">{{__('Rechercher')}}</label>
-                    <input
-                        class="bg-yellow-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        type="search" name="search" id="search"
-                        placeholder="{{__('Wordpress | CV | Jordan Caron')}}"/>
-                    <label class="hidden" for="s">Send</label>
-                    <input type="submit" id="s" name="s" value="search"/>
-                </form>
-            </div>
+            <x-search_bar></x-search_bar>
         </div>
         <div
             class="bg-green-700 text-white-100 order-1 font-sans flex gap-x-10 justify-end px-36 py-4 font-semibold text-xl">
