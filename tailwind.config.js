@@ -11,6 +11,8 @@ module.exports = {
             sans: ['Montserrat', 'sans-serif']
         },
         lineHeight: {
+            '8': '2rem', /* 32px */
+            '10': '2.5rem',
             '12': '3rem',
         },
         colors: {
@@ -23,10 +25,12 @@ module.exports = {
                 800: '#B08C20',
             },
             green: {
+                200: 'rgba(78,100,88,0.7)',
                 500: '#6F704D',
                 700: '#4E6458'
             },
             orange: {
+                100: '#FAF0E4',
                 200: '#FBF2E7',
                 500: '#DA953A',
             }

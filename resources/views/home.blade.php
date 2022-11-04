@@ -8,10 +8,10 @@
             </h2>
             <p class="leading-12 mb-24 max-w-3xl font-thin">{{__('TecWeb est le site de l’option web de la HELP (Haute École de la Province de Liège). Nous te proposons ici de découvrir cette merveilleuse option, de voir ce qu’elle a à t’offrir et de te faire une idée sur ce qui t’attends avant de nous rejoindre. Bonne visite et à bientôt dans les couloirs !')}}</p>
             <div class="flex gap-x-26 justify-center items-center">
-                <a href="about.blade.php"
+                <a href="/about"
                    class="font-sans text-center flex-1 text-white-100 bg-green-700 px-4 py-6 rounded-3xl text-3xl font-semibold ">{{__('Découvrir davantage')}}</a>
                 <a class="font-sans text-end text-green-700 text-3xl font-semibold underline flex-1 px-4 py-6 self-end"
-                   href="forum.blade.php">{{__('J\'ai des questions')}}</a>
+                   href="/forum/index">{{__('J\'ai des questions')}}</a>
             </div>
         </div>
         <figure class="grid grid-rows-1 grid-cols-2 gap-8">
@@ -101,226 +101,91 @@
         </div>
     </article>
     <article class="pt-20  mt-40 bg-yellow-600 px-36 pb-28" aria-labelledby="questions">
-        <div class="mt-20 flex">
+        <div class="mt-20 flex mb-24">
             <h2 class="text-4xl uppercase font-bold mb-12 font-sans" role="heading" aria-level="2"
                 id="questions">{{__('Quelques questions posées sur notre forum')}}</h2>
             <a class="font-sans text-end text-green-700 text-3xl font-semibold underline flex-1"
-               href="forum/index.blade.php">{{__('Voir le forum')}}</a>
+               href="forum/index">{{__('Voir le forum')}}</a>
         </div>
-        <div class="grid grid-cols-3">
-            <div class="mt-20  border-r-2 border-orange-500 pr-32 mr-36 col-span-2 ">
-                <article class="bg-white-100 mb-8 rounded-3xl p-5" aria-labelledby="question">
-                    <div class="grid grid-cols-4 grid-rows-3">
-                        <h3 class=" self-center order-3 font-sans col-span-2" id="question" role="heading"
-                            aria-level="3">Question du forum</h3>
+        <div class="grid grid-cols-5 justify-between">
+            <div class="col-span-3 flex flex-col gap-y-8 pr-14 border-r-2 border-r-orange-500">
+                @for($i=1;$i<6;$i++)
+                    <article class="bg-white-100 flex p-6 rounded-xl">
+                        <div class="order-2 flex-1 flex flex-col ml-4">
+                            <h3 class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                            <div class="flex justify-between">
+                                <p class="text-xl mb-2">Nom de l'auteur</p>
+                                <p class="font-bold text-lg text-green-500">Général</p>
+                                <p>03 novembre 2022</p>
+                            </div>
+                            <div class="order-3 flex justify-between">
+                                <div class="flex gap-10">
+                                    <p>Comment:5</p>
+                                    <p>3/5</p>
+                                </div>
+                                <a class="underline text-green-700 font-sans font-semibold" href="">Voir la conversation</a>
+                            </div>
+                        </div>
                         <img class="order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
                              src="https://placehold.jp/108x108.png"
                              alt="Nom">
-                        <div class="order-2 col-span-3 flex">
-                            <a class="mr-16" href="/user/single.blade.php">
-                                <p>Nom de l'auteur</p>
-                            </a>
-                            <p class="font-bold text-green-500">Générale</p>
-                            <p class="flex-1 text-end text-xl">30 septembre 2022</p>
-                        </div>
-                        <div class="order-4 col-span-3 flex">
-                            <div class="flex flex-1 items-end gap-16 text-xl">
-                                {{--                @if(count($post->comments) > 1)--}}
-                                <p class="mr-4">{{__('Commentaires : 0')}}</p>
 
-                                {{--                @else--}}
-                                {{--                    <p class="mr-4">Aucun Commentaire</p>--}}
-                                {{--                @endif--}}
-                                <p class="mr-4">{{__('3/5')}}</p>
-                                <a class="flex-1 font-sans font-semibold underline text-green-700 text-end"
-                                   href="forum/single.blade.php">{{__('Voir la conversation')}}</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="bg-white-100 mb-8 rounded-3xl p-5" aria-labelledby="question">
-                    <div class="grid grid-cols-4 grid-rows-3">
-                        <h3 class=" self-center order-3 font-sans col-span-2" id="question" role="heading"
-                            aria-level="3">Question du forum</h3>
-                        <img class="order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                             src="https://placehold.jp/108x108.png"
-                             alt="Nom">
-                        <div class="order-2 col-span-3 flex">
-                            <a class="mr-16" href="/user/single.blade.php">
-                                <p>Nom de l'auteur</p>
-                            </a>
-                            <p class="font-bold text-green-500">Générale</p>
-                            <p class="flex-1 text-end text-xl">30 septembre 2022</p>
-                        </div>
-                        <div class="order-4 col-span-3 flex">
-                            <div class="flex flex-1 items-end gap-16 text-xl">
-                                {{--                @if(count($post->comments) > 1)--}}
-                                <p class="mr-4">{{__('Commentaires : 0')}}</p>
 
-                                {{--                @else--}}
-                                {{--                    <p class="mr-4">Aucun Commentaire</p>--}}
-                                {{--                @endif--}}
-                                <p class="mr-4">{{__('3/5')}}</p>
-                                <a class="flex-1 font-sans font-semibold underline text-green-700 text-end"
-                                   href="forum/single.blade.php">{{__('Voir la conversation')}}</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="bg-white-100 mb-8 rounded-3xl p-5" aria-labelledby="question">
-                    <div class="grid grid-cols-4 grid-rows-3">
-                        <h3 class=" self-center order-3 font-sans col-span-2" id="question" role="heading"
-                            aria-level="3">Question du forum</h3>
-                        <img class="order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                             src="https://placehold.jp/108x108.png"
-                             alt="Nom">
-                        <div class="order-2 col-span-3 flex">
-                            <a class="mr-16" href="/user/single.blade.php">
-                                <p>Nom de l'auteur</p>
-                            </a>
-                            <p class="font-bold text-green-500">Générale</p>
-                            <p class="flex-1 text-end text-xl">30 septembre 2022</p>
-                        </div>
-                        <div class="order-4 col-span-3 flex">
-                            <div class="flex flex-1 items-end gap-16 text-xl">
-                                {{--                @if(count($post->comments) > 1)--}}
-                                <p class="mr-4">{{__('Commentaires : 0')}}</p>
-
-                                {{--                @else--}}
-                                {{--                    <p class="mr-4">Aucun Commentaire</p>--}}
-                                {{--                @endif--}}
-                                <p class="mr-4">{{__('3/5')}}</p>
-                                <a class="flex-1 font-sans font-semibold underline text-green-700 text-end"
-                                   href="forum/single.blade.php">{{__('Voir la conversation')}}</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="bg-white-100 mb-8 rounded-3xl p-5" aria-labelledby="question">
-                    <div class="grid grid-cols-4 grid-rows-3">
-                        <h3 class=" self-center order-3 font-sans col-span-2" id="question" role="heading"
-                            aria-level="3">Question du forum</h3>
-                        <img class="order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                             src="https://placehold.jp/108x108.png"
-                             alt="Nom">
-                        <div class="order-2 col-span-3 flex">
-                            <a class="mr-16" href="/user/single.blade.php">
-                                <p>Nom de l'auteur</p>
-                            </a>
-                            <p class="font-bold text-green-500">Générale</p>
-                            <p class="flex-1 text-end text-xl">30 septembre 2022</p>
-                        </div>
-                        <div class="order-4 col-span-3 flex">
-                            <div class="flex flex-1 items-end gap-16 text-xl">
-                                {{--                @if(count($post->comments) > 1)--}}
-                                <p class="mr-4">{{__('Commentaires : 0')}}</p>
-
-                                {{--                @else--}}
-                                {{--                    <p class="mr-4">Aucun Commentaire</p>--}}
-                                {{--                @endif--}}
-                                <p class="mr-4">{{__('3/5')}}</p>
-                                <a class="flex-1 font-sans font-semibold underline text-green-700 text-end"
-                                   href="forum/single.blade.php">{{__('Voir la conversation')}}</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                @endfor
             </div>
-            {{--        @endforeach--}}
-            <div>
-                <article aria-labelledby="last-question">
-                    <h3 class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Derniers sujets')}}</h3>
-                    {{--        @foreach()--}}
-                    <article class="bg-white-100 mb-8 rounded-3xl p-5" aria-labelledby="question">
-                        <div class="flex flex-col">
-                            <h4 aria-level="4" role="heading" id="question" class="order-2 font-sans">Question du
-                                forum</h4>
-                            <p class="flex-1 order-1 text-xl">30 septembre 2022</p>
-                            <div class="order-4 col-span-3 flex">
-                                <div class="flex flex-1 mt-2 justify-between items-end gap-16 text-xl">
-                                    {{--                @if(count($post->comments) > 1)--}}
-                                    <p>{{__('Commentaires : 0')}}</p>
-
-                                    {{--                @else--}}
-                                    {{--                    <p class="mr-4">Aucun Commentaire</p>--}}
-                                    {{--                @endif--}}
-                                    <p>{{__('3/5')}}</p>
-                                    <a class="flex-1 font-sans text-end font-semibold underline text-green-700 "
-                                       href="forum/single.blade.php">{{__('Voir la conversation')}}</a>
+            <div class="col-span-2 flex flex-col gap-y-6 pl-14">
+                <article class="border-b-orange-500 border-b-2 pb-10">
+                    <h3 id="best-rating" aria-level="3" role="heading"
+                        class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Derniers sujet')}}</h3>
+                    <div class="flex flex-col gap-y-8">
+                        @for($i=1;$i<3;$i++)
+                            <article class="bg-white-100 flex p-6 rounded-xl">
+                                <div class="order-2 flex-1 flex flex-col ml-4">
+                                    <h3 class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                                    <div class="flex justify-between">
+                                        <p class="text-xl mb-2">Nom de l'auteur</p>
+                                        <p>03 novembre 2022</p>
+                                    </div>
+                                    <div class="order-3 flex justify-between">
+                                        <div class="flex gap-10">
+                                            <p>Comment:5</p>
+                                            <p>3/5</p>
+                                        </div>
+                                        <a class="underline text-green-700 font-sans font-semibold" href="">Voir la conversation</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="bg-white-100 mb-8 rounded-3xl p-5" aria-labelledby="question">
-                        <div class="flex flex-col">
-                            <h4 aria-level="4" role="heading" id="question" class="order-2 font-sans">Question du
-                                forum</h4>
-                            <p class="flex-1 order-1 text-xl">30 septembre 2022</p>
-                            <div class="order-4 col-span-3 flex">
-                                <div class="flex flex-1 mt-2 justify-between items-end gap-16 text-xl">
-                                    {{--                @if(count($post->comments) > 1)--}}
-                                    <p>{{__('Commentaires : 0')}}</p>
-
-                                    {{--                @else--}}
-                                    {{--                    <p class="mr-4">Aucun Commentaire</p>--}}
-                                    {{--                @endif--}}
-                                    <p>{{__('3/5')}}</p>
-                                    <a class="flex-1 font-sans text-end font-semibold underline text-green-700 "
-                                       href="forum/single.blade.php">{{__('Voir la conversation')}}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    {{--        @endforeach--}}
+                            </article>
+                        @endfor
+                    </div>
                 </article>
-                <article aria-labelledby="best-rating">
+                <article class="flex flex-col gap-y-8 ">
                     <h3 id="best-rating" aria-level="3" role="heading"
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Sujets populaires')}}</h3>
-                    {{--        @foreach()--}}
-                    <article class="bg-white-100 mb-8 rounded-3xl p-5" aria-labelledby="question">
-                        <div class="flex flex-col">
-                            <h4 aria-level="4" role="heading" id="question" class="order-2 font-sans">Question du
-                                forum</h4>
-                            <p class="flex-1 order-1 text-xl">30 septembre 2022</p>
-                            <div class="order-4 col-span-3 flex">
-                                <div class="flex flex-1 mt-2 justify-between items-end gap-16 text-xl">
-                                    {{--                @if(count($post->comments) > 1)--}}
-                                    <p>{{__('Commentaires : 0')}}</p>
-
-                                    {{--                @else--}}
-                                    {{--                    <p class="mr-4">Aucun Commentaire</p>--}}
-                                    {{--                @endif--}}
-                                    <p>{{__('3/5')}}</p>
-                                    <a class="flex-1 font-sans text-end font-semibold underline text-green-700 "
-                                       href="forum/single.blade.php">{{__('Voir la conversation')}}</a>
+                    <div class="flex flex-col gap-y-8">
+                        @for($i=1;$i<3;$i++)
+                            <article class="bg-white-100 flex p-6 rounded-xl">
+                                <div class="order-2 flex-1 flex flex-col ml-4">
+                                    <h3 class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                                    <div class="flex justify-between">
+                                        <p class="text-xl mb-2">Nom de l'auteur</p>
+                                        <p>03 novembre 2022</p>
+                                    </div>
+                                    <div class="order-3 flex justify-between">
+                                        <div class="flex gap-10">
+                                            <p>Comment:5</p>
+                                            <p>3/5</p>
+                                        </div>
+                                        <a class="underline text-green-700 font-sans font-semibold" href="">Voir la conversation</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="bg-white-100 mb-8 rounded-3xl p-5" aria-labelledby="question">
-                        <div class="flex flex-col">
-                            <h4 aria-level="4" role="heading" id="question" class="order-2 font-sans">Question du
-                                forum</h4>
-                            <p class="flex-1 order-1 text-xl">30 septembre 2022</p>
-                            <div class="order-4 col-span-3 flex">
-                                <div class="flex flex-1 mt-2 justify-between items-end gap-16 text-xl">
-                                    {{--                @if(count($post->comments) > 1)--}}
-                                    <p>{{__('Commentaires : 0')}}</p>
-
-                                    {{--                @else--}}
-                                    {{--                    <p class="mr-4">Aucun Commentaire</p>--}}
-                                    {{--                @endif--}}
-                                    <p>{{__('3/5')}}</p>
-                                    <a class="flex-1 font-sans text-end font-semibold underline text-green-700 "
-                                       href="forum/single.blade.php">{{__('Voir la conversation')}}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    {{--        @endforeach--}}
+                            </article>
+                        @endfor
+                    </div>
                 </article>
             </div>
         </div>
+
     </article>
     <section class="flex my-20 px-36 items-center" aria-labelledby="interrest">
         <div class="mr-40">

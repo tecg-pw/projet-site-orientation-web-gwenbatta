@@ -1,4 +1,4 @@
-<div class="self-end justify-self-end min-w-[15%]">
+<div class="self-end justify-self-end min-w-[23%]">
     <form action="/" method="GET" class="flex flex-col relative">
         <label class="hidden" for="search">{{__('Rechercher')}}</label>
         <span>
@@ -7,10 +7,10 @@
         <input
             class="bg-yellow-100 border border-orange-500 rounded-xl pl-8 pr-2 py-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="search" name="search" id="search"
-            placeholder="{{__('Wordpress | CV | Jordan Caron')}}"/>
+            placeholder="{{__('Wordpress | Math | Jordan Caron')}}"/>
         <fieldset class="relative">
         <label class="hidden" for="s">Send</label>
-        <input class="" type="submit" id="s" name="s" value="search"/>
+        <input class="sr-only" type="submit" id="s" name="s" value="search"/>
         </fieldset>
     </form>
 </div>

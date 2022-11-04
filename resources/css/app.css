@@ -7,11 +7,23 @@
         font-family: Hind, sans-serif;
         font-weight: 200;
     }
-    .more {
-        color: pink;
-        text-indent: -9999px;
-        height: 100px;                        /* be sure to set height & width */
-        width: 600px;
-        white-space: nowrap;            /* because only the first line is indented */
+    .linkcard {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        opacity: 0;
     }
+    .burger_position{
+        position: absolute;
+        top: 100%;
+        min-height: 100%;
+        /*left: -9999px;*/
+    }
+    #burger:checked ~ .burger_position{
+        top: 20px;
+    }
+
 }
