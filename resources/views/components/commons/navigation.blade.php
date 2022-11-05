@@ -70,7 +70,7 @@
             </ul>
             <x-search_bar></x-search_bar>
         </div>
-        <div class="hidden burger_position bg-green-200 min-w-full min-h-full z-20">
+        <div class="burger_position bg-green-200 min-w-full min-h-full z-20">
             <ul class="max-w-[30%] bg-green-700 font-sans text-xl text-white-100 font-semibold flex flex-col justify-between gap-6 py-10 px-5">
                 <li class="border-b-2 border-b-white-100 pb-2"><a href="/"> {{__('Accueil')}}</a></li>
                 <li class="border-b-2 border-b-white-100 pb-2"><a href="/project/index"> {{__('Projets')}}</a></li>
@@ -86,7 +86,4 @@
             </ul>
         </div>
     </nav>
-    <div class="px-36">
-        <a href="">Fil d'arianne</a>
-    </div>
 </header>

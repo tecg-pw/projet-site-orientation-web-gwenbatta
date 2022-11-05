@@ -1,18 +1,22 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="flex flex-col py-12 mb-40 mt-40 relative" aria-labelledby="name">
-        <div class="flex items-center relative -top-10 px-36">
-            <div class="order-2 flex-1 ml-8 mt-32">
-                <div>
-                    <h2 role="heading" id="name" aria-level="2" class="text-4xl text-yellow-800 font-extrabold font-sans ">{{__('Gwenaëlle BATTA')}}</h2>
-                    <p class="uppercase text-2xl">{{__('Étudiante')}}</p>
+    <section class="flex flex-col relative mb-32" aria-labelledby="name">
+        <div class="relative">
+            <div class="flex items-center justify-self-end mt-80 px-36">
+                <div class="order-2 flex-1  ml-8 mt-32">
+                    <div>
+                        <h2 role="heading" id="name" aria-level="2"
+                            class="text-4xl text-yellow-800 font-extrabold font-sans mb-3">{{__('Gwenaëlle BATTA')}}</h2>
+                        <p class="uppercase text-2xl">{{__('Étudiante')}}</p>
+                    </div>
+                    <div class="text-end">
+                        <a href="/user/profile/modify"
+                           class="font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('Modifier le profil')}}</a>
+                    </div>
                 </div>
-                <div class="text-end">
-                    <a href="/user/profile/modify"
-                       class="font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('Modifier le profil')}}</a>
-                </div>
+                <img class="rounded-full " src="https://placehold.jp/276x276.png" alt="">
             </div>
-            <img class="rounded-full" src="https://placehold.jp/276x276.png" alt="">
+            <img class="absolute -z-10 top-0 bottom-0 left-0 right-0" src="https://placehold.jp/525dff/ffffff/1920x550.png" alt="">
         </div>
     </section>
     <article class="bg-yellow-600 px-36 pb-36 pt-20" aria-labelledby="tutos">
