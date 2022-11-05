@@ -1,9 +1,9 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="px-36 flex mt-14 mb-36 gap-24 items-center">
+    <section class="px-36 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="about">
         <div class="flex-1 ">
             <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans" role="heading" aria-level="2"
-                id="projects">
+                id="about">
                 {{__('À propos de la section')}}
             </h2>
             <p class="leading-8">
@@ -20,14 +20,14 @@
             </figure>
         </div>
     </section>
-    <section id="course" class="bg-yellow-600 mt-20 py-20 px-36">
-        <h2 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Description du bachelier option web')}}</h2>
+    <section  class="bg-yellow-600 mt-20 py-20 px-36" aria-labelledby="course" >
+        <h2 id="course" aria-level="2" role="heading" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Description du bachelier option web')}}</h2>
         <div class="flex justify-between">
-            <section class="border-r-2 pr-20 border-r-orange-500">
-                <h3 class="text-lg uppercase font-sans font-medium mb-14">{{__('1er Année')}}</h3>
+            <section class="border-r-2 pr-20 border-r-orange-500" aria-labelledby="first-year">
+                <h3 class="text-lg uppercase font-sans font-medium mb-14" id="first-year" aria-level="3" role="heading">{{__('1er Année')}}</h3>
                 <p>{{__('Cours du tron commun')}}</p>
-                <section class="mt-8 gap-2">
-                    <h4 class="font-semibold">{{__('Cours de web')}}</h4>
+                <section class="mt-8 gap-2" aria-labelledby="web">
+                    <h4 class="font-semibold" id="web" aria-level="4" role="heading">{{__('Cours de web')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col gap-2">
                             <a class="underline" href="/cours/show">{{__('CSS')}}</a>
@@ -43,8 +43,8 @@
                         </div>
                     </div>
                 </section>
-                <section class="mt-8 flex flex-col gap-2">
-                    <h4 class="font-semibold">{{__('Cours de 3D/Vidéo')}}</h4>
+                <section class="mt-8 flex flex-col gap-2" aria-labelledby="3D">
+                    <h4 class="font-semibold" id="3D" aria-level="4" role="heading">{{__('Cours de 3D/Vidéo')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col gap-2">
                             <p>{{__('Vidéo')}}</p>
@@ -60,8 +60,8 @@
                         </div>
                     </div>
                 </section>
-                <section class="mt-8 flex flex-col gap-2">
-                    <h4 class="font-semibold">{{__('Cours de Design Graphique')}}</h4>
+                <section class="mt-8 flex flex-col gap-2" aria-labelledby="graphic-design">
+                    <h4 class="font-semibold" id="graphic-design" aria-level="4" role="heading">{{__('Cours de Design Graphique')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col gap-2">
                             <p>{{__('Création infographique 2D')}}</p>
@@ -76,11 +76,11 @@
                     </div>
                 </section>
             </section>
-            <section class="border-r-2 pr-20 border-r-orange-500">
-                <h3 class="text-lg uppercase font-sans font-medium mb-14">{{__('2e Année')}}</h3>
+            <section class="border-r-2 pr-20 border-r-orange-500" aria-labelledby="second-year">
+                <h3 class="text-lg uppercase font-sans font-medium mb-14" id="second-year" aria-level="3" role="heading">{{__('2e Année')}}</h3>
                 <p>{{__('Cours du tron commun')}}</p>
-                <section class="mt-8 gap-2">
-                    <h4 class="sr-only font-semibold">{{__('Cours de web')}}</h4>
+                <section class="mt-8 gap-2" aria-labelledby="second-web">
+                    <h4 class="sr-only font-semibold" id="second-web" aria-level="3" role="heading">{{__('Cours de web')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col gap-2">
                             <a class="underline" href="/cours/show">{{__('Design Web')}}</a>
@@ -101,11 +101,11 @@
                     </div>
                 </section>
             </section>
-            <section>
-                <h3 class="text-lg uppercase font-sans font-medium mb-14">{{__('3e Année')}}</h3>
+            <section aria-labelledby="third-year">
+                <h3 class="text-lg uppercase font-sans font-medium mb-14" id="third-year" aria-level="3" role="heading">{{__('3e Année')}}</h3>
                 <p>{{__('Cours du tron commun')}}</p>
-                <section class="mt-8 gap-2">
-                    <h4 class="font-semibold">{{__('Cours de web')}}</h4>
+                <section class="mt-8 gap-2" aria-labelledby="third-web">
+                    <h4 class="sr-only font-semibold" id="third-web" aria-level="3" role="heading">{{__('Cours de web')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col gap-2">
                             <a class="underline" href="/cours/show">{{__('Projet Web')}}</a>
@@ -124,10 +124,10 @@
             </section>
         </div>
     </section>
-    <section class="px-36 mt-14 mb-36 gap-24 items-center">
+    <section class="px-36 mt-14 mb-36 gap-24 items-center" aria-labelledby="profs">
         <div class="flex-1 flex mt-36 justify-between">
             <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-20 font-sans" role="heading" aria-level="2"
-                id="projects">
+                id="profs">
                 {{__('Liste des Professeurs de la section')}}
             </h2>
             <div class="flex justify-end text-green-700 underline font-sans text-2xl font-semibold">
@@ -136,10 +136,10 @@
         </div>
         <div class="grid grid-cols-2 mt-36 gap-y-40 gap-x-20">
             @for($i=1; $i<7; $i++)
-                <article class="even:mt-36 relative">
+                <article class="even:mt-36 relative" aria-labelledby="slug">
                     <img class="rounded-lg absolute -z-10 bottom-2/3" src="https://placehold.jp/276x276.png" alt="avatar">
                     <div class="relative bg-yellow-100 rounded-lg px-4 py-8 left-10">
-                        <h3 class="font-sans font-medium text-xl mb-5">Nom du professeur</h3>
+                        <h3 class="font-sans font-medium text-xl mb-5" id="slug" aria-level="3" role="heading">Nom du professeur</h3>
                         <a class="underline text-green-700" href="mailto:@hepl.be">adresse mail</a>
                         <div class="flex justify-center items-center mt-4 ">
                         <div class="flex flex-1 gap-5">
@@ -171,56 +171,56 @@
             @endfor
         </div>
     </section>
-    <article id="jobs" class="bg-yellow-600 px-36 pb-36 pt-20">
-        <h2 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Débouchées')}}</h2>
+    <article  class="bg-yellow-600 px-36 pb-36 pt-20" aria-labelledby="jobs">
+        <h2 id="jobs" aria-level="2" role="heading" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Débouchées')}}</h2>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer d\'expérience utilisateur (UX Designer)')}}</h4>
+            <article aria-labelledby="ux" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="ux" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer d\'expérience utilisateur (UX Designer)')}}</h3>
                 <p class="text-lg">{{__('L’UX design (pour design d’expérience utilisateur en français) est le processus de conception de produits utiles, faciles et agréables à utiliser. Prenant racine dans le design d’expérience, il s’agit d’améliorer l’expérience des utilisateurs qui interagissent avec votre produit (numérique ou physique)')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer d\'expérience utilisateur (UX Designer)')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web Back-End')}}</h4>
+            <article aria-labelledby="dev-back" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="dev-back" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web Back-End')}}</h3>
                 <p class="text-lg">{{__('Le développeur back-end programme la partie cachée d’une solution web, le côté serveur, administrateur d’une app ou d’un site web, contrairement au développeur front-end qui s’occupe de la partie visible.')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Web Back-End')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Multimédia')}}</h4>
+            <article aria-labelledby="des-mmi" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="des-mmi" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Multimédia')}}</h3>
                 <p class="text-lg">{{__('Le designer graphique et multimédia (également appelé webdesigner) est un dessinateur-maquettiste travaillant sur des supports électroniques : pages web, cédéroms, habillage TV ou vidéo. Sa mission ? Donner une identité forte à ces différents supports.')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer Multimédia')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Multimédia')}}</h4>
+            <article aria-labelledby="dev-mmi" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="dev-mmi" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Multimédia')}}</h3>
                 <p class="text-lg">{{__('Le Développeur Multimédia assure la conduite technique du projet c’est à dire l’ application du scénario, la manipulation d’outils graphiques, la mise en œuvre internet. Son métier se positionne au croisement de trois domaines, infographie, interface web et multimédia dont il manipule à la perfection.')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Multimédia')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer d\'interface (UI Designer)')}}</h4>
+            <article aria-labelledby="ui" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="ui" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer d\'interface (UI Designer)')}}</h3>
                 <p class="text-lg">{{__('UI est l’abréviation d’user interface ou interface utilisateur. L’UI design se rapporte donc à l’environnement graphique dans lequel évolue l’utilisateur d’un logiciel, d’un site web ou d’une application. La mission de l’UI designer consiste à créer une interface agréable et pratique, facile à prendre en main.')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer d\'interface (UI Designer)')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web Front-End')}}</h4>
+            <article aria-labelledby="dev-front" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="dev-front" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web Front-End')}}</h3>
                 <p class="text-lg">{{__('Le développeur front end programme la partie visible, l’interface utilisateur d’une app ou d’un site web à l’inverse du développeur back-end qui travaille dans l’ombre. Son métier ressemble à celui d’un intégrateur web, mais il a un rôle plus important dans la création d’une solution web.')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Web Front-End')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Web')}}</h4>
+            <article aria-labelledby="des-web" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="des-web" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Web')}}</h3>
                 <p class="text-lg">{{__('Mi-graphiste, mi-informaticien, le web- designer est spécialisé dans la création des pages Web. Il s’occupe de tout l’aspect graphique d’un site Internet (illustrations, animations, typographie…). Il choisit la place des photos, la taille des caractères et les couleurs qui rendront la consultation agréable pour l’utilisateur.')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer Web')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web')}}</h4>
+            <article aria-labelledby="dev-web" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="dev-web" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web')}}</h3>
                 <p class="text-lg">{{__('Il s’occupe de la partie technique des sites. A la demande d’un client ou d’une entreprise et sur base d’un cahier des charges. Spécialiste des langages informatiques, il prend en charge l’ensemble des fonctionnalités du site, son architecture, l’accès aux données ainsi que l’écriture des lignes de codes .')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Web')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Mobile')}}</h4>
+            <article aria-labelledby="des-mobile" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="des-mobile" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Mobile')}}</h3>
                 <p class="text-lg">{{__('Le designer mobile est le créateur et le développeur des applications mobiles et des interfaces des entreprises. Il met sa créativité et ses connaissances au service de ses clients. Il crée des designs, des vidéos ou encore des sons pour mettre en valeur les produits et les services de ses clients.')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer mobile')}}</a>
             </article>
-            <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Mobile')}}</h4>
+            <article aria-labelledby="dev-mobile" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                <h3 id="dev-mobile" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Mobile')}}</h3>
                 <p class="text-lg">{{__('Le développeur mobile iOS/ Android se consacre à la création ou à la mise à jour d’applications destinées à fonctionner sur des appareils mobiles embarquant l’un ou l’autre de ces systèmes d’exploitation.')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur mobile')}}</a>
             </article>

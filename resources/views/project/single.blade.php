@@ -1,16 +1,16 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="px-36 mt-20 mb-40">
+    <section class="px-36 mt-20 mb-40" aria-labelledby="slug">
         <div class="flex justify-between">
-            <h2 class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Nom du projet')}}</h2>
+            <h2 id="slug" aria-level="2" role="heading" class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Nom du projet')}}</h2>
             <a class="text-green-700 underline font-sans text-2xl font-semibold"
                href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
         <div class="flex">
-            <article class="relative mt-48">
+            <article class="relative mt-48" aria-labelledby="slug-auteur">
                 <img class="rounded-lg absolute -z-10 bottom-3/4" src="https://placehold.jp/276x276.png" alt="avatar">
                 <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
-                    <h3 class="font-sans font-medium text-xl mb-2">BATTA Gwenaëlle</h3>
+                    <h3 id="slug-auteur" aria-level="3" role="heading" class="font-sans font-medium text-xl mb-2">BATTA Gwenaëlle</h3>
                     <p class="mb-4">2020-2023</p>
                     <a class="underline text-green-700 text-xl" href="url du site">gwenaelle-batta.be</a>
                     <div class="flex justify-between gap-32 items-center mt-4 ">
@@ -77,8 +77,8 @@
         </div>
 
     </section>
-    <section class="px-36 bg-yellow-600">
-        <h2 class="sr-only">{{__('Photos du projets')}}</h2>
+    <section class="px-36 bg-yellow-600" aria-labelledby="photos">
+        <h2 id="photos" aria-level="2" role="heading" class="sr-only">{{__('Photos du projets')}}</h2>
         <figure class="grid grid-cols-4 grid-rows-2 gap-5  py-24">
             <img class="rounded-xl row-span-2" src="https://placehold.jp/395x584.png" alt="{{__('photo du projet')}}">
             <img class="rounded-xl col-span-2" src="https://placehold.jp/723x278.png" alt="{{__('photo du projet')}}">
@@ -87,9 +87,9 @@
             <img class="rounded-xl " src="https://placehold.jp/330x278.png" alt="{{__('photo du projet')}}">
         </figure>
     </section>
-    <article class="px-36 mt-36 pb-40 pt-20">
+    <article class="px-36 mt-36 pb-40 pt-20" aria-labelledby="other">
         <div class="justify-between flex">
-            <h2 class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Autres projets')}}</h2>
+            <h2 id="other" aria-level="2" role="heading" class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Autres projets')}}</h2>
             <a class="text-green-700 underline font-sans text-2xl font-semibold"
                href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>

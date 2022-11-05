@@ -34,7 +34,12 @@ Route::get('/about/job/single', function () {
     return view('about.job.single');
 });
 
-
+Route::get('/project/index', function () {
+    return view('project.index');
+});
+Route::get('/project/single', function () {
+    return view('project.single');
+});
 
 Route::get('/technical/index', function () {
     return view('technical.index');
@@ -139,12 +144,7 @@ Route::get('/forum/my-talks', function () {
 });
 
 
-Route::get('/project/index', function () {
-    return view('project.index');
-});
-Route::get('/project/single', function () {
-    return view('project.single');
-});
+
 
 
 Route::get('/news/index', function () {

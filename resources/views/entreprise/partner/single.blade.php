@@ -3,12 +3,12 @@
     <div class="px-36 flex justify-end text-green-700 underline font-sans text-2xl font-semibold">
         <a href="/entreprise/partner">{{__('Retour aux autres entreprises')}}</a>
     </div>
-    <section class="mt-20 px-36 flex mb-36 gap-x-11">
+    <section class="mt-20 px-36 flex mb-36 gap-x-11" aria-labelledby="name">
         <div class="mb-7 order-2">
-            <h2 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('Nom de l\'entreprise')}}</h2>
+            <h2 id="name" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('Nom de l\'entreprise')}}</h2>
             <div class="flex gap-12">
-                <section>
-                    <h3 class="font-sans text-xl mb-5 font-semibold">{{__('Informations')}}</h3>
+                <section aria-labelledby="informations">
+                    <h3 id="informations" role="heading" aria-level="3" class="font-sans text-xl mb-5 font-semibold">{{__('Informations')}}</h3>
                     <div class="flex flex-col gap-y-2.5 mb-5">
                         <a class="text-green-700 underline text-lg font-sans" href="mailto:">adresse mail</a>
                         <div class="text-lg">
@@ -38,8 +38,8 @@
 
                     </div>
                 </section>
-                <section>
-                    <h3 class="font-sans text-xl mb-5 font-semibold">{{__('Membre de l\'équipe')}}</h3>
+                <section aria-labelledby="members">
+                    <h3 id="members" role="heading" aria-level="3" class="font-sans text-xl mb-5 font-semibold">{{__('Membre de l\'équipe')}}</h3>
                     <ul class="flex flex-col gap-3 list-disc">
                         @for($i=1;$i<6;$i++)
                             <li class="flex items-center gap-3">
@@ -76,17 +76,17 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-36 pb-24 pt-20">
+    <article class="bg-yellow-600 px-36 pb-24 pt-20" aria-labelledby="internships">
         <div class="flex justify-between">
-            <h2 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Offres de stages')}}</h2>
+            <h2 id="internship" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Offres de stages')}}</h2>
             <a class="text-green-700 underline font-sans text-2xl font-semibold"
                href="/entreprise/internship">{{__('Voir les offres de stage')}}</a>
         </div>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<3;$i++)
-                <article class="relative bg-white-100 py-6 px-8 rounded-3xl">
+                <article class="relative bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
                     <div class="flex justify-between">
-                        <h3 class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
+                        <h3 id="slug" role="heading" aria-level="3" class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
                         <p>Date de l'offre</p>
                     </div>
                     <p class="text-lg mb-3">Votre travail consiste à assimiler les besoins des différentes cibles et les
@@ -102,18 +102,18 @@
             @endfor
         </div>
     </article>
-    <article class="px-36 mt-36 mb-36">
+    <article class="px-36 mt-36 mb-36" aria-labelledby="alumnis">
         <div class="flex justify-between">
-            <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Nos alumnis en stage ici')}}</h2>
+            <h2 id="alumnis" role="heading" aria-level="2" class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Nos alumnis en stage ici')}}</h2>
             <a class="text-green-700 underline font-sans text-2xl font-semibold"
                href="/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
         </div>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class=" flex flex-col bg-yellow-100 py-6 px-8 rounded-3xl">
+                <article class=" flex flex-col bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="name">
                     <div class="flex items-center">
                         <div class="order-2 ml-4">
-                            <h4 class="font-sans text-2xl">Nom et Prénom</h4>
+                            <h3 id="name" role="heading" aria-level="3" class="font-sans text-2xl">Nom et Prénom</h3>
                             <p class="uppercase text-xl">Ancien</p>
                             <p>Date de scolarité</p>
                         </div>

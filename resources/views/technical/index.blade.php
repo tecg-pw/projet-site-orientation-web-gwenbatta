@@ -1,9 +1,9 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="px-36 flex mt-14 mb-36 gap-24 items-center">
+    <section class="px-36 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="technical">
         <div class="flex-1 ">
             <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans" role="heading" aria-level="2"
-                id="projects">
+                id="technical">
                 {{__('Pratico-Pratique')}}
             </h2>
             <p class="leading-8">
@@ -28,9 +28,9 @@
         <div class="grid grid-cols-5 justify-between">
             <div class="col-span-3 flex flex-col gap-y-8 pr-14 border-r-2 border-r-orange-500">
                 @for($i=1;$i<6;$i++)
-                    <article class="bg-white-100 flex p-6 rounded-xl">
+                    <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
                         <div class="order-2 flex-1 flex flex-col ml-4">
-                            <h3 class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                            <h3 id="question" aria-level="3" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
                             <div class="flex justify-between">
                                 <p class="text-xl mb-2">Nom de l'auteur</p>
                                 <p class="font-bold text-lg text-green-500">Général</p>
@@ -47,20 +47,18 @@
                         <img class="order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
                              src="https://placehold.jp/108x108.png"
                              alt="Nom">
-
-
                     </article>
                 @endfor
             </div>
             <div class="col-span-2 flex flex-col gap-y-6 pl-14">
-                <article class="border-b-orange-500 border-b-2 pb-10">
-                    <h3 id="best-rating" aria-level="3" role="heading"
+                <article class="border-b-orange-500 border-b-2 pb-10" aria-labelledby="latest">
+                    <h3 id="latest" aria-level="3" role="heading"
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Derniers sujet')}}</h3>
                     <div class="flex flex-col gap-y-8">
                     @for($i=1;$i<3;$i++)
-                        <article class="bg-white-100 flex p-6 rounded-xl">
+                        <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
                             <div class="order-2 flex-1 flex flex-col ml-4">
-                                <h3 class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                                <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                 <div class="flex justify-between">
                                     <p class="text-xl mb-2">Nom de l'auteur</p>
                                     <p>03 novembre 2022</p>
@@ -82,9 +80,9 @@
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Sujets populaires')}}</h3>
                     <div class="flex flex-col gap-y-8">
                     @for($i=1;$i<3;$i++)
-                        <article class="bg-white-100 flex p-6 rounded-xl">
+                        <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
                             <div class="order-2 flex-1 flex flex-col ml-4">
-                                <h3 class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                                <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                 <div class="flex justify-between">
                                     <p class="text-xl mb-2">Nom de l'auteur</p>
                                     <p>03 novembre 2022</p>
@@ -104,12 +102,12 @@
             </div>
         </div>
     </article>
-    <article class="px-36 mt-36 mb-36">
-        <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Quelques termes techniques')}}</h2>
+    <article class="px-36 mt-36 mb-36" aria-labelledby="glossary">
+        <h2 id="glossary" aria-level="2" role="heading" class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Quelques termes techniques')}}</h2>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="bg-yellow-100 py-6 px-8 rounded-3xl">
-                    <h4 class="font-sans font-medium text-2xl mb-3">Accessibilité</h4>
+                <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
+                    <h3 id="slug" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3">Accessibilité</h3>
                     <p class="text-lg">1. Caractère de quelque chose, d’un lieu qui est accessibles : L’accessibilité
                         d’un bus, d’un immeuble aux handicapés.<br>2. Droit, possibilité qu’a quelqu’un d’avoir accès à
                         quelque chose : L’accessibilité à un emploi.</p>
@@ -118,14 +116,14 @@
         </div>
         {{--                {{$posts->links()}}--}}
     </article>
-    <article class="bg-yellow-600 px-36 pt-20 pb-28">
-        <h2 class="text-4xl uppercase font-bold mb-16 font-sans">{{__('Quelques tutos')}}</h2>
+    <article class="bg-yellow-600 px-36 pt-20 pb-28" aria-labelledby="tutos">
+        <h2 id="tutos" aria-level="2" role="heading" class="text-4xl uppercase font-bold mb-16 font-sans">{{__('Quelques tutos')}}</h2>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="bg-yellow-100 py-6 px-8 rounded-3xl">
+                <article class="bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
                     <div class="flex justify-between">
                         <div>
-                            <h4 class="font-sans font-medium text-2xl mb-2">Froggy</h4>
+                            <h3 id="slug" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-2">Froggy</h3>
                             <p class="mb-3">Date de publication</p>
                         </div>
                         @auth()

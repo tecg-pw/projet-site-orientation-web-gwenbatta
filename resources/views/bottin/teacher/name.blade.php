@@ -3,9 +3,9 @@
     <div class="px-36 flex justify-end text-green-700 underline font-sans text-2xl font-semibold">
         <a href="/bottin/alumni">{{__('Voir d\'autres professeurs')}}</a>
     </div>
-    <section class="mt-20 px-36 flex mb-36 gap-x-11">
+    <section class="mt-20 px-36 flex mb-36 gap-x-11" aria-labelledby="name">
         <div class="mb-7 order-2">
-            <h2 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('Nom de l\'ancien')}}</h2>
+            <h2 id="name" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('Nom de l\'ancien')}}</h2>
             <div class="flex gap-x-10 text-lg mb-8">
                 <p class="uppercase">professeur</p>
                 <p>Date de scolarité</p>
@@ -48,12 +48,12 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-36 pb-24 pt-20">
-        <h2 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Cours donnés par Nom de la personne')}}</h2>
+    <article class="bg-yellow-600 px-36 pb-24 pt-20" aria-labelledby="classes">
+        <h2 id="classes" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Cours donnés par Nom de la personne')}}</h2>
         <div  class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                    <h4 class="font-sans font-medium text-2xl mb-3 underline font-medium">Nom du cours donnés</h4>
+                <article class="bg-white-100 py-6 px-8 rounded-3xl relative" aria-labelledby="slug">
+                    <h3 id="slug" role="heading" aria-level="3" class="font-sans font-medium text-2xl mb-3 underline font-medium">Nom du cours donnés</h3>
                     <p class="text-lg">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                     <a class="linkcard" href="/cours/show">{{__('Voir le cours')}}</a>
                 </article>

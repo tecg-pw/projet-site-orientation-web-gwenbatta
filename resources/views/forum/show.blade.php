@@ -1,9 +1,9 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="mt-20">
+    <section class="mt-20" aria-labelledby="sujet">
         <div class="px-36 flex gap-5 mb-7 justify-between items-center">
             <div class="flex gap-5 mb-5 items-center">
-                <h2 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Question / sujet du forum')}}</h2>
+                <h2 role="heading" id="sujet" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Question / sujet du forum')}}</h2>
                 <svg class="-order-1" xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 34.194 34.196">
                     <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
                         <path id="_106780bf1ed9964c2ffe0eda53fe07ea" data-name="106780bf1ed9964c2ffe0eda53fe07ea"
@@ -34,9 +34,9 @@
                         {{__('Je suis actuellement étudiant en secondaire mais la din d’année approche et je me pose des questions sur ma futur orientation. En effet, le monde du web m’attire mais je ne suis vraiement pas doué en math. Je n’aime pas les math et elle ne m’aime pas non plus. C’est pourquoi j’ai voulu me renseigner un peu à gauche et à droite en regardant des vidéos sur Youtube ou en interrogeant mes professeurs. Tous sont d’accord de dire qu’il faut être bon en math pour le web sinon je ne vais jamas y arriver. Pourriez-vous me donner votre avis sur la questions car je suis un peu démotiver du coup. Merci d’avance !')}}
                     </p>
                 </div>
-                <article class="flex flex-col gap-y-8 ">
+                <article class="flex flex-col gap-y-8 " aria-labelledby="comment">
                     <div class="flex justify-between items-center">
-                        <h3 id="comment"
+                        <h3 id="comment" aria-level="3" role="heading"
                             class="text-4xl uppercase font-extrabold text-yellow-800 font-sans ">{{__('Commentaires')}}</h3>
                         @auth()
                             <a class=" self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
@@ -46,6 +46,7 @@
                     @if(request()->has('add-comment'))
                         <div class="flex flex-col bg-yellow-100 py-6 px-10 rounded-xl">
                             <form action="/" method="post" class="relative">
+                                @csrf
                                 <a class="absolute -top-6 right-1 self-center flex font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
                                    href="/forum/show#comment">{{__('Annuler')}}</a>
                                 <label class="text-green-500 text-lg font-medium"
@@ -94,6 +95,7 @@
                             </div>
                             @if(request()->has('add-answer-comment'.$i))
                                 <form action="/" method="post" class="mt-8 relative">
+                                    @csrf
                                     <a class="absolute -top-6 right-1 self-center flex font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
                                        href="/forum/show#comment">{{__('Annuler')}}</a>
                                     <label class="text-green-500 text-lg font-medium"
@@ -107,19 +109,19 @@
                 </article>
             </div>
             <div class="col-span-2  bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14">
-                <article class="pr-14 border-b-orange-500 border-b-2 pb-10">
-                    <h3 id="best-rating" aria-level="3" role="heading"
+                <article class="pr-14 border-b-orange-500 border-b-2 pb-10" aria-labelledby="search">
+                    <h3 id="search" aria-level="3" role="heading"
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-20">{{__('Rechercher')}}</h3>
                     <x-search_bar></x-search_bar>
                 </article>
-                <article class=" pr-14 border-b-orange-500 border-b-2 pb-10">
-                    <h3 id="best-rating" aria-level="3" role="heading"
+                <article class=" pr-14 border-b-orange-500 border-b-2 pb-10" aria-labelledby="latest">
+                    <h3 id="latest" aria-level="3" role="heading"
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-10">{{__('Derniers sujet')}}</h3>
                     <div class="flex flex-col gap-y-8">
                         @for($i=1;$i<3;$i++)
-                            <article class="bg-white-100 flex p-6 rounded-xl">
+                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
                                 <div class="order-2 flex-1 flex flex-col ml-4">
-                                    <h3 class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                                    <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                     <div class="flex justify-between">
                                         <p class="text-xl mb-2">Nom de l'auteur</p>
                                         <p>03 novembre 2022</p>
@@ -137,14 +139,14 @@
                         @endfor
                     </div>
                 </article>
-                <article class=" pr-14 pb-10">
+                <article class=" pr-14 pb-10" aria-labelledby="best-rating">
                     <h3 id="best-rating" aria-level="3" role="heading"
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-10">{{__('Sujets populaires')}}</h3>
                     <div class="flex flex-col gap-y-8">
                         @for($i=1;$i<3;$i++)
-                            <article class="bg-white-100 flex p-6 rounded-xl">
+                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
                                 <div class="order-2 flex-1 flex flex-col ml-4">
-                                    <h3 class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                                    <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                     <div class="flex justify-between">
                                         <p class="text-xl mb-2">Nom de l'auteur</p>
                                         <p>03 novembre 2022</p>

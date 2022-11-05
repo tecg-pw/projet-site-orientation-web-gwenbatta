@@ -1,20 +1,20 @@
 <x-commons.navigation></x-commons.navigation>
 <main class="px-36">
-    <section class="mt-20 mb-64">
+    <section class="mt-20 mb-64" aria-labelledby="tutos">
         <div class="flex justify-between mb-7 items-center">
-            <h2 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Liste des tutos')}}</h2>
+            <h2 id="tutos" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Liste des tutos')}}</h2>
             <x-search_bar></x-search_bar>
         </div>
         <p class="mb-7 max-w-[40%] text-lg leading-10">{{__('Vous trouverez sur cette page une liste de tutoriels qui vous sont proposés afin de vous introduire certains langages que vous découvrirez au sein de notre orientation')}}</p>
         <x-sort_by class="mb-14"/>
-        <article>
-            <h3 class="sr-only">{{__('Liste du glossaire')}}</h3>
+        <article aria-labelledby="list-tutos">
+            <h3 id="list-tutos" role="heading" aria-level="3" class="sr-only">{{__('Liste de tutos')}}</h3>
             <div class="grid grid-cols-2 gap-x-24 gap-y-8">
                 @for($i=1; $i<11;$i++)
-                    <article class="bg-yellow-100 py-6 px-8 rounded-3xl">
+                    <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
                         <div class="flex justify-between">
                             <div>
-                                <h4 class="font-sans font-medium text-2xl mb-2">Froggy</h4>
+                                <h4 id="slug" role="heading" aria-level="3-4" class="font-sans font-medium text-2xl mb-2">Froggy</h4>
                                 <p class="mb-3">Date de publication</p>
                             </div>
                             @auth()

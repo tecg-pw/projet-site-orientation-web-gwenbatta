@@ -1,18 +1,18 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="px-36 mt-20 mb-40">
+    <section class="px-36 mt-20 mb-40" aria-labelledby="poste">
         <div class="flex justify-between">
-            <h2 class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Nom du poste pour le stage')}}</h2>
+            <h2 id="poste" role="heading" aria-level="2" class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Nom du poste pour le stage')}}</h2>
             <a class="text-green-700 underline font-sans text-2xl font-semibold"
                href="/entreprise/internship">{{__('Retour aux offres de stage')}}</a>
         </div>
         <div class="flex">
             <div class="flex flex-col gap-16">
-                <article class="even:mt-36 relative mt-48">
+                <article class="even:mt-36 relative mt-48" aria-labelledby="name">
                     <img class="rounded-lg absolute -z-10 bottom-2/3" src="https://placehold.jp/276x276.png"
                          alt="avatar">
                     <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
-                        <h3 class="font-sans font-medium text-xl mb-2">Léonard Web Solutions</h3>
+                        <h3 id="name" role="heading" aria-level="3" class="font-sans font-medium text-xl mb-2">Léonard Web Solutions</h3>
                         <div>
                             <p class="mb-4">Rue de Bellaire 9,</p>
                             <p class="mb-4">4802 VERVIERS</p>
@@ -61,11 +61,11 @@
                         {{__('« Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? »')}}
                     </p>
                 </div>
-                <section>
-                    <h3 class="font-sans mb-6 font-medium text-xl">{{__('Aptitude nécessaire à la mission')}}</h3>
+                <section aria-labelledby="needed">
+                    <h3  id="needed" role="heading" aria-level="3" class="font-sans mb-6 font-medium text-xl">{{__('Aptitude nécessaire à la mission')}}</h3>
                     <div class="flex gap-32">
-                        <section class="pr-24 border-r-orange-500 border-r">
-                            <h4 class="text-green-500 mb-4">{{__('Langages de programmation')}}</h4>
+                        <section class="pr-24 border-r-orange-500 border-r" aria-labelledby="languages">
+                            <h4 id="languages" role="heading" aria-level="4" class="text-green-500 mb-4">{{__('Langages de programmation')}}</h4>
                             <ul class="flex flex-col gap-2 list-disc">
                                 @for($i=1;$i<10;$i++)
                                     <li class="flex items-center gap-3">
@@ -79,8 +79,8 @@
                             </ul>
                         </section>
                         <div class="flex flex-col gap-12">
-                            <section class="">
-                                <h4 class="text-green-500 mb-4">{{__('Autres logiciels')}}</h4>
+                            <section class="" aria-labelledby="software">
+                                <h4 id="software" role="heading" aria-level="4" class="text-green-500 mb-4">{{__('Autres logiciels')}}</h4>
                                 <ul class="flex flex-col gap-2 list-disc">
                                     @for($i=1;$i<4;$i++)
                                         <li class="flex items-center gap-3">
@@ -95,8 +95,8 @@
                                     @endfor
                                 </ul>
                             </section>
-                            <section class="">
-                                <h4 class="text-green-500 mb-4">{{__('Autres ato')}}</h4>
+                            <section class="" aria-labelledby="assets">
+                                <h4 id="assets" role="heading" aria-level="4" class="text-green-500 mb-4">{{__('Autres atouts')}}</h4>
                                 <ul class="flex flex-col gap-2 list-disc">
                                     @for($i=1;$i<3;$i++)
                                         <li class="flex items-center gap-3">
@@ -106,7 +106,6 @@
                                                         fill="#6f704d"/>
                                             </svg>
                                             <p>Nom de l'aptitude</p>
-
                                         </li>
                                     @endfor
                                 </ul>
@@ -117,17 +116,17 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-36 pb-24 pt-20">
+    <article class="bg-yellow-600 px-36 pb-24 pt-20" aria-labelledby="other-offer">
         <div class="flex justify-between">
-            <h2 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('D\'autres offres')}}</h2>
+            <h2 id="other-offer" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('D\'autres offres')}}</h2>
             <a class="text-green-700 underline font-sans text-2xl font-semibold"
                href="/entreprise/internship">{{__('Voir les offres de stage')}}</a>
         </div>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="relative bg-white-100 py-6 px-8 rounded-3xl">
+                <article class="relative bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
                     <div class="flex justify-between">
-                        <h3 class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
+                        <h3 id="slug" role="heading" aria-level="3" class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
                         <p>Date de l'offre</p>
                     </div>
                     <p class="text-lg mb-3">Votre travail consiste à assimiler les besoins des différentes cibles et les

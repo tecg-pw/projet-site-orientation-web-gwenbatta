@@ -13,6 +13,7 @@
             </div>
             <div class="flex mt-14">
                 <form action="/" method="post" class="min-w-full">
+                    @csrf
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="email">{{__('Email')}}</label>
                         <input

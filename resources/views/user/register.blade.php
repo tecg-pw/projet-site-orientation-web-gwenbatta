@@ -13,6 +13,7 @@
             </div>
             <div class="flex mt-14">
                 <form class="flex-1" action="/" method="post">
+                    @csrf
                     <div class="flex flex-1">
                         <fieldset class="flex flex-1 flex-col mr-10 mb-8">
                             <label class="text-green-500 text-2xl" for="name">{{__('Nom')}}</label>

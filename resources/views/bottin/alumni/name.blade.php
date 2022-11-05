@@ -3,9 +3,9 @@
     <div class="px-36 flex justify-end text-green-700 underline font-sans text-2xl font-semibold">
     <a href="/bottin/alumni">{{__('Voir d\'autres alumni')}}</a>
     </div>
-    <section class="mt-20 px-36 flex mb-36 gap-x-11">
+    <section class="mt-20 px-36 flex mb-36 gap-x-11" aria-labelledby="name">
         <div class="mb-7 order-2">
-            <h2 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('Nom de l\'ancien')}}</h2>
+            <h2 id="name" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('Nom de l\'ancien')}}</h2>
             <div class="flex gap-x-10 text-lg mb-8">
                 <p class="uppercase">ancien</p>
                 <p>Métier</p>
@@ -48,9 +48,9 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-36 pb-40 pt-20">
+    <article class="bg-yellow-600 px-36 pb-40 pt-20" aria-labelledby="projects">
         <div class="justify-between flex">
-            <h2 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Quelques projets')}}</h2>
+            <h2 id="projects" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Quelques projets')}}</h2>
             <a class="text-green-700 underline font-sans text-2xl font-semibold" href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
         <div class="grid grid-cols-3 gap-8 justify-center">

@@ -16,6 +16,7 @@
             </div>
             <div class="flex  mt-14">
                 <form action="/" method="post" class="flex-1">
+                    @csrf
                     <div class="flex flex-1">
                         <fieldset class="flex flex-col flex-1 mr-10 mb-8">
                             <label class="text-green-500 text-2xl" for="name">{{__('Nom')}}</label>

@@ -16,6 +16,7 @@
             </div>
             <div class="flex mt-14">
                 <form action="/" method="post" enctype="multipart/form-data">
+                    @csrf
                         <fieldset class="flex flex-col mb-8">
                             <label class="text-green-500 text-2xl" for="name">{{__('Nom de l\'entreprise')}}</label>
                             <input

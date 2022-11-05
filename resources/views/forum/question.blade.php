@@ -15,6 +15,7 @@
             </div>
             <div class="grid grid-cols-5 mt-14 items-center">
                 <form action="/" method="post" class="col-span-3 items-center mr-20">
+                    @csrf
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="questions">{{__('Question')}}</label>
                         <input
