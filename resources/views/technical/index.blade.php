@@ -103,7 +103,6 @@
                 </article>
             </div>
         </div>
-
     </article>
     <article class="px-36 mt-36 mb-36">
         <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Quelques termes techniques')}}</h2>

@@ -1,24 +1,29 @@
 <x-commons.navigation></x-commons.navigation>
 <main class="text-2xl">
-    <section class="flex mt-20 px-36 items-center justify-center" aria-labelledby="intro">
-        <div class="mr-40">
-            <h2 role="heading" id="intro" aria-level="2"
-                class="text-4xl uppercase font-extrabold text-yellow-800 mb-12 font-sans">
-                {{__('Un choix à faire ? Choisis le web !')}}
+    <section class="px-36 flex mt-14 mb-36 gap-24 items-center">
+        <div class="flex-1 ">
+            <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans" role="heading" aria-level="2"
+                id="projects">
+                {{__('UN CHOIX À FAIRE ? CHOISIS LE WEB !')}}
             </h2>
-            <p class="leading-12 mb-24 max-w-3xl font-thin">{{__('TecWeb est le site de l’option web de la HELP (Haute École de la Province de Liège). Nous te proposons ici de découvrir cette merveilleuse option, de voir ce qu’elle a à t’offrir et de te faire une idée sur ce qui t’attends avant de nous rejoindre. Bonne visite et à bientôt dans les couloirs !')}}</p>
-            <div class="flex gap-x-26 justify-center items-center">
+            <p class="leading-10">
+                {{__('TecWeb est le site de l’option web de la HELP (Haute École de la Province de Liège). Nous te proposons ici de découvrir cette merveilleuse option, de voir ce qu’elle a à t’offrir et de te faire une idée sur ce qui t’attends avant de nous rejoindre. Bonne visite et à bientôt dans les couloirs !')}}
+            </p>
+            <div class="mt-20 flex items-center justify-between">
                 <a href="/about"
-                   class="font-sans text-center flex-1 text-white-100 bg-green-700 px-4 py-6 rounded-3xl text-3xl font-semibold ">{{__('Découvrir davantage')}}</a>
-                <a class="font-sans text-end text-green-700 text-3xl font-semibold underline flex-1 px-4 py-6 self-end"
-                   href="/forum/index">{{__('J\'ai des questions')}}</a>
+                   class="font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold ">{{__('En savoir plus')}}</a>
+                <a class=" self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
+                   href="/forum/index">{{__('J\'ai des questions')}}
+                </a>
             </div>
         </div>
-        <figure class="grid grid-rows-1 grid-cols-2 gap-8">
-            <img class="rounded-3xl row-span-4" src="img-redimensions/pexels-buro-millennial-1438072.jpg" alt="">
-            <img class="rounded-3xl" src="img-redimensions/pexels-buro-millennial-1438084.jpg" alt="">
-            <img class="rounded-3xl" src="img-redimensions/pexels-buro-millennial-1438081.jpeg" alt="">
-        </figure>
+        <div class="flex-1">
+            <figure class="grid grid-rows-2 grid-cols-2 gap-8">
+                <img class="rounded-3xl row-span-2 min-h-full" src="https://placehold.jp/396x584.png" alt="">
+                <img class="rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
+                <img class="rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
+            </figure>
+        </div>
     </section>
     <section class="mt-40 bg-yellow-600 px-36 grid grid-cols-3 pb-28" aria-labelledby="why">
         <div class="mt-20  border-r-2 border-orange-500 pr-32 mr-36 col-span-2">
@@ -65,39 +70,9 @@
                href="/projet/index">{{__('Voir tous les projets')}}</a>
         </div>
         <div class="flex gap-8 justify-center">
-            <article class="flex-col flex bg-yellow-100 rounded-3xl" aria-labelledby="slug">
-                <span class="flex-col flex px-4 mt-6">
-                    <h3 class="font-sans text-3xl mb-3" id="slug" aria-level="3" role="heading">{{__('Titre')}}</h3>
-                    <a href="user/single.blade.php">{{__('Name')}}</a>
-                    <p class="text-xl">Date du projet</p>
-                    <a class="self-end" href="projets/single.blade.php">{{__('Voir le projet')}}</a>
-                </span>
-                <figure class="order-first">
-                    <img class="rounded-t-3xl" src="https://placehold.jp/526x526.png" alt="">
-                </figure>
-            </article>
-            <article class="flex-col flex bg-yellow-100 rounded-3xl" aria-labelledby="slug">
-                <span class="flex-col flex px-4 mt-6">
-                    <h3 class="font-sans text-3xl mb-3" id="slug" aria-level="3" role="heading">{{__('Titre')}}</h3>
-                    <a href="user/single.blade.php">{{__('Name')}}</a>
-                    <p class="text-xl">Date du projet</p>
-                    <a class="self-end" href="projets/single.blade.php">{{__('Voir le projet')}}</a>
-                </span>
-                <figure class="order-first">
-                    <img class="rounded-t-3xl" src="https://placehold.jp/526x526.png" alt="">
-                </figure>
-            </article>
-            <article class="flex-col flex bg-yellow-100 rounded-3xl" aria-labelledby="slug">
-                <span class="flex-col flex px-4 mt-6">
-                    <h3 class="font-sans text-3xl mb-3" id="slug" aria-level="3" role="heading">{{__('Titre')}}</h3>
-                    <a href="user/single.blade.php">{{__('Name')}}</a>
-                    <p class="text-xl">Date du projet</p>
-                    <a class="self-end" href="projets/single.blade.php">{{__('Voir le projet')}}</a>
-                </span>
-                <figure class="order-first">
-                    <img class="rounded-t-3xl" src="https://placehold.jp/526x526.png" alt="">
-                </figure>
-            </article>
+            @for($i=1; $i<4;$i++)
+                <x-project/>
+            @endfor
         </div>
     </article>
     <article class="pt-20  mt-40 bg-yellow-600 px-36 pb-28" aria-labelledby="questions">
@@ -187,25 +162,30 @@
         </div>
 
     </article>
-    <section class="flex my-20 px-36 items-center" aria-labelledby="interrest">
-        <div class="mr-40">
-            <h2 id="interrest" class="text-4xl uppercase font-bold text-yellow-800 mb-12 font-sans" role="heading"
-                aria-level="2">
+    <section class="px-36 flex mt-14 mb-36 gap-24 items-center">
+        <div class="flex-1 ">
+            <h2 class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans" role="heading" aria-level="2"
+                id="projects">
                 {{__('Vous êtes interressé ?')}}
             </h2>
-            <p class="leading-12 mb-24 max-w-3xl font-thin">{{__('Si ta visite sur ce site t’as convaincu, nous t’invitons à t’inscrire au plus vite chez nous ! Mais si tu es encore hésitant car tu as encore des questions ou que tu souhaite avoir un contact avec quelqu’un, n’hésite pas à te rendre sur notre page de contact. Tu y trouveras forcément de l’aide !')}}</p>
-            <div class="flex gap-x-26 justify-center items-center">
-                <a href="about.blade.php"
-                   class="font-sans text-center flex-1 text-white-100 bg-green-700 px-4 py-6 rounded-3xl text-3xl font-semibold">{{__('Contactez-nous !')}}</a>
-                <a class="font-sans text-end text-green-700 text-3xl font-semibold underline flex-1 px-4 py-6 self-end"
-                   href="https://www.hepl.be/fr/inscription">{{__('Je veux m\'inscrire')}}</a>
+            <p class="leading-10">
+                {{__('Si ta visite sur ce site t’as convaincu, nous t’invitons à t’inscrire au plus vite chez nous ! Mais si tu es encore hésitant car tu as encore des questions ou que tu souhaite avoir un contact avec quelqu’un, n’hésite pas à te rendre sur notre page de contact. Tu y trouveras forcément de l’aide !')}}
+            </p>
+            <div class="mt-20 flex items-center justify-between">
+                <a href="/contact/student"
+                   class="font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold ">{{__('Contactez-nous')}}</a>
+                <a class=" self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
+                   href="https://www.hepl.be/fr/inscription">{{__('Je veux m\'inscrire')}}
+                </a>
             </div>
         </div>
-        <figure class="grid grid-rows-1 grid-cols-2 gap-8">
-            <img class="rounded-3xl row-span-4" src="img-redimensions/windows-VMPhyAoVqqk-unsplash.jpg" alt="">
-            <img class="rounded-3xl" src="img-redimensions/student-g0a8698c9e_1920.jpg" alt="">
-            <img class="rounded-3xl" src="img-redimensions/pexels-olya-kobruseva-5428836.jpg" alt="">
-        </figure>
+        <div class="flex-1">
+            <figure class="grid grid-rows-2 grid-cols-2 gap-8">
+                <img class="rounded-3xl row-span-2 min-h-full" src="https://placehold.jp/396x584.png" alt="">
+                <img class="rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
+                <img class="rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
+            </figure>
+        </div>
     </section>
 </main>
 <x-commons.footer></x-commons.footer>

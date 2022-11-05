@@ -171,48 +171,58 @@
             @endfor
         </div>
     </section>
-    <article class="bg-yellow-600 px-36 pb-36 pt-20">
+    <article id="jobs" class="bg-yellow-600 px-36 pb-36 pt-20">
         <h2 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Débouchées')}}</h2>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer d\'expérience utilisateur (UX Designer)')}}</h4>
                 <p class="text-lg">{{__('L’UX design (pour design d’expérience utilisateur en français) est le processus de conception de produits utiles, faciles et agréables à utiliser. Prenant racine dans le design d’expérience, il s’agit d’améliorer l’expérience des utilisateurs qui interagissent avec votre produit (numérique ou physique)')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer d\'expérience utilisateur (UX Designer)')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web Back-End')}}</h4>
                 <p class="text-lg">{{__('Le développeur back-end programme la partie cachée d’une solution web, le côté serveur, administrateur d’une app ou d’un site web, contrairement au développeur front-end qui s’occupe de la partie visible.')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Web Back-End')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Multimédia')}}</h4>
                 <p class="text-lg">{{__('Le designer graphique et multimédia (également appelé webdesigner) est un dessinateur-maquettiste travaillant sur des supports électroniques : pages web, cédéroms, habillage TV ou vidéo. Sa mission ? Donner une identité forte à ces différents supports.')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer Multimédia')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Multimédia')}}</h4>
                 <p class="text-lg">{{__('Le Développeur Multimédia assure la conduite technique du projet c’est à dire l’ application du scénario, la manipulation d’outils graphiques, la mise en œuvre internet. Son métier se positionne au croisement de trois domaines, infographie, interface web et multimédia dont il manipule à la perfection.')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Multimédia')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer d\'interface (UI Designer')}}</h4>
+                <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer d\'interface (UI Designer)')}}</h4>
                 <p class="text-lg">{{__('UI est l’abréviation d’user interface ou interface utilisateur. L’UI design se rapporte donc à l’environnement graphique dans lequel évolue l’utilisateur d’un logiciel, d’un site web ou d’une application. La mission de l’UI designer consiste à créer une interface agréable et pratique, facile à prendre en main.')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer d\'interface (UI Designer)')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web Front-End')}}</h4>
                 <p class="text-lg">{{__('Le développeur front end programme la partie visible, l’interface utilisateur d’une app ou d’un site web à l’inverse du développeur back-end qui travaille dans l’ombre. Son métier ressemble à celui d’un intégrateur web, mais il a un rôle plus important dans la création d’une solution web.')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Web Front-End')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Web')}}</h4>
                 <p class="text-lg">{{__('Mi-graphiste, mi-informaticien, le web- designer est spécialisé dans la création des pages Web. Il s’occupe de tout l’aspect graphique d’un site Internet (illustrations, animations, typographie…). Il choisit la place des photos, la taille des caractères et les couleurs qui rendront la consultation agréable pour l’utilisateur.')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer Web')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web')}}</h4>
                 <p class="text-lg">{{__('Il s’occupe de la partie technique des sites. A la demande d’un client ou d’une entreprise et sur base d’un cahier des charges. Spécialiste des langages informatiques, il prend en charge l’ensemble des fonctionnalités du site, son architecture, l’accès aux données ainsi que l’écriture des lignes de codes .')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Web')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Designer Mobile')}}</h4>
                 <p class="text-lg">{{__('Le designer mobile est le créateur et le développeur des applications mobiles et des interfaces des entreprises. Il met sa créativité et ses connaissances au service de ses clients. Il crée des designs, des vidéos ou encore des sons pour mettre en valeur les produits et les services de ses clients.')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer mobile')}}</a>
             </article>
             <article class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h4 class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Mobile')}}</h4>
                 <p class="text-lg">{{__('Le développeur mobile iOS/ Android se consacre à la création ou à la mise à jour d’applications destinées à fonctionner sur des appareils mobiles embarquant l’un ou l’autre de ces systèmes d’exploitation.')}}</p>
+                <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur mobile')}}</a>
             </article>
         </div>
     </article>

@@ -30,11 +30,17 @@ Route::get('/legals', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/about/job/single', function () {
+    return view('about.job.single');
+});
 
 
 
 Route::get('/technical/index', function () {
     return view('technical.index');
+});
+Route::get('/technical/books/single', function () {
+    return view('technical.books.single');
 });
 Route::get('/technical/glossary', function () {
     return view('technical.glossary');
@@ -49,11 +55,18 @@ Route::get('/technical/docandtool/tool', function () {
     return view('technical.tool');
 });
 
+
 Route::get('/entreprise/partner', function () {
     return view('entreprise.partner');
 });
+Route::get('/entreprise/partner/single', function () {
+    return view('entreprise.partner.single');
+});
 Route::get('/entreprise/internship', function () {
     return view('entreprise.internship');
+});
+Route::get('/entreprise/internship/single', function () {
+    return view('entreprise.internship.single');
 });
 
 
@@ -86,6 +99,12 @@ Route::get('/user/login', function () {
 });
 Route::get('/user/register', function () {
     return view('user.register');
+});
+Route::get('/user/profile', function () {
+    return view('user.profile');
+});
+Route::get('/user/profile/modify', function () {
+    return view('user.profile.modify');
 });
 Route::get('/user/password', function () {
     return view('user.password');
@@ -123,7 +142,7 @@ Route::get('/forum/my-talks', function () {
 Route::get('/project/index', function () {
     return view('project.index');
 });
-Route::get('/project/{project:slug}/single', function () {
+Route::get('/project/single', function () {
     return view('project.single');
 });
 

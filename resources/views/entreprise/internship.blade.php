@@ -17,7 +17,7 @@
         <h2 class="sr-only">{{__('Liste des offres de stages')}}</h2>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<11;$i++)
-                <article class="bg-yellow-100 py-6 px-8 rounded-3xl">
+                <article class="bg-white-100 py-6 px-8 rounded-3xl">
                     <div class="flex justify-between">
                         <h3 class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
                         <p>Date de l'offre</p>
@@ -29,7 +29,7 @@
                         <a class="order-3 underline text-green-700 font-sans font-semibold self-end"
                            href="/entreprise/partner/single">Epic Agency</a>
                         <a class="order-3 underline text-green-700 font-sans font-semibold self-end"
-                           href="/entreprise/intership/single">{{__('En savoir plus')}}</a>
+                           href="/entreprise/internship/single">{{__('En savoir plus')}}</a>
                     </div>
                 </article>
             @endfor

@@ -35,16 +35,16 @@
             <h2 class="text-green-500 font-medium text-2xl mb-8 font-sans " role="heading" aria-level="2" id="navigation">{{__('Navigation')}}</h2>
             <ul class="flex text-xl text-green-500">
                 <ul class="mr-14">
-                    <li class="mb-6"><a href="forum/index.blade.php">{{__('Forum')}}</a></li>
-                    <li class="mb-6"><a href="">{{__('Actualité')}}</a></li>
-                    <li class="mb-6"><a href="">{{__('Bottin')}}</a></li>
-                    <li><a href="projets/index.blade.php">{{__('Projets')}}</a></li>
+                    <li class="mb-6"><a href="/forum/index">{{__('Forum')}}</a></li>
+                    <li class="mb-6"><a href="/news/index">{{__('Actualité')}}</a></li>
+                    <li class="mb-6"><a href="/bottin">{{__('Bottin')}}</a></li>
+                    <li><a href="/project/index">{{__('Projets')}}</a></li>
                 </ul>
                 <ul>
-                    <li class="mb-6"><a href="agency/intern.blade.php">{{__('Stages')}}</a></li>
-                    <li class="mb-6"><a href="">{{__('Alumni')}}</a></li>
+                    <li class="mb-6"><a href="/entreprise/internship">{{__('Stages')}}</a></li>
+                    <li class="mb-6"><a href="/bottin/alumni">{{__('Alumni')}}</a></li>
                     <li class="mb-6"><a href="/contact/student">{{__('Contact')}}</a></li>
-                    <li><a href="tutos.blade.php">{{__('Tutos')}}</a></li>
+                    <li><a href="/technical/tuto">{{__('Tutos')}}</a></li>
                 </ul>
             </ul>
         </nav>
