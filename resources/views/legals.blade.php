@@ -29,11 +29,11 @@
     <section class="mt-20 pr-36" aria-labelledby="cookies">
         <h2 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11" role="heading" aria-level="2"
             id="cookies">{{__('Utilisations de cookies')}}</h2>
-        <p class="leading-8 mb-6">{{__('Nous souhaitons informer les utilisateurs de ce site Internet au sujet de l’utilisation de cookies. Les cookies sont des petits fichiers-textes placés sur le disque dur de l’ordinateur des visiteurs d’un site Internet. Ils contiennent des informations, telles que les préférences linguistiques du visiteur, afin que ce dernier ne doive plus les saisir lors de sa prochaine visite. Certains cookies veillent à ce qu’un site Internet s’affiche de manière soignée d’un point de vue graphique, d’autres à ce qu’une application du site fonctionne correctement. D’autres cookies encore sont utilisés pour collecter des statistiques relatives à nos visiteurs et ainsi nous permettre d’améliorer notre site Internet à l’avenir.  ')}}
+        <p class="leading-8 mb-6">{{__('Nous souhaitons informer les utilisateurs de ce site Internet au sujet de l’utilisation de cookies. Les cookies sont des petits fichiers-textes placés sur le disque dur de l’ordinateur des visiteurs d’un site Internet. Ils contiennent des informations, telles que les préférences linguistiques du visiteur, afin que ce dernier ne doive plus les saisir lors de sa prochaine visite. Certains cookies veillent à ce qu’un site Internet s’affiche de manière soignée d’un point de vue graphique, d’autres à ce qu’une application du site fonctionne correctement. D’autres cookies encore sont utilisés pour collecter des statistiques relatives à nos visiteurs et ainsi nous permettre d’améliorer notre site Internet à l’avenir.  ')}}</p>
         <p class="leading-8 mb-6">{{__('Pour bloquer les cookies, il vous suffit de régler les paramètres de votre navigateur. Pour ce faire, consultez la fonction d’aide de votre navigateur. Sachez toutefois que si vous désactivez les cookies, certains éléments graphiques n’apparaîtront peut-être plus de manière esthétique ou que vous ne pourrez plus utiliser certaines applications.')}}</p>
         <p class="leading-8 mb-6">{{__('En continuant d’utiliser ce site Internet sans bloquer les cookies dans les paramètres de son navigateur, le visiteur accepte leur utilisation.')}}</p>
         <p class="leading-8 mb-6">{{__('Vous pouvez retirer à tout moment les cookies installés sur votre ordinateur ou appareil mobile')}}</p>
-        </p>
+
     </section>
     </div>
 </main>

@@ -1,4 +1,4 @@
-<x-commons.navigation/>
+<x-commons.navigation></x-commons.navigation>
 <main>
     <section class="mt-20 flex justify-center" aria-labelledby="contact">
         <div class="px-36">

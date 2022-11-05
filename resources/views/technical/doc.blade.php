@@ -165,7 +165,7 @@
             </div>
         </article>
     </section>
-    <x-books/>
+    <x-books></x-books>
 </main>
 <x-commons.footer></x-commons.footer>
 </body>

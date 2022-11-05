@@ -34,9 +34,9 @@
                         {{__('Je suis actuellement étudiant en secondaire mais la din d’année approche et je me pose des questions sur ma futur orientation. En effet, le monde du web m’attire mais je ne suis vraiement pas doué en math. Je n’aime pas les math et elle ne m’aime pas non plus. C’est pourquoi j’ai voulu me renseigner un peu à gauche et à droite en regardant des vidéos sur Youtube ou en interrogeant mes professeurs. Tous sont d’accord de dire qu’il faut être bon en math pour le web sinon je ne vais jamas y arriver. Pourriez-vous me donner votre avis sur la questions car je suis un peu démotiver du coup. Merci d’avance !')}}
                     </p>
                 </div>
-                <article class="flex flex-col gap-y-8 " aria-labelledby="comment">
+                <article class="flex flex-col gap-y-8 " aria-labelledby="add-comment">
                     <div class="flex justify-between items-center">
-                        <h3 id="comment" aria-level="3" role="heading"
+                        <h3 id="add-comment" aria-level="3" role="heading"
                             class="text-4xl uppercase font-extrabold text-yellow-800 font-sans ">{{__('Commentaires')}}</h3>
                         @auth()
                             <a class=" self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
@@ -99,9 +99,9 @@
                                     <a class="absolute -top-6 right-1 self-center flex font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
                                        href="/forum/show#comment">{{__('Annuler')}}</a>
                                     <label class="text-green-500 text-lg font-medium"
-                                           for="comment">{{__('Votre Réponse')}}</label>
-                                    <textarea class="mt-4 rounded-xl border-2 border-orange-500" name="comment"
-                                              id="comment" cols="75" rows="2"></textarea>
+                                           for="answer">{{__('Votre Réponse')}}</label>
+                                    <textarea class="mt-4 rounded-xl border-2 border-orange-500" name="answer"
+                                              id="answer" cols="75" rows="2"></textarea>
                                 </form>
                             @endif
                         </div>
@@ -119,9 +119,9 @@
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-10">{{__('Derniers sujet')}}</h3>
                     <div class="flex flex-col gap-y-8">
                         @for($i=1;$i<3;$i++)
-                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
+                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-latest'.$i}}">
                                 <div class="order-2 flex-1 flex flex-col ml-4">
-                                    <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
+                                    <h4 id="{{'question-latest'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                     <div class="flex justify-between">
                                         <p class="text-xl mb-2">Nom de l'auteur</p>
                                         <p>03 novembre 2022</p>
@@ -144,9 +144,9 @@
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-10">{{__('Sujets populaires')}}</h3>
                     <div class="flex flex-col gap-y-8">
                         @for($i=1;$i<3;$i++)
-                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
+                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-rating'.$i}}">
                                 <div class="order-2 flex-1 flex flex-col ml-4">
-                                    <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
+                                    <h4 id="{{'question-rating'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                     <div class="flex justify-between">
                                         <p class="text-xl mb-2">Nom de l'auteur</p>
                                         <p>03 novembre 2022</p>

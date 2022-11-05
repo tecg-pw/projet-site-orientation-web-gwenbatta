@@ -6,15 +6,15 @@
             <x-search_bar></x-search_bar>
         </div>
         <p class="mb-7 max-w-[40%] text-lg leading-10">{{__('Vous trouverez sur cette page une liste de tutoriels qui vous sont proposés afin de vous introduire certains langages que vous découvrirez au sein de notre orientation')}}</p>
-        <x-sort_by class="mb-14"/>
+        <x-sort_by class="mb-14"></x-sort_by>
         <article aria-labelledby="list-tutos">
             <h3 id="list-tutos" role="heading" aria-level="3" class="sr-only">{{__('Liste de tutos')}}</h3>
             <div class="grid grid-cols-2 gap-x-24 gap-y-8">
                 @for($i=1; $i<11;$i++)
-                    <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
+                    <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="{{'slug'.$i}}">
                         <div class="flex justify-between">
                             <div>
-                                <h4 id="slug" role="heading" aria-level="3-4" class="font-sans font-medium text-2xl mb-2">Froggy</h4>
+                                <h4 id="{{'slug'.$i}}" role="heading" aria-level="4" class="font-sans font-medium text-2xl mb-2">Froggy</h4>
                                 <p class="mb-3">Date de publication</p>
                             </div>
                             @auth()
@@ -32,7 +32,6 @@
                     </article>
                 @endfor
             </div>
-            {{--                {{$posts->links()}}--}}
         </article>
     </section>
 </main>

@@ -37,7 +37,7 @@
         </div>
         <div class="grid grid-cols-3 gap-8 justify-center">
             @for($i=1; $i<4;$i++)
-                <x-project/>
+                <x-project :i="$i"></x-project>
             @endfor
         </div>
     </article>

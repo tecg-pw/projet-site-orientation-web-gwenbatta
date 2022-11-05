@@ -28,9 +28,9 @@
         <div class="grid grid-cols-5 justify-between">
             <div class="col-span-3 flex flex-col gap-y-8 pr-14 border-r-2 border-r-orange-500">
                 @for($i=1;$i<6;$i++)
-                    <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
+                    <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question'.$i}}">
                         <div class="order-2 flex-1 flex flex-col ml-4">
-                            <h3 id="question" aria-level="3" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
+                            <h3 id="{{'question'.$i}}" aria-level="3" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
                             <div class="flex justify-between">
                                 <p class="text-xl mb-2">Nom de l'auteur</p>
                                 <p class="font-bold text-lg text-green-500">Général</p>
@@ -56,9 +56,9 @@
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Derniers sujet')}}</h3>
                     <div class="flex flex-col gap-y-8">
                     @for($i=1;$i<3;$i++)
-                        <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
+                        <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-latest'.$i}}">
                             <div class="order-2 flex-1 flex flex-col ml-4">
-                                <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
+                                <h4 id="{{'question-latest'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                 <div class="flex justify-between">
                                     <p class="text-xl mb-2">Nom de l'auteur</p>
                                     <p>03 novembre 2022</p>
@@ -80,9 +80,9 @@
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Sujets populaires')}}</h3>
                     <div class="flex flex-col gap-y-8">
                     @for($i=1;$i<3;$i++)
-                        <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
+                        <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-rating'.$i}}">
                             <div class="order-2 flex-1 flex flex-col ml-4">
-                                <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
+                                <h4 id="{{'question-rating'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                 <div class="flex justify-between">
                                     <p class="text-xl mb-2">Nom de l'auteur</p>
                                     <p>03 novembre 2022</p>
@@ -106,24 +106,23 @@
         <h2 id="glossary" aria-level="2" role="heading" class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Quelques termes techniques')}}</h2>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
-                    <h3 id="slug" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3">Accessibilité</h3>
+                <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="{{'slug'.$i}}">
+                    <h3 id="{{'slug'.$i}}" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3">Accessibilité</h3>
                     <p class="text-lg">1. Caractère de quelque chose, d’un lieu qui est accessibles : L’accessibilité
                         d’un bus, d’un immeuble aux handicapés.<br>2. Droit, possibilité qu’a quelqu’un d’avoir accès à
                         quelque chose : L’accessibilité à un emploi.</p>
                 </article>
             @endfor
         </div>
-        {{--                {{$posts->links()}}--}}
     </article>
     <article class="bg-yellow-600 px-36 pt-20 pb-28" aria-labelledby="tutos">
         <h2 id="tutos" aria-level="2" role="heading" class="text-4xl uppercase font-bold mb-16 font-sans">{{__('Quelques tutos')}}</h2>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
+                <article class="bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="{{'slug-tuto'.$i}}">
                     <div class="flex justify-between">
                         <div>
-                            <h3 id="slug" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-2">Froggy</h3>
+                            <h3 id="{{'slug-tuto'.$i}}" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-2">Froggy</h3>
                             <p class="mb-3">Date de publication</p>
                         </div>
                         @auth()

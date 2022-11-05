@@ -5,17 +5,12 @@
             <h2 class="text-4xl uppercase font-bold text-yellow-800  font-sans" role="heading" aria-level="2" id="projects">
                 {{__('Projets de nos étudiants')}}
             </h2>
-            <x-search_bar/>
+            <x-search_bar></x-search_bar>
         </div>
-        {{--        @foreach()--}}
         <div class="grid grid-cols-3 gap-8 justify-center">
             @for($i=1; $i<10;$i++)
-                <x-project/>
+                <x-project></x-project>
             @endfor
-        </div>
-        {{--        @endforeach--}}
-        <div>
-            {{--            {{$projects->links()}}--}}
         </div>
     </article>
 </main>

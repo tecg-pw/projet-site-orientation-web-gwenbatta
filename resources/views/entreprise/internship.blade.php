@@ -5,7 +5,7 @@
             <h2 id="company" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Les entreprises')}}</h2>
             <x-search_bar></x-search_bar>
         </div>
-        <x-sort_by_entreprise class="mb-14"/>
+        <x-sort_by_entreprise class="mb-14"></x-sort_by_entreprise>
         <div class="flex gap-20 mb-12">
             <a class="text-xl underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/entreprise/partner">{{__('Partenaires')}}</a>
@@ -17,9 +17,9 @@
         <h2 id="list-internship" role="heading" aria-level="2" class="sr-only">{{__('Liste des offres de stages')}}</h2>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<11;$i++)
-                <article class="bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
+                <article class="bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="{{'slug'.$i}}">
                     <div class="flex justify-between">
-                        <h3 id="slug" role="heading" aria-level="3" class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
+                        <h3 id="{{'slug'.$i}}" role="heading" aria-level="3" class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
                         <p>Date de l'offre</p>
                     </div>
                     <p class="text-lg mb-3">Votre travail consiste à assimiler les besoins des différentes cibles et les

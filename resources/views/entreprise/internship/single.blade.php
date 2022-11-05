@@ -70,7 +70,7 @@
                                 @for($i=1;$i<10;$i++)
                                     <li class="flex items-center gap-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7">
-                                            <circle id="Ellipse_50" data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
+                                            <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                     fill="#6f704d"/>
                                         </svg>
                                         <p>Nom de l'aptitude</p>
@@ -86,7 +86,7 @@
                                         <li class="flex items-center gap-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7"
                                                  viewBox="0 0 7 7">
-                                                <circle id="Ellipse_50" data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
+                                                <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                         fill="#6f704d"/>
                                             </svg>
                                             <p>Nom de l'aptitude</p>
@@ -102,7 +102,7 @@
                                         <li class="flex items-center gap-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7"
                                                  viewBox="0 0 7 7">
-                                                <circle id="Ellipse_50" data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
+                                                <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                         fill="#6f704d"/>
                                             </svg>
                                             <p>Nom de l'aptitude</p>
@@ -124,9 +124,9 @@
         </div>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="relative bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
+                <article class="relative bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="{{'slug'.$i}}">
                     <div class="flex justify-between">
-                        <h3 id="slug" role="heading" aria-level="3" class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
+                        <h3 id="{{'slug'.$i}}" role="heading" aria-level="3" class="font-sans font-medium text-2xl mb-3">UI / UX Designer Freelance</h3>
                         <p>Date de l'offre</p>
                     </div>
                     <p class="text-lg mb-3">Votre travail consiste à assimiler les besoins des différentes cibles et les

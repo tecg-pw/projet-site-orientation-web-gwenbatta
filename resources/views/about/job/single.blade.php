@@ -39,7 +39,7 @@
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Designer Web')}}</a>
             </article>
             <article aria-labelledby="dev-web" class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                <h3 id="dev-wev" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web')}}</h3>
+                <h3 id="dev-web" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3 font-medium">{{__('Développeur Web')}}</h3>
                 <p class="text-lg">{{__('Il s’occupe de la partie technique des sites. A la demande d’un client ou d’une entreprise et sur base d’un cahier des charges. Spécialiste des langages informatiques, il prend en charge l’ensemble des fonctionnalités du site, son architecture, l’accès aux données ainsi que l’écriture des lignes de codes .')}}</p>
                 <a class="linkcard" href="/about/job/single">{{__('Voir plus sur Développeur Web')}}</a>
             </article>
@@ -87,7 +87,7 @@
         </div>
         <div class="grid grid-cols-3 gap-8 justify-center">
             @for($i=1; $i<4;$i++)
-                <x-project/>
+                <x-project></x-project>
             @endfor
         </div>
     </article>

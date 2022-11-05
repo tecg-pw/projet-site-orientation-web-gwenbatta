@@ -1,7 +1,7 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
     <article class="bg-yellow-600 px-36 py-20 " aria-labelledby="recurring-questions">
-        <h2 role="heading" aria-level="2" id="recurring questions"
+        <h2 role="heading" aria-level="2" id="recurring-questions"
             class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Quelques questions récurrentes')}}</h2>
         <div class="grid grid-cols-3 gap-x-24 gap-y-8">
             @for($i=1;$i<5;$i++)
@@ -14,7 +14,7 @@
                                 <span class="sr-only">{{__('Voir la réponse')}}</span>
                                 <span class="flex-1 justify-end"><svg xmlns="http://www.w3.org/2000/svg" width="50"
                                                                       height="50" class="flex-1 justify-end flex">
-                                  <path id="_2020bf85e241394953aca514c8b97948"
+                                  <path
                                         data-name="2020bf85e241394953aca514c8b97948"
                                         d="M27,2A25,25,0,1,0,52,27,25,25,0,0,0,27,2Zm0,45A20,20,0,1,1,47,27,20,20,0,0,1,27,47ZM37,24.5H29.5V17a2.5,2.5,0,0,0-5,0v7.5H17a2.5,2.5,0,0,0,0,5h7.5V37a2.5,2.5,0,0,0,5,0V29.5H37a2.5,2.5,0,0,0,0-5Z"
                                         transform="translate(-2 -2)" fill="#da953a"/>
@@ -30,7 +30,7 @@
                                 <span class="sr-only">{{__('Voir la réponse')}}</span>
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                                            viewBox="0 0 50 50">
-                                      <path id="_2020bf85e241394953aca514c8b97948"
+                                      <path
                                             data-name="2020bf85e241394953aca514c8b97948"
                                             d="M27,2A25,25,0,1,0,52,27,25,25,0,0,0,27,2Zm0,45A20,20,0,1,1,47,27,20,20,0,0,1,27,47ZM37,24.5H17a2.5,2.5,0,0,0,0,5H37a2.5,2.5,0,0,0,0-5Z"
                                             transform="translate(-2 -2)" fill="#da953a"/>
@@ -51,7 +51,7 @@
                    class="font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold mr-10">{{__('Ajouter un question')}}</a>
             @endauth
         </div>
-        <x-sort_by_forum class="px-36 mb-14"/>
+        <x-sort_by_forum class="px-36 mb-14"></x-sort_by_forum>
         <div class="flex gap-32 mb-12 px-36">
             <a class="text-xl underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/forum/index#forum">{{__('Derniers sujets')}}</a>
@@ -110,9 +110,9 @@
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-10">{{__('Derniers sujet')}}</h3>
                     <div class="flex flex-col gap-y-8">
                         @for($i=1;$i<3;$i++)
-                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
+                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-latest'.$i}}">
                                 <div class="order-2 flex-1 flex flex-col ml-4">
-                                    <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
+                                    <h4 id="{{'question-latest'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                     <div class="flex justify-between">
                                         <p class="text-xl mb-2">Nom de l'auteur</p>
                                         <p>03 novembre 2022</p>
@@ -135,9 +135,9 @@
                         class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-10">{{__('Sujets populaires')}}</h3>
                     <div class="flex flex-col gap-y-8">
                         @for($i=1;$i<3;$i++)
-                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="question">
+                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-rating'.$i}}">
                                 <div class="order-2 flex-1 flex flex-col ml-4">
-                                    <h4 id="question" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
+                                    <h4 id="{{'question-rating'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
                                     <div class="flex justify-between">
                                         <p class="text-xl mb-2">Nom de l'auteur</p>
                                         <p>03 novembre 2022</p>

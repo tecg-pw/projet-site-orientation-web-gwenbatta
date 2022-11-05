@@ -1,6 +1,6 @@
-<article {{ $attributes->class(['flex-col flex bg-yellow-100 rounded-3xl relative']) }} aria-labelledby="slug">
+<article {{ $attributes->class(['flex-col flex bg-yellow-100 rounded-3xl relative']) }} aria-labelledby="{{'slug'.$i}}">
     <div class="flex-col flex px-4 mt-6">
-        <h3 class="font-sans text-3xl mb-3" role="heading" aria-level="3" id="slug">{{__('Titre')}}</h3>
+        <h3 class="font-sans text-3xl mb-3" role="heading" aria-level="3" id="{{'slug'.$i}}">{{__('Titre')}}</h3>
         <a href="user/single.blade.php">{{__('Name')}}</a>
         <div class="flex justify-between mb-4">
             <p class="text-xl">Date du projet</p>

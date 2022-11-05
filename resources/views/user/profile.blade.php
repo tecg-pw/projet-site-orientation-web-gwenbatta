@@ -23,10 +23,10 @@
         <h2 role="heading" id="tutos" aria-level="2" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Tutos Favoris')}}</h2>
         <div class="mt-12 grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="slug">
+                <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="{{'slug-tuto'.$i}}">
                     <div class="flex justify-between">
                         <div>
-                            <h3 role="heading" id="slug" aria-level="3" class="font-sans font-medium text-2xl mb-2">Froggy</h3>
+                            <h3 role="heading" id="{{'slug-tuto'.$i}}" aria-level="3" class="font-sans font-medium text-2xl mb-2">Froggy</h3>
                             <p class="mb-3">Date de publication</p>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 20.996 30">
@@ -49,7 +49,7 @@
         </div>
     </article>
     <section class="px-36 mt-36 mb-36" aria-labelledby="questions">
-        <h2 role="heading" id="questiions" aria-level="2" class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Vos questions')}}</h2>
+        <h2 role="heading" id="questions" aria-level="2" class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Vos questions')}}</h2>
         <p>Vous n'avez posé aucune question</p>
     </section>
 </main>

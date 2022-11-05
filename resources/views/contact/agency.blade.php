@@ -67,8 +67,8 @@
                             <label class="text-xl" for="js">{{__('Javascript')}}</label><br>
                             <input class="mb-2.5" type="checkbox" name="flutter" id="flutter">
                             <label class="text-xl" for="flutter">{{__('Flutter')}}</label><br>
-                            <input class="mb-2.5" type="checkbox" name="other" id="other">
-                            <label class="text-xl" for="other">{{__('Autres : ')}}</label><br>
+                            <input class="mb-2.5" type="checkbox" name="other-languges" id="other-languges">
+                            <label class="text-xl" for="other-languges">{{__('Autres : ')}}</label><br>
                         </fieldset>
                         <fieldset>
                             <span class="text-green-500 text-2xl">{{__('Maîtrise des logiciels')}}</span><br>
@@ -84,15 +84,22 @@
                             <label class="text-xl" for="figma">{{__('Figma')}}</label><br>
                             <input class="mb-2.5" type="checkbox" name="sketch" id="sketch">
                             <label class="text-xl" for="sketch">{{__('Sketch')}}</label><br>
-                            <input class="mb-2.5" type="checkbox" name="other" id="other">
-                            <label class="text-xl" for="other">{{__('Autres : ')}}</label><br>
+                            <input class="mb-2.5" type="checkbox" name="other-software" id="other-software">
+                            <label class="text-xl" for="other-software">{{__('Autres : ')}}</label><br>
                         </fieldset>
                         </div>
                     </div>
-                    <fieldset class="flex flex-col mb-8 mt-16">
-                        <label class="text-green-500 text-2xl" for="pdf">{{__('Votre offre de stage (facultatif)')}}</label>
-                        <input class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            name="pdf" id="pdf" type="file" value="{{__('Glisser un PDF ici')}}" ">
+                    <fieldset class="flex flex-col mb-8 mt-4">
+                        <p class="text-green-500 text-2xl">{{__('Votre offre de stage')}}</p>
+                        <div class="flex gap-4 items-center">
+                            <label for="internship" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
+                                <span class="flex flex-col justify-center items-center py-5 px-32">
+                                    <span class="text-xl text-gray-500">{{__('Glisser un PDF')}} </span>
+                                </span>
+                                <input id="internship" type="file" class="hidden" />
+                            </label>
+                            <img class="rounded-full -order-2" src="https://placehold.jp/108x108.png" alt="">
+                        </div>
                     </fieldset>
                     <div class="flex flex-1 justify-end">
                         <input class="font-sans text-center text-white-100 bg-green-700 px-16 py-3 rounded-2xl text-xl font-semibold"

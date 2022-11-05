@@ -1,4 +1,4 @@
-<x-commons.navigation/>
+<x-commons.navigation></x-commons.navigation>
 <main>
     <section class="mt-20 mb-36 flex justify-center" aria-labelledby="question">
         <div class="px-36">
@@ -39,7 +39,6 @@
                 <x-login.commons.aside class="col-span-2"></x-login.commons.aside>
             </div>
         </div>
-
     </section>
 </main>
 <x-commons.footer></x-commons.footer>

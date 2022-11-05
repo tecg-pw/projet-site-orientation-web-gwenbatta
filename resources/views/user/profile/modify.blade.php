@@ -1,12 +1,12 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
     <a class="absolute text-green-500 left-28 top-56 font-sans text-xl underline" href="">Fil d'arianne</a>
-    <section class="flex flex-col relative mb-32" aria-labelledby="name">
+    <section class="flex flex-col relative mb-32" aria-labelledby="intro">
         <div class="relative">
             <div class="flex items-center justify-self-end mt-80 px-36">
                 <div class="order-2 flex-1  ml-8 mt-32">
                     <div>
-                        <h2 role="heading" id="name" aria-level="2"
+                        <h2 role="heading" id="intro" aria-level="2"
                             class="text-4xl text-yellow-800 font-extrabold font-sans mb-3">{{__('Gwenaëlle BATTA')}}</h2>
                         <p class="uppercase text-2xl">{{__('Étudiante')}}</p>
                     </div>
@@ -49,25 +49,25 @@
                             name="email" id="email" type="email" placeholder="email@example.be">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8 mt-16">
-                        <label class="text-green-500 text-2xl" for="profil">{{__('Votre Photo')}}</label>
+                        <p class="text-green-500 text-2xl" >{{__('Votre Photo')}}</p>
                         <div class="flex gap-4 items-center">
-                            <label for="dropzone-file" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
-                                <div class="flex flex-col justify-center items-center py-5 px-32">
-                                    <p class="text-xl text-gray-500">{{__('Glisser un JPG')}} </p>
-                                </div>
-                                <input id="dropzone-file" type="file" class="hidden" />
+                            <label for="profil-picture" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
+                                <span class="flex flex-col justify-center items-center py-5 px-32">
+                                    <span class="text-xl text-gray-500">{{__('Glisser un JPG')}} </span>
+                                </span>
+                                <input id="profil-picture" type="file" class="hidden" />
                             </label>
                                 <img class="rounded-full -order-2" src="https://placehold.jp/108x108.png" alt="">
                         </div>
                     </fieldset>
                     <fieldset class="flex flex-col mb-8 mt-4">
-                        <label class="text-green-500 text-2xl" for="profil">{{__('Votre Bannière')}}</label>
+                        <p class="text-green-500 text-2xl">{{__('Votre Bannière')}}</p>
                         <div class="flex gap-4 items-center">
-                            <label for="dropzone-file" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
-                                <div class="flex flex-col justify-center items-center py-5 px-32">
-                                    <p class="text-xl text-gray-500">{{__('Glisser un JPG')}} </p>
-                                </div>
-                                <input id="dropzone-file" type="file" class="hidden" />
+                            <label for="banner" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
+                                <span class="flex flex-col justify-center items-center py-5 px-32">
+                                    <span class="text-xl text-gray-500">{{__('Glisser un JPG')}} </span>
+                                </span>
+                                <input id="banner" type="file" class="hidden" />
                             </label>
                                 <img class="rounded-full -order-2" src="https://placehold.jp/108x108.png" alt="">
                         </div>
@@ -81,10 +81,10 @@
                             name="status" id="status" type="text" placeholder="{{__('Étudiant')}}">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8">
-                        <label class="text-green-500 text-2xl" for="status">{{__('Année académique')}}</label>
+                        <label class="text-green-500 text-2xl" for="year">{{__('Année académique')}}</label>
                         <input
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            name="status" id="status" type="text" placeholder="{{__('2020-2023')}}">
+                            name="year" id="year" type="text" placeholder="{{__('2020-2023')}}">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8 mt-16">
                         <label class="text-green-500 text-2xl" for="description">{{__('Description')}}</label>
