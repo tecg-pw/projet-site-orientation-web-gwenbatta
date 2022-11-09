@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('tutos', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('language');
+            $table->string('link');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

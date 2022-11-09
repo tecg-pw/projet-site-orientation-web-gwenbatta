@@ -15,7 +15,16 @@ return new class extends Migration
     {
         Schema::create('actualities', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->text('excerpt');
+            $table->text('description');
+            $table->string('lieu');
+            $table->string('link');
+            $table->json('gallery')->nullable();
             $table->timestamps();
+            $table->timestamp('date');
+            $table->softDeletes();
         });
     }
 

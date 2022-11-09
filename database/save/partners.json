@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "name": "Léonard Web Solutions",
+        "mail": "info@lws.be",
+        "logo": null,
+        "adresse": "Rue de Bellaire 9",
+        "locality": "4802 Verviers",
+        "description": null,
+        "site_link": "https://www.lws.be/",
+        "link_github": null,
+        "link_linkedin": "https://www.linkedin.com/company/leonard-web-solution-lws-/",
+        "link_instagram": "https://www.instagram.com/leonardwebsolutions/?hl=fr",
+        "members": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 2,
+        "name": "Whitecube agency",
+        "mail": "hello@whitecube.be",
+        "logo": null,
+        "adresse": "Rue des Anges 17",
+        "locality": "4000 Liège",
+        "description": null,
+        "site_link": "https://whitecube.be/",
+        "link_github": null,
+        "link_linkedin": "https://www.linkedin.com/company/whitecube/",
+        "link_instagram": "https://www.instagram.com/whitecube.be/?hl=fr",
+        "members": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+]
