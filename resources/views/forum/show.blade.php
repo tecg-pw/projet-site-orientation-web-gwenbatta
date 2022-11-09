@@ -3,7 +3,8 @@
     <section class="mt-20" aria-labelledby="sujet">
         <div class="px-36 flex gap-5 mb-7 justify-between items-center">
             <div class="flex gap-5 mb-5 items-center">
-                <h2 role="heading" id="sujet" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Question / sujet du forum')}}</h2>
+                <h2 role="heading" id="sujet" aria-level="2"
+                    class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Question / sujet du forum')}}</h2>
                 <svg class="-order-1" xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 34.194 34.196">
                     <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
                         <path id="_106780bf1ed9964c2ffe0eda53fe07ea" data-name="106780bf1ed9964c2ffe0eda53fe07ea"
@@ -15,7 +16,7 @@
                     </g>
                 </svg>
             </div>
-            <a class=" self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
+            <a class="hover:text-orange-500 self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
                href="/forum/index">{{__('Retour au forum')}}</a>
         </div>
         <div class="grid grid-cols-5 mb-36">
@@ -39,7 +40,7 @@
                         <h3 id="add-comment" aria-level="3" role="heading"
                             class="text-4xl uppercase font-extrabold text-yellow-800 font-sans ">{{__('Commentaires')}}</h3>
                         @auth()
-                            <a class=" self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
+                            <a class="hover:text-orange-500 self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
                                href="?add-comment#comment">{{__('Ajouter un commentaire')}}</a>
                         @endauth
                     </div>
@@ -47,12 +48,13 @@
                         <div class="flex flex-col bg-yellow-100 py-6 px-10 rounded-xl">
                             <form action="/" method="post" class="relative">
                                 @csrf
-                                <a class="absolute -top-6 right-1 self-center flex font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
+                                <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
                                    href="/forum/show#comment">{{__('Annuler')}}</a>
                                 <label class="text-green-500 text-lg font-medium"
                                        for="comment">{{__('Votre Commentaire')}}</label>
-                                <textarea class="mt-4 rounded-xl border-2 border-orange-500" name="comment" id="comment"
+                                <textarea class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 mt-4 rounded-xl border-2 border-orange-500" name="comment" id="comment"
                                           cols="75" rows="7"></textarea>
+                                <input type="submit" value="Ajouter" class="text-white-100 bg-green-700 px-6 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl font-sans font-semibold">
                             </form>
                         </div>
                     @endif
@@ -96,12 +98,13 @@
                             @if(request()->has('add-answer-comment'.$i))
                                 <form action="/" method="post" class="mt-8 relative">
                                     @csrf
-                                    <a class="absolute -top-6 right-1 self-center flex font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
+                                    <a class="hover:text-orange-500 absolute -top-6 right-1 self-center flex font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
                                        href="/forum/show#comment">{{__('Annuler')}}</a>
                                     <label class="text-green-500 text-lg font-medium"
                                            for="answer">{{__('Votre Réponse')}}</label>
-                                    <textarea class="mt-4 rounded-xl border-2 border-orange-500" name="answer"
+                                    <textarea class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 mt-4 rounded-xl border-2 border-orange-500" name="answer"
                                               id="answer" cols="75" rows="2"></textarea>
+                                    <input type="submit" value="Ajouter" class="text-white-100 bg-green-700 px-6 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl font-sans font-semibold">
                                 </form>
                             @endif
                         </div>
@@ -109,55 +112,73 @@
                 </article>
             </div>
             <div class="col-span-2  bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14">
-                <article class="pr-14 border-b-orange-500 border-b-2 pb-10" aria-labelledby="search">
+                <article class="pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
                     <h3 id="search" aria-level="3" role="heading"
-                        class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-20">{{__('Rechercher')}}</h3>
+                        class="text-3xl font-sans font-light text-green-700 underline mb-6 mt-20">{{__('Rechercher')}}</h3>
                     <x-search_bar></x-search_bar>
                 </article>
-                <article class=" pr-14 border-b-orange-500 border-b-2 pb-10" aria-labelledby="latest">
+                <article class="pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="latest">
                     <h3 id="latest" aria-level="3" role="heading"
-                        class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-10">{{__('Derniers sujet')}}</h3>
+                        class="text-3xl font-light text-green-700 underline mb-6">{{__('Derniers sujet')}}</h3>
                     <div class="flex flex-col gap-y-8">
                         @for($i=1;$i<3;$i++)
-                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-latest'.$i}}">
-                                <div class="order-2 flex-1 flex flex-col ml-4">
-                                    <h4 id="{{'question-latest'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
-                                    <div class="flex justify-between">
-                                        <p class="text-xl mb-2">Nom de l'auteur</p>
-                                        <p>03 novembre 2022</p>
+                            <article class="bg-white-100 relative flex p-6 rounded-xl" aria-labelledby="{{'question'.$i}}">
+                                <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-2">
+                                    <h3 class="order-2 font-medium font-sans text-2xl" id="{{'question'.$i}}"
+                                        role="heading"
+                                        aria-level="3">Question du forum</h3>
+                                    <div class="flex relative justify-between">
+                                        <p class="text-xl self-end">Nom de l'auteur</p>
+                                        <p class="text-xl self-end">03 novembre 2022</p>
                                     </div>
                                     <div class="order-3 flex justify-between">
                                         <div class="flex gap-10">
-                                            <p>Comment:5</p>
-                                            <p>3/5</p>
+                                            <p class="text-xl">Comment:5</p>
+                                            <p class="text-xl">3/5</p>
                                         </div>
-                                        <a class="underline text-green-700 font-sans font-semibold" href="">Voir la
+                                        <a class="linkcard underline text-green-700 font-sans font-semibold" href="/forum/show">Voir
+                                            la
                                             conversation</a>
+                                        <svg class="self-end " xmlns="http://www.w3.org/2000/svg" width="25"
+                                             viewBox="0 0 32 27.417">
+                                            <path
+                                                d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
+                                                transform="translate(-19 -8.001)" fill="#4e6458"/>
+                                        </svg>
                                     </div>
                                 </div>
                             </article>
                         @endfor
                     </div>
                 </article>
-                <article class=" pr-14 pb-10" aria-labelledby="best-rating">
+                <article class="pr-14 pb-10 mt-8" aria-labelledby="best-rating">
                     <h3 id="best-rating" aria-level="3" role="heading"
-                        class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6 mt-10">{{__('Sujets populaires')}}</h3>
+                        class="text-3xl font-light text-green-700 underline mb-6">{{__('Sujet Populaire')}}</h3>
                     <div class="flex flex-col gap-y-8">
                         @for($i=1;$i<3;$i++)
-                            <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-rating'.$i}}">
-                                <div class="order-2 flex-1 flex flex-col ml-4">
-                                    <h4 id="{{'question-rating'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
-                                    <div class="flex justify-between">
-                                        <p class="text-xl mb-2">Nom de l'auteur</p>
-                                        <p>03 novembre 2022</p>
+                            <article class="bg-white-100 relative flex p-6 rounded-xl" aria-labelledby="{{'question'.$i}}">
+                                <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-2">
+                                    <h3 class="order-2 font-medium font-sans text-2xl" id="{{'question'.$i}}"
+                                        role="heading"
+                                        aria-level="3">Question du forum</h3>
+                                    <div class="flex relative justify-between">
+                                        <p class="text-xl self-end">Nom de l'auteur</p>
+                                        <p class="text-xl self-end">03 novembre 2022</p>
                                     </div>
                                     <div class="order-3 flex justify-between">
                                         <div class="flex gap-10">
-                                            <p>Comment:5</p>
-                                            <p>3/5</p>
+                                            <p class="text-xl">Comment:5</p>
+                                            <p class="text-xl">3/5</p>
                                         </div>
-                                        <a class="underline text-green-700 font-sans font-semibold" href="">Voir la
+                                        <a class="linkcard underline text-green-700 font-sans font-semibold" href="/forum/show">Voir
+                                            la
                                             conversation</a>
+                                        <svg class="self-end " xmlns="http://www.w3.org/2000/svg" width="25"
+                                             viewBox="0 0 32 27.417">
+                                            <path
+                                                d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
+                                                transform="translate(-19 -8.001)" fill="#4e6458"/>
+                                        </svg>
                                     </div>
                                 </div>
                             </article>

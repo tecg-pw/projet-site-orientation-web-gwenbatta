@@ -8,7 +8,7 @@
                 </h2>
             </div>
             <div class="flex flex-1">
-                <a class="font-sans text-green-700 self-center text-3xl font-semibold underline flex-1"
+                <a class="hover:text-orange-500 font-sans text-green-700 self-center text-xl font-semibold underline flex-1"
                    href="/user/register">{{__('Je n\'ai pas de compte')}}</a>
             </div>
             <div class="flex mt-14">
@@ -17,26 +17,26 @@
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="email">{{__('Email')}}</label>
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="email" id="email" type="email" placeholder="email@example.be">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="password">{{__('Mot de passe')}}</label>
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="password" id="password" type="password" placeholder="azerty">
-                        <a class="mt-2 text-green-700 underline font-sans self-end"
+                        <a class="hover:text-orange-500 mt-2 text-green-700 underline font-sans self-end"
                            href="/user/password">{{('Mot de passe oublié')}}</a>
                     </fieldset>
-                    <fieldset>
+                    <fieldset class="flex flex-row-reverse justify-end gap-4">
                         <label class="text-green-500 text-2xl mr-4" for="remindme">{{__('Se souvenir de moi')}}</label>
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="remindme" id="remindme" type="checkbox">
                     </fieldset>
                     <div class="flex flex-1 justify-end">
                         <input
-                            class="mt-16 font-sans text-center text-white-100 bg-green-700 px-16 py-3 rounded-2xl text-xl font-semibold"
+                            class="hover:bg-white-100 hover:text-green-700 border-2 border-green-700 mt-16 font-sans text-center text-white-100 bg-green-700 px-16 py-3 rounded-2xl text-xl font-semibold"
                             type="submit" value="{{__('Se connecter')}}">
                     </div>
                 </form>

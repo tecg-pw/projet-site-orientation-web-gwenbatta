@@ -8,7 +8,7 @@
                 </h2>
             </div>
             <div class="flex flex-1">
-                <a class="font-sans text-green-700 self-center text-3xl font-semibold underline flex-1"
+                <a class="hover:text-orange-500 font-sans text-green-700 self-center text-xl font-semibold underline flex-1"
                    href="/user/login">{{__('J\'ai déjà un compte')}}</a>
             </div>
             <div class="flex mt-14">
@@ -18,30 +18,30 @@
                         <fieldset class="flex flex-1 flex-col mr-10 mb-8">
                             <label class="text-green-500 text-2xl" for="name">{{__('Nom')}}</label>
                             <input
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                                 placeholder="Caron" name="name" id="name" type="text">
                         </fieldset>
                         <fieldset class="flex flex-1 flex-col mb-8">
                             <label class="text-green-500 text-2xl" for="surname">{{__('Prénom')}}</label>
                             <input
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                                 name="surname" id="surname" type="text" placeholder="Jordan">
                         </fieldset>
                     </div>
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="email">{{__('Email')}}</label>
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="email" id="email" type="email" placeholder="email@example.be">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="password">{{__('Mot de passe')}}</label>
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="password" id="password" type="password" placeholder="azerty">
                     </fieldset>
                     <div class="flex flex-1 justify-end">
-                        <input class="mt-16 font-sans text-center text-white-100 bg-green-700 px-16 py-3 rounded-2xl text-xl font-semibold"
+                        <input class="hover:bg-white-100 hover:text-green-700 border-2 border-green-700 mt-16 font-sans text-center text-white-100 bg-green-700 px-16 py-3 rounded-2xl text-xl font-semibold"
                                type="submit" value="{{__('Créer un compte')}}">
                     </div>
                 </form>

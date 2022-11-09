@@ -6,7 +6,7 @@
                 id="technical">
                 {{__('Pratico-Pratique')}}
             </h2>
-            <p class="leading-8">
+            <p class="leading-10 text-xl">
                 {{__('Sur cette page, vous trouverez tout ce qui peut vous être utile que ce soit au sein de l’option web, au travers de ce site ou encore pour préparer au mieux votre rentrée en web par des petits tutoriels qui vous sont proposer, une section glossaire où vous retrouverez des termes très important pour le web et votre vision du web et enfin une section avec quelques questions posées sur notre forum qui vous permettront de vous éclairer sur ce que propose l’orientation et sur les questions que vous vous posez sans doute vous-même. ')}}
             </p>
         </div>
@@ -18,135 +18,117 @@
             </figure>
         </div>
     </section>
-    <article class="pt-20  mt-40 bg-yellow-600 px-36 pb-28" aria-labelledby="questions">
-        <div class="mt-20 flex mb-24">
-            <h2 class="text-4xl uppercase font-bold mb-12 font-sans" role="heading" aria-level="2"
-                id="questions">{{__('Quelques questions posées sur notre forum')}}</h2>
-            <a class="font-sans text-end text-green-700 text-3xl font-semibold underline flex-1"
-               href="forum/index">{{__('Voir le forum')}}</a>
-        </div>
-        <div class="grid grid-cols-5 justify-between">
-            <div class="col-span-3 flex flex-col gap-y-8 pr-14 border-r-2 border-r-orange-500">
-                @for($i=1;$i<6;$i++)
-                    <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question'.$i}}">
-                        <div class="order-2 flex-1 flex flex-col ml-4">
-                            <h3 id="{{'question'.$i}}" aria-level="3" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h3>
-                            <div class="flex justify-between">
-                                <p class="text-xl mb-2">Nom de l'auteur</p>
-                                <p class="font-bold text-lg text-green-500">Général</p>
-                                <p>03 novembre 2022</p>
-                            </div>
-                            <div class="order-3 flex justify-between">
-                                <div class="flex gap-10">
-                                    <p>Comment:5</p>
-                                    <p>3/5</p>
-                                </div>
-                                <a class="underline text-green-700 font-sans font-semibold" href="">Voir la conversation</a>
-                            </div>
-                        </div>
-                        <img class="order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                             src="https://placehold.jp/108x108.png"
-                             alt="Nom">
-                    </article>
-                @endfor
-            </div>
-            <div class="col-span-2 flex flex-col gap-y-6 pl-14">
-                <article class="border-b-orange-500 border-b-2 pb-10" aria-labelledby="latest">
-                    <h3 id="latest" aria-level="3" role="heading"
-                        class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Derniers sujet')}}</h3>
-                    <div class="flex flex-col gap-y-8">
-                    @for($i=1;$i<3;$i++)
-                        <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-latest'.$i}}">
-                            <div class="order-2 flex-1 flex flex-col ml-4">
-                                <h4 id="{{'question-latest'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
-                                <div class="flex justify-between">
-                                    <p class="text-xl mb-2">Nom de l'auteur</p>
-                                    <p>03 novembre 2022</p>
-                                </div>
-                                <div class="order-3 flex justify-between">
-                                    <div class="flex gap-10">
-                                        <p>Comment:5</p>
-                                        <p>3/5</p>
-                                    </div>
-                                    <a class="underline text-green-700 font-sans font-semibold" href="">Voir la conversation</a>
-                                </div>
-                            </div>
-                        </article>
-                    @endfor
-                    </div>
-                </article>
-                <article class="flex flex-col gap-y-8 ">
-                    <h3 id="best-rating" aria-level="3" role="heading"
-                        class="text-3xl font-sans font-light text-green-700 underline decoration-dashed mb-6">{{__('Sujets populaires')}}</h3>
-                    <div class="flex flex-col gap-y-8">
-                    @for($i=1;$i<3;$i++)
-                        <article class="bg-white-100 flex p-6 rounded-xl" aria-labelledby="{{'question-rating'.$i}}">
-                            <div class="order-2 flex-1 flex flex-col ml-4">
-                                <h4 id="{{'question-rating'.$i}}" aria-level="4" role="heading" class="order-2 font-medium font-sans text-2xl mb-4">Question du forum</h4>
-                                <div class="flex justify-between">
-                                    <p class="text-xl mb-2">Nom de l'auteur</p>
-                                    <p>03 novembre 2022</p>
-                                </div>
-                                <div class="order-3 flex justify-between">
-                                    <div class="flex gap-10">
-                                        <p>Comment:5</p>
-                                        <p>3/5</p>
-                                    </div>
-                                    <a class="underline text-green-700 font-sans font-semibold" href="">Voir la conversation</a>
-                                </div>
-                            </div>
-                        </article>
-                    @endfor
-                    </div>
-                </article>
-            </div>
-        </div>
-    </article>
+    <x-questions-forum></x-questions-forum>
     <article class="px-36 mt-36 mb-36" aria-labelledby="glossary">
+        <div class="flex justify-between">
         <h2 id="glossary" aria-level="2" role="heading" class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Quelques termes techniques')}}</h2>
+        <a class="hover:text-orange-500  font-sans text-green-700 text-3xl font-semibold underline px-4" href="/technical/glossary">{{__('Voir plus de termes')}}</a>
+        </div>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="bg-yellow-100 py-6 px-8 rounded-3xl" aria-labelledby="{{'slug'.$i}}">
-                    <h3 id="{{'slug'.$i}}" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-3">Accessibilité</h3>
-                    <p class="text-lg">1. Caractère de quelque chose, d’un lieu qui est accessibles : L’accessibilité
-                        d’un bus, d’un immeuble aux handicapés.<br>2. Droit, possibilité qu’a quelqu’un d’avoir accès à
-                        quelque chose : L’accessibilité à un emploi.</p>
-                </article>
+                <x-term-glossary :i="$i"/>
             @endfor
         </div>
     </article>
     <article class="bg-yellow-600 px-36 pt-20 pb-28" aria-labelledby="tutos">
+        <div class="flex justify-between">
         <h2 id="tutos" aria-level="2" role="heading" class="text-4xl uppercase font-bold mb-16 font-sans">{{__('Quelques tutos')}}</h2>
+            <a class="hover:text-orange-500  font-sans text-green-700 text-3xl font-semibold underline px-4" href="/technical/tuto">{{__('Voir plus de tutos')}}</a>
+        </div>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @for($i=1; $i<5;$i++)
-                <article class="bg-white-100 py-6 px-8 rounded-3xl" aria-labelledby="{{'slug-tuto'.$i}}">
-                    <div class="flex justify-between">
-                        <div>
-                            <h3 id="{{'slug-tuto'.$i}}" aria-level="3" role="heading" class="font-sans font-medium text-2xl mb-2">Froggy</h3>
-                            <p class="mb-3">Date de publication</p>
-                        </div>
-                        @auth()
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 20.996 30">
-                                <path id="c839c07daa330db315a65863143c41b9"
-                                      d="M21.5,2H9.5A4.5,4.5,0,0,0,5,6.5v24a1.5,1.5,0,0,0,2.25,1.3L15.5,27.03,23.746,31.8a1.5,1.5,0,0,0,2.25-1.3V6.5A4.5,4.5,0,0,0,21.5,2ZM23,27.9,16.248,24a1.5,1.5,0,0,0-1.5,0L8,27.9V6.5A1.5,1.5,0,0,1,9.5,5h12A1.5,1.5,0,0,1,23,6.5Z"
-                                      transform="translate(-5 -2)" fill="#da953a"/>
-                                <path id="c839c07daa330db315a65863143c41b9-2"
-                                      data-name="c839c07daa330db315a65863143c41b9"
-                                      d="M21.5,2H9.5A4.5,4.5,0,0,0,5,6.5v24a1.5,1.5,0,0,0,2.25,1.3L15.5,27.03,23.746,31.8a1.5,1.5,0,0,0,2.25-1.3V6.5A4.5,4.5,0,0,0,21.5,2ZM23,27.9,16.248,24a1.5,1.5,0,0,0-1.5,0L8,27.9V6.5A1.5,1.5,0,0,1,9.5,5h12A1.5,1.5,0,0,1,23,6.5Z"
-                                      transform="translate(-5 -2)" fill="#da953a"/>
-                            </svg>
-                        @endauth
-                    </div>
-                    <p class="mb-10 text-lg">Exercice d’introduction à Flexbox, une technique CSS </p>
-                    <div class="flex justify-between">
-                        <p class="text-orange-500 font-sans text-lg font-medium">CSS</p>
-                        <a class="text-xl underline text-green-700 font-semibold font-sans"
-                           href="">{{__('Faire l\'exercices')}}</a>
-                    </div>
-                </article>
+                <x-tuto class="bg-white-100" :i="$i"/>
             @endfor
         </div>
         {{--                {{$posts->links()}}--}}
+    </article>
+    <article class="px-36 mt-36 mb-36">
+        <div class="flex justify-between">
+            <h2 id="tutos" aria-level="2" role="heading"  class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Documentations')}}</h2>
+            <a class="hover:text-orange-500  font-sans text-green-700 text-3xl font-semibold underline px-4" href="/technical/docandtool/doc">{{__('Voir plus de documentations')}}</a>
+        </div>
+        <div class="grid grid-cols-2 gap-x-24 gap-y-8">
+            <article aria-labelledby="php" class="group relative bg-yellow-100 py-6 px-8 rounded-3xl">
+                <div class="flex justify-between">
+                    <div>
+                        <h4 id="php" aria-level="4" role="heading" class="font-medium text-2xl mb-2">{{__('Documentation de PHP')}}</h4>
+                    </div>
+                </div>
+                <p class="mb-10 text-lg">{{__('Lien vers la documentation de PHP')}}</p>
+                <div class="flex justify-between">
+                    <p class="text-lg font-medium">
+                        {{__('Cours de')}} <a class="underline text-green-700" href="/cours/show">{{__('Développement côté serveur')}}</a>
+                    </p>
+                    <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
+                       href="">{{__('Voir la doc')}}</a>
+                    <svg class="group-hover:mr-0 mr-4 self-end" xmlns="http://www.w3.org/2000/svg" width="25"
+                         viewBox="0 0 32 27.417">
+                        <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
+                              transform="translate(-19 -8.001)" fill="#4e6458"/>
+                    </svg>
+                </div>
+            </article>
+            <article aria-labelledby="laravel" class="group relative bg-yellow-100 py-6 px-8 rounded-3xl">
+                <div class="flex justify-between">
+                    <div>
+                        <h4 id="laravel" aria-level="4" role="heading" class="font-medium text-2xl mb-2">{{__('Documentation de Laravel')}}</h4>
+                    </div>
+                </div>
+                <p class="mb-10 text-lg">{{__('Lien vers la documentation de Laravel traduite en français')}}</p>
+                <div class="flex justify-between">
+                    <p class="text-lg font-medium">
+                        {{__('Cours de')}} <a class="underline text-green-700" href="/cours/show">{{__('Projet Web')}}</a>
+                    </p>
+                    <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
+                       href="">{{__('Voir la doc')}}</a>
+                    <svg class="group-hover:mr-0 mr-4 self-end" xmlns="http://www.w3.org/2000/svg" width="25"
+                         viewBox="0 0 32 27.417">
+                        <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
+                              transform="translate(-19 -8.001)" fill="#4e6458"/>
+                    </svg>
+                </div>
+            </article>
+            <article aria-labelledby="appart" class="group relative bg-yellow-100 py-6 px-8 rounded-3xl">
+                <div class="flex justify-between">
+                    <div>
+                        <h4 id="appart" aria-level="4" role="heading" class="font-medium text-2xl mb-2">{{__('Liste des livres A Book Appart')}}</h4>
+                    </div>
+                </div>
+                <p class="mb-10 text-lg">{{__('Lien vers le site de «A book Appart».')}}</p>
+                <div class="flex justify-between">
+                    <p class="text-lg font-medium">
+                        {{__('Cours de')}} <a class="underline text-green-700" href="/cours/show">{{__('Design Web B2')}}</a>
+                    </p>
+                    <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
+                       href="">{{__('Voir la doc')}}</a>
+                    <svg class="group-hover:mr-0 mr-4 self-end" xmlns="http://www.w3.org/2000/svg" width="25"
+                         viewBox="0 0 32 27.417">
+                        <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
+                              transform="translate(-19 -8.001)" fill="#4e6458"/>
+                    </svg>
+                </div>
+            </article>
+            <article aria-labelledby="wordpress" class="group relative bg-yellow-100 py-6 px-8 rounded-3xl">
+                <div class="flex justify-between">
+                    <div>
+                        <h4 id="wordpress" aria-level="4" role="heading" class="font-medium text-2xl mb-2">{{__('Documentation de Wordpress')}}</h4>
+                    </div>
+                </div>
+                <p class="mb-10 text-lg">{{__('Lien vers la documentation de Wordpress')}}</p>
+                <div class="flex justify-between">
+                    <p class="text-lg font-medium">
+                        {{__('Cours de')}} <a class="relative underline text-green-700" href="/cours/show">{{__('Design Web B2')}}</a>
+                    </p>
+                    <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
+                       href="">{{__('Voir la doc')}}</a>
+                    <svg class="group-hover:mr-0 mr-4 self-end" xmlns="http://www.w3.org/2000/svg" width="25"
+                         viewBox="0 0 32 27.417">
+                        <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
+                              transform="translate(-19 -8.001)" fill="#4e6458"/>
+                    </svg>
+                </div>
+            </article>
+        </div>
     </article>
 </main>
 <x-commons.footer></x-commons.footer>

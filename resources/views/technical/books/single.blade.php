@@ -3,13 +3,13 @@
     <section aria-labelledby="slug">
         <div class="flex px-36 justify-between mt-20">
             <h2 id="slug" aria-level="2" role="heading" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('ERGONOMIE WEB & UX DESIGN')}}</h2>
-            <a class="text-green-700 underline font-sans text-2xl font-semibold"
+            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
                href="/about#jobs">{{__('Retour à la liste des métiers')}}</a>
         </div>
-        <div class="px-36 flex gap-20 font-sans text-xl">
+        <div class="px-36 flex gap-20 text-xl">
             <p>Année académique</p>
-            <a class="underline text-green-700 uppercase" href="/cours/show">Cours</a>
-            <a class="underline text-green-700 uppercase" href="/bottin/teacher/name">Nom du professeur</a>
+            <a class="underline text-green-700 uppercase hover:text-orange-500" href="/cours/show">Cours</a>
+            <a class="underline text-green-700 uppercase hover:text-orange-500" href="/bottin/teacher/name">Nom du professeur</a>
         </div>
         <div class="mt-20 px-36 grid grid-cols-10 items-center mb-36 gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">

@@ -11,7 +11,7 @@
         <h3 class="font-sans text-xl mt-16 mb-12" role="heading" aria-level="3"
             id="coordinate">{{__('Coordonnées')}}</h3>
         <div class="flex mb-24">
-            <div itemscope itemtype="https://schema.org/Organization" class="border-r border-orange-500 pr-32 mr-36">
+            <div itemscope itemtype="https://schema.org/Organization" class="border-r border-orange-500/40 pr-32 mr-36">
                 <p itemprop="legalName" class="mb-5 uppercase font-sans">{{__('HEPL')}}</p>
                 <p itemprop="employee" class="mb-2">{{__('Sophie Paggen')}}</p>
                 <p>{{__('Secrétaire de la HEPL')}}</p>

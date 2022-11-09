@@ -12,9 +12,9 @@
                     </div>
                     <div class="text-end">
                         <a href="/user/profile/modify"
-                           class="font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('Sauvegarder')}}</a>
+                           class="hover:bg-white-100 hover:text-green-700 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('Sauvegarder')}}</a>
                         <a href="/user/profile/modify"
-                           class="font-sans text-center text-green-700 ml-6 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('Retour')}}</a>
+                           class="hover:text-orange-500 font-sans text-center text-green-700 ml-6 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('Retour')}}</a>
                     </div>
                 </div>
                 <img class="rounded-full " src="https://placehold.jp/276x276.png" alt="">
@@ -32,20 +32,20 @@
                         <fieldset class="flex flex-col flex-1 mr-10 mb-8">
                             <label class="text-green-500 text-2xl" for="name">{{__('Nom')}}</label>
                             <input
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight"
                                 placeholder="Caron" name="name" id="name" type="text">
                         </fieldset>
                         <fieldset class="flex flex-col flex-1 mb-8">
                             <label class="text-green-500 text-2xl" for="surname">{{__('Prénom')}}</label>
                             <input
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                                 name="surname" id="surname" type="text" placeholder="Jordan">
                         </fieldset>
                     </div>
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="email">{{__('Email')}}</label>
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="email" id="email" type="email" placeholder="email@example.be">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8 mt-16">
@@ -77,19 +77,19 @@
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="status">{{__('Status')}}</label>
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="status" id="status" type="text" placeholder="{{__('Étudiant')}}">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="year">{{__('Année académique')}}</label>
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="year" id="year" type="text" placeholder="{{__('2020-2023')}}">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8 mt-16">
                         <label class="text-green-500 text-2xl" for="description">{{__('Description')}}</label>
                         <textarea
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="description" id="description" cols="30" rows="10"
                             placeholder="{{__('Description')}}"></textarea>
                     </fieldset>
