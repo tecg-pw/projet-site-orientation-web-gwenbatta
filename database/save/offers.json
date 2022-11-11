@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Développeur Front-end",
+    "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
+    "languages": null,
+    "softwares": null,
+    "others": null,
+    "pdf": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "partner_id": 1
+  },
+    {
+    "id": 2,
+    "name": "Webdesigner",
+    "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
+    "languages": null,
+    "softwares": null,
+    "others": null,
+    "pdf": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "partner_id": 1
+  }
+]

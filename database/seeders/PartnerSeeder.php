@@ -30,7 +30,7 @@ class PartnerSeeder extends Seeder
                 "locality" => $value->locality,
                 "description" => $value->description,
                 "site_link" => $value->site_link,
-                "link_github" => $value->link_github,
+                "link_facebook" => $value->link_facebook,
                 "link_linkedin" => $value->link_linkedin,
                 "link_instagram" => $value->link_instagram,
                 "members" => $value->members,

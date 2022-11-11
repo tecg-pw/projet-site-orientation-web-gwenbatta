@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Ergonomie Web & UX Design",
+        "excerpt": "Livre nécessaire lors de votre première année. ",
+        "description": "AYEZ ENFIN DU SUCCÈS AUPRÈS DE VOS UTILISATEURS !\nTout service numérique doit réussir le pari difficile de satisfaire ses utilisateurs. Mais comment bien comprendre ces derniers et se mettre à leur place ? Comment concevoir un site si agréable et efficace qu’il donne envie d’y revenir ? Grâce aux conseils pratiques et méthodologiques d’Amélie Boucher dans ce livre devenu désormais la référence francophone, appliquez l’ergonomie web sur le terrain !\n• Règles et fondements théoriques de l’ergonomie (théories de la Gestalt, affordances, loi de Fitts…)\n• Méthodes de recherche utilisateur (observations, interviews, tris de cartes, tests utilisateur, personas, cartes d’expérience…)\n• Conseils pratiques pour l’architecture de l’information, les parcours utilisateur et la conception détaillée\nL’UX DESIGN PAR L’EXEMPLE\n• Inspirez-vous de sites réels pour améliorer votre ergonomie\n• + de 350 illustrations pour décortiquer les bonnes et mauvaises pratiques\n• Des interviews de professionnels",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 2,
+        "name": "HTML une référence pour le développeur",
+        "excerpt": "Livre nécessaire lors de votre première année. ",
+        "description": "Ce livre fait la lumière sur les spécifications ardues de HTML 5 dont il explore l'ensemble des nouveautés et des balises, y compris celles ayant évolué depuis les précédentes versions. Non sans avoir rappelé son histoire mouvementée au W3C et au WhatWG, l'auteur explique au fil des chapitres comment concevoir des sites et applications web performants et accessibles, et y incorporer des éléments médias (audio, vidéo), créer des zones de dessin intéractives et des animations avec Canvas, exploiter les microformats pour un balisage sémantique améliorant l'échange de données et le référencement. Il détaille pas à pas les microformats, les interfaces de programmation pour la gestion des fichiers, la géolocalisation, la prise en charge du glisser-déposer !Drag & Drop), et explique comment stocker des données locales dans le navigateur, communiquer en temps réel ou procéder à des échanges interdocuments grâce aux API avancées Web Storage, Web Sockets, Server-Sent Events et Web Messaging. Il aborde enfin les Web Workers, permettant d'exécuter du JavaScript en multithread, les bases de données SQL ou NoSQL (Indexed Database et Web SQL Database) ainsi qu'un cache d'application pour une exécution hors-ligne (Offline Web Applications), ou encore la manipulation avancée de l'historique (History API). Très illustré, riche en conseils et bonnes pratiques, l'ouvrage se complète d'une référence condensée sur JavaScript et sur la gestion du DOM. En annexe, un chapitre exhaustif sur ARIA et l'accessibilité ainsi que la liste des éléments HTML4 obsolètes et des rappels synthétiques sur les CSS. A qui s'adresse cet ouvrage ? Aux développeurs web, intégrateurs qui souhaitent mettre en oeuvre les nouvelles API de HTML 5 et moderniser leurs bonnes pratiques de développement web ; aux designers web qui souhaitent découvrir toutes les possibilités que leur offre HTML5 ; à tous ceux qui souhaitent acquérir une méthodologie cohérente de développement web, combinant qualité et accessibilité.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 3,
+        "name": "CSS Pocket Reference",
+        "excerpt": "Livre nécessaire lors de votre première année.",
+        "description": "Lorsque vous travaillez avec CSS et que vous avez besoin d'une réponse rapide, CSS Pocket Reference est là pour vous. Ce livre pratique et concis fournit toutes les informations essentielles dont vous avez besoin pour implémenter CSS à la volée. Idéale pour les concepteurs et développeurs Web intermédiaires à avancés, la 4e édition est révisée et mise à jour pour CSS3, la dernière version de la spécification Cascading Style Sheet. Outre une référence alphabétique complète aux sélecteurs et propriétés CSS3, vous trouverez également une brève introduction aux concepts clés de CSS.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 4,
+        "name": "HTML Pocket Reference",
+        "excerpt": "Livre nécessaire lors de votre première année.",
+        "description": "Des informations détaillées sur les attributs de la balise Des informations de support sur les navigateurs tels que Netscape Navigator, Microsoft Internet Explorer, Opera et WebTV Des informations de support HTML 4.0, y compris si la balise est obsolète dans la spécification actuelle En plus de balise-par- des descriptions de balises, vous trouverez des graphiques utiles sur des sujets tels que :\n\n\nEntités de caractères Conversions décimales en hexadécimales Noms de couleurs Niederst fournit également un contexte pour les balises, indiquant quelles balises sont regroupées et des exemples rudimentaires de la façon dont les éléments de page Web standard sont construit.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 5,
+        "name": "Flexbox",
+        "excerpt": "Livre nécessaire lors de votre deuxième année. ",
+        "description": "Flexbox est en passe de révolutionner de manière profonde et pérenne notre façon de concevoir des designs et des composants en CSS. Pourquoi y consacrer un ouvrage ? Car, bien utilisé, Flexbox permet de faciliter la tâche de bon nombre de développeurs web.\n\nUn ouvrage de référence pour les webdesigners et intégrateurs\n\n\"Flexible Box Layout Module\", mieux connue sous le nom de \"Flexbox\", est une spécification CSS 3 du W3C qui définit un nouveau modèle de boîte et de positionnement jusqu'alors inédit. Il intègre une gestion naturelle de la fluidité des éléments et du Responsive, et rend caduc l'usage de grilles d'affichage complexes, voire de frameworks - véritables usines à gaz où l'on n'exploite qu'à peine 10% de l'outil. Oubliez donc tout ce que vous aviez appris sur CSS et, comme moi, tombez amoureux de Flexbox !\n\nOutre la simplification des schémas de positionnement, Flexbox apporte des solutions parfaites à une problématique bien ancrée dans notre époque : le Responsive Webdesign. Le design d'éléments flexibles, la réorganisation des blocs ainsi que la faculté à basculer très aisément d'un mode d'affichage horizontal vers un mode vertical en font un allié formidable dans nos projets d'adaptation aux tablettes et smartphones.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 6,
+        "name": "Grid Layout",
+        "excerpt": "Livre nécessaire lors de votre deuxième année. ",
+        "description": "Complémentaire de Flexbox, le module de positionnement Grid Layout est une spécification du W3C à l'état de Candidate Recommandation dont les premiers jets datent de 2004. Désormais exploitable en production sur l'ensemble des navigateurs, le concept général de Grid Layout (ou \"positionnement en grille\") est de structurer l'espace en zones majeures, au sein d'une page web ou d'une application. Une grille virtuelle, indépendante des éléments HTML qui peuvent s'y placer, présente l'avantage flagrant d'être très souple lorsqu'on souhaite la modifier en fonction du contexte.\n\nParfaitement adapté au responsive webdesign, Grid Layout permet à votre page de s'adapter immédiatement aux différentes tailles d'écran. Associé aux CSS 3 Media Queries, le modèle de positionnement en grille donne toute sa puissance, plus particulièrement si vous avez opté pour une trame sous forme de variante \"template\". Seul le patron de départ nécessite d'être modifié : inutile d'intervenir sur la structure HTML, ni même sur le positionnement de chaque élément de page.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 7,
+        "name": "Responsive Web Design",
+        "excerpt": "Livre nécessaire lors de votre deuxième année. ",
+        "description": "navigateurs. Vos créations sont-elles prêtes ? Apprenez à penser au-delà du bureau et à créer de superbes conceptions qui anticipent et répondent aux besoins de vos utilisateurs. Ethan Marcotte explorera les techniques CSS et les principes de conception, y compris les grilles fluides, les images flexibles et les requêtes multimédias, démontrant comment vous pouvez offrir une expérience de qualité à vos utilisateurs, quelle que soit la taille (ou la taille) de leur affichage.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+]

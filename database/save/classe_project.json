@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 1,
+    "classe_id": 4
+  },
+  {
+    "id": 2,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 2,
+    "classe_id": 4
+  },
+  {
+    "id": 3,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 3,
+    "classe_id": 4
+  },
+  {
+    "id": 4,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 4,
+    "classe_id": 4
+  },
+  {
+    "id": 5,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 5,
+    "classe_id": 4
+  },
+  {
+    "id": 6,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 6,
+    "classe_id": 4
+  },
+  {
+    "id": 7,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 7,
+    "classe_id": 4
+  },
+  {
+    "id": 8,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 8,
+    "classe_id": 4
+  },
+  {
+    "id": 9,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 9,
+    "classe_id": 4
+  },
+  {
+    "id": 10,
+    "created_at": null,
+    "updated_at": null,
+    "project_id": 10,
+    "classe_id": 4
+  }
+]

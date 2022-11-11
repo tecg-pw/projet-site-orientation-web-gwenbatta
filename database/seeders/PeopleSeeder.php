@@ -17,9 +17,9 @@ class PeopleSeeder extends Seeder
     public function run()
     {
         $json = File::get("database/save/people.json");
-        $people = json_decode($json);
+        $peoples = json_decode($json);
 
-        foreach ($people as $key => $value) {
+        foreach ($peoples as $key => $value) {
             People::create([
                 "name" => $value->name,
                 "firstname" => $value->firstname,

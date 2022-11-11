@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->string('mail');
+            $table->string('mail')->nullable();
             $table->string('logo')->nullable();
             $table->string('adresse');
             $table->string('locality');
             $table->text('description')->nullable();
             $table->string('site_link');
-            $table->string('link_github')->nullable();
+            $table->string('link_facebook')->nullable();
             $table->string('link_linkedin')->nullable();
             $table->string('link_instagram')->nullable();
             $table->json('members')->nullable();

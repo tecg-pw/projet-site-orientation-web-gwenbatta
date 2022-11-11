@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Laravel",
+        "excerpt": "Lien vers la documentation de Laravel traduite en français",
+        "link": "https://gtmetrix.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 2,
+        "name": "CSS",
+        "excerpt": "Lien vers la documentation de CSS",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 3,
+        "name": "HTML",
+        "excerpt": "Lien vers la documentation de HTML",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 4,
+        "name": "Wordpress",
+        "excerpt": "Lien vers la documentation de Wordpress",
+        "link": "https://fr.wordpress.org/support/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 5,
+        "name": "Javascript",
+        "excerpt": "Lien vers la documentation de Javascript",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 6,
+        "name": "PHP",
+        "excerpt": "Lien vers la documentation de PHP",
+        "link": "https://www.php.net/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 7,
+        "name": "Flutter",
+        "excerpt": "Lien vers la documentation de Flutter",
+        "link": "https://docs.flutter.dev/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 8,
+        "name": "MySQL",
+        "excerpt": "Lien vers la documentation de MySQL",
+        "link": "https://dev.mysql.com/doc/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 9,
+        "name": "Tailwind",
+        "excerpt": "Lien vers la documentation de Flutter",
+        "link": "https://tailwindcss.com/docs/installation",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 10,
+        "name": "A Book Appart",
+        "excerpt": "Lien vers le site de « A book Appart », avec une liste de livre de référence du web.",
+        "link": "https://abookapart.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+]

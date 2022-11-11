@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Accessibilité",
+        "definition": "1. Caractère de quelque chose, d’un lieu qui sont accessibles : L’accessibilité d’un bus, d’un immeuble aux handicapés.\n\n2. Droit, possibilité qu’a quelqu’un d’avoir accès à quelque chose : L’accessibilité à un emploi.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 2,
+        "name": "Back-end",
+        "definition": "Ensemble des parties de construction d’un site web qui abrite notamment le développement des bases de données. Invisible, l’utilisateur ne le voit pas.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 3,
+        "name": "Efficience",
+        "definition": "L’efficience est la capacité d’un individu ou d’un système de travail d’obtenir de bonnes performances dans un type de tâche donné.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 4,
+        "name": "Efficacité",
+        "definition": "L’efficacité est la capacité, d’une personne, d’un groupe ou d’un système, à parvenir à ses fins, à ses objectifs.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 5,
+        "name": "CMS",
+        "definition": "Content Management System, regroupement de solutions permettant de créer, gérer et mettre à un jour un site Internet (Exemple : WordPress).",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 6,
+        "name": "CSS",
+        "definition": "Acronyme de Cascading Style Sheets. C’est un langage informatique utilisé sur internet pour la mise en forme de fichiers et pages HTML.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 7,
+        "name": "Modularisation",
+        "definition": "La modularisation consiste à découper des formations en modules distincts et permet de structurer des parcours qui tiennent compte à la fois des objectifs de formation et des acquis de l’apprenant. Elle est une condition essentielle de l’Individualisation des Parcours.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 8,
+        "name": "Call To Action",
+        "definition": "Un CTA ou Call to Action est un bouton contenant un texte incitant l’utilisateur à cliquer dessus. Généralement utilisé par un site pour pour diriger l’utilisateur vers une conversion.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 9,
+        "name": "Framework",
+        "definition": "Désigne un ensemble d’outils et de composants logiciels à la base d’un logiciel ou une application. Il établit la fondation d’un logiciel ou son squelette applicatif.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    },
+    {
+        "id": 10,
+        "name": "Tagline",
+        "definition": "La tagline, associé au titre du site, définit l’identité de ce site. Alors que le titre résume de quoi parle le site, le slogan développe le titre dans une phrase descriptive en renseignant davantage sur l’activité de l’entreprise.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+]

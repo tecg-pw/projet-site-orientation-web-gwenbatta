@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->text('description');
-            $table->json('languages');
-            $table->json('softwares');
-            $table->json('others');
+            $table->json('languages')->nullable();
+            $table->json('softwares')->nullable();
+            $table->json('others')->nullable();
             $table->text('pdf')->nullable();
             $table->timestamps();
             $table->softDeletes();
