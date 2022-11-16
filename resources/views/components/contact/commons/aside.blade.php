@@ -1,4 +1,4 @@
-<div class="flex flex-col mt-16">
+<div class="xl:not-sr-only sr-only flex flex-col mt-16">
     <div>
         <figure class="grid grid-rows-1 grid-cols-3 gap-8 pr-36">
             <img class="rounded-3xl row-span-5 order-2" src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash.jpg" alt="">

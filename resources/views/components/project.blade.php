@@ -1,10 +1,10 @@
 <article class="group hover:bg-orange-100 flex-col flex bg-yellow-100 rounded-3xl relative"
          aria-labelledby="{{'slug'}}">
-    <div class="flex-col flex px-4 mt-6">
-        <h3 class="text-3xl mb-3" role="heading" aria-level="3" id="{{'slug'}}">{{__('Minkee')}}</h3>
-            <p class="text-xl relative z-30">{{__('Gwenaëlle Batta')}}</p>
+    <div class="flex-col flex px-4 mt-4 xl:mt-6">
+        <h3 class="text-xl mb-1.5 xl:text-3xl xl:mb-3" role="heading" aria-level="3" id="{{'slug'}}">{{__('Minkee')}}</h3>
+            <p class="xl:text-xl relative z-30">{{__('Gwenaëlle Batta')}}</p>
         <div class="flex justify-between mb-4">
-            <p class="text-xl">Juin 2023</p>
+            <p class="xl:text-xl">Juin 2023</p>
             <svg class="group-hover:mr-0 mr-2 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                  viewBox="0 0 32 27.417">
                 <path

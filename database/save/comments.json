@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "content": "Hello ! Je suis content que tu aies poser la question car je suis dans le même cas que toi et j’avoue que les maths ne me dérange pas mais je ne veux pas en faire mon métier pour autant. Je suis curieux aussi de savoir la réponse du coup !",
+        "slug": "test",
+        "like": 1,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "user_id": 2,
+        "subject_id": 1
+    },
+    {
+        "id": 2,
+        "content": "Bonjour, personnellement, je me suis rendue au porte ouverte de la HEPL et j’ai pu discuter avec les professeurs des différentes sections que ce soit web, technique graphique et 3D/vidéo et aucun professeur ne m’a parler de mathématiques ou quoi ce soit. Je ne sais pas où vos sources ont entendu qu’il fallait être bon en math mais ils n’y connaissent rien apparemment.",
+        "like": 3,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "user_id": 4,
+        "subject_id": 1
+    },
+    {
+        "id": 3,
+        "content": "Bonjour les amis, Je suis professeur dans la section web et je vais me permettre de répondre à ta questions qui est pertinente. L’option web est ouverte à n’importe qui, qui tu sois bon en math, doué en dessin ou encore excellent codeur. Tous cela n’a pas d’importance car notre programme est justement prévu pour que chaque étudiant, peut importe son profil, sorte de notre section entièrement former. Maintenant que cela est dit, pour ce qui est des mathématique et d’être doué là dedans, il peut y avoir des notions de math qui sont introduites dans certains cours, notamment celui de développement coté client mais elles restent basiques pour n’importe qui. Comme par exemple connaitre la notion de factorielle. J’espère avoir répondu à ta question.",
+        "like": 5,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "user_id": 5,
+        "subject_id": 1
+    }
+]

@@ -1,12 +1,12 @@
 @props([
     'i'
 ])
-<article {{ $attributes->class(['group hover:bg-orange-100 relative py-6 px-8 rounded-3xl']) }} aria-labelledby="{{'slug-tuto'.$i}}">
+<article {{ $attributes->class(['group hover:bg-orange-100 relative py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }} aria-labelledby="{{'slug-tuto'.$i}}">
     <div class="flex justify-between">
-        <div>
-            <h3 id="{{'slug-tuto'.$i}}" aria-level="3" role="heading" class="font-medium text-2xl mb-1.5">
+        <div class="flex-1 flex justify-between">
+            <h3 id="{{'slug-tuto'.$i}}" aria-level="3" role="heading" class="text-lg font-medium xl:text-2xl mb-1.5">
                 Froggy</h3>
-            <p class="mb-3">Date de publication</p>
+            <p class="mb-3">03 avr.2022</p>
         </div>
         @auth()
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 20.996 30">
@@ -20,9 +20,9 @@
             </svg>
         @endauth
     </div>
-    <p class="mb-6 text-lg">Exercice d’introduction à Flexbox, une technique CSS </p>
+    <p class="mb-2.5 xl:mb-6 xl:text-lg">Exercice d’introduction à Flexbox, une technique CSS </p>
     <div class="flex justify-between">
-        <p class="text-orange-500 font-sans text-lg font-medium">CSS</p>
+        <p class="text-orange-500 font-sans xl:text-lg font-medium">CSS</p>
         <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
            href="">{{__('Faire l\'exercices')}}</a>
         <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"

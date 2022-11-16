@@ -1,6 +1,6 @@
-<article {{ $attributes->class(['bg-yellow-600','px-36', 'py-20', 'mt-80']) }}>
-    <h3 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Quelques témoignages de nos alumnis')}}</h3>
-    <div class="grid grid-cols-2 gap-x-24 gap-y-8">
+<article {{ $attributes->class(['bg-yellow-600','xl:px-36','px-10', 'py-20', 'mt-20', 'xl:mt-80']) }}>
+    <h3 class="xl:text-4xl text-2xl uppercase font-extrabold font-sans xl:mb-20 mb-12">{{__('Quelques témoignages de nos alumnis')}}</h3>
+    <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
         @for($i=1; $i<5;$i++)
             <article class="flex flex-col bg-white-100 py-6 px-8 rounded-3xl">
                 <div class="flex items-center">

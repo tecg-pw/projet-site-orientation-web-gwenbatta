@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "subject": "Faut-il être bon en math pour savoir coder",
+        "description": "Je suis actuellement étudiant en secondaire mais la din d’année approche et je me pose des questions sur ma futur orientation. En effet, le monde du web m’attire mais je ne suis vraiement pas doué en math. Je n’aime pas les math et elle ne m’aime pas non plus. C’est pourquoi j’ai voulu me renseigner un peu à gauche et à droite en regardant des vidéos sur Youtube ou en interrogeant mes professeurs. Tous sont d’accord de dire qu’il faut être bon en math pour le web sinon je ne vais jamas y arriver. Pourriez-vous me donner votre avis sur la questions car je suis un peu démotiver du coup. Merci d’avance !",
+        "tag": "générale",
+        "resolved": 1,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "user_id" : 1
+    },
+    {
+        "id": 2,
+        "subject": "En quoi consiste le cours de Multimédia ?",
+        "description": "Je suis actuellement étudiant en secondaire mais la din d’année approche et je me pose des questions sur ma futur orientation. En effet, le monde du web m’attire mais je ne suis vraiement pas doué en math. Je n’aime pas les math et elle ne m’aime pas non plus. C’est pourquoi j’ai voulu me renseigner un peu à gauche et à droite en regardant des vidéos sur Youtube ou en interrogeant mes professeurs. Tous sont d’accord de dire qu’il faut être bon en math pour le web sinon je ne vais jamas y arriver. Pourriez-vous me donner votre avis sur la questions car je suis un peu démotiver du coup. Merci d’avance !",
+        "tag": "multimédia",
+        "resolved": 1,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "user_id" : 2
+    },
+    {
+        "id": 3,
+        "subject": "Comment se passe les jurys de fin d’année",
+        "description": "Je suis actuellement étudiant en secondaire mais la din d’année approche et je me pose des questions sur ma futur orientation. En effet, le monde du web m’attire mais je ne suis vraiement pas doué en math. Je n’aime pas les math et elle ne m’aime pas non plus. C’est pourquoi j’ai voulu me renseigner un peu à gauche et à droite en regardant des vidéos sur Youtube ou en interrogeant mes professeurs. Tous sont d’accord de dire qu’il faut être bon en math pour le web sinon je ne vais jamas y arriver. Pourriez-vous me donner votre avis sur la questions car je suis un peu démotiver du coup. Merci d’avance !",
+        "tag": "design web",
+        "resolved": 0,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "user_id" : 3
+    },
+    {
+        "id": 4,
+        "subject": "Quel genre d’ordinateur faut-il pour le web",
+        "description": "Je suis actuellement étudiant en secondaire mais la din d’année approche et je me pose des questions sur ma futur orientation. En effet, le monde du web m’attire mais je ne suis vraiement pas doué en math. Je n’aime pas les math et elle ne m’aime pas non plus. C’est pourquoi j’ai voulu me renseigner un peu à gauche et à droite en regardant des vidéos sur Youtube ou en interrogeant mes professeurs. Tous sont d’accord de dire qu’il faut être bon en math pour le web sinon je ne vais jamas y arriver. Pourriez-vous me donner votre avis sur la questions car je suis un peu démotiver du coup. Merci d’avance !",
+        "tag": "générale",
+        "resolved": 0,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "user_id" : 4
+    }
+]

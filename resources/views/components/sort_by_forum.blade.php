@@ -1,10 +1,10 @@
 <div {{ $attributes }}>
-    <p class="text-green-500 text-3xl font-medium mb-4">{{__('Trier par')}}</p>
+    <p class="text-green-500 text-xl xl:text-3xl font-medium mb-2 xl:mb-4">{{__('Trier par')}}</p>
     <form action="/"
           method="get"class="flex flex-col gap-4" >
         <div class="flex">
         <fieldset class="flex flex-col">
-            <label for="status" class="text-lg text-green-500 mb-2">{{__('Status')}}</label>
+            <label for="status" class="xl:text-lg text-green-500 mb-2">{{__('Status')}}</label>
             <select id="status"
                     name="status"
                     class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1">
@@ -20,7 +20,7 @@
             </select>
         </fieldset>
         <fieldset class="flex flex-col ml-16">
-            <label for="tags" class="text-lg text-green-500 mb-2">{{__('Tags')}}</label>
+            <label for="tags" class="xl:text-lg text-green-500 mb-2">{{__('Tags')}}</label>
             <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1" id="tags"
                     name="tags">
                 <option value="all">
@@ -47,7 +47,7 @@
             </select >
         </fieldset>
         <fieldset class="flex flex-col ml-16">
-            <label for="year" class="text-lg text-green-500 mb-2">{{__('Date')}}</label>
+            <label for="year" class="xl:text-lg text-green-500 mb-2">{{__('Date')}}</label>
             <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1" id="year"
                     name="year">
                 <option value="all">

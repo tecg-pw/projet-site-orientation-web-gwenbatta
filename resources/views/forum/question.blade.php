@@ -1,20 +1,20 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
     <section class="mt-20 mb-36 flex justify-center" aria-labelledby="question">
-        <div class="px-36">
-            <div class="flex flex-col mb-28">
-                <div class="flex order-1">
-                    <h2 class="text-4xl uppercase font-bold text-yellow-800 font-sans mt-6" aria-level="2" role="heading" id="question">
+        <div class="px-10 xl:px-36">
+            <div class="flex flex-col mb-14 xl:mb-28">
+                <div class="flex flex-col xl:flex-row order-1">
+                    <h2 class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 font-sans mt-6" aria-level="2" role="heading" id="question">
                         {{__('Poser une question')}}
                     </h2>
-                    <a class="hover:text-orange-500 font-sans mt-6 text-end text-green-700 text-3xl font-semibold underline flex-1"
+                    <a class="hover:text-orange-500 font-sans mt-3 xl:mt-6 xl:text-end text-green-700 xl:text-3xl font-semibold underline flex-1"
                        href="/forum/index">{{__('Retour au forum')}}</a>
                 </div>
                 <a class="text-green-500 font-sans font-light underline mt-8"
                    href="/">{{__('Techniques > Forum > Poser une question')}}</a>
             </div>
-            <div class="grid grid-cols-5 mt-14">
-                <form action="/" method="post" class="col-span-3 items-center mr-20">
+            <div class="xl:grid xl:grid-cols-5 flex flex-1 xl:mt-14">
+                <form action="/" method="post" class="xl:col-span-3 flex-1 xl:items-center xl:mr-20">
                     @csrf
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="questions">{{__('Question')}}</label>
@@ -30,13 +30,13 @@
                             name="questionsDescription" id="questionsDescription"
                             placeholder="Je décris ma question"></textarea>
                     </fieldset>
-                    <div class="flex flex-1 justify-end">
+                    <div class="flex flex-1 xl:justify-end">
                         <input
-                            class="hover:bg-white-100 hover:text-green-700 border-green-700 border-2 mt-16 font-sans text-center text-white-100 bg-green-700 px-16 py-3 rounded-2xl text-xl font-semibold"
+                            class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex-1 xl:flex-initial"
                             type="submit" value="{{__('Poser ma question')}}">
                     </div>
                 </form>
-                <x-login.commons.aside class="col-span-2"></x-login.commons.aside>
+                <x-login.commons.aside class="sr-only xl:not-sr-only xl:col-span-2"></x-login.commons.aside>
             </div>
         </div>
     </section>

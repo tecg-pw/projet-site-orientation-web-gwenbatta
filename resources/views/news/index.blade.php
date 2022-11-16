@@ -1,21 +1,19 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <article class="px-36 mb-64" aria-labelledby="projects">
-        <div class="flex justify-between mb-12 mt-36">
-            <h2 class="text-4xl uppercase font-bold text-yellow-800  font-sans" role="heading" aria-level="2" id="projects">
-                {{__('Liste des actualités')}}
-            </h2>
-            <x-search_bar></x-search_bar>
+    <article class="xl:px-36 px-10 mb-64" aria-labelledby="projects">
+        <div class="flex flex-col xl:flex-row justify-between mb-10 mt-14 xl:items-center xl:mt-36 xl:mb-32">
+            <h2 id="projects" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('Liste des actualités')}}</h2>
+            <x-search_bar class=""></x-search_bar>
         </div>
-        <div class="grid grid-cols-3 gap-8 justify-center">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-6 xl:justify-center">
             @for($i=1; $i<7;$i++)
                 <article class="group flex-col flex bg-yellow-100 rounded-3xl relative"
                          aria-labelledby="{{'slug-event'}}">
                     <div class="flex-col flex px-4 mt-6">
-                        <div class="flex justify-between">
-                            <h3 class="text-3xl mb-3" role="heading" aria-level="3"
+                        <div class="flex justify-between mb-3">
+                            <h3 class="text-xl xl:text-3xl " role="heading" aria-level="3"
                                 id="{{'slug'}}">{{__('Porte ouverte')}}</h3>
-                            <p class="text-xl relative z-30">{{__('30 avr. 2022')}}</p>
+                            <p class="xl:text-xl relative z-30">{{__('30 avr. 2022')}}</p>
                         </div>
                         <div class="flex justify-between mb-4">
                             <p class="max-w-[80%]">Les portes ouvertes de la HEPL vous permettra de visiter l’école de votre choix et de rencontrer les professeurs</p>

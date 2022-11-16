@@ -35,7 +35,7 @@
                 <a class="hover:text-orange-500" href="/user/profil">{{__('Gwenaëlle')}}</a>
             @endauth
         </div>
-        <div class="relative z-30 flex flex-1 items-center order-2 bg-yellow-100 px-36 gap-x-10 py-10">
+        <div class="relative z-30 flex flex-1 items-center order-2 bg-yellow-100 xl:px-36 gap-x-10 py-10">
             <input class="absolute cursor-pointer opacity-0 z-30 w-8 h-8 " type="checkbox" name="burger" id="burger">
             <div class="relative">
                 <label class="sr-only" for="burger">{{__('Checkbox Burger Menu')}}</label>
@@ -170,7 +170,7 @@
                 </svg>
                 <a href="/" class="linkcard">{{__('Acceuil de TecWeb')}}</a>
             </div>
-            <ul class="flex gap-x-5 text-green-700 text-xl flex-1 font-sans font-semibold">
+            <ul class="sr-only xl:not-sr-only flex gap-x-5 text-green-700 text-xl flex-1 font-sans font-semibold">
                 <li><a class="hover:text-orange-500" href="/bottin/alumni"> {{__('Alumni')}}</a></li>
                 <li><a class="hover:text-orange-500" href="/project/index"> {{__('Projets')}}</a></li>
                 <li><a class="hover:text-orange-500" href="/forum/index"> {{__('Forum')}}</a></li>

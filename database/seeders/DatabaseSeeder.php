@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Answer;
 use App\Models\Glossary;
 use Illuminate\Database\Seeder;
+use PhpParser\Comment;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,6 +23,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call(UserSeeder::class);
         $this->call(ActualitySeeder::class);
         $this->call(BookSeeder::class);
         $this->call(ClasseSeeder::class);
@@ -28,8 +31,12 @@ class DatabaseSeeder extends Seeder
         $this->call(GlossarySeeder::class);
         $this->call(PartnerSeeder::class);
         $this->call(PeopleSeeder::class);
-        $this->call(ProjectSeeder::class);
         $this->call(OfferSeeder::class);
+        $this->call(ProjectSeeder::class);
+        $this->call(QuestionSeeder::class);
+        $this->call(SubjectSeeder::class);
+        $this->call(CommentSeeder::class);
+        $this->call(AnswerSeeder::class);
         $this->call(ToolSeeder::class);
         $this->call(TutoSeeder::class);
     }

@@ -1,14 +1,14 @@
 <x-commons.navigation></x-commons.navigation>
-<main class="px-36">
-    <section class="mt-20 mb-64" aria-labelledby="glossary">
-        <div class="flex justify-between mb-7 items-center">
-            <h2 id="glossary" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Glossaire')}}</h2>
-            <x-search_bar></x-search_bar>
+<main class="px-10 xl:px-36">
+    <section class="mt-20 mb-32 xl:mb-64" aria-labelledby="glossary">
+        <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
+            <h2 id="tutos" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('Glossaire')}}</h2>
+            <x-search_bar class=""></x-search_bar>
         </div>
-        <p class="mb-24 max-w-[55%] text-xl leading-10">{{__('Vous trouverez sur cette page une liste tous les termes techniques dont vous aurez besoin au sein de ce site ainsi qu’au sein des cours liés à l’orientation web')}}</p>
+        <p class="mb-24 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('Vous trouverez sur cette page une liste tous les termes techniques dont vous aurez besoin au sein de ce site ainsi qu’au sein des cours liés à l’orientation web')}}</p>
         <article aria-labelledby="list-glossary">
             <h3 id="list-glossary" role="heading" aria-level="3" class="sr-only">{{__('Liste du glossaire')}}</h3>
-            <div  class="grid grid-cols-2 gap-x-24 gap-y-8">
+            <div  class="xl:grid xl:grid-cols-2 flex flex-col gap-y-4 xl:gap-x-24 xl:gap-y-8">
                 @for($i=1; $i<11;$i++)
                     <x-term-glossary :i="$i"/>
                 @endfor

@@ -1,13 +1,11 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <article class="px-36 mb-64" aria-labelledby="projects">
-        <div class="flex justify-between mb-12 mt-36">
-            <h2 class="text-4xl uppercase font-bold text-yellow-800  font-sans" role="heading" aria-level="2" id="projects">
-                {{__('Projets de nos étudiants')}}
-            </h2>
-            <x-search_bar></x-search_bar>
+    <article class="px-10 xl:px-36 mt-20 mb-64" aria-labelledby="projects">
+        <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
+            <h2 id="tutos" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('Projets de nos étudiants')}}</h2>
+            <x-search_bar class=""></x-search_bar>
         </div>
-        <div class="grid grid-cols-3 gap-8 justify-center">
+        <div class="xl:grid xl:grid-cols-3 flex flex-col gap-8 justify-center">
             @for($i=1; $i<10;$i++)
                 <x-project></x-project>
             @endfor

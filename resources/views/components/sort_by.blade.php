@@ -1,8 +1,8 @@
 <div {{ $attributes }}>
-    <p class="text-green-500 text-3xl font-medium mb-4">{{__('Trier par')}}</p>
+    <p class="text-green-500 text-xl xl:text-3xl font-medium mb-2 xl:mb-4">{{__('Trier par')}}</p>
     <form action="/"
           method="get" class="flex flex-col gap-4" >
-        <div class="flex">
+        <div class="flex flex-1 justify-between xl:justify-start">
             <fieldset class="flex flex-col">
                 <label for="status" class="text-lg text-green-500 mb-2">{{__('Status')}}</label>
                 <select id="status"
@@ -42,7 +42,7 @@
             </fieldset>
         </div>
         <button type="submit"
-                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold max-w-[27%]">
+                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold xl:max-w-[27%]">
             {{__('Valider')}}
         </button>
     </form>

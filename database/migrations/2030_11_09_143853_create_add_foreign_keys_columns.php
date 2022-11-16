@@ -13,12 +13,30 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('projects', function (Blueprint $table) {
-            $table->foreignId('person_id')->constrained()->onUpdate('cascade');
+        Schema::table('answers', function (Blueprint $table) {
+            $table->foreignId('comment_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('answers', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('comments', function (Blueprint $table) {
+            $table->foreignId('subject_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('comments', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('offers', function (Blueprint $table) {
             $table->foreignId('partner_id')->constrained()->onUpdate('cascade');
         });
+        Schema::table('projects', function (Blueprint $table) {
+            $table->foreignId('person_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('subjects', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade');
+        });
+
+
+
         Schema::table('book_classe', function (Blueprint $table) {
             $table->foreignId('book_id')->constrained()->onUpdate('cascade');
             $table->foreignId('classe_id')->constrained()->onUpdate('cascade');
