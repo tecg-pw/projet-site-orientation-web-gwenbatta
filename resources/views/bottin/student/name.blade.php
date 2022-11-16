@@ -1,20 +1,21 @@
 <x-commons.navigation></x-commons.navigation>
 <main class="">
-    <section class="mt-20 px-36 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
-        <div class=" flex justify-between text-green-700 font-sans text-2xl font-semibold">
+    <section class="mt-20 px-10 xl:px-36 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
+        <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold xl:flex-row">
             <h2 id="name" role="heading" aria-level="2"
-                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans">{{__('Nom de l\'étudiant')}}</h2>
-            <a class="underline hover:text-orange-500" href="/bottin">{{__('Voir d\'autres étudiant')}}</a>
+                class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{__('Nom de l\'étudiante')}}</h2>
+            <a class="underline xl:text-2xl hover:text-orange-500" href="/bottin/alumni">{{__('Voir d\'autres étudiants')}}</a>
         </div>
-        <div class="flex gap-12 mt-16">
-            <div class="mt-7 mb-7 order-2">
+        <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mt-16">
+            <div class="mt-4 mb-7 order-2">
                 <div class="flex gap-12">
                     <div>
-                        <div class="mb-4 flex gap-24 uppercase text-xl">
-                            <p class="">Status</p>
+                        <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
+                            <p class="">étudiant</p>
                             <p>Année scolaire</p>
+                            <a class="hover:text-orange-500 underline text-green-700" href="/about/job/single">Métier</a>
                         </div>
-                        <div class="flex flex-col gap-y-2.5 mb-5 text-xl">
+                        <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-xl">
                             <a class="hover:text-orange-500 text-green-700 underline" href="mailto:">adresse
                                 mail</a>
                             <a class="hover:text-orange-500 text-green-700 underline text-xl" href="">adresse portfolio</a>
@@ -43,17 +44,17 @@
                         </div>
                     </div>
                 </div>
-                <p class="flex flex-col gap-6 text-lg leading-10 max-w-[65%]">
+                <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
                     {{__('Ancien étudiant de la HEPL, il est aujourd’hui employer et associer pour l’agence KNOK, l’une de nos entreprises partenaires. Parcours brillant, il a notamment pour son projet de fin d’étude obtenu une note maximal. Il nous avait présenter un site web comme celui sur lequel vous êtes. Aujourd’hui, Jimmy a même son projet personnel en cours de développement : Breedy, ce projet vise à aider les éleveur de chiens à gérer leurs portées.')}}
                 </p>
 
             </div>
-            <div class="min-w-[313px]">
-                <img class="mb-16 rounded-3xl" src="https://via.placeholder.com/313" alt="avatar">
-                <div class="flex flex-col">
+            <div class="min-w-[345px] flex flex-col">
+                <img class=" xl:mb-6 rounded-3xl" src="https://via.placeholder.com/345" alt="avatar">
+                <div class="flex flex-col mt-8">
                     <a href="/"
-                       class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold ">{{__('Voir le portfolio')}}</a>
-                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
+                       class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('Voir le portfolio')}}</a>
+                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-end"
                        href="/">
                 <span class="mr-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
@@ -62,18 +63,20 @@
                               transform="translate(-1.999 -2.247)" fill="#4e6458"/>
                         </svg>
                     </span>
-                        <span>{{__('Voir le Github')}}</span>
+                        <span class="xl:mt-0 mt-1.5">{{__('Voir le Github')}}</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-36 pb-40 pt-20" aria-labelledby="projects">
-        <div class="justify-between flex">
-        <h2 id="projects" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Quelques projets')}}</h2>
-        <a class="text-green-700 underline font-sans text-2xl font-semibold" href="/project/index">{{__('Voir tous les projets')}}</a>
+    <article class="bg-yellow-600 px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
+        <div class="justify-between flex flex-col mb-8 xl:flex-row">
+            <h2 id="projects" role="heading" aria-level="2"
+                class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Quelques projets')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
+               href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
-        <div class="grid grid-cols-3 gap-8 justify-center">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
             @for($i=1; $i<7;$i++)
                 <x-project :i="$i"></x-project>
             @endfor

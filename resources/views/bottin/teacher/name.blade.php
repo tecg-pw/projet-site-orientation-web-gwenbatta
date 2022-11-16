@@ -1,22 +1,23 @@
 <x-commons.navigation></x-commons.navigation>
 <main class="">
-    <section class="mt-20 px-36 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
-        <div class=" flex justify-between text-green-700 font-sans text-2xl font-semibold">
+    <section class="mt-20 px-10 xl:px-36 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
+        <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold xl:flex-row">
             <h2 id="name" role="heading" aria-level="2"
-                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans">{{__('Nom du professeur')}}</h2>
-            <a class="underline hover:text-orange-500" href="/bottin/alumni">{{__('Voir d\'autres professeurs')}}</a>
+                class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{__('Nom du professeurs')}}</h2>
+            <a class="underline xl:text-2xl hover:text-orange-500" href="/bottin/alumni">{{__('Voir d\'autres professeurs')}}</a>
         </div>
-        <div class="flex gap-12 mt-16">
-            <div class="mt-7 mb-7 order-2">
+        <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mt-16">
+            <div class="mt-4 mb-7 order-2">
                 <div class="flex gap-12">
                     <div>
-                        <div class="mb-4 flex gap-24 uppercase text-xl">
-                            <p class="">Status</p>
+                        <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
+                            <p class="">Ancien</p>
                             <p>Année scolaire</p>
                         </div>
-                        <div class="flex flex-col gap-y-2.5 mb-5 text-xl">
+                        <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-xl">
                             <a class="hover:text-orange-500 text-green-700 underline" href="mailto:">adresse
                                 mail</a>
+                            <a class="hover:text-orange-500 text-green-700 underline text-xl" href="">adresse portfolio</a>
                         </div>
                         <div class="flex flex-1 mb-6 gap-5">
                             <svg class="hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="30"
@@ -42,42 +43,39 @@
                         </div>
                     </div>
                 </div>
-                <p class="flex flex-col gap-6 text-lg leading-10 max-w-[65%]">
+                <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
                     {{__('Ancien étudiant de la HEPL, il est aujourd’hui employer et associer pour l’agence KNOK, l’une de nos entreprises partenaires. Parcours brillant, il a notamment pour son projet de fin d’étude obtenu une note maximal. Il nous avait présenter un site web comme celui sur lequel vous êtes. Aujourd’hui, Jimmy a même son projet personnel en cours de développement : Breedy, ce projet vise à aider les éleveur de chiens à gérer leurs portées.')}}
                 </p>
 
             </div>
-            <div class="min-w-[313px]">
-                <img class="mb-16 rounded-3xl" src="https://via.placeholder.com/313" alt="avatar">
-                <div class="flex flex-col">
-                    <a href="/"
-                       class="group hover:bg-white-100 hover:text-green-700 flex justify-center font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold ">
-                        <span class="mr-2.5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
-                            <path class="group-hover:fill-green-700" data-name="08774047e75405e5723edc2388e9bc78"
-                                  d="M21.484,2.247a19.484,19.484,0,0,0-6.162,37.968c.974.171,1.339-.414,1.339-.925,0-.463-.024-2-.024-3.629-4.9.9-6.162-1.193-6.551-2.289a7.084,7.084,0,0,0-2-2.752c-.682-.365-1.656-1.266-.024-1.291a3.9,3.9,0,0,1,3,2,4.164,4.164,0,0,0,5.674,1.607,4.1,4.1,0,0,1,1.242-2.606c-4.335-.487-8.865-2.168-8.865-9.62a7.583,7.583,0,0,1,2-5.236,7,7,0,0,1,.195-5.163s1.632-.511,5.358,2a18.368,18.368,0,0,1,9.742,0c3.726-2.533,5.358-2,5.358-2a7,7,0,0,1,.195,5.163,7.538,7.538,0,0,1,2,5.236c0,7.477-4.554,9.133-8.889,9.62a4.614,4.614,0,0,1,1.315,3.6c0,2.606-.024,4.7-.024,5.358,0,.511.365,1.12,1.339.925a19.494,19.494,0,0,0-6.21-37.968Z"
-                                  transform="translate(-1.999 -2.247)" fill="#ffffff"/>
-                            </svg>
+            <div class="min-w-[345px] flex flex-col">
+                <img class=" xl:mb-6 rounded-3xl" src="https://via.placeholder.com/345" alt="avatar">
+                <div class="flex flex-col mt-8">
+                    <a class="group hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex justify-center"
+                       href="/">
+                <span class="mr-2.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
+                        <path class="group-hover:fill-orange-500" data-name="08774047e75405e5723edc2388e9bc78"
+                              d="M21.484,2.247a19.484,19.484,0,0,0-6.162,37.968c.974.171,1.339-.414,1.339-.925,0-.463-.024-2-.024-3.629-4.9.9-6.162-1.193-6.551-2.289a7.084,7.084,0,0,0-2-2.752c-.682-.365-1.656-1.266-.024-1.291a3.9,3.9,0,0,1,3,2,4.164,4.164,0,0,0,5.674,1.607,4.1,4.1,0,0,1,1.242-2.606c-4.335-.487-8.865-2.168-8.865-9.62a7.583,7.583,0,0,1,2-5.236,7,7,0,0,1,.195-5.163s1.632-.511,5.358,2a18.368,18.368,0,0,1,9.742,0c3.726-2.533,5.358-2,5.358-2a7,7,0,0,1,.195,5.163,7.538,7.538,0,0,1,2,5.236c0,7.477-4.554,9.133-8.889,9.62a4.614,4.614,0,0,1,1.315,3.6c0,2.606-.024,4.7-.024,5.358,0,.511.365,1.12,1.339.925a19.494,19.494,0,0,0-6.21-37.968Z"
+                              transform="translate(-1.999 -2.247)" fill="#ffffff"/>
+                        </svg>
                     </span>
-                        <span>{{__('Voir le Github')}}</span>
+                        <span class="xl:mt-0 mt-1.5 ">{{__('Voir le Github')}}</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-36 pb-24 pt-20" aria-labelledby="classes">
-        <div class="flex justify-between">
-            <h2 id="classes" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Cours donnés par Nom de la personne')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold" href="/project/index">{{__('Voir tous les projets')}}</a>
+    <article class="bg-yellow-600 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="classes">
+        <div class="flex xl:flex-row flex-col justify-between mb-8">
+            <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Cours donnés par Nom de la personne')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold" href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
-        <div class="grid grid-cols-2 gap-x-24 gap-y-8">
+        <div  class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @for($i=1; $i<5;$i++)
-                <article class="bg-white-100 py-6 px-8 rounded-3xl relative" aria-labelledby="{{'slug-classes'.$i}}">
-                    <h3 id="{{'slug-classes'.$i}}" role="heading" aria-level="3"
-                        class="font-sans font-medium text-2xl mb-3 underline font-medium">Nom du cours donnés</h3>
-                    <p class="text-lg">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                <article class="hover:bg-orange-100 bg-white-100 py-6 px-8 rounded-3xl relative" aria-labelledby="{{'slug-classes'.$i}}">
+                    <h3 id="{{'slug-classes'.$i}}" role="heading" aria-level="3" class="font-sans font-medium text-xl xl:text-2xl mb-3 underline font-medium">Nom du cours donnés</h3>
+                    <p class="xl:text-lg">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
                     <a class="linkcard" href="/cours/show">{{__('Voir le cours')}}</a>
                 </article>
             @endfor

@@ -56,7 +56,7 @@
                         <img class="order-1 rounded-full" src="/img-redimensions/test.jpeg" alt="avatar">
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/bottin/teacher/name">{{__('En savoir plus')}}</a>
+                       href="/bottin/teachalumni/name">{{__('En savoir plus')}}</a>
                 </article>
             @endfor
             @for($i=1; $i<5;$i++)
@@ -81,7 +81,7 @@
                         <img class="order-1 rounded-full" src="/img-redimensions/test.jpeg" alt="avatar">
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/bottin/teacher/name">{{__('En savoir plus')}}</a>
+                       href="/bottin/alumni/name">{{__('En savoir plus')}}</a>
                 </article>
 
             @endfor
@@ -106,7 +106,7 @@
                     <img class="order-1 rounded-full" src="/img-redimensions/test.jpeg" alt="avatar">
                 </div>
                 <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                   href="/bottin/teacher/name">{{__('En savoir plus')}}</a>
+                   href="/bottin/student/name">{{__('En savoir plus')}}</a>
             </article>
 
             {{--                {{$posts->links()}}--}}
