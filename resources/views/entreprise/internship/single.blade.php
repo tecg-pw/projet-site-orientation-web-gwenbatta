@@ -1,29 +1,29 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="px-36 mt-20 mb-40" aria-labelledby="poste">
-        <div class="flex justify-between">
+    <section class="xl:px-36 px-10 mt-20 mb-20 xl:mb-40" aria-labelledby="poste">
+        <div class="flex xl:flex-row flex-col justify-between mb-8">
             <h2 id="poste" role="heading" aria-level="2"
-                class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Nom du poste pour le stage')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
+                class="xl:text-4xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Nom du poste pour le stage')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/entreprise/internship">{{__('Retour aux offres de stage')}}</a>
         </div>
-        <div class="flex">
+        <div class="flex xl:flex-row flex-col">
             <div class="flex flex-col gap-16">
                 <article class="even:mt-36 relative mt-48" aria-labelledby="name">
                     <img class="rounded-lg absolute -z-10 bottom-2/3" src="https://placehold.jp/276x276.png"
                          alt="avatar">
                     <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
-                        <h3 id="name" role="heading" aria-level="3" class="underline font-medium text-2xl mb-2">
+                        <h3 id="name" role="heading" aria-level="3" class="underline font-medium text-xl xl:text-2xl mb-2">
                             <a class="text-green-700 hover:text-orange-500" href="/entreprise/partner/single">
                                 Léonard Web Solutions
                             </a>
                         </h3>
                         <div>
-                            <p class="text-lg">Rue de Bellaire 9,</p>
-                            <p class="mb-4 text-lg">4802 VERVIERS</p>
+                            <p class="xl:text-lg">Rue de Bellaire 9,</p>
+                            <p class="mb-4 xl:text-lg">4802 VERVIERS</p>
                         </div>
-                        <a class="hover:text-orange-500 underline text-green-700 text-xl" href="mailto:">info@lws.be</a>
-                        <div class="flex justify-between gap-32 items-center mt-4 ">
+                        <a class="hover:text-orange-500 underline text-green-700 text-lg xl:text-xl" href="mailto:">info@lws.be</a>
+                        <div class="flex justify-between gap-24 xl:gap-32 items-center mt-4 ">
                             <div class="flex flex-1 gap-3">
                                 <svg class="hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="25"
                                      viewBox="0 0 38.97 38.005">
@@ -46,33 +46,32 @@
                                 </svg>
 
                             </div>
-                            <p class="justify-self-end text-green-500 uppercase text-lg">Partenaire</p>
+                            <p class="justify-self-end text-green-500 uppercase xl:text-lg">Partenaire</p>
                         </div>
                     </div>
                 </article>
-                <div class="flex flex-col gap-5">
+                <div class="flex flex-col xl:gap-10 mb-12 xl:mb-0">
                     <a href="/"
-                       class="hover:bg-white-100 hover:text-green-700 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold ">{{__('Voir le site')}}</a>
-                    <a class="hover:text-orange-500 self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
-                       href="/">
-                        {{__('Télécharger le PDF')}}
+                       class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('Voir le site')}}</a>
+                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline self-end"
+                       href="/">{{__('Télécharger le PDF')}}
                     </a>
                 </div>
             </div>
-            <div class="ml-20 flex flex-col gap-16">
+            <div class="xl:ml-20 flex flex-col gap-16">
                 <div>
-                    <p class="font-sans mb-4 font-medium text-xl">{{__('Description de l\'offre')}}</p>
-                    <p class="leading-8 max-w-[75%]">
+                    <p class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('Description de l\'offre')}}</p>
+                    <p class="text-lg leading-8 xl:max-w-[75%]">
                         {{__('« Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? »')}}
                     </p>
                 </div>
                 <section aria-labelledby="needed">
                     <h3 id="needed" role="heading" aria-level="3"
-                        class="font-sans mb-6 font-medium text-xl">{{__('Aptitude nécessaire à la mission')}}</h3>
-                    <div class="flex gap-32">
-                        <section class="pr-24 border-r-orange-500/40 border-r-2" aria-labelledby="languages">
+                        class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('Aptitude nécessaire à la mission')}}</h3>
+                    <div class="flex flex-col xl:flex-row gap-12 xl:gap-32">
+                        <section class="border-b-2 border-b-orange-500/40 pb-12 xl:border-b-0 xl:pb-0 xl:pr-24 xl:border-r-orange-500/40 xl:border-r-2" aria-labelledby="languages">
                             <h4 id="languages" role="heading" aria-level="4"
-                                class="text-green-500 mb-4 text-xl">{{__('Langages de programmation')}}</h4>
+                                class="text-green-500 mb-4 text-lg xl:text-xl">{{__('Langages de programmation')}}</h4>
                             <ul class="flex flex-col gap-2 list-disc">
                                 @for($i=1;$i<10;$i++)
                                     <li class="flex items-center gap-3">
@@ -86,7 +85,7 @@
                             </ul>
                         </section>
                         <div class="flex flex-col gap-12">
-                            <section class="" aria-labelledby="software">
+                            <section class="border-b-2 border-b-orange-500/40 pb-12 xl:border-b-0 xl:pb-0 " aria-labelledby="software">
                                 <h4 id="software" role="heading" aria-level="4"
                                     class="text-xl text-green-500 mb-4">{{__('Autres logiciels')}}</h4>
                                 <ul class="flex flex-col gap-2 list-disc">
@@ -124,23 +123,22 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-36 pb-24 pt-20" aria-labelledby="other-offer">
-        <div class="flex justify-between">
-            <h2 id="other-offer" role="heading" aria-level="2"
-                class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('D\'autres offres')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
+    <article class="bg-yellow-600 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="internships">
+        <div class="flex xl:flex-row flex-col justify-between mb-8">
+            <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('D\'autres offres')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/entreprise/internship">{{__('Voir les offres de stage')}}</a>
         </div>
-        <div class="grid grid-cols-2 gap-x-24 gap-y-8">
+        <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @for($i=1; $i<5;$i++)
-                <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-6 px-8 rounded-3xl"
+                <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
                          aria-labelledby="{{'name'.$i}}">
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">
-                            <div class="flex justify-between">
-                                <h3 id="{{'name'.$i}}" role="heading" aria-level="4" class="text-2xl">UI / UX
+                            <div class="xl:flex-row flex-col flex justify-between">
+                                <h3 id="{{'name'.$i}}" role="heading" aria-level="4" class="text-lg xl:text-2xl">UI / UX
                                     Designer Freelance</h3>
-                                <p class="text-lg">30 avr. 2022</p>
+                                <p class="xl:text-lg">30 avr. 2022</p>
                             </div>
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col gap-2 max-w-[80%]">
@@ -149,7 +147,7 @@
                                         objectifs du client pour les traduire visuellement. Empathie et capacité
                                         d’analyse sont des
                                         prérequis indispensables pour cette mission.</p>
-                                    <p class="font-medium text-lg">Epic Agency</p>
+                                    <p class="font-medium xl:text-lg">Epic Agency</p>
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                      width="25"

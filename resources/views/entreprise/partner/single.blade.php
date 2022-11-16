@@ -1,23 +1,25 @@
 <x-commons.navigation></x-commons.navigation>
 <main class="">
-    <section class="mt-20 px-36 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
-        <div class=" flex justify-between text-green-700 font-sans text-2xl font-semibold">
-            <h2 id="name" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold text-yellow-800 font-sans">{{__('Nom de l\'entreprise')}}</h2>
-            <a class="underline hover:text-orange-500" href="/entreprise/partner">{{__('Retour aux entreprises')}}</a>
+    <section class="xl:mt-20 px-10 xl:px-36 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
+        <div class="flex flex-col xl:flex-row justify-between mt-20">
+            <h2 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
+                id="dev-front" aria-level="2" role="heading">{{__('Nom de l\'entreprise')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
+               href="/entreprise/partner">{{__('Retour aux entreprises')}}</a>
         </div>
-        <div class="flex gap-12 mt-16">
+        <div class="flex flex-col xl:flex-row xl:gap-12 mt-16">
             <div class="mb-7 order-2">
-                <div class="flex gap-12">
+                <div class="flex xl:gap-12 gap-8">
                     <section aria-labelledby="informations">
-                        <h3 id="informations" role="heading" aria-level="3" class="text-2xl mb-5 font-semibold">{{__('Informations')}}</h3>
+                        <h3 id="informations" role="heading" aria-level="3" class="text-xl xl:text-2xl mb-5 font-semibold">{{__('Informations')}}</h3>
                         <div class="flex flex-col gap-y-2.5 mb-5">
-                            <a class="hover:text-orange-500 text-green-700 underline text-lg" href="mailto:">adresse mail</a>
-                            <div class="text-xl">
+                            <a class="hover:text-orange-500 text-green-700 underline xl:text-lg" href="mailto:">adresse mail</a>
+                            <div class="xl:text-xl">
                                 <p>Adresse de la rue,</p>
                                 <p class="uppercase">1000 Localité</p>
                             </div>
                         </div>
-                        <div class="flex flex-1 mb-10 gap-5">
+                        <div class="flex flex-1 mb-10 xl:gap-5 gap-3">
                             <svg class="hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="30"
                                  viewBox="0 0 38.97 38.005">
                                 <path id="_08774047e75405e5723edc2388e9bc78" data-name="08774047e75405e5723edc2388e9bc78"
@@ -40,8 +42,8 @@
                         </div>
                     </section>
                     <section aria-labelledby="members">
-                        <h3 id="members" role="heading" aria-level="3" class="text-2xl mb-5 font-semibold">{{__('Membre de l\'équipe')}}</h3>
-                        <ul class="flex flex-col gap-3 list-disc">
+                        <h3 id="members" role="heading" aria-level="3" class="xl:text-2xl text-xl mb-5 font-semibold">{{__('Membre de l\'équipe')}}</h3>
+                        <ul class="flex flex-col xl:gap-3 gap-y-1.5 list-disc">
                             @for($i=1;$i<6;$i++)
                                 <li class="flex items-center gap-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7">
@@ -54,7 +56,7 @@
                         </ul>
                     </section>
                 </div>
-                <p class="flex flex-col gap-6 text-lg leading-10 max-w-[65%]">
+                <p class="flex flex-col gap-6 text-lg leading-8 mt-4 xl:mt-0 xl:text-xl xl:leading-10 xl:max-w-[65%]">
                 <span>
                     {{__('«Créée en 2009 à Heusy (province de Liège), LWS est une jeune et dynamique agence spécialisée dans la communication digitale et plus particulièrement dans l’univers du web. Notre équipe est composée d’intégrateurs, développeurs et designers web.')}}
                 </span>
@@ -63,7 +65,7 @@
 
             </div>
             <div class="min-w-[313px]">
-                <img class="mb-16 rounded-3xl" src="https://via.placeholder.com/313" alt="avatar">
+                <img class="xl:mb-16 mb-6 rounded-3xl" src="https://via.placeholder.com/345" alt="avatar">
                 <div class="flex flex-col">
                     <a href="/"
                        class="hover:bg-white-100 hover:text-green-700 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold ">{{__('Voir le site')}}</a>
@@ -76,22 +78,22 @@
         </div>
 
     </section>
-    <article class="bg-yellow-600 px-36 pb-24 pt-20" aria-labelledby="internships">
-        <div class="flex justify-between">
-            <h2 id="internships" role="heading" aria-level="2" class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Offres de stages')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
+    <article class="bg-yellow-600 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="internships">
+        <div class="flex xl:flex-row flex-col justify-between mb-8">
+            <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Offres de stages')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/entreprise/internship">{{__('Voir les offres de stage')}}</a>
         </div>
-        <div class="grid grid-cols-2 gap-x-24 gap-y-8">
+        <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @for($i=1; $i<3;$i++)
-                <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-6 px-8 rounded-3xl"
+                <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
                          aria-labelledby="{{'name'.$i}}">
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">
-                            <div class="flex justify-between">
-                                <h3 id="{{'name'.$i}}" role="heading" aria-level="4" class="text-2xl">UI / UX
+                            <div class="xl:flex-row flex-col flex justify-between">
+                                <h3 id="{{'name'.$i}}" role="heading" aria-level="4" class="text-lg xl:text-2xl">UI / UX
                                     Designer Freelance</h3>
-                                <p class="text-lg">30 avr. 2022</p>
+                                <p class="xl:text-lg">30 avr. 2022</p>
                             </div>
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col gap-2 max-w-[80%]">
@@ -100,7 +102,7 @@
                                         objectifs du client pour les traduire visuellement. Empathie et capacité
                                         d’analyse sont des
                                         prérequis indispensables pour cette mission.</p>
-                                    <p class="font-medium text-lg">Epic Agency</p>
+                                    <p class="font-medium xl:text-lg">Epic Agency</p>
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                      width="25"
@@ -118,23 +120,24 @@
             @endfor
         </div>
     </article>
-    <article class="px-36 mt-36 mb-36" aria-labelledby="alumnis">
-        <div class="flex justify-between">
-            <h2 id="alumnis" role="heading" aria-level="2" class="text-4xl uppercase font-bold text-yellow-800 mb-16 font-sans">{{__('Nos alumnis en stage ici')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
+    <article class="xl:px-36 px-10 mt-36 mb-36" aria-labelledby="alumnis">
+        <div class="flex flex-col xl:flex-row justify-between mb-6">
+            <h2 class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis" aria-level="2"
+                role="heading">{{__('Nos alumnis en stage ici')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
         </div>
-        <div class="grid grid-cols-2 gap-x-24 gap-y-8">
+        <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @for($i=1; $i<5;$i++)
-                <article class="hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-6 px-8 rounded-3xl"
+                <article class="hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl"
                          aria-labelledby="{{'name'.$i}}">
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">
-                            <h4 id="{{'name'.$i}}" role="heading" aria-level="4" class="text-2xl">Gwenaëlle Batta</h4>
+                            <h4 id="{{'name'.$i}}" role="heading" aria-level="4" class="text-xl xl:text-2xl">Gwenaëlle Batta</h4>
                             <div class="mt-1 flex justify-between">
-                                <div class="flex gap-4">
-                                    <p class="uppercase text-lg">Ancien</p>
-                                    <p class="uppercase text-lg">2020-2023</p>
+                                <div class="flex flex-col xl:flex-row xl:gap-4">
+                                    <p class="uppercase xl:text-lg">Ancien</p>
+                                    <p class="uppercase xl:text-lg">2020-2023</p>
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg" width="25"
                                      viewBox="0 0 32 27.417">

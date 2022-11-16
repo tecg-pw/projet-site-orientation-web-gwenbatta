@@ -1,21 +1,21 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="px-36 mt-20 mb-40" aria-labelledby="slug">
-        <div class="flex justify-between">
+    <section class="xl:px-36 px-10 mt-20 xl:mb-40" aria-labelledby="slug">
+        <div class="flex flex-col xl:flex-row justify-between mb-8">
             <h2 id="slug" aria-level="2" role="heading"
-                class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Nom du projet')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
+                class="xl:text-4xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Nom du projet')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
-        <div class="flex">
+        <div class="flex xl:flex-row flex-col mt-20 xl:mt-0">
             <article class="relative mt-48" aria-labelledby="slug-auteur">
                 <img class="rounded-lg absolute -z-10 bottom-3/4" src="https://placehold.jp/276x276.png" alt="avatar">
                 <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
                     <h3 id="slug-auteur" aria-level="3" role="heading"
-                        class="underline text-green-700 hover:text-orange-500 font-medium text-2xl mb-2"><a
+                        class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl mb-2"><a
                             href="/user/profile">Gwenaëlle BATTA</a></h3>
                     <p class="mb-4">2020-2023</p>
-                    <a class="underline text-green-700 text-xl hover:text-orange-500" href="/">gwenaelle-batta.be</a>
+                    <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500" href="/">gwenaelle-batta.be</a>
                     <div class="flex justify-between gap-32 items-center mt-4 ">
                         <div class="flex flex-1 gap-3">
                             <svg class="hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="25"
@@ -43,38 +43,37 @@
                     </div>
                 </div>
             </article>
-            <div class="ml-28">
-                <p class="text-lg max-w-[85%] flex flex-col gap-8 leading-8">
+            <div class="xl:ml-28 xl:mt-0 mt-10">
+                <p class="text-lg xl:text-xl xl:max-w-[85%] flex flex-col gap-8 leading-8">
                     <span>{{__('«Ce site a été réalisé dans le cadre du cours de Design Web B2 afin présenter mes travaux effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et Javascript.')}}</span>
                     <span>{{__('Ce projet est un site destiné à présenter nos différents sites aux jurys de fin d’année 2021 et de montrer notre savoir-faire en Wordpress, langage que nous avons étudié lors du cours de Design Web B2. Il est aussi le projet que les entreprises iront voir lors de nos candidatures afin d’évoluer qui nous sommes et ce dont nous sommes capable. ')}}</span>
                 </p>
                 <div class="mt-8">
-                    <div class="flex gap-4 text-lg">
+                    <div class="flex xl:flex-row flex-col xl:gap-4 text-lg">
                         <p>{{__('Réaliser dans le cadre du cours de :')}}</p>
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
                            href="/cours/single">{{__('Design Web')}}</a>
                     </div>
-                    <div class="flex gap-4 text-lg">
+                    <div class="flex xl:flex-row flex-col mt-4 xl:mt-0 xl:gap-4 text-lg">
                         <p>{{__('Avec :')}}</p>
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
                            href="/bottin/teacher/name">{{__('Toon Van den Bos')}}</a>
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
                            href="/bottin/teacher/name">{{__('Maud Wéra')}}</a>
                     </div>
-                    <div class="mt-20 flex items-center gap-32">
+                    <div class="flex flex-col xl:flex-row xl:gap-32 mt-8 xl:items-center">
                         <a href="/"
-                           class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold ">{{__('Voir le portfolio')}}</a>
-                        <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
+                           class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('Voir le portfolio')}}</a>
+                        <a class="group hover:text-orange-500 flex font-sans text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"
                            href="/">
                 <span class="mr-2.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                         viewBox="0 0 38.97 38.005">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
                         <path class="group-hover:fill-orange-500" data-name="08774047e75405e5723edc2388e9bc78"
                               d="M21.484,2.247a19.484,19.484,0,0,0-6.162,37.968c.974.171,1.339-.414,1.339-.925,0-.463-.024-2-.024-3.629-4.9.9-6.162-1.193-6.551-2.289a7.084,7.084,0,0,0-2-2.752c-.682-.365-1.656-1.266-.024-1.291a3.9,3.9,0,0,1,3,2,4.164,4.164,0,0,0,5.674,1.607,4.1,4.1,0,0,1,1.242-2.606c-4.335-.487-8.865-2.168-8.865-9.62a7.583,7.583,0,0,1,2-5.236,7,7,0,0,1,.195-5.163s1.632-.511,5.358,2a18.368,18.368,0,0,1,9.742,0c3.726-2.533,5.358-2,5.358-2a7,7,0,0,1,.195,5.163,7.538,7.538,0,0,1,2,5.236c0,7.477-4.554,9.133-8.889,9.62a4.614,4.614,0,0,1,1.315,3.6c0,2.606-.024,4.7-.024,5.358,0,.511.365,1.12,1.339.925a19.494,19.494,0,0,0-6.21-37.968Z"
                               transform="translate(-1.999 -2.247)" fill="#4e6458"/>
                         </svg>
                     </span>
-                            <span>{{__('Voir le Github')}}</span>
+                            <span class="xl:mt-0 mt-1.5">{{__('Voir le Github')}}</span>
                         </a>
                     </div>
                 </div>
@@ -82,7 +81,7 @@
         </div>
 
     </section>
-    <section class="px-36 bg-yellow-600" aria-labelledby="photos">
+    <section class="xl:not-sr-only sr-only xl:px-36 px-10 bg-yellow-600" aria-labelledby="photos">
         <h2 id="photos" aria-level="2" role="heading" class="sr-only">{{__('Photos du projets')}}</h2>
         <figure class="grid grid-cols-4 grid-rows-2 gap-5  py-24">
             <img class="rounded-xl row-span-2" src="https://placehold.jp/395x584.png" alt="{{__('photo du projet')}}">
@@ -92,16 +91,16 @@
             <img class="rounded-xl " src="https://placehold.jp/330x278.png" alt="{{__('photo du projet')}}">
         </figure>
     </section>
-    <article class="px-36 mt-36 pb-40 pt-20" aria-labelledby="other">
-        <div class="justify-between flex">
-            <h2 id="other" aria-level="2" role="heading"
-                class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Autres projets')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
+    <article class="px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
+        <div class="justify-between flex flex-col mb-8 xl:flex-row">
+            <h2 id="projects" role="heading" aria-level="2"
+                class="xl:text-4xl text-yellow-800 text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Quelques projets')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
-        <div class="grid grid-cols-3 gap-8 justify-center">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
             @for($i=1; $i<4;$i++)
-                <x-project></x-project>
+                <x-project :i="$i"></x-project>
             @endfor
         </div>
     </article>

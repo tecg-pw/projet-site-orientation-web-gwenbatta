@@ -1,10 +1,10 @@
-<div {{ $attributes->class(['col-span-2  bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14']) }}>
-    <article class="pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
+<div {{ $attributes->class(['xl:not-sr-only sr-only col-span-2 bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14']) }}>
+    <article class="pl-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
         <h3 id="search" aria-level="3" role="heading"
             class="text-3xl font-sans font-light text-green-700 underline mb-6 mt-20">{{__('Rechercher')}}</h3>
         <x-search_bar></x-search_bar>
     </article>
-    <article class="pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="latest">
+    <article class="px-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="latest">
         <h3 id="latest" aria-level="3" role="heading"
             class="text-3xl font-light text-green-700 underline mb-6">{{__('Derniers sujet')}}</h3>
         <div class="flex flex-col gap-y-8">
@@ -43,7 +43,7 @@
             @endfor
         </div>
     </article>
-    <article class="pr-14 pb-10 mt-8" aria-labelledby="best-rating">
+    <article class="px-14 pb-10 mt-8" aria-labelledby="best-rating">
         <h3 id="best-rating" aria-level="3" role="heading"
             class="text-3xl font-light text-green-700 underline mb-6">{{__('Sujet Populaire')}}</h3>
         <div class="flex flex-col gap-y-8">
