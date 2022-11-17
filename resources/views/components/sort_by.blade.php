@@ -22,7 +22,7 @@
                     </option>
                 </select>
             </fieldset>
-            <fieldset class="flex flex-col ml-16">
+            <fieldset class="flex flex-col xl:ml-16">
                 <label for="year" class="text-lg text-green-500 mb-2">{{__('Année de sortie')}}</label>
                 <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold pl-2 pr-8 py-1" id="year"
                         name="year">

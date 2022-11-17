@@ -2,12 +2,12 @@
 <main>
     <x-recurrent_questions></x-recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
-        <<div class="px-10 xl:px-36 flex justify-between mb-8 xl:mb-24 items-center">
+        <div class="px-10 xl:px-36 flex justify-between mb-8 xl:mb-24 items-center">
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Le forum')}}</h2>
             @auth()
                 <a href="/forum/question"
-                   class="font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold mr-10">{{__('Ajouter un question')}}</a>
+                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('Ajouter un question')}}</a>
             @endauth
         </div>
         <x-sort_by_forum class="px-10 xl:px-36 mb-14"></x-sort_by_forum>
@@ -21,16 +21,28 @@
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
                href="/forum/my-talks#forum">{{__('Mes discussions')}}</a>
         </div>
-        <div class="grid grid-cols-5 gap-24 mb-36">
-            <div class="col-span-3 flex flex-col gap-y-8 pr-14 px-36 ">
+        <div class="xl:grid xl:grid-cols-5 gap-24 mb-36">
+            <div class="xl:col-span-3 flex flex-col gap-y-8 xl:pr-14 xl:px-36 px-10">
                 @for($i=1;$i<4;$i++)
-                    <article class="flex flex-col bg-yellow-100 py-6 px-10 rounded-xl" aria-labelledby="comment">
+                    <article class="flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl" aria-labelledby="comment">
                         <div class="hover:bg-orange-100 relative flex mb-5 rounded-xl order-3 bg-white-100 p-3 border-2 border-orange-500 gap-2">
                             <h3 id="comment" aria-level="3" role="heading"
-                                class="order-2 font-sans font-medium text-xl">
-                                    {{__('Question / sujet du forum ')}}
+                                class="order-2 font-sans font-medium xl:text-xl">
+                                    {{__('Faut-il être bon en math ?')}}
                             </h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" viewBox="0 0 34.194 34.196">
+                            <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25" viewBox="0 0 34.194 34.196">
+                                <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                    <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                          data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                          d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                          transform="translate(873 1771)" fill="#da953a"/>
+                                    <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                          data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                          d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                          transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                </g>
+                            </svg>
+                            <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 34.194 34.196">
                                 <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
                                     <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
                                           data-name="106780bf1ed9964c2ffe0eda53fe07ea"
@@ -44,16 +56,20 @@
                             </svg>
                             <a class="cursor-pointer linkcard" href="/forum/show">{{__('Voir le sujet')}}</a>
                         </div>
-                        <p class="leading-8 mt-6">
+                        <p class="xl:leading-8 xl:mt-6 mt-4">
                             {{__('Hello ! Je suis content que tu aies poser la question car je suis dans le même cas que toi et j’avoue que les maths ne me dérange pas mais je ne veux pas en faire mon métier pour autant. Je suis curieux aussi de savoir la réponse du coup !')}}
                         </p>
-                        <p class="text-green-500 font-medium text-lg mt-4 mb-2">{{__('Commentaire du sujet')}}</p>
+                        <p class="text-green-500 font-medium xl:text-lg mt-4 mb-0.5 xl:mb-2">{{__('Commentaire du sujet')}}</p>
                         <div class="flex -order-1 items-center ">
-                            <div class="order-2 ml-4">
-                                <p class="text-xl">Nom de l'auteur</p>
-                                <p class="">24 septembre 2022</p>
+                            <div class="order-2 ml-2 mt-1 xl:ml-4 xl:mt-0">
+                                <p class="text-lg xl:text-xl">Nom de l'auteur</p>
+                                <p class="xl:text-lg">24 septembre 2022</p>
                             </div>
-                            <img class="order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
+                            <img class="xl:sr-only order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
+                                 src="https://placehold.jp/75x75.png"
+                                 alt="Nom">
+
+                            <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
                                  src="https://placehold.jp/98x98.png"
                                  alt="Nom">
                         </div>

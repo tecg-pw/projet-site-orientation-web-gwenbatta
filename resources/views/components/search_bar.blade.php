@@ -1,4 +1,4 @@
-<div class="xl:justify-self-end max-w-[50%] xl:min-w-[23%]">
+<div {{ $attributes }}>
     <form action="/" method="GET" class="flex flex-col relative">
         <label class="hidden" for="search">{{__('Rechercher')}}</label>
         <span>

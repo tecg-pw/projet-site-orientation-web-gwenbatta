@@ -7,7 +7,7 @@
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Le forum')}}</h2>
             @auth()
                 <a href="/forum/question"
-                   class="font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold mr-10">{{__('Ajouter un question')}}</a>
+                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('Ajouter un question')}}</a>
             @endauth
         </div>
         <x-sort_by_forum class="px-10 xl:px-36 mb-14"></x-sort_by_forum>

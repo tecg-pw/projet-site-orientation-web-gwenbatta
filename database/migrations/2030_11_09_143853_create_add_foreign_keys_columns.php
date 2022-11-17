@@ -57,6 +57,10 @@ return new class extends Migration
             $table->foreignId('tool_id')->constrained()->onUpdate('cascade');
             $table->foreignId('classe_id')->constrained()->onUpdate('cascade');
         });
+        Schema::table('tuto_user', function (Blueprint $table) {
+            $table->foreignId('tuto_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade');
+        });
     }
 
     /**

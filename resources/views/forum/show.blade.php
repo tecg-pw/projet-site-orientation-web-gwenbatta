@@ -1,11 +1,21 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
     <section class="mt-20" aria-labelledby="sujet">
-        <div class="px-36 flex gap-5 mb-7 justify-between items-center">
-            <div class="flex gap-5 mb-5 items-center">
+        <div class="xl:px-36 px-10 flex flex-col xl:flex-row gap-5 mb-7 justify-between xl:items-center">
+            <div class="flex gap-5 xl:mb-5 xl:items-center">
                 <h2 role="heading" id="sujet" aria-level="2"
-                    class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('Question / sujet du forum')}}</h2>
-                <svg class="-order-1" xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 34.194 34.196">
+                    class="xl:text-4xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('Question / sujet du forum')}}</h2>
+                <svg class="xl:not-sr-only sr-only -order-1" xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 34.194 34.196">
+                    <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                        <path id="_106780bf1ed9964c2ffe0eda53fe07ea" data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                              d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                              transform="translate(873 1771)" fill="#da953a"/>
+                        <path id="_846e0b1f246b76024f36d97f9864a9c8" data-name="846e0b1f246b76024f36d97f9864a9c8"
+                              d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                              transform="translate(875.711 1774.888)" fill="#da953a"/>
+                    </g>
+                </svg>
+                <svg class="xl:sr-only -order-1" xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 34.194 34.196">
                     <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
                         <path id="_106780bf1ed9964c2ffe0eda53fe07ea" data-name="106780bf1ed9964c2ffe0eda53fe07ea"
                               d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
@@ -16,22 +26,25 @@
                     </g>
                 </svg>
             </div>
-            <a class="hover:text-orange-500 self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
+            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
                href="/forum/index">{{__('Retour au forum')}}</a>
         </div>
-        <div class="grid grid-cols-5 mb-36">
-            <div class="col-span-3 pl-36 pr-14 ">
+        <div class="xl:grid xl:grid-cols-5 mb-36">
+            <div class="xl:col-span-3 xl:pl-36 xl:pr-14 px-10">
                 <div class="mb-24">
-                    <div class="flex items-center">
-                        <img class="-order-1 mr-6 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
+                    <div class="flex items-center xl:gap-8">
+                        <img class="xl:not-sr-only sr-only -order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
                              src="https://placehold.jp/108x108.png"
                              alt="Nom">
+                        <img class="xl:sr-only -order-1 mr-4 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
+                             src="https://placehold.jp/84x84.png"
+                             alt="Nom">
                         <div class="flex flex-col">
-                            <p class="text-xl mb-2">Nom de l'auteur</p>
+                            <p class="xl:text-xl text-lg mb-2">Nom de l'auteur</p>
                             <p>03 novembre 2022</p>
                         </div>
                     </div>
-                    <p class="leading-8 text-lg mt-7">
+                    <p class="leading-8 xl:leading-10 xl:text-lg xl:mt-7 mt-4">
                         {{__('Je suis actuellement étudiant en secondaire mais la din d’année approche et je me pose des questions sur ma futur orientation. En effet, le monde du web m’attire mais je ne suis vraiement pas doué en math. Je n’aime pas les math et elle ne m’aime pas non plus. C’est pourquoi j’ai voulu me renseigner un peu à gauche et à droite en regardant des vidéos sur Youtube ou en interrogeant mes professeurs. Tous sont d’accord de dire qu’il faut être bon en math pour le web sinon je ne vais jamas y arriver. Pourriez-vous me donner votre avis sur la questions car je suis un peu démotiver du coup. Merci d’avance !')}}
                     </p>
                 </div>

@@ -32,7 +32,7 @@
                     </fieldset>
                     <div class="flex flex-1 xl:justify-end">
                         <input
-                            class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex-1 xl:flex-initial"
+                            class="hover:text-green-700 flex-1 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[40%]"
                             type="submit" value="{{__('Poser ma question')}}">
                     </div>
                 </form>
