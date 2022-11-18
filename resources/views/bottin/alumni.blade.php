@@ -9,18 +9,28 @@
         <x-sort_by class="px-10 xl:px-36 mb-14"></x-sort_by>
         <article class="px-10 flex flex-col gap-y-4 xl:px-36 xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8" aria-labelledby="list-bottin">
             <h3 id="list-bottin" role="heading" aria-level="3" class="sr-only">{{__('Liste du bottin')}}</h3>
-            @for($i=1; $i<9;$i++)
-                <article class="hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl"
-                         aria-labelledby="{{'name'.$i}}">
+            @foreach($people as $person)
+                <article
+                    class="hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl"
+                    aria-labelledby="{{$person->slug}}">
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">
-                            <h4 id="{{'name'.$i}}" role="heading" aria-level="4" class="text-xl xl:text-2xl">Gwenaëlle Batta</h4>
+                            <h4 id="{{$person->slug}}" role="heading" aria-level="4" class="text-xl xl:text-2xl">{{$person->firstname}} {{$person->name}}</h4>
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col xl:flex-row xl:gap-4">
-                                    <p class="uppercase xl:text-lg">Ancien</p>
-                                    <p class="uppercase xl:text-lg">2020-2023</p>
+                                    @if($person->status === 'teachalumni')
+                                        <p class="uppercase xl:text-lg">{{__('Ancien - Professeur')}}</p>
+                                    @else
+                                        <p class="uppercase xl:text-lg">{{$person->status}}</p>
+                                    @endif
+                                    @if($person->end === null)
+                                        <p class="uppercase xl:text-lg">{{$person->begin}}</p>
+                                    @else
+                                        <p class="uppercase xl:text-lg">{{$person->begin}}-{{$person->end}}</p>
+                                    @endif
                                 </div>
-                                <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg" width="25"
+                                <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
+                                     width="25"
                                      viewBox="0 0 32 27.417">
                                     <path id="e6c07a72bd494f72e4a4d962e39f725c"
                                           d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
@@ -28,13 +38,12 @@
                                 </svg>
                             </div>
                         </div>
-                        <img class="order-1 rounded-full" src="/img-redimensions/test.jpeg" alt="avatar">
+                        <img class="order-1 rounded-full" width="98" src="{{$person->avatar}}" alt="avatar">
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/bottin/teacher/name">{{__('En savoir plus')}}</a>
+                       href="/bottin/teacher/name">{{__('En savoir plus sur' . $person->name)}}</a>
                 </article>
-            @endfor
-
+            @endforeach
             {{--                {{$posts->links()}}--}}
         </article>
         <x-testimonials></x-testimonials>

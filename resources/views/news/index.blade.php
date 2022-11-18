@@ -6,17 +6,17 @@
             <x-search_bar class=""></x-search_bar>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-6 xl:justify-center">
-            @for($i=1; $i<7;$i++)
-                <article class="group flex-col flex bg-yellow-100 rounded-3xl relative"
-                         aria-labelledby="{{'slug-event'}}">
+            @foreach($news as $new)
+                <article class="group hover:bg-orange-100 flex-col flex bg-yellow-100 rounded-3xl relative"
+                         aria-labelledby="{{$new->slug}}">
                     <div class="flex-col flex px-4 mt-6">
                         <div class="flex justify-between mb-3">
                             <h3 class="text-xl xl:text-3xl " role="heading" aria-level="3"
-                                id="{{'slug'}}">{{__('Porte ouverte')}}</h3>
-                            <p class="xl:text-xl relative z-30">{{__('30 avr. 2022')}}</p>
+                                id="{{$new->slug}}">{{$new->name}}</h3>
+                            <p class="xl:text-xl relative z-30">{{$new->date}}</p>
                         </div>
                         <div class="flex justify-between mb-4">
-                            <p class="max-w-[80%]">Les portes ouvertes de la HEPL vous permettra de visiter l’école de votre choix et de rencontrer les professeurs</p>
+                            <p class="max-w-[80%]">{{__($new->excerpt)}}</p>
                             <svg class="group-hover:mr-0 mr-2 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                                  viewBox="0 0 32 27.417">
                                 <path
@@ -24,13 +24,14 @@
                                     transform="translate(-19 -8.001)" fill="#4e6458"/>
                             </svg>
                         </div>
-                        <a class="self-end linkcard" href="/news/single">{{__('Voir le projet')}}</a>
+                        <a class="self-end linkcard" href="/news/single">{{__('Voir l\'évènement')}}</a>
                     </div>
                     <figure class="order-first">
-                        <img class="rounded-t-3xl" src="https://placehold.jp/526x526.png" alt="">
+                        <img class="rounded-t-3xl" src="{{$new->main_picture}}" alt="">
                     </figure>
                 </article>
-            @endfor
+            @endforeach
+                {{$news->links()}}
         </div>
     </article>
 </main>

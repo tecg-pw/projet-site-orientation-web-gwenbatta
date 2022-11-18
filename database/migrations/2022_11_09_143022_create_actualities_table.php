@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('lieu');
             $table->string('link');
+            $table->string('main_picture');
             $table->json('gallery')->nullable();
             $table->timestamps();
             $table->timestamp('date')->nullable();

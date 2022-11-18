@@ -6,10 +6,11 @@
             <x-search_bar class=""></x-search_bar>
         </div>
         <div class="xl:grid xl:grid-cols-3 flex flex-col gap-8 justify-center">
-            @for($i=1; $i<10;$i++)
-                <x-project></x-project>
-            @endfor
+            @foreach($projects as $project)
+                <x-project :project="$project"></x-project>
+            @endforeach
         </div>
+        {{$projects->links()}}
     </article>
 </main>
 <x-commons.footer></x-commons.footer>

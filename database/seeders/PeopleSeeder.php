@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\People;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use File;
@@ -25,7 +26,7 @@ class PeopleSeeder extends Seeder
                 "firstname" => $value->firstname,
                 "slug" => \Str::slug($value->name.$value->firstname),
                 "status" => $value->status,
-                "photo" => $value->photo,
+                "avatar" => $value->avatar,
                 "description" => $value->description,
                 "link_portfolio" => $value->link_portfolio,
                 "link_github" => $value->link_github,

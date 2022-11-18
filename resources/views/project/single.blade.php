@@ -1,21 +1,21 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section class="xl:px-36 px-10 mt-20 xl:mb-40" aria-labelledby="slug">
+    <section class="xl:px-36 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
         <div class="flex flex-col xl:flex-row justify-between mb-8">
-            <h2 id="slug" aria-level="2" role="heading"
-                class="xl:text-4xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Nom du projet')}}</h2>
+            <h2 id="{{$project->slug}}" aria-level="2" role="heading"
+                class="xl:text-4xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$project->title}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
         <div class="flex xl:flex-row flex-col mt-20 xl:mt-0">
-            <article class="relative mt-48" aria-labelledby="slug-auteur">
-                <img class="rounded-lg absolute -z-10 bottom-3/4" src="https://placehold.jp/276x276.png" alt="avatar">
+            <article class="relative mt-48" aria-labelledby="{{$project->person->slug}}">
+                <img class="rounded-lg absolute -z-10 bottom-3/4" src="{{$project->person->avatar}}" alt="avatar">
                 <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
-                    <h3 id="slug-auteur" aria-level="3" role="heading"
+                    <h3 id="{{$project->person->slug}}" aria-level="3" role="heading"
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl mb-2"><a
-                            href="/user/profile">Gwenaëlle BATTA</a></h3>
-                    <p class="mb-4">2020-2023</p>
-                    <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500" href="/">gwenaelle-batta.be</a>
+                            href="/user/profile">{{$project->person->firstname}} {{$project->person->name}}</a></h3>
+                    <p class="mb-4">{{$project->person->begin}}-{{$project->person->end}}</p>
+                    <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500" href="/">{{$project->person->link_portfolio}}</a>
                     <div class="flex justify-between gap-32 items-center mt-4 ">
                         <div class="flex flex-1 gap-3">
                             <svg class="hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="25"
@@ -45,27 +45,27 @@
             </article>
             <div class="xl:ml-28 xl:mt-0 mt-10">
                 <p class="text-lg xl:text-xl xl:max-w-[85%] flex flex-col gap-8 leading-8">
-                    <span>{{__('«Ce site a été réalisé dans le cadre du cours de Design Web B2 afin présenter mes travaux effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et Javascript.')}}</span>
-                    <span>{{__('Ce projet est un site destiné à présenter nos différents sites aux jurys de fin d’année 2021 et de montrer notre savoir-faire en Wordpress, langage que nous avons étudié lors du cours de Design Web B2. Il est aussi le projet que les entreprises iront voir lors de nos candidatures afin d’évoluer qui nous sommes et ce dont nous sommes capable. ')}}</span>
+                    {{$project->description}}
                 </p>
                 <div class="mt-8">
                     <div class="flex xl:flex-row flex-col xl:gap-4 text-lg">
                         <p>{{__('Réaliser dans le cadre du cours de :')}}</p>
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
-                           href="/cours/single">{{__('Design Web')}}</a>
+                           href="/cours/single">{{__(var_dump($project->classe))}}</a>
                     </div>
                     <div class="flex xl:flex-row flex-col mt-4 xl:mt-0 xl:gap-4 text-lg">
                         <p>{{__('Avec :')}}</p>
+
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
                            href="/bottin/teacher/name">{{__('Toon Van den Bos')}}</a>
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
                            href="/bottin/teacher/name">{{__('Maud Wéra')}}</a>
                     </div>
                     <div class="flex flex-col xl:flex-row xl:gap-32 mt-8 xl:items-center">
-                        <a href="/"
+                        <a href="{{$project->person->link_portfolio}}"
                            class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('Voir le portfolio')}}</a>
                         <a class="group hover:text-orange-500 flex font-sans text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"
-                           href="/">
+                           href="{{$project->person->link_github}}">
                 <span class="mr-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
                         <path class="group-hover:fill-orange-500" data-name="08774047e75405e5723edc2388e9bc78"
@@ -99,9 +99,9 @@
                href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
-            @for($i=1; $i<4;$i++)
-                <x-project :i="$i"></x-project>
-            @endfor
+            @foreach($projects as $project)
+                <x-project :project="$project"></x-project>
+            @endforeach
         </div>
     </article>
 </main>

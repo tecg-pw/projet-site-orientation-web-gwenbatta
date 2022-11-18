@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ActualityController;
+use App\Http\Controllers\PersonController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,19 +27,13 @@ Route::get('/legals', function () {
 });
 
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [AboutController::class, 'index']);
 Route::get('/about/job/single', function () {
     return view('about.job.single');
 });
 
-Route::get('/project/index', function () {
-    return view('project.index');
-});
-Route::get('/project/single', function () {
-    return view('project.single');
-});
+Route::get('/project/index', [ProjectController::class, 'index']);
+Route::get('/project/{project:slug}', [ProjectController::class, 'show']);
 
 Route::get('/technical/index', function () {
     return view('technical.index');
@@ -71,21 +69,13 @@ Route::get('/entreprise/internship/single', function () {
 });
 
 
-Route::get('/bottin', function () {
-    return view('bottin');
-});
-Route::get('/bottin/alumni', function () {
-    return view('bottin.alumni');
-});
+Route::get('/bottin', [PersonController::class, 'index']);
+Route::get('/bottin/alumni', [PersonController::class, 'indexAlumni']);
 Route::get('/bottin/alumni/name', function () {
     return view('bottin.alumni.name');
 });
-Route::get('/bottin/teacher/name', function () {
-    return view('bottin.teacher.name');
-});
-Route::get('/bottin/teachalumni/name', function () {
-    return view('bottin.teachalumni.name');
-});
+Route::get('/bottin/teacher/{teacher:slug}', [PersonController::class, 'showTeacher']);
+Route::get('/bottin/teachalumni/{teacher:slug}', [PersonController::class, 'showTeachAlumni']);
 Route::get('/bottin/student/name', function () {
     return view('bottin.student.name');
 });
@@ -143,9 +133,7 @@ Route::get('/forum/my-talks', function () {
 
 
 
-Route::get('/news/index', function () {
-    return view('news.index');
-});
+Route::get('/news/index', [ActualityController::class, 'index']);
 Route::get('/news/single', function () {
     return view('news.single');
 });

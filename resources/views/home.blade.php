@@ -19,9 +19,9 @@
         </div>
         <div class="xl:flex-1">
             <figure class=" xl:grid xl:grid-rows-2 xl:grid-cols-2 xl:gap-8">
-                <img class="sr-only xl:not-sr-only xl:rounded-3xl xl:row-span-2 xl:min-h-full" src="https://placehold.jp/396x584.png" alt="">
-                <img class="sr-only xl:not-sr-only xl:rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
-                <img class="sr-only xl:not-sr-only xl:rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
+                <img class="sr-only xl:not-sr-only xl:rounded-3xl xl:row-span-2 xl:min-h-full" src="/img-redimensions/test.jpg" alt="">
+                <img class="sr-only xl:not-sr-only xl:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438081.jpeg" alt="">
+                <img class="sr-only xl:not-sr-only xl:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438084.jpg" alt="">
             </figure>
         </div>
     </section>
@@ -105,9 +105,9 @@
         </div>
         <div class="sr-only xl:not-sr-only flex-1">
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
-                <img class="rounded-3xl row-span-2 min-h-full" src="https://placehold.jp/396x584.png" alt="">
-                <img class="rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
-                <img class="rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
+                <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/girl-260x481.jpg" alt="">
+                <img class="rounded-3xl" src="/img-redimensions/pexels-olya-kobruseva-5428836.jpg" alt="">
+                <img class="rounded-3xl" src="/img-redimensions/student-g0a8698c9e_1920.jpg" alt="">
             </figure>
         </div>
     </section>

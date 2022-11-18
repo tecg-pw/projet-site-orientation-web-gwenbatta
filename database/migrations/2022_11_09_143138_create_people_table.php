@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('slug');
             $table->string('status');
-            $table->string('photo')->nullable();
+            $table->string('avatar')->nullable();
             $table->text('description')->nullable();
             $table->string('link_portfolio')->nullable();
             $table->string('link_github');

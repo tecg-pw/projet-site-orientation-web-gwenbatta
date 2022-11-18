@@ -27,6 +27,7 @@ class ActualitySeeder extends Seeder
                 "description" => $value->description,
                 "lieu" => $value->lieu,
                 "link" => $value->link,
+                "main_picture" => $value->main_picture,
                 "gallery" => $value->gallery,
             ]);
         }

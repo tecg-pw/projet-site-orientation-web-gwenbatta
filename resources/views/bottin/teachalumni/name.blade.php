@@ -3,7 +3,7 @@
     <section class="mt-20 px-10 xl:px-36 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold xl:flex-row">
             <h2 id="name" role="heading" aria-level="2"
-                class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{__('Nom de l\'ancien')}}</h2>
+                class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$teachalumni->name}}</h2>
             <a class="underline xl:text-2xl hover:text-orange-500" href="/bottin/alumni">{{__('Voir d\'autres alumni')}}</a>
         </div>
         <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mt-16">
@@ -11,7 +11,7 @@
                 <div class="flex gap-12">
                     <div>
                         <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
-                            <p class="">Ancien</p>
+                            <p class="">{{$teachalumni->status}}</p>
                             <p>Année scolaire</p>
                             <a class="hover:text-orange-500 underline text-green-700" href="/about/job/single">Métier</a>
                         </div>
@@ -92,9 +92,12 @@
                href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
-            @for($i=1; $i<7;$i++)
-                <x-project :i="$i"></x-project>
-            @endfor
+            @foreach($projects as $project)
+                <x-project :project="$project"></x-project>
+            @endforeach
+            @if(count($projects) === 0)
+                <p class="xl:text-xl text-lg">{{__('Aucun projet pour l\'instant')}}</p>
+            @endif
         </div>
     </article>
 </main>
