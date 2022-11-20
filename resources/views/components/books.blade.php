@@ -1,5 +1,5 @@
 <article {{ $attributes->class(['bg-yellow-600 px-10 xl:px-36 pb-36 pt-20']) }} aria-labelledby="books">
-    <h2 id="books" aria-level="2" role="heading" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-20">{{__('Livres indispensable')}}</h2>
+    <h2 id="books" aria-level="2" role="heading" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-20">{{__('docandtool.book_title')}}</h2>
     <div class="mt-12 xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
         <article class="group relative bg-white-100 hover:bg-orange-100 py-6 px-8 rounded-3xl" aria-labelledby="ergonomie-web">
             <div class="flex justify-between">

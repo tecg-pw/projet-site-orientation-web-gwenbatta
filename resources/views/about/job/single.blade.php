@@ -115,9 +115,9 @@
                href="/project/index">{{__('Voir tous les projets')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 flex flex-col gap-8 justify-center">
-            @for($i=1; $i<4;$i++)
-                <x-project></x-project>
-            @endfor
+{{--            @for($i=1; $i<4;$i++)--}}
+{{--                <x-project></x-project>--}}
+{{--            @endfor--}}
         </div>
     </article>
 </main>

@@ -2,13 +2,13 @@
 <main class="">
     <section class="mt-20" aria-labelledby="alumni">
         <div class="px-10 flex flex-col xl:px-36 xl:flex-row justify-between mb-7 xl:items-center">
-            <h2 id="almuni" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('Alumni')}}</h2>
+            <h2 id="almuni" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('people.alumni_title')}}</h2>
             <x-search_bar class=""></x-search_bar>
         </div>
-        <p class="px-10 xl:pl-36 mb-7 xl:max-w-[47%] xl:text-xl xl:leading-10">{{__('Vous trouverez sur cette page une liste de tous nos anciens étudiants avec qui nous gardons contact')}}</p>
+        <p class="px-10 xl:pl-36 mb-7 xl:max-w-[47%] xl:text-xl xl:leading-10">{{__('people.alumni_text')}}</p>
         <x-sort_by class="px-10 xl:px-36 mb-14"></x-sort_by>
         <article class="px-10 flex flex-col gap-y-4 xl:px-36 xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8" aria-labelledby="list-bottin">
-            <h3 id="list-bottin" role="heading" aria-level="3" class="sr-only">{{__('Liste du bottin')}}</h3>
+            <h3 id="list-bottin" role="heading" aria-level="3" class="sr-only">{{__('people.alumni_list_title')}}</h3>
             @foreach($people as $person)
                 <article
                     class="hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl"

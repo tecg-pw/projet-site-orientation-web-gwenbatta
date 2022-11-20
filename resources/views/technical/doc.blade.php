@@ -3,16 +3,16 @@
     <section class="xl:px-36 px-10 mt-20 mb-32 xl:mb-64" aria-labelledby="doc-and-tool">
         <div class="flex justify-between mb-7 items-center">
             <h2 id="doc-and-tool" role="heading" aria-level="2"
-                class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('Documentations et outils')}}</h2>
+                class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('docandtool.doc_tool_title')}}</h2>
         </div>
-        <p class="mb-8 text-lg leading-8 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('Vous trouverez sur cette page de la documentation et les outils qui vous seront utiles durant votre cursus que ce soit lors de votre première ou au sein de l’option web.')}}</p>
+        <p class="mb-8 text-lg leading-8 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('docandtool.doc_tool_text')}}</p>
         <article aria-labelledby="list-doc">
             <h3 id="list-doc" role="heading" aria-level="3" class="sr-only">{{__('Liste de documentations')}}</h3>
             <div class="flex justify-between xl:justify-start  mb-12">
                 <a class="text-xl rounded-lg underline text-green-700 font-semibold font-sans xl:mr-36 bg-orange-100 px-5 py-2"
-                   href="/technical/docandtool/doc">{{__('Documentations')}}</a>
+                   href="/technical/docandtool/doc">{{__('docandtool.doc_link')}}</a>
                 <a class="text-xl underline text-green-700 font-semibold font-sans px-5 py-2"
-                   href="/technical/docandtool/tool">{{__('Outils')}}</a>
+                   href="/technical/docandtool/tool">{{__('docandtool.tool_link')}}</a>
             </div>
             <div class="mt-12 xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
                 <article aria-labelledby="php" class="bg-yellow-100 hover:bg-orange-100 relative group py-6 px-8 rounded-3xl">

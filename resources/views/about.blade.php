@@ -5,12 +5,10 @@
             <h2 class="text-2xl leading-8 mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-16 font-sans"
                 role="heading" aria-level="2"
                 id="about">
-                {{__('À propos de la section')}}
+                {{__('about.about_title')}}
             </h2>
             <p class="text-lg xl:leading-10 xl:text-xl">
-                {{__('L’option Web forme des spécialistes en design Web, en design d’interaction et en développement d’applications mobiles. Les étudiantes et les étudiants sont formés pour être capables de s’occuper des aspects visuels des interfaces et des expériences d’utilisation qu’en auront les utilisateurs.
-    Leur formation leur permet de gérer les deux aspects : technique et visuel.
-    Ils donnent donc vie au projet du designer ou du graphiste et le transforme en un produit qui fonctionne dans un environnement technique.')}}
+                {{__('about.about_text')}}
             </p>
         </div>
         <div class="sr-only xl:not-sr-only flex-1">
@@ -23,23 +21,23 @@
     </section>
     <section class="bg-yellow-600 mt-20 px-10 py-14 xl:py-20 xl:px-36" aria-labelledby="course">
         <h2 id="course" aria-level="2" role="heading"
-            class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('Description du bachelier option web')}}</h2>
+            class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.course_title')}}</h2>
         <div class="flex flex-col gap-y-12 xl:flex-row justify-between">
             <section
                 class="border-b-2 border-b-orange-500/40 pb-10 xl:border-b-0 xl:border-r-2 xl:pr-10 xl:border-r-orange-500/40"
                 aria-labelledby="first-year">
                 <h3 class="text-xl mb-7 xl:text-2xl uppercase font-medium xl:mb-14" id="first-year" aria-level="3"
-                    role="heading">{{__('1er Année')}}</h3>
-                <p class="xl:text-lg">{{__('Cours du tronc commun')}}</p>
+                    role="heading">{{__('about.course_first')}}</h3>
+                <p class="xl:text-lg">{{__('about.course_commons')}}</p>
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="web">
-                    <h4 class="font-semibold" id="web" aria-level="4" role="heading">{{__('Cours de web')}}</h4>
+                    <h4 class="font-semibold" id="web" aria-level="4" role="heading">{{__('about.course_web_title')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col xl:gap-2">
-                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('CSS')}}</a>
-                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('HTML')}}</a>
-                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('Design Web')}}</a>
+                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('about.course_CSS')}}</a>
+                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('about.course_HTML')}}</a>
+                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('about.course_design_web')}}</a>
                             <a class="hover:text-orange-500 underline"
-                               href="/cours/show">{{__('Initialisation à la programmation')}}</a>
+                               href="/cours/show">{{__('course_programming')}}</a>
                         </div>
                         <div class="flex flex-col ml-8 xl:gap-2">
                             <p>{{__('60H')}}</p>
@@ -50,13 +48,13 @@
                     </div>
                 </section>
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="3D">
-                    <h4 class="font-semibold" id="3D" aria-level="4" role="heading">{{__('Cours de 3D/Vidéo')}}</h4>
+                    <h4 class="font-semibold" id="3D" aria-level="4" role="heading">{{__('about.course_3D_title')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col xl:gap-2">
-                            <p>{{__('Vidéo')}}</p>
-                            <p>{{__('Photo')}}</p>
-                            <p>{{__('Création infographique 3D')}}</p>
-                            <p>{{__('Introduction à l\'animation 3D')}}</p>
+                            <p>{{__('about.course_video')}}</p>
+                            <p>{{__('about.course_photo')}}</p>
+                            <p>{{__('about.course_creation_3d')}}</p>
+                            <p>{{__('about.course_creation_animation_3d')}}</p>
                         </div>
                         <div class="flex flex-col xl:gap-2">
                             <p>{{__('75H')}}</p>
@@ -68,12 +66,12 @@
                 </section>
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="graphic-design">
                     <h4 class="font-semibold" id="graphic-design" aria-level="4"
-                        role="heading">{{__('Cours de Design Graphique')}}</h4>
+                        role="heading">{{__('about.course_design_graphique_title')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col xl:gap-2">
-                            <p>{{__('Création infographique 2D')}}</p>
-                            <p>{{__('Image et argumentation')}}</p>
-                            <p>{{__('Introduction à l\'image numérique')}}</p>
+                            <p>{{__('about.course_creation_2d')}}</p>
+                            <p>{{__('about.course_image_argumentation')}}</p>
+                            <p>{{__('about.course_numeric_image')}}</p>
                         </div>
                         <div class="flex flex-col xl:gap-2">
                             <p>{{__('60H')}}</p>
@@ -87,11 +85,11 @@
                 class="border-b-2 border-b-orange-500/40 pb-10 xl:border-b-0 xl:border-r-2 xl:pr-10 xl:border-r-orange-500/40"
                 aria-labelledby="second-year">
                 <h3 class="text-xl mb-7 xl:text-2xl uppercase font-medium xl:mb-14" id="second-year" aria-level="3"
-                    role="heading">{{__('2e Année')}}</h3>
-                <p class="xl:text-lg">{{__('Cours du tronc commun')}}</p>
+                    role="heading">{{__('about.course_second')}}</h3>
+                <p class="xl:text-lg">{{__('about.course_commons')}}</p>
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="second-web">
                     <h4 class="sr-only font-semibold" id="second-web" aria-level="3"
-                        role="heading">{{__('Cours de web')}}</h4>
+                        role="heading">{{__('about.course_web_title')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col xl:gap-2">
                             <a class="underline hover:text-orange-500" href="/cours/show">{{__('Design Web')}}</a>
@@ -118,8 +116,8 @@
             </section>
             <section aria-labelledby="third-year">
                 <h3 class="text-xl mb-7 xl:text-2xl uppercase font-medium xl:mb-14" id="third-year" aria-level="3"
-                    role="heading">{{__('3e Année')}}</h3>
-                <p class="xl:text-lg">{{__('Cours du tronc commun')}}</p>
+                    role="heading">{{__('about.course_third')}}</h3>
+                <p class="xl:text-lg">{{__('about.course_commons')}}</p>
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="third-web">
                     <h4 class="sr-only font-semibold" id="third-web" aria-level="3"
                         role="heading">{{__('Cours de web')}}</h4>
@@ -148,11 +146,11 @@
             <h2 class="text-2xl mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-20 font-sans" role="heading"
                 aria-level="2"
                 id="profs">
-                {{__('Liste des Professeurs de la section')}}
+                {{__('about.teacher_title')}}
             </h2>
             <div
                 class="hover:text-orange-500 flex xl:justify-end text-green-700 underline font-sans text-lg xl:text-2xl font-semibold">
-                <a href="/bottin/alumni">{{__('Voir le bottin')}}</a>
+                <a href="/bottin/alumni">{{__('about.teacher_button')}}</a>
             </div>
         </div>
         <div class="xl:grid xl:grid-cols-2 flex flex-col gap-y-60 xl:mt-60 xl:gap-y-40 xl:gap-x-60">
@@ -206,7 +204,7 @@
     </section>
     <article class="bg-yellow-600 px-10 xl:px-36 pb-36 pt-20" aria-labelledby="jobs">
         <h2 id="jobs" aria-level="2" role="heading"
-            class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('Débouchées')}}</h2>
+            class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.job_title')}}</h2>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             <article aria-labelledby="ux" class="bg-white-100 py-6 px-8 rounded-3xl relative">
                 <h3 id="ux" aria-level="3" role="heading"

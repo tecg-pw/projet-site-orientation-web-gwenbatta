@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Développer front-end",
+    "excerpt": "Le développeur front end programme la partie visible, l’interface utilisateur d’une app ou d’un site web à l’inverse du développeur back-end qui travaille dans l’ombre. Son métier ressemble à celui d’un intégrateur web, mais il a un rôle plus important dans la création d’une solution web.",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 2,
+    "name": "Développer back-end",
+    "excerpt": "Le développeur back-end programme la partie cachée d’une solution web, le côté serveur, administrateur d’une app ou d’un site web, contrairement au développeur front-end qui s’occupe de la partie visible.",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 3,
+    "name": "Designer d'expérience utilisateur (UX Designer)",
+    "excerpt": "L’UX design (pour design d’expérience utilisateur en français) est le processus de conception de produits utiles, faciles et agréables à utiliser. Prenant racine dans le design d’expérience, il s’agit d’améliorer l’expérience des utilisateurs qui interagissent avec votre produit (numérique ou physique)",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 4,
+    "name": "Designer Multimédia",
+    "excerpt": "Le designer graphique et multimédia (également appelé webdesigner) est un dessinateur-maquettiste travaillant sur des supports électroniques : pages web, cédéroms, habillage TV ou vidéo. Sa mission ? Donner une identité forte à ces différents supports.",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 5,
+    "name": "Développeur Multimédia",
+    "excerpt": "Le Développeur Multimédia assure la conduite technique du projet c’est à dire l’ application du scénario, la manipulation d’outils graphiques, la mise en œuvre internet. Son métier se positionne au croisement de trois domaines, infographie, interface web et multimédia dont il manipule à la perfection.",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 6,
+    "name": "Designer d'interface (UI Designer)",
+    "excerpt": "UI est l’abréviation d’user interface ou interface utilisateur. L’UI design se rapporte donc à l’environnement graphique dans lequel évolue l’utilisateur d’un logiciel, d’un site web ou d’une application. La mission de l’UI designer consiste à créer une interface agréable et pratique, facile à prendre en main.",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 7,
+    "name": "Développeur web",
+    "excerpt": "Il s’occupe de la partie technique des sites. A la demande d’un client ou d’une entreprise et sur base d’un cahier des charges. Spécialiste des langages informatiques, il prend en charge l’ensemble des fonctionnalités du site, son architecture, l’accès aux données ainsi que l’écriture des lignes de codes .",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 8,
+    "name": "Designer web",
+    "excerpt": "Mi-graphiste, mi-informaticien, le web- designer est spécialisé dans la création des pages Web. Il s’occupe de tout l’aspect graphique d’un site Internet (illustrations, animations, typographie…). Il choisit la place des photos, la taille des caractères et les couleurs qui rendront la consultation agréable pour l’utilisateur.",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 7,
+    "name": "Développeur mobile",
+    "excerpt": "Le développeur mobile iOS/ Android se consacre à la création ou à la mise à jour d’applications destinées à fonctionner sur des appareils mobiles embarquant l’un ou l’autre de ces systèmes d’exploitation.",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  },
+    {
+    "id": 8,
+    "name": "Designer mobile",
+    "excerpt": "Le designer mobile est le créateur et le développeur des applications mobiles et des interfaces des entreprises. Il met sa créativité et ses connaissances au service de ses clients. Il crée des designs, des vidéos ou encore des sons pour mettre en valeur les produits et les services de ses clients.",
+    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null
+  }
+]

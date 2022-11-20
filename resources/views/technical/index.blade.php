@@ -5,10 +5,10 @@
             <h2 class="xl:text-4xl text-2xl leading-8 mb-6 uppercase font-bold text-yellow-800 xl:mb-16 font-sans"
                 role="heading" aria-level="2"
                 id="technical">
-                {{__('Pratico-Pratique')}}
+                {{__('technicals.technical_title')}}
             </h2>
             <p class="text-lg xl:leading-10 xl:text-xl">
-                {{__('Sur cette page, vous trouverez tout ce qui peut vous être utile que ce soit au sein de l’option web, au travers de ce site ou encore pour préparer au mieux votre rentrée en web par des petits tutoriels qui vous sont proposer, une section glossaire où vous retrouverez des termes très important pour le web et votre vision du web et enfin une section avec quelques questions posées sur notre forum qui vous permettront de vous éclairer sur ce que propose l’orientation et sur les questions que vous vous posez sans doute vous-même. ')}}
+                {{__('technicals.technical_text')}}
             </p>
         </div>
         <div class="sr-only xl:not-sr-only flex-1">
@@ -23,9 +23,9 @@
     <article class="px-10 mt-14 mb-20 xl:px-36 xl:mt-36 xl:mb-36" aria-labelledby="glossary">
         <div class="flex flex-col mb-8 xl:flex-row justify-between">
             <h2 id="glossary" aria-level="2" role="heading"
-                class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 mb-4 xl:mb-16 font-sans">{{__('Quelques termes techniques')}}</h2>
+                class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 mb-4 xl:mb-16 font-sans">{{__('technicals.glossary_title')}}</h2>
             <a class="hover:text-orange-500 font-sans text-green-700 xl:text-3xl font-semibold underline xl:px-4"
-               href="/technical/glossary">{{__('Voir plus de termes')}}</a>
+               href="/technical/glossary">{{__('technicals.glossary_button')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 flex flex-col gap-y-4 xl:gap-x-24 xl:gap-y-8">
             @for($i=1; $i<5;$i++)
@@ -36,9 +36,9 @@
     <article class="bg-yellow-600 px-10 xl:px-36 pt-20 pb-28" aria-labelledby="tutos">
         <div class="flex flex-col mb-8 xl:flex-row justify-between">
             <h2 id="tutos" aria-level="2" role="heading"
-                class="text-2xl xl:text-4xl uppercase font-bold mb-4 xl:mb-16 font-sans">{{__('Quelques tutos')}}</h2>
+                class="text-2xl xl:text-4xl uppercase font-bold mb-4 xl:mb-16 font-sans">{{__('technicals.tuto_title')}}</h2>
             <a class="hover:text-orange-500  font-sans text-green-700 xl:text-3xl font-semibold underline xl:px-4"
-               href="/technical/tuto">{{__('Voir plus de tutos')}}</a>
+               href="/technical/tuto">{{__('technicals.tuto_button')}}</a>
         </div>
         <div class="flex gap-y-4 flex-col xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8">
             @for($i=1; $i<5;$i++)
@@ -50,9 +50,9 @@
     <article class="xl:px-36 px-10 mt-36 mb-36">
         <div class="flex flex-col mb-8 xl:flex-row justify-between">
             <h2 id="tutos" aria-level="2" role="heading"
-                class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 mb-4 xl:mb-16 font-sans">{{__('Documentations')}}</h2>
+                class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 mb-4 xl:mb-16 font-sans">{{__('technicals.doc_title')}}</h2>
             <a class="hover:text-orange-500  font-sans text-green-700 xl:text-3xl font-semibold underline xl:px-4"
-               href="/technical/docandtool/doc">{{__('Voir plus de documentations')}}</a>
+               href="/technical/docandtool/doc">{{__('technicals.doc_button')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4 ">
             <article aria-labelledby="php" class="group relative bg-yellow-100 py-6 px-8 rounded-3xl">
