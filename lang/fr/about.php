@@ -30,6 +30,7 @@ return [
     'teacher_title' => 'Liste des Professeurs de la section',
     'teacher_button' => 'Voir le bottin',
     'job_title' => 'Débouchées',
+    'job_more' => 'Voir plus sur ',
 
 
 ];

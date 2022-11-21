@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('instagram')->nullable();
             $table->string('mail');
             $table->string('job')->nullable();
+            $table->string('job_slug')->nullable();
             $table->json('gallery')->nullable();
             $table->timestamps();
             $table->timestamp('begin');

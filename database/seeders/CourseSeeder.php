@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Classe;
+use App\Models\Course;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ClasseSeeder extends Seeder
+class CourseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,7 +20,7 @@ class ClasseSeeder extends Seeder
         $classes = json_decode($json);
 
         foreach ($classes as $key => $value) {
-            Classe::create([
+            Course::create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "hours" => $value->hours,

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Développer front-end",
+    "name": "Développeur front-end",
     "excerpt": "Le développeur front end programme la partie visible, l’interface utilisateur d’une app ou d’un site web à l’inverse du développeur back-end qui travaille dans l’ombre. Son métier ressemble à celui d’un intégrateur web, mais il a un rôle plus important dans la création d’une solution web.",
     "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
     "created_at": null,
@@ -10,9 +10,9 @@
   },
     {
     "id": 2,
-    "name": "Développer back-end",
-    "excerpt": "Le développeur back-end programme la partie cachée d’une solution web, le côté serveur, administrateur d’une app ou d’un site web, contrairement au développeur front-end qui s’occupe de la partie visible.",
-    "description": "Le développement web frontal (aussi appelé front-end en anglais) correspond aux productions HTML, CSS et JavaScript d’une page internet ou d’une application qu’un utilisateur peut voir et avec lesquelles il peut interagir directement.\n\nLe principal défi du développement web frontal est de toujours s’adapter aux dernières évolutions ; les outils et les techniques de développement étant en évolution constante.\n\nLa conception des sites internet doit également être capable d’offrir une bonne ergonomie de lecture en facilitant la navigation et l’obtention d’information. Cet objectif est d’autant plus compliqué que les appareils ont des formats et tailles variés. Le développeur doit donc s’assurer que le site internet apparait correctement sur l’ensemble des navigateurs Web et des appareils disponibles.",
+    "name": "Développeur back-end",
+    "excerpt": "Le développeur back-end s’occupe du côté technique et fonctionnel d’un site web. Contrairement au développeur front-end, celui-ci travaille dans l’ombre et se charge de toute la partie back-office, c’est-à-dire les éléments indispensables pour le fonctionnement du site, mais qui sont invisibles des internautes.",
+    "description": "Le développeur back-end a pour mission de concevoir tous les éléments techniques indispensables au fonctionnement d’un site web ou d’une application. Il doit donc avoir des connaissances approfondies en informatique telle la maitrise des langages de programmation comme Python, Ruby, PHP, Java… Il est aussi en charge de la gestion des bases de données. De ce fait, il doit impérativement être familier des systèmes SQL Serveur et MySQL. Le développeur back-end doit aussi être en mesure de développer la plateforme de gestion des contenus et de développer les applications web. Si des problèmes persistent, le développeur back-end préconise des solutions pour le client et assure un support technique du site, ainsi qu’une maintenance réactive. Il a aussi le devoir d’aider le client si ce dernier lui livre un site.",
     "created_at": null,
     "updated_at": null,
     "deleted_at": null

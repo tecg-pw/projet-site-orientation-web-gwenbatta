@@ -34,8 +34,9 @@ class PeopleSeeder extends Seeder
                 "instagram" => $value->instagram,
                 "mail" => $value->mail,
                 "job" => $value->job,
+                "job_slug" => \Str::slug($value->job),
                 "gallery" => $value->gallery,
-                "begin" => $value->begin,
+                "begin" => Carbon::create($value->begin),
                 "end" => $value->end,
             ]);
         }

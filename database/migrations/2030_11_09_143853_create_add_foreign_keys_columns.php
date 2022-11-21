@@ -37,25 +37,25 @@ return new class extends Migration
 
 
 
-        Schema::table('book_classe', function (Blueprint $table) {
+        Schema::table('book_course', function (Blueprint $table) {
             $table->foreignId('book_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('classe_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
-        Schema::table('classe_doc', function (Blueprint $table) {
+        Schema::table('course_doc', function (Blueprint $table) {
             $table->foreignId('doc_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('classe_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
-        Schema::table('classe_person', function (Blueprint $table) {
+        Schema::table('course_person', function (Blueprint $table) {
             $table->foreignId('person_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('classe_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
-        Schema::table('classe_project', function (Blueprint $table) {
+        Schema::table('course_project', function (Blueprint $table) {
             $table->foreignId('project_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('classe_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
-        Schema::table('classe_tool', function (Blueprint $table) {
+        Schema::table('course_tool', function (Blueprint $table) {
             $table->foreignId('tool_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('classe_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('tuto_user', function (Blueprint $table) {
             $table->foreignId('tuto_id')->constrained()->onUpdate('cascade');

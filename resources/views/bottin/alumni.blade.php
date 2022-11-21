@@ -41,7 +41,7 @@
                         <img class="order-1 rounded-full" width="98" src="{{$person->avatar}}" alt="avatar">
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/bottin/teacher/name">{{__('En savoir plus sur' . $person->name)}}</a>
+                       href="/bottin/{{$person->status === 'teachalumni'? 'teachalumni' : 'alumni'}}/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
                 </article>
             @endforeach
             {{--                {{$posts->links()}}--}}

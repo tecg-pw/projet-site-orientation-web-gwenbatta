@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Opportunity;
 use App\Models\People;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class AboutController extends Controller
      */
     public function index()
     {
+        $jobs = Opportunity::all();
         $teachers = People::where('status', 'professeur')->orWhere('status', 'teachalumni')->get();
-        return view('about', compact( 'teachers'));
+        return view('about', compact( 'teachers', 'jobs'));
     }
 
     /**

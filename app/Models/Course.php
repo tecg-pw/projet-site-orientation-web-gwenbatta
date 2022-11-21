@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Classe extends Model
+class Course extends Model
 {
     use HasFactory, SoftDeletes;
     protected $fillable = [
@@ -16,5 +16,9 @@ class Classe extends Model
     public function person(): BelongsToMany
     {
         return $this->belongsToMany(People::class);
+    }
+    public function projects(): BelongsToMany
+    {
+        return $this->belongsToMany(Project::class);
     }
 }

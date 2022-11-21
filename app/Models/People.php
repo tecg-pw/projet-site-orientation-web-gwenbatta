@@ -19,6 +19,6 @@ class People extends Model
     }
     public function classes(): HasMany
     {
-        return $this->hasMany(Classe::class);
+        return $this->hasMany(Course::class);
     }
 }

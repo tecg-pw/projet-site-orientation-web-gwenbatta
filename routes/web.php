@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ActualityController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +29,7 @@ Route::get('/legals', function () {
 
 
 Route::get('/about', [AboutController::class, 'index']);
-Route::get('/about/job/single', function () {
-    return view('about.job.single');
-});
+Route::get('/about/job/{job:slug}', [JobController::class, 'show']);
 
 Route::get('/project/index', [ProjectController::class, 'index']);
 Route::get('/project/{project:slug}', [ProjectController::class, 'show']);
@@ -71,14 +70,10 @@ Route::get('/entreprise/internship/single', function () {
 
 Route::get('/bottin', [PersonController::class, 'index']);
 Route::get('/bottin/alumni', [PersonController::class, 'indexAlumni']);
-Route::get('/bottin/alumni/name', function () {
-    return view('bottin.alumni.name');
-});
+Route::get('/bottin/alumni/{alumni:slug}', [PersonController::class, 'showAlumni']);
 Route::get('/bottin/teacher/{teacher:slug}', [PersonController::class, 'showTeacher']);
-Route::get('/bottin/teachalumni/{teacher:slug}', [PersonController::class, 'showTeachAlumni']);
-Route::get('/bottin/student/name', function () {
-    return view('bottin.student.name');
-});
+Route::get('/bottin/teachalumni/{teachalumni:slug}', [PersonController::class, 'showTeachAlumni']);
+Route::get('/bottin/student/{student:slug}', [PersonController::class, 'showStudent']);
 
 Route::get('/cours/show', function () {
     return view('cours.show');
@@ -128,9 +123,6 @@ Route::get('/forum/my-subject', function () {
 Route::get('/forum/my-talks', function () {
     return view('forum.my_talks');
 });
-
-
-
 
 
 Route::get('/news/index', [ActualityController::class, 'index']);

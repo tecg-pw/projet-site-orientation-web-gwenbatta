@@ -5,7 +5,7 @@
             <h2 id="slug" aria-level="2" role="heading"
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('Porte Ouverte de la HEPL')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
-               href="/about#jobs">{{__('Retour aux actualités')}}</a>
+               href="/about#jobs">{{__('actu.actu_single_back')}}</a>
         </div>
         <div class="px-36 flex gap-20 text-xl">
             <p>Année</p>
@@ -15,7 +15,7 @@
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading"
-                        class="font-sans text-xl font-medium mb-5">{{__('Description')}}</h3>
+                        class="font-sans text-xl font-medium mb-5">{{__('actu.actu_single_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
                         <p class="text-lg leading-10 mb-10 flex flex-col gap-10">
                     <span>
@@ -26,7 +26,7 @@
                     </span>
                         </p>
                         <a class="hover:text-orange-500 underline text-xl text-green-700 font-sans font-semibold "
-                           href="">{{__('En savoir plus')}}</a>
+                           href="">{{__('actu.actu_single_more')}}</a>
                     </div>
                 </section>
             </div>

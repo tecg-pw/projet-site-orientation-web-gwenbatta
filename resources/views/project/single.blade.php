@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <x-commons.navigation></x-commons.navigation>
 <main>
     <section class="xl:px-36 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
@@ -5,7 +9,7 @@
             <h2 id="{{$project->slug}}" aria-level="2" role="heading"
                 class="xl:text-4xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$project->title}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/project/index">{{__('Voir tous les projets')}}</a>
+               href="/project/index">{{__('project.project_button')}}</a>
         </div>
         <div class="flex xl:flex-row flex-col mt-20 xl:mt-0">
             <article class="relative mt-48" aria-labelledby="{{$project->person->slug}}">
@@ -39,7 +43,7 @@
                             </svg>
 
                         </div>
-                        <p class="justify-self-end text-green-500 uppercase text-lg">étudiant</p>
+                        <p class="justify-self-end text-green-500 uppercase text-lg">{{$project->person->status}}</p>
                     </div>
                 </div>
             </article>
@@ -49,13 +53,12 @@
                 </p>
                 <div class="mt-8">
                     <div class="flex xl:flex-row flex-col xl:gap-4 text-lg">
-                        <p>{{__('Réaliser dans le cadre du cours de :')}}</p>
+                        <p>{{__('project.project_make_course')}}</p>
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
-                           href="/cours/single">{{__(var_dump($project->classe))}}</a>
+                           href="/cours/single">{{__('Design Web')}}</a>
                     </div>
                     <div class="flex xl:flex-row flex-col mt-4 xl:mt-0 xl:gap-4 text-lg">
-                        <p>{{__('Avec :')}}</p>
-
+                        <p>{{__('project.project_make_with')}}</p>
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
                            href="/bottin/teacher/name">{{__('Toon Van den Bos')}}</a>
                         <a class="hover:text-orange-500 underline text-green-700 font-sans"
@@ -63,7 +66,7 @@
                     </div>
                     <div class="flex flex-col xl:flex-row xl:gap-32 mt-8 xl:items-center">
                         <a href="{{$project->person->link_portfolio}}"
-                           class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('Voir le portfolio')}}</a>
+                           class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('project.project_portfolio')}}</a>
                         <a class="group hover:text-orange-500 flex font-sans text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"
                            href="{{$project->person->link_github}}">
                 <span class="mr-2.5">
@@ -73,7 +76,7 @@
                               transform="translate(-1.999 -2.247)" fill="#4e6458"/>
                         </svg>
                     </span>
-                            <span class="xl:mt-0 mt-1.5">{{__('Voir le Github')}}</span>
+                            <span class="xl:mt-0 mt-1.5">{{__('project.project_github')}}</span>
                         </a>
                     </div>
                 </div>
@@ -82,7 +85,7 @@
 
     </section>
     <section class="xl:not-sr-only sr-only xl:px-36 px-10 bg-yellow-600" aria-labelledby="photos">
-        <h2 id="photos" aria-level="2" role="heading" class="sr-only">{{__('Photos du projets')}}</h2>
+        <h2 id="photos" aria-level="2" role="heading" class="sr-only">{{__('project.project_pictures')}}</h2>
         <figure class="grid grid-cols-4 grid-rows-2 gap-5  py-24">
             <img class="rounded-xl row-span-2" src="https://placehold.jp/395x584.png" alt="{{__('photo du projet')}}">
             <img class="rounded-xl col-span-2" src="https://placehold.jp/723x278.png" alt="{{__('photo du projet')}}">
@@ -94,9 +97,9 @@
     <article class="px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
         <div class="justify-between flex flex-col mb-8 xl:flex-row">
             <h2 id="projects" role="heading" aria-level="2"
-                class="xl:text-4xl text-yellow-800 text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Quelques projets')}}</h2>
+                class="xl:text-4xl text-yellow-800 text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/project/index">{{__('Voir tous les projets')}}</a>
+               href="/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
             @foreach($projects as $project)

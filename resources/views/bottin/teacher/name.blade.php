@@ -51,7 +51,7 @@
                 </div>
                 @if($teacher->description === null)
                     <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
-                        {{__('Pas de description')}}
+                        {{__('people.bottin_no_description')}}
                     </p>
                 @else
                     <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
@@ -60,7 +60,7 @@
                 @endif
             </div>
             <div class="min-w-[345px] flex flex-col">
-                <img class=" xl:mb-6 rounded-3xl" src="https://via.placeholder.com/345" alt="avatar">
+                <img class=" xl:mb-6 rounded-3xl" src="{{$teacher->avatar}}" alt="avatar">
                 <div class="flex flex-col mt-8">
                     <a class="group hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex justify-center"
                        href="{{$teacher->link_github}}">
@@ -71,7 +71,7 @@
                               transform="translate(-1.999 -2.247)" fill="#ffffff"/>
                         </svg>
                     </span>
-                        <span class="xl:mt-0 mt-1.5 ">{{__('Voir le Github')}}</span>
+                        <span class="xl:mt-0 mt-1.5 ">{{__('people.bottin_github')}}</span>
                     </a>
                 </div>
             </div>
@@ -79,17 +79,17 @@
     </section>
     <article class="bg-yellow-600 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="classes">
         <div class="flex xl:flex-row flex-col justify-between mb-8">
-            <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Cours donnés par Nom de la personne')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold" href="/project/index">{{__('Voir tous les projets')}}</a>
+            <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('people.bottin_course') . ( $teacher->firstname . ' ' .$teacher->name)}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold" href="/about#course">{{__('people.teacher_course')}}</a>
         </div>
         <div  class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
-            @foreach($teacher->classes as $classe)
-                <article class="hover:bg-orange-100 bg-white-100 py-6 px-8 rounded-3xl relative" aria-labelledby="{{$classe->slug}}">
-                    <h3 id="{{$classe->slug}}" role="heading" aria-level="3" class="font-sans font-medium text-xl xl:text-2xl mb-3 underline font-medium">{{$classe->name}}</h3>
-                    <p class="xl:text-lg">{{$classe->description}}</p>
-                    <a class="linkcard" href="/cours/show">{{__('Voir le cours'. $classe->name)}}</a>
-                </article>
-            @endforeach
+{{--            @foreach($teacher->classes as $classe)--}}
+{{--                <article class="hover:bg-orange-100 bg-white-100 py-6 px-8 rounded-3xl relative" aria-labelledby="{{$classe->slug}}">--}}
+{{--                    <h3 id="{{$classe->slug}}" role="heading" aria-level="3" class="font-sans font-medium text-xl xl:text-2xl mb-3 underline font-medium">{{$classe->name}}</h3>--}}
+{{--                    <p class="xl:text-lg">{{$classe->description}}</p>--}}
+{{--                    <a class="linkcard" href="/cours/show">{{__('Voir le cours'. $classe->name)}}</a>--}}
+{{--                </article>--}}
+{{--            @endforeach--}}
         </div>
     </article>
 </main>
