@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Project extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $with = ['person', 'course'];
+    protected $with = ['course'];
     protected $fillable = [
         'title', 'slug' , 'description',  'link_project','link_github','date', 'main_picture','gallery'
     ];

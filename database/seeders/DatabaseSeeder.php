@@ -40,5 +40,10 @@ class DatabaseSeeder extends Seeder
         $this->call(ToolSeeder::class);
         $this->call(TutoSeeder::class);
         $this->call(OpportunitiesSeeder::class);
+        $this->call(CoursePersonSeeder::class);
+        $this->call(CourseProjectSeeder::class);
+        $this->call(CourseDocSeeder::class);
+        $this->call(CourseToolSeeder::class);
+        $this->call(BookCourseSeeder::class);
     }
 }

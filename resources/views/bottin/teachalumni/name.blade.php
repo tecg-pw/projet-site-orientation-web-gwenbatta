@@ -91,13 +91,13 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold" href="/about#course">{{__('people.teacher_course')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
-            {{--            @foreach($teacher->classes as $classe)--}}
-            {{--                <article class="hover:bg-orange-100 bg-white-100 py-6 px-8 rounded-3xl relative" aria-labelledby="{{$classe->slug}}">--}}
-            {{--                    <h3 id="{{$classe->slug}}" role="heading" aria-level="3" class="font-sans font-medium text-xl xl:text-2xl mb-3 underline font-medium">{{$classe->name}}</h3>--}}
-            {{--                    <p class="xl:text-lg">{{$classe->description}}</p>--}}
-            {{--                    <a class="linkcard" href="/cours/show">{{__('Voir le cours'. $classe->name)}}</a>--}}
-            {{--                </article>--}}
-            {{--            @endforeach--}}
+            @foreach($teachalumni->courses as $classe)
+                <article class="hover:bg-orange-100 bg-white-100 py-6 px-8 rounded-3xl relative" aria-labelledby="{{$classe->slug}}">
+                    <h3 id="{{$classe->slug}}" role="heading" aria-level="3" class="font-sans font-medium text-xl xl:text-2xl mb-3 underline font-medium">{{$classe->name}}</h3>
+                    <p class="xl:text-lg">{{$classe->description}}</p>
+                    <a class="linkcard" href="/cours/{{$classe->slug}}">{{__('Voir le cours'. $classe->name)}}</a>
+                </article>
+            @endforeach
         </div>
     </article>
     <article class="px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">

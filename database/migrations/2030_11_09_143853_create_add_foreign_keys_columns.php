@@ -46,7 +46,7 @@ return new class extends Migration
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('course_person', function (Blueprint $table) {
-            $table->foreignId('person_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('people_id')->constrained()->onUpdate('cascade');
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('course_project', function (Blueprint $table) {

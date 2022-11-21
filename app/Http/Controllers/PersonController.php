@@ -17,7 +17,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        $people = People::all();
+        $people = People::paginate(8);
         return view('bottin', compact('people'));
     }
 
@@ -65,6 +65,8 @@ class PersonController extends Controller
     }
     public function showAlumni(People $alumni)
     {
+        $alumni->begin = Carbon::parse($alumni->begin)->format('Y');
+        $alumni->end = Carbon::parse($alumni->end)->format('Y');
         $projects = Project::where('person_id', $alumni->id)->orderBy('date')->take(6)->get();
         return view('bottin.alumni.name', compact( 'alumni','projects'));
     }

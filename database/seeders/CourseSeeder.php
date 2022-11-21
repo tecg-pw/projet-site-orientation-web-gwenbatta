@@ -22,7 +22,7 @@ class CourseSeeder extends Seeder
         foreach ($classes as $key => $value) {
             Course::create([
                 "name" => $value->name,
-                "slug" => \Str::slug($value->name),
+                "slug" => \Str::slug($value->name.$value->bac),
                 "hours" => $value->hours,
                 "bac" => $value->bac,
                 "description" => $value->description,

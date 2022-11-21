@@ -12,8 +12,8 @@
                     <div>
                         <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
                             <p class="">{{__($alumni->status)}}</p>
-                            <p>{{__($alumni->begin)}} - {{__($alumni->end)}}</p>
-                            <a class="hover:text-orange-500 underline text-green-700" href="/about/job/single">{{__($alumni->job)}}r</a>
+                            <p>{{($alumni->begin)}} - {{__($alumni->end)}}</p>
+                            <a class="hover:text-orange-500 underline text-green-700" href="/about/job/single">{{__($alumni->job)}}</a>
                         </div>
                         <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-xl">
                             <a class="hover:text-orange-500 text-green-700 underline" href="mailto:{{__($alumni->mail)}}">{{__($alumni->mail)}}</a>

@@ -46,7 +46,7 @@
                        href="/bottin/{{($person->status === 'ancien'? 'alumni' : $person->status)}}/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
                 </article>
             @endforeach
-{{--            {{$people->links()}}--}}
+            {{$people->links()}}
         </article>
         <x-testimonials></x-testimonials>
     </section>

@@ -2,9 +2,14 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ActualityController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DocController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TechnicalController;
+use App\Http\Controllers\ToolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,24 +39,17 @@ Route::get('/about/job/{job:slug}', [JobController::class, 'show']);
 Route::get('/project/index', [ProjectController::class, 'index']);
 Route::get('/project/{project:slug}', [ProjectController::class, 'show']);
 
-Route::get('/technical/index', function () {
-    return view('technical.index');
-});
-Route::get('/technical/books/single', function () {
-    return view('technical.books.single');
-});
+Route::get('/technical/index', [TechnicalController::class, 'index']);
+Route::get('/technical/books/{book:slug}', [BookController::class, 'show']);
+
 Route::get('/technical/glossary', function () {
     return view('technical.glossary');
 });
 Route::get('/technical/tuto', function () {
     return view('technical.tuto');
 });
-Route::get('/technical/docandtool/doc', function () {
-    return view('technical.doc');
-});
-Route::get('/technical/docandtool/tool', function () {
-    return view('technical.tool');
-});
+Route::get('/technical/docandtool/doc', [DocController::class, 'index', BookController::class, 'index']);
+Route::get('/technical/docandtool/tool', [ToolController::class, 'index', BookController::class, 'index'] );
 
 
 Route::get('/entreprise/partner', function () {
@@ -75,9 +73,7 @@ Route::get('/bottin/teacher/{teacher:slug}', [PersonController::class, 'showTeac
 Route::get('/bottin/teachalumni/{teachalumni:slug}', [PersonController::class, 'showTeachAlumni']);
 Route::get('/bottin/student/{student:slug}', [PersonController::class, 'showStudent']);
 
-Route::get('/cours/show', function () {
-    return view('cours.show');
-});
+Route::get('/cours/{course:slug}', [CourseController::class, 'show']);
 
 
 Route::get('/user/login', function () {
