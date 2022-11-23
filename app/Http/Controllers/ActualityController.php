@@ -42,12 +42,12 @@ class ActualityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int  $new
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show($id)
+    public function show(Actuality $new)
     {
-        //
+        return view('news.single', compact('new'));
     }
 
     /**

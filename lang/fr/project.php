@@ -9,6 +9,7 @@ return [
     'project_portfolio' => 'Voir le portfolio',
     'project_github' => 'Voir le Github',
     'project_pictures' => 'Photos du projets',
+    'project_view' => 'Voir le projet',
     'project_other' => 'Quelques projets',
     'project_see_all' => 'Voir tous les projets',
 

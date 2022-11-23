@@ -10,10 +10,11 @@
         <article aria-labelledby="list-tutos">
             <h3 id="list-tutos" role="heading" aria-level="3" class="sr-only">{{__('tuto.tuto_list_title')}}</h3>
             <div class="flex gap-y-4 flex-col xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8">
-                @for($i=1; $i<11;$i++)
-                    <x-tuto class="bg-yellow-100" :i="$i"/>
-                @endfor
+                @foreach($tutos as $tuto)
+                    <x-tuto class="bg-yellow-100" :tuto="$tuto"/>
+                @endforeach
             </div>
+            {{$tutos->links()}}
         </article>
     </section>
 </main>

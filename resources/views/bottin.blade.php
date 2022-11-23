@@ -4,10 +4,10 @@
         <div class="px-10 flex flex-col xl:px-36 xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="bottin" role="heading" aria-level="2"
                 class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('people.bottin_title')}}</h2>
-            <x-search_bar class=""></x-search_bar>
+            <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
         </div>
         <p class="px-10 xl:pl-36 mb-7 xl:max-w-[47%] xl:text-xl xl:leading-10">{{__('people.bottin_text')}}</p>
-        <x-sort_by class="px-10 xl:px-36 mb-14"></x-sort_by>
+        <x-sort_by :status="$status" :years_end="$years_end"/>
         <article class="px-10 flex flex-col gap-y-4 xl:px-36 xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8"
                  aria-labelledby="list-bottin">
             <h3 id="list-bottin" role="heading" aria-level="3" class="sr-only">{{__('people.bottin_list_title')}}</h3>
@@ -17,7 +17,8 @@
                     aria-labelledby="{{$person->slug}}">
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">
-                            <h4 id="{{$person->slug}}" role="heading" aria-level="4" class="text-xl xl:text-2xl">{{$person->firstname}} {{$person->name}}</h4>
+                            <h4 id="{{$person->slug}}" role="heading" aria-level="4"
+                                class="text-xl xl:text-2xl">{{$person->firstname}} {{$person->name}}</h4>
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col xl:flex-row xl:gap-4">
                                     @if($person->status === 'teachalumni')
@@ -25,11 +26,13 @@
                                     @else
                                         <p class="uppercase xl:text-lg">{{$person->status}}</p>
                                     @endif
-                                        @if($person->end === null)
-                                        <p class="uppercase xl:text-lg">{{$person->begin}}</p>
-                                        @else
-                                        <p class="uppercase xl:text-lg">{{$person->begin}}-{{$person->end}}</p>
-                                        @endif
+                                    @if($person->end === null)
+                                        <p class="xl:text-lg">{{$person->begin->format('Y')}}
+                                            - {{__('people.bottin_today')}}</p>
+                                    @else
+                                        <p class="uppercase xl:text-lg">{{$person->begin->format('Y')}}
+                                            -{{$person->end->format('Y')}}</p>
+                                    @endif
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                      width="25"
@@ -42,13 +45,25 @@
                         </div>
                         <img class="order-1 rounded-full" width="98" src="{{$person->avatar}}" alt="avatar">
                     </div>
-                    <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/bottin/{{($person->status === 'ancien'? 'alumni' : $person->status)}}/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
+                    @if($person->status === 'ancien')
+                        <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
+                           href="/bottin/alumni/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
+                    @elseif($person->status === 'professeur')
+                        <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
+                           href="/bottin/teacher/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
+                    @elseif($person->status === 'étudiante')
+                        <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
+                           href="/bottin/student/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
+                    @elseif($person->status === 'teachalumni')
+                        <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
+                           href="/bottin/teacher/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
+                    @endif
+
                 </article>
             @endforeach
             {{$people->links()}}
         </article>
-        <x-testimonials></x-testimonials>
+        <x-testimonials :testimonials="$testimonials"/>
     </section>
 </main>
 <x-commons.footer></x-commons.footer>

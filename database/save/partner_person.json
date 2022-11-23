@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "created_at": null,
+    "updated_at": null,
+    "people_id": 1,
+    "partner_id": 1
+  },
+  {
+    "id": 2,
+    "created_at": null,
+    "updated_at": null,
+    "people_id": 2,
+    "partner_id": 1
+  },
+  {
+    "id": 3,
+    "created_at": null,
+    "updated_at": null,
+    "people_id": 9,
+    "partner_id": 1
+  },
+  {
+    "id": 4,
+    "created_at": null,
+    "updated_at": null,
+    "people_id": 8,
+    "partner_id": 1
+  }
+]

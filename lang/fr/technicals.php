@@ -10,9 +10,11 @@ return [
     'tuto_button' => 'Voir plus de tutos',
     'doc_title' => 'Documentations',
     'doc_button' => 'Voir plus de docs',
+    'doc_course' => 'Cours de ',
     'doc_link' => 'Voir la documentation sur',
     'book_link' => 'Voir plus le livre ',
     'book_single_back' => 'Retour à la liste des livres',
+    'book_subtitle' => 'Description',
 
 
 ];

@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Project extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $with = ['course'];
+    protected $dates =['date'];
     protected $fillable = [
         'title', 'slug' , 'description',  'link_project','link_github','date', 'main_picture','gallery'
     ];
@@ -19,8 +19,9 @@ class Project extends Model
     {
         return $this->belongsTo(People::class);
     }
-    public function course(): BelongsTo
+    protected $with = ["courses"];
+    public function courses(): BelongsToMany
     {
-        return $this->belongsTo(Course::class,);
+        return $this->belongsToMany(Course::class);
     }
 }

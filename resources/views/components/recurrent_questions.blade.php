@@ -1,16 +1,16 @@
 <article {{ $attributes->class(['bg-yellow-600 xl:px-36 px-10 py-20 ']) }} aria-labelledby="recurring-questions">
     <h2 role="heading" aria-level="2" id="recurring-questions"
-        class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-8 xl:mb-20">{{__('Quelques questions récurrentes')}}</h2>
+        class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-8 xl:mb-20">{{__('recurring.recurring_title')}}</h2>
     <div class="xl:grid xl:grid-cols-3 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
-        @for($i=1;$i<5;$i++)
-            <article aria-labelledby="{{__('test'.$i)}}"
+        @foreach($recurrings as $recurring)
+            <article aria-labelledby="{{$recurring->slug}}"
                      class="col-span-2 flex flex-col justify-between bg-white-100 py-10 px-8 rounded-3xl">
-                <h3 role="heading" aria-level="3" id="{{__('test'.$i)}}"
-                    class="xl:text-2xl text-xl font-sans font-medium">{{__('Est-ce qu’avoir un Mac est indispensable ?')}}</h3>
-                @if(!(request()->has('show-reponse-test'.$i)))
+                <h3 role="heading" aria-level="3" id="{{$recurring->slug}}"
+                    class="xl:text-2xl text-xl font-sans font-medium">{{$recurring->name}}</h3>
+                @if(!(request()->has('show-reponse-'.$recurring->slug)))
                     <div class="justify-end flex">
-                        <a href="?show-reponse-{{__('test'.$i)}}#{{__('test'.$i)}}" class="">
-                            <span class="sr-only">{{__('Voir la réponse')}}</span>
+                        <a href="?show-reponse-{{$recurring->slug}}#{{$recurring->slug}}" class="">
+                            <span class="sr-only">{{__('recurring.recurring_link')}}</span>
                             <span class="flex-1 justify-end">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
                                       <path id="_2020bf85e241394953aca514c8b97948"
@@ -21,12 +21,12 @@
                                 </span></a>
                     </div>
                 @endif
-                @if(request()->has('show-reponse-test'.$i))
-                    <p class="mt-8 text-lg leading-8 xl:text-xl xl:mr-36">{{__('Non, il n’est pas obligatoire d’avoir un Mac pour les cours de web. Cependant, nous vous conseillons, si vous devez acheter un nouvel ordinateur et que vous vous destinez au web, de prendre un Mac. En effet, la plupart des professeurs de web utilise Apple et sauront mieux vous aider si vous avez un problème car il maitrise mieux ces machines et c’est un outil mieux adapter pour le développment de sites.')}}</p>
+                @if(request()->has('show-reponse-'.$recurring->slug))
+                    <p class="mt-8 text-lg leading-8 xl:text-xl xl:mr-36">{{$recurring->description}}</p>
                     <div class="flex justify-end">
-                        <a href="/forum/index#{{__('test'.$i)}}"
+                        <a href="/forum/index#{{$recurring->slug}}"
                            class="justify-self-end">
-                            <span class="sr-only">{{__('Voir la réponse')}}</span>
+                            <span class="sr-only">{{__('recurring.recurring_link')}}</span>
                             <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
                                       <path id="_2020bf85e241394953aca514c8b97948"
@@ -38,6 +38,6 @@
                     </div>
                 @endif
             </article>
-        @endfor
+        @endforeach
     </div>
 </article>

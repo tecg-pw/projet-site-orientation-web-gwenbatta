@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "created_at": null,
+    "updated_at": null,
+    "user_id": 5,
+    "tuto_id": 5
+  },
+  {
+    "id": 2,
+    "created_at": null,
+    "updated_at": null,
+    "user_id": 5,
+    "tuto_id": 3
+  },
+  {
+    "id": 3,
+    "created_at": null,
+    "updated_at": null,
+    "user_id": 5,
+    "tuto_id": 2
+  },
+  {
+    "id": 4,
+    "created_at": null,
+    "updated_at": null,
+    "user_id": 6,
+    "tuto_id": 10
+  }
+]

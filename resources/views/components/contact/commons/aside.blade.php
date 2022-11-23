@@ -9,7 +9,7 @@
     </div>
     <section class="bg-yellow-600 mb-36 px-36" aria-labelledby="coordinate">
         <h3 class="font-sans text-xl mt-16 mb-12" role="heading" aria-level="3"
-            id="coordinate">{{__('Coordonnées')}}</h3>
+            id="coordinate">{{__('contact_page.aside_title')}}</h3>
         <div class="flex mb-24">
             <div itemscope itemtype="https://schema.org/Organization" class="border-r border-orange-500/40 pr-32 mr-36">
                 <p itemprop="legalName" class="mb-5 uppercase font-sans">{{__('HEPL')}}</p>
@@ -21,7 +21,7 @@
             </div>
             <div itemscope itemtype="https://schema.org/Person">
                 <p itemprop="jobTitle" class="uppercase mb-5 font-sans">{{__('Administrateur')}}</p>
-                <a href="" class="text-green-700 underline" class="mb-2" itemprop="name">{{__('Domique Vilain')}}</a>
+                <a href="/bottin" class="text-green-700 underline" class="mb-2" itemprop="name">{{__('Dominique Vilain')}}</a>
                 <p itemprop="jobTitle">{{__('Professeur de l\'option web')}}</p>
                 <a class="text-green-700 underline" href="mailto:dominique.vilaint@hepl.be"
                    itemprop="email">{{__('dominique.vilaint@hepl.be')}}</a>

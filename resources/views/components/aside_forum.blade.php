@@ -1,30 +1,35 @@
+@props([
+    'latests',
+
+])
+
 <div {{ $attributes->class(['xl:not-sr-only sr-only col-span-2 bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14']) }}>
-    <article class="pl-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
+    <article class="pl-14 pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
         <h3 id="search" aria-level="3" role="heading"
-            class="text-3xl font-sans font-light text-green-700 underline mb-6 mt-20">{{__('Rechercher')}}</h3>
+            class="text-3xl font-sans font-light text-green-700 underline mb-6 mt-20">{{__('forum_aside.label')}}</h3>
         <x-search_bar></x-search_bar>
     </article>
     <article class="px-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="latest">
         <h3 id="latest" aria-level="3" role="heading"
-            class="text-3xl font-light text-green-700 underline mb-6">{{__('Derniers sujet')}}</h3>
+            class="text-3xl font-light text-green-700 underline mb-6">{{__('forum_aside.latest')}}</h3>
         <div class="flex flex-col gap-y-8">
-            @for($i=1;$i<3;$i++)
+            @foreach($latests as $latest)
                 <article class="hover:bg-orange-100 group bg-white-100 relative flex p-6 rounded-xl"
-                         aria-labelledby="{{'question'.$i}}">
+                         aria-labelledby="{{$latest->slug}}">
                     <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
                         <div class="flex-col flex">
-                            <h4 class="order-2 font-medium font-sans text-2xl" id="{{'question'.$i}}"
+                            <h4 class="order-2 font-medium font-sans text-2xl" id="{{$latest->slug}}"
                                 role="heading"
-                                aria-level="4">Question du forum</h4>
+                                aria-level="4">{{$latest->subject}}</h4>
                             <div class="flex relative justify-between">
-                                <p class="text-xl self-end">Nom de l'auteur</p>
-                                <p class="text-xl self-end">03 nov. 2022</p>
+                                <p class="text-xl self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
+                                <p class="text-xl self-end">{{$latest->created_at->format('d M. Y')}}</p>
                             </div>
                         </div>
                         <div class="order-3 flex justify-between">
                             <div class="flex gap-4">
                                 <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
-                                    Général</p>
+                                    {{ucwords($latest->tag)}}</p>
                             </div>
                             <a class="linkcard underline text-green-700 font-sans font-semibold"
                                href="/forum/show">Voir
@@ -40,12 +45,12 @@
                         </div>
                     </div>
                 </article>
-            @endfor
+            @endforeach
         </div>
     </article>
     <article class="px-14 pb-10 mt-8" aria-labelledby="best-rating">
         <h3 id="best-rating" aria-level="3" role="heading"
-            class="text-3xl font-light text-green-700 underline mb-6">{{__('Sujet Populaire')}}</h3>
+            class="text-3xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
         <div class="flex flex-col gap-y-8">
             @for($i=1;$i<3;$i++)
                 <article class="hover:bg-orange-100 group bg-white-100 relative flex p-6 rounded-xl"

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('logo')->nullable();
             $table->string('adresse');
             $table->string('locality');
+            $table->string('locality_number');
             $table->text('description')->nullable();
             $table->string('site_link');
             $table->string('link_facebook')->nullable();

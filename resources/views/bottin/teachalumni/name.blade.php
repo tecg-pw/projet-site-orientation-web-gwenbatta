@@ -13,7 +13,7 @@
                     <div>
                         <div class="mb-4 flex gap-8 xl:flex-row xl:justify-between uppercase text-lg xl:text-xl">
                             <p class="uppercase xl:text-lg">{{__('people.teachalumni_status')}}</p>
-                            <p>{{$teachalumni->begin}}</p>
+                            <p>{{$teachalumni->begin->format('Y')}}</p>
                             <a class="hover:text-orange-500 underline text-green-700"
                                href="/about/job/single">{{$teachalumni->job}}</a>
                         </div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 @if($teachalumni->description === null)
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else

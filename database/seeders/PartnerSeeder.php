@@ -28,6 +28,7 @@ class PartnerSeeder extends Seeder
                 "logo" => $value->logo,
                 "adresse" => $value->adresse,
                 "locality" => $value->locality,
+                "locality_number" => $value->locality_number,
                 "description" => $value->description,
                 "site_link" => $value->site_link,
                 "link_facebook" => $value->link_facebook,

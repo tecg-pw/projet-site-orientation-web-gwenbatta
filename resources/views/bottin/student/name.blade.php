@@ -12,7 +12,7 @@
                     <div>
                         <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
                             <p class="">{{$student->status}}</p>
-                            <p>{{$student->begin}}</p>
+                            <p>{{$student->begin->format('Y')}}</p>
                         </div>
                         <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-xl">
                             <a class="hover:text-orange-500 text-green-700 underline" href="mailto:{{$student->mail}}">{{$student->mail}}</a>
@@ -50,9 +50,15 @@
                         </div>
                     </div>
                 </div>
-                <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
-                    {{$student->description}}
-                </p>
+                @if($student->description === null)
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
+                        {{__('people.bottin_no_description')}}
+                    </p>
+                @else
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                        {{$student->description}}
+                    </p>
+                @endif
 
             </div>
             <div class="min-w-[345px] flex flex-col">

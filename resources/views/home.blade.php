@@ -80,9 +80,9 @@
                href="/projet/index">{{__('home.projects_button')}}</a>
         </div>
         <div class="flex-wrap flex gap-8 justify-center xl:flex-nowrap">
-{{--            @for($i=1; $i<4;$i++)--}}
-{{--                <x-project :i="$i"></x-project>--}}
-{{--            @endfor--}}
+            @foreach($projects as $project)
+                <x-project :project="$project"></x-project>
+            @endforeach
         </div>
     </article>
     <x-questions-forum></x-questions-forum>

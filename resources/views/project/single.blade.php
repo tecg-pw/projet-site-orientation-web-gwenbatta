@@ -1,7 +1,6 @@
 <?php
 
 ?>
-
 <x-commons.navigation></x-commons.navigation>
 <main>
     <section class="xl:px-36 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
@@ -17,9 +16,10 @@
                 <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
                     <h3 id="{{$project->person->slug}}" aria-level="3" role="heading"
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl mb-2"><a
-                            href="/user/profile">{{$project->person->firstname}} {{$project->person->name}}</a></h3>
-                    <p class="mb-4">{{$project->person->begin}}-{{$project->person->end}}</p>
-                    <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500" href="/">{{$project->person->link_portfolio}}</a>
+                            href="/bottin/alumni/{{$project->person->slug}}">{{$project->person->firstname}} {{$project->person->name}}</a></h3>
+                    <p class="mb-4">{{$project->person->begin->format('Y')}}-{{$project->person->end->format('Y')}}</p>
+                    <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500"
+                       href="/">{{$project->person->link_portfolio}}</a>
                     <div class="flex justify-between gap-32 items-center mt-4 ">
                         <div class="flex flex-1 gap-3">
                             <svg class="hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="25"
@@ -52,17 +52,22 @@
                     {{$project->description}}
                 </p>
                 <div class="mt-8">
-                    <div class="flex xl:flex-row flex-col xl:gap-4 text-lg">
-                        <p>{{__('project.project_make_course')}}</p>
-                        <a class="hover:text-orange-500 underline text-green-700 font-sans"
-                           href="/cours/single">{{__('Design Web')}}</a>
-                    </div>
-                    <div class="flex xl:flex-row flex-col mt-4 xl:mt-0 xl:gap-4 text-lg">
-                        <p>{{__('project.project_make_with')}}</p>
-                        <a class="hover:text-orange-500 underline text-green-700 font-sans"
-                           href="/bottin/teacher/name">{{__('Toon Van den Bos')}}</a>
-                        <a class="hover:text-orange-500 underline text-green-700 font-sans"
-                           href="/bottin/teacher/name">{{__('Maud Wéra')}}</a>
+                    <div class="flex flex-col xl:gap-4 text-lg">
+                        <div class="flex gap-3">
+                            <p>{{__('project.project_make_course')}}</p>
+                            @foreach($project->courses as $classe)
+                                <a class=" underline text-green-700 uppercase hover:text-orange-500"
+                                   href="/cours/{{$classe->slug}}">{{$classe->name}}</a>
+                        </div>
+                        <div class="flex flex-row gap-3">
+                            <p>{{__('project.project_make_with')}}</p>
+                            @foreach($teachers as $teacher)
+                                <a class=" underline text-green-700 uppercase hover:text-orange-500"
+                                   href="/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
+                            @endforeach
+                        </div>
+
+                        @endforeach
                     </div>
                     <div class="flex flex-col xl:flex-row xl:gap-32 mt-8 xl:items-center">
                         <a href="{{$project->person->link_portfolio}}"

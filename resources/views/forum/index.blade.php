@@ -1,50 +1,81 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <x-recurrent_questions></x-recurrent_questions>
+    <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
         <div class="px-10 xl:px-36 flex xl:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
             <h2 id="forum" aria-level="2" role="heading"
-                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('Le forum')}}</h2>
+                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
             @auth()
                 <a href="/forum/question"
-                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('Ajouter un question')}}</a>
+                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
-        <x-sort_by_forum class="px-10 xl:px-36 mb-14"></x-sort_by_forum>
+        <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="px-10 xl:px-36 mb-14"></x-sort_by_forum>
         <div class="flex items-start xl:flex-row flex-col xl:gap-32 mb-12 px-10 xl:px-36">
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
-               href="/forum/index#forum">{{__('Derniers sujets')}}</a>
+               href="/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
-               href="/forum/latest-answers#forum">{{__('Dernières réponses')}}</a>
-            <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
-               href="/forum/my-subject#forum">{{__('Mes sujets')}}</a>
-            <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
-               href="/forum/my-talks#forum">{{__('Mes discussions')}}</a>
+               href="/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
+            @auth()
+                <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
+                   href="/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
+                <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
+                   href="/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
+            @endauth
         </div>
         <div class="xl:grid xl:grid-cols-5 xl:gap-24 mb-36">
-            <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 px-10 xl:px-36 ">
-                @for($i=1;$i<8;$i++)
+            <div class="col-span-3 flex flex-col gap-y-8 px-10 xl:pl-36 xl:pr-0 ">
+                @foreach($subjects as $subject)
                     <article class="group hover:bg-orange-100 bg-yellow-100 relative flex p-6 rounded-xl"
-                             aria-labelledby="{{'question'.$i}}">
+                             aria-labelledby="{{$subject->slug}}">
                         <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-2.5 xl:gap-4">
-                            <div class="flex flex-col">
-                                <h3 class="order-2 font-medium font-sans text-xl xl:text-2xl" id="{{'question'.$i}}"
-                                    role="heading"
-                                    aria-level="3">Faut-il être bon en math ?</h3>
-                                <div class="flex relative justify-between">
-                                    <p class="text-xl self-end">Nom de l'auteur</p>
-                                    <p class="text-xl self-end">03 nov. 2022</p>
+                            <div class="flex flex-col ">
+                                <div class="flex gap-2">
+                                    <h3 class="order-2 font-medium font-sans text-xl xl:text-2xl"
+                                        id="{{$subject->slug}}"
+                                        role="heading"
+                                        aria-level="3">{{$subject->subject}}</h3>
+                                    @if($subject->resolved)
+                                        <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
+                                             viewBox="0 0 34.194 34.196">
+                                            <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                      transform="translate(873 1771)" fill="#da953a"/>
+                                                <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                      data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                      d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                      transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                            </g>
+                                        </svg>
+                                        <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
+                                             viewBox="0 0 34.194 34.196">
+                                            <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                      transform="translate(873 1771)" fill="#da953a"/>
+                                                <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                      data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                      d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                      transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                            </g>
+                                        </svg>
+                                    @endif
+                                </div>
+                                <div class="flex relative -order-2 justify-between">
+                                    <p class="text-xl self-end">{{$subject->user->firstname}} {{$subject->user->name}}</p>
+                                    <p class="text-xl self-end">{{$subject->created_at->format('d M. Y')}}</p>
                                 </div>
                             </div>
                             <div class="order-3 flex justify-between">
                                 <div class="flex gap-4 items-center">
                                     <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
-                                        Général</p>
-                                    <p class="sr-only xl:not-sr-only text-xl">Comment:5</p>
+                                        {{ucwords($subject->tag)}}</p>
+                                    <p class="sr-only xl:not-sr-only text-xl"> {{__('forum.number_comment') . count($subject->comments)}}</p>
                                 </div>
-                                <a class="linkcard underline text-green-700 font-sans font-semibold" href="/forum/show">Voir
-                                    la
-                                    conversation</a>
+                                <a class="linkcard underline text-green-700 font-sans font-semibold" href="/forum/{{$subject->slug}}">{{__('forum.see_subject')}}</a>
                                 <svg class="group-hover:mr-0 mr-4 xl:self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                                      viewBox="0 0 32 27.417">
                                     <path
@@ -57,9 +88,9 @@
                              src="https://placehold.jp/115x115.png"
                              alt="Nom">
                     </article>
-                @endfor
+                @endforeach
             </div>
-            <x-aside_forum></x-aside_forum>
+            <x-aside_forum :latests="$latests"></x-aside_forum>
         </div>
     </section>
 </main>

@@ -24,7 +24,7 @@
             class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.course_title')}}</h2>
         <div class="flex flex-col gap-y-12 xl:flex-row justify-between">
             <section
-                class="border-b-2 border-b-orange-500/40 pb-10 xl:border-b-0 xl:border-r-2 xl:pr-10 xl:border-r-orange-500/40"
+                class="border-b-2 border-b-orange-500/40 pb-10 xl:border-b-0 xl:border-r-2 xl:pr-12 xl:border-r-orange-500/40"
                 aria-labelledby="first-year">
                 <h3 class="text-xl mb-7 xl:text-2xl uppercase font-medium xl:mb-14" id="first-year" aria-level="3"
                     role="heading">{{__('about.course_first')}}</h3>
@@ -33,17 +33,12 @@
                     <h4 class="font-semibold" id="web" aria-level="4" role="heading">{{__('about.course_web_title')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col xl:gap-2">
-                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('about.course_CSS')}}</a>
-                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('about.course_HTML')}}</a>
-                            <a class="hover:text-orange-500 underline" href="/cours/show">{{__('about.course_design_web')}}</a>
-                            <a class="hover:text-orange-500 underline"
-                               href="/cours/show">{{__('course_programming')}}</a>
-                        </div>
-                        <div class="flex flex-col ml-8 xl:gap-2">
-                            <p>{{__('60H')}}</p>
-                            <p>{{__('60H')}}</p>
-                            <p>{{__('30H')}}</p>
-                            <p>{{__('30H')}}</p>
+                            @foreach($courses_bac1 as $course)
+                                <div class="flex justify-between">
+                                <a class="hover:text-orange-500 underline" href="/cours/{{$course->slug}}">{{$course->name}}</a>
+                                    <p class="ml-4">{{$course->hours}}H</p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>
@@ -82,7 +77,7 @@
                 </section>
             </section>
             <section
-                class="border-b-2 border-b-orange-500/40 pb-10 xl:border-b-0 xl:border-r-2 xl:pr-10 xl:border-r-orange-500/40"
+                class="border-b-2 border-b-orange-500/40 pb-10 xl:border-b-0 xl:border-r-2 xl:pr-16 xl:border-r-orange-500/40"
                 aria-labelledby="second-year">
                 <h3 class="text-xl mb-7 xl:text-2xl uppercase font-medium xl:mb-14" id="second-year" aria-level="3"
                     role="heading">{{__('about.course_second')}}</h3>
@@ -92,49 +87,45 @@
                         role="heading">{{__('about.course_web_title')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col xl:gap-2">
-                            <a class="underline hover:text-orange-500" href="/cours/show">{{__('Design Web')}}</a>
-                            <a class="underline hover:text-orange-500"
-                               href="/cours/show">{{__('Design d\'application mobile')}}</a>
-                            <a class="underline hover:text-orange-500"
-                               href="/cours/show">{{__('Développement côté serveur')}}</a>
-                            <a class="underline hover:text-orange-500"
-                               href="/cours/show">{{__('Développement côté client')}}</a>
-                            <a class="underline hover:text-orange-500" href="/cours/show">{{__('Multimédia')}}</a>
-                            <a class="underline hover:text-orange-500"
-                               href="/cours/show">{{__('Système de gestion de base de données')}}</a>
+                            @foreach($courses_bac2 as $course)
+                                <div class="flex justify-between">
+                                    <a class="hover:text-orange-500 underline" href="/cours/{{$course->slug}}">{{$course->name}}</a>
+                                </div>
+                            @endforeach
                         </div>
                         <div class="flex flex-col ml-8 xl:gap-2">
-                            <p>{{__('165H')}}</p>
-                            <p>{{__('30H')}}</p>
-                            <p>{{__('60H')}}</p>
-                            <p>{{__('75H')}}</p>
-                            <p>{{__('60H')}}</p>
-                            <p>{{__('45H')}}</p>
+                            @foreach($courses_bac2 as $course)
+                                <div class="flex justify-between">
+                                    <p>{{$course->hours}}H</p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>
             </section>
-            <section aria-labelledby="third-year">
+            <section
+                class="border-b-2 border-b-orange-500/40 pb-10 xl:border-b-0 "
+                aria-labelledby="third-year">
                 <h3 class="text-xl mb-7 xl:text-2xl uppercase font-medium xl:mb-14" id="third-year" aria-level="3"
                     role="heading">{{__('about.course_third')}}</h3>
                 <p class="xl:text-lg">{{__('about.course_commons')}}</p>
-                <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="third-web">
-                    <h4 class="sr-only font-semibold" id="third-web" aria-level="3"
-                        role="heading">{{__('Cours de web')}}</h4>
+                <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="second-web">
+                    <h4 class="sr-only font-semibold" id="second-web" aria-level="3"
+                        role="heading">{{__('about.course_web_title')}}</h4>
                     <div class="flex justify-between">
                         <div class="flex flex-col xl:gap-2">
-                            <a class="underline hover:text-orange-500" href="/cours/show">{{__('Projet Web')}}</a>
-                            <a class="underline hover:text-orange-500"
-                               href="/cours/show">{{__('Développement d\'application mobile')}}</a>
-                            <a class="underline hover:text-orange-500"
-                               href="/cours/show">{{__('Projet de fin d\'étude')}}</a>
-                            <a class="underline hover:text-orange-500" href="/cours/show">{{__('Stage')}}</a>
+                            @foreach($courses_bac3 as $course)
+                                <div class="flex justify-between">
+                                    <a class="hover:text-orange-500 underline" href="/cours/{{$course->slug}}">{{$course->name}}</a>
+                                </div>
+                            @endforeach
                         </div>
                         <div class="flex flex-col ml-8 xl:gap-2">
-                            <p>{{__('240H')}}</p>
-                            <p>{{__('45H')}}</p>
-                            <p>{{__('210H')}}</p>
-                            <p>{{__('140H')}}</p>
+                            @foreach($courses_bac3 as $course)
+                                <div class="flex justify-between">
+                                    <p>{{$course->hours}}H</p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>

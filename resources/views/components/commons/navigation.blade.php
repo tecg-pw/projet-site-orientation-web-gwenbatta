@@ -84,8 +84,7 @@
                                     d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
                                     transform="translate(-19 -8.001)" fill="#ffffff"/>
                             </svg>
-                        </a>
-                    </li>
+                        </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
                             class="group flex flex-1 justify-between" href="/about">
                             <span>{{__('nav.nav_navigation.about')}}</span>
@@ -121,8 +120,7 @@
                                     d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
                                     transform="translate(-19 -8.001)" fill="#ffffff"/>
                             </svg>
-                        </a>
-                    </li>
+                        </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
                             class="group flex flex-1 justify-between" href="/forum/index">
                             <span>{{__('nav.nav_navigation.forum')}}</span>
@@ -232,14 +230,11 @@
             </div>
             <ul class="sr-only xl:not-sr-only flex gap-x-5 text-green-700 text-xl flex-1 font-sans font-semibold">
                 <li><a class="hover:text-orange-500" href="/bottin/alumni"> {{__('nav.nav_navigation.alumni')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/project/index"> {{__('nav.nav_navigation.project')}}</a>
-                </li>
+                <li><a class="hover:text-orange-500" href="/project/index"> {{__('nav.nav_navigation.project')}}</a></li>
                 <li><a class="hover:text-orange-500" href="/forum/index"> {{__('nav.nav_navigation.forum')}}</a></li>
                 <li><a class="hover:text-orange-500" href="/about"> {{__('nav.nav_navigation.about')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/news/index"> {{__('nav.nav_navigation.actualities')}}</a>
-                </li>
-                <li><a class="hover:text-orange-500" href="/contact/student"> {{__('nav.nav_navigation.contact')}}</a>
-                </li>
+                <li><a class="hover:text-orange-500" href="/news/index"> {{__('nav.nav_navigation.actualities')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
             </ul>
             <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
         </div>

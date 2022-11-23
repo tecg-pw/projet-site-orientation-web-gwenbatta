@@ -18,8 +18,10 @@ class AboutController extends Controller
     {
         $jobs = Opportunity::all();
         $teachers = People::where('status', 'professeur')->orWhere('status', 'teachalumni')->get();
-        $courses = Course::all();
-        return view('about', compact( 'teachers', 'jobs', 'courses'));
+        $courses_bac1 = Course::where('bac', 1)->get();
+        $courses_bac2 = Course::where('bac', 2)->get();
+        $courses_bac3 = Course::where('bac', 3)->get();
+        return view('about', compact( 'teachers', 'jobs', 'courses_bac1','courses_bac2','courses_bac3'));
     }
 
     /**

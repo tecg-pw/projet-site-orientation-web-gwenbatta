@@ -22,8 +22,11 @@ class UserSeeder extends Seeder
         foreach ($users as $key => $value) {
             User::create([
                 "name" => $value->name,
-                "slug" => \Str::slug($value->name),
+                "firstname" => $value->firstname,
+                "slug" => \Str::slug($value->firstname.$value->name),
+                "status" => $value->status,
                 "avatar" => $value->avatar,
+                "back_image" => $value->back_image,
                 "email" => $value->email,
                 "is_admin" => $value->is_admin,
                 "email_verified_at" => $value->email_verified_at,

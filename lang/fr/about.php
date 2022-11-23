@@ -31,6 +31,10 @@ return [
     'teacher_button' => 'Voir le bottin',
     'job_title' => 'Débouchées',
     'job_more' => 'Voir plus sur ',
+    'job_alumni_title' => 'Nos alumnis qui font ce métier',
+    'job_alumni_link' => 'Voir plus d\'alumnis',
+    'job_project_title' => 'Quelques projets',
+    'job_project_link' => 'Voir tous les projets',
 
 
 ];

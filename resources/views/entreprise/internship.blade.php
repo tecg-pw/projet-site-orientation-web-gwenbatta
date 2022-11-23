@@ -3,7 +3,7 @@
     <section class="xl:px-36 px-10 mt-20" aria-labelledby="company">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="company" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('agency.agency_title')}}</h2>
-            <x-search_bar class=""></x-search_bar>
+            <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
         </div>
         <x-sort_by_entreprise class="mb-14"></x-sort_by_entreprise>
         <div class="flex xl:gap-20 mb-12 justify-between xl:justify-start">
@@ -16,24 +16,19 @@
     <article class="px-10 xl:px-36 pt-20 pb-36 bg-yellow-600" aria-labelledby="list-internship">
         <h2 id="list-internship" role="heading" aria-level="2" class="sr-only">{{__('agency.offer_list')}}</h2>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
-            @for($i=1; $i<11;$i++)
+            @foreach($offers as $offer)
                 <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
-                         aria-labelledby="{{'name'.$i}}">
+                         aria-labelledby="{{$offer->slug}}">
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">
                             <div class="xl:flex-row flex-col flex justify-between">
-                                <h3 id="{{'name'.$i}}" role="heading" aria-level="4" class="text-lg xl:text-2xl">UI / UX
-                                    Designer Freelance</h3>
-                                <p class="xl:text-lg">30 avr. 2022</p>
+                                <h3 id="{{$offer->slug}}" role="heading" aria-level="4" class="text-lg xl:text-2xl">{{$offer->name}}</h3>
+                                <p class="xl:text-lg">{{$offer->created_at->format('d M. Y')}}</p>
                             </div>
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col gap-2 max-w-[80%]">
-                                    <p class="text">Votre travail consiste à assimiler les besoins des différentes
-                                        cibles et les
-                                        objectifs du client pour les traduire visuellement. Empathie et capacité
-                                        d’analyse sont des
-                                        prérequis indispensables pour cette mission.</p>
-                                    <p class="font-medium xl:text-lg">Epic Agency</p>
+                                    <p class="text">{{$offer->description}}</p>
+                                    <p class="font-medium xl:text-lg">{{$offer->partner->name}}</p>
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                      width="25"
@@ -46,9 +41,9 @@
                         </div>
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/entreprise/internship/single">{{__('En savoir plus')}}</a>
+                       href="/entreprise/internship/{{$offer->slug}}">{{__('agency.offer_more') . $offer->slug}}</a>
                 </article>
-            @endfor
+            @endforeach
         </div>
         {{--                {{$posts->links()}}--}}
     </article>

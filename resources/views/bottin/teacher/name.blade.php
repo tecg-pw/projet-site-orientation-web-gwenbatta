@@ -4,7 +4,7 @@
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold xl:flex-row">
             <h2 id="name" role="heading" aria-level="2"
                 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$teacher->firstname}} {{$teacher->name}}</h2>
-            <a class="underline xl:text-2xl hover:text-orange-500" href="/bottin/alumni">{{__('Voir d\'autres professeurs')}}</a>
+            <a class="underline xl:text-2xl hover:text-orange-500" href="/bottin">{{__('Voir d\'autres professeurs')}}</a>
         </div>
         <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mt-16">
             <div class="mt-4 mb-7 order-2">
@@ -12,7 +12,7 @@
                     <div>
                         <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
                             <p class="">{{$teacher->status}}</p>
-                            <p>{{$teacher->begin}}</p>
+                            <p>{{$teacher->begin->format('Y')}}</p>
                         </div>
                         <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-xl">
                             <a class="hover:text-orange-500 text-green-700 underline" href="mailto:{{$teacher->mail}}">{{$teacher->mail}}</a>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 @if($teacher->description === null)
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else

@@ -51,8 +51,11 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        foreach ($project->courses as $classe){
+        $teachers = Course::find($classe->id)->person()->get();
+    }
         $projects = Project::where('person_id', $project->person_id)->orderBy('date')->take(6)->get();
-        return view('project.single', compact('project', 'projects'));
+        return view('project.single', compact('project', 'projects', 'teachers'));
     }
 
     /**

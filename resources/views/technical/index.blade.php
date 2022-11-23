@@ -65,14 +65,14 @@
                     <p class="mb-4 xl:mb-10 xl:text-lg">{{$doc->excerpt}}</p>
                     <div class="flex justify-between">
                         <p class="xl:text-lg font-medium">
-                            {{__('Cours de')}}
+                            {{__('technicals.doc_course')}}
                             @foreach($doc->courses as $course)
                                 <a class="underline text-green-700"
-                                   href="/cours/show">{{$course->name}}</a>
+                                   href="/cours/{{$course->slug}}">{{$course->name}}</a>
                             @endforeach
                         </p>
                         <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
-                           href="{{$doc->link}}">{{__('Voir la doc')}}</a>
+                           href="{{$doc->link}}">{{__('docandtool.doc_link')}}</a>
                         <svg class="group-hover:mr-0 mr-4 self-end" xmlns="http://www.w3.org/2000/svg" width="25"
                              viewBox="0 0 32 27.417">
                             <path

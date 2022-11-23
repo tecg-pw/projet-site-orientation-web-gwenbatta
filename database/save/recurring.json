@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "name": "Est-ce qu’avoir un Mac est indispensable ?",
+        "description": "Non, il n’est pas obligatoire d’avoir un Mac pour les cours de web. Cependant, nous vous conseillons, si vous devez acheter un nouvel ordinateur et que vous vous destinez au web, de prendre un Mac. En effet, la plupart des professeurs de web utilise Apple et sauront mieux vous aider si vous avez un problème car il maitrise mieux ces machines et c’est un outil mieux adapter pour le développement de sites.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null
+    }
+]

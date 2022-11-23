@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\People;
 use App\Models\Project;
+use App\Models\Testimonial;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -17,14 +18,20 @@ class PersonController extends Controller
      */
     public function index()
     {
+        $testimonials = Testimonial::all();
         $people = People::paginate(8);
-        return view('bottin', compact('people'));
+        $status = People::select('status')->groupBy('status')->get();
+        $years_end = People::select('end')->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
+        return view('bottin', compact('people', 'status', 'years_end', 'testimonials'));
     }
 
     public function indexAlumni()
     {
+        $testimonials = Testimonial::all();
         $people = People::where('status', 'ancien')->orWhere('status', 'teachalumni')->get();
-        return view('bottin.alumni', compact('people'));
+        $status = People::select('status')->groupBy('status')->get();
+        $years_end = People::select('end')->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
+        return view('bottin.alumni', compact('people', 'status', 'years_end', 'testimonials'));
     }
 
     /**
@@ -40,7 +47,7 @@ class PersonController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -51,35 +58,36 @@ class PersonController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  People $teacher
+     * @param People $teacher
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function showTeacher(People $teacher)
     {
-        return view('bottin.teacher.name', compact( 'teacher'));
+        return view('bottin.teacher.name', compact('teacher'));
     }
+
     public function showTeachAlumni(People $teachalumni)
     {
         $projects = Project::where('person_id', $teachalumni->id)->orderBy('date')->take(6)->get();
-        return view('bottin.teachalumni.name', compact( 'teachalumni','projects'));
+        return view('bottin.teachalumni.name', compact('teachalumni', 'projects'));
     }
+
     public function showAlumni(People $alumni)
     {
-        $alumni->begin = Carbon::parse($alumni->begin)->format('Y');
-        $alumni->end = Carbon::parse($alumni->end)->format('Y');
         $projects = Project::where('person_id', $alumni->id)->orderBy('date')->take(6)->get();
-        return view('bottin.alumni.name', compact( 'alumni','projects'));
+        return view('bottin.alumni.name', compact('alumni', 'projects'));
     }
+
     public function showStudent(People $student)
     {
         $projects = Project::where('person_id', $student->id)->orderBy('date')->take(6)->get();
-        return view('bottin.student.name', compact( 'student','projects'));
+        return view('bottin.student.name', compact('student', 'projects'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -90,8 +98,8 @@ class PersonController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -102,7 +110,7 @@ class PersonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -34,6 +34,9 @@ return new class extends Migration
         Schema::table('subjects', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
         });
+        Schema::table('testimonials', function (Blueprint $table) {
+            $table->foreignId('person_id')->constrained()->onUpdate('cascade');
+        });
 
 
 
@@ -56,6 +59,10 @@ return new class extends Migration
         Schema::table('course_tool', function (Blueprint $table) {
             $table->foreignId('tool_id')->constrained()->onUpdate('cascade');
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('partner_person', function (Blueprint $table) {
+            $table->foreignId('people_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('partner_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('tuto_user', function (Blueprint $table) {
             $table->foreignId('tuto_id')->constrained()->onUpdate('cascade');

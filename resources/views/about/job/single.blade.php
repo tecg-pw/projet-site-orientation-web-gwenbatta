@@ -56,9 +56,9 @@
         <div class="flex flex-col xl:flex-row justify-between mb-6">
             <h2 class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis"
                 aria-level="2"
-                role="heading">{{__('Nos alumnis qui font ce métier')}}</h2>
+                role="heading">{{__('about.job_alumni_title')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
+               href="/bottin/alumni">{{__('about.job_alumni_link')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($alumnis as $alumni)
@@ -72,7 +72,7 @@
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col xl:flex-row xl:gap-4">
                                     <p class="uppercase xl:text-lg">{{$alumni->status}}</p>
-                                    <p class="uppercase xl:text-lg">{{$alumni->begin}}-{{$alumni->end}}</p>
+                                    <p class="uppercase xl:text-lg">{{$alumni->begin->format('Y')}}-{{$alumni->end->format('Y')}}</p>
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                      width="25"
@@ -94,23 +94,6 @@
             @endif
         </div>
         {{--                {{$posts->links()}}--}}
-    </article>
-    <article class="bg-yellow-600 xl:px-36 px-10 pb-40 pt-20" aria-labelledby="projects">
-        <div class="justify-between flex flex-col xl:flex-row mb-6">
-            <h2 class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-6 xl:mb-20" id="projects"
-                aria-level="2"
-                role="heading">{{__('Quelques projets')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
-               href="/project/index">{{__('Voir tous les projets')}}</a>
-        </div>
-        <div class="xl:grid xl:grid-cols-3 flex flex-col gap-8 justify-center">
-            {{--            @for($i=1; $i<4;$i++)--}}
-            {{--                <x-project></x-project>--}}
-            {{--            @endfor--}}
-{{--            @if(count($projects) === 0)--}}
-{{--                <p class="xl:text-xl text-lg">{{__('people.bottin_no_project')}}</p>--}}
-{{--            @endif--}}
-        </div>
     </article>
 </main>
 <x-commons.footer></x-commons.footer>

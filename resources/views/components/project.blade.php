@@ -7,7 +7,7 @@
         <h3 class="text-xl mb-1.5 xl:text-3xl xl:mb-3" role="heading" aria-level="3" id="{{$project->slug}}">{{$project->title}}</h3>
             <p class="xl:text-xl relative z-30">{{$project->person->firstname}} {{$project->person->name}}</p>
         <div class="flex justify-between mb-4">
-            <p class="xl:text-xl">{{$project->date}}</p>
+            <p class="xl:text-xl">{{$project->date->format('M. Y')}}</p>
             <svg class="group-hover:mr-0 mr-2 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                  viewBox="0 0 32 27.417">
                 <path
@@ -15,7 +15,7 @@
                     transform="translate(-19 -8.001)" fill="#4e6458"/>
             </svg>
         </div>
-        <a class="self-end linkcard" href="/project/{{$project->slug}}">{{__('Voir le projet'. $project->title)}}</a>
+        <a class="self-end linkcard" href="/project/{{$project->slug}}">{{__('project.project_view'). $project->title}}</a>
     </div>
     <figure class="order-first">
         <img class="rounded-t-3xl" src="{{$project->main_picture}}" alt="">

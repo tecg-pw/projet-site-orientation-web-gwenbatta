@@ -4,7 +4,7 @@
         <div class="flex xl:flex-row flex-col xl:px-36 px-10 justify-between mt-20 mb-8">
             <h2 id="slug" aria-level="2" role="heading"
                 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$book->name}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl xl:text-end font-semibold"
                href="/technical/docandtool/doc#books">{{__('technicals.book_single_back')}}</a>
         </div>
         <div class="xl:px-36 px-10 flex text-center gap-10 xl:gap-20 text-xl">
@@ -22,7 +22,7 @@
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading"
-                        class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('Description')}}</h3>
+                        class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('technicals.book_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
                         <p class="text-lg leading-8 xl:leading-10 xl:text-xl">{{$book->description}}</p>
                     </div>

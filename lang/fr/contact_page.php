@@ -37,5 +37,6 @@ return [
     'agency_sketch' => 'Sketch',
     'agency_offer_title' => 'Votre offre de stage',
     'agency_offer' => 'Glisser un PDF',
+    'aside_title' => 'Coordonnées',
 
 ];

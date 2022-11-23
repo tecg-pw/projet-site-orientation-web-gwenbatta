@@ -6,36 +6,36 @@
                 <div class="order-2 flex-1  ml-8 mt-32">
                     <div>
                         <h2 role="heading" id="name" aria-level="2"
-                            class="text-4xl text-yellow-800 font-extrabold font-sans mb-3">{{__('Gwenaëlle BATTA')}}</h2>
-                        <p class="uppercase text-2xl">{{__('Étudiante')}}</p>
+                            class="text-4xl text-yellow-800 font-extrabold font-sans mb-3">{{$user->firstname}} {{$user->name}}</h2>
+                        <p class="uppercase text-2xl">{{$user->status}}</p>
                     </div>
                     <div class="text-end">
-                        <a href="/user/profile/modify"
-                           class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('Modifier le profil')}}</a>
+                        <a href="/user/profile/modify/{{$user->slug}}"
+                           class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_modify')}}</a>
                     </div>
                 </div>
-                <img class="rounded-full " src="https://placehold.jp/276x276.png" alt="">
+                <img class="rounded-full " src="{{$user->avatar}}" alt="">
             </div>
             <img class="absolute -z-10 top-0 bottom-0 left-0 right-0"
-                 src="https://placehold.jp/525dff/ffffff/1920x550.png" alt="">
+                 src="{{$user->back_image}}" alt="">
         </div>
     </section>
     <article class="bg-yellow-600 px-36 pb-36 pt-20" aria-labelledby="tutos">
         <div class="flex justify-between">
             <h2 role="heading" id="tutos" aria-level="2"
-                class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('Tutos Favoris')}}</h2>
-            <a class="hover:text-orange-500  font-sans text-green-700 text-3xl font-semibold underline px-4" href="/technical/tuto">{{__('Voir plus de tutos')}}</a>
+                class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('user.user_favorite')}}</h2>
+            <a class="hover:text-orange-500  font-sans text-green-700 text-3xl font-semibold underline px-4" href="/technical/tuto">{{__('user.tuto_back')}}</a>
         </div>
         <div class="mt-12 grid grid-cols-2 gap-x-24 gap-y-8">
-            @for($i=1; $i<5;$i++)
+            @foreach($tutos as $tuto)
                 <article class="group relative bg-yellow-100 py-6 px-8 rounded-3xl"
-                         aria-labelledby="{{'slug-tuto'.$i}}">
+                         aria-labelledby="{{$tuto->slug}}">
                     <div class="flex justify-between">
                         <div>
-                            <h3 id="{{'slug-tuto'.$i}}" aria-level="3" role="heading"
+                            <h3 id="{{$tuto->slug}}" aria-level="3" role="heading"
                                 class="font-medium text-2xl mb-1.5">
-                                Froggy</h3>
-                            <p class="mb-3">Date de publication</p>
+                                {{$tuto->name}}</h3>
+                            <p class="mb-3">{{$tuto->created_at->format('d M Y')}}</p>
                         </div>
                         <div class="relative">
                             <label class="sr-only" for="favorite">{{__('Checkbox Favoris')}}</label>
@@ -58,11 +58,11 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="mb-6 text-lg">Exercice d’introduction à Flexbox, une technique CSS </p>
+                    <p class="mb-6 text-lg">{{$tuto->excerpt}}</p>
                     <div class="flex justify-between">
-                        <p class="text-orange-500 font-sans text-lg font-medium">CSS</p>
+                        <p class="text-orange-500 font-sans text-lg font-medium">{{$tuto->languages}}</p>
                         <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
-                           href="">{{__('Faire l\'exercices')}}</a>
+                           href="{{$tuto->link}}">{{__('Faire l\'exercices')}}</a>
                         <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                              viewBox="0 0 32 27.417">
                             <path
@@ -71,13 +71,13 @@
                         </svg>
                     </div>
                 </article>
-            @endfor
+            @endforeach
         </div>
     </article>
     <section class="px-36 mt-36 mb-36" aria-labelledby="questions">
         <h2 role="heading" id="questions" aria-level="2"
-            class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('Vos questions')}}</h2>
-        <p>Vous n'avez posé aucune question</p>
+            class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('user.user_question_title')}}</h2>
+        <p>{{__('user.user_no_question')}}</p>
     </section>
 </main>
 <x-commons.footer></x-commons.footer>

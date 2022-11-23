@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Answer;
 use App\Models\Glossary;
+use App\Models\Testimonial;
 use Illuminate\Database\Seeder;
 use PhpParser\Comment;
 
@@ -35,15 +36,19 @@ class DatabaseSeeder extends Seeder
         $this->call(ProjectSeeder::class);
         $this->call(QuestionSeeder::class);
         $this->call(SubjectSeeder::class);
+        $this->call(RecurringSeeder::class);
         $this->call(CommentSeeder::class);
         $this->call(AnswerSeeder::class);
         $this->call(ToolSeeder::class);
         $this->call(TutoSeeder::class);
+        $this->call(TestimonialSeeder::class);
         $this->call(OpportunitiesSeeder::class);
         $this->call(CoursePersonSeeder::class);
         $this->call(CourseProjectSeeder::class);
         $this->call(CourseDocSeeder::class);
         $this->call(CourseToolSeeder::class);
         $this->call(BookCourseSeeder::class);
+        $this->call(PartnerPersonSeeder::class);
+        $this->call(TutoUserSeeder::class);
     }
 }

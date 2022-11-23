@@ -5,9 +5,9 @@
             <h2 id="doc-and-tool" role="heading" aria-level="2"
                 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('docandtool.doc_tool_title')}}</h2>
         </div>
-        <p class="mb-8 text-lg leading-8 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('')}}</p>
+        <p class="mb-8 text-lg leading-8 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('docandtool.doc_tool_text')}}</p>
         <article aria-labelledby="list-tools">
-            <h3 id="list-tools" role="heading" aria-level="3" class="sr-only">{{__('Liste d\'outils')}}</h3>
+            <h3 id="list-tools" role="heading" aria-level="3" class="sr-only">{{__('docandtool.tool_title')}}</h3>
             <div class="flex justify-between xl:justify-start mb-12">
                 <a class="text-xl underline text-green-700 font-semibold font-sans xl:mr-36 px-5 py-2" href="/technical/docandtool/doc">{{__('docandtool.doc_link')}}</a>
                 <a class="rounded-lg text-xl underline text-green-700 font-semibold font-sans bg-orange-100 px-5 py-2" href="/technical/docandtool/tool">{{__('docandtool.tool_link')}}</a>

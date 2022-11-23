@@ -1,15 +1,17 @@
 <x-commons.navigation></x-commons.navigation>
 <main>
-    <section aria-labelledby="slug">
+    <section aria-labelledby="{{$new->slug}}">
         <div class="flex px-36 justify-between mt-20">
-            <h2 id="slug" aria-level="2" role="heading"
-                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{__('Porte Ouverte de la HEPL')}}</h2>
+            <h2 id="{{$new->slug}}" aria-level="2" role="heading"
+                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{$new->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
-               href="/about#jobs">{{__('actu.actu_single_back')}}</a>
+               href="/news/index">{{__('actu.actu_single_back')}}</a>
         </div>
         <div class="px-36 flex gap-20 text-xl">
-            <p>Année</p>
-            <p>Lieu</p>
+            @if($new->date !== null)
+                <p>{{$new->date}}</p>
+            @endif
+            <p>{{$new->lieu}}</p>
         </div>
         <div class="px-36 grid grid-cols-10 items-center mb-36 gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
@@ -18,15 +20,10 @@
                         class="font-sans text-xl font-medium mb-5">{{__('actu.actu_single_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
                         <p class="text-lg leading-10 mb-10 flex flex-col gap-10">
-                    <span>
-                    {{__('La journée Porte Ouverte au Parc des Marêts aura lieu ce samedi 30 avril 2022. Lors de cette journée, vous pourrez rencontrer les professeurs de l’option, des anciens étudiants qui seront présents pour parler de leur expériences mais également tout l’équipe pédagogique. Vous pourrez parler avec eux et posez toutes vos questions. ')}}
-                    </span>
-                            <span>
-                        {{__('Nous espérons vous y voir nombreux !')}}
-                    </span>
+                            {{$new->description}}
                         </p>
                         <a class="hover:text-orange-500 underline text-xl text-green-700 font-sans font-semibold "
-                           href="">{{__('actu.actu_single_more')}}</a>
+                           href="{{$new->link}}">{{__('actu.actu_single_more')}}</a>
                     </div>
                 </section>
             </div>
