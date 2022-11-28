@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <article class="xl:px-36 px-10 mb-64" aria-labelledby="projects">
         <div class="flex flex-col xl:flex-row justify-between mb-10 mt-14 xl:items-center xl:mt-36 xl:mb-32">
             <h2 id="projects" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('actu.actu_title')}}</h2>

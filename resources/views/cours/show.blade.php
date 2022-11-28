@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <section aria-labelledby="slug">
         <div class="flex xl:flex-row flex-col xl:px-36 px-10 justify-between mt-20 mb-8">
             <h2 id="slug" aria-level="2" role="heading" class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$course->name}}</h2>

@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <a class="absolute text-green-500 left-28 top-56 font-sans text-xl underline" href="">Fil d'arianne</a>
     <section class="flex flex-col relative mb-32" aria-labelledby="name">
         <div class="relative">

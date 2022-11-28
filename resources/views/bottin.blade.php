@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main class="">
+<main id="content" class="">
     <section class="mt-20" aria-labelledby="bottin">
         <div class="px-10 flex flex-col xl:px-36 xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="bottin" role="heading" aria-level="2"

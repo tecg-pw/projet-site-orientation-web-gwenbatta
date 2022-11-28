@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <section class="mt-20 mb-36 flex justify-center" aria-labelledby="login">
         <div class="xl:px-36 px-10">
             <div class="flex flex-col">

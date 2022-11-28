@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{--><!--{str_replace('_','-',app()->getLocale())}}">
+<html lang="{{str_replace('_','-',app()->getLocale())}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,9 +17,10 @@
 <body class="bg-white-100" aria-labelledby="body">
 <header>
     <h1 class="sr-only" aria-level="1" role="heading"
-        id="body">{{__('TecWeb, le site de l\'option Web de la HEPL')}}</h1>
+        id="body">{{__('nav.main_title')}}</h1>
+    <a href="/#content" class="sr-only">{{__('nav.nav_avoid content')}}</a>
     <nav class="flex flex-col relative fixed" aria-labelledby="navigation">
-        <h2 class="sr-only" id="navigation" role="heading" aria-level="2">{{__('')}}</h2>
+        <h2 class="sr-only" id="navigation" role="heading" aria-level="2">{{__('nav.nav_title')}}</h2>
         <div
             class="relative z-30 bg-green-700 text-white-100 order-1 font-sans flex gap-x-10 justify-between xl:justify-end xl:px-36 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl">
             <ul class="flex gap-x-1">

@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main class="xl:text-2xl">
+<main id="content" class="xl:text-2xl">
     <section class="relative mt-14 px-10 xl:px-36 xl:flex xl:mt-14 xl:mb-36 xl:gap-24 xl:items-center" aria-labelledby="intro">
         <div class="xl:flex-1">
             <h2 class="text-2xl leading-8 mb-6 uppercase font-bold text-yellow-800 font-sans xl:text-4xl xl:mb-16  xl:leading-12" role="heading" aria-level="2"

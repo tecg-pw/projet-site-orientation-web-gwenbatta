@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
         <div class="px-10 xl:px-36 flex justify-between mb-8 xl:mb-24 items-center">

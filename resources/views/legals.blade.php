@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main class="flex flex-col xl:flex-row gap-x-20 mb-60">
+<main id="content" class="flex flex-col xl:flex-row gap-x-20 mb-60">
     <section class="bg-yellow-600 xl:mt-20 py-20 px-10 xl:px-36" aria-labelledby="informations">
         <h2 class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-11" role="heading" aria-level="2"
             id="informations">{{__('legals.informations_title')}}</h2>

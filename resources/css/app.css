@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+    *:focus {
+        padding: 1em;
+        border-color: #F2CF67;
+    }
     html {
         font-family: Hind, sans-serif;
         font-weight: 200;

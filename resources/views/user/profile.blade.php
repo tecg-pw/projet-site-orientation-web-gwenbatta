@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <section class="flex flex-col relative mb-32" aria-labelledby="name">
         <div class="relative">
             <div class="flex items-center justify-self-end mt-80 px-36">

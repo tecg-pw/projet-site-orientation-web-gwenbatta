@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main class="flex min-h-full gap-x-20 mb-60">
+<main id="content" class="flex min-h-full gap-x-20 mb-60">
         <section class="min-w-full mt-20 xl:px-36 flex flex-col items-center justify-center" aria-labelledby="404">
             <h2 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mt-20 mb-11" role="heading" aria-level="2"
                 id="404">{{__('404.404_title')}}</h2>

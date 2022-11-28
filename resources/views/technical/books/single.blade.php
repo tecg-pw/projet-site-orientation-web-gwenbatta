@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <section aria-labelledby="slug">
         <div class="flex xl:flex-row flex-col xl:px-36 px-10 justify-between mt-20 mb-8">
             <h2 id="slug" aria-level="2" role="heading"

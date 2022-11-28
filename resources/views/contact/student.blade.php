@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <section class="mt-20 mb-20 xl:mb-0 xl:flex justify-center" aria-labelledby="contact">
         <div class="xl:px-36">
             <div class="px-10 xl:px-0 flex flex-col">

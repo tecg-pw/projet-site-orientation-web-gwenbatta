@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <section class="xl:px-36 px-10 mt-20 mb-20 xl:mb-40" aria-labelledby="{{$offer->slug}}">
         <div class="flex xl:flex-row flex-col justify-between mb-8">
             <h2 id="{{$offer->slug}}" role="heading" aria-level="2"

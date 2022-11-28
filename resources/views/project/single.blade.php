@@ -2,7 +2,7 @@
 
 ?>
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <section class="xl:px-36 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
         <div class="flex flex-col xl:flex-row justify-between mb-8">
             <h2 id="{{$project->slug}}" aria-level="2" role="heading"

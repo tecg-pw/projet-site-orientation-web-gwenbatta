@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main>
+<main id="content">
     <section class="px-10 xl:px-36 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="about">
         <div class="flex-1 ">
             <h2 class="text-2xl leading-8 mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-16 font-sans"

@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main class="">
+<main id="content" class="">
     <section class="xl:px-36 px-10 mt-20 mb-32 xl:mb-64" aria-labelledby="doc-and-tool">
         <div class="flex justify-between mb-7 items-center">
             <h2 id="doc-and-tool" role="heading" aria-level="2"
