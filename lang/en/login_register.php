@@ -2,18 +2,18 @@
 
 return [
 
-    'login_title' => 'Connexion à votre compte',
-    'login_button' => 'Se connecter',
-    'register_title' => 'Création de votre compte',
-    'register_button' => 'Créer un compte',
-    'name' => 'Nom',
-    'firstname' => 'Prénom',
+    'login_title' => 'Login',
+    'login_button' => 'Login to your account',
+    'register_title' => 'Create your account',
+    'register_button' => 'Register',
+    'name' => 'Name',
+    'firstname' => 'Firstname',
     'mail' => 'Email',
-    'password' => 'Mot de passe',
-    'forgot' => 'Mot de passe oublié',
-    'remind' => 'Se souvenir de moi',
-    'register_link' => 'Je n\'ai pas de compte',
-    'login_link' => 'J\'ai déjà un compte',
+    'password' => 'Password',
+    'forgot' => 'Forgot Password',
+    'remind' => 'Remembering me',
+    'register_link' => 'I don\'t have an account',
+    'login_link' => 'I already have an account',
 
 
 ];

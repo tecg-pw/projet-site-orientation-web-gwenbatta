@@ -2,12 +2,12 @@
 
 return [
 
-    'sort_by' => 'Trier par',
-    'city' => 'Ville',
-    'agency' => 'Agence',
-    'year' => 'Année',
+    'sort_by' => 'Sort by',
+    'city' => 'Cities',
+    'agency' => 'Agencies',
+    'year' => 'Year',
     'status' => 'Status',
     'tags' => 'Tags',
-    'button' => 'Valider'
+    'button' => 'Confirm'
 
 ];

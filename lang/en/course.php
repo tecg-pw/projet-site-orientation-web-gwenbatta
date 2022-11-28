@@ -2,9 +2,9 @@
 
 return [
 
-    'course_back' => 'Retour à la grille de cours',
-    'course_year' => 'année',
+    'course_back' => 'Back to the course grid',
+    'course_year' => 'year',
     'course_subtitle' => 'Description',
-    'project_title' => 'Projets réalisés dans ce cours',
+    'project_title' => 'Projects created in this course',
 
 ];

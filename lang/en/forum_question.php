@@ -2,12 +2,12 @@
 
 return [
 
-    'title' => 'Poser une question',
-    'back' => 'Retour au forum',
+    'title' => 'Ask a question',
+    'back' => 'Back to the forum',
     'question' => 'Question',
-    'question_placeholder' => 'Comment vole les oiseaux ?',
+    'question_placeholder' => 'How do birds fly?',
     'description' => 'Description',
-    'description_placeholder' => 'Je décris ma question',
-    'button' => 'Poser ma question',
+    'description_placeholder' => 'I describe my question',
+    'button' => 'Ask my question',
 
 ];

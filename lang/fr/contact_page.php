@@ -8,7 +8,7 @@ return [
     'student_name' => 'Nom',
     'student_firstname' => 'Prénom',
     'mail' => 'Email',
-    'student_object' => 'Object',
+    'student_object' => 'Objet',
     'student_object_value' => 'Je pose une question',
     'student_message' => 'Message',
     'student_message_value' => 'Mon message',

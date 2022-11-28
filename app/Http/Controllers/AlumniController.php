@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\People;
 use App\Models\Project;
 use App\Models\Testimonial;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class PersonController extends Controller
+class AlumniController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $testimonials = Testimonial::all();
-        $people = People::paginate(8);
+        $people = People::where('status', 'ancien')->orWhere('status', 'teachalumni')->get();
         $status = People::select('status')->groupBy('status')->get();
         $years_end = People::select('end')->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
-        return view('bottin', compact('people', 'status', 'years_end', 'testimonials'));
+        return view('bottin.alumni', compact('people', 'status', 'years_end', 'testimonials'));
     }
 
     /**
@@ -38,7 +36,7 @@ class PersonController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,20 +47,19 @@ class PersonController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param People $teacher
+     * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-
-
-    public function show($id)
+    public function show(People $alumni)
     {
-        //
+        $projects = Project::where('person_id', $alumni->id)->orderBy('date')->take(6)->get();
+        return view('bottin.alumni.name', compact('alumni', 'projects'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -73,8 +70,8 @@ class PersonController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -85,7 +82,7 @@ class PersonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

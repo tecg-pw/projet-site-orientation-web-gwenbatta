@@ -2,11 +2,11 @@
 
 return [
 
-    'job_back' => 'Retour à la liste des métiers',
+    'job_back' => 'Back to the list of professions',
     'job_subtitle' => 'Description',
-    'job_other' => 'D\'autres métiers',
-    'job_other_see' => 'Voir tout les métiers',
-    'job_no_alumni' => 'Aucun alumni ne fait ce métier',
+    'job_other' => 'Other jobs',
+    'job_other_see' => 'See all jobs',
+    'job_no_alumni' => 'No alumni do this job',
 
 
 ];

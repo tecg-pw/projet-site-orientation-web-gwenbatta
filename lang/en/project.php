@@ -2,15 +2,15 @@
 
 return [
 
-    'project_title' => 'Projets de nos étudiants',
-    'project_button' => 'Voir tous les projets',
-    'project_make_course' => 'Réaliser dans le cadre du cours de :',
-    'project_make_with' => 'Avec :',
-    'project_portfolio' => 'Voir le portfolio',
-    'project_github' => 'Voir le Github',
-    'project_pictures' => 'Photos du projets',
-    'project_view' => 'Voir le projet',
-    'project_other' => 'Quelques projets',
-    'project_see_all' => 'Voir tous les projets',
+    'project_title' => 'Our students\' projects',
+    'project_button' => 'See all projects',
+    'project_make_course' => 'Done in the course of :',
+    'project_make_with' => 'With :',
+    'project_portfolio' => 'See the portfolio',
+    'project_github' => 'See the Github',
+    'project_pictures' => 'Project photos',
+    'project_view' => 'See the project',
+    'project_other' => 'Some projects',
+    'project_see_all' => 'See all projects',
 
 ];

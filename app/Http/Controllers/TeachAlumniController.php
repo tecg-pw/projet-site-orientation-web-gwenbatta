@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\People;
+use App\Models\Project;
+use Illuminate\Http\Request;
+
+class TeachAlumniController extends Controller
+{
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function show(People $teachalumni)
+    {
+        $projects = Project::where('person_id', $teachalumni->id)->orderBy('date')->take(6)->get();
+        return view('bottin.teachalumni.name', compact('teachalumni', 'projects'));
+    }
+}

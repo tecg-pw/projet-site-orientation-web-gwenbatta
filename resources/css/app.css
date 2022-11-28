@@ -4,8 +4,9 @@
 @tailwind utilities;
 @layer base {
     *:focus {
-        padding: 1em;
-        border-color: #F2CF67;
+        padding: 0.1em;
+        color: #DA953A;
+        outline-color: rgba(78,100,88,0.7);
     }
     html {
         font-family: Hind, sans-serif;

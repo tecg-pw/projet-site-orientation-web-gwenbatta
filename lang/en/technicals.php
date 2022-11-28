@@ -2,18 +2,18 @@
 
 return [
 
-    'technical_title' => 'Pratico-Pratique',
-    'technical_text' => 'Sur cette page, vous trouverez tout ce qui peut vous être utile que ce soit au sein de l’option web, au travers de ce site ou encore pour préparer au mieux votre rentrée en web par des petits tutoriels qui vous sont proposer, une section glossaire où vous retrouverez des termes très important pour le web et votre vision du web et enfin une section avec quelques questions posées sur notre forum qui vous permettront de vous éclairer sur ce que propose l’orientation et sur les questions que vous vous posez sans doute vous-même.',
-    'glossary_title' => 'Quelques termes techniques',
-    'glossary_button' => 'Voir plus de termes',
-    'tuto_title' => 'Quelques tutos',
-    'tuto_button' => 'Voir plus de tutos',
-    'doc_title' => 'Documentations',
-    'doc_button' => 'Voir plus de docs',
-    'doc_course' => 'Cours de ',
-    'doc_link' => 'Voir la documentation sur',
-    'book_link' => 'Voir plus le livre ',
-    'book_single_back' => 'Retour à la liste des livres',
+    'technical_title' => 'Practical',
+    'technical_text' => 'On this page, you will find everything that can be useful to you whether it is within the web option, through this site or to prepare your return to the web by small tutorials which are proposed to you, a glossary section where you will find very important terms for the web and your vision of the web and finally a section with some questions asked on our forum which will allow you to enlighten you on what the orientation proposes and on the questions which you undoubtedly ask yourself.',
+    'glossary_title' => 'Some technical terms',
+    'glossary_button' => 'See more terms',
+    'tuto_title' => 'Some tutorials',
+    'tuto_button' => 'See more tutorials',
+    'doc_title' => 'Documentation',
+    'doc_button' => 'See more documents',
+    'doc_course' => 'Course ',
+    'doc_link' => 'See the documentation on',
+    'book_link' => 'See more about the book ',
+    'book_single_back' => 'Back to the list of books',
     'book_subtitle' => 'Description',
 
 

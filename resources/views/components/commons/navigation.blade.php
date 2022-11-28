@@ -44,10 +44,60 @@
                 <a class="hover:text-orange-500" href="/user/profil">{{__('Gwenaëlle')}}</a>
             @endauth
         </div>
-        <div
-            class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-2.5 xl:px-36 px-5 gap-x-10 xl:py-10">
+        <div class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-2.5 xl:px-36 px-5 gap-x-10 xl:py-10">
+            <div class="group ml-4 group relative">
+                <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="170.001" height="77.656"
+                     viewBox="0 0 170.001 77.656">
+                    <g id="Groupe_284" data-name="Groupe 284" transform="translate(-230.999 -70.345)">
+                        <path id="Soustraction_1" data-name="Soustraction 1"
+                              d="M4116.213,11516.657h-48.141a12.468,12.468,0,0,1-4.4-.723,3.3,3.3,0,0,1-2.414-3.093,2.349,2.349,0,0,1,.648-1.733c.956-.958,2.789-1.09,4.628-1.09.287,0,.581,0,.818.006l.208,0,.513,0h20.255v-6.63h-29.886a14.443,14.443,0,0,1-14.443-14.443v-35.513a14.443,14.443,0,0,1,14.443-14.442h67.4a14.33,14.33,0,0,1,8.646,2.871,14.562,14.562,0,0,1,5.151,7.285h-6.012a9.381,9.381,0,0,0-7.784-4.529h-67.4a9.642,9.642,0,0,0-5.324,1.756,7.99,7.99,0,0,0-2.4,2.7,9.666,9.666,0,0,0-1.092,4.361v35.513a8.727,8.727,0,0,0,2.232,6.449,9.375,9.375,0,0,0,6.58,2.366h67.4a10.458,10.458,0,0,0,3.925-.761,7.37,7.37,0,0,0,3.823-3.493h5.96a14.449,14.449,0,0,1-13.708,9.882h-29.885v6.63h20.255a17.816,17.816,0,0,1,4.405.409c1.6.432,2.41,1.24,2.41,2.4,0,1.5-1.311,2.407-2.411,2.905A11.38,11.38,0,0,1,4116.213,11516.657Z"
+                              transform="translate(-3813 -11368.656)" fill="rgba(111, 112, 77, 0.3)"/>
+                        <g id="Groupe_251" data-name="Groupe 251" transform="translate(0 63)">
+                            <text class="group-hover:fill-green-700" id="TecWeb_" data-name="TecWeb "
+                                  transform="translate(242 47)" fill="#da953a" font-size="35"
+                                  font-family="Montserrat-Bold, Montserrat" font-weight="700">
+                                <tspan x="0" y="0">TecWeb</tspan>
+                            </text>
+                            <text class="group-hover:fill-green-700" id="Le_site_de_l_option_web_de_la_HEPL"
+                                  data-name="Le site de l’option web de la HEPL" transform="translate(242 58)"
+                                  fill="#da953a" font-size="11" font-family="Hind-Regular, Hind">
+                                <tspan x="0" y="0">Le site de l’option web de la HEPL</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </svg>
+                <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="80" viewBox="0 0 170.001 77.656">
+                    <g id="Groupe_284" data-name="Groupe 284" transform="translate(-230.999 -70.345)">
+                        <path id="Soustraction_1" data-name="Soustraction 1"
+                              d="M4116.213,11516.657h-48.141a12.468,12.468,0,0,1-4.4-.723,3.3,3.3,0,0,1-2.414-3.093,2.349,2.349,0,0,1,.648-1.733c.956-.958,2.789-1.09,4.628-1.09.287,0,.581,0,.818.006l.208,0,.513,0h20.255v-6.63h-29.886a14.443,14.443,0,0,1-14.443-14.443v-35.513a14.443,14.443,0,0,1,14.443-14.442h67.4a14.33,14.33,0,0,1,8.646,2.871,14.562,14.562,0,0,1,5.151,7.285h-6.012a9.381,9.381,0,0,0-7.784-4.529h-67.4a9.642,9.642,0,0,0-5.324,1.756,7.99,7.99,0,0,0-2.4,2.7,9.666,9.666,0,0,0-1.092,4.361v35.513a8.727,8.727,0,0,0,2.232,6.449,9.375,9.375,0,0,0,6.58,2.366h67.4a10.458,10.458,0,0,0,3.925-.761,7.37,7.37,0,0,0,3.823-3.493h5.96a14.449,14.449,0,0,1-13.708,9.882h-29.885v6.63h20.255a17.816,17.816,0,0,1,4.405.409c1.6.432,2.41,1.24,2.41,2.4,0,1.5-1.311,2.407-2.411,2.905A11.38,11.38,0,0,1,4116.213,11516.657Z"
+                              transform="translate(-3813 -11368.656)" fill="rgba(111, 112, 77, 0.3)"/>
+                        <g id="Groupe_251" data-name="Groupe 251" transform="translate(0 63)">
+                            <text class="group-hover:fill-green-700" id="TecWeb_" data-name="TecWeb "
+                                  transform="translate(242 47)" fill="#da953a" font-size="35"
+                                  font-family="Montserrat-Bold, Montserrat" font-weight="700">
+                                <tspan x="0" y="0">TecWeb</tspan>
+                            </text>
+                            <text class="group-hover:fill-green-700" id="Le_site_de_l_option_web_de_la_HEPL"
+                                  data-name="Le site de l’option web de la HEPL" transform="translate(242 58)"
+                                  fill="#da953a" font-size="11" font-family="Hind-Regular, Hind">
+                                <tspan x="0" y="0">Le site de l’option web de la HEPL</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </svg>
+                <a href="/" class="linkcard">{{__('nav.nav_link_home')}}</a>
+            </div>
+            <ul class="sr-only xl:not-sr-only flex gap-x-5 text-green-700 text-xl flex-1 font-sans font-semibold">
+                <li><a class="hover:text-orange-500" href="/bottin/alumni"> {{__('nav.nav_navigation.alumni')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/project/index"> {{__('nav.nav_navigation.project')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/forum/index"> {{__('nav.nav_navigation.forum')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/about"> {{__('nav.nav_navigation.about')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/news/index"> {{__('nav.nav_navigation.actualities')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
+            </ul>
+            <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
             <input class="absolute cursor-pointer opacity-0 z-30 w-8 h-8 " type="checkbox" name="burger" id="burger">
-            <div class="relative">
+            <div class="relative -order-1">
                 <label class="sr-only" for="burger">{{__('nav.nav_burger')}}</label>
                 <div class="cursor-pointer space-y-2 absolute -top-2.5 xl:-top-2">
                     <div class="w-8 h-0.5 bg-green-700"></div>
@@ -187,57 +237,6 @@
                             class="text-sm font-medium font-body xl:justify-self-end xl:sr-only"></x-search_bar></span>
                 </ul>
             </div>
-            <div class="group ml-4 group relative">
-                <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="170.001" height="77.656"
-                     viewBox="0 0 170.001 77.656">
-                    <g id="Groupe_284" data-name="Groupe 284" transform="translate(-230.999 -70.345)">
-                        <path id="Soustraction_1" data-name="Soustraction 1"
-                              d="M4116.213,11516.657h-48.141a12.468,12.468,0,0,1-4.4-.723,3.3,3.3,0,0,1-2.414-3.093,2.349,2.349,0,0,1,.648-1.733c.956-.958,2.789-1.09,4.628-1.09.287,0,.581,0,.818.006l.208,0,.513,0h20.255v-6.63h-29.886a14.443,14.443,0,0,1-14.443-14.443v-35.513a14.443,14.443,0,0,1,14.443-14.442h67.4a14.33,14.33,0,0,1,8.646,2.871,14.562,14.562,0,0,1,5.151,7.285h-6.012a9.381,9.381,0,0,0-7.784-4.529h-67.4a9.642,9.642,0,0,0-5.324,1.756,7.99,7.99,0,0,0-2.4,2.7,9.666,9.666,0,0,0-1.092,4.361v35.513a8.727,8.727,0,0,0,2.232,6.449,9.375,9.375,0,0,0,6.58,2.366h67.4a10.458,10.458,0,0,0,3.925-.761,7.37,7.37,0,0,0,3.823-3.493h5.96a14.449,14.449,0,0,1-13.708,9.882h-29.885v6.63h20.255a17.816,17.816,0,0,1,4.405.409c1.6.432,2.41,1.24,2.41,2.4,0,1.5-1.311,2.407-2.411,2.905A11.38,11.38,0,0,1,4116.213,11516.657Z"
-                              transform="translate(-3813 -11368.656)" fill="rgba(111, 112, 77, 0.3)"/>
-                        <g id="Groupe_251" data-name="Groupe 251" transform="translate(0 63)">
-                            <text class="group-hover:fill-green-700" id="TecWeb_" data-name="TecWeb "
-                                  transform="translate(242 47)" fill="#da953a" font-size="35"
-                                  font-family="Montserrat-Bold, Montserrat" font-weight="700">
-                                <tspan x="0" y="0">TecWeb</tspan>
-                            </text>
-                            <text class="group-hover:fill-green-700" id="Le_site_de_l_option_web_de_la_HEPL"
-                                  data-name="Le site de l’option web de la HEPL" transform="translate(242 58)"
-                                  fill="#da953a" font-size="11" font-family="Hind-Regular, Hind">
-                                <tspan x="0" y="0">Le site de l’option web de la HEPL</tspan>
-                            </text>
-                        </g>
-                    </g>
-                </svg>
-                <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="80" viewBox="0 0 170.001 77.656">
-                    <g id="Groupe_284" data-name="Groupe 284" transform="translate(-230.999 -70.345)">
-                        <path id="Soustraction_1" data-name="Soustraction 1"
-                              d="M4116.213,11516.657h-48.141a12.468,12.468,0,0,1-4.4-.723,3.3,3.3,0,0,1-2.414-3.093,2.349,2.349,0,0,1,.648-1.733c.956-.958,2.789-1.09,4.628-1.09.287,0,.581,0,.818.006l.208,0,.513,0h20.255v-6.63h-29.886a14.443,14.443,0,0,1-14.443-14.443v-35.513a14.443,14.443,0,0,1,14.443-14.442h67.4a14.33,14.33,0,0,1,8.646,2.871,14.562,14.562,0,0,1,5.151,7.285h-6.012a9.381,9.381,0,0,0-7.784-4.529h-67.4a9.642,9.642,0,0,0-5.324,1.756,7.99,7.99,0,0,0-2.4,2.7,9.666,9.666,0,0,0-1.092,4.361v35.513a8.727,8.727,0,0,0,2.232,6.449,9.375,9.375,0,0,0,6.58,2.366h67.4a10.458,10.458,0,0,0,3.925-.761,7.37,7.37,0,0,0,3.823-3.493h5.96a14.449,14.449,0,0,1-13.708,9.882h-29.885v6.63h20.255a17.816,17.816,0,0,1,4.405.409c1.6.432,2.41,1.24,2.41,2.4,0,1.5-1.311,2.407-2.411,2.905A11.38,11.38,0,0,1,4116.213,11516.657Z"
-                              transform="translate(-3813 -11368.656)" fill="rgba(111, 112, 77, 0.3)"/>
-                        <g id="Groupe_251" data-name="Groupe 251" transform="translate(0 63)">
-                            <text class="group-hover:fill-green-700" id="TecWeb_" data-name="TecWeb "
-                                  transform="translate(242 47)" fill="#da953a" font-size="35"
-                                  font-family="Montserrat-Bold, Montserrat" font-weight="700">
-                                <tspan x="0" y="0">TecWeb</tspan>
-                            </text>
-                            <text class="group-hover:fill-green-700" id="Le_site_de_l_option_web_de_la_HEPL"
-                                  data-name="Le site de l’option web de la HEPL" transform="translate(242 58)"
-                                  fill="#da953a" font-size="11" font-family="Hind-Regular, Hind">
-                                <tspan x="0" y="0">Le site de l’option web de la HEPL</tspan>
-                            </text>
-                        </g>
-                    </g>
-                </svg>
-                <a href="/" class="linkcard">{{__('nav.nav_link_home')}}</a>
-            </div>
-            <ul class="sr-only xl:not-sr-only flex gap-x-5 text-green-700 text-xl flex-1 font-sans font-semibold">
-                <li><a class="hover:text-orange-500" href="/bottin/alumni"> {{__('nav.nav_navigation.alumni')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/project/index"> {{__('nav.nav_navigation.project')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/forum/index"> {{__('nav.nav_navigation.forum')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/about"> {{__('nav.nav_navigation.about')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/news/index"> {{__('nav.nav_navigation.actualities')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
-            </ul>
-            <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
         </div>
     </nav>
 </header>

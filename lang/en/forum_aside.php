@@ -2,8 +2,8 @@
 
 return [
 
-    'label' => 'Rechercher',
-    'latest' => 'Dernier sujet',
-    'rating' => 'Sujets populaire',
+    'label' => 'Search',
+    'latest' => 'Latest subject',
+    'rating' => 'Popular topics',
 
 ];

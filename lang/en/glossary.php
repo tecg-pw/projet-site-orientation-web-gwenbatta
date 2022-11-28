@@ -2,9 +2,9 @@
 
 return [
 
-    'glossary_title' => 'Glossaire',
-    'glossary_text' => 'Vous trouverez sur cette page une liste tous les termes techniques dont vous aurez besoin au sein de ce site ainsi qu’au sein des cours liés à l’orientation web',
-    'glossary_list_title' => 'Liste du glossaire',
+    'glossary_title' => 'Glossary',
+    'glossary_text' => 'On this page you will find a list of all the technical terms you will need in this site and in the web orientation courses',
+    'glossary_list_title' => 'Glossary list',
 
 
 ];

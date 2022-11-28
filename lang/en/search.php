@@ -2,10 +2,10 @@
 
 return [
 
-    'label' => 'Rechercher',
+    'label' => 'Search',
     'placeholder' => 'Wordpress | Math | Jordan Caron',
-    'button' => 'Valider',
-    'actu_single_back' => 'Retour aux actualités',
-    'actu_single_more' => 'En savoir plus',
+    'button' => 'Confirm',
+    'actu_single_back' => 'Back to news',
+    'actu_single_more' => 'Read more',
 
 ];

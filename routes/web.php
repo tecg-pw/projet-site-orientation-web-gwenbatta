@@ -2,18 +2,27 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ActualityController;
+use App\Http\Controllers\AgencyContactController;
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DocController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\GlossaryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\LatestAnswerController;
+use App\Http\Controllers\LatestSubjectController;
+use App\Http\Controllers\MyAnswerController;
+use App\Http\Controllers\MySubjectController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\StudentContactController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeachAlumniController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TechnicalController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\TutoController;
@@ -31,7 +40,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/{locale?}', [HomeController::class, 'index']);
 
 
 Route::get('/legals', function () {
@@ -61,11 +70,11 @@ Route::get('/entreprise/internship/{offer:slug}', [OfferController::class, 'show
 
 
 Route::get('/bottin', [PersonController::class, 'index']);
-Route::get('/bottin/alumni', [PersonController::class, 'indexAlumni']);
-Route::get('/bottin/alumni/{alumni:slug}', [PersonController::class, 'showAlumni']);
-Route::get('/bottin/teacher/{teacher:slug}', [PersonController::class, 'showTeacher']);
-Route::get('/bottin/teachalumni/{teachalumni:slug}', [PersonController::class, 'showTeachAlumni']);
-Route::get('/bottin/student/{student:slug}', [PersonController::class, 'showStudent']);
+Route::get('/bottin/alumni', [AlumniController::class, 'index']);
+Route::get('/bottin/alumni/{alumni:slug}', [AlumniController::class, 'show']);
+Route::get('/bottin/teacher/{teacher:slug}', [TeacherController::class, 'show']);
+Route::get('/bottin/teachalumni/{teachalumni:slug}', [TeachAlumniController::class, 'show']);
+Route::get('/bottin/student/{student:slug}', [StudentController::class, 'show']);
 
 Route::get('/cours/{course:slug}', [CourseController::class, 'show']);
 
@@ -83,17 +92,17 @@ Route::get('/user/password', function () {
 });
 
 
-Route::get('/contact/student', [ContactController::class, 'indexStudent']);
-Route::get('/contact/agency', [ContactController::class, 'indexAgency']);
+Route::get('/contact/student', [StudentContactController::class, 'index']);
+Route::get('/contact/agency', [AgencyContactController::class, 'index']);
 
 
 Route::get('/forum/question', function () {
     return view('forum.question');
 });
-Route::get('/forum/index', [ForumController::class, 'indexLatestSubject']);
-Route::get('/forum/latest-answers', [ForumController::class, 'indexLatestAnswer']);
-Route::get('/forum/my-subject', [ForumController::class, 'indexMySubject']);
-Route::get('/forum/my-talks', [ForumController::class, 'indexMyAnswer']);
+Route::get('/forum/index', [LatestSubjectController::class, 'index']);
+Route::get('/forum/latest-answers', [LatestAnswerController::class, 'index']);
+Route::get('/forum/my-subject', [MySubjectController::class, 'index']);
+Route::get('/forum/my-talks', [MyAnswerController::class, 'index']);
 Route::get('/forum/{subject:slug}', [ForumController::class, 'show']);
 
 
