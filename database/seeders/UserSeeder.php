@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
                 "email" => $value->email,
                 "is_admin" => $value->is_admin,
                 "email_verified_at" => $value->email_verified_at,
-                "password" => $value->password,
+                "password" => password_hash('change_this',PASSWORD_DEFAULT),
             ]);
         }
     }

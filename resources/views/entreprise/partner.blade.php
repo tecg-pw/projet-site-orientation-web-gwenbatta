@@ -8,9 +8,9 @@
        <x-sort_by_partner :cities="$cities" :agencies="$agencies"/>
         <div class="flex xl:gap-20 mb-12 justify-between xl:justify-start">
             <a class="xl:text-xl text-lg underline rounded-lg text-green-700 font-semibold font-sans bg-orange-100 px-5 py-2"
-               href="/entreprise/partner">{{__('agency.partner_link')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/partner">{{__('agency.partner_link')}}</a>
             <a class="hover:text-orange-500 xl:text-xl text-lg underline text-green-700 font-semibold font-sans px-5 py-2"
-               href="/entreprise/internship">{{__('agency.offer_link')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship">{{__('agency.offer_link')}}</a>
         </div>
     </section>
         <article class="xl:px-36 px-10  pt-20 pb-36 bg-yellow-600" aria-labelledby="list-partner">
@@ -38,7 +38,7 @@
                             <img class="order-1 rounded-full" src="{{$partner->logo}}" alt="avatar">
                         </div>
                         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                           href="/entreprise/partner/{{$partner->slug}}">{{__('En savoir plus') . $partner->name}}</a>
+                           href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/partner/{{$partner->slug}}">{{__('En savoir plus') . $partner->name}}</a>
                     </article>
                 @endforeach
             </div>

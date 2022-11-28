@@ -49,9 +49,9 @@ class ForumController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Subject $subject, string $locale = null)
+    public function show(string $locale = null, Subject $subject)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);

@@ -4,7 +4,7 @@
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold xl:flex-row">
             <h2 id="name" role="heading" aria-level="2"
                 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$teacher->firstname}} {{$teacher->name}}</h2>
-            <a class="underline xl:text-2xl hover:text-orange-500" href="/bottin">{{__('Voir d\'autres professeurs')}}</a>
+            <a class="underline xl:text-2xl hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/bottin">{{__('Voir d\'autres professeurs')}}</a>
         </div>
         <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mt-16">
             <div class="mt-4 mb-7 order-2">
@@ -80,14 +80,14 @@
     <article class="bg-yellow-600 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="classes">
         <div class="flex xl:flex-row flex-col justify-between mb-8">
             <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('people.bottin_course') . ( $teacher->firstname . ' ' .$teacher->name)}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold" href="/about#course">{{__('people.teacher_course')}}</a>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold" href="/{{str_replace('_','-',app()->getLocale())}}/about#course">{{__('people.teacher_course')}}</a>
         </div>
         <div  class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($teacher->courses as $classe)
                 <article class="hover:bg-orange-100 bg-white-100 py-6 px-8 rounded-3xl relative" aria-labelledby="{{$classe->slug}}">
                     <h3 id="{{$classe->slug}}" role="heading" aria-level="3" class="font-sans font-medium text-xl xl:text-2xl mb-3 underline font-medium">{{$classe->name}}</h3>
                     <p class="xl:text-lg">{{$classe->description}}</p>
-                    <a class="linkcard" href="/cours/{{$classe->slug}}">{{__('Voir le cours'. $classe->name)}}</a>
+                    <a class="linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/cours/{{$classe->slug}}">{{__('Voir le cours'. $classe->name)}}</a>
                 </article>
             @endforeach
         </div>

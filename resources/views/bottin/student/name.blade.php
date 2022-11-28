@@ -4,7 +4,7 @@
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold xl:flex-row">
             <h2 id="name" role="heading" aria-level="2"
                 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$student->firstname}} {{$student->name}}</h2>
-            <a class="underline xl:text-2xl hover:text-orange-500" href="/bottin">{{__('people.bottin_button')}}</a>
+            <a class="underline xl:text-2xl hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/bottin">{{__('people.bottin_button')}}</a>
         </div>
         <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mt-16">
             <div class="mt-4 mb-7 order-2">
@@ -86,7 +86,7 @@
             <h2 id="projects" role="heading" aria-level="2"
                 class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/project/index">{{__('project.project_see_all')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
             @foreach($projects as $project)

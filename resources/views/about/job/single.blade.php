@@ -5,7 +5,7 @@
             <h2 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
                 id="dev-front" aria-level="2" role="heading">{{$job->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/about#jobs">{{__('job.job_back')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/about#jobs">{{__('job.job_back')}}</a>
         </div>
         <div class="xl:mt-20 mt-10 px-10 xl:px-36 xl:grid xl:grid-cols-10 xl:items-center mb-36 xl:gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
@@ -38,7 +38,7 @@
             <h2 class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20" id="other" aria-level="2"
                 role="heading">{{__('job.job_other')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/about#jobs">{{__('job.job_other_see')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/about#jobs">{{__('job.job_other_see')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($jobs as $job)
@@ -47,7 +47,7 @@
                         class="font-medium text-xl xl:text-2xl mb-3 font-medium">{{$job->name}}</h3>
                     <p class="xl:text-lg">{{$job->excerpt}}</p>
                     <a class="linkcard"
-                       href="/about/job/{{$job->slug}}">{{__('about.job_more'). $job->slug}}</a>
+                       href="/{{str_replace('_','-',app()->getLocale())}}/about/job/{{$job->slug}}">{{__('about.job_more'). $job->slug}}</a>
                 </article>
             @endforeach
         </div>
@@ -58,7 +58,7 @@
                 aria-level="2"
                 role="heading">{{__('about.job_alumni_title')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/bottin/alumni">{{__('about.job_alumni_link')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni">{{__('about.job_alumni_link')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($alumnis as $alumni)
@@ -86,7 +86,7 @@
                         <img class="order-1 rounded-full " width="98" src="{{$alumni->avatar}}" alt="avatar">
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/bottin/alumni/name">{{__('En savoir plus')}}</a>
+                       href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni/name">{{__('En savoir plus')}}</a>
                 </article>
             @endforeach
             @if(count($alumnis) === 0)

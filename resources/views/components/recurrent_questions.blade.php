@@ -24,7 +24,7 @@
                 @if(request()->has('show-reponse-'.$recurring->slug))
                     <p class="mt-8 text-lg leading-8 xl:text-xl xl:mr-36">{{$recurring->description}}</p>
                     <div class="flex justify-end">
-                        <a href="/forum/index#{{$recurring->slug}}"
+                        <a href="/{{str_replace('_','-',app()->getLocale())}}/forum/index#{{$recurring->slug}}"
                            class="justify-self-end">
                             <span class="sr-only">{{__('recurring.recurring_link')}}</span>
                             <span>

@@ -9,7 +9,7 @@
             </div>
             <div class="flex flex-1">
                 <a class="hover:text-orange-500 font-sans text-green-700 self-center xl:text-xl font-semibold underline flex-1"
-                   href="/user/login">{{__('login_register.login_link')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/user/login">{{__('login_register.login_link')}}</a>
             </div>
             <div class="flex mt-14">
                 <form class="flex-1" action="/" method="post">

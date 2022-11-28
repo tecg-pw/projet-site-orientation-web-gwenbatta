@@ -13,7 +13,7 @@ class TeacherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(People $teacher, string $locale=null)
+    public function show(string $locale=null, People $teacher)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);

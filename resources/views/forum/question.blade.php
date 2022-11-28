@@ -8,10 +8,10 @@
                         {{__('forum_question.title')}}
                     </h2>
                     <a class="hover:text-orange-500 font-sans mt-3 xl:mt-6 xl:text-end text-green-700 xl:text-3xl font-semibold underline flex-1"
-                       href="/forum/index">{{__('forum_question.back')}}</a>
+                       href="/{{str_replace('_','-',app()->getLocale())}}/forum/index">{{__('forum_question.back')}}</a>
                 </div>
                 <a class="text-green-500 font-sans font-light underline mt-8"
-                   href="/">{{__('Techniques > Forum > Poser une question')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/">{{__('Techniques > Forum > Poser une question')}}</a>
             </div>
             <div class="xl:grid xl:grid-cols-5 flex flex-1 xl:mt-14">
                 <form action="/" method="post" class="xl:col-span-3 flex-1 xl:items-center xl:mr-20">

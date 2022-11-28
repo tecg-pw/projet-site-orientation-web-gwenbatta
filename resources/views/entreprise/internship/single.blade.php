@@ -5,7 +5,7 @@
             <h2 id="{{$offer->slug}}" role="heading" aria-level="2"
                 class="xl:text-4xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$offer->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/entreprise/internship">{{__('agency.offer_back')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship">{{__('agency.offer_back')}}</a>
         </div>
         <div class="flex xl:flex-row flex-col">
             <div class="flex flex-col gap-16">
@@ -14,7 +14,7 @@
                          alt="avatar">
                     <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
                         <h3 id="{{$offer->partner->slug}}" role="heading" aria-level="3" class="underline font-medium text-xl xl:text-2xl mb-2">
-                            <a class="text-green-700 hover:text-orange-500" href="/entreprise/partner/{{$offer->partner->slug}}">
+                            <a class="text-green-700 hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/partner/{{$offer->partner->slug}}">
                                 {{$offer->partner->name}}
                             </a>
                         </h3>
@@ -26,13 +26,7 @@
                         <div class="flex justify-between gap-24 xl:gap-32 items-center mt-4 ">
                             <div class="flex flex-1 gap-3">
                                 <div class="relative group">
-                                    <svg class="group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="30"
-                                         viewBox="0 0 38.97 38.005">
-                                        <path id="_08774047e75405e5723edc2388e9bc78"
-                                              data-name="08774047e75405e5723edc2388e9bc78"
-                                              d="M21.484,2.247a19.484,19.484,0,0,0-6.162,37.968c.974.171,1.339-.414,1.339-.925,0-.463-.024-2-.024-3.629-4.9.9-6.162-1.193-6.551-2.289a7.084,7.084,0,0,0-2-2.752c-.682-.365-1.656-1.266-.024-1.291a3.9,3.9,0,0,1,3,2,4.164,4.164,0,0,0,5.674,1.607,4.1,4.1,0,0,1,1.242-2.606c-4.335-.487-8.865-2.168-8.865-9.62a7.583,7.583,0,0,1,2-5.236,7,7,0,0,1,.195-5.163s1.632-.511,5.358,2a18.368,18.368,0,0,1,9.742,0c3.726-2.533,5.358-2,5.358-2a7,7,0,0,1,.195,5.163,7.538,7.538,0,0,1,2,5.236c0,7.477-4.554,9.133-8.889,9.62a4.614,4.614,0,0,1,1.315,3.6c0,2.606-.024,4.7-.024,5.358,0,.511.365,1.12,1.339.925a19.494,19.494,0,0,0-6.21-37.968Z"
-                                              transform="translate(-1.999 -2.247)" fill="#da953a"/>
-                                    </svg>
+                                    <svg class="group-hover:scale-110" width="34" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" fill="#da953a"><path d="M20.9,2H3.1A1.1,1.1,0,0,0,2,3.1V20.9A1.1,1.1,0,0,0,3.1,22h9.58V14.25h-2.6v-3h2.6V9a3.64,3.64,0,0,1,3.88-4,20.26,20.26,0,0,1,2.33.12v2.7H17.3c-1.26,0-1.5.6-1.5,1.47v1.93h3l-.39,3H15.8V22h5.1A1.1,1.1,0,0,0,22,20.9V3.1A1.1,1.1,0,0,0,20.9,2Z"/></svg>
                                     <a class="linkcard" href="{{$offer->partner->link_facebook}}"></a>
                                 </div>
                                 <div class="group relative">
@@ -136,7 +130,7 @@
         <div class="flex xl:flex-row flex-col justify-between mb-8">
             <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('agency.offer_other_title')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/entreprise/internship">{{__('agency.offer_other')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship">{{__('agency.offer_other')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($offers as $other_offer)
@@ -164,7 +158,7 @@
                         </div>
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/entreprise/internship/{{$other_offer->slug}}">{{__('En savoir plus' . $other_offer->slug)}}</a>
+                       href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship/{{$other_offer->slug}}">{{__('En savoir plus' . $other_offer->slug)}}</a>
                 </article>
             @endforeach
         </div>

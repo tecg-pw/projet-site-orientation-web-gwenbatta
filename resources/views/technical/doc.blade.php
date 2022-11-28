@@ -10,9 +10,9 @@
             <h3 id="list-doc" role="heading" aria-level="3" class="sr-only">{{__('technicals.doc_title')}}</h3>
             <div class="flex justify-between xl:justify-start  mb-12">
                 <a class="text-xl rounded-lg underline text-green-700 font-semibold font-sans xl:mr-36 bg-orange-100 px-5 py-2"
-                   href="/technical/docandtool/doc">{{__('docandtool.doc_link')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/technical/docandtool/doc">{{__('docandtool.doc_link')}}</a>
                 <a class="text-xl underline text-green-700 font-semibold font-sans px-5 py-2"
-                   href="/technical/docandtool/tool">{{__('docandtool.tool_link')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/technical/docandtool/tool">{{__('docandtool.tool_link')}}</a>
             </div>
             <div class="mt-12 xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
                 @foreach($docs as $doc)

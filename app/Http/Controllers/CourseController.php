@@ -14,7 +14,7 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show (Course $course, string $locale = null)
+    public function show (string $locale = null, Course $course)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);

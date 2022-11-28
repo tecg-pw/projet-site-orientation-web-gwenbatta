@@ -24,7 +24,7 @@
                                     transform="translate(-19 -8.001)" fill="#4e6458"/>
                             </svg>
                         </div>
-                        <a class="self-end linkcard" href="/news/{{$new->slug}}">{{__('actu.actu_link')}}</a>
+                        <a class="self-end linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/news/{{$new->slug}}">{{__('actu.actu_link')}}</a>
                     </div>
                     <figure class="order-first">
                         <img class="rounded-t-3xl" src="{{$new->main_picture}}" alt="">

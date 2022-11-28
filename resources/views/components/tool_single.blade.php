@@ -18,7 +18,7 @@
             <span class="flex gap-2">
                 @foreach($tool->courses as $course)
                     <a class="underline text-green-700"
-                       href="/cours/show">{{$course->name}}</a>
+                       href="/{{str_replace('_','-',app()->getLocale())}}/cours/show">{{$course->name}}</a>
                 @endforeach
             </span>
 

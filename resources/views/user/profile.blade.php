@@ -10,7 +10,7 @@
                         <p class="uppercase text-2xl">{{$user->status}}</p>
                     </div>
                     <div class="text-end">
-                        <a href="/user/profile/modify/{{$user->slug}}"
+                        <a href="/{{str_replace('_','-',app()->getLocale())}}/user/profile/modify/{{$user->slug}}"
                            class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_modify')}}</a>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
         <div class="flex justify-between">
             <h2 role="heading" id="tutos" aria-level="2"
                 class="text-4xl uppercase font-extrabold font-sans mb-20">{{__('user.user_favorite')}}</h2>
-            <a class="hover:text-orange-500  font-sans text-green-700 text-3xl font-semibold underline px-4" href="/technical/tuto">{{__('user.tuto_back')}}</a>
+            <a class="hover:text-orange-500  font-sans text-green-700 text-3xl font-semibold underline px-4" href="/{{str_replace('_','-',app()->getLocale())}}/technical/tuto">{{__('user.tuto_back')}}</a>
         </div>
         <div class="mt-12 grid grid-cols-2 gap-x-24 gap-y-8">
             @foreach($tutos as $tuto)

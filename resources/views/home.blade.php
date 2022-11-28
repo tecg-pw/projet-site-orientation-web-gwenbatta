@@ -10,10 +10,10 @@
                 {{__('home.intro_text')}}
             </p>
             <div class="mt-6 flex flex-col xl:justify-between xl:flex-row xl:items-center xl:mt-20 ">
-                <a href="/about"
+                <a href="/{{str_replace('_','-',app()->getLocale())}}/about"
                    class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('home.intro_button_about')}}</a>
                 <a class="text-center rounded-lg px-4 py-2 hover:text-orange-500 font-semibold underline font-sans text-green-700 xl:self-center xl:flex xl:text-end xl:text-2xl  xl:px-4 xl:py-6 xl:self-end"
-                   href="/forum/index">{{__('home.intro_button_forum')}}
+                   href="/{{str_replace('_','-',app()->getLocale())}}/forum/index">{{__('home.intro_button_forum')}}
                 </a>
             </div>
         </div>
@@ -40,7 +40,7 @@
                     <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
                         transform="translate(-19 -8.001)" fill="#4e6458"/>
                 </svg>
-                <a class="linkcard" href="/about#course">
+                <a class="linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/about#course">
                     {{__('qualities_button')}}
                 </a>
             </div>
@@ -52,7 +52,7 @@
                     <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
                         transform="translate(-19 -8.001)" fill="#4e6458"/>
                 </svg>
-                <a class="linkcard" href="/about#jobs">
+                <a class="linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/about#jobs">
                     {{__('home.emploi_button')}}
                 </a>
             </div>
@@ -64,7 +64,7 @@
                     <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
                         transform="translate(-19 -8.001)" fill="#4e6458"/>
                 </svg>
-                <a class="linkcard" href="/about#profs">
+                <a class="linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/about#profs">
                     {{__('home.teacher_button')}}
                 </a>
             </div>
@@ -77,7 +77,7 @@
                 {{__('home.projects_title')}}
             </h2>
             <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 xl:text-end xl:text-3xl"
-               href="/projet/index">{{__('home.projects_button')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/projet/index">{{__('home.projects_button')}}</a>
         </div>
         <div class="flex-wrap flex gap-8 justify-center xl:flex-nowrap">
             @foreach($projects as $project)
@@ -96,7 +96,7 @@
                 {{__('home.interrest_text')}}
             </p>
             <div class="mt-6 flex flex-col xl:justify-between xl:flex-row xl:items-center xl:mt-20 ">
-                <a href="/contact/student"
+                <a href="/{{str_replace('_','-',app()->getLocale())}}/contact/student"
                    class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('home.interrest_button_contact')}}</a>
                 <a class="text-center rounded-lg px-4 py-2 hover:text-orange-500 font-semibold underline font-sans text-green-700 xl:self-center xl:flex xl:text-end xl:text-2xl  xl:px-4 xl:py-6 xl:self-end"
                    href="https://www.hepl.be/fr/inscription">{{__('home.interrest_button_inscription')}}

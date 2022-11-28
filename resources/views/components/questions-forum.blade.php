@@ -4,8 +4,6 @@
     'ratings'
 
 ])
-
-
 <article {{ $attributes->class(['px-10 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-36 pb-28']) }} aria-labelledby="questions">
     <div class="flex flex-col xl:mt-20 xl:flex-row xl:mb-24 mb-12">
         <h2 class="text-2xl mb-6 xl:text-4xl xl:max-w-[50%] uppercase font-bold xl:mb-12 font-sans xl:leading-12" role="heading" aria-level="2"
@@ -19,22 +17,22 @@
                 <article class="group hover:bg-orange-100 bg-white-100 relative flex xl:p-6 rounded-xl"
                          aria-labelledby="{{$subject->slug}}">
                     <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
-                        <div class="flex flex-col">
-                            <h3 class="order-2 font-medium font-sans xl:text-xl" id="{{$subject->slug}}"
+                        <div class="flex flex-col gap-4">
+                            <h3 class="order-2 font-medium xl:text-xl" id="{{$subject->slug}}"
                                 role="heading"
                                 aria-level="3">{{$subject->subject}}</h3>
                             <div class="flex relative xl:justify-between">
-                                <p class="xl:text-xl self-end">{{$subject->user->firstname}} {{$subject->user->name}}</p>
-                                <p class="xl:text-xl self-end">{{$subject->created_at->format('d M. Y')}}</p>
+                                <p class="xl:text-base text-base uppercase self-end ">{{$subject->user->firstname}} {{$subject->user->name}}</p>
+                                <p class="xl:text-base self-end">{{$subject->created_at->format('d M. Y')}}</p>
                             </div>
                         </div>
                         <div class="order-3 flex flex-col xl:flex-row justify-between">
                             <div class="flex gap-4 items-center">
-                                <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg xl:text-lg text-green-700">
+                                <p class="text-base uppercase font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg xl:text-base text-green-700">
                                     {{ucwords($subject->tag)}}</p>
-                                <p class="xl:text-xl">{{__('forum.number_comment').$subject->comments_count}}</p>
+                                <p class="xl:text-lg ">{{__('forum.number_comment').$subject->comments_count}}</p>
                             </div>
-                            <a class="linkcard underline text-green-700 font-sans font-semibold" href="/forum/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
+                            <a class="linkcard underline text-green-700 font-sans font-semibold" href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
                             <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                                  viewBox="0 0 32 27.417">
                                 <path
@@ -58,22 +56,22 @@
                         <article class="hover:bg-orange-100 group bg-white-100 relative flex p-6 rounded-xl"
                                  aria-labelledby="{{$latest->slug}}">
                             <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
-                                <div class="flex-col flex">
-                                    <h4 class="order-2 font-medium font-sans text-xl" id="{{$latest->slug}}"
+                                <div class="flex-col flex gap-4">
+                                    <h4 class="order-2 font-medium text-xl" id="{{$latest->slug}}"
                                         role="heading"
                                         aria-level="4">{{$latest->subject}}</h4>
                                     <div class="flex relative justify-between">
-                                        <p class="text-xl self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
-                                        <p class="text-xl self-end">{{$latest->created_at->format('d M. Y')}}</p>
+                                        <p class="text-base uppercase self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
+                                        <p class="text-base self-end">{{$latest->created_at->format('d M. Y')}}</p>
                                     </div>
                                 </div>
                                 <div class="order-3 flex justify-between">
                                     <div class="flex gap-4">
-                                        <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
+                                        <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-base uppercase text-green-700">
                                             {{ucwords($latest->tag)}}</p>
                                     </div>
                                     <a class="linkcard underline text-green-700 font-sans font-semibold"
-                                       href="/forum/{{$latest->slug}}">{{__('forum.see_subject')}}</a>
+                                       href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$latest->slug}}">{{__('forum.see_subject')}}</a>
                                     <svg class="mr-4 self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                          width="25"
                                          viewBox="0 0 32 27.417">
@@ -95,22 +93,22 @@
                         <article class="hover:bg-orange-100 group bg-white-100 relative flex p-6 rounded-xl"
                                  aria-labelledby="{{$rating->slug}}">
                             <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
-                                <div class="flex-col flex">
-                                    <h4 class="order-2 font-medium font-sans text-xl" id="{{$rating->slug}}"
+                                <div class="flex-col flex gap-4">
+                                    <h4 class="order-2 font-medium text-xl" id="{{$rating->slug}}"
                                         role="heading"
                                         aria-level="4">{{$rating->subject}}</h4>
                                     <div class="flex relative justify-between">
-                                        <p class="text-xl self-end">{{$rating->user->firstname}} {{$rating->user->name}} </p>
-                                        <p class="text-xl self-end">{{$rating->created_at->format('d M. Y')}}</p>
+                                        <p class="text-base uppercase self-end">{{$rating->user->firstname}} {{$rating->user->name}} </p>
+                                        <p class="text-base self-end">{{$rating->created_at->format('d M. Y')}}</p>
                                     </div>
                                 </div>
                                 <div class="order-3 flex justify-between">
                                     <div class="flex gap-4">
-                                        <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
+                                        <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-base uppercase text-green-700">
                                             {{ucwords($rating->tag)}}</p>
                                     </div>
                                     <a class="linkcard underline text-green-700 font-sans font-semibold"
-                                       href="/forum/{{$rating->slug}}">{{__('forum.see_subject')}}</a>
+                                       href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$rating->slug}}">{{__('forum.see_subject')}}</a>
                                     <svg class="mr-4 self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                          width="25"
                                          viewBox="0 0 32 27.417">

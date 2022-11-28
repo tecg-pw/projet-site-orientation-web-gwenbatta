@@ -53,7 +53,7 @@ class PartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Partner $partner, string $locale=null)
+    public function show(string $locale=null, Partner $partner)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);

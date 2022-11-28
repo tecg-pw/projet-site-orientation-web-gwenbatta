@@ -8,9 +8,9 @@
         <x-sort_by_entreprise class="mb-14"></x-sort_by_entreprise>
         <div class="flex xl:gap-20 mb-12 justify-between xl:justify-start">
             <a class="hover:text-orange-500 xl:text-xl text-lg underline text-green-700 font-semibold font-sans px-5 py-2"
-               href="/entreprise/partner">{{__('agency.partner_link')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/partner">{{__('agency.partner_link')}}</a>
             <a class=" xl:text-xl text-lg underline text-green-700 bg-orange-100 rounded-lg font-semibold font-sans px-5 py-2"
-               href="/entreprise/internship">{{__('agency.offer_link')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship">{{__('agency.offer_link')}}</a>
         </div>
     </section>
     <article class="px-10 xl:px-36 pt-20 pb-36 bg-yellow-600" aria-labelledby="list-internship">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/entreprise/internship/{{$offer->slug}}">{{__('agency.offer_more') . $offer->slug}}</a>
+                       href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship/{{$offer->slug}}">{{__('agency.offer_more') . $offer->slug}}</a>
                 </article>
             @endforeach
         </div>

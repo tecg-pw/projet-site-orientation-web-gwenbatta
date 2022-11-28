@@ -49,8 +49,11 @@ class OfferController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Offer $offer)
+    public function show(string $locale=null,Offer $offer)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $offers = Offer::where('partner_id', $offer->partner_id)->where('id', '<>', $offer->id)->get();
         return view('entreprise.internship.single', compact('offer', 'offers'));
     }

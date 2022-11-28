@@ -8,13 +8,13 @@
                     {{__('contact_page.contact_title')}}
                 </h2>
                 <a class="text-green-500 text-lg xl:text-2xl font-sans font-light underline mt-8"
-                   href="/">{{__('Contact > Étudiant')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}">{{__('Contact > Étudiant')}}</a>
             </div>
             <div class="flex flex-1 px-10 xl:px-0">
                 <a class="bg-orange-200 font-sans text-green-700 text-xl rounded-lg font-semibold underline xl:mr-28 py-2.5 px-6"
-                   href="/contact/student">{{__('contact_page.student_link')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/contact/student">{{__('contact_page.student_link')}}</a>
                 <a class="hover:text-orange-500 text-end font-sans text-green-700 self-center text-xl font-semibold underline flex-1 py-2.5 px-6 xl:text-start"
-                   href="/contact/agency">{{__('contact_page.agency_link')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             <div class="flex  mt-14">
                 <form action="/" method="post" class="flex-1 px-10 xl:px-0">

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
 
-    public function show(Book $book, string $locale = null)
+    public function show(string $locale = null, Book $book)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);

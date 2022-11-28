@@ -5,15 +5,15 @@
             <h2 id="slug" aria-level="2" role="heading"
                 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$book->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl xl:text-end font-semibold"
-               href="/technical/docandtool/doc#books">{{__('technicals.book_single_back')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/technical/docandtool/doc#books">{{__('technicals.book_single_back')}}</a>
         </div>
         <div class="xl:px-36 px-10 flex text-center gap-10 xl:gap-20 text-xl">
             @foreach($book->courses as $classe)
                 <a class=" underline text-green-700 uppercase hover:text-orange-500"
-                   href="/cours/{{$classe->slug}}">{{$classe->name}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/cours/{{$classe->slug}}">{{$classe->name}}</a>
                 @foreach($teachers as $teacher)
                     <a class=" underline text-green-700 uppercase hover:text-orange-500"
-                       href="/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
+                       href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
                 @endforeach
             @endforeach
 

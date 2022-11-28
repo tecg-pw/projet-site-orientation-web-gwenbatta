@@ -53,7 +53,7 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(People $alumni)
+    public function show(string $locale=null, People $alumni)
     {
         $projects = Project::where('person_id', $alumni->id)->orderBy('date')->take(6)->get();
         return view('bottin.alumni.name', compact('alumni', 'projects'));

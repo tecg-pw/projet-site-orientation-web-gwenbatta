@@ -9,7 +9,7 @@
             </div>
             <div class="flex flex-1">
                 <a class="hover:text-orange-500 font-sans text-green-700 self-center xl:text-xl font-semibold underline flex-1"
-                   href="/user/register">{{__('login_register.register_link')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/user/register">{{__('login_register.register_link')}}</a>
             </div>
             <div class="flex mt-14">
                 <form action="/" method="post" class="flex flex-col xl:block min-w-full">
@@ -26,7 +26,7 @@
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="password" id="password" type="password" placeholder="azerty">
                         <a class="hover:text-orange-500 mt-2 text-green-700 underline font-sans self-end text-sm"
-                           href="/user/password">{{__('login_register.forgot')}}</a>
+                           href="/{{str_replace('_','-',app()->getLocale())}}/user/password">{{__('login_register.forgot')}}</a>
                     </fieldset>
                     <fieldset class="flex flex-row-reverse justify-end gap-4">
                         <label class="text-green-500 text-lg xl:text-2xl mr-4" for="remindme">{{__('login_register.remind')}}</label>

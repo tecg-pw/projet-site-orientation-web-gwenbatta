@@ -5,7 +5,7 @@
             <h2 id="{{$new->slug}}" aria-level="2" role="heading"
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans mb-11">{{$new->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
-               href="/news/index">{{__('actu.actu_single_back')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/news/index">{{__('actu.actu_single_back')}}</a>
         </div>
         <div class="px-36 flex gap-20 text-xl">
             @if($new->date !== null)

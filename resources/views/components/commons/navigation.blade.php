@@ -18,7 +18,7 @@
 <header>
     <h1 class="sr-only" aria-level="1" role="heading"
         id="body">{{__('nav.main_title')}}</h1>
-    <a href="/#content" class="sr-only">{{__('nav.nav_avoid content')}}</a>
+    <a href="/{{str_replace('_','-',app()->getLocale())}}/#content" class="sr-only">{{__('nav.nav_avoid content')}}</a>
     <nav class="flex flex-col relative fixed" aria-labelledby="navigation">
         <h2 class="sr-only" id="navigation" role="heading" aria-level="2">{{__('nav.nav_title')}}</h2>
         <div
@@ -38,10 +38,10 @@
                 </li>
             </ul>
             @guest()
-                <a class="hover:text-orange-500" href="/user/login">{{__('nav.connexion')}}</a>
+                <a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/user/login">{{__('nav.connexion')}}</a>
             @endguest
             @auth()
-                <a class="hover:text-orange-500" href="/user/profil">{{__('Gwenaëlle')}}</a>
+                <a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/user/profile/{{auth()->user()->slug}}">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
             @endauth
         </div>
         <div class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-2.5 xl:px-36 px-5 gap-x-10 xl:py-10">

@@ -23,7 +23,7 @@
             </span>
         </p>
         <a class="text-xl underline text-green-700 linkcard font-semibold font-sans linkcard"
-           href="/technical/books/{{$book->slug}}">{{__('technicals.book_link')}}</a>
+           href="/{{str_replace('_','-',app()->getLocale())}}/technical/books/{{$book->slug}}">{{__('technicals.book_link')}}</a>
         <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
              viewBox="0 0 32 27.417">
             <path

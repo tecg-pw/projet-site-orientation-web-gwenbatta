@@ -15,7 +15,7 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(Opportunity $job, string $locale = null)
+    public function show(string $locale = null, Opportunity $job)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);

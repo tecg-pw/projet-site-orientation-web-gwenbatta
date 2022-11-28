@@ -53,7 +53,7 @@ class ProjectController extends Controller
      * @param  Project $project
      * @return Application|Factory|View
      */
-    public function show(Project $project, string $locale=null)
+    public function show(string $locale=null, Project $project)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);

@@ -11,9 +11,9 @@
                         <p class="uppercase text-2xl">{{$user->status}}</p>
                     </div>
                     <div class="text-end">
-                        <a href="/user/profile/{{$user->slug}}"
+                        <a href="/{{str_replace('_','-',app()->getLocale())}}/user/profile/{{$user->slug}}"
                            class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_save')}}</a>
-                        <a href="/user/profile/{{$user->slug}}"
+                        <a href="/{{str_replace('_','-',app()->getLocale())}}/user/profile/{{$user->slug}}"
                            class="hover:text-orange-500 font-sans text-center text-green-700 ml-6 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_back')}}</a>
                     </div>
                 </div>

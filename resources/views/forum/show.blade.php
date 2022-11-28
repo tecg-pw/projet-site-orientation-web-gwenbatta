@@ -29,7 +29,7 @@
                 @endif
             </div>
             <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
-               href="/forum/index">{{__('forum.single_back')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/forum/index">{{__('forum.single_back')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-5 mb-36">
             <div class="xl:col-span-3 xl:pl-36 xl:pr-14 px-10">
@@ -66,7 +66,7 @@
                             <form action="/" method="post" class="relative">
                                 @csrf
                                 <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
-                                   href="/forum/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
+                                   href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
                                 <label class="text-green-500 text-lg font-medium"
                                        for="comment">{{__('forum.label_comment')}}</label>
                                 <textarea class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 mt-4 rounded-xl border-2 border-orange-500" name="comment" id="comment"
@@ -119,7 +119,7 @@
                                     <form action="/" method="post" class="mt-8 relative">
                                         @csrf
                                         <a class="hover:text-orange-500 absolute -top-6 right-1 self-center flex font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
-                                           href="/forum/{{$subject->slug}}#{{$comment->slug}}">{{__('forum.button_back')}}</a>
+                                           href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$subject->slug}}#{{$comment->slug}}">{{__('forum.button_back')}}</a>
                                         <label class="text-green-500 text-lg font-medium"
                                                for="answer">{{__('forum.label_answer')}}</label>
                                         <textarea class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 mt-4 rounded-xl border-2 border-orange-500" name="answer"

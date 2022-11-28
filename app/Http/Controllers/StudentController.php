@@ -14,7 +14,7 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function showStudent(People $student, string $locale=null)
+    public function showStudent(string $locale=null, People $student)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);

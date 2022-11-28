@@ -35,7 +35,7 @@
                         <div class="flex flex-col xl:gap-2">
                             @foreach($courses_bac1 as $course)
                                 <div class="flex justify-between">
-                                <a class="hover:text-orange-500 underline" href="/cours/{{$course->slug}}">{{$course->name}}</a>
+                                <a class="hover:text-orange-500 underline" href="/{{str_replace('_','-',app()->getLocale())}}/cours/{{$course->slug}}">{{$course->name}}</a>
                                     <p class="ml-4">{{$course->hours}}H</p>
                                 </div>
                             @endforeach
@@ -89,7 +89,7 @@
                         <div class="flex flex-col xl:gap-2">
                             @foreach($courses_bac2 as $course)
                                 <div class="flex justify-between">
-                                    <a class="hover:text-orange-500 underline" href="/cours/{{$course->slug}}">{{$course->name}}</a>
+                                    <a class="hover:text-orange-500 underline" href="/{{str_replace('_','-',app()->getLocale())}}/cours/{{$course->slug}}">{{$course->name}}</a>
                                 </div>
                             @endforeach
                         </div>
@@ -116,7 +116,7 @@
                         <div class="flex flex-col xl:gap-2">
                             @foreach($courses_bac3 as $course)
                                 <div class="flex justify-between">
-                                    <a class="hover:text-orange-500 underline" href="/cours/{{$course->slug}}">{{$course->name}}</a>
+                                    <a class="hover:text-orange-500 underline" href="/{{str_replace('_','-',app()->getLocale())}}/cours/{{$course->slug}}">{{$course->name}}</a>
                                 </div>
                             @endforeach
                         </div>
@@ -141,7 +141,7 @@
             </h2>
             <div
                 class="hover:text-orange-500 flex xl:justify-end text-green-700 underline font-sans text-lg xl:text-2xl font-semibold">
-                <a href="/bottin/alumni">{{__('about.teacher_button')}}</a>
+                <a href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni">{{__('about.teacher_button')}}</a>
             </div>
         </div>
         <div class="xl:grid xl:grid-cols-2 flex flex-col gap-y-60 xl:mt-60 xl:gap-y-40 xl:gap-x-60">
@@ -151,7 +151,7 @@
                          alt="avatar">
                     <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
                         <h3 class="font-medium text-2xl mb-5" id="{{$teacher->slug}}" aria-level="3" role="heading">
-                            <a class="hover:text-orange-500" href="/bottin/{{$teacher->status === 'teachalumni'? 'teachalumni':'teacher'}}/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
+                            <a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/bottin/{{$teacher->status === 'teachalumni'? 'teachalumni':'teacher'}}/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
                         </h3>
                         <a class="hover:text-orange-500 text-xl underline text-green-700" href="mailto:{{$teacher->mail}}">{{$teacher->mail}}</a>
                         <div class="flex gap-60 items-center mt-4 ">
@@ -203,7 +203,7 @@
                     class="font-medium text-xl xl:text-2xl mb-3 font-medium">{{$job->name}}</h3>
                 <p class="xl:text-lg">{{$job->excerpt}}</p>
                 <a class="linkcard"
-                   href="/about/job/{{$job->slug}}">{{__('about.job_more'). $job->slug}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/about/job/{{$job->slug}}">{{__('about.job_more'). $job->slug}}</a>
             </article>
         @endforeach
         </div>

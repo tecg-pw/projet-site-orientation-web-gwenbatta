@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Doc;
 use App\Models\Glossary;
+use App\Models\Subject;
 use App\Models\Tuto;
 use Illuminate\Http\Request;
 
@@ -20,10 +21,13 @@ class TechnicalController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+        $subjects = Subject::all();
+        $latests = Subject::latest()->take(2)->get();
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $termes = Glossary::take(4)->get();
         $tutos = Tuto::take(4)->get();
         $docs = Doc::take(4)->get();
-        return view('technical.index', compact('termes', 'tutos', 'docs'));
+        return view('technical.index', compact('termes', 'tutos', 'docs', 'subjects', 'latests','ratings'));
     }
 
     /**

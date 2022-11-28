@@ -48,8 +48,11 @@ class ActualityController extends Controller
      * @param  int  $new
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Actuality $new)
+    public function show(string $locale=null, Actuality $new)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         return view('news.single', compact('new'));
     }
 

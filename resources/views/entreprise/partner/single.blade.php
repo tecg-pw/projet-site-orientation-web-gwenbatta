@@ -5,7 +5,7 @@
             <h2 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
                 id="dev-front" aria-level="2" role="heading">{{$partner->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/entreprise/partner">{{__('agency.partner_back')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/partner">{{__('agency.partner_back')}}</a>
         </div>
         <div class="flex flex-col xl:flex-row xl:gap-12 mt-16">
             <div class="mb-7 order-2 xl:gap-y-10">
@@ -21,13 +21,7 @@
                         </div>
                         <div class="flex flex-1 mb-6 gap-5">
                             <div class="relative group">
-                                <svg class="group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="30"
-                                     viewBox="0 0 38.97 38.005">
-                                    <path id="_08774047e75405e5723edc2388e9bc78"
-                                          data-name="08774047e75405e5723edc2388e9bc78"
-                                          d="M21.484,2.247a19.484,19.484,0,0,0-6.162,37.968c.974.171,1.339-.414,1.339-.925,0-.463-.024-2-.024-3.629-4.9.9-6.162-1.193-6.551-2.289a7.084,7.084,0,0,0-2-2.752c-.682-.365-1.656-1.266-.024-1.291a3.9,3.9,0,0,1,3,2,4.164,4.164,0,0,0,5.674,1.607,4.1,4.1,0,0,1,1.242-2.606c-4.335-.487-8.865-2.168-8.865-9.62a7.583,7.583,0,0,1,2-5.236,7,7,0,0,1,.195-5.163s1.632-.511,5.358,2a18.368,18.368,0,0,1,9.742,0c3.726-2.533,5.358-2,5.358-2a7,7,0,0,1,.195,5.163,7.538,7.538,0,0,1,2,5.236c0,7.477-4.554,9.133-8.889,9.62a4.614,4.614,0,0,1,1.315,3.6c0,2.606-.024,4.7-.024,5.358,0,.511.365,1.12,1.339.925a19.494,19.494,0,0,0-6.21-37.968Z"
-                                          transform="translate(-1.999 -2.247)" fill="#da953a"/>
-                                </svg>
+                                <svg class="group-hover:scale-110" width="34" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" fill="#da953a"><path d="M20.9,2H3.1A1.1,1.1,0,0,0,2,3.1V20.9A1.1,1.1,0,0,0,3.1,22h9.58V14.25h-2.6v-3h2.6V9a3.64,3.64,0,0,1,3.88-4,20.26,20.26,0,0,1,2.33.12v2.7H17.3c-1.26,0-1.5.6-1.5,1.47v1.93h3l-.39,3H15.8V22h5.1A1.1,1.1,0,0,0,22,20.9V3.1A1.1,1.1,0,0,0,20.9,2Z"/></svg>
                                 <a class="linkcard" href="{{$partner->link_facebook}}"></a>
                             </div>
                             <div class="group relative">
@@ -81,7 +75,7 @@
                     <a href="{{$partner->site_link}}"
                        class="hover:bg-white-100 hover:text-green-700 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold ">{{__('agency.partner_view_site')}}</a>
                     <a class=" self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
-                       href="/">
+                       href="/{{str_replace('_','-',app()->getLocale())}}/">
 
                     </a>
                 </div>
@@ -93,7 +87,7 @@
         <div class="flex xl:flex-row flex-col justify-between mb-8">
             <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Offres de stages')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/entreprise/internship">{{__('Voir les offres de stage')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship">{{__('Voir les offres de stage')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @if(count($offers) !== 0)
@@ -122,7 +116,7 @@
                             </div>
                         </div>
                         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                           href="/entreprise/internship/{{$offer->slug}}">{{__('En savoir plus' . $offer->slug)}}</a>
+                           href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship/{{$offer->slug}}">{{__('En savoir plus' . $offer->slug)}}</a>
                     </article>
                 @endforeach
             @else
@@ -137,7 +131,7 @@
             <h2 class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis" aria-level="2"
                 role="heading">{{__('Nos alumnis en stage ici')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($alumnis as $alumni)
@@ -172,7 +166,7 @@
                         <img class="order-1 rounded-full" width="98" src="{{$alumni->avatar}}" alt="avatar">
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/bottin/{{$alumni->status === 'teachalumni'? 'teachalumni' : 'alumni'}}/{{$alumni->slug}}">{{__('En savoir plus sur' . $alumni->name)}}</a>
+                       href="/{{str_replace('_','-',app()->getLocale())}}/bottin/{{$alumni->status === 'teachalumni'? 'teachalumni' : 'alumni'}}/{{$alumni->slug}}">{{__('En savoir plus sur' . $alumni->name)}}</a>
                 </article>
             @endforeach
         </div>

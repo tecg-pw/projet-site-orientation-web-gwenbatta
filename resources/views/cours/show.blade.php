@@ -4,13 +4,13 @@
         <div class="flex xl:flex-row flex-col xl:px-36 px-10 justify-between mt-20 mb-8">
             <h2 id="slug" aria-level="2" role="heading" class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$course->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/about#course">{{__('course.course_back')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/about#course">{{__('course.course_back')}}</a>
         </div>
         <div class="xl:px-36 xl:mb-0 px-10 flex justify-between xl:justify-start xl:gap-20 text-lg xl:text-xl">
             <p class="uppercase">{{$course->bac}}e{{$course->bac===1?'r':''}} {{__('course.course_year')}}</p>
             <div class="flex flex-wrap xl:gap-x-24 xl:gap-y-3 max-w-[50%]">
             @foreach($teachers as $teacher)
-            <a class="underline text-green-700 uppercase hover:text-orange-500" href="/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
+            <a class="underline text-green-700 uppercase hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
             @endforeach
             </div>
         </div>
@@ -42,7 +42,7 @@
             <h2 id="projects" role="heading" aria-level="2"
                 class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('course.project_title')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/project/index">{{__('project.project_see_all')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
             @foreach($projects as $project)

@@ -6,21 +6,21 @@
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('forum.index_title')}}</h2>
             @auth()
-                <a href="/forum/question"
+                <a href="/{{str_replace('_','-',app()->getLocale())}}/forum/question"
                    class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
         <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="px-10 xl:px-36 mb-14"></x-sort_by_forum>
         <div class="flex items-start xl:flex-row flex-col xl:gap-32 mb-12 px-10 xl:px-36">
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
-               href="/forum/index#forum">{{__('forum.latest_subject')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg bg-orange-100 font-sans px-5 py-2"
-               href="/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
             @auth()
                 <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-                   href="/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
                 <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-                   href="/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
+                   href="/{{str_replace('_','-',app()->getLocale())}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
             @endauth
         </div>
         <div class="xl:grid xl:grid-cols-5 mb-36">
@@ -29,7 +29,7 @@
                     <article class="flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl" aria-labelledby="{{$comment->slug}}">
                         <div class="hover:bg-orange-100 relative flex mb-5 rounded-xl order-3 bg-white-100 p-3 border-2 border-orange-500 gap-2">
                             <h3 id="{{$comment->subject->slug}}" aria-level="3" role="heading"
-                                class="order-2 font-sans font-medium xl:text-xl">
+                                class="order-2 font-medium xl:text-xl">
                                 {{$comment->subject->subject}}
                             </h3>
                             <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25" viewBox="0 0 34.194 34.196">
@@ -56,7 +56,7 @@
                                           transform="translate(875.711 1774.888)" fill="#da953a"/>
                                 </g>
                             </svg>
-                            <a class="cursor-pointer linkcard" href="/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
+                            <a class="cursor-pointer linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
                         </div>
                         <p class="xl:leading-8 xl:mt-6 mt-4">
                             {{$comment->content}}
@@ -64,8 +64,8 @@
                         <p class="text-green-500 font-medium xl:text-lg mt-4 mb-0.5 xl:mb-2">{{__('forum.latest_comment')}}</p>
                         <div class="flex -order-1 items-center ">
                             <div class="order-2 ml-2 mt-1 xl:ml-4 xl:mt-0">
-                                <p class="text-lg xl:text-xl">{{$comment->user->firstname}} {{$comment->user->name}}</p>
-                                <p class="xl:text-lg">{{$comment->created_at-> format('d M. Y')}}</p>
+                                <p class="text-base xl:text-base uppercase">{{$comment->user->firstname}} {{$comment->user->name}}</p>
+                                <p class="xl:text-base">{{$comment->created_at-> format('d M. Y')}}</p>
                             </div>
                             <img class="xl:sr-only order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
                                  src="https://placehold.jp/75x75.png"

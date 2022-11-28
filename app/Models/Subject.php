@@ -12,7 +12,7 @@ class Subject extends Model
 {
     use HasFactory, SoftDeletes;
     protected $dates = ['created_at'];
-    protected $with = ['comments'];
+    protected $with = ['comments', 'user'];
     protected $withCount = ['comments'];
     protected $fillable = [
         'subject', 'slug' , 'description', 'tag', 'resolved'
