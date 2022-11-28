@@ -51,8 +51,11 @@ class ForumController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Subject $subject)
+    public function show(Subject $subject, string $locale = null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         return view('forum.show', compact('subject','latests', 'ratings'));

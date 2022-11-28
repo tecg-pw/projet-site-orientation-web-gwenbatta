@@ -25,16 +25,16 @@
             class="relative z-30 bg-green-700 text-white-100 order-1 font-sans flex gap-x-10 justify-between xl:justify-end xl:px-36 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl">
             <ul class="flex gap-x-1">
                 <li class="hover:text-orange-500 border-r-2 border-white-100/40 pr-1.5">
-                    <a href="/">{{__('nav.nav_languages.francais')}}</a>
+                    <a href="/{{strtolower(__('nav.nav_languages.francais'))}}">{{__('nav.nav_languages.francais')}}</a>
                 </li>
                 <li class="hover:text-orange-500 border-r-2 border-white-100/40 pr-1.5">
-                    <a href="/">{{__('nav.nav_languages.english')}}</a>
+                    <a href="/{{strtolower(__('nav.nav_languages.english'))}}">{{__('nav.nav_languages.english')}}</a>
                 </li>
                 <li class="hover:text-orange-500 border-r-2 border-white-100/40 pr-1.5">
-                    <a href="/">{{__('nav.nav_languages.deutsch')}}</a>
+                    <a href="/{{strtolower(__('nav.nav_languages.deutsch'))}}">{{__('nav.nav_languages.deutsch')}}</a>
                 </li>
                 <li class="hover:text-orange-500">
-                    <a href="/">{{__('nav.nav_languages.nederlands')}}</a>
+                    <a href="/{{strtolower(__('nav.nav_languages.nederlands'))}}">{{__('nav.nav_languages.nederlands')}}</a>
                 </li>
             </ul>
             @guest()
@@ -85,15 +85,15 @@
                         </g>
                     </g>
                 </svg>
-                <a href="/" class="linkcard">{{__('nav.nav_link_home')}}</a>
+                <a href="/{{str_replace('_','-',app()->getLocale())}}" class="linkcard">{{__('nav.nav_link_home')}}</a>
             </div>
             <ul class="sr-only xl:not-sr-only flex gap-x-5 text-green-700 text-xl flex-1 font-sans font-semibold">
-                <li><a class="hover:text-orange-500" href="/bottin/alumni"> {{__('nav.nav_navigation.alumni')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/project/index"> {{__('nav.nav_navigation.project')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/forum/index"> {{__('nav.nav_navigation.forum')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/about"> {{__('nav.nav_navigation.about')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/news/index"> {{__('nav.nav_navigation.actualities')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni"> {{__('nav.nav_navigation.alumni')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/project/index"> {{__('nav.nav_navigation.project')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/forum/index"> {{__('nav.nav_navigation.forum')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/about"> {{__('nav.nav_navigation.about')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/news/index"> {{__('nav.nav_navigation.actualities')}}</a></li>
+                <li><a class="hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
             </ul>
             <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
             <input class="absolute cursor-pointer opacity-0 z-30 w-8 h-8 " type="checkbox" name="burger" id="burger">
@@ -108,7 +108,7 @@
             <div class="burger_position bg-green-200 min-w-full min-h-full z-20 ">
                 <ul class="xl:max-w-[30%] flex-1 bg-green-700 font-sans text-lg xl:text-xl text-white-100 font-semibold flex flex-col justify-between py-6 gap-4 xl:gap-6 xl:py-10 px-5 h-full">
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2">
-                        <a class="group flex flex-1 justify-between" href="/project/index">
+                        <a class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/project/index">
                             <span>
                                 {{__("nav.nav_navigation.project")}}
                             </span>
@@ -123,7 +123,7 @@
                         </a>
                     </li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
-                            class="group flex flex-1 justify-between" href="/contact/student">
+                            class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/contact/student">
                             <span>
                                 {{__('nav.nav_navigation.contact')}}
                             </span>
@@ -137,7 +137,7 @@
                             </svg>
                         </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
-                            class="group flex flex-1 justify-between" href="/about">
+                            class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/about">
                             <span>{{__('nav.nav_navigation.about')}}</span>
                             <svg class="group-hover:mr-0 group-hover:opacity-100 opacity-0 mr-3 self-end "
                                  xmlns="http://www.w3.org/2000/svg" width="32"
@@ -149,7 +149,7 @@
                             </svg>
                         </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
-                            class="group flex flex-1 justify-between" href="/news/index">
+                            class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/news/index">
                             <span>{{__('nav.nav_navigation.actualities')}}</span>
                             <svg class="group-hover:mr-0 group-hover:opacity-100 opacity-0 mr-3 self-end "
                                  xmlns="http://www.w3.org/2000/svg" width="32"
@@ -161,7 +161,7 @@
                             </svg>
                         </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
-                            class="group flex flex-1 justify-between" href="/technical/index">
+                            class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/technical/index">
                             <span>{{__('nav.nav_navigation.technical')}}</span>
                             <svg class="group-hover:mr-0 group-hover:opacity-100 opacity-0 mr-3 self-end "
                                  xmlns="http://www.w3.org/2000/svg" width="32"
@@ -173,7 +173,7 @@
                             </svg>
                         </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
-                            class="group flex flex-1 justify-between" href="/forum/index">
+                            class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/forum/index">
                             <span>{{__('nav.nav_navigation.forum')}}</span>
                             <svg class="group-hover:mr-0 group-hover:opacity-100 opacity-0 mr-3 self-end "
                                  xmlns="http://www.w3.org/2000/svg" width="32"
@@ -185,7 +185,7 @@
                             </svg>
                         </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
-                            class="group flex flex-1 justify-between" href="/bottin">
+                            class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/bottin">
                             <span>{{__('nav.nav_navigation.people')}}</span>
                             <svg class="group-hover:mr-0 group-hover:opacity-100 opacity-0 mr-3 self-end "
                                  xmlns="http://www.w3.org/2000/svg" width="32"
@@ -197,7 +197,7 @@
                             </svg>
                         </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
-                            class="group flex flex-1 justify-between" href="/bottin/alumni">
+                            class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni">
                             <span>{{__('nav.nav_navigation.alumni')}}</span>
                             <svg class="group-hover:mr-0 group-hover:opacity-100 opacity-0 mr-3 self-end "
                                  xmlns="http://www.w3.org/2000/svg" width="32"
@@ -209,7 +209,7 @@
                             </svg>
                         </a></li>
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2"><a
-                            class="group flex flex-1 justify-between" href="/entreprise/partner">
+                            class="group flex flex-1 justify-between" href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/partner">
                             <span>{{__('nav.nav_navigation.partner')}}</span>
                             <svg class="group-hover:mr-0 group-hover:opacity-100 opacity-0 mr-3 self-end "
                                  xmlns="http://www.w3.org/2000/svg" width="32"
@@ -222,7 +222,7 @@
                         </a></li>
                     <li>
                         <a class="group flex flex-1 justify-between border-b-2 border-b-white-100/40 pb-0.5 xl:border-b-0 xl:pb-0"
-                           href="/technical/tuto">
+                           href="/{{str_replace('_','-',app()->getLocale())}}/technical/tuto">
                             <span>{{__('nav.nav_navigation.tuto')}}</span>
                             <svg class="group-hover:mr-0 group-hover:opacity-100 opacity-0 mr-3 self-end "
                                  xmlns="http://www.w3.org/2000/svg" width="32"

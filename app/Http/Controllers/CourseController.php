@@ -14,8 +14,11 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show (Course $course)
-    {;
+    public function show (Course $course, string $locale = null)
+    {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $teachers = Course::find($course->id)->person()->get();
         $projects = Course::find($course->id)->projects()->take(3)->get();
         return view('cours.show', compact('course', 'teachers','projects'));

@@ -14,8 +14,11 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function showStudent(People $student)
+    public function showStudent(People $student, string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $projects = Project::where('person_id', $student->id)->orderBy('date')->take(6)->get();
         return view('bottin.student.name', compact('student', 'projects'));
     }

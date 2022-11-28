@@ -15,8 +15,11 @@ class PartnerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string  $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $cities = Partner::select('locality')->groupBy('locality')->get();
         $agencies = Partner::select('name')->groupBy('name')->get();
         $partners = Partner::paginate(8);
@@ -50,9 +53,11 @@ class PartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Partner $partner)
+    public function show(Partner $partner, string $locale=null)
     {
-
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $offers = Offer::where('partner_id', $partner->id)->get();
         $alumnis = Partner::find($partner->id)->person()->get();
         return view('entreprise.partner.single', compact('partner', 'offers', 'alumnis'));

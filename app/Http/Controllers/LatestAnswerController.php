@@ -15,8 +15,11 @@ class LatestAnswerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $recurrings = Recurring::all();
         $comments = Comment::latest()->paginate(3);
         $latests = Subject::latest()->take(2)->get();

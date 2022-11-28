@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -46,8 +46,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(User $user, string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $tutos = User::find($user->id)->tutos()->get();
         return view('user.profile', compact('user', 'tutos'));
     }
@@ -58,8 +61,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(User $user, string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         return view('user.profile.modify', compact('user'));
     }
 

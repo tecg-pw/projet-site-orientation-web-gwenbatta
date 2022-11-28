@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Project;
+use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,8 +17,11 @@ class ProjectController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(): View|Factory|Application
+    public function index(string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $projects = Project::latest('date')->paginate(9);
         return view('project.index', compact('projects'));
     }
@@ -49,8 +53,11 @@ class ProjectController extends Controller
      * @param  Project $project
      * @return Application|Factory|View
      */
-    public function show(Project $project)
+    public function show(Project $project, string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         foreach ($project->courses as $classe){
         $teachers = Course::find($classe->id)->person()->get();
     }

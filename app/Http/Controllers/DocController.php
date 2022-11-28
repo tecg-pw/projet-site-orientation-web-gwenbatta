@@ -14,8 +14,11 @@ class DocController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $locale = null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $docs = Doc::all();
         $books = Book::all();
         return view('technical.doc', compact('docs', 'books'));

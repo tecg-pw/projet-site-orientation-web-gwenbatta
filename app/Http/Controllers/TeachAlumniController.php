@@ -14,8 +14,11 @@ class TeachAlumniController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(People $teachalumni)
+    public function show(People $teachalumni, string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $projects = Project::where('person_id', $teachalumni->id)->orderBy('date')->take(6)->get();
         return view('bottin.teachalumni.name', compact('teachalumni', 'projects'));
     }

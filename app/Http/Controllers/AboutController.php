@@ -14,8 +14,11 @@ class AboutController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(string $locale = null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $jobs = Opportunity::all();
         $teachers = People::where('status', 'professeur')->orWhere('status', 'teachalumni')->get();
         $courses_bac1 = Course::where('bac', 1)->get();

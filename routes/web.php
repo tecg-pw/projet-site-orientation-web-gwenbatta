@@ -43,68 +43,68 @@ use Illuminate\Support\Facades\Route;
 Route::get('/{locale?}', [HomeController::class, 'index']);
 
 
-Route::get('/legals', function () {
+Route::get('/{locale?}/legals', function () {
     return view('legals');
 });
 
 
-Route::get('/about', [AboutController::class, 'index']);
-Route::get('/about/job/{job:slug}', [JobController::class, 'show']);
+Route::get('/{locale?}/about', [AboutController::class, 'index']);
+Route::get('/{locale?}/about/job/{job:slug}', [JobController::class, 'show']);
 
-Route::get('/project/index', [ProjectController::class, 'index']);
-Route::get('/project/{project:slug}', [ProjectController::class, 'show']);
+Route::get('/{locale?}/project/index', [ProjectController::class, 'index']);
+Route::get('/{locale?}/project/{project:slug}', [ProjectController::class, 'show']);
 
-Route::get('/technical/index', [TechnicalController::class, 'index']);
-Route::get('/technical/books/{book:slug}', [BookController::class, 'show']);
+Route::get('/{locale?}/technical/index', [TechnicalController::class, 'index']);
+Route::get('/{locale?}/technical/books/{book:slug}', [BookController::class, 'show']);
 
-Route::get('/technical/glossary', [GlossaryController::class, 'index']);
-Route::get('/technical/tuto', [TutoController::class, 'index']);
-Route::get('/technical/docandtool/doc', [DocController::class, 'index', BookController::class, 'index']);
-Route::get('/technical/docandtool/tool', [ToolController::class, 'index', BookController::class, 'index'] );
-
-
-Route::get('/entreprise/partner', [PartnerController::class, 'index']);
-Route::get('/entreprise/partner/{partner:slug}', [PartnerController::class, 'show']);
-Route::get('/entreprise/internship', [OfferController::class, 'index']);
-Route::get('/entreprise/internship/{offer:slug}', [OfferController::class, 'show']);
+Route::get('/{locale?}/technical/glossary', [GlossaryController::class, 'index']);
+Route::get('/{locale?}/technical/tuto', [TutoController::class, 'index']);
+Route::get('/{locale?}/technical/docandtool/doc', [DocController::class, 'index', BookController::class, 'index']);
+Route::get('/{locale?}/technical/docandtool/tool', [ToolController::class, 'index', BookController::class, 'index'] );
 
 
-Route::get('/bottin', [PersonController::class, 'index']);
-Route::get('/bottin/alumni', [AlumniController::class, 'index']);
-Route::get('/bottin/alumni/{alumni:slug}', [AlumniController::class, 'show']);
-Route::get('/bottin/teacher/{teacher:slug}', [TeacherController::class, 'show']);
-Route::get('/bottin/teachalumni/{teachalumni:slug}', [TeachAlumniController::class, 'show']);
-Route::get('/bottin/student/{student:slug}', [StudentController::class, 'show']);
-
-Route::get('/cours/{course:slug}', [CourseController::class, 'show']);
+Route::get('/{locale?}/entreprise/partner', [PartnerController::class, 'index']);
+Route::get('/{locale?}/entreprise/partner/{partner:slug}', [PartnerController::class, 'show']);
+Route::get('/{locale?}/entreprise/internship', [OfferController::class, 'index']);
+Route::get('/{locale?}/entreprise/internship/{offer:slug}', [OfferController::class, 'show']);
 
 
-Route::get('/user/login', function () {
+Route::get('/{locale?}/bottin', [PersonController::class, 'index']);
+Route::get('/{locale?}/bottin/alumni', [AlumniController::class, 'index']);
+Route::get('/{locale?}/bottin/alumni/{alumni:slug}', [AlumniController::class, 'show']);
+Route::get('/{locale?}/bottin/teacher/{teacher:slug}', [TeacherController::class, 'show']);
+Route::get('/{locale?}/bottin/teachalumni/{teachalumni:slug}', [TeachAlumniController::class, 'show']);
+Route::get('/{locale?}/bottin/student/{student:slug}', [StudentController::class, 'show']);
+
+Route::get('/{locale?}/cours/{course:slug}', [CourseController::class, 'show']);
+
+
+Route::get('/{locale?}/user/login', function () {
     return view('user.login');
 });
-Route::get('/user/register', function () {
+Route::get('/{locale?}/user/register', function () {
     return view('user.register');
 });
-Route::get('/user/profile/{user:slug}', [UserController::class, 'show']);
-Route::get('/user/profile/modify/{user:slug}', [UserController::class, 'edit']);
-Route::get('/user/password', function () {
+Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show']);
+Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit']);
+Route::get('/{locale?}/user/password', function () {
     return view('user.password');
 });
 
 
-Route::get('/contact/student', [StudentContactController::class, 'index']);
-Route::get('/contact/agency', [AgencyContactController::class, 'index']);
+Route::get('/{locale?}/contact/student', [StudentContactController::class, 'index']);
+Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'index']);
 
 
-Route::get('/forum/question', function () {
+Route::get('/{locale?}/forum/question', function () {
     return view('forum.question');
 });
-Route::get('/forum/index', [LatestSubjectController::class, 'index']);
-Route::get('/forum/latest-answers', [LatestAnswerController::class, 'index']);
-Route::get('/forum/my-subject', [MySubjectController::class, 'index']);
-Route::get('/forum/my-talks', [MyAnswerController::class, 'index']);
-Route::get('/forum/{subject:slug}', [ForumController::class, 'show']);
+Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index']);
+Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index']);
+Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index']);
+Route::get('/{locale?}/forum/my-talks', [MyAnswerController::class, 'index']);
+Route::get('/{locale?}/forum/{subject:slug}', [ForumController::class, 'show']);
 
 
-Route::get('/news/index', [ActualityController::class, 'index']);
-Route::get('/news/{new:slug}', [ActualityController::class, 'show']);
+Route::get('/{locale?}/news/index', [ActualityController::class, 'index']);
+Route::get('/{locale?}/news/{new:slug}', [ActualityController::class, 'show']);

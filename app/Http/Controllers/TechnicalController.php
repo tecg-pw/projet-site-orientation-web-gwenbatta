@@ -15,8 +15,11 @@ class TechnicalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $termes = Glossary::take(4)->get();
         $tutos = Tuto::take(4)->get();
         $docs = Doc::take(4)->get();

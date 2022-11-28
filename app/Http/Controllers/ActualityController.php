@@ -12,8 +12,11 @@ class ActualityController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(string $locale = null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $news = Actuality::latest('date')->paginate(9);
         return view('news.index', compact('news'));
     }

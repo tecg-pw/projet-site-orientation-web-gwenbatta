@@ -13,8 +13,11 @@ class TeacherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(People $teacher)
+    public function show(People $teacher, string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         return view('bottin.teacher.name', compact('teacher'));
     }
 }

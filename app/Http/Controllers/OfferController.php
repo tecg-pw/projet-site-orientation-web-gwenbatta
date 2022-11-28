@@ -13,8 +13,11 @@ class OfferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $offers = Offer::paginate(8);
         return view('entreprise.internship', compact('offers'));
     }

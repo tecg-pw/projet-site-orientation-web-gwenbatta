@@ -14,8 +14,11 @@ class AlumniController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $locale = null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $testimonials = Testimonial::all();
         $people = People::where('status', 'ancien')->orWhere('status', 'teachalumni')->get();
         $status = People::select('status')->groupBy('status')->get();

@@ -16,8 +16,11 @@ class PersonController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $testimonials = Testimonial::all();
         $people = People::paginate(8);
         $status = People::select('status')->groupBy('status')->get();

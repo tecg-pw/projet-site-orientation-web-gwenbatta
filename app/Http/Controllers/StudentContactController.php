@@ -13,8 +13,11 @@ class StudentContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $locale=null)
     {
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
         $coordinates = Coordinate::all();
         return view('contact.student', compact('coordinates'));
     }
