@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ActualitySeeder::class);
         $this->call(BookSeeder::class);
         $this->call(CourseSeeder::class);
+        $this->call(CoordinateSeeder::class);
         $this->call(DocSeeder::class);
         $this->call(GlossarySeeder::class);
         $this->call(PartnerSeeder::class);

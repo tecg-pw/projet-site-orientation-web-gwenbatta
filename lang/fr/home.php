@@ -19,6 +19,8 @@ return [
     'teacher_button' => 'En savoir plus sur les professeurs',
     'projects_title' => 'Quelques projets ambitieux',
     'projects_button' => 'Voir plus de projets',
+    'forum_title' => 'Quelques questions posées sur notre forum',
+    'forum_link' => 'Voir le forum',
     'interrest_title' => 'Vous êtes interressé ?',
     'interrest_button_contact' => 'Contactez-nous',
     'interrest_button_inscription' => 'Je veux m\'inscrire',

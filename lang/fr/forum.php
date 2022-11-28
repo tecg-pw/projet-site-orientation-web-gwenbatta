@@ -18,6 +18,9 @@ return [
     'label_comment' => 'Votre Commentaire',
     'number_comment' => 'Commentaires : ',
     'see_subject' => 'Voir la conversation',
-    'latest_comment' => 'Commentaire du sujet'
+    'latest_comment' => 'Commentaire du sujet',
+    'no_comment' => 'Aucun commentaire disponible pour l\'instant',
+    'no_talks' => 'Aucun commentaire disponible pour l\'instant',
+    'no_subject' => 'Aucun sujet disponible pour l\'instant',
 
 ];

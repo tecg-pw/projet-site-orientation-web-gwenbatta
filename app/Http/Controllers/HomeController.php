@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,8 +15,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $subjects = Subject::all();
+        $latests = Subject::latest()->take(2)->get();
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $projects = Project::latest('date')->take(3)->get();
-        return view('home', compact('projects'));
+        return view('home', compact('projects','ratings','latests','subjects'));
     }
 
     /**

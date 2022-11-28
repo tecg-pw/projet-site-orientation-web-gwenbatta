@@ -24,7 +24,7 @@ class AnswerSeeder extends Seeder
                 "content" => $value->content,
                 "slug" => \Str::slug($value->content),
                 "user_id" => $value->user_id,
-                "comment_id" => $value->subject_id,
+                "comment_id" => $value->comment_id,
             ]);
         }
     }

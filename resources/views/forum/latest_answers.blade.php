@@ -23,7 +23,7 @@
                    href="/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
             @endauth
         </div>
-        <div class="xl:grid xl:grid-cols-5 gap-24 mb-36">
+        <div class="xl:grid xl:grid-cols-5 mb-36">
             <div class="xl:col-span-3 flex flex-col gap-y-8 xl:pr-14 xl:px-36 px-10">
                 @foreach($comments as $comment)
                     <article class="flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl" aria-labelledby="{{$comment->slug}}">
@@ -56,7 +56,7 @@
                                           transform="translate(875.711 1774.888)" fill="#da953a"/>
                                 </g>
                             </svg>
-                            <a class="cursor-pointer linkcard" href="/forum/show">{{__('Voir le sujet')}}</a>
+                            <a class="cursor-pointer linkcard" href="/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
                         </div>
                         <p class="xl:leading-8 xl:mt-6 mt-4">
                             {{$comment->content}}
@@ -88,7 +88,7 @@
                 @endforeach
                 {{$comments->links()}}
             </div>
-            <x-aside_forum :latests="$latests"></x-aside_forum>
+            <x-aside_forum :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>
     </section>
 </main>

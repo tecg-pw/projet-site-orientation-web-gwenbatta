@@ -1,34 +1,40 @@
+@props([
+    'subjects',
+    'latests',
+    'ratings'
+
+])
+
+
 <article {{ $attributes->class(['px-10 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-36 pb-28']) }} aria-labelledby="questions">
     <div class="flex flex-col xl:mt-20 xl:flex-row xl:mb-24 mb-12">
         <h2 class="text-2xl mb-6 xl:text-4xl xl:max-w-[50%] uppercase font-bold xl:mb-12 font-sans xl:leading-12" role="heading" aria-level="2"
-            id="questions">{{__('Quelques questions posées sur notre forum')}}</h2>
+            id="questions">{{__('home.forum_title')}}</h2>
         <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 xl:text-end xl:text-3xl"
-           href="forum/index">{{__('Voir le forum')}}</a>
+           href="forum/index">{{__('home.forum_link')}}</a>
     </div>
     <div class="xl:grid xl:grid-cols-5 xl:justify-between">
         <div class="xl:col-span-3 flex flex-col gap-y-8 xl:pr-14 border-r-2 border-r-orange-500/40">
-            @for($i=1;$i<6;$i++)
+            @foreach($subjects as $subject)
                 <article class="group hover:bg-orange-100 bg-white-100 relative flex xl:p-6 rounded-xl"
-                         aria-labelledby="{{'question'.$i}}">
+                         aria-labelledby="{{$subject->slug}}">
                     <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
                         <div class="flex flex-col">
-                            <h3 class="order-2 font-medium font-sans xl:text-2xl" id="{{'question'.$i}}"
+                            <h3 class="order-2 font-medium font-sans xl:text-xl" id="{{$subject->slug}}"
                                 role="heading"
-                                aria-level="3">Question du forum</h3>
+                                aria-level="3">{{$subject->subject}}</h3>
                             <div class="flex relative xl:justify-between">
-                                <p class="xl:text-xl self-end">Nom de l'auteur</p>
-                                <p class="xl:text-xl self-end">03 nov. 2022</p>
-                        </div>
+                                <p class="xl:text-xl self-end">{{$subject->user->firstname}} {{$subject->user->name}}</p>
+                                <p class="xl:text-xl self-end">{{$subject->created_at->format('d M. Y')}}</p>
+                            </div>
                         </div>
                         <div class="order-3 flex flex-col xl:flex-row justify-between">
                             <div class="flex gap-4 items-center">
                                 <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg xl:text-lg text-green-700">
-                                    Général</p>
-                                <p class="xl:text-xl">Comment:5</p>
+                                    {{ucwords($subject->tag)}}</p>
+                                <p class="xl:text-xl">{{__('forum.number_comment').$subject->comments_count}}</p>
                             </div>
-                            <a class="linkcard underline text-green-700 font-sans font-semibold" href="/forum/show">Voir
-                                la
-                                conversation</a>
+                            <a class="linkcard underline text-green-700 font-sans font-semibold" href="/forum/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
                             <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                                  viewBox="0 0 32 27.417">
                                 <path
@@ -41,36 +47,33 @@
                          src="https://placehold.jp/115x115.png"
                          alt="Nom">
                 </article>
-            @endfor
+            @endforeach
         </div>
         <div class="col-span-2 flex flex-col gap-y-6 xl:pl-14">
             <article class="border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="latest">
                 <h3 id="latest" aria-level="3" role="heading"
-                    class="text-3xl font-light text-green-700 underline mb-6">{{__('Derniers sujet')}}</h3>
+                    class="text-3xl font-light text-green-700 underline mb-6">{{__('forum.latest_subject')}}</h3>
                 <div class="flex flex-col gap-y-8">
-                    @for($i=1;$i<3;$i++)
+                    @foreach($latests as $latest)
                         <article class="hover:bg-orange-100 group bg-white-100 relative flex p-6 rounded-xl"
-                                 aria-labelledby="{{'question'.$i}}">
+                                 aria-labelledby="{{$latest->slug}}">
                             <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
                                 <div class="flex-col flex">
-                                    <h4 class="order-2 font-medium font-sans text-2xl" id="{{'question'.$i}}"
+                                    <h4 class="order-2 font-medium font-sans text-xl" id="{{$latest->slug}}"
                                         role="heading"
-                                        aria-level="4">Question du forum</h4>
+                                        aria-level="4">{{$latest->subject}}</h4>
                                     <div class="flex relative justify-between">
-                                        <p class="text-xl self-end">Nom de l'auteur</p>
-                                        <p class="text-xl self-end">03 nov. 2022</p>
-                                </div>
-
+                                        <p class="text-xl self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
+                                        <p class="text-xl self-end">{{$latest->created_at->format('d M. Y')}}</p>
+                                    </div>
                                 </div>
                                 <div class="order-3 flex justify-between">
                                     <div class="flex gap-4">
                                         <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
-                                            Général</p>
+                                            {{ucwords($latest->tag)}}</p>
                                     </div>
                                     <a class="linkcard underline text-green-700 font-sans font-semibold"
-                                       href="/forum/show">Voir
-                                        la
-                                        conversation</a>
+                                       href="/forum/{{$latest->slug}}">{{__('forum.see_subject')}}</a>
                                     <svg class="mr-4 self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                          width="25"
                                          viewBox="0 0 32 27.417">
@@ -81,36 +84,33 @@
                                 </div>
                             </div>
                         </article>
-                    @endfor
+                    @endforeach
                 </div>
             </article>
             <article class="pb-10 mt-8" aria-labelledby="best-rating">
                 <h3 id="best-rating" aria-level="3" role="heading"
-                    class="text-3xl font-light text-green-700 underline mb-6">{{__('Sujet Populaire')}}</h3>
+                    class="text-3xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
                 <div class="flex flex-col gap-y-8">
-                    @for($i=1;$i<3;$i++)
+                    @foreach($ratings as $rating)
                         <article class="hover:bg-orange-100 group bg-white-100 relative flex p-6 rounded-xl"
-                                 aria-labelledby="{{'question'.$i}}">
+                                 aria-labelledby="{{$rating->slug}}">
                             <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
                                 <div class="flex-col flex">
-                                    <h4 class="order-2 font-medium font-sans text-2xl" id="{{'question'.$i}}"
+                                    <h4 class="order-2 font-medium font-sans text-xl" id="{{$rating->slug}}"
                                         role="heading"
-                                        aria-level="4">Question du forum</h4>
+                                        aria-level="4">{{$rating->subject}}</h4>
                                     <div class="flex relative justify-between">
-                                        <p class="text-xl self-end">Nom de l'auteur</p>
-                                        <p class="text-xl self-end">03 nov. 2022</p>
+                                        <p class="text-xl self-end">{{$rating->user->firstname}} {{$rating->user->name}} </p>
+                                        <p class="text-xl self-end">{{$rating->created_at->format('d M. Y')}}</p>
                                     </div>
-
                                 </div>
                                 <div class="order-3 flex justify-between">
                                     <div class="flex gap-4">
                                         <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
-                                            Général</p>
+                                            {{ucwords($rating->tag)}}</p>
                                     </div>
                                     <a class="linkcard underline text-green-700 font-sans font-semibold"
-                                       href="/forum/show">Voir
-                                        la
-                                        conversation</a>
+                                       href="/forum/{{$rating->slug}}">{{__('forum.see_subject')}}</a>
                                     <svg class="mr-4 self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                          width="25"
                                          viewBox="0 0 32 27.417">
@@ -121,7 +121,7 @@
                                 </div>
                             </div>
                         </article>
-                    @endfor
+                    @endforeach
                 </div>
             </article>
         </div>

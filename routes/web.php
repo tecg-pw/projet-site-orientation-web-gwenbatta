@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ActualityController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DocController;
 use App\Http\Controllers\ForumController;
@@ -82,12 +83,8 @@ Route::get('/user/password', function () {
 });
 
 
-Route::get('/contact/student', function () {
-    return view('contact.student');
-});
-Route::get('/contact/agency', function () {
-    return view('contact.agency');
-});
+Route::get('/contact/student', [ContactController::class, 'indexStudent']);
+Route::get('/contact/agency', [ContactController::class, 'indexAgency']);
 
 
 Route::get('/forum/question', function () {
@@ -95,13 +92,9 @@ Route::get('/forum/question', function () {
 });
 Route::get('/forum/index', [ForumController::class, 'indexLatestSubject']);
 Route::get('/forum/latest-answers', [ForumController::class, 'indexLatestAnswer']);
+Route::get('/forum/my-subject', [ForumController::class, 'indexMySubject']);
+Route::get('/forum/my-talks', [ForumController::class, 'indexMyAnswer']);
 Route::get('/forum/{subject:slug}', [ForumController::class, 'show']);
-Route::get('/forum/my-subject', function () {
-    return view('forum.my_subject');
-});
-Route::get('/forum/my-talks', function () {
-    return view('forum.my_talks');
-});
 
 
 Route::get('/news/index', [ActualityController::class, 'index']);

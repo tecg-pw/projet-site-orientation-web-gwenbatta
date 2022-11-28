@@ -85,7 +85,7 @@
             @endforeach
         </div>
     </article>
-    <x-questions-forum></x-questions-forum>
+    <x-questions-forum :latests="$latests" :ratings="$ratings" :subjects="$subjects"></x-questions-forum>
     <section class="px-10 xl:px-36 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="interrest">
         <div class="flex-1">
             <h2 class="pt-14 leading-8 mb-6 text-2xl xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-16 font-sans" role="heading" aria-level="2"

@@ -4,7 +4,7 @@
     <section class="mt-20" aria-labelledby="forum">
         <div class="px-10 xl:px-36 flex xl:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
             <h2 id="forum" aria-level="2" role="heading"
-                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
+{{--                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>--}}
             @auth()
                 <a href="/forum/question"
                    class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
@@ -16,22 +16,22 @@
                href="/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
-            @auth()
+{{--            @auth()--}}
                 <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                    href="/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
                 <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                    href="/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
-            @endauth
+{{--            @endauth--}}
         </div>
-        <div class="xl:grid xl:grid-cols-5 xl:gap-24 mb-36">
-            <div class="col-span-3 flex flex-col gap-y-8 px-10 xl:pl-36 xl:pr-0 ">
+        <div class="xl:grid xl:grid-cols-5 mb-36">
+            <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 xl:px-36 px-10 ">
                 @foreach($subjects as $subject)
                     <article class="group hover:bg-orange-100 bg-yellow-100 relative flex p-6 rounded-xl"
                              aria-labelledby="{{$subject->slug}}">
                         <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-2.5 xl:gap-4">
                             <div class="flex flex-col ">
                                 <div class="flex gap-2">
-                                    <h3 class="order-2 font-medium font-sans text-xl xl:text-2xl"
+                                    <h3 class="order-2 font-medium font-sans text-xl "
                                         id="{{$subject->slug}}"
                                         role="heading"
                                         aria-level="3">{{$subject->subject}}</h3>
@@ -73,7 +73,7 @@
                                 <div class="flex gap-4 items-center">
                                     <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
                                         {{ucwords($subject->tag)}}</p>
-                                    <p class="sr-only xl:not-sr-only text-xl"> {{__('forum.number_comment') . count($subject->comments)}}</p>
+                                    <p class="sr-only xl:not-sr-only text-xl"> {{__('forum.number_comment') . $subject->comments_count}}</p>
                                 </div>
                                 <a class="linkcard underline text-green-700 font-sans font-semibold" href="/forum/{{$subject->slug}}">{{__('forum.see_subject')}}</a>
                                 <svg class="group-hover:mr-0 mr-4 xl:self-end " xmlns="http://www.w3.org/2000/svg" width="25"
@@ -86,11 +86,12 @@
                         </div>
                         <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
                              src="https://placehold.jp/115x115.png"
-                             alt="Nom">
+                             alt="{{$subject->user->slug}}">
                     </article>
                 @endforeach
+                    {{$subjects->links()}}
             </div>
-            <x-aside_forum :latests="$latests"></x-aside_forum>
+            <x-aside_forum :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>
     </section>
 </main>

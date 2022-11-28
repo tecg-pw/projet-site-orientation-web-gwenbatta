@@ -60,7 +60,7 @@
                 </form>
             </div>
         </div>
-        <x-contact.commons.aside></x-contact.commons.aside>
+        <x-contact.commons.aside :coordinates="$coordinates"></x-contact.commons.aside>
     </section>
 </main>
 <x-commons.footer></x-commons.footer>

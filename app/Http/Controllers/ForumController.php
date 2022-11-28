@@ -19,22 +19,46 @@ class ForumController extends Controller
     public function indexLatestSubject()
     {
         $recurrings = Recurring::all();
-        $subjects = Subject::all();
+        $subjects = Subject::paginate(8);
         $latests = Subject::latest()->take(2)->get();
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
         $tags = Subject::select('tag')->groupBy('tag')->get();
         $created = Subject::select('created_at')->groupBy('created_at')->get();
-        return view('forum.index', compact('recurrings', 'subjects', 'latests', 'status', 'tags', 'created'));
+        return view('forum.index', compact('recurrings', 'subjects', 'latests', 'status', 'tags', 'created', 'ratings'));
     }
     public function indexLatestAnswer()
     {
         $recurrings = Recurring::all();
         $comments = Comment::latest()->paginate(3);
         $latests = Subject::latest()->take(2)->get();
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
         $tags = Subject::select('tag')->groupBy('tag')->get();
         $created = Subject::select('created_at')->groupBy('created_at')->get();
-        return view('forum.latest_answers', compact('recurrings', 'comments', 'latests', 'status', 'tags', 'created'));
+        return view('forum.latest_answers', compact('recurrings', 'comments', 'latests', 'status', 'tags', 'created', 'ratings'));
+    }
+    public function indexMySubject()
+    {
+        $recurrings = Recurring::all();
+        $subjects = Subject::paginate(8);
+        $latests = Subject::latest()->take(2)->get();
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
+        $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
+        $tags = Subject::select('tag')->groupBy('tag')->get();
+        $created = Subject::select('created_at')->groupBy('created_at')->get();
+        return view('forum.my_subject', compact('recurrings', 'subjects', 'latests', 'status', 'tags', 'created', 'ratings'));
+    }
+    public function indexMyAnswer()
+    {
+        $recurrings = Recurring::all();
+        $comments = Comment::latest()->paginate(3);
+        $latests = Subject::latest()->take(2)->get();
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
+        $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
+        $tags = Subject::select('tag')->groupBy('tag')->get();
+        $created = Subject::select('created_at')->groupBy('created_at')->get();
+        return view('forum.my_talks', compact('recurrings', 'comments', 'latests', 'status', 'tags', 'created', 'ratings'));
     }
 
     /**
@@ -67,7 +91,8 @@ class ForumController extends Controller
     public function show(Subject $subject)
     {
         $latests = Subject::latest()->take(2)->get();
-        return view('forum.show', compact('subject','latests'));
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
+        return view('forum.show', compact('subject','latests', 'ratings'));
     }
 
     /**
