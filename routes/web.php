@@ -85,8 +85,8 @@ Route::get('/{locale?}/user/login', function () {
 Route::get('/{locale?}/user/register', function () {
     return view('user.register');
 });
-Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show']);
-Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit']);
+Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show'])->middleware('auth');
+Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit'])->middleware('auth');
 Route::get('/{locale?}/user/password', function () {
     return view('user.password');
 });

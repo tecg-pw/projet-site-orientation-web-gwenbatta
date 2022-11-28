@@ -13,12 +13,12 @@ class People extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'people';
     protected $with = ['courses'];
     protected $dates =['begin','end'];
     protected $fillable = [
         'name', 'firstname', 'slug', 'status', 'avatar', 'description', 'link_portfolio', 'link_github', 'linkedin', 'instagram', 'mail', 'job', 'gallery', 'begin', 'end'
     ];
-    protected $table = 'people';
 
     public function projects(): HasMany
     {

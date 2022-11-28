@@ -11,15 +11,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Project extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $dates =['date'];
+
+    protected $dates = ['date'];
+    protected $with = ["courses"];
     protected $fillable = [
-        'title', 'slug' , 'description',  'link_project','link_github','date', 'main_picture','gallery'
+        'title', 'slug', 'description', 'link_project', 'link_github', 'date', 'main_picture', 'gallery'
     ];
+
     public function person(): BelongsTo
     {
         return $this->belongsTo(People::class);
     }
-    protected $with = ["courses"];
+
     public function courses(): BelongsToMany
     {
         return $this->belongsToMany(Course::class);
