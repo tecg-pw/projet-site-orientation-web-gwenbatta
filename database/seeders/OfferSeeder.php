@@ -21,14 +21,8 @@ class OfferSeeder extends Seeder
 
         foreach ($offers as $key => $value) {
             Offer::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "description" => $value->description,
-                "languages" => json_encode($value->languages),
-                "softwares" => json_encode($value->softwares),
-                "others" => json_encode($value->others),
-                "pdf" => $value->pdf,
                 "partner_id" => $value->partner_id,
+                "id" => $value->id,
             ]);
         }
     }

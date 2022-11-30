@@ -22,19 +22,8 @@ class PartnerSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             Partner::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "mail" => $value->mail,
-                "logo" => $value->logo,
-                "adresse" => $value->adresse,
-                "locality" => $value->locality,
-                "locality_number" => $value->locality_number,
-                "description" => $value->description,
-                "site_link" => $value->site_link,
-                "link_facebook" => $value->link_facebook,
-                "link_linkedin" => $value->link_linkedin,
-                "link_instagram" => $value->link_instagram,
-                "members" => json_encode($value->members),
+                "id" => $value->id,
+
             ]);
         }
     }

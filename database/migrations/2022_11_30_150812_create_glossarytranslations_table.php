@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('recurrings', function (Blueprint $table) {
+        Schema::create('glossarytranslations', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->string('locale');
+            $table->text('definition');
             $table->timestamps();
-
         });
     }
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recurrings');
+        Schema::dropIfExists('glossarytranslations');
     }
 };

@@ -13,10 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('recurrings', function (Blueprint $table) {
+        Schema::create('coordinatetranslations', function (Blueprint $table) {
             $table->id();
+            $table->string('locale');
+            $table->string('organization');
+            $table->string('employee_name');
+            $table->string('employee_firstname');
+            $table->string('phone');
+            $table->string('mail');
+            $table->string('job');
             $table->timestamps();
-
+            $table->softDeletes();
         });
     }
 
@@ -27,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recurrings');
+        Schema::dropIfExists('coordinatetranslations');
     }
 };

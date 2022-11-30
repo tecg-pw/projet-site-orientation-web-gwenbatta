@@ -21,11 +21,7 @@ class TutoSeeder extends Seeder
 
         foreach ($tutos as $key => $value) {
             Tuto::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "link" => $value->link,
-                "excerpt" => $value->excerpt,
-                "languages" => $value->languages
+                "id"=>$value->id
             ]);
         }
     }

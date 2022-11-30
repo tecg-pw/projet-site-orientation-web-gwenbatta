@@ -21,9 +21,8 @@ class RecurringSeeder extends Seeder
 
         foreach ($recurring as $key => $value) {
             Recurring::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "description" => $value->description,
+                "id" => $value->id,
+
             ]);
         }
     }

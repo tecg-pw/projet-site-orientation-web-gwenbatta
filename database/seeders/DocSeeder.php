@@ -22,10 +22,7 @@ class DocSeeder extends Seeder
 
         foreach ($docs as $key => $value) {
             Doc::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "link" => $value->link,
-                "excerpt" => $value->excerpt,
+                "id"=>$value->id
             ]);
         }
     }

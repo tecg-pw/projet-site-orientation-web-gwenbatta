@@ -22,21 +22,7 @@ class PeopleSeeder extends Seeder
 
         foreach ($peoples as $key => $value) {
             People::create([
-                "name" => $value->name,
-                "firstname" => $value->firstname,
-                "slug" => \Str::slug($value->name.$value->firstname),
-                "status" => $value->status,
-                "avatar" => $value->avatar,
-                "description" => $value->description,
-                "link_portfolio" => $value->link_portfolio,
-                "link_github" => $value->link_github,
-                "linkedin" => $value->linkedin,
-                "instagram" => $value->instagram,
-                "mail" => $value->mail,
-                "job" => $value->job,
-                "job_slug" => \Str::slug($value->job),
-                "begin" => Carbon::parse($value->begin)->toDateTimeString(),
-                "end" => $value->end,
+                "id" => $value->id,
             ]);
         }
 

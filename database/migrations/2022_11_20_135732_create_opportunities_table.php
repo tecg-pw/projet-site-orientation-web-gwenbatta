@@ -15,12 +15,7 @@ return new class extends Migration
     {
         Schema::create('opportunities', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->text('excerpt');
-            $table->text('description');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

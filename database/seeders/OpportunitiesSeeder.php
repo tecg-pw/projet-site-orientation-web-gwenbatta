@@ -21,10 +21,7 @@ class OpportunitiesSeeder extends Seeder
 
         foreach ($tools as $key => $value) {
             Opportunity::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "description" => $value->description,
-                "excerpt" => $value->excerpt,
+                "id" => $value->id
             ]);
         }
     }

@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
             $table->timestamps();
-            $table->softDeletes();
+
         });
     }
 

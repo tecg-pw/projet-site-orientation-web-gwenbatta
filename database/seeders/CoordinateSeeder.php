@@ -21,12 +21,7 @@ class CoordinateSeeder extends Seeder
 
         foreach ($comment as $key => $value) {
             Coordinate::create([
-                "organization" => $value->organization,
-                "employee_name" => $value->employee_name,
-                "employee_firstname" => $value->employee_firstname,
-                "phone" => $value->phone,
-                "job" => $value->job,
-                "mail" => $value->mail,
+                "id"=>$value->id
             ]);
         }
     }

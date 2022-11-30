@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('recurrings', function (Blueprint $table) {
+        Schema::create('recurringtranslations', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('locale');
+            $table->string('slug');
+            $table->text('description');
             $table->timestamps();
-
+            $table->softDeletes();
         });
     }
 
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recurrings');
+        Schema::dropIfExists('recurringtranslations');
     }
 };

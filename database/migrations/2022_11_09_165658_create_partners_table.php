@@ -15,21 +15,7 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
-            $table->string('slug');
-            $table->string('mail')->nullable();
-            $table->string('logo')->nullable();
-            $table->string('adresse');
-            $table->string('locality')->index();
-            $table->string('locality_number');
-            $table->text('description')->nullable();
-            $table->string('site_link');
-            $table->string('link_facebook')->nullable();
-            $table->string('link_linkedin')->nullable();
-            $table->string('link_instagram')->nullable();
-            $table->json('members')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

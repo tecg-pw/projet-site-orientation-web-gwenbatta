@@ -22,16 +22,8 @@ class ProjectSeeder extends Seeder
 
         foreach ($projects as $key => $value) {
             Project::create([
-                "title" => $value->title,
+                "id" => $value->id,
                 "person_id" => $value->person_id,
-                "slug" => \Str::slug($value->title.$value->person_id),
-                "description" => $value->description,
-                "link_project" => $value->link_project,
-                "link_github" => $value->link_github,
-                "date" => $value->date,
-                "main_picture" => $value->main_picture,
-                "gallery" => $value->gallery,
-
             ]);
         }
     }

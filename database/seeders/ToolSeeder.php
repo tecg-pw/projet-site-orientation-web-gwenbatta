@@ -21,10 +21,7 @@ class ToolSeeder extends Seeder
 
         foreach ($tools as $key => $value) {
             Tool::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "link" => $value->link,
-                "excerpt" => $value->excerpt,
+                "id"=>$value->id
             ]);
         }
     }

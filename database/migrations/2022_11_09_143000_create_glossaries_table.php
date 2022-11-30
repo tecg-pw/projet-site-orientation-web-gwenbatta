@@ -15,11 +15,7 @@ return new class extends Migration
     {
         Schema::create('glossaries', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->text('definition');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

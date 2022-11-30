@@ -21,11 +21,7 @@ class BookSeeder extends Seeder
 
         foreach ($books as $key => $value) {
             Book::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "excerpt" => $value->excerpt,
-                "description" => $value->description,
-                "gallery" => $value->gallery
+                "id"=>$value->id
             ]);
         }
     }

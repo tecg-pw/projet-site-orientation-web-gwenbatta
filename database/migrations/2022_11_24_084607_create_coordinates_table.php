@@ -15,14 +15,8 @@ return new class extends Migration
     {
         Schema::create('coordinates', function (Blueprint $table) {
             $table->id();
-            $table->string('organization');
-            $table->string('employee_name');
-            $table->string('employee_firstname');
-            $table->string('phone');
-            $table->string('mail');
-            $table->string('job');
             $table->timestamps();
-            $table->softDeletes();
+
         });
     }
 

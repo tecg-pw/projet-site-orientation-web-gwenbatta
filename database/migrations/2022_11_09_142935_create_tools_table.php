@@ -15,12 +15,8 @@ return new class extends Migration
     {
         Schema::create('tools', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->text('excerpt');
-            $table->string('link');
             $table->timestamps();
-            $table->softDeletes();
+
         });
     }
 

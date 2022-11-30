@@ -22,7 +22,7 @@ class TestimonialSeeder extends Seeder
 
         foreach ($recurring as $key => $value) {
             Testimonial::create([
-                "description" => $value->description,
+                "id" => $value->id,
                 "person_id" => $value->person_id,
             ]);
         }

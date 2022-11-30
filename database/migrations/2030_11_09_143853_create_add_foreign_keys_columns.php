@@ -39,6 +39,55 @@ return new class extends Migration
         });
 
 
+        Schema::table('actualitytranslations', function (Blueprint $table) {
+            $table->foreignId('actuality_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('booktranslations', function (Blueprint $table) {
+            $table->foreignId('book_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('coursetranslations', function (Blueprint $table) {
+            $table->foreignId('course_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('coordinatetranslations', function (Blueprint $table) {
+            $table->foreignId('coordinate_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('doctranslations', function (Blueprint $table) {
+            $table->foreignId('doc_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('offertranslations', function (Blueprint $table) {
+            $table->foreignId('offer_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('partnertranslations', function (Blueprint $table) {
+            $table->foreignId('partner_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('projecttranslations', function (Blueprint $table) {
+            $table->foreignId('project_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('testimonialtranslations', function (Blueprint $table) {
+            $table->foreignId('testimonial_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('tooltranslations', function (Blueprint $table) {
+            $table->foreignId('tool_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('tutotranslations', function (Blueprint $table) {
+            $table->foreignId('tuto_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('recurringtranslations', function (Blueprint $table) {
+            $table->foreignId('recurring_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('persontranslations', function (Blueprint $table) {
+            $table->foreignId('person_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('glossarytranslations', function (Blueprint $table) {
+            $table->foreignId('glossary_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('opportunitytranslations', function (Blueprint $table) {
+            $table->foreignId('opportunity_id')->constrained()->onUpdate('cascade');
+        });
+
+
+
+
 
         Schema::table('book_course', function (Blueprint $table) {
             $table->foreignId('book_id')->constrained()->onUpdate('cascade');

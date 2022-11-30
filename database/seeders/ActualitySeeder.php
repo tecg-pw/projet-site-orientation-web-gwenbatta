@@ -21,14 +21,7 @@ class ActualitySeeder extends Seeder
 
         foreach ($actualities as $key => $value) {
             Actuality::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "excerpt" => $value->excerpt,
-                "description" => $value->description,
-                "lieu" => $value->lieu,
-                "link" => $value->link,
-                "main_picture" => $value->main_picture,
-                "gallery" => $value->gallery,
+                "id" => $value->id
             ]);
         }
     }

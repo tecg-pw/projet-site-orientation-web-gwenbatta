@@ -21,9 +21,7 @@ class GlossarySeeder extends Seeder
 
         foreach ($glossaries as $key => $value) {
             Glossary::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "definition" => $value->definition,
+                "id"=>$value->id
             ]);
         }
     }
