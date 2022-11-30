@@ -1,26 +1,8 @@
 [
-  {
-    "id": 1,
-    "organization": "hepl",
-    "employee_name": "paggen",
-    "employee_firstname": "sophie",
-    "phone": "04 279 55 20",
-    "mail": "tech.secretariat@hepl.be",
-    "job": "secrétaire de la HEPL",
-    "created_at": null,
-    "updated_at": null,
-    "deleted_at": null
-  },
     {
-    "id": 2,
-    "organization": "hepl",
-    "employee_name": "vilain",
-    "employee_firstname": "dominique",
-    "phone": "04 279 55 20",
-    "mail": "dominique.vilain@hepl.be",
-    "job": "professeur de l'option",
-    "created_at": null,
-    "updated_at": null,
-    "deleted_at": null
-  }
+        "id": 1
+    },
+    {
+        "id": 2
+    }
 ]

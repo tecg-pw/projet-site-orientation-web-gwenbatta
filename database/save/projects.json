@@ -1,122 +1,42 @@
 [
   {
     "id": 1,
-    "title": "Portfolio",
-    "description": "«Ce site a été réalisé dans le cadre du cours de Design Web B2 afin présenter mes travaux effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et Javascript.\n\nCe projet est un site destiné à présenter nos différents sites aux jurys de fin d’année 2021 et de montrer notre savoir-faire en Wordpress, langage que nous avons étudié lors du cours de Design Web B2. Il est aussi le projet que les entreprises iront voir lors de nos candidatures afin d’évoluer qui nous sommes et ce dont nous sommes capable.»",
-    "link_project": "https://gwenaelle-batta.be/",
-    "link_github": "https://github.com/GwenaelleBatta/portfolio/tree/main/wordpress",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/portfolio-gwen-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 1
   },
   {
     "id": 2,
-    "title": "Ecosph'air",
-    "description": "«Ce site a été réalisé dans le cadre du cours de Design Web B2 afin présenter mes travaux effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et Javascript.\n\nCe projet a vu le jour suite à la demande d'un client externe. En effet, celui-ci était désireux de pouvoir présenter et faire connaître différents modules mesurant le taux de CO2 dans l'air afin d'attirer de potentiels clients. Le but du site était aussi de promouvoir la section d'électronique de la HEPL, afin que les futurs étudiants de l'option puissent se projeter et découvrir les modules qu'ils seront amenés à manipuler.»",
-    "link_project": "https://ecosphair.gwenaelle-batta.be/",
-    "link_github": "https://github.com/GwenaelleBatta/projet-antilope",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/ecosphair-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 1
   },
   {
     "id": 3,
-    "title": "CV",
-    "description": "«Ce site a été réalisé dans le cadre du cours de Design Web afin de nous présenter à travers un CV. Ce site a été codé principalement grâce à HTML5, CSS3 et Javascript\n\nCe projet est le premier de l'année, il consistait à nous entraîner à utiliser les nouveaux outils vu cette année comme Flexbox et Grid Layout. Nous avons du choisir un site existant et l'adapter à notre contenu ainsi que veiller à ce que celui-ci respecte correctement les règles CSS et HTML. Si cela n'était pas le cas nous avons dû rectifier cela. Mon site d'inspiration était celui de Win, que j'ai trouvé via le site de Knok.»",
-    "link_project": "https://projet-cv.gwenaelle-batta.be/",
-    "link_github": "https://github.com/GwenaelleBatta/CV-project",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/cv-gwen-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 1
   },
   {
     "id": 4,
-    "title": "Portfolio",
-    "description": "«Vous êtes dessus ! Un des gros projets à réaliser lors du cours de 2ème année de l'option Web est un portfolio dans lequel on peut retrouver tous nos projets. Le site devait être réalisé à l'aide du CMS WordPress et est présenté durant le jury de fin d'année.»",
-    "link_project": "https://noemie-vincent.be/fr/",
-    "link_github": "https://github.com/noemievincent/portfolio",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/portfolio-noemie-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 2
   },
   {
     "id": 5,
-    "title": "Antilope",
-    "description": "«Dans le cadre du cours de Design Web, il nous était demandé de réaliser un site pour un client externe qui serait ensuite présenté au jury de Juin. Cette année, le site devait être un site vitrine dans lequel on présente les différents modules destinés à mesurer la pollution de l'air, mais aussi les différents partenaires du projet. Il permet aussi de promouvoir la section électronique de l'HEPL, qui a travaillé en collaboration avec l'ISSeP.»",
-    "link_project": "https://antilope.noemie-vincent.be/fr/",
-    "link_github": "https://github.com/noemievincent/antilope",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/antilope-noemie-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 2
   },
   {
     "id": 6,
-    "title": "CV",
-    "description": "«Il s'agit du premier site que j'ai dû réaliser dans le cadre du cours de Design Web. Les consignes étaient de reproduire un site existant en adaptant son contenu pour qu'il ressemble à un CV.»",
-    "link_project": "https://cv.noemie-vincent.be/",
-    "link_github": "https://github.com/noemievincent/cv",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/cv-noemie-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 2
   },
   {
     "id": 7,
-    "title": "Portfolio",
-    "description": "«Ce site a été réalisé dans le cadre du cours de Design Web B2 afin présenter mes travaux effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et Javascript.\n\nCe projet est un site destiné à présenter nos différents sites aux jurys de fin d’année 2021 et de montrer notre savoir-faire en Wordpress, langage que nous avons étudié lors du cours de Design Web B2. Il est aussi le projet que les entreprises iront voir lors de nos candidatures afin d’évoluer qui nous sommes et ce dont nous sommes capable.»",
-    "link_project": "https://aline-db.be/",
-    "link_github": "https://github.com/AlineDB/portfolio-V2",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/portfolio-nathan-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 11
   },
   {
     "id": 8,
-    "title": "CV",
-    "description": "«Ce site a été réalisé dans le cadre du cours de Design Web B2 afin présenter mes travaux effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et Javascript.\n\nCe projet est un site destiné à présenter nos différents sites aux jurys de fin d’année 2021 et de montrer notre savoir-faire en Wordpress, langage que nous avons étudié lors du cours de Design Web B2. Il est aussi le projet que les entreprises iront voir lors de nos candidatures afin d’évoluer qui nous sommes et ce dont nous sommes capable.»",
-    "link_project": "https://aline-db.be/",
-    "link_github": "https://github.com/AlineDB/Aline_CV",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/ecosphair-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 11
   },
   {
     "id": 9,
-    "title": "CV",
-    "description": "«Dans le cadre du cours de design web, il nous a été demandé de créer un cv à partir d'une page web déjà existante. Voulant mettre en avant mes compétences d'illustrateur, je voulais une page me permettant à la fois de redessiner certains éléments en plus d'afficher certains de mes anciens dessins. J'ai donc choisi l'ancienne page personnelle de Denise Chandler, une typographe et designer web américaine, car elle remplissait toutes les conditions que je cherchais. J'aime aussi beaucoup son design très simple et épuré !\n\nJ'ai rencontré plusieurs difficultés au cours de ce projet. La première était de créer un remplaçant à cette sorte d'animal étrange. En effet, la forme très particulière a rendu la tâche assez ardue mais après plusieurs essais, j'ai finalement trouvé le bon design ! J'ai aussi eu du mal avec tout ce qui tourne autour de la balise canvas et son positionnement en arrière-plan de l'illustration principale.»",
-    "link_project": "https://cv.nathan-schyns.be/",
-    "link_github": "https://github.com/SCHYNS-Nathan/web_design-CVs",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/ecosphair-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 12
   },
   {
     "id": 10,
-    "title": "Portfolio",
-    "description": "«Ce site a été réalisé dans le cadre du cours de Design Web B2 afin présenter mes travaux effectués durant l’année. Ce site a été codé principalement grâce à Wordpress, CSS3 et Javascript.\n\nCe projet est un site destiné à présenter nos différents sites aux jurys de fin d’année 2021 et de montrer notre savoir-faire en Wordpress, langage que nous avons étudié lors du cours de Design Web B2. Il est aussi le projet que les entreprises iront voir lors de nos candidatures afin d’évoluer qui nous sommes et ce dont nous sommes capable.»",
-    "link_project": "https://nathan-schyns.be/",
-    "link_github": "https://github.com/SCHYNS-Nathan/portfolio",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "/img-redimensions/portfolio-nathan-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
     "person_id": 12
   }
 ]

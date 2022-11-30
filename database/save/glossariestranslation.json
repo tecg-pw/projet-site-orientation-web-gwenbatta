@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "name": "Accessibilité",
+        "locale": "fr",
+        "definition": "1. Caractère de quelque chose, d’un lieu qui sont accessibles : L’accessibilité d’un bus, d’un immeuble aux handicapés.\n\n2. Droit, possibilité qu’a quelqu’un d’avoir accès à quelque chose : L’accessibilité à un emploi.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Accessibility",
+        "locale": "en",
+        "definition": "1. The character of something or a place that is accessible: The accessibility of a bus, a building to the disabled.\n\n2. Right, possibility that someone has to have access to something: Accessibility to a job.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 1
+    },
+    {
+        "id": 3,
+        "name": "Back-end",
+        "locale": "fr",
+        "definition": "Ensemble des parties de construction d’un site web qui abrite notamment le développement des bases de données. Invisible, l’utilisateur ne le voit pas.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 2
+    },
+    {
+        "id": 4,
+        "name": "Back-end",
+        "locale": "en",
+        "definition": "A set of parts of the construction of a website that includes the development of databases. Invisible, the user does not see it.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 2
+    },
+    {
+        "id": 5,
+        "name": "Efficience",
+        "locale": "fr",
+        "definition": "L’efficience est la capacité d’un individu ou d’un système de travail d’obtenir de bonnes performances dans un type de tâche donné.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 3
+    },
+    {
+        "id": 6,
+        "name": "Efficiency",
+        "locale": "en",
+        "definition": "Efficiency is the ability of an individual or a work system to perform well in a given type of task.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 3
+    },
+    {
+        "id": 7,
+        "name": "Efficacité",
+        "locale": "fr",
+        "definition": "L’efficacité est la capacité, d’une personne, d’un groupe ou d’un système, à parvenir à ses fins, à ses objectifs.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 4
+    },
+    {
+        "id": 8,
+        "name": "Effectiveness",
+        "locale": "en",
+        "definition": "Effectiveness is the ability of a person, a group or a system to achieve its ends, its objectives.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 4
+    },
+    {
+        "id": 9,
+        "name": "CMS",
+        "locale": "fr",
+        "definition": "Content Management System, regroupement de solutions permettant de créer, gérer et mettre à un jour un site Internet (Exemple : WordPress).",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 5
+    },
+    {
+        "id": 10,
+        "name": "CMS",
+        "locale": "en",
+        "definition": "Content Management System, group of solutions allowing to create, manage and update a website (Example: WordPress).",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 5
+    },
+    {
+        "id": 11,
+        "name": "CSS",
+        "locale": "fr",
+        "definition": "Acronyme de Cascading Style Sheets. C’est un langage informatique utilisé sur internet pour la mise en forme de fichiers et pages HTML.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 6
+    },
+    {
+        "id": 12,
+        "name": "CSS",
+        "locale": "en",
+        "definition": "Acronyme de Cascading Style Sheets. C’est un langage informatique utilisé sur internet pour la mise en forme de fichiers et pages HTML.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 6
+    },
+    {
+        "id": 13,
+        "name": "Modularisation",
+        "locale": "fr",
+        "definition": "La modularisation consiste à découper des formations en modules distincts et permet de structurer des parcours qui tiennent compte à la fois des objectifs de formation et des acquis de l’apprenant. Elle est une condition essentielle de l’Individualisation des Parcours.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 7
+    },
+    {
+        "id": 14,
+        "name": "Modularisation",
+        "locale": "en",
+        "definition": "Modularisation consists in dividing training courses into distinct modules and allows the structuring of courses that take into account both the training objectives and the learner's prior learning. It is an essential condition for the Individualisation of Pathways.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 7
+    },
+    {
+        "id": 15,
+        "name": "Call To Action",
+        "locale": "fr",
+        "definition": "Un CTA ou Call to Action est un bouton contenant un texte incitant l’utilisateur à cliquer dessus. Généralement utilisé par un site pour pour diriger l’utilisateur vers une conversion.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 8
+    },
+    {
+        "id": 16,
+        "name": "Call To Action",
+        "locale": "en",
+        "definition": "A CTA or Call to Action is a button containing text that prompts the user to click on it. Generally used by a website to direct the user to a conversion.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 8
+    },
+    {
+        "id": 17,
+        "name": "Framework",
+        "locale": "fr",
+        "definition": "Désigne un ensemble d’outils et de composants logiciels à la base d’un logiciel ou une application. Il établit la fondation d’un logiciel ou son squelette applicatif.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 9
+    },
+    {
+        "id": 18,
+        "name": "Framework",
+        "locale": "en",
+        "definition": "A set of software tools and components that form the basis of a software program or application. It establishes the foundation of a software or its application skeleton.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 9
+    },
+    {
+        "id": 19,
+        "name": "Tagline",
+        "locale": "fr",
+        "definition": "La tagline, associé au titre du site, définit l’identité de ce site. Alors que le titre résume de quoi parle le site, le slogan développe le titre dans une phrase descriptive en renseignant davantage sur l’activité de l’entreprise.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 10
+    },
+    {
+        "id": 20,
+        "name": "Tagline",
+        "locale": "en",
+        "definition": "The tagline, associated with the title of the site, defines the identity of the site. While the title summarises what the site is about, the tagline expands on the title in a descriptive sentence by providing more information about the company's activity.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 10
+    }
+]

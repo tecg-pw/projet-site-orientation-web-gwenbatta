@@ -1,102 +1,32 @@
 [
     {
-        "id": 1,
-        "name": "Froggy",
-        "excerpt": "Exercice d’introduction à Flexbox, une technique CSS ",
-        "link": "https://flexboxfroggy.com/#fr",
-        "languages": "CSS",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 1
     },
     {
-        "id": 2,
-        "name": "Grid Garden",
-        "excerpt": "Exercice d’introduction à Grid Layout, une technique CSS",
-        "link": "https://codepip.com/games/grid-garden/",
-        "languages": "CSS",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 2
     },
     {
-        "id": 3,
-        "name": "Bugdroid",
-        "excerpt": "Exercice d’introduction au langage HTML qui présente Bugdroid.",
-        "link": "https://github.com/tecg-cpw/html-bugdroid",
-        "languages": "HTML",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 3
     },
     {
-        "id": 4,
-        "name": "HTML List Base",
-        "excerpt": "Exercice d’introduction au langage HTML qui explique la notion de liste.",
-        "link": "https://github.com/tecg-cpw/html-lists-base",
-        "languages": "HTML",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 4
     },
     {
-        "id": 5,
-        "name": "Movies App",
-        "excerpt": "Exercice réaliser lors de la session de juin 2022",
-        "link": "https://github.com/tecg-cpw/css-MovieApp",
-        "languages": "CSS",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 5
     },
     {
-        "id": 6,
-        "name": "Instagram",
-        "excerpt": "Exercice réaliser dans le cadre du cours de Création de page Web",
-        "link": "https://github.com/tecg-cpw/css-instagram",
-        "languages": "CSS",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 6
     },
     {
-        "id": 7,
-        "name": "Slide on Scroll",
-        "excerpt": "Exercice de Wes Bos pour réaliser une animation Js dans vos pages",
-        "link": "https://www.youtube.com/watch?v=uzRsENVD3W8&list=PLu8EoSxDXHP6CGK4YVJhL_VWetA865GOH&index=13",
-        "languages": "javascript",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 7
     },
     {
-        "id": 8,
-        "name": "Svg Clock",
-        "excerpt": "Exercice de Wes Bos pour réaliser une horloge à l’aide de JS",
-        "link": "https://www.youtube.com/watch?v=xu87YWbr4X0&list=PLu8EoSxDXHP6CGK4YVJhL_VWetA865GOH&index=2",
-        "languages": "javascript",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 8
     },
     {
-        "id": 9,
-        "name": "10 screens",
-        "excerpt": "Exercice d’introduction pour vous familiariser avec Adobe XD",
-        "link": "https://github.com/tecg-dwm/dwm-10screens",
-        "languages": "xd",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 9
     },
     {
-        "id": 10,
-        "name": "Calculette",
-        "excerpt": "Exercice d’introduction au langage PHP réaliser en classe",
-        "link": "https://github.com/tecg-dcs/calculette",
-        "languages": "php",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 10
     }
 ]

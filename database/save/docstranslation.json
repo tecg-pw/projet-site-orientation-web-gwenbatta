@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "name": "Laravel",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de Laravel traduite en enançais",
+        "link": "https://gtmetrix.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Laravel",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de Laravel traduite en français",
+        "link": "https://gtmetrix.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 2
+    },
+    {
+        "id": 3,
+        "name": "CSS",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de CSS",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 2
+    },
+    {
+        "id": 4,
+        "name": "CSS",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de CSS",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 2
+    },
+    {
+        "id": 5,
+        "name": "HTML",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de HTML",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 3
+    },
+    {
+        "id": 6,
+        "name": "HTML",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de HTML",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 3
+    },
+    {
+        "id": 7,
+        "name": "Wordpress",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de Wordpress",
+        "link": "https://en.wordpress.org/support/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 4
+    },
+    {
+        "id": 8,
+        "name": "Wordpress",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de Wordpress",
+        "link": "https://fr.wordpress.org/support/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 4
+    },
+    {
+        "id": 9,
+        "name": "Javascript",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de Javascript",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 5
+    },
+    {
+        "id": 10,
+        "name": "Javascript",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de Javascript",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 5
+    },
+    {
+        "id": 11,
+        "name": "PHP",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de PHP",
+        "link": "https://www.php.net/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 6
+    },
+    {
+        "id": 12,
+        "name": "PHP",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de PHP",
+        "link": "https://www.php.net/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 6
+    },
+    {
+        "id": 13,
+        "name": "Flutter",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de Flutter",
+        "link": "https://docs.flutter.dev/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 7
+    },
+    {
+        "id": 14,
+        "name": "Flutter",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de Flutter",
+        "link": "https://docs.flutter.dev/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 7
+    },
+    {
+        "id": 15,
+        "name": "MySQL",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de MySQL",
+        "link": "https://dev.mysql.com/doc/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 8
+    },
+    {
+        "id": 16,
+        "name": "MySQL",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de MySQL",
+        "link": "https://dev.mysql.com/doc/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 8
+    },
+    {
+        "id": 17,
+        "name": "Tailwind",
+        "locale": "en",
+        "excerpt": "Lien vers la documentation de Flutter",
+        "link": "https://tailwindcss.com/docs/installation",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 9
+    },
+    {
+        "id": 18,
+        "name": "Tailwind",
+        "locale": "fr",
+        "excerpt": "Lien vers la documentation de Flutter",
+        "link": "https://tailwindcss.com/docs/installation",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 9
+    },
+    {
+        "id": 19,
+        "name": "A Book Appart",
+        "locale": "en",
+        "excerpt": "Lien vers le site de « A book Appart », avec une liste de livre de référence du web.",
+        "link": "https://abookapart.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 10
+    },
+    {
+        "id": 20,
+        "name": "A Book Appart",
+        "locale": "fr",
+        "excerpt": "Lien vers le site de « A book Appart », avec une liste de livre de référence du web.",
+        "link": "https://abookapart.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 10
+    }
+]

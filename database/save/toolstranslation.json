@@ -1,0 +1,254 @@
+[
+    {
+        "id": 1,
+        "name": "GtMetrix",
+        "locale": "fr",
+        "excerpt": "Lien vers le site de GTMetrix qui évaluera votre site et vous aidera à l’améliorer",
+        "link": "https://gtmetrix.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 1
+    }, {
+        "id": 2,
+        "name": "GtMetrix",
+        "locale": "en",
+        "excerpt": "Link to the GTMetrix website which will evaluate your site and help you improve it",
+        "link": "https://gtmetrix.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 1
+    },
+    {
+        "id": 3,
+        "name": "Zeal",
+        "locale": "fr",
+        "excerpt": "Application qui vous permet d’avoir toutes la documentation sur votre Windows",
+        "link": "https://zealdocs.org/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 2
+    }, {
+        "id": 4,
+        "name": "Zeal",
+        "locale": "en",
+        "excerpt": "Application that allows you to have all the documentation on your Windows",
+        "link": "https://zealdocs.org/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 2
+    },
+    {
+        "id": 5,
+        "name": "Dash",
+        "locale": "fr",
+        "excerpt": "Application qui vous permet d’avoir toutes la documentation sur votre Mac",
+        "link": "https://kapeli.com/dash",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 3
+    }, {
+        "id": 6,
+        "name": "Dash",
+        "locale": "en",
+        "excerpt": "Application that allows you to have all the documentation on your Mac",
+        "link": "https://kapeli.com/dash",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 3
+    },
+    {
+        "id": 7,
+        "name": "HTML Validator",
+        "locale": "fr",
+        "excerpt": "Vérifie votre structure HTML et vous notifie les erreurs dans votre fichier.",
+        "link": "https://validator.w3.org/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 4
+    },  {
+        "id": 8,
+        "name": "HTML Validator",
+        "locale": "en",
+        "excerpt": "Checks your HTML structure and notifies you of errors in your file.",
+        "link": "https://validator.w3.org/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 4
+    },
+    {
+        "id": 9,
+        "name": "CSS Stats",
+        "locale": "fr",
+        "excerpt": "CSS Stats fournit des analyses et des visualisations pour vos feuilles de style. ",
+        "link": "https://cssstats.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 5
+    }, {
+        "id": 10,
+        "name": "CSS Stats",
+        "locale": "en",
+        "excerpt": "CSS Stats provides analyses and visualisations for your style sheets.",
+        "link": "https://cssstats.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 5
+    },
+    {
+        "id": 11,
+        "name": "Headings Map",
+        "locale": "fr",
+        "excerpt": "Vérifie l’arborescence de votre sites, la présence des titres et leurs validité",
+        "link": "https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 6
+    }, {
+        "id": 12,
+        "name": "Headings Map",
+        "locale": "en",
+        "excerpt": "Checks the tree structure of your site, the presence of titles and their validity",
+        "link": "https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 6
+    },
+    {
+        "id": 13,
+        "name": "Règle Opquast",
+        "locale": "fr",
+        "excerpt": "Liste des règles Opquast pour créer un bon site web",
+        "link": "https://checklists.opquast.com/fr/assurance-qualite-web/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 7
+    }, {
+        "id": 14,
+        "name": "Règle Opquast",
+        "locale": "en",
+        "excerpt": "List of Opquast rules for creating a good website",
+        "link": "https://checklists.opquast.com/fr/assurance-qualite-web/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 7
+    },
+    {
+        "id": 15,
+        "name": "Checklist WCAG",
+        "locale": "fr",
+        "excerpt": "Lien vers la check-list, afin de vous aider à améliorer l’accessibilité de votre site.",
+        "link": "https://www.anysurfer.be/fr/documentation/articles/detail/webaims-wcag-2-checklist",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 8
+    }, {
+        "id": 16,
+        "name": "Checklist WCAG",
+        "locale": "en",
+        "excerpt": "Link to the checklist, to help you improve the accessibility of your site.",
+        "link": "https://www.anysurfer.be/fr/documentation/articles/detail/webaims-wcag-2-checklist",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 8
+    },
+    {
+        "id": 17,
+        "name": "ImagOptim",
+        "locale": "fr",
+        "excerpt": "Application qui vous permet d’optimiser vos images (Disponible sous Mac)",
+        "link": "https://imageoptim.com/fr",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 9
+    }, {
+        "id": 18,
+        "name": "ImagOptim",
+        "locale": "en",
+        "excerpt": "Application that allows you to optimize your images (Available on Mac)",
+        "link": "https://imageoptim.com/fr",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 9
+    },
+    {
+        "id": 19,
+        "name": "Lighthouse",
+        "locale": "fr",
+        "excerpt": "Onglet présent dans l’inspecteur, permet d’optimiser votre site.",
+        "link": "https://addons.mozilla.org/fr/firefox/addon/google-lighthouse/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 10
+    }, {
+        "id": 20,
+        "name": "Lighthouse",
+        "locale": "en",
+        "excerpt": "Tab present in the inspector, allows you to optimise your site.",
+        "link": "https://addons.mozilla.org/fr/firefox/addon/google-lighthouse/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 10
+    },
+    {
+        "id": 21,
+        "name": "CSS Validator",
+        "locale": "fr",
+        "excerpt": "Vérifie votre structure CSS et vous notifie les erreurs dans votre fichier.",
+        "link": "https://jigsaw.w3.org/css-validator/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 11
+    },{
+        "id": 22,
+        "name": "CSS Validator",
+        "locale": "en",
+        "excerpt": "Checks your CSS structure and notifies you of errors in your file.",
+        "link": "https://jigsaw.w3.org/css-validator/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 11
+    },
+    {
+        "id": 23,
+        "name": "Contrast Checker",
+        "locale": "fr",
+        "excerpt": "Vérifie les contrates de couleurs présentent dans votre site",
+        "link": "https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 12
+    }, {
+        "id": 24,
+        "name": "Contrast Checker",
+        "locale": "en",
+        "excerpt": "Checks for colour contrasts in your site",
+        "link": "https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tool_id": 12
+    }
+]

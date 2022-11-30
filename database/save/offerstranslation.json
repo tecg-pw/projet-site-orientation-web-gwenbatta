@@ -1,0 +1,124 @@
+[
+    {
+        "id": 1,
+        "name": "Développeur Front-end",
+        "locale": "fr",
+        "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
+        "languages": [
+            "PHP",
+            "HTML5",
+            "CSS3",
+            "SASS",
+            "Javascript",
+            "NodeJS",
+            "Wordpress",
+            "MySQL"
+        ],
+        "softwares": [
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "Adobe XD"
+        ],
+        "others": [
+            "Compétences en design web",
+            "Compétence en infographie",
+            "VueJS",
+            "ReactJS"
+        ],
+        "pdf": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "offer_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Front-end developer",
+        "locale": "en",
+        "description": "Are you passionate, dynamic and creative?\nAre you looking for a new professional challenge?\nOur young and dynamic team is\nlooking for profiles like yours.",
+        "languages": [
+            "PHP",
+            "HTML5",
+            "CSS3",
+            "SASS",
+            "Javascript",
+            "NodeJS",
+            "Wordpress",
+            "MySQL"
+        ],
+        "softwares": [
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "Adobe XD"
+        ],
+        "others": [
+            "Web design skills",
+            "Computer graphics skills",
+            "VueJS",
+            "ReactJS"
+        ],
+        "pdf": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "offer_id": 1
+    },
+    {
+        "id": 3,
+        "name": "Webdesigner",
+        "locale": "fr",
+        "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
+        "languages": [
+            "HTML5",
+            "CSS3",
+            "SASS",
+            "Javascript",
+            "Wordpress"
+        ],
+        "softwares": [
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "Adobe XD"
+        ],
+        "others": [
+            "PHP",
+            "MySQL",
+            "Adobe Première",
+            "After Effect"
+        ],
+        "pdf": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "offer_id": 1
+    },
+    {
+        "id": 4,
+        "name": "Webdesigner",
+        "locale": "en",
+        "description": "Are you passionate, dynamic and creative?\nAre you looking for a new professional challenge?\nOur young and dynamic team is\nlooking for profiles like yours.",
+        "languages": [
+            "HTML5",
+            "CSS3",
+            "SASS",
+            "Javascript",
+            "Wordpress"
+        ],
+        "softwares": [
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "Adobe XD"
+        ],
+        "others": [
+            "PHP",
+            "MySQL",
+            "Adobe Première",
+            "After Effect"
+        ],
+        "pdf": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "offer_id": 1
+    }
+]

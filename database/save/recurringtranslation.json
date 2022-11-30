@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Est-ce qu’avoir un Mac est indispensable ?",
+        "locale": "fr",
+        "description": "Non, il n’est pas obligatoire d’avoir un Mac pour les cours de web. Cependant, nous vous conseillons, si vous devez acheter un nouvel ordinateur et que vous vous destinez au web, de prendre un Mac. En effet, la plupart des professeurs de web utilise Apple et sauront mieux vous aider si vous avez un problème car il maitrise mieux ces machines et c’est un outil mieux adapter pour le développement de sites.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "recurring_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Is having a Mac essential?",
+        "locale": "en",
+        "description": "No, it is not mandatory to have a Mac for web courses. However, if you have to buy a new computer and you are going to take a web course, we advise you to get a Mac. Indeed, most web teachers use Apple and will be able to help you better if you have a problem because they are more familiar with these machines and it is a better tool for web development..",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "recurring_id": 1
+    }
+]

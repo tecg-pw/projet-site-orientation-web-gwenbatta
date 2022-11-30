@@ -1,142 +1,45 @@
 [
     {
-        "id": 1,
-        "name": "Projet Web",
-        "hours": "240",
-        "bac": "3",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine. ",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 1
     },
     {
-        "id": 2,
-        "name": "Développement d'application mobile",
-        "hours": "45",
-        "bac": "3",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine. ",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 2
     },
     {
-        "id": 3,
-        "name": "Projet de fin d'étude",
-        "hours": "210",
-        "bac": "3",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine. ",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 3
     },
     {
-        "id": 3,
-        "name": "Stage",
-        "hours": "140",
-        "bac": "3",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine. ",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 4
     },
     {
-        "id": 4,
-        "name": "Design Web",
-        "hours": "165",
-        "bac": "2",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine. ",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 5
+
     },
     {
-        "id": 5,
-        "name": "Design d'application mobile",
-        "hours": "30",
-        "bac": "2",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 5
     },
     {
-        "id": 6,
-        "name": "Développement côté client",
-        "hours": "75",
-        "bac": "2",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 6
     },
     {
-        "id": 7,
-        "name": "Développement côté serveur",
-        "hours": "75",
-        "bac": "2",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 7
     },
     {
-        "id": 8,
-        "name": "Multimédia",
-        "hours": "60",
-        "bac": "2",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 8
     },
     {
-        "id": 9,
-        "name": "Système de gestion de contenu",
-        "hours": "45",
-        "bac": "2",
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 9
     },
     {
-        "id": 10,
-        "name": "HTML",
-        "hours": 60,
-        "bac": 1,
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 10
     },
     {
-        "id": 11,
-        "name": "CSS",
-        "hours": 60,
-        "bac": 1,
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 11
     },
     {
-        "id": 12,
-        "name": "Design Web",
-        "hours": 30,
-        "bac": 1,
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 12
     },
     {
-        "id": 13,
-        "name": "Initialisation à la programmation",
-        "hours": 30,
-        "bac": 1,
-        "description": "Ce cours a pour objectif de prolonger l’apprentissage du cours de Développement côté serveur et du cours de Design Web B2. En effet, dans le cadre de ce cours, vous apprendrez le Framework Laravel qui es ton surcouche du langage PHP et vous passerez du temps à réaliser un projet pour un client externe en Laravel, à présenter lors du jury de janvier. Ce cours se déroule au premier quadrimestre uniquement et comporte 16h de cours par semaine.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "id": 13
     }
 ]
