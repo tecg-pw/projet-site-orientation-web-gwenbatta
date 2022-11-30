@@ -6,7 +6,7 @@
             <x-search_bar class=""></x-search_bar>
         </div>
         <p class="mb-7 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('tuto.tuto_text')}}</p>
-        <x-sort_by class="mb-14"></x-sort_by>
+        <x-sort_by_tutos :languages="$languages" :date="$date" class="mb-14"></x-sort_by_tutos>
         <article aria-labelledby="list-tutos">
             <h3 id="list-tutos" role="heading" aria-level="3" class="sr-only">{{__('tuto.tuto_list_title')}}</h3>
             <div class="flex gap-y-4 flex-col xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8">

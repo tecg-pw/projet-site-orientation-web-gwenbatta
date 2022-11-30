@@ -35,7 +35,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PeopleSeeder::class);
         $this->call(OfferSeeder::class);
         $this->call(ProjectSeeder::class);
-        $this->call(QuestionSeeder::class);
         $this->call(SubjectSeeder::class);
         $this->call(RecurringSeeder::class);
         $this->call(CommentSeeder::class);

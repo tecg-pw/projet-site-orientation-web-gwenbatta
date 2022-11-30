@@ -3,29 +3,26 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class People extends Resource
+class Opportunity extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\People::class;
+    public static $model = \App\Models\Opportunity::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'mail';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -47,69 +44,17 @@ class People extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Avatar::make('Avatar')->rounded(),
-
-
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Firstname')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
             Text::make('Slug')
-                ->hideFromIndex()
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Mail')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+            Textarea::make('Excerpt')->rows(3)->rules('required'),
 
-            Text::make('Status')
-                ->sortable()
-                ->rules('required','max:255'),
-
-            Textarea::make('Description')->rows(3),
-
-            Text::make('Link_Portfolio')
-                ->hideFromIndex()
-                ->rules('max:255'),
-
-            Text::make('Link_Github')
-                ->hideFromIndex()
-                ->rules('max:255'),
-
-            Text::make('Linkedin')
-                ->hideFromIndex()
-                ->rules('max:255'),
-
-            Text::make('Instagram')
-                ->hideFromIndex()
-                ->rules('max:255'),
-
-            Text::make('Github')
-                ->hideFromIndex()
-                ->rules( 'max:255'),
-
-            Text::make('Job')
-                ->hideFromIndex()
-                ->rules( 'max:255'),
-
-            Text::make('Job_slug')
-                ->hideFromIndex()
-                ->rules( 'max:255'),
-
-            DateTime::make('Begin')->rules('required'),
-
-            DateTime::make('End'),
-
-            HasMany::make('Projects'),
-
-            HasMany::make('Testimonials'),
+            Textarea::make('Descriptiob')->rows(3)->rules('required'),
         ];
     }
 

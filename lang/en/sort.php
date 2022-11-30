@@ -7,6 +7,8 @@ return [
     'agency' => 'Agencies',
     'year' => 'Year',
     'status' => 'Status',
+    'date' => 'Date',
+    'languages' => 'Languages',
     'tags' => 'Tags',
     'button' => 'Confirm'
 

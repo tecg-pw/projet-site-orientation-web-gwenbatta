@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->index();
             $table->string('slug');
             $table->string('mail')->nullable();
             $table->string('logo')->nullable();
             $table->string('adresse');
-            $table->string('locality');
+            $table->string('locality')->index();
             $table->string('locality_number');
             $table->text('description')->nullable();
             $table->string('site_link');

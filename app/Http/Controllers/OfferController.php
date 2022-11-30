@@ -54,6 +54,10 @@ class OfferController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+        $offer->languages = json_decode($offer->languages );
+        $offer->softwares = json_decode($offer->softwares );
+        $offer->others = json_decode($offer->others );
+
         $offers = Offer::where('partner_id', $offer->partner_id)->where('id', '<>', $offer->id)->get();
         return view('entreprise.internship.single', compact('offer', 'offers'));
     }

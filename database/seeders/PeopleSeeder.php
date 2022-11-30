@@ -35,7 +35,6 @@ class PeopleSeeder extends Seeder
                 "mail" => $value->mail,
                 "job" => $value->job,
                 "job_slug" => \Str::slug($value->job),
-                "gallery" => $value->gallery,
                 "begin" => Carbon::parse($value->begin)->toDateTimeString(),
                 "end" => $value->end,
             ]);

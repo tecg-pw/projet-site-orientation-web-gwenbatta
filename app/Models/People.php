@@ -17,7 +17,7 @@ class People extends Model
     protected $with = ['courses'];
     protected $dates =['begin','end'];
     protected $fillable = [
-        'name', 'firstname', 'slug', 'status', 'avatar', 'description', 'link_portfolio', 'link_github', 'linkedin', 'instagram', 'mail', 'job', 'gallery', 'begin', 'end'
+        'name', 'firstname', 'slug', 'status', 'avatar', 'description', 'link_portfolio', 'link_github', 'linkedin', 'instagram', 'mail', 'job', 'begin', 'end'
     ];
 
     public function projects(): HasMany

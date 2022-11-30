@@ -60,6 +60,7 @@ class PartnerController extends Controller
         }
         $offers = Offer::where('partner_id', $partner->id)->get();
         $alumnis = Partner::find($partner->id)->person()->get();
+        $partner->members = json_decode($partner->members);
         return view('entreprise.partner.single', compact('partner', 'offers', 'alumnis'));
     }
 

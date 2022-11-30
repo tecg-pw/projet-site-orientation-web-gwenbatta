@@ -76,15 +76,15 @@
                             <h4 id="languages" role="heading" aria-level="4"
                                 class="text-green-500 mb-4 text-lg xl:text-xl">{{__('contact_page.agency_language')}}</h4>
                             <ul class="flex flex-col gap-2 list-disc">
-                                @for($i=1;$i<10;$i++)
+                                @foreach($offer->languages as $language)
                                     <li class="flex items-center gap-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7">
                                             <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                     fill="#6f704d"/>
                                         </svg>
-                                        <p>Nom de l'aptitude</p>
+                                        <p>{{ucwords($language)}}</p>
                                     </li>
-                                @endfor
+                                @endforeach
                             </ul>
                         </section>
                         <div class="flex flex-col gap-12">
@@ -92,32 +92,32 @@
                                 <h4 id="software" role="heading" aria-level="4"
                                     class="text-xl text-green-500 mb-4">{{__('agency.offer_software')}}</h4>
                                 <ul class="flex flex-col gap-2 list-disc">
-                                    @for($i=1;$i<4;$i++)
+                                    @foreach($offer->softwares as $software)
                                         <li class="flex items-center gap-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7"
                                                  viewBox="0 0 7 7">
                                                 <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                         fill="#6f704d"/>
                                             </svg>
-                                            <p>Nom de l'aptitude</p>
+                                            <p>{{$software}}</p>
                                         </li>
-                                    @endfor
+                                    @endforeach
                                 </ul>
                             </section>
                             <section class="" aria-labelledby="assets">
                                 <h4 id="assets" role="heading" aria-level="4"
                                     class="text-xl text-green-500 mb-4">{{__('agency.offer_plus')}}</h4>
                                 <ul class="flex flex-col gap-2 list-disc">
-                                    @for($i=1;$i<3;$i++)
+                                    @foreach($offer->others as $other)
                                         <li class="flex items-center gap-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7"
                                                  viewBox="0 0 7 7">
                                                 <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                         fill="#6f704d"/>
                                             </svg>
-                                            <p>Nom de l'aptitude</p>
+                                            <p>{{$other}}</p>
                                         </li>
-                                    @endfor
+                                    @endforeach
                                 </ul>
                             </section>
                         </div>

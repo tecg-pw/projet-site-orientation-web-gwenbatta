@@ -8,9 +8,10 @@
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
+        "laravel/nova": "*",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "laravel/nova": "*",
+        "optimistdigital/nova-table-field": "^1.0",
         "spatie/laravel-translatable": "^6.1"
     },
     "require-dev": {

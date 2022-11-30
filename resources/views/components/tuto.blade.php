@@ -6,7 +6,6 @@
         <div class="flex-1 flex justify-between">
             <h3 id="{{$tuto->slug}}" aria-level="3" role="heading" class="text-lg font-medium xl:text-2xl mb-1.5">
                 {{$tuto->name}}</h3>
-            <p class="mb-3">{{$tuto->created_at}}</p>
         </div>
         @auth()
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 20.996 30">
@@ -22,7 +21,10 @@
     </div>
     <p class="mb-2.5 xl:mb-6 xl:text-lg">{{$tuto->excerpt}}</p>
     <div class="flex justify-between">
+        <div class="flex gap-3 items-center">
         <p class="text-orange-500 font-sans xl:text-lg font-medium">{{$tuto->languages}}</p>
+        <p>{{$tuto->created_at->format('d M. Y')}}</p>
+        </div>
         <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
            href="{{$tuto->link}}">{{__('tuto.tuto_do')}}</a>
         <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"

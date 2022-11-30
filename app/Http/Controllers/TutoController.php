@@ -18,7 +18,9 @@ class TutoController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+        $languages = Tuto::select('languages')->groupBy('languages')->get();
+        $date = Tuto::select('created_at')->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at','DESC')->get();
         $tutos = Tuto::paginate(8);
-        return view('technical.tuto', compact('tutos'));
+        return view('technical.tuto', compact('tutos','languages','date'));
     }
 }

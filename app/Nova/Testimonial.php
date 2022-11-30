@@ -4,22 +4,19 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Project extends Resource
+class Testimonial extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Project::class;
+    public static $model = \App\Models\Testimonial::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -40,7 +37,7 @@ class Project extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function fields(Request $request)
@@ -48,29 +45,9 @@ class Project extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Title')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Text::make('Slug')
-                ->hideFromIndex()
-                ->rules('required', 'max:255'),
-
-            Text::make('Link_Project')
-                ->hideFromIndex()
-                ->rules('max:255'),
-
-            Text::make('Link_Github')
-                ->hideFromIndex()
-                ->rules('max:255'),
-
-            Image::make('Main_pictures')->hideFromIndex(),
-
-            DateTime::make('Date'),
+            Textarea::make('Description')->rows(3)->showOnIndex(),
 
             Number::make('Person_id'),
-
-            Textarea::make('Description')->rows(3),
 
             BelongsTo::make('People', 'person', 'App\Nova\People')
                 ->onlyOnDetail(),
@@ -80,7 +57,7 @@ class Project extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function cards(Request $request)
@@ -91,7 +68,7 @@ class Project extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function filters(Request $request)
@@ -102,7 +79,7 @@ class Project extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function lenses(Request $request)
@@ -113,7 +90,7 @@ class Project extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function actions(Request $request)

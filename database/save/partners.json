@@ -12,7 +12,7 @@
         "link_facebook": "https://www.facebook.com/lws.be/",
         "link_linkedin": "https://www.linkedin.com/company/leonard-web-solution-lws-/",
         "link_instagram": "https://www.instagram.com/leonardwebsolutions/?hl=fr",
-        "members": null,
+        "members": ["Olivier Léonard","Ludovic Chavée","Jonathan Juhazs","Maïde Akdede"],
         "created_at": null,
         "updated_at": null,
         "deleted_at": null
@@ -30,7 +30,7 @@
         "link_facebook": "https://www.facebook.com/whitecube.be",
         "link_linkedin": "https://www.linkedin.com/company/whitecube/",
         "link_instagram": "https://www.instagram.com/whitecube.be/?hl=fr",
-        "members": null,
+        "members": ["Toon Van den Bos","Florence Randaxhe","Guillaume Henry","Lisa Bomboir","Gérard Castermens","Adrien Leloup"],
         "created_at": null,
         "updated_at": null,
         "deleted_at": null

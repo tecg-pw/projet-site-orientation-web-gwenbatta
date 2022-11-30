@@ -16,6 +16,7 @@ class Offer extends Model
     protected $fillable = [
         'name', 'slug' , 'description',  'languages','softwares','others','pdf'
     ];
+
     public function partner(): BelongsTo
     {
         return $this->belongsTo(Partner::class);

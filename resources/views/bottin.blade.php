@@ -56,7 +56,7 @@
                            href="/{{str_replace('_','-',app()->getLocale())}}/bottin/student/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
                     @elseif($person->status === 'teachalumni')
                         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                           href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
+                           href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teachalumni/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
                     @endif
 
                 </article>

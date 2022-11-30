@@ -47,15 +47,19 @@
                     <section aria-labelledby="members">
                         <h3 id="members" role="heading" aria-level="3" class="xl:text-2xl text-xl mb-5 font-semibold">{{__('agency.partner_members')}}</h3>
                         <ul class="flex flex-col xl:gap-3 gap-y-1.5 list-disc">
-                            @for($i=1;$i<6;$i++)
-                                <li class="flex items-center gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7">
-                                        <circle id="Ellipse_50" data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
-                                                fill="#6f704d"/>
-                                    </svg>
-                                    <p>Nom du membre</p>
-                                </li>
-                            @endfor
+                            @if($partner->members === null)
+                            <p>{{__('Aucun partenaire connu')}}</p>
+                            @else
+                                @foreach($partner->members as $member)
+                                    <li class="flex items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7">
+                                            <circle id="Ellipse_50" data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
+                                                    fill="#6f704d"/>
+                                        </svg>
+                                        <p>{{ucwords($member)}}</p>
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </section>
                 </div>

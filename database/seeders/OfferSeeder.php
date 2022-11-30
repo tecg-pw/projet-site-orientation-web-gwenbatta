@@ -17,16 +17,16 @@ class OfferSeeder extends Seeder
     public function run()
     {
         $json = File::get("database/save/offers.json");
-        $peoples = json_decode($json);
+        $offers = json_decode($json);
 
-        foreach ($peoples as $key => $value) {
+        foreach ($offers as $key => $value) {
             Offer::create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "description" => $value->description,
-                "languages" => $value->languages,
-                "softwares" => $value->softwares,
-                "others" => $value->others,
+                "languages" => json_encode($value->languages),
+                "softwares" => json_encode($value->softwares),
+                "others" => json_encode($value->others),
                 "pdf" => $value->pdf,
                 "partner_id" => $value->partner_id,
             ]);

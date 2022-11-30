@@ -34,7 +34,7 @@ class PartnerSeeder extends Seeder
                 "link_facebook" => $value->link_facebook,
                 "link_linkedin" => $value->link_linkedin,
                 "link_instagram" => $value->link_instagram,
-                "members" => $value->members,
+                "members" => json_encode($value->members),
             ]);
         }
     }

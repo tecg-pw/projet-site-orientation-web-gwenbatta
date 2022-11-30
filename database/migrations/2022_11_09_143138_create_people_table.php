@@ -28,7 +28,6 @@ return new class extends Migration
             $table->string('mail');
             $table->string('job')->nullable();
             $table->string('job_slug')->nullable();
-            $table->json('gallery')->nullable();
             $table->timestamps();
             $table->timestamp('begin');
             $table->timestamp('end')->nullable();

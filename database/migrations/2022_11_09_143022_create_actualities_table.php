@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('main_picture');
             $table->json('gallery')->nullable();
             $table->timestamps();
-            $table->timestamp('date')->nullable();
+            $table->timestamp('date')->nullable()->index();
             $table->softDeletes();
         });
     }
