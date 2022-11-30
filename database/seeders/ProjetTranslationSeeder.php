@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ProjetTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +21,7 @@ class ProjetTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('projecttranslations')->insert([
+            ProjetTranslation::create([
                 "title" => $value->title,
                 "slug" => \Str::slug($value->title.$value->project_id.$value->locale),
                 "locale" => $value->locale,

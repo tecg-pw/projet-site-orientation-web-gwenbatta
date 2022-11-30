@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\DocTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +21,7 @@ class DocTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('doctranslations')->insert([
+            DocTranslation::create([
                 "name" => $value->name,
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),

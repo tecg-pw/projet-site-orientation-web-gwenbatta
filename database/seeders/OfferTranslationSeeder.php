@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\OfferTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +21,7 @@ class OfferTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('offertranslations')->insert([
+            OfferTranslation::create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "description" => $value->description,

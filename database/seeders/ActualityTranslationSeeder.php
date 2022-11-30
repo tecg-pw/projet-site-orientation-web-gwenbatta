@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\ActualityTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +20,7 @@ class ActualityTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('actualitytranslations')->insert([
+            ActualityTranslation::create([
                 "name" => $value->name,
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),

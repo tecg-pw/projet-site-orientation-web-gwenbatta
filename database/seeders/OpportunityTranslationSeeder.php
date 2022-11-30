@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\OpportunityTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +21,7 @@ class OpportunityTranslationSeeder extends Seeder
         $opportunities = json_decode($json);
 
         foreach ($opportunities as $key => $value) {
-            DB::table('opportunitytranslations')->insert([
+            OpportunityTranslation::create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "description" => $value->description,

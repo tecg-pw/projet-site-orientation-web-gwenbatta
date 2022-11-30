@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CourseTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +21,7 @@ class CourseTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('coursetranslations')->insert([
+            CourseTranslation::create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name.$value->bac),
                 "locale" => $value->locale,

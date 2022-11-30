@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\PartnerTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +21,7 @@ class PartnerTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('partnertranslations')->insert([
+            PartnerTranslation::create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "mail" => $value->mail,

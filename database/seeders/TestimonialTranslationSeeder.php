@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TestimonialTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +21,7 @@ class TestimonialTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('testimonialtranslations')->insert([
+            TestimonialTranslation::create([
                 "description" => $value->description,
                 "locale" => $value->locale,
                 "testimonial_id" => $value->testimonial_id,

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\RecurringTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,7 +21,7 @@ class RecurringTranslationSeeder extends Seeder
         $recurrings = json_decode($json);
 
         foreach ($recurrings as $key => $value) {
-            DB::table('recurringtranslations')->insert([
+            RecurringTranslation::create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "description" => $value->description,

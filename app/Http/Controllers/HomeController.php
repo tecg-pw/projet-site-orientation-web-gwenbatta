@@ -21,7 +21,9 @@ class HomeController extends Controller
         $subjects = Subject::all();
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
-        $projects = Project::latest('date')->take(3)->get();
+        //$projects = Project::latest('date')->take(3)->get();
+        $projects = Project::all();
+        return $projects;
         return view('home', compact('projects','ratings','latests','subjects'));
     }
 

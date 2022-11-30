@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\PersonTranslation;
 use Carbon\Carbon;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -21,7 +22,7 @@ class PersonTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('persontranslations')->insert([
+            PersonTranslation::create([
                 "name" => $value->name,
                 "firstname" => $value->firstname,
                 "slug" => \Str::slug($value->name.$value->firstname),

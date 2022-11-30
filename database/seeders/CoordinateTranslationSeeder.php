@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CoordinateTranslation;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,7 +22,7 @@ class CoordinateTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DB::table('coordinatetranslations')->insert([
+            CoordinateTranslation::create([
                 "organization" => $value->organization,
                 "locale" => $value->locale,
                 "employee_name" => $value->employee_name,
