@@ -3,25 +3,30 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use OptimistDigital\NovaTableField\Table;
 
-class Book extends Resource
+class OfferTranslation extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Book::class;
+    public static $model = \App\Models\OfferTranslation::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -42,8 +47,27 @@ class Book extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Name')
+                ->sortable()
+                ->rules('required', 'max:255'),
 
-            HasMany::make('BookTranslations','translation','App\Nova\BookTranslation')
+            Text::make('Slug')
+                ->hideFromIndex()
+                ->rules('required', 'max:255'),
+
+            File::make('PDF')->hideFromIndex(),
+
+            Number::make('Partner_id'),
+
+            Text::make('Languages')->hideFromIndex(),
+            Text::make('Softwares')->hideFromIndex(),
+            Text::make('Others')->hideFromIndex(),
+
+            Textarea::make('Description')->rows(3)->rules('required'),
+
+            BelongsTo::make('Partner')->hideFromIndex(),
+
+            BelongsTo::make('Offer','offer', 'App\Nova\Offer')->hideFromIndex(),
         ];
     }
 

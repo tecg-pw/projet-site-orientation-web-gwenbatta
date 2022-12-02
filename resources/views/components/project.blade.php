@@ -2,7 +2,7 @@
     'project_ref'
 ])
 @php
-    dd($project_ref);
+    dd(gettype($project_ref));
 @endphp
 <article class="group hover:bg-orange-100 flex-col flex bg-yellow-100 rounded-3xl relative"
          aria-labelledby="{{$project_ref->slug}}">

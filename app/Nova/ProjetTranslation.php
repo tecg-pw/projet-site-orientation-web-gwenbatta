@@ -3,18 +3,23 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Book extends Resource
+class ProjetTranslation extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Book::class;
+    public static $model = \App\Models\ProjetTranslation::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -29,13 +34,13 @@ class Book extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id','name','slug'
     ];
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
@@ -43,14 +48,42 @@ class Book extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            HasMany::make('BookTranslations','translation','App\Nova\BookTranslation')
+            Text::make('Title')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Slug')
+                ->hideFromIndex()
+                ->rules('required', 'max:255'),
+
+            Text::make('Link_Project')
+                ->hideFromIndex()
+                ->rules('max:255'),
+
+            Text::make('Link_Github')
+                ->hideFromIndex()
+                ->rules('max:255'),
+
+            Image::make('Main_pictures')->hideFromIndex(),
+
+            DateTime::make('Date'),
+
+            Number::make('Person_id'),
+
+            Textarea::make('Description')->rows(3),
+
+            BelongsTo::make('People', 'person', 'App\Nova\Person')
+                ->onlyOnDetail(),
+
+            BelongsTo::make('Project')
+                ->onlyOnDetail(),
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -61,7 +94,7 @@ class Book extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function filters(Request $request)
@@ -72,7 +105,7 @@ class Book extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -83,7 +116,7 @@ class Book extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function actions(Request $request)

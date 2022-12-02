@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -43,17 +44,7 @@ class Glossary extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Text::make('Slug')
-                ->onlyOnForms()
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Textarea::make('Definition')->rows(3)->rules('required'),
+            HasMany::make('GlossaryTranslations','translation','App\Nova\GlossaryTranslation')
         ];
     }
 

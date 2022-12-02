@@ -3,10 +3,8 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Doc extends Resource
 {
@@ -44,19 +42,7 @@ class Doc extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Text::make('Slug')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Textarea::make('Excerpt')->rows(3)->rules('required'),
-
-            Text::make('Link')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            HasMany::make('DocTranslations','translation','App\Nova\DocTranslation')
         ];
     }
 

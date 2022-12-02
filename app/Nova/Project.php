@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
@@ -48,31 +49,9 @@ class Project extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Title')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            HasMany::make('ProjetTranslations'),
 
-            Text::make('Slug')
-                ->hideFromIndex()
-                ->rules('required', 'max:255'),
-
-            Text::make('Link_Project')
-                ->hideFromIndex()
-                ->rules('max:255'),
-
-            Text::make('Link_Github')
-                ->hideFromIndex()
-                ->rules('max:255'),
-
-            Image::make('Main_pictures')->hideFromIndex(),
-
-            DateTime::make('Date'),
-
-            Number::make('Person_id'),
-
-            Textarea::make('Description')->rows(3),
-
-            BelongsTo::make('People', 'person', 'App\Nova\People')
+            BelongsTo::make('People', 'person', 'App\Nova\Person')
                 ->onlyOnDetail(),
         ];
     }

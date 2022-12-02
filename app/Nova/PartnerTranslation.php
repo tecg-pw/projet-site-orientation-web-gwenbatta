@@ -3,28 +3,30 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Testimonial extends Resource
+class PartnerTranslation extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Testimonial::class;
+    public static $model = \App\Models\PartnerTranslation::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -32,7 +34,7 @@ class Testimonial extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id','name','slug'
     ];
 
     /**
@@ -46,7 +48,55 @@ class Testimonial extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            HasMany::make('TestimonialTranslations','translation','App\Nova\TestimonialTranslation'),
+            Avatar::make('Logo')->rounded(),
+
+            Text::make('Name')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Slug')
+                ->hideFromIndex()
+                ->rules('required', 'max:255'),
+
+            Text::make('Mail')
+                ->sortable()
+                ->rules('required', 'email', 'max:254')
+                ->creationRules('unique:users,email')
+                ->updateRules('unique:users,email,{{resourceId}}'),
+
+            Text::make('Adresse')
+                ->hideFromIndex()
+                ->rules('max:255'),
+
+            Text::make('Locality')
+                ->hideFromIndex()
+                ->rules('max:255'),
+
+            Number::make('Locality_number'),
+
+
+            Text::make('Link_linkedin')
+                ->hideFromIndex()
+                ->rules('max:255'),
+
+            Text::make('Link_instagram')
+                ->hideFromIndex()
+                ->rules('max:255'),
+
+            Text::make('Link_facebook')
+                ->hideFromIndex()
+                ->rules( 'max:255'),
+
+            Text::make('Site_link')
+                ->hideFromIndex()
+                ->rules( 'max:255'),
+
+            Text::make('Members')->hideFromIndex(),
+
+            Textarea::make('Description')->rows(3),
+
+            HasMany::make('Offers'),
+            BelongsTo::make('Partner','partner','App\Nova\Partner'),
         ];
     }
 

@@ -3,18 +3,22 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Book extends Resource
+class ActualityTranslation extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Book::class;
+    public static $model = \App\Models\ActualityTranslation::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -43,7 +47,31 @@ class Book extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            HasMany::make('BookTranslations','translation','App\Nova\BookTranslation')
+            Text::make('Name')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Slug')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Textarea::make('Excerpt')->rows(3)->rules('required'),
+
+            Textarea::make('Description')->rows(3)->rules('required'),
+
+            Text::make('Lieu')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Link')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Image::make('Main_pictures')->onlyOnForms(),
+
+            DateTime::make('Date'),
+
+            BelongsTo::make('Actuality', 'actuality', 'App\Nova\Actuality')
         ];
     }
 

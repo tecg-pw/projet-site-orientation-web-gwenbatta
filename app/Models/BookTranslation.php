@@ -18,12 +18,12 @@ class BookTranslation extends Model
         'name', 'slug' , 'locale', 'excerpt', 'description', 'gallery'
     ];
 
-    protected $with = ["courses"];
-
-    public function courses(): BelongsToMany
-    {
-        return $this->belongsToMany(Course::class);
-    }
+//    protected $with = ["courses"];
+//
+//    public function courses(): BelongsToMany
+//    {
+//        return $this->belongsToMany(Course::class);
+//    }
 
     public function book(): BelongsTo
     {

@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\File;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -47,26 +48,7 @@ class Offer extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Text::make('Slug')
-                ->hideFromIndex()
-                ->rules('required', 'max:255'),
-
-            File::make('PDF')->hideFromIndex(),
-
-            Number::make('Partner_id'),
-
-            Text::make('Languages')->hideFromIndex(),
-            Text::make('Softwares')->hideFromIndex(),
-            Text::make('Others')->hideFromIndex(),
-
-            Textarea::make('Description')->rows(3)->rules('required'),
-
-            BelongsTo::make('Partner')
-                ->onlyOnDetail(),
+            HasMany::make('OfferTranslations','translation', 'App\Nova\OfferTranslation'),
         ];
     }
 

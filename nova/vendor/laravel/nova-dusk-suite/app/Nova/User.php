@@ -90,11 +90,11 @@ class User extends Resource
                         ->referToPivotAs('Role Assignment')
                         ->prunable(),
 
-            BelongsToMany::make('Purchase Books', 'personalBooks', Book::class)
+            BelongsToMany::make('Purchase Books', 'personalBooks', BookTranslation::class)
                 ->fields(new Fields\BookPurchase())
                 ->allowDuplicateRelations(),
 
-            BelongsToMany::make('Gift Books', 'giftBooks', Book::class)
+            BelongsToMany::make('Gift Books', 'giftBooks', BookTranslation::class)
                 ->fields(
                     (new Fields\BookPurchase('gift'))->appends([
                         Text::make('Relative Time', function ($resource) {

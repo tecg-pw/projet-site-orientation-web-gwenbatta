@@ -12,7 +12,8 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "optimistdigital/nova-table-field": "^1.0",
-        "spatie/laravel-translatable": "^6.1"
+        "spatie/laravel-translatable": "^6.1",
+        "spatie/nova-translatable": "^3.0.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",

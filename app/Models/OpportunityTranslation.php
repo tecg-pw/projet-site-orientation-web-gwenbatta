@@ -16,7 +16,7 @@ class OpportunityTranslation extends Model
         'name', 'slug' ,'locale', 'excerpt', 'description'
     ];
 
-    public function recurring(): BelongsTo
+    public function opportunity(): BelongsTo
     {
         return $this->belongsTo(Opportunity::class);
     }

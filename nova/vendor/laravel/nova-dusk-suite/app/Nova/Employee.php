@@ -48,7 +48,7 @@ class Employee extends Resource
 
             Text::make(__('Attendance')),
 
-            BelongsTo::make(__('Person'), 'people', People::class),
+            BelongsTo::make(__('Person'), 'people', Person::class),
         ];
     }
 

@@ -7,7 +7,7 @@
         </div>
         <div class="xl:grid xl:grid-cols-3 flex flex-col gap-8 justify-center">
             @foreach($projects as $project_ref)
-                <x-project :project_ref="$project_ref->translation->where('locale',str_replace('_','-',app()->getLocale()))"></x-project>
+                <x-project :project_ref="($project_ref->translation->where('locale',app()->getLocale())"></x-project>
             @endforeach
         </div>
         {{$projects->links()}}

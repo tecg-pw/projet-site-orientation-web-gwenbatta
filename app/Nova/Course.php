@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -44,19 +45,8 @@ class Course extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Number::make('hours'),
-
-            Number::make('bac'),
-
-            Textarea::make('Description')->rows(3)->rules('required'),
+            HasMany::make('CourseTranslations','translation','App\Nova\CourseTranslation')
         ];
     }
 

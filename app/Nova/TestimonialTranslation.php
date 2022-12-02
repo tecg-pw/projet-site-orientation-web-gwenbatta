@@ -3,18 +3,20 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Book extends Resource
+class TestimonialTranslation extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Book::class;
+    public static $model = \App\Models\TestimonialTranslation::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -29,7 +31,7 @@ class Book extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id','description'
     ];
 
     /**
@@ -43,7 +45,14 @@ class Book extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            HasMany::make('BookTranslations','translation','App\Nova\BookTranslation')
+            Textarea::make('Description')->rows(3)->showOnIndex(),
+
+            Number::make('Person_id'),
+
+            BelongsTo::make('People', 'person', 'App\Nova\Person')
+                ->onlyOnDetail(),
+
+            BelongsTo::make('Testimonial','testimonial','App\Nova\Testimonial'),
         ];
     }
 
