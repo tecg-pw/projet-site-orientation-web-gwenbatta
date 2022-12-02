@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Recurring;
 use App\Models\Subject;
-use Illuminate\Http\Request;
 
 class MyAnswerController extends Controller
 {
@@ -20,7 +19,7 @@ class MyAnswerController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $recurrings = Recurring::all();
+        $recurrings = Recurring::where('locale',$locale)->get();
         $comments = Comment::latest()->paginate(3);
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();

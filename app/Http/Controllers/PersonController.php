@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\People;
-use App\Models\Project;
 use App\Models\Testimonial;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PersonController extends Controller
@@ -21,10 +18,10 @@ class PersonController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $testimonials = Testimonial::all();
-        $people = People::paginate(8);
-        $status = People::select('status')->groupBy('status')->get();
-        $years_end = People::select('end')->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
+        $testimonials = Testimonial::where('locale',$locale)->get();
+        $people = People::where('locale',$locale)->paginate(8);
+        $status = People::select('status')->where('locale',$locale)->groupBy('status')->get();
+        $years_end = People::select('end')->where('locale',$locale)->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
         return view('bottin', compact('people', 'status', 'years_end', 'testimonials'));
     }
 

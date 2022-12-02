@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\People;
 use App\Models\Project;
+use App\Models\ProjetTranslation;
 use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -17,12 +19,16 @@ class ProjectController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(string $locale=null)
+    public function index(string $locale = null)
     {
+
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $projects = Project::latest('date')->paginate(9);
+        $projects = Project::paginate(9);
+
+        //$projects = ProjetTranslation::latest('date')->where('locale', $locale)->paginate(9);
+
         return view('project.index', compact('projects'));
     }
 

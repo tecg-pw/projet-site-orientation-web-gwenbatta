@@ -19,10 +19,12 @@ class AlumniController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $testimonials = Testimonial::all();
-        $people = People::where('status', 'ancien')->orWhere('status', 'teachalumni')->get();
-        $status = People::select('status')->groupBy('status')->get();
-        $years_end = People::select('end')->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
+        $testimonials = Testimonial::where('locale',$locale)->get();
+        $people = People::where('status', 'ancien')->where('locale',$locale)->orWhere('status', 'teachalumni')->where('locale',$locale)->orWhere('status', 'alumni')->where('locale',$locale)->get();
+
+        $status = People::select('status')->where('locale',$locale)->groupBy('status')->get();
+        $years_end = People::select('end')->where('locale',$locale)->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
+
         return view('bottin.alumni', compact('people', 'status', 'years_end', 'testimonials'));
     }
 

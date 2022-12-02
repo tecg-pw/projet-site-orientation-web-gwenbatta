@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\Doc;
 use App\Models\Tool;
-use Illuminate\Http\Request;
 
 class ToolController extends Controller
 {
@@ -20,8 +18,8 @@ class ToolController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $tools = Tool::all();
-        $books = Book::all();
+        $tools = Tool::where('locale',$locale)->get();
+        $books = Book::where('locale',$locale)->get();
         return view('technical.tool', compact('tools', 'books'));
     }
 }

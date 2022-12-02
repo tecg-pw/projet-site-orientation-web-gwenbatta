@@ -14,17 +14,17 @@
     <p class="mb-4 xl:mb-10 xl:text-lg">{{$tool->excerpt}}</p>
     <div class="flex flex- justify-between">
         <p class="xl:text-lg flex gap-x-3 font-medium">
-            {{__('Cours de')}}
+            {{__('technicals.doc_course')}}
             <span class="flex gap-2">
-                @foreach($tool->courses as $course)
-                    <a class="underline text-green-700"
-                       href="/{{str_replace('_','-',app()->getLocale())}}/cours/show">{{$course->name}}</a>
-                @endforeach
+{{--                @foreach($tool->courses as $course)--}}
+{{--                    <a class="underline text-green-700"--}}
+{{--                       href="/{{str_replace('_','-',app()->getLocale())}}/cours/show">{{$course->name}}</a>--}}
+{{--                @endforeach--}}
             </span>
 
         </p>
-        <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
-           href="{{$tool->link}}">{{__('')}} {{$course->name}}</a>
+{{--        <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"--}}
+{{--           href="{{$tool->link}}">{{__('')}} {{$course->name}}</a>--}}
         <svg class="group-hover:mr-0 mr-4 self-end" xmlns="http://www.w3.org/2000/svg" width="25"
              viewBox="0 0 32 27.417">
             <path

@@ -29,7 +29,8 @@
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
-        "offer_id": 1
+        "offer_id": 1,
+        "partner_id": 1
     },
     {
         "id": 2,
@@ -61,7 +62,8 @@
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
-        "offer_id": 1
+        "offer_id": 1,
+        "partner_id": 1
     },
     {
         "id": 3,
@@ -90,7 +92,8 @@
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
-        "offer_id": 1
+        "offer_id": 1,
+        "partner_id": 1
     },
     {
         "id": 4,
@@ -119,6 +122,7 @@
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
-        "offer_id": 1
+        "offer_id": 1,
+        "partner_id": 1
     }
 ]

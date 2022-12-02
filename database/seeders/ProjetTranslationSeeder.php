@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\ProjetTranslation;
+use Carbon\Carbon;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -28,10 +29,11 @@ class ProjetTranslationSeeder extends Seeder
                 "description" => $value->description,
                 "link_project" => $value->link_project,
                 "link_github" => $value->link_github,
-                "date" => $value->date,
+                "date" => Carbon::parse($value->date)->toDateTimeString(),
                 "main_picture" => $value->main_picture,
                 "gallery" => $value->gallery,
                 "project_id" => $value->project_id,
+                "person_id" => $value->person_id,
             ]);
         }
     }

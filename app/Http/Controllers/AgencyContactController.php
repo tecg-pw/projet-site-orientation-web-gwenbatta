@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Coordinate;
-use Illuminate\Http\Request;
 
 class AgencyContactController extends Controller
 {
@@ -18,7 +17,7 @@ class AgencyContactController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $coordinates = Coordinate::all();
+        $coordinates = Coordinate::where('locale',$locale)->get();
         return view('contact.agency', compact('coordinates'));
     }
 }

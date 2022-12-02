@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\Doc;
 use App\Models\Glossary;
 use App\Models\Subject;
@@ -24,9 +23,9 @@ class TechnicalController extends Controller
         $subjects = Subject::all();
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
-        $termes = Glossary::take(4)->get();
-        $tutos = Tuto::take(4)->get();
-        $docs = Doc::take(4)->get();
+        $termes = Glossary::take(4)->where('locale',$locale)->get();
+        $tutos = Tuto::take(4)->where('locale',$locale)->get();
+        $docs = Doc::take(4)->where('locale',$locale)->get();
         return view('technical.index', compact('termes', 'tutos', 'docs', 'subjects', 'latests','ratings'));
     }
 

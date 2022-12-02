@@ -25,16 +25,16 @@ return new class extends Migration
         Schema::table('comments', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
         });
-        Schema::table('offers', function (Blueprint $table) {
+        Schema::table('offertranslations', function (Blueprint $table) {
             $table->foreignId('partner_id')->constrained()->onUpdate('cascade');
         });
-        Schema::table('projects', function (Blueprint $table) {
+        Schema::table('projecttranslations', function (Blueprint $table) {
             $table->foreignId('person_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('subjects', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
         });
-        Schema::table('testimonials', function (Blueprint $table) {
+        Schema::table('testimonialtranslations', function (Blueprint $table) {
             $table->foreignId('person_id')->constrained()->onUpdate('cascade');
         });
 

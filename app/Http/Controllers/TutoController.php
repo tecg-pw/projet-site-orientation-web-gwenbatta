@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Glossary;
 use App\Models\Tuto;
-use Illuminate\Http\Request;
 
 class TutoController extends Controller
 {
@@ -18,9 +16,9 @@ class TutoController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $languages = Tuto::select('languages')->groupBy('languages')->get();
-        $date = Tuto::select('created_at')->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at','DESC')->get();
-        $tutos = Tuto::paginate(8);
+        $languages = Tuto::select('languages')->where('locale',$locale)->groupBy('languages')->get();
+        $date = Tuto::select('created_at')->where('locale',$locale)->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at','DESC')->get();
+        $tutos = Tuto::where('locale',$locale)->paginate(8);
         return view('technical.tuto', compact('tutos','languages','date'));
     }
 }

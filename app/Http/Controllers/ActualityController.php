@@ -17,7 +17,7 @@ class ActualityController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $news = Actuality::latest('date')->paginate(9);
+        $news = Actuality::latest()->paginate(9);
         return view('news.index', compact('news'));
     }
 

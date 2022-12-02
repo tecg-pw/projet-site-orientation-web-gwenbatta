@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Doc;
-use Illuminate\Http\Request;
+
 
 class DocController extends Controller
 {
@@ -19,8 +19,8 @@ class DocController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $docs = Doc::all();
-        $books = Book::all();
+        $docs = Doc::where('locale',$locale)->get();
+        $books = Book::where('locale',$locale)->get();
         return view('technical.doc', compact('docs', 'books'));
     }
 }

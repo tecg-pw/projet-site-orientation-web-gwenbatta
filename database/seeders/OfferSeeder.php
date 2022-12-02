@@ -21,7 +21,7 @@ class OfferSeeder extends Seeder
 
         foreach ($offers as $key => $value) {
             Offer::create([
-                "partner_id" => $value->partner_id,
+
                 "id" => $value->id,
             ]);
         }

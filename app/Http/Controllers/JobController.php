@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Opportunity;
 use App\Models\People;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
+
 
 class JobController extends Controller
 {

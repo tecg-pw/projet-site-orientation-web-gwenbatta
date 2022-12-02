@@ -22,7 +22,11 @@
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col xl:flex-row xl:gap-4">
                                     @if($person->status === 'teachalumni')
-                                        <p class="uppercase xl:text-lg">{{__('Ancien - Professeur')}}</p>
+                                        @if(str_replace('_','-',app()->getLocale()) === 'fr')
+                                            <p class="uppercase xl:text-lg">{{__('Ancien - Professeur')}}</p>
+                                        @else
+                                            <p class="uppercase xl:text-lg">{{__('Alumni - Teacher')}}</p>
+                                        @endif
                                     @else
                                         <p class="uppercase xl:text-lg">{{$person->status}}</p>
                                     @endif
@@ -52,18 +56,18 @@
                         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
                            href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
                     @elseif($person->status === 'étudiante')
-                            <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/student/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
+                        <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
+                           href="/{{str_replace('_','-',app()->getLocale())}}/bottin/student/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
                     @elseif($person->status === 'teachalumni')
-                            <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
+                        <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
+                           href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$person->slug}}">{{__('En savoir plus sur' . $person->name)}}</a>
                     @endif
 
                 </article>
             @endforeach
             {{--            {{$people->links()}}--}}
         </article>
-       <x-testimonials :testimonials="$testimonials"/>
+        <x-testimonials :testimonials="$testimonials"/>
     </section>
 </main>
 <x-commons.footer></x-commons.footer>

@@ -1,13 +1,16 @@
 @props([
-    'project'
+    'project_ref'
 ])
+@php
+    dd($project_ref);
+@endphp
 <article class="group hover:bg-orange-100 flex-col flex bg-yellow-100 rounded-3xl relative"
-         aria-labelledby="{{$project->slug}}">
+         aria-labelledby="{{$project_ref->slug}}">
     <div class="flex-col flex px-4 mt-4 xl:mt-6">
-        <h3 class="text-xl mb-1.5 xl:text-3xl xl:mb-3" role="heading" aria-level="3" id="{{$project->slug}}">{{$project->title}}</h3>
-            <p class="xl:text-xl relative z-30">{{$project->person->firstname}} {{$project->person->name}}</p>
+        <h3 class="text-xl mb-1.5 xl:text-3xl xl:mb-3" role="heading" aria-level="3" id="{{$project_ref->slug}}">{{$project_ref->title}}</h3>
+            <p class="xl:text-xl relative z-30">{{$project_ref->person->firstname}} {{$project_ref->person->name}}</p>
         <div class="flex justify-between mb-4">
-            <p class="xl:text-xl">{{$project->date->format('M. Y')}}</p>
+            <p class="xl:text-xl">{{$project_ref->date->format('M. Y')}}</p>
             <svg class="group-hover:mr-0 mr-2 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                  viewBox="0 0 32 27.417">
                 <path
@@ -15,9 +18,9 @@
                     transform="translate(-19 -8.001)" fill="#4e6458"/>
             </svg>
         </div>
-        <a class="self-end linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/project/{{$project->slug}}">{{__('project.project_view'). $project->title}}</a>
+        <a class="self-end linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/project_ref/{{$project_ref->slug}}">{{__('project_ref.project_ref_view'). $project_ref->title}}</a>
     </div>
     <figure class="order-first">
-        <img class="rounded-t-3xl" src="{{$project->main_picture}}" alt="">
+        <img class="rounded-t-3xl" src="{{$project_ref->main_picture}}" alt="">
     </figure>
 </article>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Offer;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -18,7 +17,7 @@ class OfferController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $offers = Offer::paginate(8);
+        $offers = Offer::where('locale',$locale)->paginate(8);
         return view('entreprise.internship', compact('offers'));
     }
 
@@ -49,7 +48,7 @@ class OfferController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(string $locale=null,Offer $offer)
+    public function show(string $locale=null,OfferTranslation $offer)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
@@ -58,7 +57,7 @@ class OfferController extends Controller
         $offer->softwares = json_decode($offer->softwares );
         $offer->others = json_decode($offer->others );
 
-        $offers = Offer::where('partner_id', $offer->partner_id)->where('id', '<>', $offer->id)->get();
+        $offers = OfferTranslation::where('partner_id', $offer->partner_id)->where('id', '<>', $offer->id)->where('locale',$locale)->get();
         return view('entreprise.internship.single', compact('offer', 'offers'));
     }
 

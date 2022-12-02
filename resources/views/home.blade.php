@@ -80,8 +80,8 @@
                href="/{{str_replace('_','-',app()->getLocale())}}/projet/index">{{__('home.projects_button')}}</a>
         </div>
         <div class="flex-wrap flex gap-8 justify-center xl:flex-nowrap">
-            @foreach($projects as $project)
-                <x-project :project="$project"></x-project>
+            @foreach($projects as $project_ref)
+{{--                <x-project :project_ref="$project_ref->translation->where('locale',str_replace('_','-',app()->getLocale()))"></x-project>--}}
             @endforeach
         </div>
     </article>

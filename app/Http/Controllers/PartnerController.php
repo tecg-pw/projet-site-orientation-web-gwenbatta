@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Offer;
 use App\Models\Partner;
-use App\Models\People;
-use App\Models\Project;
 use Illuminate\Http\Request;
 
 class PartnerController extends Controller
@@ -22,7 +20,7 @@ class PartnerController extends Controller
         }
         $cities = Partner::select('locality')->groupBy('locality')->get();
         $agencies = Partner::select('name')->groupBy('name')->get();
-        $partners = Partner::paginate(8);
+        $partners = Partner::where('locale',$locale)->paginate(8);
         return view('entreprise.partner', compact('partners', 'cities', 'agencies'));
     }
 
@@ -58,7 +56,7 @@ class PartnerController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $offers = Offer::where('partner_id', $partner->id)->get();
+        $offers = Offer::where('partner_id', $partner->id)->where('locale',$locale)->get();
         $alumnis = Partner::find($partner->id)->person()->get();
         $partner->members = json_decode($partner->members);
         return view('entreprise.partner.single', compact('partner', 'offers', 'alumnis'));

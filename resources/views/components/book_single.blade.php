@@ -14,12 +14,12 @@
     <p class="mb-4 xl:mb-10 xl:text-lg">{{$book->excerpt}}</p>
     <div class="flex justify-between">
         <p class="xl:text-lg flex gap-x-3 font-medium">
-            {{__('Cours de')}}
+            {{__('technicals.doc_course')}}
             <span class="flex gap-2">
-                @foreach($book->courses as $course)
-                    <a class="underline text-green-700"
-                       href="/cours/show">{{$course->name}}</a>
-                @endforeach
+{{--                @foreach($book->courses as $course)--}}
+{{--                    <a class="underline text-green-700"--}}
+{{--                       href="/cours/show">{{$course->name}}</a>--}}
+{{--                @endforeach--}}
             </span>
         </p>
         <a class="text-xl underline text-green-700 linkcard font-semibold font-sans linkcard"

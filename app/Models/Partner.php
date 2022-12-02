@@ -13,14 +13,12 @@ class Partner extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name', 'slug' , 'mail', 'logo', 'adresse', 'locality','locality_number', 'description', 'site_link', 'link_facebook','link_linkedin','link_instagram','members'
+        'id'
     ];
-    public function offers(): HasMany
+
+    public function translation(): HasMany
     {
-        return $this->hasMany(Offer::class);
+        return $this->hasMany(PartnerTranslation::class);
     }
-    public function person(): BelongsToMany
-    {
-        return $this->belongsToMany(People::class, 'partner_person', 'partner_id', 'people_id');
-    }
+
 }

@@ -20,7 +20,7 @@ class AboutController extends Controller
             app()->setLocale($locale);
         }
         $jobs = Opportunity::all();
-        $teachers = People::where('status', 'professeur')->orWhere('status', 'teachalumni')->get();
+        $teachers = People::where('status', 'professeur')->orWhere('status', 'teachalumni')->orWhere('status', 'teacher')->get();
         $courses_bac1 = Course::where('bac', 1)->get();
         $courses_bac2 = Course::where('bac', 2)->get();
         $courses_bac3 = Course::where('bac', 3)->get();

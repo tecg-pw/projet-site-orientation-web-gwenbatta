@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Glossary;
-use Illuminate\Http\Request;
 
 class GlossaryController extends Controller
 {
@@ -17,7 +16,7 @@ class GlossaryController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $termes = Glossary::paginate(8);
+        $termes = Glossary::where('locale',$locale)->paginate(8);
         return view('technical.glossary', compact('termes'));
     }
 }

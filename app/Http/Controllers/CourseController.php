@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\People;
-use Illuminate\Http\Request;
+
 
 class CourseController extends Controller
 {
@@ -19,8 +18,8 @@ class CourseController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $teachers = Course::find($course->id)->person()->get();
-        $projects = Course::find($course->id)->projects()->take(3)->get();
+        $teachers = Course::find($course->id)->where('locale',$locale)->person()->get();
+        $projects = Course::find($course->id)->where('locale',$locale)->projects()->take(3)->get();
         return view('cours.show', compact('course', 'teachers','projects'));
     }
 }
