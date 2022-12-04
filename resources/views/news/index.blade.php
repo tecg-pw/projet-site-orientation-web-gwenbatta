@@ -7,7 +7,7 @@
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-6 xl:justify-center">
             @foreach($news as $new_ref)
-                <x-new :new_ref="$new_ref->translation->where('locale',str_replace('_','-',app()->getLocale()))"/>
+                <x-new :new_ref="$new_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
                 {{$news->links()}}
         </div>

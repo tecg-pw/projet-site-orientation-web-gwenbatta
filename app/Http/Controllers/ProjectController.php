@@ -25,6 +25,7 @@ class ProjectController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+
         $projects = Project::paginate(9);
 
         //$projects = ProjetTranslation::latest('date')->where('locale', $locale)->paginate(9);
@@ -59,16 +60,18 @@ class ProjectController extends Controller
      * @param  Project $project
      * @return Application|Factory|View
      */
-    public function show(string $locale=null, Project $project)
+    public function show(string $locale=null, ProjetTranslation $project)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+        $projects = ProjetTranslation::where('person_id', $project->person_id)->where('locale',$locale)->orderBy('date')->take(6)->get();
+
+        return $project ;
         foreach ($project->courses as $classe){
         $teachers = Course::find($classe->id)->person()->get();
     }
-        $projects = Project::where('person_id', $project->person_id)->orderBy('date')->take(6)->get();
-        return view('project.single', compact('project', 'projects', 'teachers'));
+        return view('project.single', compact('project', 'projects','teachers'));
     }
 
     /**

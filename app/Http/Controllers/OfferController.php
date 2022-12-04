@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Offer;
+use App\Models\OfferTranslation;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -17,7 +18,7 @@ class OfferController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $offers = Offer::where('locale',$locale)->paginate(8);
+        $offers = Offer::paginate(8);
         return view('entreprise.internship', compact('offers'));
     }
 

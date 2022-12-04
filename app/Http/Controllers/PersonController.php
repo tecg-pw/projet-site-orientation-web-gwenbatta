@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\People;
+use App\Models\PersonTranslation;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -18,10 +19,10 @@ class PersonController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $testimonials = Testimonial::where('locale',$locale)->get();
-        $people = People::where('locale',$locale)->paginate(8);
-        $status = People::select('status')->where('locale',$locale)->groupBy('status')->get();
-        $years_end = People::select('end')->where('locale',$locale)->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
+        $testimonials = Testimonial::take(4)->orderBy('created_at')->get();
+        $people = People::paginate(8);
+        $status = PersonTranslation::select('status')->where('locale',$locale)->groupBy('status')->get();
+        $years_end = PersonTranslation::select('end')->where('locale',$locale)->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
         return view('bottin', compact('people', 'status', 'years_end', 'testimonials'));
     }
 

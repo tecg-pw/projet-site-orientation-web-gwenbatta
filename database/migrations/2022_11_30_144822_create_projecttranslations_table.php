@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('locale');
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->text('description');
             $table->string('link_project');
             $table->string('link_github');

@@ -12,6 +12,7 @@ class OfferTranslation extends Model
     use HasFactory, SoftDeletes;
 
     protected $table ='offertranslations';
+
     protected $dates =['created_at'];
 
     protected $fillable = [

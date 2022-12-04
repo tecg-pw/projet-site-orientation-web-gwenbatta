@@ -5,7 +5,7 @@
             <h2 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
                 id="dev-front" aria-level="2" role="heading">{{$partner->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/partner">{{__('agency.partner_back')}}</a>
+               href="/{{app()->getLocale()}}/entreprise/partner">{{__('agency.partner_back')}}</a>
         </div>
         <div class="flex flex-col xl:flex-row xl:gap-12 mt-16">
             <div class="mb-7 order-2 xl:gap-y-10">
@@ -79,7 +79,7 @@
                     <a href="{{$partner->site_link}}"
                        class="hover:bg-white-100 hover:text-green-700 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold ">{{__('agency.partner_view_site')}}</a>
                     <a class=" self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
-                       href="/{{str_replace('_','-',app()->getLocale())}}/">
+                       href="/{{app()->getLocale()}}/">
 
                     </a>
                 </div>
@@ -91,7 +91,7 @@
         <div class="flex xl:flex-row flex-col justify-between mb-8">
             <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Offres de stages')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship">{{__('Voir les offres de stage')}}</a>
+               href="/{{app()->getLocale()}}/entreprise/internship">{{__('Voir les offres de stage')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @if(count($offers) !== 0)
@@ -102,7 +102,7 @@
                             <div class="flex-1 order-2 ml-4">
                                 <div class="xl:flex-row flex-col flex justify-between">
                                     <h3 id="{{$offer->slug}}" role="heading" aria-level="4" class="text-lg xl:text-2xl">{{$offer->name}}</h3>
-                                    <p class="xl:text-lg">{{$offer->created_at->format('d M. Y')}}</p>
+                                    <p class="xl:text-lg">{{$offer->created_at->translatedFormat('d M. Y')}}</p>
                                 </div>
                                 <div class="mt-1 flex justify-between">
                                     <div class="flex flex-col gap-2 max-w-[80%]">
@@ -120,7 +120,7 @@
                             </div>
                         </div>
                         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                           href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/internship/{{$offer->slug}}">{{__('En savoir plus' . $offer->slug)}}</a>
+                           href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->slug}}">{{__('En savoir plus' . $offer->slug)}}</a>
                     </article>
                 @endforeach
             @else
@@ -135,46 +135,13 @@
             <h2 class="xl:text-4xl text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis" aria-level="2"
                 role="heading">{{__('Nos alumnis en stage ici')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
+               href="/{{app()->getLocale()}}/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
-            @foreach($alumnis as $alumni)
-                <article
-                    class="hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl"
-                    aria-labelledby="{{$alumni->slug}}">
-                    <div class="flex flex-1 items-center">
-                        <div class="flex-1 order-2 ml-4">
-                            <h4 id="{{$alumni->slug}}" role="heading" aria-level="4" class="text-xl xl:text-2xl">{{$alumni->firstname}} {{$alumni->name}}</h4>
-                            <div class="mt-1 flex justify-between">
-                                <div class="flex flex-col xl:flex-row xl:gap-4">
-                                    @if($alumni->status === 'teachalumni')
-                                        <p class="uppercase xl:text-lg">{{__('Ancien - Professeur')}}</p>
-                                    @else
-                                        <p class="uppercase xl:text-lg">{{$alumni->status}}</p>
-                                    @endif
-                                    @if($alumni->end === null)
-                                        <p class="xl:text-lg">{{$alumni->begin->format('Y')}} - {{__('people.bottin_today')}}</p>
-                                    @else
-                                        <p class="uppercase xl:text-lg">{{$alumni->begin->format('Y')}}-{{$alumni->end->format('Y')}}</p>
-                                    @endif
-                                </div>
-                                <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
-                                     width="25"
-                                     viewBox="0 0 32 27.417">
-                                    <path id="e6c07a72bd494f72e4a4d962e39f725c"
-                                          d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
-                                          transform="translate(-19 -8.001)" fill="#4e6458"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <img class="order-1 rounded-full" width="98" src="{{$alumni->avatar}}" alt="avatar">
-                    </div>
-                    <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/{{str_replace('_','-',app()->getLocale())}}/bottin/{{$alumni->status === 'teachalumni'? 'teachalumni' : 'alumni'}}/{{$alumni->slug}}">{{__('En savoir plus sur' . $alumni->name)}}</a>
-                </article>
+            @foreach($alumnis as $alumni_ref)
+                <x-alumni_article :alumni_ref="$alumni_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
-        {{--                {{$posts->links()}}--}}
     </article>
 </main>
 <x-commons.footer></x-commons.footer>

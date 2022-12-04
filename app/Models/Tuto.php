@@ -12,10 +12,10 @@ class Tuto extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $with = ["translation"];
     protected $fillable = [
         'id'
     ];
-
     public function translation(): HasMany
     {
         return $this->hasMany(TutoTranslation::class);

@@ -11,7 +11,7 @@
         "opportunity_id": 1
     },{
         "id": 2,
-        "name": "Développeur front-end",
+        "name": "Front-end developper",
         "locale": "en",
         "excerpt": "The front-end developer programs the visible part, the user interface of an app or a website, unlike the back-end developer who works in the background. His job is similar to that of a web integrator, but he has a more important role in the creation of a web solution.",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
@@ -32,7 +32,7 @@
         "opportunity_id": 2
     },{
         "id": 4,
-        "name": "Développeur back-end",
+        "name": "Back-end developper",
         "locale": "en",
         "excerpt": "The back-end developer deals with the technical and functional side of a website. Unlike the front-end developer, he works in the background and takes care of the back-office, i.e. the elements that are essential for the functioning of the site, but which are invisible to Internet users.",
         "description": "The back-end developer's mission is to design all the technical elements that are essential to the functioning of a website or an application. They must therefore have in-depth knowledge of IT, such as mastering programming languages like Python, Ruby, PHP, Java, etc. They are also in charge of database management. For this reason, it is essential that they are familiar with SQL Server and MySQL. The back-end developer must also be able to develop the content management platform and develop web applications. If problems persist, the back-end developer recommends solutions for the client and provides technical support for the site, as well as reactive maintenance. It is also the developer's duty to help the client if the client delivers a site.",
@@ -53,7 +53,7 @@
         "opportunity_id": 3
     },{
         "id": 6,
-        "name": "Designer d'expérience utilisateur (UX Designer)",
+        "name": "User Experience Designer (UX Designer)",
         "locale": "en",
         "excerpt": "UX design is the process of designing products that are useful, easy and enjoyable to use. Rooted in experience design, it is about improving the experience of users who interact with your product (digital or physical)",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
@@ -74,7 +74,7 @@
         "opportunity_id": 4
     },{
         "id": 8,
-        "name": "Designer Multimédia",
+        "name": "Multimédia Designer",
         "locale": "en",
         "excerpt": "The graphic and multimedia designer (also known as webdesigner) is a draughtsman and layout artist working on electronic media: web pages, CD-ROMs, TV or video packaging. Their mission? To give a strong identity to these different media.",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
@@ -95,7 +95,7 @@
         "opportunity_id": 5
     },{
         "id": 10,
-        "name": "Développeur Multimédia",
+        "name": "Multimédia Developper",
         "locale": "en",
         "excerpt": "The Multimedia Developer ensures the technical management of the project, i.e. the application of the scenario, the manipulation of graphic tools and the implementation of the Internet. His job is at the crossroads of three fields, computer graphics, web interface and multimedia, which he handles to perfection.",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
@@ -116,7 +116,7 @@
         "opportunity_id": 6
     },{
         "id": 12,
-        "name": "Designer d'interface (UI Designer)",
+        "name": "Interface Designer (UI Designer)",
         "locale": "en",
         "excerpt": "UI stands for user interface. UI design therefore refers to the graphic environment in which the user of a software, website or application evolves. The mission of the UI designer is to create a pleasant and practical interface that is easy to use.",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
@@ -137,7 +137,7 @@
         "opportunity_id": 7
     },{
         "id": 14,
-        "name": "Développeur web",
+        "name": "Web Developer",
         "locale": "en",
         "excerpt": "He takes care of the technical part of the sites. At the request of a client or a company and based on a set of specifications. As a specialist in computer languages, he/she takes charge of all the site's functionalities, its architecture, data access and the writing of the lines of code .",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
@@ -158,7 +158,7 @@
         "opportunity_id": 8
     },{
         "id": 16,
-        "name": "Designer web",
+        "name": "Web Designer",
         "locale": "en",
         "excerpt": "Half graphic designer, half computer scientist, the web designer is specialised in the creation of web pages. He takes care of the whole graphic aspect of an Internet site (illustrations, animations, typography...). He chooses the place of the photos, the size of the characters and the colours that will make the consultation pleasant for the user..",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
@@ -179,7 +179,7 @@
         "opportunity_id": 9
     },{
         "id": 18,
-        "name": "Développeur mobile",
+        "name": "Mobile Developer",
         "locale": "en",
         "excerpt": "The iOS/Android mobile developer is dedicated to creating or updating applications to run on mobile devices running either of these operating systems.",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
@@ -200,7 +200,7 @@
         "opportunity_id": 10
     },{
         "id": 20,
-        "name": "Designer mobile",
+        "name": "Mobile Designer",
         "locale": "en",
         "excerpt": "The mobile designer is the creator and developer of mobile applications and company interfaces. They put their creativity and knowledge at the service of their clients. They create designs, videos and sounds to highlight their clients' products and services..",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",

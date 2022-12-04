@@ -18,8 +18,8 @@ class ToolController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $tools = Tool::where('locale',$locale)->get();
-        $books = Book::where('locale',$locale)->get();
+        $tools = Tool::all();
+        $books = Book::all();
         return view('technical.tool', compact('tools', 'books'));
     }
 }

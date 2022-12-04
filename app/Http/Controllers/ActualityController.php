@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Actuality;
+use App\Models\ActualityTranslation;
 use Illuminate\Http\Request;
 
 class ActualityController extends Controller
@@ -48,11 +49,13 @@ class ActualityController extends Controller
      * @param  int  $new
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(string $locale=null, Actuality $new)
+    public function show(string $locale=null, ActualityTranslation $new)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+        //$new =  ActualityTranslation::where('locale',$locale)->get();
+
         return view('news.single', compact('new'));
     }
 

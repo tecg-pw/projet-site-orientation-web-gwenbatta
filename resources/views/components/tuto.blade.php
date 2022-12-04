@@ -1,11 +1,11 @@
 @props([
-    'tuto'
+    'tuto_ref'
 ])
-<article {{ $attributes->class(['group hover:bg-orange-100 relative py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }} aria-labelledby="{{$tuto->slug}}">
+<article {{ $attributes->class(['group hover:bg-orange-100 relative py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }} aria-labelledby="{{$tuto_ref->slug}}">
     <div class="flex justify-between">
         <div class="flex-1 flex justify-between">
-            <h3 id="{{$tuto->slug}}" aria-level="3" role="heading" class="text-lg font-medium xl:text-2xl mb-1.5">
-                {{$tuto->name}}</h3>
+            <h3 id="{{$tuto_ref->slug}}" aria-level="3" role="heading" class="text-lg font-medium xl:text-2xl mb-1.5">
+                {{$tuto_ref->name}}</h3>
         </div>
         @auth()
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 20.996 30">
@@ -19,14 +19,14 @@
             </svg>
         @endauth
     </div>
-    <p class="mb-2.5 xl:mb-6 xl:text-lg">{{$tuto->excerpt}}</p>
+    <p class="mb-2.5 xl:mb-6 xl:text-lg">{{$tuto_ref->excerpt}}</p>
     <div class="flex justify-between">
-        <div class="flex gap-3 items-center">
-        <p class="text-orange-500 font-sans xl:text-lg font-medium">{{$tuto->languages}}</p>
-        <p>{{$tuto->created_at->format('d M. Y')}}</p>
+        <div class="flex gap-5 items-center">
+        <p class="text-orange-500 font-sans xl:text-lg font-medium">{{ucwords($tuto_ref->languages)}}</p>
+        <p>{{ucwords($tuto_ref->created_at->translatedFormat('d F Y'))}}</p>
         </div>
         <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
-           href="{{$tuto->link}}">{{__('tuto.tuto_do')}}</a>
+           href="{{$tuto_ref->link}}">{{__('tuto_ref.tuto_ref_do')}}</a>
         <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
              viewBox="0 0 32 27.417">
             <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"

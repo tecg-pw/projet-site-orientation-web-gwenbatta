@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 use App\Models\ActualityTranslation;
+use Carbon\Carbon;
 use File;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,12 +24,13 @@ class ActualityTranslationSeeder extends Seeder
             ActualityTranslation::create([
                 "name" => $value->name,
                 "locale" => $value->locale,
-                "slug" => \Str::slug($value->name),
+                "slug" => \Str::slug($value->name.$value->locale),
                 "excerpt" => $value->excerpt,
                 "description" => $value->description,
                 "lieu" => $value->lieu,
                 "link" => $value->link,
                 "main_picture" => $value->main_picture,
+                "date" => Carbon::parse($value->date)->toDateTimeString(),
                 "gallery" => $value->gallery,
                 "actuality_id" => $value->actuality_id,
             ]);

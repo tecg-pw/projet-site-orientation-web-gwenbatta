@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Book extends Model
 {
     use HasFactory, SoftDeletes;
+    protected $with = ["translation"];
     protected $fillable = [
         'id'
     ];

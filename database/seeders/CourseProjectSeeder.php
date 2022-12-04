@@ -20,7 +20,7 @@ class CourseProjectSeeder extends Seeder
         $courses = json_decode($json);
 
         foreach ($courses as $key => $value) {
-            DB::table('course_project')->insert([
+            DB::table('course_projecttranslation')->insert([
                 "project_id" => $value->project_id,
                 "course_id" => $value->course_id
             ]);

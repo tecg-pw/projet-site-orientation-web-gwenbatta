@@ -12,6 +12,7 @@ class ActualityTranslation extends Model
     use HasFactory , SoftDeletes;
 
     protected $table = 'actualitytranslations';
+    protected $dates = ['date'];
 
     protected $fillable = [
         'name', 'slug' , 'locale', 'excerpt', 'description', 'lieu', 'link','gallery','actuality_id'

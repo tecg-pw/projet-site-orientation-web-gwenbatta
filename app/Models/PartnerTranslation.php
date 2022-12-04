@@ -12,7 +12,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class PartnerTranslation extends Model
 {
     use HasFactory, SoftDeletes;
+
     protected $table = 'partnertranslations';
+
     protected $fillable = [
         'name', 'slug' ,'locale', 'mail', 'logo', 'adresse', 'locality','locality_number', 'description', 'site_link', 'link_facebook','link_linkedin','link_instagram','members'
     ];

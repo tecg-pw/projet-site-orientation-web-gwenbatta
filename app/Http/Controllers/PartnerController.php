@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Offer;
+use App\Models\OfferTranslation;
 use App\Models\Partner;
+use App\Models\PartnerTranslation;
 use Illuminate\Http\Request;
 
 class PartnerController extends Controller
@@ -18,9 +20,11 @@ class PartnerController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $cities = Partner::select('locality')->groupBy('locality')->get();
-        $agencies = Partner::select('name')->groupBy('name')->get();
-        $partners = Partner::where('locale',$locale)->paginate(8);
+        $partners = Partner::paginate(8);
+
+        $cities = PartnerTranslation::select('locality')->groupBy('locality')->get();
+        $agencies = PartnerTranslation::select('name')->groupBy('name')->get();
+
         return view('entreprise.partner', compact('partners', 'cities', 'agencies'));
     }
 
@@ -51,15 +55,15 @@ class PartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(string $locale=null, Partner $partner)
+    public function show(string $locale=null, PartnerTranslation $partner)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $offers = Offer::where('partner_id', $partner->id)->where('locale',$locale)->get();
-        $alumnis = Partner::find($partner->id)->person()->get();
+        $offers = OfferTranslation::where('partner_id', $partner->id)->where('locale',$locale)->get();
+        $alumnis = PartnerTranslation::find($partner->id)->person()->get();
         $partner->members = json_decode($partner->members);
-        return view('entreprise.partner.single', compact('partner', 'offers', 'alumnis'));
+        return view('entreprise.partner.single', compact('partner','offers','alumnis'));
     }
 
     /**

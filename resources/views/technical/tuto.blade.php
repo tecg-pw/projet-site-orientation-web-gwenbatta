@@ -10,8 +10,8 @@
         <article aria-labelledby="list-tutos">
             <h3 id="list-tutos" role="heading" aria-level="3" class="sr-only">{{__('tuto.tuto_list_title')}}</h3>
             <div class="flex gap-y-4 flex-col xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8">
-                @foreach($tutos as $tuto)
-                    <x-tuto class="bg-yellow-100" :tuto="$tuto"/>
+                @foreach($tutos as $tuto_ref)
+                    <x-tuto class="bg-yellow-100" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
                 @endforeach
             </div>
             {{$tutos->links()}}

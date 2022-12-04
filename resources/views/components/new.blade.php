@@ -8,7 +8,7 @@
         <div class="flex justify-between mb-3">
             <h3 class="text-xl xl:text-3xl " role="heading" aria-level="3"
                 id="{{$new_ref->slug}}">{{$new_ref->name}}</h3>
-            <p class="xl:text-xl relative z-30">{{$new_ref->date}}</p>
+            <p class="xl:text-xl relative z-30">{{ucwords($new_ref->date->translatedFormat('d F Y '))}}</p>
         </div>
         <div class="flex justify-between mb-4">
             <p class="max-w-[80%]">{{__($new_ref->excerpt)}}</p>
@@ -20,7 +20,7 @@
             </svg>
         </div>
         <a class="self-end linkcard"
-           href="/{{str_replace('_','-',app()->getLocale())}}/news/{{$new_ref->slug}}">{{__('actu.actu_link')}}</a>
+           href="/{{app()->getLocale()}}/news/{{$new_ref->slug}}">{{__('actu.actu_link')}}</a>
     </div>
     <figure class="order-first">
         <img class="rounded-t-3xl" src="{{$new_ref->main_picture}}" alt="">

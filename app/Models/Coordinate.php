@@ -11,6 +11,7 @@ class Coordinate extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $with = ["translation"];
     protected $fillable = [
         'id'
     ];

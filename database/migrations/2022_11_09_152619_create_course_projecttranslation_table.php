@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('course_project', function (Blueprint $table) {
+        Schema::create('course_projecttranslation', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_project');
+        Schema::dropIfExists('course_projecttranslation');
     }
 };

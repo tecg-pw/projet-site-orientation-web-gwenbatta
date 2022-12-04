@@ -15,15 +15,8 @@
         <h3 class="font-sans text-xl mt-16 mb-12" role="heading" aria-level="3"
             id="coordinate">{{__('contact_page.aside_title')}}</h3>
         <div class="flex gap-24 mb-24">
-            @foreach($coordinates as $coordinate)
-                <div itemscope itemtype="https://schema.org/Organization">
-                    <p itemprop="legalName" class="mb-5 uppercase font-sans">{{strtoupper($coordinate->organization)}}</p>
-                    <p itemprop="employee" >{{ucwords($coordinate->employee_firstname)}} {{ucwords($coordinate->employee_name)}}</p>
-                    <p class="mb-2">{{$coordinate->job}}</p>
-                    <a class="text-green-700 underline" href="mailto:{{$coordinate->mail}}"
-                       itemprop="email">{{$coordinate->mail}}</a>
-                    <p itemprop="telephone">{{$coordinate->phone}}</p>
-                </div>
+            @foreach($coordinates as $coordinate_ref)
+                <x-contact_coordinate :coordinate_ref="$coordinate_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </section>

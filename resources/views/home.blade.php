@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main id="content" class="xl:text-2xl">
+<main id="content" >
     <section class="relative mt-14 px-10 xl:px-36 xl:flex xl:mt-14 xl:mb-36 xl:gap-24 xl:items-center" aria-labelledby="intro">
         <div class="xl:flex-1">
             <h2 class="text-2xl leading-8 mb-6 uppercase font-bold text-yellow-800 font-sans xl:text-4xl xl:mb-16  xl:leading-12" role="heading" aria-level="2"
@@ -77,11 +77,11 @@
                 {{__('home.projects_title')}}
             </h2>
             <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 xl:text-end xl:text-3xl"
-               href="/{{str_replace('_','-',app()->getLocale())}}/projet/index">{{__('home.projects_button')}}</a>
+               href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('home.projects_button')}}</a>
         </div>
         <div class="flex-wrap flex gap-8 justify-center xl:flex-nowrap">
             @foreach($projects as $project_ref)
-{{--                <x-project :project_ref="$project_ref->translation->where('locale',str_replace('_','-',app()->getLocale()))"></x-project>--}}
+                <x-project :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
         </div>
     </article>

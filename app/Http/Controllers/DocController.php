@@ -19,8 +19,8 @@ class DocController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $docs = Doc::where('locale',$locale)->get();
-        $books = Book::where('locale',$locale)->get();
+        $docs = Doc::all();
+        $books = Book::all();
         return view('technical.doc', compact('docs', 'books'));
     }
 }

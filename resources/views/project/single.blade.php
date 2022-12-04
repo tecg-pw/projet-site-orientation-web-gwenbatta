@@ -1,5 +1,8 @@
 <?php
+    $project->person = $project->person->translation->where('locale', app()->getLocale())->first();
+    $project->course = $project->course->translation->where('locale', app()->getLocale())->first();
 
+    dd($project);
 ?>
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
@@ -8,7 +11,7 @@
             <h2 id="{{$project->slug}}" aria-level="2" role="heading"
                 class="xl:text-4xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$project->title}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_button')}}</a>
+               href="/{{app()->getLocale()}}/project/index">{{__('project.project_button')}}</a>
         </div>
         <div class="flex xl:flex-row flex-col mt-20 xl:mt-0">
             <article class="relative mt-48" aria-labelledby="{{$project->person->slug}}">
@@ -16,12 +19,13 @@
                 <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
                     <h3 id="{{$project->person->slug}}" aria-level="3" role="heading"
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl mb-2"><a
-                            href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni/{{$project->person->slug}}">{{$project->person->firstname}} {{$project->person->name}}</a></h3>
-                    <p class="mb-4">{{$project->person->begin->format('Y')}}-{{$project->person->end->format('Y')}}</p>
+                            href="/{{app()->getLocale()}}/bottin/alumni/{{$project->person->slug}}">{{$project->person->firstname}} {{$project->person->name}}</a>
+                    </h3>
+                    {{--                    <p class="mb-4">{{$project->person->begin->format('Y')}}-{{$project->person->end->format('Y')}}</p>--}}
                     <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500"
                        href="{{$project->person->link_portfolio}}">{{$project->person->link_portfolio}}</a>
-                    <div class="flex justify-between gap-32 items-center mt-4 ">
-                        <div class="flex flex-1 mb-6 gap-5">
+                    <div class="flex justify-between gap-32 items-center mt-4 mb-2 ">
+                        <div class="flex flex-1 gap-5">
                             <div class="relative group">
                                 <svg class="group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="30"
                                      viewBox="0 0 38.97 38.005">
@@ -51,7 +55,7 @@
                                 <a class="linkcard" href="{{$project->person->linkedin}}"></a>
                             </div>
                         </div>
-                        <p class="justify-self-end text-green-500 uppercase text-lg">{{$project->person->status}}</p>
+                        <p class="justify-self-end text-green-500 uppercase text-lg mt-2">{{$project->person->status}}</p>
                     </div>
                 </div>
             </article>
@@ -63,25 +67,25 @@
                     <div class="flex flex-col xl:gap-4 text-lg">
                         <div class="flex gap-3">
                             <p>{{__('project.project_make_course')}}</p>
-                            @foreach($project->courses as $classe)
-                                <a class=" underline text-green-700 uppercase hover:text-orange-500"
-                                   href="/{{str_replace('_','-',app()->getLocale())}}/cours/{{$classe->slug}}">{{$classe->name}}</a>
-                        </div>
-                        <div class="flex flex-row gap-3">
-                            <p>{{__('project.project_make_with')}}</p>
-                            @foreach($teachers as $teacher)
-                                <a class=" underline text-green-700 uppercase hover:text-orange-500"
-                                   href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
-                            @endforeach
-                        </div>
+                            {{--                            @foreach($project->courses as $classe)--}}
+                            {{--                                <a class=" underline text-green-700 uppercase hover:text-orange-500"--}}
+                            {{--                                   href="/{{app()->getLocale()}}/cours/{{$classe->slug}}">{{$classe->name}}</a>--}}
+                            {{--                        </div>--}}
+                            {{--                        <div class="flex flex-row gap-3">--}}
+                            {{--                            <p>{{__('project.project_make_with')}}</p>--}}
+                            {{--                            @foreach($teachers as $teacher)--}}
+                            {{--                                <a class=" underline text-green-700 uppercase hover:text-orange-500"--}}
+                            {{--                                   href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>--}}
+                            {{--                            @endforeach--}}
+                            {{--                        </div>--}}
 
-                        @endforeach
-                    </div>
-                    <div class="flex flex-col xl:flex-row xl:gap-32 mt-8 xl:items-center">
-                        <a href="{{$project->person->link_portfolio}}"
-                           class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('project.project_portfolio')}}</a>
-                        <a class="group hover:text-orange-500 flex font-sans text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"
-                           href="{{$project->person->link_github}}">
+                            {{--                        @endforeach--}}
+                        </div>
+                        <div class="flex flex-col xl:flex-row xl:gap-32 mt-8 xl:items-center">
+                            <a href="{{$project->person->link_portfolio}}"
+                               class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('project.project_portfolio')}}</a>
+                            <a class="group hover:text-orange-500 flex font-sans text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"
+                               href="{{$project->link_github}}">
                 <span class="mr-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
                         <path class="group-hover:fill-orange-500" data-name="08774047e75405e5723edc2388e9bc78"
@@ -89,12 +93,12 @@
                               transform="translate(-1.999 -2.247)" fill="#4e6458"/>
                         </svg>
                     </span>
-                            <span class="xl:mt-0 mt-1.5">{{__('project.project_github')}}</span>
-                        </a>
+                                <span class="xl:mt-0 mt-1.5">{{__('project.project_github')}}</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     </section>
     <section class="xl:not-sr-only sr-only xl:px-36 px-10 bg-yellow-600" aria-labelledby="photos">
@@ -112,11 +116,11 @@
             <h2 id="projects" role="heading" aria-level="2"
                 class="xl:text-4xl text-yellow-800 text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_see_all')}}</a>
+               href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
-            @foreach($projects as $project)
-                <x-project :project="$project"></x-project>
+            @foreach($projects as $project_ref)
+                <x-project :project_ref="$project_ref"></x-project>
             @endforeach
         </div>
     </article>

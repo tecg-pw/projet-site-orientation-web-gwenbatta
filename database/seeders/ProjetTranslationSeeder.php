@@ -24,7 +24,7 @@ class ProjetTranslationSeeder extends Seeder
         foreach ($partners as $key => $value) {
             ProjetTranslation::create([
                 "title" => $value->title,
-                "slug" => \Str::slug($value->title.$value->project_id.$value->locale),
+                "slug" => \Str::slug($value->title.$value->project_id),
                 "locale" => $value->locale,
                 "description" => $value->description,
                 "link_project" => $value->link_project,

@@ -9,7 +9,7 @@
         </div>
         <div class="px-36 flex gap-20 text-xl">
             @if($new->date !== null)
-                <p>{{$new->date}}</p>
+                <p>{{ucwords($new->date->translatedFormat('d F Y '))}}</p>
             @endif
             <p>{{$new->lieu}}</p>
         </div>

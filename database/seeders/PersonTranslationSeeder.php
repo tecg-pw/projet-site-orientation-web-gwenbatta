@@ -39,7 +39,7 @@ class PersonTranslationSeeder extends Seeder
                 "job_slug" => \Str::slug($value->job),
                 "begin" => Carbon::parse($value->begin)->toDateTimeString(),
                 "end" => $value->end,
-                "person_id" => $value->person_id,
+                "people_id" => $value->people_id,
             ]);
         }
     }

@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Tool extends Model
 {
     use HasFactory, SoftDeletes;
+    protected $with  = ["translation"];
+
     protected $fillable = [
         'id'
     ];

@@ -12,6 +12,8 @@ class TestimonialTranslation extends Model
     use HasFactory, SoftDeletes;
     protected $table = 'testimonialtranslations';
 
+    protected $with = ["person"];
+
     protected $fillable = [
         'description', 'person_id','locale'
     ];

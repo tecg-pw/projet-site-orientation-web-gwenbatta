@@ -15,7 +15,7 @@ class ProjetTranslation extends Model
 
     protected $dates = ['date'];
 
-    protected $with = ["person"];
+    protected $with = ["person","course"];
 
     protected $fillable = [
         'title', 'slug','locale', 'description', 'link_project', 'link_github', 'date', 'main_picture', 'gallery','project_id'
@@ -29,8 +29,8 @@ class ProjetTranslation extends Model
     {
         return $this->belongsTo(People::class);
     }
-    public function courses(): BelongsToMany
+    public function course(): BelongsToMany
     {
-        return $this->belongsToMany(Course::class);
+        return $this->belongsToMany(Course::class,'course_projecttranslation','course_id','project_id');
     }
 }

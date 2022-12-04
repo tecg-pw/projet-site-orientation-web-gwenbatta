@@ -23,7 +23,7 @@ class OfferTranslationSeeder extends Seeder
         foreach ($partners as $key => $value) {
             OfferTranslation::create([
                 "name" => $value->name,
-                "slug" => \Str::slug($value->name),
+                "slug" => \Str::slug($value->name.'_'.$value->locale),
                 "description" => $value->description,
                 "languages" => json_encode($value->languages),
                 "softwares" => json_encode($value->softwares),

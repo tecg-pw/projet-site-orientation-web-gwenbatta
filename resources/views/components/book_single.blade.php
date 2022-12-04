@@ -1,29 +1,29 @@
 @props([
     /** @var \Illuminate\Database\Eloquent\Model */
-    'book'
+    'book_ref'
 ])
 
 <article {{ $attributes->class(['group relative bg-white-100 hover:bg-orange-100 py-6 px-8 rounded-3xl']) }}
-         aria-labelledby="{{$book->slug}}">
+         aria-labelledby="{{$book_ref->slug}}">
     <div class="flex justify-between">
         <div>
-            <h4 id="{{$book->slug}}" aria-level="4" role="heading"
-                class="font-medium text-lg xl:text-2xl mb-2">{{$book->name}}</h4>
+            <h4 id="{{$book_ref->slug}}" aria-level="4" role="heading"
+                class="font-medium text-lg xl:text-2xl mb-2">{{$book_ref->name}}</h4>
         </div>
     </div>
-    <p class="mb-4 xl:mb-10 xl:text-lg">{{$book->excerpt}}</p>
+    <p class="mb-4 xl:mb-10 xl:text-lg">{{$book_ref->excerpt}}</p>
     <div class="flex justify-between">
         <p class="xl:text-lg flex gap-x-3 font-medium">
             {{__('technicals.doc_course')}}
             <span class="flex gap-2">
-{{--                @foreach($book->courses as $course)--}}
+{{--                @foreach($book_ref->courses as $course)--}}
 {{--                    <a class="underline text-green-700"--}}
 {{--                       href="/cours/show">{{$course->name}}</a>--}}
 {{--                @endforeach--}}
             </span>
         </p>
         <a class="text-xl underline text-green-700 linkcard font-semibold font-sans linkcard"
-           href="/{{str_replace('_','-',app()->getLocale())}}/technical/books/{{$book->slug}}">{{__('technicals.book_link')}}</a>
+           href="/{{str_replace('_','-',app()->getLocale())}}/technical/book_refs/{{$book_ref->slug}}">{{__('technicals.book_ref_link')}}</a>
         <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
              viewBox="0 0 32 27.417">
             <path

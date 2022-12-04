@@ -28,7 +28,7 @@
                         </div>
                         <div class="order-3 flex flex-col xl:flex-row justify-between">
                             <div class="flex gap-4 items-center">
-                                <p class="text-base uppercase font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg xl:text-base text-green-700">
+                                <p class="text-base uppercase font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-green-700">
                                     {{ucwords($subject->tag)}}</p>
                                 <p class="xl:text-lg ">{{__('forum.number_comment').$subject->comments_count}}</p>
                             </div>

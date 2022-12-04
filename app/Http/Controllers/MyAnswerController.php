@@ -19,7 +19,7 @@ class MyAnswerController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
-        $recurrings = Recurring::where('locale',$locale)->get();
+        $recurrings = Recurring::allt();
         $comments = Comment::latest()->paginate(3);
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();

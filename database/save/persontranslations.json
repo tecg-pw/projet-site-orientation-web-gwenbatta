@@ -18,7 +18,7 @@
         "begin": "2020-09-10 00:00:00",
         "end": "2023-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 1
+        "people_id": 1
     },
     {
         "id": 2,
@@ -39,7 +39,7 @@
         "begin": "2020-09-10 00:00:00",
         "end": "2023-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 1
+        "people_id": 1
     },
     {
         "id": 3,
@@ -60,7 +60,7 @@
         "begin": "2020-09-10 00:00:00",
         "end": "2023-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 2
+        "people_id": 2
     },
     {
         "id": 4,
@@ -81,7 +81,7 @@
         "begin": "2020-09-10 00:00:00",
         "end": "2023-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 2
+        "people_id": 2
     },
     {
         "id": 5,
@@ -102,7 +102,7 @@
         "begin": "2002-09-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 3
+        "people_id": 3
     },
     {
         "id": 6,
@@ -123,7 +123,7 @@
         "begin": "2002-09-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 3
+        "people_id": 3
     },
     {
         "id": 7,
@@ -144,7 +144,7 @@
         "begin": "2002-09-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 4
+        "people_id": 4
     },
     {
         "id": 8,
@@ -165,7 +165,7 @@
         "begin": "2002-09-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 4
+        "people_id": 4
     },
     {
         "id": 9,
@@ -186,7 +186,7 @@
         "begin": "2012-09-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 5
+        "people_id": 5
     },
     {
         "id": 10,
@@ -207,7 +207,7 @@
         "begin": "2012-09-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 5
+        "people_id": 5
     },
     {
         "id": 11,
@@ -228,7 +228,7 @@
         "begin": "2016-03-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 6
+        "people_id": 6
     },
     {
         "id": 12,
@@ -249,7 +249,7 @@
         "begin": "2016-03-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 6
+        "people_id": 6
     },
     {
         "id": 13,
@@ -270,7 +270,7 @@
         "begin": "2022-02-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 7
+        "people_id": 7
     },
     {
         "id": 14,
@@ -291,7 +291,7 @@
         "begin": "2022-02-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 7
+        "people_id": 7
     },
     {
         "id": 15,
@@ -312,7 +312,7 @@
         "begin": "2019-09-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 8
+        "people_id": 8
     },{
         "id": 16,
         "name": "Schreurs",
@@ -332,7 +332,7 @@
         "begin": "2019-09-10 00:00:00",
         "end": null,
         "deleted_at": null,
-        "person_id": 8
+        "people_id": 8
     },
     {
         "id": 17,
@@ -353,7 +353,7 @@
         "begin": "2018-09-10 00:00:00",
         "end": "2022-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 9
+        "people_id": 9
     },{
         "id": 18,
         "name": "Akdede",
@@ -373,7 +373,7 @@
         "begin": "2018-09-10 00:00:00",
         "end": "2022-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 9
+        "people_id": 9
     },
     {
         "id": 19,
@@ -394,7 +394,7 @@
         "begin": "2014-09-10 00:00:00",
         "end": "2017-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 10
+        "people_id": 10
     },{
         "id": 20,
         "name": "Letecheur",
@@ -414,7 +414,7 @@
         "begin": "2014-09-10 00:00:00",
         "end": "2017-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 10
+        "people_id": 10
     },
     {
         "id": 21,
@@ -435,7 +435,7 @@
         "begin": "2020-09-10 00:00:00",
         "end": "2024-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 11
+        "people_id": 11
     },{
         "id": 22,
         "name": "De barros",
@@ -455,7 +455,7 @@
         "begin": "2020-09-10 00:00:00",
         "end": "2024-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 11
+        "people_id": 11
     },
     {
         "id": 23,
@@ -476,7 +476,7 @@
         "begin": "2020-09-10 00:00:00",
         "end": "2023-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 12
+        "people_id": 12
     },
     {
         "id": 24,
@@ -497,6 +497,6 @@
         "begin": "2020-09-10 00:00:00",
         "end": "2023-06-30 00:00:00",
         "deleted_at": null,
-        "person_id": 12
+        "people_id": 12
     }
 ]

@@ -13,9 +13,9 @@
         </div>
         <div class="sr-only xl:not-sr-only flex-1">
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
-                <img class="rounded-3xl row-span-2 min-h-full" src="https://placehold.jp/396x584.png" alt="">
-                <img class="rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
-                <img class="rounded-3xl" src="https://placehold.jp/330x278.png" alt="">
+                <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/windows-97pJ_0CkVEY-unsplash-584.jpeg" alt="">
+                <img class="rounded-3xl" src="/img-redimensions/christopher-gower-m_HRfLhgABo-unsplash.jpg" alt="">
+                <img class="rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438081.jpeg" alt="">
             </figure>
         </div>
     </section>
@@ -28,8 +28,8 @@
                href="/{{str_replace('_','-',app()->getLocale())}}/technical/glossary">{{__('technicals.glossary_button')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 flex flex-col gap-y-4 xl:gap-x-24 xl:gap-y-8">
-            @foreach($termes as $terme)
-                <x-term-glossary :terme="$terme"/>
+            @foreach($termes as $terme_ref)
+                <x-term-glossary :terme_ref="$terme_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </article>
@@ -38,11 +38,11 @@
             <h2 id="tutos" aria-level="2" role="heading"
                 class="text-2xl xl:text-4xl uppercase font-bold mb-4 xl:mb-16 font-sans">{{__('technicals.tuto_title')}}</h2>
             <a class="hover:text-orange-500  font-sans text-green-700 xl:text-3xl font-semibold underline xl:px-4"
-               href="/{{str_replace('_','-',app()->getLocale())}}/technical/tuto">{{__('technicals.tuto_button')}}</a>
+               href="/{{app()->getLocale()}}/technical/tuto">{{__('technicals.tuto_button')}}</a>
         </div>
         <div class="flex gap-y-4 flex-col xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8">
-            @foreach($tutos as $tuto)
-                <x-tuto class="bg-yellow-100" :tuto="$tuto"/>
+            @foreach($tutos as $tuto_ref)
+                <x-tuto class="bg-yellow-100" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </article>
@@ -54,33 +54,8 @@
                href="/{{str_replace('_','-',app()->getLocale())}}/technical/docandtool/doc">{{__('technicals.doc_button')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4 ">
-            @foreach($docs as $doc)
-                <article aria-labelledby="{{$doc->slug}}" class="group relative bg-yellow-100 py-6 px-8 rounded-3xl">
-                    <div class="flex justify-between">
-                        <div>
-                            <h4 id="{{$doc->slug}}" aria-level="4" role="heading"
-                                class="font-medium text-lg xl:text-2xl mb-2">{{$doc->name}}</h4>
-                        </div>
-                    </div>
-                    <p class="mb-4 xl:mb-10 xl:text-lg">{{$doc->excerpt}}</p>
-                    <div class="flex justify-between">
-                        <p class="xl:text-lg font-medium">
-                            {{__('technicals.doc_course')}}
-                            @foreach($doc->courses as $course)
-                                <a class="underline text-green-700"
-                                   href="/{{str_replace('_','-',app()->getLocale())}}/cours/{{$course->slug}}">{{$course->name}}</a>
-                            @endforeach
-                        </p>
-                        <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
-                           href="{{$doc->link}}">{{__('docandtool.doc_link')}}</a>
-                        <svg class="group-hover:mr-0 mr-4 self-end" xmlns="http://www.w3.org/2000/svg" width="25"
-                             viewBox="0 0 32 27.417">
-                            <path
-                                d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
-                                transform="translate(-19 -8.001)" fill="#4e6458"/>
-                        </svg>
-                    </div>
-                </article>
+            @foreach($docs as $doc_ref)
+                <x-doc_single :doc_ref="$doc_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </article>

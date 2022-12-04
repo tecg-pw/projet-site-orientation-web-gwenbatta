@@ -23,7 +23,7 @@ class PartnerTranslationSeeder extends Seeder
         foreach ($partners as $key => $value) {
             PartnerTranslation::create([
                 "name" => $value->name,
-                "slug" => \Str::slug($value->name),
+                "slug" => \Str::slug($value->name.'_'.$value->locale),
                 "mail" => $value->mail,
                 "logo" => $value->logo,
                 "adresse" => $value->adresse,

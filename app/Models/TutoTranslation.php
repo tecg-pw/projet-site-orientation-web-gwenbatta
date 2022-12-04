@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class TutoTranslation extends Model
 {
     use HasFactory, SoftDeletes;
+
     protected $table = 'tutotranslations';
     protected $dates = ['created_at'];
     protected $fillable = [

@@ -15,6 +15,7 @@ class Course extends Model
     protected $fillable = [
         'id'
     ];
+    protected $with = ["translation"];
 
     public function translation(): HasMany
     {
