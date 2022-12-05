@@ -31,6 +31,6 @@ class ProjetTranslation extends Model
     }
     public function course(): BelongsToMany
     {
-        return $this->belongsToMany(Course::class,'course_projecttranslation','course_id','project_id');
+        return $this->belongsToMany(Course::class,'course_project','project_id', 'course_id');
     }
 }

@@ -36,7 +36,9 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
         });
-        //Route::pattern('locale', '^(?!nova).*$');
+
+        $locale = implode('|',config('app.available_locales'));
+        Route::pattern('locale', $locale);
     }
 
     /**

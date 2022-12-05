@@ -15,6 +15,7 @@ class People extends Model
 
     protected $table = 'people';
 
+    //protected $with = ["translation","courses"];
     protected $with = ["translation"];
 
     protected $fillable = [
@@ -24,6 +25,11 @@ class People extends Model
     public function translation(): HasMany
     {
         return $this->hasMany(PersonTranslation::class);
+    }
+
+    public function courses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'course_person', 'people_id', 'course_id');
     }
 }
 

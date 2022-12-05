@@ -12,7 +12,7 @@
                    href="/{{str_replace('_','-',app()->getLocale())}}/user/register">{{__('login_register.register_link')}}</a>
             </div>
             <div class="flex mt-14">
-                <form action="/" method="post" class="flex flex-col xl:block min-w-full">
+                <form action="/login" method="post" class="flex flex-col xl:block min-w-full">
                     @csrf
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>

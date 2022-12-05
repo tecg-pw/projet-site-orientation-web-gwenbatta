@@ -89,8 +89,8 @@
                href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
-            @foreach($projects as $project)
-                <x-project :project="$project"></x-project>
+            @foreach($projects as $project_ref)
+                <x-project :project_ref="$project_ref"></x-project>
             @endforeach
             @if(count($projects) === 0)
                 <p class="xl:text-xl text-lg">{{__('people.bottin_no_project')}}</p>

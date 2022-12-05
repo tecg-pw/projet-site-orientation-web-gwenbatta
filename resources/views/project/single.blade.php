@@ -1,8 +1,8 @@
 <?php
-    $project->person = $project->person->translation->where('locale', app()->getLocale())->first();
-    $project->course = $project->course->translation->where('locale', app()->getLocale())->first();
+$project->person = $project->person->translation->where('locale', app()->getLocale())->first();
+//$project->course = $project->course->translation->where('locale', app()->getLocale())->first();
 
-    dd($project);
+//dd($project);
 ?>
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
@@ -18,10 +18,11 @@
                 <img class="rounded-lg absolute -z-10 bottom-3/4" src="{{$project->person->avatar}}" alt="avatar">
                 <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
                     <h3 id="{{$project->person->slug}}" aria-level="3" role="heading"
-                        class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl mb-2"><a
+                        class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl"><a
                             href="/{{app()->getLocale()}}/bottin/alumni/{{$project->person->slug}}">{{$project->person->firstname}} {{$project->person->name}}</a>
                     </h3>
-                    {{--                    <p class="mb-4">{{$project->person->begin->format('Y')}}-{{$project->person->end->format('Y')}}</p>--}}
+                    <p class="mb-2 mt-2 xl:text-xl">{{$project->person->begin->format('Y')}}
+                        -{{$project->person->end->format('Y')}}</p>
                     <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500"
                        href="{{$project->person->link_portfolio}}">{{$project->person->link_portfolio}}</a>
                     <div class="flex justify-between gap-32 items-center mt-4 mb-2 ">
@@ -67,19 +68,19 @@
                     <div class="flex flex-col xl:gap-4 text-lg">
                         <div class="flex gap-3">
                             <p>{{__('project.project_make_course')}}</p>
-                            {{--                            @foreach($project->courses as $classe)--}}
-                            {{--                                <a class=" underline text-green-700 uppercase hover:text-orange-500"--}}
-                            {{--                                   href="/{{app()->getLocale()}}/cours/{{$classe->slug}}">{{$classe->name}}</a>--}}
-                            {{--                        </div>--}}
-                            {{--                        <div class="flex flex-row gap-3">--}}
-                            {{--                            <p>{{__('project.project_make_with')}}</p>--}}
-                            {{--                            @foreach($teachers as $teacher)--}}
-                            {{--                                <a class=" underline text-green-700 uppercase hover:text-orange-500"--}}
-                            {{--                                   href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>--}}
-                            {{--                            @endforeach--}}
-                            {{--                        </div>--}}
+                            @foreach($project->course as $classe)
+                                <a class=" underline text-green-700 uppercase hover:text-orange-500"
+                                   href="/{{app()->getLocale()}}/cours/{{$classe->translation->where('locale',app()->getLocale())->first()->slug}}">{{$classe->translation->where('locale',app()->getLocale())->first()->name}}</a>
+                        </div>
+                        <div class="flex flex-row gap-3">
+                            <p>{{__('project.project_make_with')}}</p>
+{{--                            @foreach($teachers as $teacher)--}}
+{{--                                <a class=" underline text-green-700 uppercase hover:text-orange-500"--}}
+{{--                                   href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>--}}
+{{--                            @endforeach--}}
+                        </div>
 
-                            {{--                        @endforeach--}}
+                        @endforeach
                         </div>
                         <div class="flex flex-col xl:flex-row xl:gap-32 mt-8 xl:items-center">
                             <a href="{{$project->person->link_portfolio}}"

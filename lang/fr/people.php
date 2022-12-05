@@ -13,6 +13,7 @@ return [
     'alumni_title' => 'Alumni',
     'alumni_text' => 'Vous trouverez sur cette page une liste de tous nos anciens étudiants avec qui nous gardons contact',
     'alumni_button' => 'Voir d\'autres alumni',
+    'teacher_button' => 'Voir d\'autres professeur',
     'bottin_button' => 'Voir d\'autres étudiant',
     'alumni_list_title' => 'Liste des alumnis',
     'teachalumni_status' => 'Ancien - Professeur',

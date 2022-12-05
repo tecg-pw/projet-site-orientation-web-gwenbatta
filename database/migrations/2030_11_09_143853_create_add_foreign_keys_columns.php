@@ -29,7 +29,7 @@ return new class extends Migration
             $table->foreignId('partner_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('projecttranslations', function (Blueprint $table) {
-            $table->foreignId('person_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('person_id')->constrained('people')->onUpdate('cascade');
         });
         Schema::table('subjects', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
@@ -101,7 +101,7 @@ return new class extends Migration
             $table->foreignId('people_id')->constrained()->onUpdate('cascade');
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });
-        Schema::table('course_projecttranslation', function (Blueprint $table) {
+        Schema::table('course_project', function (Blueprint $table) {
             $table->foreignId('project_id')->constrained()->onUpdate('cascade');
             $table->foreignId('course_id')->constrained()->onUpdate('cascade');
         });

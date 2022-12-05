@@ -27,6 +27,7 @@ class PersonTranslationSeeder extends Seeder
                 "firstname" => $value->firstname,
                 "slug" => \Str::slug($value->name.$value->firstname),
                 "status" => $value->status,
+                "isTeacher" => $value->isTeacher,
                 "avatar" => $value->avatar,
                 "locale" => $value->locale,
                 "description" => $value->description,

@@ -14,10 +14,10 @@ class PersonTranslation extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'persontranslations';
-    protected $with = ['courses'];
+    //protected $with = ['courses'];
     protected $dates =['begin','end'];
     protected $fillable = [
-        'name', 'firstname', 'slug', 'status', 'avatar', 'description', 'link_portfolio', 'link_github', 'linkedin', 'instagram', 'mail', 'job', 'begin', 'end'
+        'name', 'firstname', 'slug', 'status','isTeacher', 'avatar', 'description', 'link_portfolio', 'link_github', 'linkedin', 'instagram', 'mail', 'job', 'begin', 'end'
     ];
 
     public function person(): BelongsTo
@@ -34,10 +34,6 @@ class PersonTranslation extends Model
         return $this->hasMany(Testimonial::class);
     }
 
-    public function courses(): BelongsToMany
-    {
-        return $this->belongsToMany(Course::class, 'course_person', 'people_id', 'course_id');
-    }
     public function partners(): BelongsToMany
     {
         return $this->belongsToMany(Partner::class, 'partner_person', 'people_id', 'partner_id');

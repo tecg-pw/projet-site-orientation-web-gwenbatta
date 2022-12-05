@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\People;
 use App\Models\PersonTranslation;
 use App\Models\Project;
+use App\Models\ProjetTranslation;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -56,9 +57,16 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(string $locale=null, People $alumni)
+    public function show(string $locale=null, PersonTranslation $alumni)
     {
-        $projects = Project::where('person_id', $alumni->id)->orderBy('date')->take(6)->get();
+        if (in_array($locale, config('app.available_locales'))){
+            app()->setLocale($locale);
+        }
+        $alumni = People::find($alumni->people_id);
+        $alumni = $alumni->translation->where('locale',$locale)->first();
+
+        $projects = ProjetTranslation::where('person_id', $alumni->people_id)->where('locale',$locale)->orderBy('date')->take(6)->get();
+
         return view('bottin.alumni.name', compact('alumni', 'projects'));
     }
 

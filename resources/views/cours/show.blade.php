@@ -1,3 +1,4 @@
+
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section aria-labelledby="slug">
@@ -10,7 +11,7 @@
             <p class="uppercase">{{$course->bac}}e{{$course->bac===1?'r':''}} {{__('course.course_year')}}</p>
             <div class="flex flex-wrap xl:gap-x-24 xl:gap-y-3 max-w-[50%]">
             @foreach($teachers as $teacher)
-            <a class="underline text-green-700 uppercase hover:text-orange-500" href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
+            <a class="underline text-green-700 uppercase hover:text-orange-500" href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->translation->where('locale',app()->getLocale())->first()->slug}}">{{$teacher->translation->where('locale',app()->getLocale())->first()->firstname}} {{$teacher->translation->where('locale',app()->getLocale())->first()->name}}</a>
             @endforeach
             </div>
         </div>
@@ -45,8 +46,8 @@
                href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
-            @foreach($projects as $project)
-                <x-project :project="$project"></x-project>
+            @foreach($projects as $project_ref)
+                <x-project :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
             @if(count($projects) === 0)
                 <p class="xl:text-xl text-lg">{{__('people.bottin_no_project')}}</p>

@@ -13,6 +13,7 @@ return [
     'alumni_title' => 'Alumni',
     'alumni_text' => 'On this page you will find a list of all our former students with whom we keep in touch',
     'alumni_button' => 'See more alumni',
+    'teacher_button' => 'See more teacher',
     'bottin_button' => 'See more students',
     'alumni_list_title' => 'List of alumni',
     'teachalumni_status' => 'Former - Teacher',

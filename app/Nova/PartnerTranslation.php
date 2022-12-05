@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -48,7 +49,7 @@ class PartnerTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Avatar::make('Logo')->rounded(),
+            Image::make('Logo')->disk('public')->rounded(),
 
             Text::make('Name')
                 ->sortable()
@@ -96,6 +97,7 @@ class PartnerTranslation extends Resource
             Textarea::make('Description')->rows(3),
 
             HasMany::make('Offers'),
+
             BelongsTo::make('Partner','partner','App\Nova\Partner'),
         ];
     }

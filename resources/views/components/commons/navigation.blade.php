@@ -31,10 +31,9 @@
                     $segments = Request::segments();
                     array_shift($segments);
                     $url = implode('/',$segments);
-                //dd(config('app.available_locales').length)
                 @endphp
                 @foreach(config('app.available_locales') as $locale)
-                    <li class="hover:text-orange-500 border-r-2 border-white-100/40 pr-1.5">
+                    <li class="hover:text-orange-500 border-r-2 border-white-100/40 pr-1.5 last:border-r-0">
                         <a href="/{{empty($url)?$locale : $locale .'/'. $url}}">{{strtoupper($locale)}}</a>
                     </li>
                 @endforeach

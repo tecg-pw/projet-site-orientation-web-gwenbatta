@@ -146,6 +146,9 @@
         </div>
         <div class="xl:grid xl:grid-cols-2 flex flex-col gap-y-60 xl:mt-60 xl:gap-y-40 xl:gap-x-60">
             @foreach($teachers as $teacher_ref)
+{{--                @php--}}
+{{--                    dd($teacher_ref->translation[1]->locale);--}}
+{{--                @endphp--}}
                 <x-teacher_list_about :teacher_ref="$teacher_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>

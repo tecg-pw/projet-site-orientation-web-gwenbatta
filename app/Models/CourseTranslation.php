@@ -23,14 +23,8 @@ class CourseTranslation extends Model
         return $this->belongsTo(Course::class);
     }
 
-    public function person(): BelongsToMany
-    {
-        return $this->belongsToMany(People::class, 'course_person', 'course_id', 'people_id');
-    }
-    public function projects(): BelongsToMany
-    {
-        return $this->belongsToMany(Project::class,'course_projecttranslation','project_id','course_id');
-    }
+
+
     public function docs(): BelongsToMany
     {
         return $this->belongsToMany(DocTranslation::class);

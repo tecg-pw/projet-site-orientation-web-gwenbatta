@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ActualityController;
 use App\Http\Controllers\AgencyContactController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DocController;
@@ -79,12 +80,9 @@ Route::get('/{locale?}/bottin/student/{student:slug}', [StudentController::class
 Route::get('/{locale?}/cours/{course:slug}', [CourseController::class, 'show']);
 
 
-Route::get('/{locale?}/user/login', function () {
-    return view('user.login');
-});
-Route::get('/{locale?}/user/register', function () {
-    return view('user.register');
-});
+Route::get('/{locale?}/user/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware('guest');
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
 Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show'])->middleware('auth');
 Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit'])->middleware('auth');
 Route::get('/{locale?}/user/password', function () {
@@ -96,9 +94,7 @@ Route::get('/{locale?}/contact/student', [StudentContactController::class, 'inde
 Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'index']);
 
 
-Route::get('/{locale?}/forum/question', function () {
-    return view('forum.question');
-});
+Route::get('/{locale?}/forum/question', [ForumController::class, 'create']);
 Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index']);
 Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index']);
 Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index']);

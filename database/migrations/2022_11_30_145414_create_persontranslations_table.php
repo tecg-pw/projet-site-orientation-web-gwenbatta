@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('slug');
             $table->string('status');
+            $table->boolean('isTeacher')->default(false);
             $table->string('avatar')->nullable();
             $table->string('locale');
             $table->text('description')->nullable();

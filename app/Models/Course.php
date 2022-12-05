@@ -21,5 +21,12 @@ class Course extends Model
     {
         return $this->hasMany(CourseTranslation::class);
     }
-
+    public function person(): BelongsToMany
+    {
+        return $this->belongsToMany(People::class, 'course_person', 'course_id', 'people_id');
+    }
+    public function projects(): BelongsToMany
+    {
+        return $this->belongsToMany(Project::class,'course_project','course_id','project_id');
+    }
 }
