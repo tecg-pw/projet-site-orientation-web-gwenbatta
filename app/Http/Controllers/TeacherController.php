@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use App\Models\People;
 use App\Models\PersonTranslation;
-use App\Models\CourseTranslation;
-use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {

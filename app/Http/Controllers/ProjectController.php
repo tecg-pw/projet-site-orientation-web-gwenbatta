@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
-use App\Models\People;
 use App\Models\Project;
 use App\Models\ProjetTranslation;
-use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;

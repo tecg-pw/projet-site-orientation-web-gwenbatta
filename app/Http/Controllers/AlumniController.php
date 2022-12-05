@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\People;
 use App\Models\PersonTranslation;
-use App\Models\Project;
 use App\Models\ProjetTranslation;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;

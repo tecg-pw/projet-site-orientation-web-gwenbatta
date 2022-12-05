@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\CourseTranslation;
-use App\Models\People;
-use App\Models\PersonTranslation;
 
 
 class CourseController extends Controller

@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Opportunity;
 use App\Models\People;
 use App\Models\OpportunityTranslation;
-use App\Models\PersonTranslation;
 
 
 class JobController extends Controller

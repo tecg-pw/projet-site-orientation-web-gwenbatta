@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
-use App\Models\People;
-use App\Models\Recurring;
 use App\Models\Subject;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class ForumController extends Controller

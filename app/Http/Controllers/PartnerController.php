@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Offer;
 use App\Models\OfferTranslation;
 use App\Models\Partner;
 use App\Models\PartnerTranslation;

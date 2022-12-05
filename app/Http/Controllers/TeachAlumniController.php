@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\People;
 use App\Models\PersonTranslation;
-use App\Models\Project;
 use App\Models\ProjetTranslation;
-use Illuminate\Http\Request;
 
 class TeachAlumniController extends Controller
 {
