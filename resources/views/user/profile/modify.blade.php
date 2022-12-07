@@ -12,8 +12,6 @@
                     </div>
                     <div class="text-end">
                         <a href="/{{str_replace('_','-',app()->getLocale())}}/user/profile/{{$user->slug}}"
-                           class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_save')}}</a>
-                        <a href="/{{str_replace('_','-',app()->getLocale())}}/user/profile/{{$user->slug}}"
                            class="hover:text-orange-500 font-sans text-center text-green-700 ml-6 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_back')}}</a>
                     </div>
                 </div>
@@ -74,7 +72,7 @@
                         </div>
                     </fieldset>
                 </div>
-                <div class="flex-1">
+                <div class="flex-1 flex flex-col">
                     <fieldset class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="status">{{__('user.user_modify_status')}}</label>
                         <input
@@ -88,6 +86,8 @@
                             name="description" id="description" cols="30" rows="10"
                             placeholder="{{__('user.user_modify_description')}}"></textarea>
                     </fieldset>
+                    <button
+                       class="border-2 mt-4 self-end border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_save')}}</button>
                 </div>
             </form>
         </div>

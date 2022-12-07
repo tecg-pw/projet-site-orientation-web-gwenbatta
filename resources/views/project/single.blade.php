@@ -74,10 +74,10 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                         </div>
                         <div class="flex flex-row gap-3">
                             <p>{{__('project.project_make_with')}}</p>
-{{--                            @foreach($teachers as $teacher)--}}
-{{--                                <a class=" underline text-green-700 uppercase hover:text-orange-500"--}}
-{{--                                   href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>--}}
-{{--                            @endforeach--}}
+                            @foreach($teachers as $teacher_ref)
+                                <a class=" underline text-green-700 uppercase hover:text-orange-500"
+                                   href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher_ref->translation->where('locale',app()->getLocale())->first()->slug}}">{{$teacher_ref->translation->where('locale',app()->getLocale())->first()->firstname}} {{$teacher_ref->translation->where('locale',app()->getLocale())->first()->name}}</a>
+                            @endforeach
                         </div>
 
                         @endforeach

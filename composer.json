@@ -8,10 +8,9 @@
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
-        "laravel/nova": "*",
+        "laravel/nova": "~4.0",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "optimistdigital/nova-table-field": "^1.0",
         "spatie/laravel-translatable": "^6.1",
         "spatie/nova-translatable": "^3.0.4"
     },
@@ -19,6 +18,7 @@
         "barryvdh/laravel-debugbar": "^3.7",
         "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
+        "laravel/dusk": "^7.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
@@ -70,8 +70,8 @@
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "path",
-            "url": "./nova"
+            "type": "composer",
+            "url": "https://nova.laravel.com"
         }
     ]
 }

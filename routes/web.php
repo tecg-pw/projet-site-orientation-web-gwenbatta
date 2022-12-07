@@ -20,6 +20,7 @@ use App\Http\Controllers\OfferController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RegisterSessionController;
 use App\Http\Controllers\StudentContactController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeachAlumniController;
@@ -81,7 +82,9 @@ Route::get('/{locale?}/cours/{course:slug}', [CourseController::class, 'show']);
 
 
 Route::get('/{locale?}/user/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware('guest');
+Route::get('/{locale?}/user/register', [RegisterSessionController::class, 'create'])->middleware('guest');
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
+Route::post('/register', [RegisterSessionController::class, 'store'])->middleware('guest');
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
 Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show'])->middleware('auth');
 Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit'])->middleware('auth');

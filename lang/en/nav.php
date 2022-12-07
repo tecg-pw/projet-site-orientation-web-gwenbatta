@@ -4,6 +4,7 @@ return [
 
     'main_title' => 'TecWeb, the website of the HEPL\'s Web option',
     'connexion' => 'Login',
+    'logout' => 'Logout',
     'nav_title' => 'TecWeb navigation',
     'nav_avoid content' => 'Go directly to content',
     'nav_footer_nav' => 'Navigation',
@@ -17,7 +18,7 @@ return [
         "project" => 'Projects',
         "contact" => 'Contact',
         "about" => 'About',
-        "actualities" => 'Actualities',
+        "actualities" => 'News',
         "technical" => 'Techniques',
         "forum" => 'Forum',
         "people" => 'People',

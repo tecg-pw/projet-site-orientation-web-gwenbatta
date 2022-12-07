@@ -2,7 +2,9 @@
 
 return [
 
+    'main_title' => 'TecWeb, le site de l\'option web de la HEPL' ,
     'connexion' => 'Connexion',
+    'logout'=>'Déconnexion',
     'nav_title' => 'Navigation de TecWeb',
     'nav_footer_nav' => 'Navigation',
     'nav_footer_socials' => 'Réseaux sociaux',

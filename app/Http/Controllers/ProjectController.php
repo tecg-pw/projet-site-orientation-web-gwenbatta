@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\People;
 use App\Models\Project;
 use App\Models\ProjetTranslation;
 use Illuminate\Contracts\Foundation\Application;
@@ -62,16 +64,18 @@ class ProjectController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+        $project = Project::find($project->project_id);
+        $project = $project->translation->where('locale',$locale)->first();
+
         $projects = ProjetTranslation::where('person_id', $project->person_id)->where('locale',$locale)->orderBy('date')->take(6)->get();
 
-//        foreach ($project->course as $classe){
-//        return $classe->translation[0]->person[0]->translation->where('locale', $locale)->first()->firstname;
-//        $teachers = Course::find($classe->translation->id)->person()->get();
-//    }
+        foreach ($project->course as $classe){
+        $teachers = Course::find($classe->translation->where('locale',$locale)->first()->course_id)->person()->get();
+    }
 
+        //return $teachers->translation;
 
-
-        return view('project.single', compact('project', 'projects'));
+        return view('project.single', compact('project', 'projects','teachers'));
     }
 
     /**

@@ -127,5 +127,9 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('add_foreign_keys_columns');
+
+        Schema::table('projecttranslations',function (Blueprint $table){
+           $table->dropConstrainedForeignId('person_id');
+        });
     }
 };

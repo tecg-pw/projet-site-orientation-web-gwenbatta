@@ -60,7 +60,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user, string $locale=null)
+    public function edit(string $locale=null, User $user)
     {
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
