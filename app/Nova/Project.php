@@ -49,10 +49,9 @@ class Project extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            HasMany::make('ProjetTranslations'),
+            HasMany::make('ProjetTranslations','translation'),
 
-            BelongsTo::make('People', 'person', 'App\Nova\Person')
-                ->onlyOnDetail(),
+
         ];
     }
 
