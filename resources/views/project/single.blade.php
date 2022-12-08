@@ -64,8 +64,8 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                 <p class="text-lg xl:text-xl xl:max-w-[85%] flex flex-col gap-8 leading-8">
                     {{$project->description}}
                 </p>
-                <div class="mt-8">
-                    <div class="flex flex-col xl:gap-4 text-lg">
+                <div class="mt-6">
+                    <div class="flex flex-col xl:gap-2 text-lg">
                         <div class="flex gap-3">
                             <p>{{__('project.project_make_course')}}</p>
                             @foreach($project->course as $classe)
@@ -79,10 +79,16 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                                    href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher_ref->translation->where('locale',app()->getLocale())->first()->slug}}">{{$teacher_ref->translation->where('locale',app()->getLocale())->first()->firstname}} {{$teacher_ref->translation->where('locale',app()->getLocale())->first()->name}}</a>
                             @endforeach
                         </div>
-
+                        <div class="mb-4">
+                            <p class="flex gap-3"> {{__('project.project_available')}}
+                                @foreach($locales as $locale)
+                                    <a href="/{{$locale}}/project/{{$project->slug}}" class="underline uppercase text-green-700">{{$locale}}</a>
+                                @endforeach
+                            </p>
+                        </div>
                         @endforeach
                         </div>
-                        <div class="flex flex-col xl:flex-row xl:gap-32 mt-8 xl:items-center">
+                        <div class="flex flex-col xl:flex-row xl:gap-32 mt-4 xl:items-center">
                             <a href="{{$project->person->link_portfolio}}"
                                class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('project.project_portfolio')}}</a>
                             <a class="group hover:text-orange-500 flex font-sans text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"

@@ -61,10 +61,15 @@ class ProjectController extends Controller
      */
     public function show(string $locale=null, ProjetTranslation $project)
     {
+        $locales = [];
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
         $project = Project::find($project->project_id);
+        foreach ($project->translation as $projet_ref){
+            $locales[] = $projet_ref->locale;
+        }
+
         $project = $project->translation->where('locale',$locale)->first();
 
         $projects = ProjetTranslation::where('person_id', $project->person_id)->where('locale',$locale)->orderBy('date')->take(6)->get();
@@ -75,7 +80,7 @@ class ProjectController extends Controller
 
         //return $teachers->translation;
 
-        return view('project.single', compact('project', 'projects','teachers'));
+        return view('project.single', compact('project', 'projects','teachers','locales'));
     }
 
     /**

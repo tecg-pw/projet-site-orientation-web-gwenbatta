@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class Actuality extends Resource
 {
@@ -47,7 +48,8 @@ class Actuality extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            HasMany::make('ActualityTranslations','translation','App\Nova\ActualityTranslation')
+            Translatable::make([HasMany::make('ActualityTranslations','translation','App\Nova\ActualityTranslation')]),
+
         ];
     }
 

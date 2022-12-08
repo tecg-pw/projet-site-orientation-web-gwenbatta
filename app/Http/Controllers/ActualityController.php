@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Actuality;
 use App\Models\ActualityTranslation;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ActualityController extends Controller
@@ -51,12 +52,20 @@ class ActualityController extends Controller
      */
     public function show(string $locale=null, ActualityTranslation $new)
     {
+        $locales = [];
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+
+        $new = Actuality::find($new->actuality_id);
+
+        foreach ($new->translation as $new_ref){
+            $locales[] = $new_ref;
+        }
+        $new = $new->translation->where('locale',$locale)->first();
         //$new =  ActualityTranslation::where('locale',$locale)->get();
 
-        return view('news.single', compact('new'));
+        return view('news.single', compact('new','locales'));
     }
 
     /**

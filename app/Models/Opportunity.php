@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Opportunity extends Model
 {
     use HasFactory, SoftDeletes;
-
+    protected $with = ["translation"];
     protected $fillable = [
         'id'
     ];

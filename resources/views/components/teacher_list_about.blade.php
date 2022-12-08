@@ -2,10 +2,6 @@
     /** @var \Illuminate\Database\Eloquent\Model */
     'teacher_ref'
 ])
-{{--@php--}}
-{{--    //$teacher_ref = $teacher_ref->where('isTeacher', true);--}}
-{{--    dd($teacher_ref->isTeacher);--}}
-{{--@endphp--}}
 @if($teacher_ref->isTeacher)
     <article {{ $attributes->class(['even:mt-36 relative group']) }} aria-labelledby="{{$teacher_ref->slug}}">
         <img class="rounded-lg absolute -z-10 -top-[70%] group-even:-top-[120%]" src="{{$teacher_ref->avatar}}"

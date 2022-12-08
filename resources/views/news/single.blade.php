@@ -19,9 +19,16 @@
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-xl font-medium mb-5">{{__('actu.actu_single_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
-                        <p class="text-lg leading-10 mb-10 flex flex-col gap-10">
+                        <p class="text-lg leading-10 flex flex-col gap-10">
                             {{$new->description}}
                         </p>
+                        <div class="mb-10">
+                            <p class="flex gap-3 text-lg"> {{__('project.project_available')}}
+                                @foreach($locales as $locale)
+                                    <a href="/{{$locale->locale}}/news/{{$locale->slug}}" class="underline uppercase text-green-700">{{$locale->locale}}</a>
+                                @endforeach
+                            </p>
+                        </div>
                         <a class="hover:text-orange-500 underline text-xl text-green-700 font-sans font-semibold "
                            href="{{$new->link}}">{{__('actu.actu_single_more')}}</a>
                     </div>

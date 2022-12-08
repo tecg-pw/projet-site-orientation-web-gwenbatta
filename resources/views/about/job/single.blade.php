@@ -2,10 +2,10 @@
 <main id="content">
     <section aria-labelledby="dev-front">
         <div class="flex flex-col px-10 xl:px-36 xl:flex-row justify-between mt-20">
-            <h2 class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
+            <h2 class="xl:text-4xl flex-1 max-w-[50%] xl:leading-12 text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
                 id="dev-front" aria-level="2" role="heading">{{$job->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/about#jobs">{{__('job.job_back')}}</a>
+               href="/{{app()->getLocale()}}/about#jobs">{{__('job.job_back')}}</a>
         </div>
         <div class="xl:mt-20 mt-10 px-10 xl:px-36 xl:grid xl:grid-cols-10 xl:items-center mb-36 xl:gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
@@ -14,6 +14,13 @@
                         role="heading">{{__('job.job_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
                         <p class="text-lg leading-8 xl:leading-10 xl:text-xl ">{{$job->description}}</p>
+                    </div>
+                    <div class="mt-8">
+                        <p class="flex gap-3 text-lg"> {{__('project.project_available')}}
+                            @foreach($locales as $locale)
+                                <a href="/{{$locale->locale}}/about/job/{{$locale->slug}}" class="underline uppercase text-green-700">{{$locale->locale}}</a>
+                            @endforeach
+                        </p>
                     </div>
                 </section>
             </div>
@@ -38,16 +45,16 @@
             <h2 class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20" id="other" aria-level="2"
                 role="heading">{{__('job.job_other')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/about#jobs">{{__('job.job_other_see')}}</a>
+               href="/{{app()->getLocale()}}/about#jobs">{{__('job.job_other_see')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
-            @foreach($jobs as $job)
-                <article aria-labelledby="{{$job->slug}}" class="bg-white-100 py-6 px-8 rounded-3xl relative">
-                    <h3 id="{{$job->slug}}" aria-level="3" role="heading"
-                        class="font-medium text-xl xl:text-2xl mb-3 font-medium">{{$job->name}}</h3>
-                    <p class="xl:text-lg">{{$job->excerpt}}</p>
+            @foreach($jobs as $job_ref)
+                <article aria-labelledby="{{$job_ref->translation->where('locale',app()->getLocale())->first()->slug}}" class="bg-white-100 py-6 px-8 rounded-3xl relative">
+                    <h3 id="{{$job_ref->translation->where('locale',app()->getLocale())->first()->slug}}" aria-level="3" role="heading"
+                        class="font-medium text-xl xl:text-2xl mb-3 font-medium">{{$job_ref->translation->where('locale',app()->getLocale())->first()->name}}</h3>
+                    <p class="xl:text-lg">{{$job_ref->translation->where('locale',app()->getLocale())->first()->excerpt}}</p>
                     <a class="linkcard"
-                       href="/{{str_replace('_','-',app()->getLocale())}}/about/job/{{$job->slug}}">{{__('about.job_more'). $job->slug}}</a>
+                       href="/{{app()->getLocale()}}/about/job/{{$job_ref->translation->where('locale',app()->getLocale())->first()->slug}}">{{__('about.job_more'). $job_ref->translation->where('locale',app()->getLocale())->first()->slug}}</a>
                 </article>
             @endforeach
         </div>
@@ -58,40 +65,12 @@
                 aria-level="2"
                 role="heading">{{__('about.job_alumni_title')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni">{{__('about.job_alumni_link')}}</a>
+               href="/{{app()->getLocale()}}/bottin/alumni">{{__('about.job_alumni_link')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
-{{--            @foreach($alumnis as $alumni)--}}
-{{--                <article--}}
-{{--                    class="hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl"--}}
-{{--                    aria-labelledby="{{$alumni->slug}}">--}}
-{{--                    <div class="flex flex-1 items-center">--}}
-{{--                        <div class="flex-1 order-2 ml-4">--}}
-{{--                            <h4 id="{{$alumni->slug}}" role="heading" aria-level="4"--}}
-{{--                                class="text-xl xl:text-2xl">{{$alumni->firstname}} {{$alumni->name}}</h4>--}}
-{{--                            <div class="mt-1 flex justify-between">--}}
-{{--                                <div class="flex flex-col xl:flex-row xl:gap-4">--}}
-{{--                                    <p class="uppercase xl:text-lg">{{$alumni->status}}</p>--}}
-{{--                                    <p class="uppercase xl:text-lg">{{$alumni->begin->format('Y')}}-{{$alumni->end->format('Y')}}</p>--}}
-{{--                                </div>--}}
-{{--                                <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                     width="25"--}}
-{{--                                     viewBox="0 0 32 27.417">--}}
-{{--                                    <path id="e6c07a72bd494f72e4a4d962e39f725c"--}}
-{{--                                          d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"--}}
-{{--                                          transform="translate(-19 -8.001)" fill="#4e6458"/>--}}
-{{--                                </svg>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <img class="order-1 rounded-full " width="98" src="{{$alumni->avatar}}" alt="avatar">--}}
-{{--                    </div>--}}
-{{--                    <a class="linkcard underline text-green-700 font-sans font-semibold self-end"--}}
-{{--                       href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni/name">{{__('En savoir plus')}}</a>--}}
-{{--                </article>--}}
-{{--            @endforeach--}}
-{{--            @if(count($alumnis) === 0)--}}
-{{--                <p class="xl:text-xl text-lg">{{__('job.job_no_alumni')}}</p>--}}
-{{--            @endif--}}
+            @foreach($alumnis as $alumni_ref)
+                <x-alumni_job_article :job="$job" :alumni_ref="$alumni_ref->translation->where('locale',app()->getLocale())->first()"/>
+            @endforeach
         </div>
     </article>
 </main>
