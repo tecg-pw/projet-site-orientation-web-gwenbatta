@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('glossarytranslations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->string('locale');
-            $table->text('definition');
+            $table->json('name');
+            $table->json('slug');
+            $table->json('locale');
+            $table->json('definition');
             $table->timestamps();
             $table->softDeletes();
         });

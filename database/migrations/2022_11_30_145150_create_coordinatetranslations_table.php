@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('coordinatetranslations', function (Blueprint $table) {
             $table->id();
-            $table->string('locale');
-            $table->string('organization');
-            $table->string('employee_name');
-            $table->string('employee_firstname');
-            $table->string('phone');
-            $table->string('mail');
-            $table->string('job');
+            $table->json('locale');
+            $table->json('organization');
+            $table->json('employee_name');
+            $table->json('employee_firstname');
+            $table->json('phone');
+            $table->json('mail');
+            $table->json('job');
             $table->timestamps();
             $table->softDeletes();
         });

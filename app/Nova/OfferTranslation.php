@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use OptimistDigital\NovaTableField\Table;
+use Spatie\NovaTranslatable\Translatable;
 
 class OfferTranslation extends Resource
 {
@@ -47,23 +48,29 @@ class OfferTranslation extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name')
+
+            Translatable::make([
+                Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->hideFromIndex()
-                ->rules('required', 'max:255'),
+                Text::make('Slug')
+                    ->hideFromIndex()
+                    ->rules('required', 'max:255'),
+
+                Text::make('Languages')->hideFromIndex(),
+
+                Text::make('Softwares')->hideFromIndex(),
+
+                Text::make('Others')->hideFromIndex(),
+
+                Textarea::make('Description')->rows(3)->rules('required'),
+                ]),
+
 
             File::make('PDF')->hideFromIndex(),
 
             Number::make('Partner_id'),
-
-            Text::make('Languages')->hideFromIndex(),
-            Text::make('Softwares')->hideFromIndex(),
-            Text::make('Others')->hideFromIndex(),
-
-            Textarea::make('Description')->rows(3)->rules('required'),
 
             BelongsTo::make('Partner')->hideFromIndex(),
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52262b883ca3b0ae4c0e9b0a0a38d2d0",
+    "content-hash": "751744f489356b1bb2a2647ac1210793",
     "packages": [
         {
             "name": "brick/math",
@@ -2656,6 +2656,56 @@
             "time": "2022-11-12T15:38:23+00:00"
         },
         {
+            "name": "nova-kit/nova-packages-tool",
+            "version": "v1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nova-kit/nova-packages-tool.git",
+                "reference": "c6deaf054a94d36c20b9472979c5dc94415f1283"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nova-kit/nova-packages-tool/zipball/c6deaf054a94d36c20b9472979c5dc94415f1283",
+                "reference": "c6deaf054a94d36c20b9472979c5dc94415f1283",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": ">=4.19.0 <4.20.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.24 || ^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "NovaKit\\NovaPackagesTool\\LaravelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NovaKit\\NovaPackagesTool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com"
+                }
+            ],
+            "description": "Tool for Laravel Nova Packages Development",
+            "support": {
+                "source": "https://github.com/nova-kit/nova-packages-tool/tree/v1.6.1"
+            },
+            "time": "2022-11-22T21:40:15+00:00"
+        },
+        {
             "name": "nunomaduro/termwind",
             "version": "v1.14.2",
             "source": {
@@ -2829,6 +2879,69 @@
                 }
             ],
             "time": "2022-03-31T06:15:15+00:00"
+        },
+        {
+            "name": "outl1ne/nova-translatable",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/outl1ne/nova-translatable.git",
+                "reference": "0dd45b7e1e1909d56d4bda3d8c96d17bcff5c124"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/outl1ne/nova-translatable/zipball/0dd45b7e1e1909d56d4bda3d8c96d17bcff5c124",
+                "reference": "0dd45b7e1e1909d56d4bda3d8c96d17bcff5c124",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.12",
+                "nova-kit/nova-packages-tool": "^1.0",
+                "php": ">=8.0",
+                "spatie/laravel-translatable": "^4.0 || ^5.0 || ^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Outl1ne\\NovaTranslatable\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Outl1ne\\NovaTranslatable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tarvo Reinpalu",
+                    "email": "tarvoreinpalu@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Outl1ne",
+                    "email": "info@outl1ne.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A laravel-translatable extension for Laravel Nova.",
+            "keywords": [
+                "i18n",
+                "laravel",
+                "nova",
+                "translatable",
+                "translate"
+            ],
+            "support": {
+                "issues": "https://github.com/outl1ne/nova-translatable/issues",
+                "source": "https://github.com/outl1ne/nova-translatable/tree/2.1.4"
+            },
+            "time": "2022-11-03T05:48:18+00:00"
         },
         {
             "name": "phpoption/phpoption",

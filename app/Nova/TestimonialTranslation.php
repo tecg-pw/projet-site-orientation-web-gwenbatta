@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class TestimonialTranslation extends Resource
 {
@@ -45,7 +46,9 @@ class TestimonialTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Textarea::make('Description')->rows(3)->showOnIndex(),
+            Translatable::make([
+                Textarea::make('Description')->rows(3)->showOnIndex(),
+            ]),
 
             Number::make('Person_id'),
 

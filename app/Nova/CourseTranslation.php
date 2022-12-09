@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class CourseTranslation extends Resource
 {
@@ -45,19 +46,21 @@ class CourseTranslation extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
+
+                Text::make('Slug')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
+                Textarea::make('Description')->rows(3)->rules('required'),
+            ]),
 
             Number::make('hours'),
 
             Number::make('bac'),
-
-            Textarea::make('Description')->rows(3)->rules('required'),
 
             BelongsTo::make('Course', 'course', 'App\Nova\Course')
         ];

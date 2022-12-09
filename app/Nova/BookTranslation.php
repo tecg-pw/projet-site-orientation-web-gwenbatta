@@ -44,20 +44,21 @@ class BookTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-//            \Spatie\NovaTranslatable\Translatable::make(),
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Slug')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Textarea::make('Excerpt')->rows(3)->rules('required'),
+                Textarea::make('Excerpt')->rows(3)->rules('required'),
 
-            Textarea::make('Description')->rows(3)->rules('required'),
+                Textarea::make('Description')->rows(3)->rules('required'),
+            ]),
 
             BelongsTo::make('Book', 'book', 'App\Nova\Book')
 

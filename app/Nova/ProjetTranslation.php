@@ -10,7 +10,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class ProjetTranslation extends Resource
 {
@@ -48,29 +48,31 @@ class ProjetTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Title')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            Translatable::make([
+                Text::make('Title')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->hideFromIndex()
-                ->rules('required', 'max:255'),
+                Text::make('Slug')
+                    ->hideFromIndex()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Link_Project')
-                ->hideFromIndex()
-                ->rules('max:255'),
+                Text::make('Link_Project')
+                    ->hideFromIndex()
+                    ->rules('max:255'),
 
-            Text::make('Link_Github')
-                ->hideFromIndex()
-                ->rules('max:255'),
+                Text::make('Link_Github')
+                    ->hideFromIndex()
+                    ->rules('max:255'),
+
+                Textarea::make('Description')->rows(3),
+            ]),
 
             Image::make('Main_pictures')->hideFromIndex(),
 
             DateTime::make('Date'),
 
             Number::make('Person_id'),
-
-            Textarea::make('Description')->rows(3),
 
             BelongsTo::make('People', 'person', 'App\Nova\Person')
                 ->onlyOnDetail(),

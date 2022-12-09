@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class DocTranslation extends Resource
 {
@@ -45,19 +46,21 @@ class DocTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Slug')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Textarea::make('Excerpt')->rows(3)->rules('required'),
+                Textarea::make('Excerpt')->rows(3)->rules('required'),
 
-            Text::make('Link')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Link')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
+            ]),
 
             BelongsTo::make('Doc', 'doc', 'App\Nova\Doc')
         ];

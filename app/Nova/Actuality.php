@@ -3,13 +3,8 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Spatie\NovaTranslatable\Translatable;
 
 class Actuality extends Resource
@@ -48,7 +43,7 @@ class Actuality extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Translatable::make([HasMany::make('ActualityTranslations','translation','App\Nova\ActualityTranslation')]),
+            HasMany::make('ActualityTranslations','translation','App\Nova\ActualityTranslation'),
 
         ];
     }

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('testimonialtranslations', function (Blueprint $table) {
             $table->id();
-            $table->string('locale');
-            $table->text('description');
+            $table->json('locale');
+            $table->json('description');
             $table->timestamps();
             $table->softDeletes();
         });

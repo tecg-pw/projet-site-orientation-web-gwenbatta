@@ -10,9 +10,13 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class ActualityTranslation extends Resource
 {
+    // in any service provider
+
+
     /**
      * The model the resource corresponds to.
      *
@@ -45,31 +49,34 @@ class ActualityTranslation extends Resource
     public function fields(Request $request)
     {
         return [
+
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Slug')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Textarea::make('Excerpt')->rows(3)->rules('required'),
+                Textarea::make('Excerpt')->rows(3)->rules('required'),
 
-            Textarea::make('Description')->rows(3)->rules('required'),
+                Textarea::make('Description')->rows(3)->rules('required'),
 
-            Text::make('Lieu')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Lieu')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Link')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Link')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
+
+                DateTime::make('Date'),
+            ])->locales(['fr', 'en']),
 
             Image::make('Main_pictures')->onlyOnForms(),
-
-            DateTime::make('Date'),
 
             BelongsTo::make('Actuality', 'actuality', 'App\Nova\Actuality')
         ];

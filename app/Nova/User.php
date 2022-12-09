@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class User extends Resource
 {
@@ -48,24 +49,29 @@ class User extends Resource
 
             Gravatar::make()->maxWidth(50),
 
-            Text::make('Name')
+            Translatable::make([
+
+                Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Firstname')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Firstname')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+                Text::make('Email')
+                    ->sortable()
+                    ->rules('required', 'email', 'max:254')
+                    ->creationRules('unique:users,email')
+                    ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', Rules\Password::defaults())
-                ->updateRules('nullable', Rules\Password::defaults()),
+                Password::make('Password')
+                    ->onlyOnForms()
+                    ->creationRules('required', Rules\Password::defaults())
+                    ->updateRules('nullable', Rules\Password::defaults()),
+                ]),
+
+
         ];
     }
 

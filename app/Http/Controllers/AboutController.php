@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Opportunity;
 use App\Models\People;
 use Illuminate\Http\Request;
@@ -19,13 +20,12 @@ class AboutController extends Controller
             app()->setLocale($locale);
         }
         $jobs = Opportunity::all();
-        return 'test';
-        //$teachers = People::where('status', 'professeur')->orWhere('status', 'teachalumni')->orWhere('status', 'teacher')->get();
         $teachers = People::all();
+        $courses = Course::all();
 //        $courses_bac1 = Course::where('bac', 1)->get();
 //        $courses_bac2 = Course::where('bac', 2)->get();
 //        $courses_bac3 = Course::where('bac', 3)->get();
-        return view('about', compact( 'jobs','teachers'));
+        return view('about', compact( 'jobs','teachers','courses'));
     }
 
     /**

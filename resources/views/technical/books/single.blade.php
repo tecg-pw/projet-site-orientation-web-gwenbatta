@@ -1,19 +1,22 @@
+
+
+
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section aria-labelledby="slug">
         <div class="flex xl:flex-row flex-col xl:px-36 px-10 justify-between mt-20 mb-8">
             <h2 id="slug" aria-level="2" role="heading"
-                class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$book->name}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl xl:text-end font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/technical/docandtool/doc#books">{{__('technicals.book_single_back')}}</a>
+                class="xl:text-4xl flex-1 text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$book->name}}</h2>
+            <a class="hover:text-orange-500 leading-12 text-green-700 underline font-sans xl:text-2xl xl:text-end font-semibold"
+               href="/{{app()->getLocale()}}/technical/docandtool/doc#books">{{__('technicals.book_single_back')}}</a>
         </div>
         <div class="xl:px-36 px-10 flex text-center gap-10 xl:gap-20 text-xl">
             @foreach($book->courses as $classe)
                 <a class=" underline text-green-700 uppercase hover:text-orange-500"
-                   href="/{{str_replace('_','-',app()->getLocale())}}/cours/{{$classe->slug}}">{{$classe->name}}</a>
+                   href="/{{app()->getLocale()}}/cours/{{$classe->translation->where('locale',app()->getLocale())->first()->slug}}">{{$classe->translation->where('locale',app()->getLocale())->first()->name}}</a>
                 @foreach($teachers as $teacher)
                     <a class=" underline text-green-700 uppercase hover:text-orange-500"
-                       href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$teacher->slug}}">{{$teacher->firstname}} {{$teacher->name}}</a>
+                       href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->translation->where('locale',app()->getLocale())->first()->slug}}">{{$teacher->translation->where('locale',app()->getLocale())->first()->firstname}} {{$teacher->translation->where('locale',app()->getLocale())->first()->name}}</a>
                 @endforeach
             @endforeach
 
@@ -25,6 +28,13 @@
                         class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('technicals.book_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
                         <p class="text-lg leading-8 xl:leading-10 xl:text-xl">{{$book->description}}</p>
+                    </div>
+                    <div class="mt-8 text-lg">
+                        <p class="flex gap-3"> {{__('project.project_available')}}
+                            @foreach($locales as $locale)
+                                <a href="/{{$locale->locale}}/technical/books/{{$locale->slug}}" class="underline uppercase text-green-700">{{$locale->locale}}</a>
+                            @endforeach
+                        </p>
                     </div>
                 </section>
             </div>

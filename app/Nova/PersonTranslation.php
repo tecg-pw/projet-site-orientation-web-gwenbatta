@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class PersonTranslation extends Resource
 {
@@ -50,59 +51,60 @@ class PersonTranslation extends Resource
 
             Avatar::make('Avatar')->rounded(),
 
+            Translatable::make([
+                Text::make('Name')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Firstname')
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Firstname')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Slug')
+                    ->hideFromIndex()
+                    ->sortable()
+                    ->rules('required', 'max:255'),
 
-            Text::make('Slug')
-                ->hideFromIndex()
-                ->sortable()
-                ->rules('required', 'max:255'),
+                Text::make('Mail')
+                    ->sortable()
+                    ->rules('required', 'email', 'max:254')
+                    ->creationRules('unique:users,email')
+                    ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Text::make('Mail')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+                Text::make('Status')
+                    ->sortable()
+                    ->rules('required','max:255'),
 
-            Text::make('Status')
-                ->sortable()
-                ->rules('required','max:255'),
+                Textarea::make('Description')->rows(3),
 
-            Textarea::make('Description')->rows(3),
+                Text::make('Link_Portfolio')
+                    ->hideFromIndex()
+                    ->rules('max:255'),
 
-            Text::make('Link_Portfolio')
-                ->hideFromIndex()
-                ->rules('max:255'),
+                Text::make('Link_Github')
+                    ->hideFromIndex()
+                    ->rules('max:255'),
 
-            Text::make('Link_Github')
-                ->hideFromIndex()
-                ->rules('max:255'),
+                Text::make('Linkedin')
+                    ->hideFromIndex()
+                    ->rules('max:255'),
 
-            Text::make('Linkedin')
-                ->hideFromIndex()
-                ->rules('max:255'),
+                Text::make('Instagram')
+                    ->hideFromIndex()
+                    ->rules('max:255'),
 
-            Text::make('Instagram')
-                ->hideFromIndex()
-                ->rules('max:255'),
+                Text::make('Github')
+                    ->hideFromIndex()
+                    ->rules( 'max:255'),
 
-            Text::make('Github')
-                ->hideFromIndex()
-                ->rules( 'max:255'),
+                Text::make('Job')
+                    ->hideFromIndex()
+                    ->rules( 'max:255'),
 
-            Text::make('Job')
-                ->hideFromIndex()
-                ->rules( 'max:255'),
-
-            Text::make('Job_slug')
-                ->hideFromIndex()
-                ->rules( 'max:255'),
+                Text::make('Job_slug')
+                    ->hideFromIndex()
+                    ->rules( 'max:255'),
+            ]),
 
             DateTime::make('Begin')->rules('required'),
 

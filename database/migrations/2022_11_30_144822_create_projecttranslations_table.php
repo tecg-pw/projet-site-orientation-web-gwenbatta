@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('projecttranslations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('locale');
-            $table->string('slug');
-            $table->text('description');
-            $table->string('link_project');
-            $table->string('link_github');
+            $table->json('title');
+            $table->json('locale');
+            $table->json('slug');
+            $table->json('description');
+            $table->json('link_project');
+            $table->json('link_github');
             $table->timestamp('date')->nullable()->index();
-            $table->string('main_picture')->nullable();
+            $table->json('main_picture')->nullable();
             $table->json('gallery')->nullable();
             $table->timestamps();
             $table->softDeletes();

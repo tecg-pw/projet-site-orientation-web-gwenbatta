@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('opportunitytranslations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->string('locale');
-            $table->text('excerpt');
-            $table->text('description');
+            $table->json('name');
+            $table->json('slug');
+            $table->json('locale');
+            $table->json('excerpt');
+            $table->json('description');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,21 +15,21 @@ return new class extends Migration
     {
         Schema::create('persontranslations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('firstname');
-            $table->string('slug');
-            $table->string('status');
+            $table->json('name');
+            $table->json('firstname');
+            $table->json('slug');
+            $table->json('status');
             $table->boolean('isTeacher')->default(false);
-            $table->string('avatar')->nullable();
-            $table->string('locale');
-            $table->text('description')->nullable();
-            $table->string('link_portfolio')->nullable();
-            $table->string('link_github');
-            $table->string('linkedin')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('mail');
-            $table->string('job')->nullable();
-            $table->string('job_slug')->nullable();
+            $table->json('avatar')->nullable();
+            $table->json('locale');
+            $table->json('description')->nullable();
+            $table->json('link_portfolio')->nullable();
+            $table->json('link_github');
+            $table->json('linkedin')->nullable();
+            $table->json('instagram')->nullable();
+            $table->json('mail');
+            $table->json('job')->nullable();
+            $table->json('job_slug')->nullable();
             $table->timestamps();
             $table->timestamp('begin');
             $table->timestamp('end')->nullable();

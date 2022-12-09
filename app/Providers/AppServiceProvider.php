@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // in any service provider
+
+        \Spatie\NovaTranslatable\Translatable::defaultLocales(config('app.available_locales'));
     }
 }
