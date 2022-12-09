@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -11,7 +12,7 @@ class Project extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $with = ["translation"];
+    protected $with = ["translation","course"];
     protected $fillable = [
         'id'
     ];
@@ -21,6 +22,10 @@ class Project extends Model
         return $this->hasMany(ProjetTranslation::class);
     }
 
+    public function course(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class,'course_project','project_id', 'course_id');
+    }
 
 
 }

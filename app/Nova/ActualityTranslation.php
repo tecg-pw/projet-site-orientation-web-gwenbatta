@@ -8,18 +8,15 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
-use Spatie\NovaTranslatable\Translatable;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ActualityTranslation extends Resource
 {
-    // in any service provider
-
-
     /**
      * The model the resource corresponds to.
      *
-     * @var string
+     * @var class-string<\App\Models\ActualityTranslation>
      */
     public static $model = \App\Models\ActualityTranslation::class;
 
@@ -42,43 +39,37 @@ class ActualityTranslation extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         return [
+            ID::make()->sortable(),
 
-            ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Name')
+                ->sortable()
+                ->rules('required', 'max:255'),
 
-                Text::make(__('Name'))
-                    ->sortable()
-                    ->rules('required', 'max:255'),
+            Text::make('Slug')
+                ->sortable()
+                ->rules('required', 'max:255'),
 
-                Text::make('Slug')
-                    ->sortable()
-                    ->rules('required', 'max:255'),
+            Textarea::make('Excerpt')->rows(3)->rules('required'),
 
-                Text::make('Lieu')
-                    ->sortable()
-                    ->rules('required', 'max:255'),
+            Textarea::make('Description')->rows(3)->rules('required'),
 
-            Text::make('Locale')
-                    ->sortable()
-                    ->rules('required', 'max:255'),
+            Text::make('Lieu')
+                ->sortable()
+                ->rules('required', 'max:255'),
 
-                Text::make('Link')
-                    ->sortable()
-                    ->rules('required', 'max:255'),
-
-                Trix::make('Excerpt')->rules('required'),
-
-                Trix::make('Description')->rules('required'),
-
-
-            DateTime::make('Date'),
+            Text::make('Link')
+                ->sortable()
+                ->rules('required', 'max:255'),
 
             Image::make('Main_pictures')->onlyOnForms(),
+
+            DateTime::make('Date'),
 
             BelongsTo::make('Actuality', 'actuality', 'App\Nova\Actuality')
         ];
@@ -87,10 +78,10 @@ class ActualityTranslation extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -98,10 +89,10 @@ class ActualityTranslation extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -109,10 +100,10 @@ class ActualityTranslation extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -120,10 +111,10 @@ class ActualityTranslation extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }

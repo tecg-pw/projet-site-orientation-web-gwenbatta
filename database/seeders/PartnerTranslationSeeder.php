@@ -22,20 +22,20 @@ class PartnerTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             PartnerTranslation::create([
-                "name" => json_encode($value->name),
-                "slug" => json_encode(\Str::slug($value->name.'_'.$value->locale)),
-                "mail" => json_encode($value->mail),
-                "logo" => json_encode($value->logo),
-                "adresse" => json_encode($value->adresse),
-                "locality" => json_encode($value->locality),
-                "locality_number" => json_encode($value->locality_number),
-                "description" => json_encode($value->description),
-                "site_link" => json_encode($value->site_link),
-                "link_facebook" => json_encode($value->link_facebook),
-                "link_linkedin" => json_encode($value->link_linkedin),
-                "link_instagram" => json_encode($value->link_instagram),
+                "name" => $value->name,
+                "slug" => \Str::slug($value->name.'_'.$value->locale),
+                "mail" => $value->mail,
+                "logo" => $value->logo,
+                "adresse" => $value->adresse,
+                "locality" => $value->locality,
+                "locality_number" => $value->locality_number,
+                "description" => $value->description,
+                "site_link" => $value->site_link,
+                "link_facebook" => $value->link_facebook,
+                "link_linkedin" => $value->link_linkedin,
+                "link_instagram" => $value->link_instagram,
                 "members" => json_encode($value->members),
-                "locale" => json_encode($value->locale),
+                "locale" => $value->locale,
                 "partner_id" => $value->partner_id,
             ]);
         }

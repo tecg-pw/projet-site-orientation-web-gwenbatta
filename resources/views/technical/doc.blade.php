@@ -26,7 +26,7 @@
             class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-20">{{__('docandtool.book_title')}}</h2>
         <div class="mt-12 xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($books as $book_ref)
-                <x-book_single :book_ref="$book_ref->translation->where('locale',app()->getLocale())->first()"/>
+                <x-book_single :book_ref="$book_ref"/>
             @endforeach
         </div>
     </article>

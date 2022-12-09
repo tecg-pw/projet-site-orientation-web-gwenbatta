@@ -8,7 +8,6 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Spatie\NovaTranslatable\Translatable;
 
 class RecurringTranslation extends Resource
 {
@@ -46,19 +45,15 @@ class RecurringTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Translatable::make([
+            Text::make('Name')
+                ->sortable()
+                ->rules('required', 'max:255'),
 
-                Text::make('Name')
-                    ->sortable()
-                    ->rules('required', 'max:255'),
+            Text::make('Slug')
+                ->sortable()
+                ->rules('required', 'max:255'),
 
-                Text::make('Slug')
-                    ->sortable()
-                    ->rules('required', 'max:255'),
-
-                Textarea::make('Description')->rows(3)->rules('required'),
-
-            ]),
+            Textarea::make('Description')->rows(3)->rules('required'),
 
             BelongsTo::make('Recurring','recurring','App\Nova\Recurring'),
         ];

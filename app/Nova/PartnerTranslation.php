@@ -12,7 +12,6 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Spatie\NovaTranslatable\Translatable;
 
 class PartnerTranslation extends Resource
 {
@@ -52,51 +51,50 @@ class PartnerTranslation extends Resource
 
             Image::make('Logo')->disk('public')->rounded(),
 
-            Translatable::make([
-                Text::make('Name')
-                    ->sortable()
-                    ->rules('required', 'max:255'),
+            Text::make('Name')
+                ->sortable()
+                ->rules('required', 'max:255'),
 
-                Text::make('Slug')
-                    ->hideFromIndex()
-                    ->rules('required', 'max:255'),
+            Text::make('Slug')
+                ->hideFromIndex()
+                ->rules('required', 'max:255'),
 
-                Text::make('Mail')
-                    ->sortable()
-                    ->rules('required', 'email', 'max:254')
-                    ->creationRules('unique:users,email')
-                    ->updateRules('unique:users,email,{{resourceId}}'),
+            Text::make('Mail')
+                ->sortable()
+                ->rules('required', 'email', 'max:254')
+                ->creationRules('unique:users,email')
+                ->updateRules('unique:users,email,{{resourceId}}'),
 
-                Text::make('Adresse')
-                    ->hideFromIndex()
-                    ->rules('max:255'),
+            Text::make('Adresse')
+                ->hideFromIndex()
+                ->rules('max:255'),
 
-                Text::make('Locality')
-                    ->hideFromIndex()
-                    ->rules('max:255'),
-
-                Text::make('Link_linkedin')
-                    ->hideFromIndex()
-                    ->rules('max:255'),
-
-                Text::make('Link_instagram')
-                    ->hideFromIndex()
-                    ->rules('max:255'),
-
-                Text::make('Link_facebook')
-                    ->hideFromIndex()
-                    ->rules( 'max:255'),
-
-                Text::make('Site_link')
-                    ->hideFromIndex()
-                    ->rules( 'max:255'),
-
-                Text::make('Members')->hideFromIndex(),
-
-                Textarea::make('Description')->rows(3),
-            ]),
+            Text::make('Locality')
+                ->hideFromIndex()
+                ->rules('max:255'),
 
             Number::make('Locality_number'),
+
+
+            Text::make('Link_linkedin')
+                ->hideFromIndex()
+                ->rules('max:255'),
+
+            Text::make('Link_instagram')
+                ->hideFromIndex()
+                ->rules('max:255'),
+
+            Text::make('Link_facebook')
+                ->hideFromIndex()
+                ->rules( 'max:255'),
+
+            Text::make('Site_link')
+                ->hideFromIndex()
+                ->rules( 'max:255'),
+
+            Text::make('Members')->hideFromIndex(),
+
+            Textarea::make('Description')->rows(3),
 
             HasMany::make('Offers'),
 

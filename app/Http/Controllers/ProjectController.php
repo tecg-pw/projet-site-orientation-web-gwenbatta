@@ -65,6 +65,8 @@ class ProjectController extends Controller
             app()->setLocale($locale);
         }
         $project = Project::find($project->project_id);
+        $course  = $project->course;
+
         foreach ($project->translation as $projet_ref){
             $locales[] = $projet_ref->locale;
         }
@@ -73,13 +75,11 @@ class ProjectController extends Controller
 
         $projects = ProjetTranslation::where('person_id', $project->person_id)->where('locale',$locale)->orderBy('date')->take(6)->get();
 
-        foreach ($project->course as $classe){
+        foreach ($course as $classe){
         $teachers = Course::find($classe->translation->where('locale',$locale)->first()->course_id)->person()->get();
     }
 
-        //return $teachers->translation;
-
-        return view('project.single', compact('project', 'projects','teachers','locales'));
+        return view('project.single', compact('project', 'projects','teachers','locales','course'));
     }
 
     /**

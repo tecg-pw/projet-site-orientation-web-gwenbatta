@@ -29,4 +29,8 @@ class Course extends Model
     {
         return $this->belongsToMany(Project::class,'course_project','course_id','project_id');
     }
+    public function books(): BelongsToMany
+    {
+        return $this->belongsToMany(Book::class, 'book_course','course_id','book_id');
+    }
 }

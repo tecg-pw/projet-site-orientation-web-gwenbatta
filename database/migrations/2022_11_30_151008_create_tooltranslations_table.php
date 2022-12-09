@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('tooltranslations', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
-            $table->json('slug');
-            $table->json('locale');
-            $table->json('excerpt');
-            $table->json('link');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('locale');
+            $table->text('excerpt');
+            $table->string('link');
             $table->timestamps();
             $table->softDeletes();
         });

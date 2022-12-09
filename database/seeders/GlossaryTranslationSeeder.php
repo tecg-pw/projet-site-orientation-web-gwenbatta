@@ -22,10 +22,10 @@ class GlossaryTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             GlossaryTranslation::create([
-                "name" => json_encode($value->name),
-                "locale" => json_encode($value->locale),
-                "slug" => json_encode(\Str::slug($value->name)),
-                "definition" => json_encode($value->definition),
+                "name" => $value->name,
+                "locale" => $value->locale,
+                "slug" => \Str::slug($value->name),
+                "definition" => $value->definition,
                 "glossary_id" => $value->glossary_id,
             ]);
         }

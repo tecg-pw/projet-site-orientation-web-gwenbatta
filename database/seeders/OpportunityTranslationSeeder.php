@@ -22,11 +22,11 @@ class OpportunityTranslationSeeder extends Seeder
 
         foreach ($opportunities as $key => $value) {
             OpportunityTranslation::create([
-                "name" => json_encode($value->name),
-                "slug" => json_encode(\Str::slug($value->name)),
-                "description" => json_encode($value->description),
-                "excerpt" => json_encode($value->excerpt),
-                "locale" => json_encode($value->locale),
+                "name" => $value->name,
+                "slug" => \Str::slug($value->name),
+                "description" => $value->description,
+                "excerpt" => $value->excerpt,
+                "locale" => $value->locale,
                 "opportunity_id" => $value->opportunity_id,
             ]);
         }

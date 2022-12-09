@@ -31,8 +31,5 @@ class CourseTranslation extends Model
     {
         return $this->belongsToMany(ToolTranslation::class);
     }
-    public function books(): BelongsToMany
-    {
-        return $this->belongsToMany(Book::class);
-    }
+
 }

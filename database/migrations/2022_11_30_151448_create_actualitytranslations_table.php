@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('actualitytranslations', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
-            $table->json('slug');
-            $table->json('locale');
-            $table->json('excerpt');
-            $table->json('description');
-            $table->json('lieu');
-            $table->json('link');
-            $table->json('main_picture');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('locale');
+            $table->text('excerpt');
+            $table->text('description');
+            $table->string('lieu');
+            $table->string('link');
+            $table->string('main_picture');
             $table->json('gallery')->nullable();
             $table->timestamps();
             $table->timestamp('date')->nullable()->index();

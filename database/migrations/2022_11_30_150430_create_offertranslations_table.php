@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('offertranslations', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
-            $table->json('slug');
-            $table->json('locale');
-            $table->json('description');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('locale');
+            $table->text('description');
             $table->json('languages')->nullable();
             $table->json('softwares')->nullable();
             $table->json('others')->nullable();

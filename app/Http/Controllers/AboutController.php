@@ -22,9 +22,6 @@ class AboutController extends Controller
         $jobs = Opportunity::all();
         $teachers = People::all();
         $courses = Course::all();
-//        $courses_bac1 = Course::where('bac', 1)->get();
-//        $courses_bac2 = Course::where('bac', 2)->get();
-//        $courses_bac3 = Course::where('bac', 3)->get();
         return view('about', compact( 'jobs','teachers','courses'));
     }
 

@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('coursetranslations', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
-            $table->json('slug');
-            $table->json('locale');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('locale');
             $table->integer('hours');
             $table->integer('bac');
-            $table->json('description');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });

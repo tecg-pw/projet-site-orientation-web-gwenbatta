@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('recurringtranslations', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
-            $table->json('locale');
-            $table->json('slug');
-            $table->json('description');
+            $table->string('name');
+            $table->string('locale');
+            $table->string('slug');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('tutotranslations', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
-            $table->json('slug');
-            $table->json('locale');
-            $table->json('excerpt');
-            $table->json('link');
-            $table->json('languages');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('locale');
+            $table->text('excerpt');
+            $table->string('link');
+            $table->string('languages');
             $table->timestamps();
             $table->softDeletes();
         });

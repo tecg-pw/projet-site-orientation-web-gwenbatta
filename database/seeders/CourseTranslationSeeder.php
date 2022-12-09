@@ -22,12 +22,12 @@ class CourseTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             CourseTranslation::create([
-                "name" => json_encode($value->name),
-                "slug" => json_encode(\Str::slug($value->name.$value->bac)),
-                "locale" => json_encode($value->locale),
+                "name" => $value->name,
+                "slug" => \Str::slug($value->name.$value->bac),
+                "locale" => $value->locale,
                 "hours" => $value->hours,
                 "bac" => $value->bac,
-                "description" => json_encode($value->description),
+                "description" => $value->description,
                 "course_id"=>$value->course_id
             ]);
         }

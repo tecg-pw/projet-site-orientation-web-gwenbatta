@@ -68,7 +68,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                     <div class="flex flex-col xl:gap-2 text-lg">
                         <div class="flex gap-3">
                             <p>{{__('project.project_make_course')}}</p>
-                            @foreach($project->course as $classe)
+                            @foreach($course as $classe)
                                 <a class=" underline text-green-700 uppercase hover:text-orange-500"
                                    href="/{{app()->getLocale()}}/cours/{{$classe->translation->where('locale',app()->getLocale())->first()->slug}}">{{$classe->translation->where('locale',app()->getLocale())->first()->name}}</a>
                         </div>
@@ -82,7 +82,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                         <div class="mb-4">
                             <p class="flex gap-3"> {{__('project.project_available')}}
                                 @foreach($locales as $locale)
-                                    <a href="/{{$locale}}/project/{{$project->slug}}" class="underline uppercase text-green-700">{{$locale}}</a>
+                                    <a href="/{{$locale}}/project/{{$project->slug}}" class="underline hover:text-orange-500 uppercase text-green-700">{{$locale}}</a>
                                 @endforeach
                             </p>
                         </div>

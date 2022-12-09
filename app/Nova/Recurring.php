@@ -5,6 +5,9 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Recurring extends Resource
 {
@@ -41,7 +44,6 @@ class Recurring extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-
             HasMany::make('RecurringTranslations','translation','App\Nova\RecurringTranslation')
         ];
     }
