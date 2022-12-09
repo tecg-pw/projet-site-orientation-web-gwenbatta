@@ -23,13 +23,13 @@ class CoordinateTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             CoordinateTranslation::create([
-                "organization" => $value->organization,
-                "locale" => $value->locale,
-                "employee_name" => $value->employee_name,
-                "employee_firstname" => $value->employee_firstname,
-                "phone" => $value->phone,
-                "job" => $value->job,
-                "mail" => $value->mail,
+                "organization" => json_encode($value->organization),
+                "locale" => json_encode($value->locale),
+                "employee_name" => json_encode($value->employee_name),
+                "employee_firstname" => json_encode($value->employee_firstname),
+                "phone" => json_encode($value->phone),
+                "job" => json_encode($value->job),
+                "mail" => json_encode($value->mail),
                 "coordinate_id"=> $value->coordinate_id
             ]);
         }

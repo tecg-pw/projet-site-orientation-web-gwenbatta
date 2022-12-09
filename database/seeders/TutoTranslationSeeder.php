@@ -22,12 +22,12 @@ class TutoTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             TutoTranslation::create([
-                "locale" => $value->locale,
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "link" => $value->link,
-                "excerpt" => $value->excerpt,
-                "languages" => $value->languages,
+                "locale" => json_encode($value->locale),
+                "name" => json_encode($value->name),
+                "slug" => json_encode(\Str::slug($value->name)),
+                "link" => json_encode($value->link),
+                "excerpt" => json_encode($value->excerpt),
+                "languages" => json_encode($value->languages),
                 "tuto_id"=>$value->tuto_id
             ]);
         }

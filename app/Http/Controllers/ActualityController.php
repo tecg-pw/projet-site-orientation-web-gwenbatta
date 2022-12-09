@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Actuality;
 use App\Models\ActualityTranslation;
-use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ActualityController extends Controller

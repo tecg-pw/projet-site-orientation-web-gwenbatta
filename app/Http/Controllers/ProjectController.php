@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\People;
 use App\Models\Project;
 use App\Models\ProjetTranslation;
 use Illuminate\Contracts\Foundation\Application;

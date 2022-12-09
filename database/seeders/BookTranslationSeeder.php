@@ -22,12 +22,12 @@ class BookTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             BookTranslation::create([
-                "name" => $value->name,
-                "locale" => $value->locale,
-                "slug" => \Str::slug($value->name),
-                "excerpt" => $value->excerpt,
-                "description" => $value->description,
-                "gallery" => $value->gallery,
+                "name" => json_encode($value->name),
+                "locale" => json_encode($value->locale),
+                "slug" => json_encode(\Str::slug($value->name)),
+                "excerpt" =>json_encode( $value->excerpt),
+                "description" => json_encode($value->description),
+                "gallery" => json_encode($value->gallery),
                 "book_id" => $value->book_id,
             ]);
         }

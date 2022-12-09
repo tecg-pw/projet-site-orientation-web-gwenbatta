@@ -22,10 +22,10 @@ class RecurringTranslationSeeder extends Seeder
 
         foreach ($recurrings as $key => $value) {
             RecurringTranslation::create([
-                "name" => $value->name,
-                "slug" => \Str::slug($value->name),
-                "description" => $value->description,
-                "locale" => $value->locale,
+                "name" => json_encode($value->name),
+                "slug" => json_encode(\Str::slug($value->name)),
+                "description" => json_encode($value->description),
+                "locale" => json_encode($value->locale),
                 "recurring_id" => $value->recurring_id,
             ]);
         }

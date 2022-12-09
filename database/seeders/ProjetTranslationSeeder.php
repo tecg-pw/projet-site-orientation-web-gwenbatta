@@ -23,15 +23,15 @@ class ProjetTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             ProjetTranslation::create([
-                "title" => $value->title,
-                "slug" => \Str::slug($value->title.$value->project_id),
-                "locale" => $value->locale,
-                "description" => $value->description,
-                "link_project" => $value->link_project,
-                "link_github" => $value->link_github,
+                "title" => json_encode($value->title),
+                "slug" => json_encode(\Str::slug($value->title.$value->project_id)),
+                "locale" => json_encode($value->locale),
+                "description" => json_encode($value->description),
+                "link_project" => json_encode($value->link_project),
+                "link_github" => json_encode($value->link_github),
                 "date" => Carbon::parse($value->date)->toDateTimeString(),
-                "main_picture" => $value->main_picture,
-                "gallery" => $value->gallery,
+                "main_picture" => json_encode($value->main_picture),
+                "gallery" => json_encode($value->gallery),
                 "project_id" => $value->project_id,
                 "person_id" => $value->person_id,
             ]);

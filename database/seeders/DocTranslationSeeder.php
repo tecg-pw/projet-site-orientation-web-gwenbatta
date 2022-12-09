@@ -22,11 +22,11 @@ class DocTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             DocTranslation::create([
-                "name" => $value->name,
-                "locale" => $value->locale,
-                "slug" => \Str::slug($value->name),
-                "link" => $value->link,
-                "excerpt" => $value->excerpt,
+                "name" => json_encode($value->name),
+                "locale" => json_encode($value->locale),
+                "slug" => json_encode(\Str::slug($value->name)),
+                "link" => json_encode($value->link),
+                "excerpt" => json_encode($value->excerpt),
                 "doc_id"=>$value->doc_id
             ]);
         }
