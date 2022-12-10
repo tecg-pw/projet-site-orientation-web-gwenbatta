@@ -17,13 +17,14 @@ class TestimonialTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\TestimonialTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'description';
 
     /**
      * The columns that should be searched.
@@ -45,7 +46,7 @@ class TestimonialTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Textarea::make('Description')->rows(3)->showOnIndex(),
+            Textarea::make('Description')->rows(3),
 
             Number::make('Person_id'),
 
@@ -55,6 +56,7 @@ class TestimonialTranslation extends Resource
             BelongsTo::make('Testimonial','testimonial','App\Nova\Testimonial'),
         ];
     }
+
 
     /**
      * Get the cards available for the request.

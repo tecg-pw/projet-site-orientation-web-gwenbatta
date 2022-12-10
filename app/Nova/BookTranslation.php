@@ -18,6 +18,7 @@ class BookTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\BookTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -62,6 +63,17 @@ class BookTranslation extends Resource
             BelongsTo::make('Book', 'book', 'App\Nova\Book')
 
         ];
+    }
+
+    public static function label(){
+
+        $books = \App\Models\Book::all();
+
+        foreach ($books as $book){
+
+            return \App\Models\BookTranslation::where('locale',app()->getLocale())->where('book_id',$book->id)->first()->name;
+
+        }
     }
 
     /**

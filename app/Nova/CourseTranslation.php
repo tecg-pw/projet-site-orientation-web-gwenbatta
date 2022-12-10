@@ -19,6 +19,8 @@ class CourseTranslation extends Resource
      */
     public static $model = \App\Models\CourseTranslation::class;
 
+    public static $displayInNavigation = false;
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
@@ -32,7 +34,7 @@ class CourseTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id','name','slug'
     ];
 
     /**
@@ -45,6 +47,7 @@ class CourseTranslation extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
@@ -61,6 +64,17 @@ class CourseTranslation extends Resource
 
             BelongsTo::make('Course', 'course', 'App\Nova\Course')
         ];
+    }
+
+    public static function label(){
+
+        $courses = \App\Models\Course::all();
+
+        foreach ($courses as $course){
+
+            return \App\Models\CourseTranslation::where('locale',app()->getLocale())->where('course_id',$course->id)->first()->name;
+
+        }
     }
 
     /**

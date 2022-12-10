@@ -21,6 +21,7 @@ class PartnerTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\PartnerTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -102,6 +103,16 @@ class PartnerTranslation extends Resource
         ];
     }
 
+    public static function label(){
+
+        $partners = \App\Models\Partner::all();
+
+        foreach ($partners as $partner){
+
+            return \App\Models\PartnerTranslation::where('locale',app()->getLocale())->where('partner_id',$partner->id)->first()->name;
+
+        }
+    }
     /**
      * Get the cards available for the request.
      *

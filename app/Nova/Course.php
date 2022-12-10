@@ -44,7 +44,12 @@ class Course extends Resource
     public function fields(Request $request)
     {
         return [
+
             ID::make(__('ID'), 'id')->sortable(),
+
+            Text::make('Name', function () {
+               return CourseTranslation::label();
+            }),
 
             HasMany::make('CourseTranslations','translation','App\Nova\CourseTranslation')
         ];

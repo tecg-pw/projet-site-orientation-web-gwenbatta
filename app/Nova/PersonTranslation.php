@@ -20,6 +20,7 @@ class PersonTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\PersonTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -112,9 +113,10 @@ class PersonTranslation extends Resource
 
             HasMany::make('Testimonials'),
 
-            BelongsTo::make('People','translation','App\Nova\Person'),
+            BelongsTo::make('People','person','App\Nova\Person'),
         ];
     }
+
 
     /**
      * Get the cards available for the request.

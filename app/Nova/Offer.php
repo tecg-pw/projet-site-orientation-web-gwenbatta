@@ -48,6 +48,9 @@ class Offer extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Name', function () {
+                return OfferTranslation::label();
+            }),
             HasMany::make('OfferTranslations','translation', 'App\Nova\OfferTranslation'),
         ];
     }

@@ -48,6 +48,10 @@ class Actuality extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
+            Text::make('Name', function () {
+                return ActualityTranslation::label();
+            }),
+
             HasMany::make('ActualityTranslations','translation','App\Nova\ActualityTranslation'),
 
         ];

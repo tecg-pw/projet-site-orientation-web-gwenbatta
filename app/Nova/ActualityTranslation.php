@@ -19,6 +19,7 @@ class ActualityTranslation extends Resource
      * @var class-string<\App\Models\ActualityTranslation>
      */
     public static $model = \App\Models\ActualityTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -73,6 +74,17 @@ class ActualityTranslation extends Resource
 
             BelongsTo::make('Actuality', 'actuality', 'App\Nova\Actuality')
         ];
+    }
+
+    public static function label(){
+
+        $actus = \App\Models\Actuality::all();
+
+        foreach ($actus as $actu){
+
+            return \App\Models\ActualityTranslation::where('locale',app()->getLocale())->where('actuality_id',$actu->id)->first()->name;
+
+        }
     }
 
     /**

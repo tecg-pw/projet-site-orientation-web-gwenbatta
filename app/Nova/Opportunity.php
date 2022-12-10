@@ -44,6 +44,9 @@ class Opportunity extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Name', function () {
+                return OpportunityTranslation::label();
+            }),
             HasMany::make('OpportunityTranslations','translation', 'App\Nova\OpportunityTranslation'),
         ];
     }

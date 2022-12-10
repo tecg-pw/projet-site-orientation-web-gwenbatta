@@ -18,6 +18,7 @@ class GlossaryTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\GlossaryTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -61,6 +62,16 @@ class GlossaryTranslation extends Resource
         ];
     }
 
+    public static function label(){
+
+        $glossaries = \App\Models\Glossary::all();
+
+        foreach ($glossaries as $glossary){
+
+            return \App\Models\GlossaryTranslation::where('locale',app()->getLocale())->where('glossary_id',$glossary->id)->first()->name;
+
+        }
+    }
     /**
      * Get the cards available for the request.
      *

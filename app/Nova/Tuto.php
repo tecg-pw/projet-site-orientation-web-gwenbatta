@@ -45,6 +45,9 @@ class Tuto extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
+            Text::make('Name', function () {
+                return TutoTranslation::label();
+            }),
             HasMany::make('TutoTranslations','translation','App\Nova\TutoTranslation')
         ];
     }

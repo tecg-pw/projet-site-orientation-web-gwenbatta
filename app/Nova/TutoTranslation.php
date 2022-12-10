@@ -17,6 +17,7 @@ class TutoTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\TutoTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -65,6 +66,17 @@ class TutoTranslation extends Resource
 
             BelongsTo::make('Tuto','tuto','App\Nova\Tuto')
         ];
+    }
+
+    public static function label(){
+
+        $tutos = \App\Models\Tuto::all();
+
+        foreach ($tutos as $tuto){
+
+            return \App\Models\TutoTranslation::where('locale',app()->getLocale())->where('tuto_id',$tuto->id)->first()->name;
+
+        }
     }
 
     /**

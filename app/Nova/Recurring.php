@@ -44,6 +44,9 @@ class Recurring extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Name', function () {
+                return RecurringTranslation::label();
+            }),
             HasMany::make('RecurringTranslations','translation','App\Nova\RecurringTranslation')
         ];
     }

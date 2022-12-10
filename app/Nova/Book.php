@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Book extends Resource
@@ -42,6 +43,10 @@ class Book extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+
+            Text::make('Name', function () {
+                return BookTranslation::label();
+            }),
 
             HasMany::make('BookTranslations','translation','App\Nova\BookTranslation')
         ];

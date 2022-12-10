@@ -17,6 +17,7 @@ class ToolTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\ToolTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -61,6 +62,16 @@ class ToolTranslation extends Resource
 
             BelongsTo::make('Tool','tool','App\Nova\Tool')
         ];
+    }
+    public static function label(){
+
+        $tools = \App\Models\Tool::all();
+
+        foreach ($tools as $tool){
+
+            return \App\Models\ToolTranslation::where('locale',app()->getLocale())->where('tool_id',$tool->id)->first()->name;
+
+        }
     }
 
     /**

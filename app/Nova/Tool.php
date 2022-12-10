@@ -44,7 +44,9 @@ class Tool extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-
+            Text::make('Name', function () {
+                return ToolTranslation::label();
+            }),
             HasMany::make('ToolTranslations','translation','App\Nova\ToolTranslation')
         ];
     }

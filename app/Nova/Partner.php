@@ -46,6 +46,9 @@ class Partner extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Name', function () {
+                return PartnerTranslation::label();
+            }),
 
             HasMany::make('PartnerTranslations','translation','App\Nova\PartnerTranslation'),
         ];

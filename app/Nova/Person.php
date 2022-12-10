@@ -47,7 +47,7 @@ class Person extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            HasMany::make('PersonTranslations','person','App\Nova\PersonTranslation'),
+            HasMany::make('PersonTranslations','translation','App\Nova\PersonTranslation'),
 
             HasMany::make('Testimonials'),
         ];

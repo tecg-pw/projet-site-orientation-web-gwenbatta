@@ -44,6 +44,9 @@ class Glossary extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Name', function () {
+                return GlossaryTranslation::label();
+            }),
             HasMany::make('GlossaryTranslations','translation','App\Nova\GlossaryTranslation')
         ];
     }

@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 
 class Doc extends Resource
 {
@@ -42,9 +43,14 @@ class Doc extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
+            Text::make('Name', function () {
+                return DocTranslation::label();
+            }),
+
             HasMany::make('DocTranslations','translation','App\Nova\DocTranslation')
         ];
     }
+
 
     /**
      * Get the cards available for the request.

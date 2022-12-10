@@ -20,6 +20,7 @@ class OfferTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\OfferTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -69,6 +70,17 @@ class OfferTranslation extends Resource
 
             BelongsTo::make('Offer','offer', 'App\Nova\Offer')->hideFromIndex(),
         ];
+    }
+
+    public static function label(){
+
+        $offers = \App\Models\Offer::all();
+
+        foreach ($offers as $offer){
+
+            return \App\Models\OfferTranslation::where('locale',app()->getLocale())->where('offer_id',$offer->id)->first()->name;
+
+        }
     }
 
     /**

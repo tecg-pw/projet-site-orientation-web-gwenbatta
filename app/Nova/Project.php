@@ -48,7 +48,6 @@ class Project extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-
             HasMany::make('ProjetTranslations','translation'),
 
 

@@ -17,6 +17,7 @@ class OpportunityTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\OpportunityTranslation::class;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -55,10 +56,20 @@ class OpportunityTranslation extends Resource
 
             Textarea::make('Excerpt')->rows(3)->rules('required'),
 
-            Textarea::make('Descriptiob')->rows(3)->rules('required'),
+            Textarea::make('Description')->rows(3)->rules('required'),
 
             BelongsTo::make('Opportunity','opportunity', 'App\Nova\Opportunity')->hideFromIndex(),
         ];
+    }
+    public static function label(){
+
+        $opportunities = \App\Models\Opportunity::all();
+
+        foreach ($opportunities as $opportunity){
+
+            return \App\Models\OpportunityTranslation::where('locale',app()->getLocale())->where('opportunity_id',$opportunity->id)->first()->name;
+
+        }
     }
 
     /**
