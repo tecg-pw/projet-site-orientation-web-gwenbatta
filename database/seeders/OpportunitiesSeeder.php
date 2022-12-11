@@ -20,7 +20,7 @@ class OpportunitiesSeeder extends Seeder
         $tools = json_decode($json);
 
         foreach ($tools as $key => $value) {
-            Opportunity::create([
+            Opportunity::factory()->create([
                 "id" => $value->id
             ]);
         }

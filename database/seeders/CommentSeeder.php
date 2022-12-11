@@ -20,7 +20,7 @@ class CommentSeeder extends Seeder
         $comment = json_decode($json);
 
         foreach ($comment as $key => $value) {
-            Comment::create([
+            Comment::factory()->create([
                 "content" => $value->content,
                 "slug" => \Str::slug($value->content),
                 "like" => $value->like,

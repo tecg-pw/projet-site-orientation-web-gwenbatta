@@ -21,7 +21,7 @@ class PartnerTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            PartnerTranslation::create([
+            PartnerTranslation::factory()->create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name.'_'.$value->locale),
                 "mail" => $value->mail,

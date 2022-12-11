@@ -33,4 +33,14 @@ class Course extends Model
     {
         return $this->belongsToMany(Book::class, 'book_course','course_id','book_id');
     }
+
+    public function tools(): BelongsToMany
+    {
+        return $this->belongsToMany(Tool::class,'course_tool','course_id','tool_id');
+    }
+
+    public function docs(): BelongsToMany
+    {
+        return $this->belongsToMany(Doc::class,'course_doc','course_id','doc_id');
+    }
 }

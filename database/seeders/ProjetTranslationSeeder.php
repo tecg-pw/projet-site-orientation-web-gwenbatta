@@ -22,7 +22,7 @@ class ProjetTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            ProjetTranslation::create([
+            ProjetTranslation::factory()->create([
                 "title" => $value->title,
                 "slug" => \Str::slug($value->title.$value->project_id),
                 "locale" => $value->locale,

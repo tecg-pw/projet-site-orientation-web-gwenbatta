@@ -21,7 +21,7 @@ class PeopleSeeder extends Seeder
         $peoples = json_decode($json);
 
         foreach ($peoples as $key => $value) {
-            People::create([
+            People::factory()->create([
                 "id" => $value->id,
             ]);
         }

@@ -14,6 +14,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\LatestAnswerController;
 use App\Http\Controllers\LatestSubjectController;
+use App\Http\Controllers\LegalController;
 use App\Http\Controllers\MyAnswerController;
 use App\Http\Controllers\MySubjectController;
 use App\Http\Controllers\OfferController;
@@ -45,9 +46,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/{locale?}', [HomeController::class, 'index']);
 
 
-Route::get('/{locale?}/legals', function () {
-    return view('legals');
-});
+Route::get('/{locale?}/legals',[LegalController::class, 'index']);
 
 
 Route::get('/{locale?}/about', [AboutController::class, 'index']);

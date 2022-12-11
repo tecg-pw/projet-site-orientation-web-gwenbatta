@@ -21,7 +21,7 @@ class PartnerSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            Partner::create([
+            Partner::factory()->create([
                 "id" => $value->id,
 
             ]);

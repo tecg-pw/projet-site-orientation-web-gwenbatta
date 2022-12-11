@@ -21,7 +21,9 @@ class Doc extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\DocTranslation::where('locale',app()->getLocale())->where('doc_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -44,7 +46,7 @@ class Doc extends Resource
             ID::make(__('ID'), 'id')->sortable(),
 
             Text::make('Name', function () {
-                return DocTranslation::label();
+                return $this->title();
             }),
 
             HasMany::make('DocTranslations','translation','App\Nova\DocTranslation')

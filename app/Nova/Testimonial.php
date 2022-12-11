@@ -25,7 +25,9 @@ class Testimonial extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public function title() {
+        return \App\Models\TestimonialTranslation::where('locale',app()->getLocale())->where('testimonial_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -46,6 +48,9 @@ class Testimonial extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Textarea::make('description', function () {
+                return $this->title();
+            }),
             HasMany::make('TestimonialTranslations','translation','App\Nova\TestimonialTranslation'),
         ];
     }

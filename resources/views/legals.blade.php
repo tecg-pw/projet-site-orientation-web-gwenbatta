@@ -12,7 +12,7 @@
             <h3 class="xl:text-2xl text-xl font-semibold" role="heading" aria-level="3"
                 id="social">{{__('legals.informations_social_title')}}</h3>
             <div itemscope itemtype="https://schema.org/PostalAddress">
-                <p class="xl:text-xl text-lg" itemprop="streetAddress">{{('legals.informations_social_street')}}</p>
+                <p class="xl:text-xl text-lg" itemprop="streetAddress">{{__('legals.informations_social_street')}}</p>
                 <p class="xl:text-xl text-lg" itemprop="postalCode">{{__('legals.informations_social_city')}}</p>
             </div>
         </section>

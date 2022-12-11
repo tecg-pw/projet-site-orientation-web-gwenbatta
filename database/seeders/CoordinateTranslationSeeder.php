@@ -22,7 +22,7 @@ class CoordinateTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            CoordinateTranslation::create([
+            CoordinateTranslation::factory()->create([
                 "organization" => $value->organization,
                 "locale" => $value->locale,
                 "employee_name" => $value->employee_name,

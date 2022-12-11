@@ -6,7 +6,7 @@ return [
     'informations_company_title' => 'Socity',
     'informations_company_text' => 'Haute école de la province de Liège',
     'informations_social_title' => 'Head office',
-    'informations_social_street' => 'Rue Peetermans, 80',
+    'informations_social_street' => 'Peetermans Street, 80',
     'informations_social_city' => '4100, Seraing',
     'informations_mail_title' => 'Email',
     'informations_mail_text' => 'tech.secretariat@hepl.be',

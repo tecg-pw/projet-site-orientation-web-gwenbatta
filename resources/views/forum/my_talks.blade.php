@@ -6,20 +6,20 @@
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('forum.index_title')}}</h2>
             @auth()
-                <a href="/{{str_replace('_','-',app()->getLocale())}}/forum/question"
+                <a href="/{{app()->getLocale()}}/forum/question"
                    class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
         <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="px-10 xl:px-36 mb-14"></x-sort_by_forum>
         <div class="flex items-start xl:flex-row flex-col xl:gap-32 mb-12 px-10 xl:px-36">
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
+               href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
+               href="/{{app()->getLocale()}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
+               href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg bg-orange-100 font-sans px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
+               href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-5 xl:gap-24 mb-36">
             <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 px-10 xl:px-36 ">
@@ -56,7 +56,7 @@
                                                   transform="translate(875.711 1774.888)" fill="#da953a"/>
                                         </g>
                                     </svg>
-                                    <a class="cursor-pointer linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
+                                    <a class="cursor-pointer linkcard" href="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
                                 </div>
                                 <p class="xl:leading-8 xl:mt-6 mt-4">
                                     {{$comment->content}}

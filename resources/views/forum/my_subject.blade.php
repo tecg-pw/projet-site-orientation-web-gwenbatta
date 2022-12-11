@@ -14,19 +14,18 @@
                          class="px-10 xl:px-36 mb-14"></x-sort_by_forum>
         <div class="flex items-start xl:flex-row flex-col xl:gap-32 mb-12 px-10 xl:px-36">
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
+               href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
+               href="/{{app()->getLocale()}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
+               href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
+               href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-5 xl:gap-24 mb-36">
             <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 px-10 xl:px-36 ">
-                @auth()
                     @foreach($subjects as $subject)
-                        @if(auth()->user()->slug === $subject->user->slug)
+                        @if(auth()->user()->id === $subject->user->id)
                             <article class="group hover:bg-orange-100 bg-yellow-100 relative flex p-6 rounded-xl"
                                      aria-labelledby="{{$subject->slug}}">
                                 <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-2.5 xl:gap-4">
@@ -99,10 +98,11 @@
                                     src="https://placehold.jp/115x115.png"
                                     alt="Nom">
                             </article>
+                    @else
+                        <p>{{__('forum.no_subject')}}</p>
                         @endif
                     @endforeach
                     {{$subjects->links()}}
-                @endauth
             </div>
             <x-aside_forum :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>

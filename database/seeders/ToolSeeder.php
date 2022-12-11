@@ -20,7 +20,7 @@ class ToolSeeder extends Seeder
         $tools = json_decode($json);
 
         foreach ($tools as $key => $value) {
-            Tool::create([
+            Tool::factory()->create([
                 "id"=>$value->id
             ]);
         }

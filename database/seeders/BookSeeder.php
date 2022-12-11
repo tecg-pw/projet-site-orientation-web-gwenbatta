@@ -20,7 +20,7 @@ class BookSeeder extends Seeder
         $books = json_decode($json);
 
         foreach ($books as $key => $value) {
-            Book::create([
+            Book::factory()->create([
                 "id"=>$value->id
             ]);
         }

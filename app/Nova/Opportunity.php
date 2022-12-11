@@ -23,7 +23,9 @@ class Opportunity extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\OpportunityTranslation::where('locale',app()->getLocale())->where('opportunity_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -45,7 +47,7 @@ class Opportunity extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Name', function () {
-                return OpportunityTranslation::label();
+                return $this->title();
             }),
             HasMany::make('OpportunityTranslations','translation', 'App\Nova\OpportunityTranslation'),
         ];

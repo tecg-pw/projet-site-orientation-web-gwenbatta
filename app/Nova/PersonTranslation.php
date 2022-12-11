@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Models\ProjetTranslation;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
@@ -114,6 +115,8 @@ class PersonTranslation extends Resource
             HasMany::make('Testimonials'),
 
             BelongsTo::make('People','person','App\Nova\Person'),
+
+            HasMany::make('Projects','projects','App\Nova\ProjetTranslation'),
         ];
     }
 

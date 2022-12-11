@@ -21,7 +21,7 @@ class DocTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            DocTranslation::create([
+            DocTranslation::factory()->create([
                 "name" => $value->name,
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),

@@ -20,7 +20,7 @@ class GlossarySeeder extends Seeder
         $glossaries = json_decode($json);
 
         foreach ($glossaries as $key => $value) {
-            Glossary::create([
+            Glossary::factory()->create([
                 "id"=>$value->id
             ]);
         }

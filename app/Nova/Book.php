@@ -22,7 +22,9 @@ class Book extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public function title() {
+        return \App\Models\BookTranslation::where('locale',app()->getLocale())->where('book_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -45,7 +47,7 @@ class Book extends Resource
             ID::make(__('ID'), 'id')->sortable(),
 
             Text::make('Name', function () {
-                return BookTranslation::label();
+                return $this->title();
             }),
 
             HasMany::make('BookTranslations','translation','App\Nova\BookTranslation')

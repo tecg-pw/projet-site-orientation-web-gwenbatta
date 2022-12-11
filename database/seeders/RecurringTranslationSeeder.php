@@ -21,7 +21,7 @@ class RecurringTranslationSeeder extends Seeder
         $recurrings = json_decode($json);
 
         foreach ($recurrings as $key => $value) {
-            RecurringTranslation::create([
+            RecurringTranslation::factory()->create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "description" => $value->description,

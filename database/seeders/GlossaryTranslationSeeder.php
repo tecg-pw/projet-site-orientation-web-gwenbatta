@@ -21,7 +21,7 @@ class GlossaryTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            GlossaryTranslation::create([
+            GlossaryTranslation::factory()->create([
                 "name" => $value->name,
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),

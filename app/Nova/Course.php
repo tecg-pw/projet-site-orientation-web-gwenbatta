@@ -24,7 +24,9 @@ class Course extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\CourseTranslation::where('locale',app()->getLocale())->where('course_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -48,7 +50,7 @@ class Course extends Resource
             ID::make(__('ID'), 'id')->sortable(),
 
             Text::make('Name', function () {
-               return CourseTranslation::label();
+                return $this->title();
             }),
 
             HasMany::make('CourseTranslations','translation','App\Nova\CourseTranslation')

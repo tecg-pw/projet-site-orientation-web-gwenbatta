@@ -21,7 +21,7 @@ class CourseTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            CourseTranslation::create([
+            CourseTranslation::factory()->create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name.$value->bac),
                 "locale" => $value->locale,

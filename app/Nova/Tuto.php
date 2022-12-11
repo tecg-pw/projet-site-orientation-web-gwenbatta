@@ -23,7 +23,9 @@ class Tuto extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\TutoTranslation::where('locale',app()->getLocale())->where('tuto_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -46,7 +48,7 @@ class Tuto extends Resource
             ID::make(__('ID'), 'id')->sortable(),
 
             Text::make('Name', function () {
-                return TutoTranslation::label();
+                return $this->title();
             }),
             HasMany::make('TutoTranslations','translation','App\Nova\TutoTranslation')
         ];

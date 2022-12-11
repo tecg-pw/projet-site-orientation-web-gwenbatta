@@ -21,7 +21,7 @@ class OfferTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            OfferTranslation::create([
+            OfferTranslation::factory()->create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name.'_'.$value->locale),
                 "description" => $value->description,

@@ -21,7 +21,7 @@ class OpportunityTranslationSeeder extends Seeder
         $opportunities = json_decode($json);
 
         foreach ($opportunities as $key => $value) {
-            OpportunityTranslation::create([
+            OpportunityTranslation::factory()->create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "description" => $value->description,

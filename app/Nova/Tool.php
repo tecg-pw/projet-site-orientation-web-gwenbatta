@@ -23,7 +23,9 @@ class Tool extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\ToolTranslation::where('locale',app()->getLocale())->where('tool_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -45,7 +47,7 @@ class Tool extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Name', function () {
-                return ToolTranslation::label();
+                return $this->title();
             }),
             HasMany::make('ToolTranslations','translation','App\Nova\ToolTranslation')
         ];

@@ -64,16 +64,6 @@ class DocTranslation extends Resource
         ];
     }
 
-    public static function label(){
-
-        $docs = \App\Models\Doc::all();
-
-        foreach ($docs as $doc){
-
-            return \App\Models\DocTranslation::where('locale',app()->getLocale())->where('doc_id',$doc->id)->first()->name;
-
-        }
-    }
     /**
      * Get the cards available for the request.
      *

@@ -23,13 +23,5 @@ class CourseTranslation extends Model
         return $this->belongsTo(Course::class);
     }
 
-    public function docs(): BelongsToMany
-    {
-        return $this->belongsToMany(DocTranslation::class);
-    }
-    public function tools(): BelongsToMany
-    {
-        return $this->belongsToMany(ToolTranslation::class);
-    }
 
 }

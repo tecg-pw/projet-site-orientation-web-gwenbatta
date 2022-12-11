@@ -27,7 +27,9 @@ class Project extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public function title() {
+        return \App\Models\ProjetTranslation::where('locale',app()->getLocale())->where('project_id',$this->id)->first()->title;
+    }
 
     /**
      * The columns that should be searched.
@@ -35,7 +37,7 @@ class Project extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id','title'
     ];
 
     /**
@@ -48,6 +50,11 @@ class Project extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+
+            Text::make('Title', function () {
+                return $this->title();
+            }),
+
             HasMany::make('ProjetTranslations','translation'),
 
 

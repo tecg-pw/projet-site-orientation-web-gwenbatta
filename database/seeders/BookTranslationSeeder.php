@@ -21,7 +21,7 @@ class BookTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            BookTranslation::create([
+            BookTranslation::factory()->create([
                 "name" => $value->name,
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),

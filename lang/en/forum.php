@@ -20,7 +20,7 @@ return [
     'see_subject' => 'See the conversation',
     'latest_comment' => 'Comment on the subject',
     'no_comment' => 'No comments available at the moment',
-    'no_talks' => 'No comments available at the momen',
+    'no_talks' => 'No comments available at the moment',
     'no_subject' => 'No topics available at the moment',
 
 ];

@@ -20,7 +20,7 @@ class TutoSeeder extends Seeder
         $tutos = json_decode($json);
 
         foreach ($tutos as $key => $value) {
-            Tuto::create([
+            Tuto::factory()->create([
                 "id"=>$value->id
             ]);
         }

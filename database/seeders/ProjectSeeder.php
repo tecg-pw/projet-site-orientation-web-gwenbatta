@@ -21,7 +21,7 @@ class ProjectSeeder extends Seeder
         $projects = json_decode($json);
 
         foreach ($projects as $key => $value) {
-            Project::create([
+            Project::factory()->create([
                 "id" => $value->id,
             ]);
         }

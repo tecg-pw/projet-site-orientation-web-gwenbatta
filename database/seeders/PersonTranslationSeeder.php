@@ -22,7 +22,7 @@ class PersonTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            PersonTranslation::create([
+            PersonTranslation::factory()->create([
                 "name" => $value->name,
                 "firstname" => $value->firstname,
                 "slug" => \Str::slug($value->name.$value->firstname),

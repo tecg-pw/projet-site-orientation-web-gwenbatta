@@ -103,16 +103,6 @@ class PartnerTranslation extends Resource
         ];
     }
 
-    public static function label(){
-
-        $partners = \App\Models\Partner::all();
-
-        foreach ($partners as $partner){
-
-            return \App\Models\PartnerTranslation::where('locale',app()->getLocale())->where('partner_id',$partner->id)->first()->name;
-
-        }
-    }
     /**
      * Get the cards available for the request.
      *

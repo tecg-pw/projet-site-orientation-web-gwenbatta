@@ -68,16 +68,6 @@ class TutoTranslation extends Resource
         ];
     }
 
-    public static function label(){
-
-        $tutos = \App\Models\Tuto::all();
-
-        foreach ($tutos as $tuto){
-
-            return \App\Models\TutoTranslation::where('locale',app()->getLocale())->where('tuto_id',$tuto->id)->first()->name;
-
-        }
-    }
 
     /**
      * Get the cards available for the request.

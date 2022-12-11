@@ -27,7 +27,7 @@ class ProjetTranslation extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -35,7 +35,7 @@ class ProjetTranslation extends Resource
      * @var array
      */
     public static $search = [
-        'id','name','slug'
+        'id','title','slug'
     ];
 
     /**
@@ -73,10 +73,10 @@ class ProjetTranslation extends Resource
 
             Textarea::make('Description')->rows(3),
 
-            BelongsTo::make('People', 'person', 'App\Nova\Person')
+            BelongsTo::make('People', 'person', 'App\Nova\PersonTranslation')
                 ->onlyOnDetail(),
 
-            BelongsTo::make('Project')
+            BelongsTo::make('Project','project','App\Nova\Project')
                 ->onlyOnDetail(),
         ];
     }

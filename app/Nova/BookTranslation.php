@@ -65,16 +65,6 @@ class BookTranslation extends Resource
         ];
     }
 
-    public static function label(){
-
-        $books = \App\Models\Book::all();
-
-        foreach ($books as $book){
-
-            return \App\Models\BookTranslation::where('locale',app()->getLocale())->where('book_id',$book->id)->first()->name;
-
-        }
-    }
 
     /**
      * Get the cards available for the request.

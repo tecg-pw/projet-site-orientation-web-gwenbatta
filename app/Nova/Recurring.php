@@ -23,7 +23,9 @@ class Recurring extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\RecurringTranslation::where('locale',app()->getLocale())->where('recurring_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -45,7 +47,7 @@ class Recurring extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Name', function () {
-                return RecurringTranslation::label();
+                return $this->title();
             }),
             HasMany::make('RecurringTranslations','translation','App\Nova\RecurringTranslation')
         ];

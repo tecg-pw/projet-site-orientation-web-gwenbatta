@@ -61,16 +61,6 @@ class OpportunityTranslation extends Resource
             BelongsTo::make('Opportunity','opportunity', 'App\Nova\Opportunity')->hideFromIndex(),
         ];
     }
-    public static function label(){
-
-        $opportunities = \App\Models\Opportunity::all();
-
-        foreach ($opportunities as $opportunity){
-
-            return \App\Models\OpportunityTranslation::where('locale',app()->getLocale())->where('opportunity_id',$opportunity->id)->first()->name;
-
-        }
-    }
 
     /**
      * Get the cards available for the request.

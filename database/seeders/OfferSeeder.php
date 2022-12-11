@@ -20,7 +20,7 @@ class OfferSeeder extends Seeder
         $offers = json_decode($json);
 
         foreach ($offers as $key => $value) {
-            Offer::create([
+            Offer::factory()->create([
 
                 "id" => $value->id,
             ]);

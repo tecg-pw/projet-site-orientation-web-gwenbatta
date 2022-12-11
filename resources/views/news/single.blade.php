@@ -7,7 +7,7 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans text-2xl font-semibold"
                href="/{{str_replace('_','-',app()->getLocale())}}/news/index">{{__('actu.actu_single_back')}}</a>
         </div>
-        <div class="px-36 flex gap-20 text-xl">
+        <div class="px-36 flex gap-20 text-xl mb-5">
             @if($new->date !== null)
                 <p>{{ucwords($new->date->translatedFormat('d F Y '))}}</p>
             @endif

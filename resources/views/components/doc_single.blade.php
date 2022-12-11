@@ -2,29 +2,31 @@
     /** @var \Illuminate\Database\Eloquent\Model */
     'doc_ref'
 ])
-
+@php
+    $doc = $doc_ref->translation->where('locale',app()->getLocale())->first();
+@endphp
 <article
-        aria-labelledby="{{$doc_ref->slug}}" {{ $attributes->class(['group relative bg-yellow-100 py-6 px-8 rounded-3xl']) }}>
+        aria-labelledby="{{$doc->slug}}" {{ $attributes->class(['group hover:bg-orange-100 relative bg-yellow-100 py-6 px-8 rounded-3xl']) }}>
     <div class="flex justify-between">
         <div>
-            <h4 id="{{$doc_ref->slug}}" aria-level="4" role="heading"
-                class="font-medium text-lg xl:text-2xl mb-2">{{$doc_ref->name}}</h4>
+            <h4 id="{{$doc->slug}}" aria-level="4" role="heading"
+                class="font-medium text-lg xl:text-2xl mb-2">{{$doc->name}}</h4>
         </div>
     </div>
-    <p class="mb-4 xl:mb-10 xl:text-lg">{{$doc_ref->excerpt}}</p>
+    <p class="mb-4 xl:mb-10 xl:text-lg">{{$doc->excerpt}}</p>
     <div class="flex flex- justify-between">
         <p class="xl:text-lg flex gap-x-3 font-medium">
             {{__('technicals.doc_course')}}
             <span class="flex gap-2">
-{{--                @foreach($doc_ref->courses as $course)--}}
-{{--                    <a class="underline text-green-700"--}}
-{{--                       href="/{{str_replace('_','-',app()->getLocale())}}/cours/show">{{$course->name}}</a>--}}
-{{--                @endforeach--}}
+@foreach($doc_ref->courses as $course)
+                    <a class="underline text-green-700"
+                       href="/{{app()->getLocale()}}/cours/{{$course->translation->where('locale',app()->getLocale())->first()->slug}}">{{$course->translation->where('locale',app()->getLocale())->first()->name}}</a>
+                @endforeach
             </span>
 
         </p>
-{{--        <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"--}}
-{{--           href="{{$doc_ref->link}}">{{__('')}} {{$course->name}}</a>--}}
+        <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
+           href="{{$doc->link}}">{{$doc->name}}</a>
         <svg class="group-hover:mr-0 mr-4 self-end" xmlns="http://www.w3.org/2000/svg" width="25"
              viewBox="0 0 32 27.417">
             <path

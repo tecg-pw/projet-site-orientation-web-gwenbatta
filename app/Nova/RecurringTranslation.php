@@ -59,16 +59,6 @@ class RecurringTranslation extends Resource
             BelongsTo::make('Recurring','recurring','App\Nova\Recurring'),
         ];
     }
-    public static function label(){
-
-        $recurrings = \App\Models\Recurring::all();
-
-        foreach ($recurrings as $recurring){
-
-            return \App\Models\RecurringTranslation::where('locale',app()->getLocale())->where('recurring_id',$recurring->id)->first()->name;
-
-        }
-    }
     /**
      * Get the cards available for the request.
      *

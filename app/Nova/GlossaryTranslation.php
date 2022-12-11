@@ -62,16 +62,6 @@ class GlossaryTranslation extends Resource
         ];
     }
 
-    public static function label(){
-
-        $glossaries = \App\Models\Glossary::all();
-
-        foreach ($glossaries as $glossary){
-
-            return \App\Models\GlossaryTranslation::where('locale',app()->getLocale())->where('glossary_id',$glossary->id)->first()->name;
-
-        }
-    }
     /**
      * Get the cards available for the request.
      *

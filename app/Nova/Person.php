@@ -25,7 +25,10 @@ class Person extends Resource
      *
      * @var string
      */
-    public static $title = 'mail';
+    public function title() {
+        return \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->name .' '.                 \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->firstname;
+;
+    }
 
     /**
      * The columns that should be searched.
@@ -47,9 +50,18 @@ class Person extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
+            Text::make('Name', function () {
+                return \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->name;
+            }),
+            Text::make('Firstname', function () {
+                return \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->firstname;
+            }),
+
             HasMany::make('PersonTranslations','translation','App\Nova\PersonTranslation'),
 
             HasMany::make('Testimonials'),
+
+
         ];
     }
 

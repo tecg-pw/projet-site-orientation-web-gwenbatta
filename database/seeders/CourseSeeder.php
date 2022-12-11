@@ -20,7 +20,7 @@ class CourseSeeder extends Seeder
         $classes = json_decode($json);
 
         foreach ($classes as $key => $value) {
-            Course::create([
+            Course::factory()->create([
                 "id"=>$value->id
             ]);
         }

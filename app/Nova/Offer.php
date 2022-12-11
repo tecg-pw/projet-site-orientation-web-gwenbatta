@@ -27,7 +27,9 @@ class Offer extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\OfferTranslation::where('locale',app()->getLocale())->where('offer_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -49,7 +51,7 @@ class Offer extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Name', function () {
-                return OfferTranslation::label();
+                return $this->title();
             }),
             HasMany::make('OfferTranslations','translation', 'App\Nova\OfferTranslation'),
         ];

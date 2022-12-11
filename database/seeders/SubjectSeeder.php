@@ -20,7 +20,7 @@ class SubjectSeeder extends Seeder
         $subject = json_decode($json);
 
         foreach ($subject as $key => $value) {
-            Subject::create([
+            Subject::factory()->create([
                 "subject" => $value->subject,
                 "slug" => \Str::slug($value->subject),
                 "description" => $value->description,

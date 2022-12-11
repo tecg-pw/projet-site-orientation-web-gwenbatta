@@ -23,7 +23,9 @@ class Glossary extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\GlossaryTranslation::where('locale',app()->getLocale())->where('glossary_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -45,7 +47,7 @@ class Glossary extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Name', function () {
-                return GlossaryTranslation::label();
+                return $this->title();
             }),
             HasMany::make('GlossaryTranslations','translation','App\Nova\GlossaryTranslation')
         ];

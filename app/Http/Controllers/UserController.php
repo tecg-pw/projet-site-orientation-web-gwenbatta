@@ -51,6 +51,7 @@ class UserController extends Controller
             app()->setLocale($locale);
         }
         $tutos = User::find($user->id)->tutos()->get();
+
         return view('user.profile', compact('user', 'tutos'));
     }
 

@@ -11,14 +11,10 @@ class ToolTranslation extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'tooltranslations';
-    //protected $with = ["courses"];
+
     protected $fillable = [
         'name', 'slug' , 'locale', 'link', 'excerpt'
     ];
-//    public function courses(): BelongsToMany
-//    {
-//        return $this->belongsToMany(Course::class);
-//    }
 
     public function tool(): BelongsTo
     {

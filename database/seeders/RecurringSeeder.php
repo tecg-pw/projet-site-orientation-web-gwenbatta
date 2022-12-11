@@ -20,7 +20,7 @@ class RecurringSeeder extends Seeder
         $recurring = json_decode($json);
 
         foreach ($recurring as $key => $value) {
-            Recurring::create([
+            Recurring::factory()->create([
                 "id" => $value->id,
 
             ]);

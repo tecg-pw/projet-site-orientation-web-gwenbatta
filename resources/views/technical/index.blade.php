@@ -55,7 +55,7 @@
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4 ">
             @foreach($docs as $doc_ref)
-                <x-doc_single :doc_ref="$doc_ref->translation->where('locale',app()->getLocale())->first()"/>
+                <x-doc_single :doc_ref="$doc_ref"/>
             @endforeach
         </div>
     </article>

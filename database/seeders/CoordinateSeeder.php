@@ -20,7 +20,7 @@ class CoordinateSeeder extends Seeder
         $comment = json_decode($json);
 
         foreach ($comment as $key => $value) {
-            Coordinate::create([
+            Coordinate::factory()->create([
                 "id"=>$value->id
             ]);
         }

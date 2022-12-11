@@ -76,17 +76,6 @@ class ActualityTranslation extends Resource
         ];
     }
 
-    public static function label(){
-
-        $actus = \App\Models\Actuality::all();
-
-        foreach ($actus as $actu){
-
-            return \App\Models\ActualityTranslation::where('locale',app()->getLocale())->where('actuality_id',$actu->id)->first()->name;
-
-        }
-    }
-
     /**
      * Get the cards available for the request.
      *

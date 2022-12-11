@@ -21,7 +21,7 @@ class ToolTranslationSeeder extends Seeder
         $partners = json_decode($json);
 
         foreach ($partners as $key => $value) {
-            ToolTranslation::create([
+            ToolTranslation::factory()->create([
                 "name" => $value->name,
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),

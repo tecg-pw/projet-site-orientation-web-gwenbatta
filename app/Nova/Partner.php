@@ -25,7 +25,9 @@ class Partner extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\PartnerTranslation::where('locale',app()->getLocale())->where('partner_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -47,7 +49,7 @@ class Partner extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Name', function () {
-                return PartnerTranslation::label();
+                return $this->title();
             }),
 
             HasMany::make('PartnerTranslations','translation','App\Nova\PartnerTranslation'),

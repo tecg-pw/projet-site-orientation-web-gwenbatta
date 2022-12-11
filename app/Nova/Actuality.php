@@ -26,7 +26,9 @@ class Actuality extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public function title() {
+        return \App\Models\ActualityTranslation::where('locale',app()->getLocale())->where('actuality_id',$this->id)->first()->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -49,7 +51,7 @@ class Actuality extends Resource
             ID::make(__('ID'), 'id')->sortable(),
 
             Text::make('Name', function () {
-                return ActualityTranslation::label();
+                return $this->title();
             }),
 
             HasMany::make('ActualityTranslations','translation','App\Nova\ActualityTranslation'),

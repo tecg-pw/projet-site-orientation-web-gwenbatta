@@ -21,7 +21,7 @@ class DocSeeder extends Seeder
         $docs = json_decode($json);
 
         foreach ($docs as $key => $value) {
-            Doc::create([
+            Doc::factory()->create([
                 "id"=>$value->id
             ]);
         }

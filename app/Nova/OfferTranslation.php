@@ -72,17 +72,6 @@ class OfferTranslation extends Resource
         ];
     }
 
-    public static function label(){
-
-        $offers = \App\Models\Offer::all();
-
-        foreach ($offers as $offer){
-
-            return \App\Models\OfferTranslation::where('locale',app()->getLocale())->where('offer_id',$offer->id)->first()->name;
-
-        }
-    }
-
     /**
      * Get the cards available for the request.
      *

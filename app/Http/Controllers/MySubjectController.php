@@ -19,6 +19,7 @@ class MySubjectController extends Controller
             app()->setLocale($locale);
         }
         $recurrings = Recurring::all();
+        $my_subjects = [];
         $subjects = Subject::paginate(8);
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();

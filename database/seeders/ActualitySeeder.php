@@ -20,8 +20,8 @@ class ActualitySeeder extends Seeder
         $actualities = json_decode($json);
 
         foreach ($actualities as $key => $value) {
-            Actuality::create([
-                "id" => $value->id
+            Actuality::factory()->create([
+                'id'=>$value->id
             ]);
         }
     }

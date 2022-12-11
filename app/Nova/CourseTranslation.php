@@ -66,16 +66,6 @@ class CourseTranslation extends Resource
         ];
     }
 
-    public static function label(){
-
-        $courses = \App\Models\Course::all();
-
-        foreach ($courses as $course){
-
-            return \App\Models\CourseTranslation::where('locale',app()->getLocale())->where('course_id',$course->id)->first()->name;
-
-        }
-    }
 
     /**
      * Get the cards available for the request.

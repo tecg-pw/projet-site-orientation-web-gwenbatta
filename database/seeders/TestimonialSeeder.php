@@ -21,7 +21,7 @@ class TestimonialSeeder extends Seeder
         $recurring = json_decode($json);
 
         foreach ($recurring as $key => $value) {
-            Testimonial::create([
+            Testimonial::factory()->create([
                 "id" => $value->id,
             ]);
         }

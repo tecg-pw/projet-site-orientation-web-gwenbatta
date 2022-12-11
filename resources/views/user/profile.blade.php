@@ -1,7 +1,3 @@
-<?php
-//dd($user)
-
-?>
 
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
@@ -15,7 +11,7 @@
                         <p class="uppercase text-2xl">{{$user->status}}</p>
                     </div>
                     <div class="text-end">
-                        <a href="/{{str_replace('_','-',app()->getLocale())}}/user/profile/modify/{{$user->slug}}"
+                        <a href="/{{app()->getLocale()}}/user/profile/modify/{{$user->slug}}"
                            class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_modify')}}</a>
                     </div>
                 </div>
@@ -34,13 +30,13 @@
         <div class="mt-12 grid grid-cols-2 gap-x-24 gap-y-8">
             @foreach($tutos as $tuto)
                 <article class="group relative bg-yellow-100 py-6 px-8 rounded-3xl"
-                         aria-labelledby="{{$tuto->slug}}">
+                         aria-labelledby="{{$tuto->translation->where('locale',app()->getLocale())->first()->slug}}">
                     <div class="flex justify-between">
                         <div>
-                            <h3 id="{{$tuto->slug}}" aria-level="3" role="heading"
+                            <h3 id="{{$tuto->translation->where('locale',app()->getLocale())->first()->slug}}" aria-level="3" role="heading"
                                 class="font-medium text-2xl mb-1.5">
-                                {{$tuto->name}}</h3>
-                            <p class="mb-3">{{$tuto->created_at->format('d M Y')}}</p>
+                                {{$tuto->translation->where('locale',app()->getLocale())->first()->name}}</h3>
+                            <p class="mb-3">{{$tuto->translation->where('locale',app()->getLocale())->first()->created_at->format('d M Y')}}</p>
                         </div>
                         <div class="relative">
                             <label class="sr-only" for="favorite">{{__('Checkbox Favoris')}}</label>
@@ -63,11 +59,11 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="mb-6 text-lg">{{$tuto->excerpt}}</p>
+                    <p class="mb-6 text-lg">{{$tuto->translation->where('locale',app()->getLocale())->first()->excerpt}}</p>
                     <div class="flex justify-between">
-                        <p class="text-orange-500 font-sans text-lg font-medium">{{$tuto->languages}}</p>
+                        <p class="text-orange-500 font-sans text-lg font-medium">{{$tuto->translation->where('locale',app()->getLocale())->first()->languages}}</p>
                         <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
-                           href="{{$tuto->link}}">{{__('Faire l\'exercices')}}</a>
+                           href="{{$tuto->translation->where('locale',app()->getLocale())->first()->link}}">{{__('Faire l\'exercices')}}</a>
                         <svg class="group-hover:mr-0 mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                              viewBox="0 0 32 27.417">
                             <path
