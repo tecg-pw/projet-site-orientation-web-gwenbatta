@@ -7,6 +7,7 @@ return [
     'question' => 'Question',
     'question_placeholder' => 'How do birds fly?',
     'description' => 'Description',
+    'tag' => 'Tag',
     'description_placeholder' => 'I describe my question',
     'button' => 'Ask my question',
 

@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "name": "générales",
+        "locale": "fr",
+        "tag_id": 1
+    },
+    {
+        "id": 2,
+        "name": "general",
+        "locale": "en",
+        "tag_id": 1
+    },
+    {
+        "id": 3,
+        "name": "php",
+        "locale": "fr",
+        "tag_id": 2
+    },
+    {
+        "id": 4,
+        "name": "php",
+        "locale": "en",
+        "tag_id": 2
+    },
+    {
+        "id": 5,
+        "name": "html",
+        "locale": "fr",
+        "tag_id": 3
+    },
+    {
+        "id": 6,
+        "name": "html",
+        "locale": "en",
+        "tag_id": 3
+    },
+    {
+        "id": 7,
+        "name": "css",
+        "locale": "fr",
+        "tag_id": 4
+    },
+    {
+        "id": 8,
+        "name": "css",
+        "locale": "en",
+        "tag_id": 4
+    },
+    {
+        "id": 9,
+        "name": "javascript",
+        "locale": "fr",
+        "tag_id": 5
+    },
+    {
+        "id": 10,
+        "name": "javascript",
+        "locale": "en",
+        "tag_id": 5
+    },
+    {
+        "id": 11,
+        "name": "sgbd",
+        "locale": "fr",
+        "tag_id": 6
+    },
+    {
+        "id": 12,
+        "name": "sgbd",
+        "locale": "en",
+        "tag_id": 6
+    },
+    {
+        "id": 13,
+        "name": "multimédia",
+        "locale": "fr",
+        "tag_id": 7
+    },
+    {
+        "id": 14,
+        "name": "multimedia",
+        "locale": "en",
+        "tag_id": 7
+    },
+    {
+        "id": 15,
+        "name": "design web",
+        "locale": "fr",
+        "tag_id": 8
+    },
+    {
+        "id": 16,
+        "name": "web design",
+        "locale": "en",
+        "tag_id": 8
+    },
+    {
+        "id": 17,
+        "name": "flutter",
+        "locale": "fr",
+        "tag_id": 9
+    },
+    {
+        "id": 18,
+        "name": "flutter",
+        "locale": "en",
+        "tag_id": 9
+    },
+    {
+        "id": 19,
+        "name": "stage",
+        "locale": "fr",
+        "tag_id": 10
+    },
+    {
+        "id": 20,
+        "name": "intership",
+        "locale": "en",
+        "tag_id": 10
+    },
+    {
+        "id": 21,
+        "name": "projet de fin d'étude",
+        "locale": "fr",
+        "tag_id": 11
+    },
+    {
+        "id": 22,
+        "name": "end-of-studies project",
+        "locale": "en",
+        "tag_id": 11
+    }
+]

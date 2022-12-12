@@ -29,7 +29,7 @@
                 @endif
             </div>
             <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/index">{{__('forum.single_back')}}</a>
+               href="/{{app()->getLocale()}}/forum/index">{{__('forum.single_back')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-5 mb-36">
             <div class="xl:col-span-3 xl:pl-36 xl:pr-14 px-10">
@@ -45,8 +45,8 @@
                             <p class="xl:text-xl text-lg mb-2">{{$subject->user->firstname}} {{$subject->user->name}}</p>
                             <p>{{$subject->created_at->format('d M. Y')}}</p>
                         </div>
-                        <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
-                            {{ucwords($subject->tag)}}</p>
+                        <p class="uppercase font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
+                            {{ucwords($subject->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                     </div>
                     <p class="leading-8 xl:leading-10 xl:text-lg xl:mt-7 mt-4">
                         {{$subject->description}}
@@ -66,7 +66,7 @@
                             <form action="/" method="post" class="relative">
                                 @csrf
                                 <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
-                                   href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
+                                   href="/{{app()->getLocale()}}/forum/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
                                 <label class="text-green-500 text-lg font-medium"
                                        for="comment">{{__('forum.label_comment')}}</label>
                                 <textarea class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 mt-4 rounded-xl border-2 border-orange-500" name="comment" id="comment"
@@ -102,31 +102,7 @@
                                         </svg>
                                         <p class="pt-1">{{$comment->like}}</p>
                                     </div>
-                                    @auth()
-                                        <div class="relative flex order-7 gap-1.5">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22.5" height="25"
-                                                 viewBox="0 0 22.5 25">
-                                                <path id="a4d0e49689a4bff4cac02fa19dbcc0e0"
-                                                      d="M21.75,2h-15A3.75,3.75,0,0,0,3,5.75V19.5a3.75,3.75,0,0,0,3.75,3.75H9.987l3.375,3.387a1.259,1.259,0,0,0,1.7.062l4.025-3.45H21.75A3.75,3.75,0,0,0,25.5,19.5V5.75A3.75,3.75,0,0,0,21.75,2ZM23,19.5a1.25,1.25,0,0,1-1.25,1.25H18.625a1.25,1.25,0,0,0-.813.3l-3.5,3-2.925-2.937a1.25,1.25,0,0,0-.887-.363H6.75A1.25,1.25,0,0,1,5.5,19.5V5.75A1.25,1.25,0,0,1,6.75,4.5h15A1.25,1.25,0,0,1,23,5.75Z"
-                                                      transform="translate(-3 -2)" fill="#da953a"/>
-                                            </svg>
-
-                                            <a href="?add-answer-{{$comment->slug}}#{{$comment->slug}}" class="pt-1">{{__('forum.answer')}}</a>
-                                        </div>
-                                    @endauth
                                 </div>
-                                @if(request()->has('add-answer-'.$comment->slug))
-                                    <form action="/" method="post" class="mt-8 relative">
-                                        @csrf
-                                        <a class="hover:text-orange-500 absolute -top-6 right-1 self-center flex font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
-                                           href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$subject->slug}}#{{$comment->slug}}">{{__('forum.button_back')}}</a>
-                                        <label class="text-green-500 text-lg font-medium"
-                                               for="answer">{{__('forum.label_answer')}}</label>
-                                        <textarea class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 mt-4 rounded-xl border-2 border-orange-500" name="answer"
-                                                  id="answer" cols="75" rows="2"></textarea>
-                                        <input type="submit" value="Ajouter" class="text-white-100 bg-green-700 px-6 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl font-sans font-semibold">
-                                    </form>
-                                @endif
                             </div>
                         @endforeach
                     @endif

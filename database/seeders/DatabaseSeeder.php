@@ -2,12 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Answer;
-use App\Models\Glossary;
-use App\Models\Testimonial;
+
 use Illuminate\Database\Seeder;
-use PhpParser\Comment;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -45,11 +42,12 @@ class DatabaseSeeder extends Seeder
         $this->call(OfferTranslationSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(ProjetTranslationSeeder::class);
+        $this->call(TagSeeder::class);
+        $this->call(TagTranslationSeeder::class);
         $this->call(SubjectSeeder::class);
         $this->call(RecurringSeeder::class);
         $this->call(RecurringTranslationSeeder::class);
         $this->call(CommentSeeder::class);
-        $this->call(AnswerSeeder::class);
         $this->call(ToolSeeder::class);
         $this->call(ToolTranslationSeeder::class);
         $this->call(TutoSeeder::class);

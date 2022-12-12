@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubjectRequest;
 use App\Models\Subject;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ForumController extends Controller
@@ -30,8 +32,9 @@ class ForumController extends Controller
         if (in_array($locale, config('app.available_locales'))){
             app()->setLocale($locale);
         }
+        $tags = Tag::all();
 
-        return view('forum.question');
+        return view('forum.question',compact('tags'));
     }
 
     /**
@@ -40,7 +43,7 @@ class ForumController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubjectRequest $request)
     {
         //
     }

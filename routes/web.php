@@ -85,7 +85,7 @@ Route::get('/{locale?}/cours/{course:slug}', [CourseController::class, 'show']);
 
 
 Route::get('/{locale?}/user/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware('guest');
-Route::get('/{locale?}/user/register', [RegisterSessionController::class, 'create'])->middleware('guest');
+Route::get('/{locale?}/user/register', [RegisterSessionController::class, 'create'])->name('register')->middleware('guest');
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
 Route::post('/register', [RegisterSessionController::class, 'store'])->middleware('guest');
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
@@ -100,7 +100,8 @@ Route::get('/{locale?}/contact/student', [StudentContactController::class, 'inde
 Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'index']);
 
 
-Route::get('/{locale?}/forum/question', [ForumController::class, 'create']);
+Route::get('/{locale?}/forum/question', [ForumController::class, 'create'])->middleware('auth');
+Route::post('/subject', [ForumController::class, 'store'])->middleware('auth');
 Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index']);
 Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index']);
 Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index']);

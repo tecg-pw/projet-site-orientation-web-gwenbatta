@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 
@@ -16,23 +17,15 @@ class RegisterSessionController extends Controller
         return view('user.register');
     }
 
-    public function store()
+    public function store(RegisterRequest $request)
     {
+        $validated = $request->validated();
+        $validated['slug'] = \Str::slug($validated['firstname'].$validated['name']);
+        $validated['password'] = bcrypt($validated['password']);
 
-        $firstname = \request('firstname');
-        $name = \request('name');
-        $email = \request('email');
-        $password = \request('password');
-        $user = User::create([
-            'name' => $name,
-            'firstname' => $firstname,
-            'slug' => \Str::slug(\request('name').\request('surname')),
-            'email' => $email,
-            'isAdmin' => false,
-            'password' => bcrypt($password),
-        ]);
-        \Auth::login($user);
-        return Redirect::to('/')->with('success','Vous êtes connecté');
+            $user = User::create($validated);
+            \Auth::login($user);
+            return redirect('/');
 
     }
 }

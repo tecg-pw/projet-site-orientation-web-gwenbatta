@@ -9,36 +9,50 @@
             </div>
             <div class="flex flex-1">
                 <a class="hover:text-orange-500 font-sans text-green-700 self-center xl:text-xl font-semibold underline flex-1"
-                   href="/{{str_replace('_','-',app()->getLocale())}}/user/login">{{__('login_register.login_link')}}</a>
+                   href="/{{app()->getLocale()}}/user/login">{{__('login_register.login_link')}}</a>
             </div>
             <div class="flex mt-14">
                 <form class="flex-1" action="/register" method="post">
                     @csrf
                     <div class="xl:flex-row flex-col flex flex-1">
                         <fieldset class="flex flex-1 flex-col xl:mr-10 mb-8">
-                            <label class="text-green-500 text-lg xl:text-2xl" for="name">{{__('login_register.name')}}</label>
+                            <label class="text-green-500 @error('name') text-red-400 @enderror text-lg xl:text-2xl" for="name">{{__('login_register.name')}}</label>
+                            @error('name')
+                            <p class="text-red-400 my-2">{{ $message }}</p>
+                            @enderror
                             <input
                                 class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                                placeholder="Caron" dusk="name" name="name" id="name" type="text">
+                                placeholder="Caron" dusk="name" name="name" id="name" type="text" value="{{old('name')}}">
                         </fieldset>
                         <fieldset class="flex flex-1 flex-col mb-8">
-                            <label class="text-green-500 text-lg xl:text-2xl" for="firstname">{{__('login_register.firstname')}}</label>
+                            <label class="text-green-500 @error('firstname') text-red-400 @enderror text-lg xl:text-2xl" for="firstname">{{__('login_register.firstname')}}</label>
+                            @error('firstname')
+                            <p class="text-red-400 my-2">{{ $message }}</p>
+                            @enderror
                             <input
                                 class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                                name="firstname" id="firstname" dusk="firstname" type="text" placeholder="Jordan">
+                                name="firstname" id="firstname" dusk="firstname" type="text" placeholder="Jordan" value="{{old('firstname')}}">
                         </fieldset>
                     </div>
                     <fieldset class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>
+                        <label class="text-green-500 @error('email') text-red-400 @enderror text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>
+                        @error('email')
+                        <p class="text-red-400 my-2">{{ $message }}</p>
+                        @enderror
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                            name="email" id="email" dusk="email" type="email" placeholder="email@example.be">
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value="{{old('email')}}">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg xl:text-2xl" for="password">{{__('login_register.password')}}</label>
+                        <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl" for="password">{{__('login_register.password')}}</label>
+                        @error('password')
+                        <p class="text-red-400 my-2">{{ $message }}</p>
+                        @enderror
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                            name="password" dusk="password" id="password" type="password" placeholder="azerty">
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('password') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            name="password" dusk="password-field" id="password" type="password" placeholder="azerty">
+                        <a class="hover:text-orange-500 mt-2 text-green-700 underline font-sans self-end text-sm"
+                           href="/{{app()->getLocale()}}/user/password">{{__('login_register.forgot')}}</a>
                     </fieldset>
                     <div class="flex flex-1 justify-end mt-8 xl:mt-0">
                         <input
