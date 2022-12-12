@@ -35,9 +35,11 @@
         left: -12px;
         right: -12px;
         opacity: 0;
+        visibility: hidden;
     }
     .user_name:hover .hover_section{
         opacity: 1;
+        visibility: visible;
     }
     #burger:checked ~ .burger_position{
         position: absolute;
