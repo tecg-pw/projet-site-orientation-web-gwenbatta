@@ -15,9 +15,6 @@ class ActualityController extends Controller
      */
     public function index(string $locale = null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
         $news = Actuality::latest()->paginate(9);
         return view('news.index', compact('news'));
     }
@@ -52,9 +49,6 @@ class ActualityController extends Controller
     public function show(string $locale=null, ActualityTranslation $new)
     {
         $locales = [];
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
 
         $new = Actuality::find($new->actuality_id);
 

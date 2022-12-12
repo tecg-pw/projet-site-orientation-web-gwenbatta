@@ -22,7 +22,7 @@
                href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-5 xl:gap-24 mb-36">
-            <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 px-10 xl:px-36 ">
+            <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 xl:px-36 px-10 ">
                 @auth()
                     @foreach($comments as $comment)
                         @if(auth()->user()->slug === $comment->user->slug)
@@ -88,8 +88,8 @@
                         @endif
                     @endforeach
                     {{$comments->links()}}
-                @endauth
                 <p>Vous n'avez aucun sujet</p>
+                @endauth
             </div>
             <x-aside_forum :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>

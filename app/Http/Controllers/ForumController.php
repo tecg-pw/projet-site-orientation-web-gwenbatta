@@ -29,9 +29,6 @@ class ForumController extends Controller
      */
     public function create(string $locale = null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
         $tags = Tag::all();
 
         return view('forum.question',compact('tags'));
@@ -56,9 +53,7 @@ class ForumController extends Controller
      */
     public function show(string $locale = null, Subject $subject)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         return view('forum.show', compact('subject','latests', 'ratings'));

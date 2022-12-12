@@ -28,7 +28,7 @@
                     name="tags">
                 @foreach($tags as $tag)
                     <option value="{{$tag->translation->where('locale',app()->getLocale())->first()->slug}}">
-                        {{$tag->translation->where('locale',app()->getLocale())->first()->name}}
+                        {{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->name)}}
                     </option>
                 @endforeach
             </select >

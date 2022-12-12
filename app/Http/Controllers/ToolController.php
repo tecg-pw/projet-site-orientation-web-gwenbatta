@@ -15,9 +15,6 @@ class ToolController extends Controller
      */
     public function index(string $locale=null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
         $tools = Tool::all();
         $books = Book::all();
         return view('technical.tool', compact('tools', 'books'));

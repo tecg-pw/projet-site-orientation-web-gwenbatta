@@ -48,66 +48,66 @@ Route::get('/', function () {
     return redirect('/' . $locale);
 });
 
-Route::get('/{locale?}', [HomeController::class, 'index']);
+Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('locale');
 
-Route::get('/{locale?}/legals',[LegalController::class, 'index']);
-
-
-Route::get('/{locale?}/about', [AboutController::class, 'index']);
-Route::get('/{locale?}/about/job/{job:slug}', [JobController::class, 'show']);
-
-Route::get('/{locale?}/project/index', [ProjectController::class, 'index']);
-Route::get('/{locale?}/project/{project:slug}', [ProjectController::class, 'show']);
-
-Route::get('/{locale?}/technical/index', [TechnicalController::class, 'index']);
-Route::get('/{locale?}/technical/books/{book:slug}', [BookController::class, 'show']);
-
-Route::get('/{locale?}/technical/glossary', [GlossaryController::class, 'index']);
-Route::get('/{locale?}/technical/tuto', [TutoController::class, 'index']);
-Route::get('/{locale?}/technical/docandtool/doc', [DocController::class, 'index', BookController::class, 'index']);
-Route::get('/{locale?}/technical/docandtool/tool', [ToolController::class, 'index', BookController::class, 'index'] );
+Route::get('/{locale?}/legals',[LegalController::class, 'index'])->middleware('locale')->middleware('locale');
 
 
-Route::get('/{locale?}/entreprise/partner', [PartnerController::class, 'index']);
-Route::get('/{locale?}/entreprise/partner/{partner:slug}', [PartnerController::class, 'show']);
-Route::get('/{locale?}/entreprise/internship', [OfferController::class, 'index']);
-Route::get('/{locale?}/entreprise/internship/{offer:slug}', [OfferController::class, 'show']);
+Route::get('/{locale?}/about', [AboutController::class, 'index'])->middleware('locale')->middleware('locale');
+Route::get('/{locale?}/about/job/{job:slug}', [JobController::class, 'show'])->middleware('locale')->middleware('locale');
+
+Route::get('/{locale?}/project/index', [ProjectController::class, 'index'])->middleware('locale')->middleware('locale');
+Route::get('/{locale?}/project/{project:slug}', [ProjectController::class, 'show'])->middleware('locale')->middleware('locale');
+
+Route::get('/{locale?}/technical/index', [TechnicalController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/technical/books/{book:slug}', [BookController::class, 'show'])->middleware('locale');
+
+Route::get('/{locale?}/technical/glossary', [GlossaryController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/technical/tuto', [TutoController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/technical/docandtool/doc', [DocController::class, 'index', BookController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/technical/docandtool/tool', [ToolController::class, 'index', BookController::class, 'index'] )->middleware('locale');
 
 
-Route::get('/{locale?}/bottin', [PersonController::class, 'index']);
-Route::get('/{locale?}/bottin/alumni', [AlumniController::class, 'index']);
-Route::get('/{locale?}/bottin/alumni/{alumni:slug}', [AlumniController::class, 'show']);
-Route::get('/{locale?}/bottin/teacher/{teacher:slug}', [TeacherController::class, 'show']);
-Route::get('/{locale?}/bottin/teachalumni/{teachalumni:slug}', [TeachAlumniController::class, 'show']);
-Route::get('/{locale?}/bottin/student/{student:slug}', [StudentController::class, 'show']);
-
-Route::get('/{locale?}/cours/{course:slug}', [CourseController::class, 'show']);
+Route::get('/{locale?}/entreprise/partner', [PartnerController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/entreprise/partner/{partner:slug}', [PartnerController::class, 'show'])->middleware('locale');
+Route::get('/{locale?}/entreprise/internship', [OfferController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/entreprise/internship/{offer:slug}', [OfferController::class, 'show'])->middleware('locale');
 
 
-Route::get('/{locale?}/user/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware('guest');
-Route::get('/{locale?}/user/register', [RegisterSessionController::class, 'create'])->name('register')->middleware('guest');
+Route::get('/{locale?}/bottin', [PersonController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/bottin/alumni', [AlumniController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/bottin/alumni/{alumni:slug}', [AlumniController::class, 'show'])->middleware('locale');
+Route::get('/{locale?}/bottin/teacher/{teacher:slug}', [TeacherController::class, 'show'])->middleware('locale');
+Route::get('/{locale?}/bottin/teachalumni/{teachalumni:slug}', [TeachAlumniController::class, 'show'])->middleware('locale');
+Route::get('/{locale?}/bottin/student/{student:slug}', [StudentController::class, 'show'])->middleware('locale');
+
+Route::get('/{locale?}/cours/{course:slug}', [CourseController::class, 'show'])->middleware('locale');
+
+
+Route::get('/{locale?}/user/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware(['guest','locale']);
+Route::get('/{locale?}/user/register', [RegisterSessionController::class, 'create'])->name('register')->middleware(['guest','locale']);
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
 Route::post('/register', [RegisterSessionController::class, 'store'])->middleware('guest');
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
-Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show'])->middleware('auth');
-Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit'])->middleware('auth');
+Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show'])->middleware(['auth','locale']);
+Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit'])->middleware(['auth','locale']);
 Route::get('/{locale?}/user/password', function () {
     return view('user.password');
 });
 
 
-Route::get('/{locale?}/contact/student', [StudentContactController::class, 'index']);
-Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'index']);
+Route::get('/{locale?}/contact/student', [StudentContactController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'index'])->middleware('locale');
 
 
-Route::get('/{locale?}/forum/question', [ForumController::class, 'create'])->middleware('auth');
+Route::get('/{locale?}/forum/question', [ForumController::class, 'create'])->middleware(['auth','locale']);
 Route::post('/subject', [ForumController::class, 'store'])->middleware('auth');
-Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index']);
-Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index']);
-Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index']);
-Route::get('/{locale?}/forum/my-talks', [MyAnswerController::class, 'index']);
-Route::get('/{locale?}/forum/{subject:slug}', [ForumController::class, 'show']);
+Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/my-talks', [MyAnswerController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/{subject:slug}', [ForumController::class, 'show'])->middleware('locale');
 
 
-Route::get('/{locale?}/news/index', [ActualityController::class, 'index']);
-Route::get('/{locale?}/news/{new:slug}', [ActualityController::class, 'show']);
+Route::get('/{locale?}/news/index', [ActualityController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/news/{new:slug}', [ActualityController::class, 'show'])->middleware('locale');

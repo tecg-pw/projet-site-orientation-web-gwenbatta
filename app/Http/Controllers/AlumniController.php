@@ -17,16 +17,19 @@ class AlumniController extends Controller
      */
     public function index(string $locale = null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $testimonials = Testimonial::take(4)->orderBy('created_at')->get();
-        $people = People::paginate(8);
+        $alumnis = [];
+        $people = People::all();
+        foreach ($people as $person) {
+            if ($person->translation->where('locale', $locale)->first()->status === 'ancien' || $person->translation->where('locale', $locale)->first()->status === 'alumni' || $person->translation->where('locale', $locale)->first()->status === 'teachalumni' ) {
+                $alumnis [] = $person;
+            }
+        }
+        $status = PersonTranslation::select('status')->where('locale', $locale)->groupBy('status')->get();
+        $years_end = PersonTranslation::select('end')->where('locale', $locale)->whereNot('end', null)->groupBy('end')->orderBy('end', 'DESC')->get();
 
-        $status = PersonTranslation::select('status')->where('locale',$locale)->groupBy('status')->get();
-        $years_end = PersonTranslation::select('end')->where('locale',$locale)->whereNot('end', null)->groupBy('end')->orderBy('end','DESC')->get();
-
-        return view('bottin.alumni', compact('people', 'status', 'years_end', 'testimonials'));
+        return view('bottin.alumni', compact('alumnis', 'status', 'years_end', 'testimonials'));
     }
 
     /**
@@ -42,7 +45,7 @@ class AlumniController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,18 +56,16 @@ class AlumniController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(string $locale=null, PersonTranslation $alumni)
+    public function show(string $locale = null, PersonTranslation $alumni)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
-        $alumni = People::find($alumni->people_id);
-        $alumni = $alumni->translation->where('locale',$locale)->first();
 
-        $projects = ProjetTranslation::where('person_id', $alumni->people_id)->where('locale',$locale)->orderBy('date')->take(6)->get();
+        $alumni = People::find($alumni->people_id);
+        $alumni = $alumni->translation->where('locale', $locale)->first();
+
+        $projects = ProjetTranslation::where('person_id', $alumni->people_id)->where('locale', $locale)->orderBy('date')->take(6)->get();
 
         return view('bottin.alumni.name', compact('alumni', 'projects'));
     }
@@ -72,7 +73,7 @@ class AlumniController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -83,8 +84,8 @@ class AlumniController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -95,7 +96,7 @@ class AlumniController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

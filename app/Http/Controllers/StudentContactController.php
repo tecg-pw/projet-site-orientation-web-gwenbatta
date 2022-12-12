@@ -15,9 +15,6 @@ class StudentContactController extends Controller
      */
     public function index(string $locale=null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
         $coordinates = Coordinate::all();
         return view('contact.student', compact('coordinates'));
     }

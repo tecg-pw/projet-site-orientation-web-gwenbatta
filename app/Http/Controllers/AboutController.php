@@ -18,9 +18,7 @@ class AboutController extends Controller
     public function index(string $locale = null)
     {
 
-        if (in_array($locale, config('app.available_locales'))) {
-            app()->setLocale($locale);
-        }
+
         $jobs = Opportunity::all();
         $teachers = People::all();
         $courses = Course::all();

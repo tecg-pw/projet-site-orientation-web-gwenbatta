@@ -15,7 +15,7 @@
                 <form class="flex-1" action="/register" method="post">
                     @csrf
                     <div class="xl:flex-row flex-col flex flex-1">
-                        <fieldset class="flex flex-1 flex-col xl:mr-10 mb-8">
+                        <div class="flex flex-1 flex-col xl:mr-10 mb-8">
                             <label class="text-green-500 @error('name') text-red-400 @enderror text-lg xl:text-2xl" for="name">{{__('login_register.name')}}</label>
                             @error('name')
                             <p class="text-red-400 my-2">{{ $message }}</p>
@@ -23,8 +23,8 @@
                             <input
                                 class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                                 placeholder="Caron" dusk="name" name="name" id="name" type="text" value="{{old('name')}}">
-                        </fieldset>
-                        <fieldset class="flex flex-1 flex-col mb-8">
+                        </div>
+                        <div class="flex flex-1 flex-col mb-8">
                             <label class="text-green-500 @error('firstname') text-red-400 @enderror text-lg xl:text-2xl" for="firstname">{{__('login_register.firstname')}}</label>
                             @error('firstname')
                             <p class="text-red-400 my-2">{{ $message }}</p>
@@ -32,9 +32,9 @@
                             <input
                                 class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                                 name="firstname" id="firstname" dusk="firstname" type="text" placeholder="Jordan" value="{{old('firstname')}}">
-                        </fieldset>
+                        </div>
                     </div>
-                    <fieldset class="flex flex-col mb-8">
+                    <div class="flex flex-col mb-8">
                         <label class="text-green-500 @error('email') text-red-400 @enderror text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>
                         @error('email')
                         <p class="text-red-400 my-2">{{ $message }}</p>
@@ -42,8 +42,8 @@
                         <input
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value="{{old('email')}}">
-                    </fieldset>
-                    <fieldset class="flex flex-col mb-8">
+                    </div>
+                    <div class="flex flex-col mb-8">
                         <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl" for="password">{{__('login_register.password')}}</label>
                         @error('password')
                         <p class="text-red-400 my-2">{{ $message }}</p>
@@ -53,7 +53,7 @@
                             name="password" dusk="password-field" id="password" type="password" placeholder="azerty">
                         <a class="hover:text-orange-500 mt-2 text-green-700 underline font-sans self-end text-sm"
                            href="/{{app()->getLocale()}}/user/password">{{__('login_register.forgot')}}</a>
-                    </fieldset>
+                    </div>
                     <div class="flex flex-1 justify-end mt-8 xl:mt-0">
                         <input
                             class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex-1 xl:flex-initial"

@@ -17,18 +17,13 @@ class JobController extends Controller
      */
     public function show(string $locale = null, OpportunityTranslation $job)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
 
         $locales = [];
         $job = Opportunity::find($job->opportunity_id);
         foreach ($job->translation as $job_ref){
                 $locales[] = $job_ref;
         }
-
         $job = $job->translation->where('locale',$locale)->first();
-
 
         //$alumnis = People::where('job_slug', $job->slug)->where('status', 'ancien')->get();
         $alumnis = People::all();

@@ -14,9 +14,6 @@ class TutoController extends Controller
      */
     public function index(string $locale=null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
         $languages = TutoTranslation::select('languages')->where('locale',$locale)->groupBy('languages')->get();
         $date = TutoTranslation::select('created_at')->where('locale',$locale)->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at','DESC')->get();
         $tutos = Tuto::paginate(8);

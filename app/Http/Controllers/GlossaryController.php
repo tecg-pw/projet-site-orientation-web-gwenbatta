@@ -13,9 +13,7 @@ class GlossaryController extends Controller
      */
     public function index(string $locale=null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $termes = Glossary::paginate(8);
         return view('technical.glossary', compact('termes'));
     }

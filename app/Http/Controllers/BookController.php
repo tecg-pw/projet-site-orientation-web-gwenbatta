@@ -12,9 +12,7 @@ class BookController extends Controller
     public function show(string $locale = null, BookTranslation $book)
     {
         $locales = [];
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $book = Book::find($book->book_id);
         $course  = $book->course;
 

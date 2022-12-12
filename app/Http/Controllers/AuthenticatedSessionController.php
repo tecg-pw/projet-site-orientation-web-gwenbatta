@@ -10,9 +10,6 @@ class AuthenticatedSessionController extends Controller
 {
     public function create(string $locale = null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
 
         return view('user.login');
     }

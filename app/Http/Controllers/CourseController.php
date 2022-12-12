@@ -16,9 +16,7 @@ class CourseController extends Controller
      */
     public function show(string $locale = null, CourseTranslation $course)
     {
-        if (in_array($locale, config('app.available_locales'))) {
-            app()->setLocale($locale);
-        }
+
         $course = Course::find($course->course_id);
         $course = $course->translation->where('locale', $locale)->first();
         $teachers = Course::find($course->course_id)->person;

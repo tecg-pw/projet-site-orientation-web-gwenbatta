@@ -3,7 +3,6 @@
     'person_ref'
 ])
 
-@if($person_ref->status === 'alumni')
     <article
         {{ $attributes->class(['hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl']) }}
         aria-labelledby="{{$person_ref->slug}}">
@@ -52,4 +51,3 @@
         @endif
 
     </article>
-@endif

@@ -20,9 +20,7 @@ class ProjectController extends Controller
     public function index(string $locale = null)
     {
 
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
 
         $projects = Project::paginate(9);
 
@@ -61,9 +59,7 @@ class ProjectController extends Controller
     public function show(string $locale=null, ProjetTranslation $project)
     {
         $locales = [];
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $project = Project::find($project->project_id);
         $course  = $project->course;
 

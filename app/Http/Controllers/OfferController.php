@@ -15,9 +15,7 @@ class OfferController extends Controller
      */
     public function index(string $locale=null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $offers = Offer::paginate(8);
         return view('entreprise.internship', compact('offers'));
     }
@@ -51,9 +49,7 @@ class OfferController extends Controller
      */
     public function show(string $locale=null,OfferTranslation $offer)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $offer->languages = json_decode($offer->languages );
         $offer->softwares = json_decode($offer->softwares );
         $offer->others = json_decode($offer->others );

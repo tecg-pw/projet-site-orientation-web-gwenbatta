@@ -16,9 +16,6 @@ class StudentController extends Controller
      */
     public function show(string $locale=null, PersonTranslation $student)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
         $student = People::find($student->people_id);
         $student = $student->translation->where('locale',$locale)->first();
 

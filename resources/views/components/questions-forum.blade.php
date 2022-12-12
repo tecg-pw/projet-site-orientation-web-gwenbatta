@@ -29,7 +29,7 @@
                         <div class="order-3 flex flex-col xl:flex-row justify-between">
                             <div class="flex gap-4 items-center">
                                 <p class="text-base uppercase font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-green-700">
-                                    {{ucwords($subject->tag)}}</p>
+                                    {{ucwords($subject->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                                 <p class="xl:text-lg ">{{__('forum.number_comment').$subject->comments_count}}</p>
                             </div>
                             <a class="linkcard underline text-green-700 font-sans font-semibold" href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
@@ -68,7 +68,7 @@
                                 <div class="order-3 flex justify-between">
                                     <div class="flex gap-4">
                                         <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-base uppercase text-green-700">
-                                            {{ucwords($latest->tag)}}</p>
+                                            {{ucwords($latest->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                                     </div>
                                     <a class="linkcard underline text-green-700 font-sans font-semibold"
                                        href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$latest->slug}}">{{__('forum.see_subject')}}</a>
@@ -105,7 +105,7 @@
                                 <div class="order-3 flex justify-between">
                                     <div class="flex gap-4">
                                         <p class=" font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-base uppercase text-green-700">
-                                            {{ucwords($rating->tag)}}</p>
+                                            {{ucwords($rating->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                                     </div>
                                     <a class="linkcard underline text-green-700 font-sans font-semibold"
                                        href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$rating->slug}}">{{__('forum.see_subject')}}</a>

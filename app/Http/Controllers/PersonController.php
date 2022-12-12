@@ -16,9 +16,7 @@ class PersonController extends Controller
      */
     public function index(string $locale=null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $testimonials = Testimonial::take(4)->orderBy('created_at')->get();
         $people = People::paginate(8);
         $status = PersonTranslation::select('status')->where('locale',$locale)->groupBy('status')->get();

@@ -15,9 +15,6 @@ class TeacherController extends Controller
      */
     public function show(string $locale = null, PersonTranslation $teacher)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
         $teacher = People::find($teacher->people_id);
         $courses = $teacher->courses;
         $teacher = $teacher->translation->where('locale',$locale)->first();

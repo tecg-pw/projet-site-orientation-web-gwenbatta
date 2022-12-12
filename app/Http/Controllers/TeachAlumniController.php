@@ -16,9 +16,6 @@ class TeachAlumniController extends Controller
      */
     public function show(string $locale=null, PersonTranslation $teachalumni)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
 
         $teachalumni = People::find($teachalumni->people_id);
         $courses = $teachalumni->courses;

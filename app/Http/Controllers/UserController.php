@@ -47,9 +47,6 @@ class UserController extends Controller
      */
     public function show(string $locale=null, User $user)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
         $tutos = User::find($user->id)->tutos()->get();
 
         return view('user.profile', compact('user', 'tutos'));
@@ -63,9 +60,7 @@ class UserController extends Controller
      */
     public function edit(string $locale=null, User $user)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         return view('user.profile.modify', compact('user'));
     }
 

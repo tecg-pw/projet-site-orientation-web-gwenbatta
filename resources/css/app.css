@@ -21,9 +21,9 @@
         z-index: 2;
         opacity: 0;
     }
-    .test{
-        background-image: url("../../../../Pictures/studio-ghibli-forest-clearing-forest-landscape-oak-hd-wallpaper-b8e66d7830908c38504c617e28c2148a.jpeg");
-    }
+    /*.test{*/
+    /*    background-image: url("../../../../Pictures/studio-ghibli-forest-clearing-forest-landscape-oak-hd-wallpaper-b8e66d7830908c38504c617e28c2148a.jpeg");*/
+    /*}*/
     .burger_position{
         position: absolute;
         top: 100%;
@@ -31,10 +31,12 @@
         min-height: 100%;
     }
     .hover_section{
-        top: 45px;
+        top: 30px;
+        left: -12px;
+        right: -12px;
         opacity: 0;
     }
-    .user_name:hover + .hover_section{
+    .user_name:hover .hover_section{
         opacity: 1;
     }
     #burger:checked ~ .burger_position{

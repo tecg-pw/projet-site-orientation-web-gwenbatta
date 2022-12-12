@@ -16,9 +16,7 @@ class PartnerController extends Controller
      */
     public function index(string  $locale=null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $partners = Partner::paginate(8);
 
         $cities = PartnerTranslation::select('locality')->groupBy('locality')->get();
@@ -56,9 +54,7 @@ class PartnerController extends Controller
      */
     public function show(string $locale=null, PartnerTranslation $partner)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
+
         $offers = OfferTranslation::where('partner_id', $partner->id)->where('locale',$locale)->get();
         $alumnis = PartnerTranslation::find($partner->id)->person()->get();
         $partner->members = json_decode($partner->members);

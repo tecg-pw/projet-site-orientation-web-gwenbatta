@@ -14,9 +14,6 @@ class LegalController extends Controller
      */
     public function index(string $locale = null)
     {
-        if (in_array($locale, config('app.available_locales'))){
-            app()->setLocale($locale);
-        }
             return view('legals');
 
     }

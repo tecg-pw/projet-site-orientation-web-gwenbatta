@@ -41,11 +41,11 @@
                 <a class="-order-2 hover:text-orange-500" href="/{{app()->getLocale()}}/user/login">{{__('nav.connexion')}}</a>
             @endguest
             @auth()
-                <div class="-order-2 gap-3">
-                    <a href="#" class="user_name">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
-                    <div class="bg-green-700 flex flex-col">
+                <div class="-order-2 gap-3 relative user_name">
+                    <a href="#" class="">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
+                    <div class="bg-green-700 hover_section absolute z-50 flex-1 rounded-lg flex gap-2 p-3 flex-col">
                         <a dusk="logged-user-name"
-                           class="border-b-2 border-b-white-100/40 pb-0.5 flex-1 hover:text-orange-500"
+                           class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
                            href="/{{app()->getLocale()}}/user/profile/{{auth()->user()->slug}}">Mon profil</a>
                         <form action="/logout"
                               method="post">
