@@ -43,8 +43,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{locale?}', [HomeController::class, 'index']);
+Route::get('/', function () {
+    $locale = substr(Request::server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
+    return redirect('/' . $locale);
+});
 
+Route::get('/{locale?}', [HomeController::class, 'index']);
 
 Route::get('/{locale?}/legals',[LegalController::class, 'index']);
 

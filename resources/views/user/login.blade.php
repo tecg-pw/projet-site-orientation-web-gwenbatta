@@ -15,15 +15,21 @@
                 <form action="/login" method="post" class="flex flex-col xl:block min-w-full">
                     @csrf
                     <fieldset class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>
+                        <label class="text-green-500 @error('email') text-red-400 @enderror text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>
+                        @error('email')
+                        <p class="text-red-400 my-2">{{ $message }}</p>
+                        @enderror
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                            name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be">
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value=" @error('email') {{old('email')}} @enderror">
                     </fieldset>
                     <fieldset class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg xl:text-2xl" for="password">{{__('login_register.password')}}</label>
+                        <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl" for="password">{{__('login_register.password')}}</label>
+                        @error('password')
+                        <p class="text-red-400 my-2">{{ $message }}</p>
+                        @enderror
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('password') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="password" dusk="password-field" id="password" type="password" placeholder="azerty">
                         <a class="hover:text-orange-500 mt-2 text-green-700 underline font-sans self-end text-sm"
                            href="/{{app()->getLocale()}}/user/password">{{__('login_register.forgot')}}</a>

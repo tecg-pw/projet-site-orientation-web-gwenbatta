@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Opportunity;
 use App\Models\People;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -16,7 +17,8 @@ class AboutController extends Controller
      */
     public function index(string $locale = null)
     {
-        if (in_array($locale, config('app.available_locales'))){
+
+        if (in_array($locale, config('app.available_locales'))) {
             app()->setLocale($locale);
         }
         $jobs = Opportunity::all();
@@ -38,7 +40,7 @@ class AboutController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,7 +51,7 @@ class AboutController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -60,7 +62,7 @@ class AboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -71,8 +73,8 @@ class AboutController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -83,7 +85,7 @@ class AboutController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
