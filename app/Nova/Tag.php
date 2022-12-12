@@ -50,7 +50,7 @@ class Tag extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('TagTranslations','translation','App\Nova\TagTranslation'),
+            HasMany::make('Translations','translation','App\Nova\TagTranslation'),
         ];
     }
 

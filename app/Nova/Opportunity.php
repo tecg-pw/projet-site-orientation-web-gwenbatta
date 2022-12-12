@@ -49,7 +49,7 @@ class Opportunity extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
-            HasMany::make('OpportunityTranslations','translation', 'App\Nova\OpportunityTranslation'),
+            HasMany::make('Translations','translation', 'App\Nova\OpportunityTranslation'),
         ];
     }
 

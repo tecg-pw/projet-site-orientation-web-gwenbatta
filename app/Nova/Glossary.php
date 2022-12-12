@@ -49,7 +49,7 @@ class Glossary extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
-            HasMany::make('GlossaryTranslations','translation','App\Nova\GlossaryTranslation')
+            HasMany::make('Translations','translation','App\Nova\GlossaryTranslation')
         ];
     }
 

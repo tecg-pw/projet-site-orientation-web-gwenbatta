@@ -49,7 +49,7 @@ class Tool extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
-            HasMany::make('ToolTranslations','translation','App\Nova\ToolTranslation')
+            HasMany::make('Translations','translation','App\Nova\ToolTranslation')
         ];
     }
 

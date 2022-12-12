@@ -57,7 +57,7 @@ class Person extends Resource
                 return \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->firstname;
             }),
 
-            HasMany::make('PersonTranslations','translation','App\Nova\PersonTranslation'),
+            HasMany::make('Translations','translation','App\Nova\PersonTranslation'),
 
             HasMany::make('Testimonials'),
 

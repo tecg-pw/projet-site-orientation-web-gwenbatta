@@ -50,7 +50,7 @@ class Tuto extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
-            HasMany::make('TutoTranslations','translation','App\Nova\TutoTranslation')
+            HasMany::make('Translations','translation','App\Nova\TutoTranslation')
         ];
     }
 

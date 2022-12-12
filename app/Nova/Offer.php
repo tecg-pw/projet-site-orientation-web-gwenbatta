@@ -53,7 +53,7 @@ class Offer extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
-            HasMany::make('OfferTranslations','translation', 'App\Nova\OfferTranslation'),
+            HasMany::make('Translations','translation', 'App\Nova\OfferTranslation'),
         ];
     }
 

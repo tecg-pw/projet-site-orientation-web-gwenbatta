@@ -53,7 +53,7 @@ class Course extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('CourseTranslations','translation','App\Nova\CourseTranslation')
+            HasMany::make('Translations','translation','App\Nova\CourseTranslation')
         ];
     }
 

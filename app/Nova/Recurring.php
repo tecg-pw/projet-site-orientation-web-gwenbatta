@@ -49,7 +49,7 @@ class Recurring extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
-            HasMany::make('RecurringTranslations','translation','App\Nova\RecurringTranslation')
+            HasMany::make('Translations','translation','App\Nova\RecurringTranslation')
         ];
     }
 

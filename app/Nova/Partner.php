@@ -52,7 +52,7 @@ class Partner extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('PartnerTranslations','translation','App\Nova\PartnerTranslation'),
+            HasMany::make('Translations','translation','App\Nova\PartnerTranslation'),
         ];
     }
 

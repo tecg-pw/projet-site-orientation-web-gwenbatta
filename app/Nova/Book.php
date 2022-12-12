@@ -50,7 +50,7 @@ class Book extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('BookTranslations','translation','App\Nova\BookTranslation')
+            HasMany::make('Translations','translation','App\Nova\BookTranslation')
         ];
     }
 

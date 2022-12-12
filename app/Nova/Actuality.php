@@ -54,7 +54,7 @@ class Actuality extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('ActualityTranslations','translation','App\Nova\ActualityTranslation'),
+            HasMany::make('Translations','translation','App\Nova\ActualityTranslation'),
 
         ];
     }

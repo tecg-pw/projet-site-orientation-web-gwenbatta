@@ -51,7 +51,7 @@ class Testimonial extends Resource
             Textarea::make('description', function () {
                 return $this->title();
             }),
-            HasMany::make('TestimonialTranslations','translation','App\Nova\TestimonialTranslation'),
+            HasMany::make('Translations','translation','App\Nova\TestimonialTranslation'),
         ];
     }
 

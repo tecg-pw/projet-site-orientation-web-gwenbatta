@@ -55,8 +55,7 @@ class Project extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('ProjetTranslations','translation'),
-
+            HasMany::make('Translations','translation','App\Nova\ProjetTranslation'),
 
         ];
     }

@@ -49,7 +49,7 @@ class Doc extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('DocTranslations','translation','App\Nova\DocTranslation')
+            HasMany::make('Translations','translation','App\Nova\DocTranslation')
         ];
     }
 
