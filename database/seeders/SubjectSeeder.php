@@ -24,7 +24,7 @@ class SubjectSeeder extends Seeder
                 "subject" => $value->subject,
                 "slug" => \Str::slug($value->subject),
                 "description" => $value->description,
-                "tag" => $value->tag,
+                "tag_id" => $value->tag_id,
                 "resolved" => $value->resolved,
                 "user_id" => $value->user_id,
             ]);

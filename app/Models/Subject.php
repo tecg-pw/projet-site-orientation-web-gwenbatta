@@ -12,7 +12,7 @@ class Subject extends Model
 {
     use HasFactory, SoftDeletes;
     protected $dates = ['created_at'];
-    protected $with = ['comments', 'user'];
+    protected $with = ['comments', 'user','tag'];
     protected $withCount = ['comments'];
     protected $fillable = [
         'subject', 'slug' , 'description', 'tag', 'resolved'
@@ -20,6 +20,10 @@ class Subject extends Model
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+    public function tag(): BelongsTo
+    {
+        return $this->belongsTo(Tag::class);
     }
     public function user(): BelongsTo
     {

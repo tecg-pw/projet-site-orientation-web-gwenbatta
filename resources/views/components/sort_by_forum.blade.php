@@ -26,9 +26,9 @@
             <label for="tags" class="xl:text-lg text-green-500 xl:mb-2">{{__('sort.tags')}}</label>
             <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1" id="tags"
                     name="tags">
-                @foreach($tags as $filter)
-                    <option value="{{$filter->tag}}">
-                        {{$filter->tag}}
+                @foreach($tags as $tag)
+                    <option value="{{$tag->translation->where('locale',app()->getLocale())->first()->slug}}">
+                        {{$tag->translation->where('locale',app()->getLocale())->first()->name}}
                     </option>
                 @endforeach
             </select >

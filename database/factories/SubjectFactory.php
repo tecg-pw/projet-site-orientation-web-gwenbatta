@@ -20,7 +20,7 @@ class SubjectFactory extends Factory
             "subject" => fake()->sentence(10),
             "slug" => \Str::slug(fake()->sentence(10)),
             "description" => fake()->sentence(50),
-            "tag" => "générale",
+            "tag_id" => 1,
             "resolved" => false,
             "user_id" => 1,
         ];
