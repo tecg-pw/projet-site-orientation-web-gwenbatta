@@ -2,20 +2,23 @@
     /** @var \mixed */
     'offer_ref'
 ])
+@php
+    $offer = $offer_ref->translation->where('locale',app()->getLocale())->first()
+@endphp
 <article
         {{$attributes->class(['group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }}
-        aria-labelledby="{{$offer_ref->slug}}">
+        aria-labelledby="{{$offer->slug}}">
     <div class="flex flex-1 items-center">
         <div class="flex-1 order-2 ml-4">
             <div class="xl:flex-row flex-col flex justify-between">
-                <h3 id="{{$offer_ref->slug}}" role="heading" aria-level="4"
-                    class="text-lg xl:text-2xl">{{$offer_ref->name}}</h3>
-                <p class="xl:text-lg">{{ucwords($offer_ref->created_at->translatedFormat('d F Y'))}}</p>
+                <h3 id="{{$offer->slug}}" role="heading" aria-level="4"
+                    class="text-lg xl:text-2xl">{{$offer->name}}</h3>
+                <p class="xl:text-lg">{{ucwords($offer->created_at->translatedFormat('d F Y'))}}</p>
             </div>
             <div class="mt-1 flex justify-between">
                 <div class="flex flex-col gap-2 max-w-[80%]">
-                    <p class="text">{{$offer_ref->description}}</p>
-                    <p class="font-medium xl:text-lg">{{$offer_ref->partner->name}}</p>
+                    <p class="text">{{$offer->description}}</p>
+                    <p class="font-medium xl:text-lg">{{$offer_ref->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                 </div>
                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                      width="25"
@@ -28,5 +31,5 @@
         </div>
     </div>
     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-       href="/{{app()->getLocale()}}/entreprise/internship/{{$offer_ref->slug}}">{{__('agency.offer_more') . $offer_ref->slug}}</a>
+       href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->slug}}">{{__('agency.offer_more') . $offer->slug}}</a>
 </article>

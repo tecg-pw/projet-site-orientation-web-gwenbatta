@@ -2,9 +2,12 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\BacYear;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -22,8 +25,34 @@ class Book extends Resource
      *
      * @var string
      */
-    public function title() {
-        return \App\Models\BookTranslation::where('locale',app()->getLocale())->where('book_id',$this->id)->first()->name;
+    public function title()
+    {
+        return \App\Models\BookTranslation::where('book_id', $this->id)->first()->name;
+    }
+
+    public function course()
+    {
+        $courses = $this->course;
+        foreach ($courses as $course) {
+            return $course->translation->first()->name;
+        }
+    }
+
+    public function year()
+    {
+        $courses = $this->course;
+        foreach ($courses as $course) {
+            return $course->translation->first()->bac;
+        }
+    }
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
     }
 
     /**
@@ -38,26 +67,37 @@ class Book extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hide(),
 
             Text::make('Name', function () {
                 return $this->title();
             }),
+            Text::make('Course', function () {
+                return $this->course();
+            }),
+            Number::make('Year', function () {
+                return $this->year();
+            })->sortable(),
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('right'),
 
-            HasMany::make('Translations','translation','App\Nova\BookTranslation')
+            HasMany::make('Translations', 'translation', 'App\Nova\BookTranslation'),
+
+            BelongsToMany::make('Course','course','App\Nova\Course')
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -68,18 +108,21 @@ class Book extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+           new Filters\Course(),
+            new Filters\BacYear(),
+        ];
     }
 
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -90,7 +133,7 @@ class Book extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function actions(Request $request)

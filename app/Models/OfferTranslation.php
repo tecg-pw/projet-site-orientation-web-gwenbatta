@@ -19,10 +19,7 @@ class OfferTranslation extends Model
         'name', 'slug' ,'locale', 'description',  'languages','softwares','others','pdf'
     ];
 
-    public function partner(): BelongsTo
-    {
-        return $this->belongsTo(Partner::class);
-    }
+
 
     public function offer(): BelongsTo
     {

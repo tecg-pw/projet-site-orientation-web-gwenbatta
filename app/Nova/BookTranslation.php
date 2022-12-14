@@ -5,8 +5,10 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Spatie\Translatable\Translatable;
 
@@ -56,9 +58,14 @@ class BookTranslation extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Textarea::make('Excerpt')->rows(3)->rules('required'),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
 
-            Textarea::make('Description')->rows(3)->rules('required'),
+            Trix::make('Excerpt')->rules('required'),
+
+            Trix::make('Description')->rules('required'),
 
             BelongsTo::make('Book', 'book', 'App\Nova\Book')
 

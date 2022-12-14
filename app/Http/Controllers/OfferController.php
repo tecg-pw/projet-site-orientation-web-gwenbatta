@@ -53,13 +53,9 @@ class OfferController extends Controller
      */
     public function show(string $locale=null,OfferTranslation $offer)
     {
-
-        $offer->languages = json_decode($offer->languages );
-        $offer->softwares = json_decode($offer->softwares );
-        $offer->others = json_decode($offer->others );
-
-        $offers = OfferTranslation::where('partner_id', $offer->partner_id)->where('id', '<>', $offer->id)->where('locale',$locale)->get();
-        return view('entreprise.internship.single', compact('offer', 'offers'));
+        $offer = Offer::find($offer->offer_id);
+        $offers = Offer::where('id', '<>', $offer->id)->get();
+        return view('entreprise.internship.single', compact('offer','offers'));
     }
 
     /**

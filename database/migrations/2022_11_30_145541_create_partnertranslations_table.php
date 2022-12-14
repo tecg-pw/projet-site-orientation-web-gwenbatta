@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('locale');
             $table->string('mail')->nullable();
             $table->string('logo')->nullable();
+            $table->string('supervisor')->nullable();
             $table->string('adresse');
             $table->string('locality')->index();
             $table->string('locality_number');

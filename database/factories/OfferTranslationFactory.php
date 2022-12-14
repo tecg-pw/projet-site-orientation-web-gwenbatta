@@ -27,7 +27,7 @@ class OfferTranslationFactory extends Factory
             "pdf" => "",
             "locale" => "fr",
             "offer_id" => 1,
-            "partner_id" => 1,
+
         ];
     }
 }

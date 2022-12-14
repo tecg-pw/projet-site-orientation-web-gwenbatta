@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -51,13 +53,15 @@ class Person extends Resource
             ID::make(__('ID'), 'id')->sortable(),
 
             Text::make('Name', function () {
-                return \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->name;
+                return \App\Models\PersonTranslation::where('people_id',$this->id)->first()->name;
             }),
             Text::make('Firstname', function () {
-                return \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->firstname;
+                return \App\Models\PersonTranslation::where('people_id',$this->id)->first()->firstname;
             }),
 
             HasMany::make('Translations','translation','App\Nova\PersonTranslation'),
+
+            BelongsToMany::make('Course','courses','App\Nova\Course'),
 
             HasMany::make('Testimonials'),
 

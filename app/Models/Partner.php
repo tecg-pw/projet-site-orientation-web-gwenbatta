@@ -20,4 +20,8 @@ protected $with = ["translation"];
         return $this->hasMany(PartnerTranslation::class);
     }
 
+    public function offers(): HasMany
+    {
+        return $this->hasMany(Offer::class);
+    }
 }

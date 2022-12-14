@@ -108,7 +108,7 @@
                 <li><a class="hover:text-orange-500" href="/{{app()->getLocale()}}/news/index"> {{__('nav.nav_navigation.actualities')}}</a></li>
                 <li><a class="hover:text-orange-500" href="/{{app()->getLocale()}}/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
             </ul>
-            <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
+            <x-search_bar_nav class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar_nav>
             <input class="absolute cursor-pointer opacity-0 z-30 w-8 h-8 " type="checkbox" name="burger" id="burger">
             <div class="relative -order-1">
                 <label class="sr-only" for="burger">{{__('nav.nav_burger')}}</label>

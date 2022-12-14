@@ -1,3 +1,7 @@
+@php
+    $partner = $partner->translation->where('locale',app()->getLocale())->first();
+    $partner->members = json_decode($partner->members);
+@endphp
 <x-commons.navigation></x-commons.navigation>
 <main id="content" class="">
     <section class="xl:mt-20 px-10 xl:px-36 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
@@ -97,17 +101,17 @@
             @if(count($offers) !== 0)
                 @foreach($offers as $offer)
                     <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
-                             aria-labelledby="{{$offer->slug}}">
+                             aria-labelledby="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}">
                         <div class="flex flex-1 items-center">
                             <div class="flex-1 order-2 ml-4">
                                 <div class="xl:flex-row flex-col flex justify-between">
-                                    <h3 id="{{$offer->slug}}" role="heading" aria-level="4" class="text-lg xl:text-2xl">{{$offer->name}}</h3>
-                                    <p class="xl:text-lg">{{$offer->created_at->translatedFormat('d M. Y')}}</p>
+                                    <h3 id="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="4" class="text-lg xl:text-2xl">{{$offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
+                                    <p class="xl:text-lg">{{$offer->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d M Y')}}</p>
                                 </div>
                                 <div class="mt-1 flex justify-between">
                                     <div class="flex flex-col gap-2 max-w-[80%]">
-                                        <p class="text">{{$offer->description}}</p>
-                                        <p class="font-medium xl:text-lg">{{$offer->partner->name}}</p>
+                                        <p class="text">{{$offer->translation->where('locale',app()->getLocale())->first()->description}}</p>
+                                        <p class="font-medium xl:text-lg">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                                     </div>
                                     <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                          width="25"
@@ -120,7 +124,7 @@
                             </div>
                         </div>
                         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                           href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->slug}}">{{__('En savoir plus' . $offer->slug)}}</a>
+                           href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}">{{__('En savoir plus' . $offer->translation->where('locale',app()->getLocale())->first()->slug)}}</a>
                     </article>
                 @endforeach
             @else

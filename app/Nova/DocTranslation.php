@@ -5,9 +5,10 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\Trix;
+
 
 class DocTranslation extends Resource
 {
@@ -54,7 +55,12 @@ class DocTranslation extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Textarea::make('Excerpt')->rows(3)->rules('required'),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
+
+            Trix::make('Excerpt')->rules('required'),
 
             Text::make('Link')
                 ->sortable()

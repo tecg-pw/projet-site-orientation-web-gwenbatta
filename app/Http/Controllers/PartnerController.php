@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Offer;
 use App\Models\OfferTranslation;
 use App\Models\Partner;
 use App\Models\PartnerTranslation;
@@ -55,9 +56,9 @@ class PartnerController extends Controller
     public function show(string $locale=null, PartnerTranslation $partner)
     {
 
-        $offers = OfferTranslation::where('partner_id', $partner->id)->where('locale',$locale)->get();
+        $offers = Offer::where('partner_id', $partner->id)->get();
         $alumnis = PartnerTranslation::find($partner->id)->person()->get();
-        $partner->members = json_decode($partner->members);
+        $partner = Partner::find($partner->partner_id);
         return view('entreprise.partner.single', compact('partner','offers','alumnis'));
     }
 

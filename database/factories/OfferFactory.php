@@ -18,6 +18,7 @@ class OfferFactory extends Factory
     {
         return [
             "id" => 1,
+            "partner_id" => 1,
         ];
     }
 }

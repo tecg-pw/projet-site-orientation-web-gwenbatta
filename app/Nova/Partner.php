@@ -53,6 +53,8 @@ class Partner extends Resource
             }),
 
             HasMany::make('Translations','translation','App\Nova\PartnerTranslation'),
+
+            HasMany::make('Offers','offers','App\Nova\Offer'),
         ];
     }
 

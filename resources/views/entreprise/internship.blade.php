@@ -17,7 +17,7 @@
         <h2 id="list-internship" role="heading" aria-level="2" class="sr-only">{{__('agency.offer_list')}}</h2>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($offers as $offer_ref)
-                <x-offer_article :offer_ref="$offer_ref->translation->where('locale',app()->getLocale())->first()"/>
+                <x-offer_article :offer_ref="$offer_ref"/>
             @endforeach
         </div>
         {{--                {{$offers->links()}}--}}

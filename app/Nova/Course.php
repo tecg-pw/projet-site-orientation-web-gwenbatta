@@ -25,7 +25,26 @@ class Course extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\CourseTranslation::where('locale',app()->getLocale())->where('course_id',$this->id)->first()->name;
+        return \App\Models\CourseTranslation::where('course_id',$this->id)->first()->name;
+    }
+    public function bac() {
+        return \App\Models\CourseTranslation::where('course_id',$this->id)->first()->bac;
+    }
+    public function hours() {
+        return \App\Models\CourseTranslation::where('course_id',$this->id)->first()->hours;
+    }
+    public function person(){
+        return \App\Models\Course::find($this->course_id)->person;
+    }
+
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
     }
 
     /**
@@ -52,8 +71,26 @@ class Course extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
+            Text::make('Bac', function () {
+                return $this->bac();
+            }),
+            Text::make('Hours', function () {
+                return $this->hours();
+            })->textAlign('right'),
 
-            HasMany::make('Translations','translation','App\Nova\CourseTranslation')
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('right'),
+
+            HasMany::make('Translations','translation','App\Nova\CourseTranslation'),
+
+            HasMany::make('People','person','App\Nova\Person'),
+
+            HasMany::make('Docs','docs','App\Nova\Doc'),
+
+            HasMany::make('Books','books','App\Nova\Book'),
+
+            HasMany::make('Tools','tools','App\Nova\Tool'),
         ];
     }
 

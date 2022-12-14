@@ -54,6 +54,8 @@ class Offer extends Resource
                 return $this->title();
             }),
             HasMany::make('Translations','translation', 'App\Nova\OfferTranslation'),
+
+            BelongsTo::make('Partner','partner','App\Nova\Partner')
         ];
     }
 

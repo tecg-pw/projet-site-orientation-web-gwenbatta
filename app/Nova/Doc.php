@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -25,6 +26,19 @@ class Doc extends Resource
         return \App\Models\DocTranslation::where('locale',app()->getLocale())->where('doc_id',$this->id)->first()->name;
     }
 
+    public function link() {
+        return \App\Models\DocTranslation::where('locale',app()->getLocale())->where('doc_id',$this->id)->first()->link;
+    }
+
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
+    }
     /**
      * The columns that should be searched.
      *
@@ -49,10 +63,19 @@ class Doc extends Resource
                 return $this->title();
             }),
 
-            HasMany::make('Translations','translation','App\Nova\DocTranslation')
+            Text::make('Link', function () {
+                return $this->link();
+            }),
+
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('right'),
+
+            HasMany::make('Translations','translation','App\Nova\DocTranslation'),
+
+            BelongsToMany::make('Course','courses','App\Nova\Course')
         ];
     }
-
 
     /**
      * Get the cards available for the request.

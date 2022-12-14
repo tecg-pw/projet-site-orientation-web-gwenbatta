@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -26,7 +27,18 @@ class Tool extends Resource
     public function title() {
         return \App\Models\ToolTranslation::where('locale',app()->getLocale())->where('tool_id',$this->id)->first()->name;
     }
-
+    public function link() {
+        return \App\Models\ToolTranslation::where('locale',app()->getLocale())->where('tool_id',$this->id)->first()->link;
+    }
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
+    }
     /**
      * The columns that should be searched.
      *
@@ -49,7 +61,17 @@ class Tool extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
-            HasMany::make('Translations','translation','App\Nova\ToolTranslation')
+            Text::make('Link', function () {
+                return $this->link();
+            }),
+
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('right'),
+
+            HasMany::make('Translations','translation','App\Nova\ToolTranslation'),
+
+            BelongsToMany::make('Course','courses','App\Nova\Course')
         ];
     }
 

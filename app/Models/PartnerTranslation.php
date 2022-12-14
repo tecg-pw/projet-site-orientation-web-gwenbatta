@@ -18,10 +18,6 @@ class PartnerTranslation extends Model
     protected $fillable = [
         'name', 'slug' ,'locale', 'mail', 'logo', 'adresse', 'locality','locality_number', 'description', 'site_link', 'link_facebook','link_linkedin','link_instagram','members'
     ];
-    public function offers(): HasMany
-    {
-        return $this->hasMany(Offer::class);
-    }
     public function person(): BelongsToMany
     {
         return $this->belongsToMany(People::class, 'partner_person', 'partner_id', 'people_id');

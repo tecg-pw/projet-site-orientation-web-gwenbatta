@@ -27,6 +27,16 @@ class Glossary extends Resource
         return \App\Models\GlossaryTranslation::where('locale',app()->getLocale())->where('glossary_id',$this->id)->first()->name;
     }
 
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
+    }
+
     /**
      * The columns that should be searched.
      *
@@ -49,6 +59,9 @@ class Glossary extends Resource
             Text::make('Name', function () {
                 return $this->title();
             }),
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('right'),
             HasMany::make('Translations','translation','App\Nova\GlossaryTranslation')
         ];
     }

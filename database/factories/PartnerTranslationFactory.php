@@ -22,6 +22,7 @@ class PartnerTranslationFactory extends Factory
             "slug" => \Str::slug($name),
             "mail" =>  fake()->unique()->safeEmail(),
             "logo" => "",
+            "supervisor" => "",
             "adresse" => "rue des Anges, 14",
             "locality" => 'Liège',
             "locality_number" => 4000,

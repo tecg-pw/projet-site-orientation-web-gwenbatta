@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class CourseTranslation extends Resource
@@ -56,11 +58,20 @@ class CourseTranslation extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Number::make('hours'),
+            Number::make('Hours'),
 
-            Number::make('bac'),
+            Select::make('Bac')->options([
+                '1' => 'Bac 1',
+                '2' => 'Bac 2',
+                '3' => 'Bac 3',
+            ])->displayUsingLabels(),
 
-            Textarea::make('Description')->rows(3)->rules('required'),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
+
+            Trix::make('Description')->rules('required'),
 
             BelongsTo::make('Course', 'course', 'App\Nova\Course')
         ];

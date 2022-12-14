@@ -23,6 +23,7 @@ class OfferSeeder extends Seeder
             Offer::factory()->create([
 
                 "id" => $value->id,
+                "partner_id" => $value->partner_id,
             ]);
         }
     }

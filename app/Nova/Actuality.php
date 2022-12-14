@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -27,7 +28,22 @@ class Actuality extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\ActualityTranslation::where('locale',app()->getLocale())->where('actuality_id',$this->id)->first()->name;
+        return \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first()->name;
+    }
+    public function location() {
+        return \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first()->lieu;
+    }
+    public function date() {
+        return \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first()->date;
+    }
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
     }
 
     /**
@@ -48,10 +64,20 @@ class Actuality extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hide(),
 
             Text::make('Name', function () {
                 return $this->title();
+            }),
+            Text::make('Location', function () {
+                return $this->location();
+            }),
+            Date::make('Date', function () {
+                return $this->date();
+            }),
+
+            Text::make('Traduction', function () {
+                return $this->translationList();
             }),
 
             HasMany::make('Translations','translation','App\Nova\ActualityTranslation'),

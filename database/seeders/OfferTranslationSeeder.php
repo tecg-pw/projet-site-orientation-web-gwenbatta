@@ -31,7 +31,7 @@ class OfferTranslationSeeder extends Seeder
                 "pdf" => $value->pdf,
                 "locale" => $value->locale,
                 "offer_id" => $value->offer_id,
-                "partner_id" => $value->partner_id,
+
             ]);
         }
     }

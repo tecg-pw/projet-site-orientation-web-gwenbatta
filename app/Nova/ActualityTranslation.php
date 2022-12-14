@@ -2,13 +2,17 @@
 
 namespace App\Nova;
 
+
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ActualityTranslation extends Resource
@@ -56,9 +60,14 @@ class ActualityTranslation extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Textarea::make('Excerpt')->rows(3)->rules('required'),
+            Select::make('Locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
 
-            Textarea::make('Description')->rows(3)->rules('required'),
+            Trix::make('Excerpt')->rules('required'),
+
+            Trix::make('Description')->rules('required'),
 
             Text::make('Lieu')
                 ->sortable()
@@ -70,7 +79,7 @@ class ActualityTranslation extends Resource
 
             Image::make('Main_pictures')->onlyOnForms(),
 
-            DateTime::make('Date'),
+            Date::make('Date'),
 
             BelongsTo::make('Actuality', 'actuality', 'App\Nova\Actuality')
         ];
