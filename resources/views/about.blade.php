@@ -132,10 +132,10 @@
             </h2>
             <div
                 class="hover:text-orange-500 flex xl:justify-end text-green-700 underline font-sans text-lg xl:text-2xl font-semibold">
-                <a href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni">{{__('about.teacher_button')}}</a>
+                <a href="/{{app()->getLocale()}}/bottin/alumni">{{__('about.teacher_button')}}</a>
             </div>
         </div>
-        <div class="xl:grid xl:grid-cols-2 flex flex-col gap-y-60 xl:mt-60 xl:gap-y-40 xl:gap-x-60">
+        <div class="xl:grid xl:grid-cols-2 flex flex-col xl:gap-y-60 xl:mt-60 xl:gap-y-40 xl:gap-x-60">
             @foreach($teachers as $teacher_ref)
                 <x-teacher_list_about :teacher_ref="$teacher_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach

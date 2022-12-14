@@ -5,7 +5,7 @@
             <h2 id="projects" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('actu.actu_title')}}</h2>
             <x-search_bar class=""></x-search_bar>
         </div>
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-6 xl:justify-center">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col items-center gap-6 xl:justify-center">
             @foreach($news as $new_ref)
                 <x-new :new_ref="$new_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach

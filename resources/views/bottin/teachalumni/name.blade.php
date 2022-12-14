@@ -17,7 +17,7 @@
                             <a class="hover:text-orange-500 underline text-green-700"
                                href="/{{str_replace('_','-',app()->getLocale())}}/about/job/single">{{$teachalumni->job}}</a>
                         </div>
-                        <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-xl">
+                        <div class="flex gap-y-1.5 flex-col xl:gap-y-2.5 mb-5 text-xl">
                             <a class="hover:text-orange-500 text-green-700 underline"
                                href="mailto:{{$teachalumni->mail}}">{{$teachalumni->mail}}</a>
                             <a class="hover:text-orange-500 text-green-700 underline text-xl"
@@ -103,7 +103,7 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 {{count($projects) !== 0 ? 'items-center' : ''}} justify-center">
             @foreach($projects as $project_ref)
                 <x-project :project_ref="$project_ref"></x-project>
             @endforeach

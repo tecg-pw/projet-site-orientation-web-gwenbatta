@@ -1,7 +1,7 @@
 @props([
     'project_ref'
 ])
-<article class="group hover:bg-orange-100 flex-col flex bg-yellow-100 rounded-3xl relative"
+<article class="group hover:bg-orange-100 flex-col sm:max-w-[93%] flex bg-yellow-100 rounded-3xl relative"
          aria-labelledby="{{$project_ref->slug}}">
     <div class="flex-col flex px-4 mt-4 xl:mt-6">
         <h3 class="text-xl mb-1.5 xl:text-3xl xl:mb-3" role="heading" aria-level="3" id="{{$project_ref->slug}}">{{$project_ref->title}}</h3>

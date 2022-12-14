@@ -13,10 +13,10 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_button')}}</a>
         </div>
-        <div class="flex xl:flex-row flex-col mt-20 xl:mt-0">
-            <article class="relative mt-48" aria-labelledby="{{$project->person->slug}}">
-                <img class="rounded-lg absolute -z-10 bottom-3/4" src="{{$project->person->avatar}}" alt="avatar">
-                <div class="relative bg-yellow-100 rounded-xl px-4 py-8 left-10">
+        <div class="flex xl:flex-row flex-col mt-20  xl:mt-0">
+            <article class="xl:relative xl:block sm:mb-8 xl:mb-0 sm:flex sm:gap-x-4 sm:items-center xl:mt-48" aria-labelledby="{{$project->person->slug}}">
+                <img class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 mb-2" src="{{$project->person->avatar}}" alt="avatar">
+                <div class="relative xl:bg-yellow-100 rounded-xl py-4 px-4 xl:py-8 xl:left-10">
                     <h3 id="{{$project->person->slug}}" aria-level="3" role="heading"
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl"><a
                             href="/{{app()->getLocale()}}/bottin/alumni/{{$project->person->slug}}">{{$project->person->firstname}} {{$project->person->name}}</a>
@@ -25,7 +25,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                         -{{$project->person->end->format('Y')}}</p>
                     <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500"
                        href="{{$project->person->link_portfolio}}">{{$project->person->link_portfolio}}</a>
-                    <div class="flex justify-between gap-32 items-center mt-4 mb-2 ">
+                    <div class="flex xl:flex-row flex-col justify-between xl:gap-32 xl:items-center mt-4 mb-2 ">
                         <div class="flex flex-1 gap-5">
                             <div class="relative group">
                                 <svg class="group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="30"
@@ -56,23 +56,23 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                                 <a class="linkcard" href="{{$project->person->linkedin}}"></a>
                             </div>
                         </div>
-                        <p class="justify-self-end text-green-500 uppercase text-lg mt-2">{{$project->person->status}}</p>
+                        <p class="justify-self-end text-green-500 uppercase text-lg mt-4 xl:mt-2">{{$project->person->status}}</p>
                     </div>
                 </div>
             </article>
-            <div class="xl:ml-28 xl:mt-0 mt-10">
+            <div class="xl:ml-28 xl:mt-0">
                 <p class="text-lg xl:text-xl xl:max-w-[85%] flex flex-col gap-8 leading-8">
                     {{$project->description}}
                 </p>
                 <div class="mt-6">
                     <div class="flex flex-col xl:gap-2 text-lg">
-                        <div class="flex gap-3">
+                        <div class="flex xl:flex-row flex-col xl:gap-3 mb-3">
                             <p>{{__('project.project_make_course')}}</p>
                             @foreach($course as $classe)
                                 <a class=" underline text-green-700 uppercase hover:text-orange-500"
                                    href="/{{app()->getLocale()}}/cours/{{$classe->translation->where('locale',app()->getLocale())->first()->slug}}">{{$classe->translation->where('locale',app()->getLocale())->first()->name}}</a>
                         </div>
-                        <div class="flex flex-row gap-3">
+                        <div class="flex xl:flex-row flex-col mb-3 xl:gap-3">
                             <p>{{__('project.project_make_with')}}</p>
                             @foreach($teachers as $teacher_ref)
                                 <a class=" underline text-green-700 uppercase hover:text-orange-500"

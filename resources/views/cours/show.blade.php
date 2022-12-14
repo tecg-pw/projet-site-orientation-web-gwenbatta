@@ -5,9 +5,9 @@
         <div class="flex xl:flex-row flex-col xl:px-36 px-10 justify-between mt-20 mb-8">
             <h2 id="slug" aria-level="2" role="heading" class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$course->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/about#course">{{__('course.course_back')}}</a>
+               href="/{{app()->getLocale()}}/about#course">{{__('course.course_back')}}</a>
         </div>
-        <div class="xl:px-36 xl:mb-0 px-10 flex justify-between xl:justify-start xl:gap-20 text-lg xl:text-xl">
+        <div class="xl:px-36 mb-6 xl:mb-0 px-10 flex justify-between sm:justify-start sm:gap-x-10  xl:justify-start xl:gap-20 text-lg xl:text-xl">
             <p class="uppercase">{{$course->bac}}e{{$course->bac===1?'r':''}} {{__('course.course_year')}}</p>
             <div class="flex flex-wrap xl:gap-x-24 xl:gap-y-3 max-w-[50%]">
             @foreach($teachers as $teacher)
@@ -15,10 +15,10 @@
             @endforeach
             </div>
         </div>
-        <div class="xl:px-36 xl:mt-6 px-10 grid grid-cols-10 items-end mb-36 gap-x-20">
+        <div class="xl:px-36 xl:mt-6 px-10 xl:grid xl:grid-cols-10 items-end mb-36 gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
-                    <h3 id="description" aria-level="3" role="heading" class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('course.course_subtitle')}}</h3>
+                    <h3 id="description" aria-level="3" role="heading" class="font-sans text-lg xl:text-2xl font-medium mb-5">{{__('course.course_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
                         <p class="text-lg leading-8 xl:text-xl xl:leading-10 ">{{$course->description}}</p>
                     </div>

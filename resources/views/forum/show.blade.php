@@ -16,7 +16,7 @@
                                   transform="translate(875.711 1774.888)" fill="#da953a"/>
                         </g>
                     </svg>
-                    <svg class="xl:sr-only -order-1" xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 34.194 34.196">
+                    <svg class="xl:sr-only -order-1" xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 34.194 34.196">
                         <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
                             <path id="_106780bf1ed9964c2ffe0eda53fe07ea" data-name="106780bf1ed9964c2ffe0eda53fe07ea"
                                   d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
@@ -34,30 +34,30 @@
         <div class="xl:grid xl:grid-cols-5 mb-36">
             <div class="xl:col-span-3 xl:pl-36 xl:pr-14 px-10">
                 <div class="mb-24">
-                    <div class="flex items-center xl:gap-8">
+                    <div class="flex items-center gap-y-4 flex-wrap xl:gap-8">
                         <img class="xl:not-sr-only sr-only -order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
                              src="https://placehold.jp/108x108.png"
                              alt="Nom">
                         <img class="xl:sr-only -order-1 mr-4 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
                              src="https://placehold.jp/84x84.png"
                              alt="Nom">
-                        <div class="flex flex-1 flex-col">
+                        <div class="flex mr-4 sm:mr-0 flex-1 flex-col">
                             <p class="xl:text-xl text-lg mb-2">{{$subject->user->firstname}} {{$subject->user->name}}</p>
                             <p>{{$subject->created_at->format('d M. Y')}}</p>
                         </div>
-                        <p class="uppercase font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
+                        <p class="uppercase font-medium bg-orange-500/40 mr-4 px-4 xl:px-6 pb-1 pt-1.5 rounded-lg xl:text-lg text-green-700">
                             {{ucwords($subject->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                     </div>
-                    <p class="leading-8 xl:leading-10 xl:text-lg xl:mt-7 mt-4">
+                    <p class="leading-8 xl:leading-10 xl:text-lg xl:mt-7 mt-6">
                         {{$subject->description}}
                     </p>
                 </div>
                 <article class="flex flex-col gap-y-8 " aria-labelledby="add-comment">
-                    <div class="flex justify-between items-center">
+                    <div class="flex xl:flex-row flex-col justify-between xl:items-center">
                         <h3 id="add-comment" aria-level="3" role="heading"
-                            class="text-4xl uppercase font-extrabold text-yellow-800 font-sans ">{{__('forum.comment')}}</h3>
+                            class="xl:text-4xl text-2xl uppercase font-extrabold mb-3 text-yellow-800 font-sans ">{{__('forum.comment')}}</h3>
                         @auth()
-                            <a class="hover:text-orange-500 self-center flex font-sans text-end text-green-700 text-2xl font-semibold underline px-4 py-6 self-end"
+                            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
                                href="?add-comment#comment">{{__('forum.add_comment')}}</a>
                         @endauth
                     </div>
@@ -79,16 +79,16 @@
                       <p>{{__('forum.no_comment')}}</p>
                     @else
                         @foreach($subject->comments as $comment)
-                            <div id="{{$comment->slug}}" class="flex flex-col bg-yellow-100 py-6 px-10 rounded-xl">
-                                <p class="leading-8 mt-6">
+                            <div id="{{$comment->slug}}" class="flex flex-col bg-yellow-100 py-3 px-5 xl:py-6 xl:px-10 rounded-xl">
+                                <p class="sm:leading-8 mt-3 sm:mt-6 leading-6 text-sm sm:text-base">
                                     {{$comment->content}}
                                 </p>
                                 <div class="flex -order-1 items-center ">
-                                    <div class="order-2 ml-4">
-                                        <p class="text-xl">{{$comment->user->firstname}} {{$comment->user->name}}</p>
+                                    <div class="order-2 sm:ml-2 xl:ml-4">
+                                        <p class="text-lg uppercase">{{$comment->user->firstname}} {{$comment->user->name}}</p>
                                         <p class="">{{$comment->created_at->format('d M. Y')}}</p>
                                     </div>
-                                    <img class="order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full" width="98"
+                                    <img class="order-1 row-span-3 order-1 justify-self-center row-span-2 sr-only sm:not-sr-only xl:w-[98px] sm:w-[78px] rounded-full" width="98"
                                          src="{{$comment->user->avatar}}"
                                          alt="{{$comment->user->firstname}} {{$comment->user->name}}">
                                 </div>

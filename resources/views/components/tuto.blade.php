@@ -1,7 +1,7 @@
 @props([
     'tuto_ref'
 ])
-<article {{ $attributes->class(['group hover:bg-orange-100 relative py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }} aria-labelledby="{{$tuto_ref->slug}}">
+<article {{ $attributes->class(['group hover:bg-orange-100 relative py-6 px-8 rounded-3xl']) }} aria-labelledby="{{$tuto_ref->slug}}">
     <div class="flex justify-between">
         <div class="flex-1 flex justify-between">
             <h3 id="{{$tuto_ref->slug}}" aria-level="3" role="heading" class="text-lg font-medium xl:text-2xl mb-1.5">

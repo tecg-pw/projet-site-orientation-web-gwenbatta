@@ -1,7 +1,7 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section class="mt-20 mb-36 flex justify-center" aria-labelledby="contact">
-        <div class="px-10 xl:px-36 ">
+    <section class="mt-20 mb-36 xl:flex justify-center" aria-labelledby="contact">
+        <div class=" px-10 xl:px-36 ">
             <div class="flex flex-col">
                 <h2 class="text-2xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6"
                     id="contact" role="heading" aria-level="2">
@@ -17,7 +17,7 @@
                    href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             <div class="flex  mt-14">
-                <form action="/" method="post" enctype="multipart/form-data">
+                <form action="/" class="flex-1" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 text-lg mb-2 xl:text-2xl" for="name">{{__('contact_page.agency_name')}}</label>

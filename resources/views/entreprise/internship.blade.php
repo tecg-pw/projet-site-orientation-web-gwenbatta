@@ -5,7 +5,7 @@
             <h2 id="company" role="heading" aria-level="2" class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('agency.agency_title')}}</h2>
             <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
         </div>
-{{--        <x-sort_by_partner :cities="$cities" :agencies="$agencies"/>--}}
+        <x-sort_by_partner :cities="$cities" :agencies="$agencies"/>
         <div class="flex xl:gap-20 mb-12 justify-between xl:justify-start">
             <a class="hover:text-orange-500 xl:text-xl text-lg underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/{{app()->getLocale()}}/entreprise/partner">{{__('agency.partner_link')}}</a>

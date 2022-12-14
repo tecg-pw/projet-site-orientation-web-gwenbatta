@@ -15,7 +15,7 @@
                             <p>{{($alumni->begin->format('Y'))}} - {{($alumni->end->format('Y'))}}</p>
                             <a class="hover:text-orange-500 underline text-green-700" href="/{{str_replace('_','-',app()->getLocale())}}/about/job/{{__($alumni->job_slug)}}">{{__($alumni->job)}}</a>
                         </div>
-                        <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-xl">
+                        <div class="flex gap-y-1.5 flex-col xl:gap-y-2.5 mb-5 text-xl">
                             <a class="hover:text-orange-500 text-green-700 underline" href="mailto:{{__($alumni->mail)}}">{{__($alumni->mail)}}</a>
                             <a class="hover:text-orange-500 text-green-700 underline text-xl" href="{{__($alumni->link_portfolio)}}">{{__($alumni->link_portfolio)}}</a>
                         </div>
@@ -86,9 +86,9 @@
             <h2 id="projects" role="heading" aria-level="2"
                 class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_see_all')}}</a>
+               href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col {{count($projects) !== 0 ? 'items-center' : ''}} gap-y-4 justify-center">
             @foreach($projects as $project)
                 <x-project :project="$project"></x-project>
             @endforeach

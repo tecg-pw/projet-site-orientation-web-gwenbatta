@@ -3,7 +3,7 @@
 ])
 
 <article aria-labelledby="{{$recurring_ref->slug}}"
-        {{ $attributes->class(['col-span-2 flex flex-col justify-between bg-white-100 py-10 px-8 rounded-3xl']) }}>
+        {{ $attributes->class(['col-span-2 flex flex-col justify-between bg-white-100 p-5 xl:py-10 xl:px-8 rounded-3xl']) }}>
     <h3 role="heading" aria-level="3" id="{{$recurring_ref->slug}}"
         class="xl:text-2xl text-xl font-sans font-medium">{{$recurring_ref->name}}</h3>
     @if(!(request()->has('show-reponse-'.$recurring_ref->slug)))

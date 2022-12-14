@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Offer;
 use App\Models\OfferTranslation;
+use App\Models\PartnerTranslation;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -17,7 +18,10 @@ class OfferController extends Controller
     {
 
         $offers = Offer::paginate(8);
-        return view('entreprise.internship', compact('offers'));
+
+        $cities = PartnerTranslation::select('locality')->groupBy('locality')->get();
+        $agencies = PartnerTranslation::select('name')->groupBy('name')->get();
+        return view('entreprise.internship', compact('offers','cities','agencies'));
     }
 
     /**
