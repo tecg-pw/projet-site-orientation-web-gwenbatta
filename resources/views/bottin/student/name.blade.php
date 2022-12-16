@@ -1,6 +1,6 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content" class="">
-    <section class="mt-20 px-10 xl:px-36 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
+    <section class="mt-20 px-10 2xl:px-48 xl:px-36 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
         <div class=" flex flex-col justify-between gap-y-2 text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"
                 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$student->firstname}} {{$student->name}}</h2>
@@ -61,7 +61,7 @@
                 @endif
 
             </div>
-            <div class="xl:min-w-[345px] md:min-w-[250px] flex-1 flex flex-col">
+            <div class="xl:max-w-[345px] 2xl:max-w-[400px] md:max-w-[250px] flex-1 flex flex-col">
                 <img class=" xl:mb-6 rounded-3xl" src="{{$student->avatar}}" alt="avatar">
                 <div class="flex flex-col mt-8">
                     <a href="{{$student->link_portfolio}}"
@@ -81,7 +81,7 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
+    <article class="bg-yellow-600 2xl:px-48 px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
         <div class="justify-between flex flex-col mb-8 md:flex-row">
             <h2 id="projects" role="heading" aria-level="2"
                 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>

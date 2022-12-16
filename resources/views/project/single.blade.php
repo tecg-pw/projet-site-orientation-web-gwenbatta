@@ -3,7 +3,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
 ?>
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section class="xl:px-36 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
+    <section class="xl:px-36 2xl:px-48 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
         <div class="flex flex-col md:flex-row justify-between mb-8">
             <h2 id="{{$project->slug}}" aria-level="2" role="heading"
                 class="xl:text-4xl md:text-3xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$project->title}}</h2>
@@ -58,7 +58,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                 </div>
             </article>
             <div class="xl:ml-28 xl:mt-0">
-                <p class="text-lg xl:text-xl xl:max-w-[85%] flex flex-col gap-8 leading-8">
+                <p class="text-lg xl:text-xl xl:max-w-[85%] 2xl:max-w-[60%] 2xl:leading-10 flex flex-col gap-8 leading-8">
                     {{$project->description}}
                 </p>
                 <div class="mt-6">
@@ -85,7 +85,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                         </div>
                         @endforeach
                         </div>
-                        <div class="flex flex-col xl:flex-row xl:gap-32 mt-4 xl:items-center">
+                        <div class="flex flex-col xl:flex-row xl:gap-32 2xl:gap-x-48 mt-4 xl:items-center">
                             <a href="{{$project->person->link_portfolio}}"
                                class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('project.project_portfolio')}}</a>
                             <a class="group hover:text-orange-500 flex font-sans text-green-700 md:text-xl xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"
@@ -105,9 +105,9 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
             </div>
 
     </section>
-    <section class="xl:not-sr-only sr-only xl:px-36 px-10 bg-yellow-600" aria-labelledby="photos">
+    <section class="xl:not-sr-only 2xl:px-48 2xl:flex 2xl:justify-center sr-only xl:px-36 px-10 bg-yellow-600" aria-labelledby="photos">
         <h2 id="photos" aria-level="2" role="heading" class="sr-only">{{__('project.project_pictures')}}</h2>
-        <figure class="grid grid-cols-4 grid-rows-2 gap-5  py-24">
+        <figure class="grid grid-cols-4 grid-rows-2 gap-5 py-24">
             <img class="rounded-xl row-span-2" src="https://placehold.jp/395x584.png" alt="{{__('photo du projet')}}">
             <img class="rounded-xl col-span-2" src="https://placehold.jp/723x278.png" alt="{{__('photo du projet')}}">
             <img class="rounded-xl row-span-2" src="https://placehold.jp/395x584.png" alt="{{__('photo du projet')}}">
@@ -122,7 +122,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
-        <div class="md:grid xl:grid-cols-3 md:grid-cols-2 xl:gap-8 flex flex-col gap-y-4 justify-center">
+        <div class="md:grid xl:grid-cols-3 md:grid-cols-2 xl:gap-8 2xl:gap-x-5 flex flex-col gap-y-4 justify-center">
             @foreach($projects as $project_ref)
                 <x-project :project_ref="$project_ref"></x-project>
             @endforeach

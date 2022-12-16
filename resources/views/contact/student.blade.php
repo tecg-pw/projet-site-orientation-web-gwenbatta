@@ -1,20 +1,18 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section class="mt-20 mb-20 xl:mb-0 xl:flex justify-center" aria-labelledby="contact">
-        <div class="xl:px-36">
+        <div class="xl:px-36 2xl:pl-48 mt-10 flex-1">
             <div class="px-10 xl:px-0 flex flex-col">
                 <h2 class="text-2xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6"
                     id="contact" role="heading" aria-level="2">
                     {{__('contact_page.contact_title')}}
                 </h2>
-                <a class="text-green-500 text-lg xl:text-2xl font-sans font-light underline mt-8"
-                   href="/{{str_replace('_','-',app()->getLocale())}}">{{__('Contact > Étudiant')}}</a>
             </div>
-            <div class="flex flex-1 px-10 xl:px-0">
-                <a class="bg-orange-200 font-sans text-green-700 text-xl rounded-lg font-semibold underline xl:mr-28 py-2.5 px-6"
-                   href="/{{str_replace('_','-',app()->getLocale())}}/contact/student">{{__('contact_page.student_link')}}</a>
-                <a class="hover:text-orange-500 text-end font-sans text-green-700 self-center text-xl font-semibold underline flex-1 py-2.5 px-6 xl:text-start"
-                   href="/{{str_replace('_','-',app()->getLocale())}}/contact/agency">{{__('contact_page.agency_link')}}</a>
+            <div class="flex flex-1 justify-between px-10 xl:px-0">
+                <a class="hover:text-orange-500 bg-orange-200 rounded-lg font-sans text-green-700 text-xl rounded-lg font-semibold underline  py-2.5 px-6"
+                   href="/{{app()->getLocale()}}/contact/student">{{__('contact_page.student_link')}}</a>
+                <a class=" font-sans text-green-700 text-en xl:text-start self-center text-xl font-semibold underline py-2.5 "
+                   href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             <div class="flex  mt-14">
                 <form action="/" method="post" class="flex-1 px-10 xl:px-0">

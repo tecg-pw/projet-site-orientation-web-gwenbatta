@@ -4,9 +4,9 @@
     'ratings'
 ])
 
-<article {{ $attributes->class(['px-7 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-36 pb-28']) }} aria-labelledby="questions">
+<article {{ $attributes->class(['px-7 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-36 2xl:px-48 pb-28']) }} aria-labelledby="questions">
     <div class="flex flex-col xl:mt-20 md:flex-row xl:mb-24 mb-12">
-        <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl xl:max-w-[50%] uppercase font-bold xl:mb-12 font-sans xl:leading-12" role="heading" aria-level="2"
+        <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl xl:max-w-[50%] 2xl:max-w-full uppercase font-bold xl:mb-12 font-sans xl:leading-12" role="heading" aria-level="2"
             id="questions">{{__('home.forum_title')}}</h2>
         <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl xl:text-end xl:text-3xl"
            href="forum/index">{{__('home.forum_link')}}</a>

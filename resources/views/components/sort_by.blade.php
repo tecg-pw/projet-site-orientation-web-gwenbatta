@@ -3,7 +3,7 @@
     'years_end'
 ])
 
-<div {{ $attributes->class(['xl:px-36 px-10 mb-8 xl:mb-20']) }}>
+<div {{ $attributes->class(['xl:px-36 2xl:px-48 px-10 mb-8 xl:mb-20']) }}>
     <p class="text-green-500 text-xl xl:text-3xl font-medium mb-2 xl:mb-4">{{__('sort.sort_by')}}</p>
     <form action="/"
           method="get" class="flex flex-col gap-4">

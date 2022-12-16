@@ -8,7 +8,7 @@
 
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section class="xl:px-36 px-10 mt-20 mb-20 xl:mb-40" aria-labelledby="{{$offer_ref->slug}}">
+    <section class="xl:px-36 2xl:px-48 px-10 mt-20 mb-20 xl:mb-40" aria-labelledby="{{$offer_ref->slug}}">
         <div class="flex md:flex-row flex-col justify-between mb-8">
             <h2 id="{{$offer_ref->slug}}" role="heading" aria-level="2"
                 class="xl:text-4xl md:text-3xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$offer_ref->name}}</h2>
@@ -134,7 +134,7 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="internships">
+    <article class="bg-yellow-600 2xl:px-48 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="internships">
         <div class="flex md:flex-row flex-col justify-between mb-8">
             <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('agency.offer_other_title')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"

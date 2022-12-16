@@ -1,13 +1,13 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section aria-labelledby="slug">
-        <div class="flex md:flex-row flex-col xl:px-36 px-10 justify-between mt-20 mb-8">
+        <div class="flex md:flex-row flex-col xl:px-36 2xl:px-48 px-10 justify-between  mt-20 mb-8">
             <h2 id="slug" aria-level="2" role="heading"
-                class="xl:text-4xl md:text-3xl text-2xl md:max-w-sm md:leading-10 uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$book->name}}</h2>
+                class="xl:text-4xl md:text-3xl text-2xl md:max-w-sm xl:max-w-full md:leading-10 uppercase font-extrabold text-yellow-800 font-sans mb-4 xl:mb-11">{{$book->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl xl:text-end font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/technical/docandtool/doc#books">{{__('technicals.book_single_back')}}</a>
+               href="/{{app()->getLocale()}}/technical/docandtool/doc#books">{{__('technicals.book_single_back')}}</a>
         </div>
-        <div class="xl:px-36 px-10 flex text-center gap-10 xl:gap-20 text-xl">
+        <div class="xl:px-36 2xl:px-48 px-10 flex text-center gap-10 xl:gap-20 text-xl">
             @foreach($course as $classe)
                 <a class=" underline text-green-700 uppercase hover:text-orange-500"
                    href="/{{app()->getLocale()}}/cours/{{$classe->translation->where('locale',app()->getLocale())->first()->slug}}">{{$classe->translation->where('locale',app()->getLocale())->first()->name}}</a>
@@ -18,7 +18,7 @@
             @endforeach
 
         </div>
-        <div class="xl:mt-20 mt-10 xl:px-36 px-10 xl:grid xl:grid-cols-10 items-center mb-36 xl:gap-x-20">
+        <div class="xl:mt-20 mt-10 xl:px-36 2xl:px-48 px-10 xl:grid xl:grid-cols-10 items-center mb-36 xl:gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading"
@@ -36,7 +36,7 @@
                 </section>
             </div>
             <div class="xl:not-sr-only sr-only col-span-5">
-                <figure class="grid grid-rows-1 grid-cols-3 gap-6 ">
+                <figure class="grid grid-rows-1 grid-cols-3 gap-6">
                     <img class="rounded-3xl row-span-2"
                          src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash.jpg" alt="">
                     <img class="rounded-3xl col-span-2 order-1"

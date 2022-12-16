@@ -1,77 +1,86 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section class="mt-20 mb-36 xl:flex justify-center" aria-labelledby="contact">
-        <div class=" px-10 xl:px-36 ">
+    <section class="mt-20 mb-20 xl:mb-0 xl:flex justify-center" aria-labelledby="contact">
+        <div class="xl:px-36 2xl:pl-48 mt-10 flex-1 mb-40">
             <div class="flex flex-col">
                 <h2 class="text-2xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6"
                     id="contact" role="heading" aria-level="2">
                     {{__('contact_page.contact_title')}}
                 </h2>
-                <a class="text-green-500 text-lg xl:text-2xl font-sans font-light underline mt-8"
-                   href="/{{app()->getLocale()}}">{{__('Contact > Étudiant')}}</a>
             </div>
             <div class="flex flex-1 justify-between">
-                <a class="hover:text-orange-500 font-sans text-green-700 text-xl rounded-lg font-semibold underline  py-2.5"
+                <a class="hover:text-orange-500 font-sans text-green-700 text-xl rounded-lg font-semibold underline py-2.5"
                    href="/{{app()->getLocale()}}/contact/student">{{__('contact_page.student_link')}}</a>
                 <a class="bg-orange-200 rounded-lg font-sans text-green-700 text-en xl:text-start self-center text-xl font-semibold underline py-2.5 px-6"
                    href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
-            <div class="flex  mt-14">
+            <div class="flex mt-14">
                 <form action="/" class="flex-1" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg mb-2 xl:text-2xl" for="name">{{__('contact_page.agency_name')}}</label>
+                        <label class="text-green-500 text-lg mb-2 xl:text-2xl"
+                               for="name">{{__('contact_page.agency_name')}}</label>
                         <input
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             placeholder="Whitecube" name="name" id="name" type="text">
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg mb-2 xl:text-2xl" for="surname">{{__('contact_page.agency_supervisor_name')}}</label>
+                        <label class="text-green-500 text-lg mb-2 xl:text-2xl"
+                               for="surname">{{__('contact_page.agency_supervisor_name')}}</label>
                         <input
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="surname" id="surname" type="text" placeholder="Toon VAN DEN BOS">
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg mb-2 xl:text-2xl" for="email">{{__('contact_page.mail')}}</label>
+                        <label class="text-green-500 text-lg mb-2 xl:text-2xl"
+                               for="email">{{__('contact_page.mail')}}</label>
                         <input
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="email" id="email" type="email" placeholder="email@example.be">
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg mb-2 xl:text-2xl" for="title">{{__('contact_page.agency_title')}}</label>
+                        <label class="text-green-500 text-lg mb-2 xl:text-2xl"
+                               for="title">{{__('contact_page.agency_title')}}</label>
                         <input
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="title" id="title" type="text" placeholder="{{__('contact_page.agency_title_value')}}">
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-lg mb-2 xl:text-2xl" for="offer">{{__('contact_page.agency_description')}}</label>
+                        <label class="text-green-500 text-lg mb-2 xl:text-2xl"
+                               for="offer">{{__('contact_page.agency_description')}}</label>
                         <textarea
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="offer" id="offer" cols="30" rows="10"
                             placeholder="{{__('agency_description_value')}}"></textarea>
                     </div>
                     <div>
-                        <span class="text-green-500 text-lg mb-2 xl:text-2xl">{{__('contact_page.agency_aptitude_value')}}</span>
+                        <span
+                            class="text-green-500 text-lg mb-2 xl:text-2xl">{{__('contact_page.agency_aptitude_value')}}</span>
                         <div class="flex mt-2">
                             <div class="pr-12 border-r border-orange-500 mr-12">
-                                <span class="text-green-500 xl:text-xl ">{{__('contact_page.agency_language')}}</span><br>
+                                <span
+                                    class="text-green-500 xl:text-xl ">{{__('contact_page.agency_language')}}</span><br>
                                 <input class="mb-2.5 mt-6" type="checkbox" name="html" id="html">
                                 <label class="xl:text-xl" for="html">{{__('contact_page.agency_html')}}</label><br>
                                 <input class="mb-2.5" type="checkbox" name="css" id="css">
                                 <label class="xl:text-xl" for="css">{{__('contact_page.agency_css')}}</label><br>
                                 <input class="mb-2.5" type="checkbox" name="laravel" id="laravel">
-                                <label class="xl:text-xl" for="laravel">{{__('contact_page.agency_laravel')}}</label><br>
+                                <label class="xl:text-xl"
+                                       for="laravel">{{__('contact_page.agency_laravel')}}</label><br>
                                 <input class="mb-2.5" type="checkbox" name="wordpress" id="wordpress">
-                                <label class="xl:text-xl" for="wordpress">{{__('contact_page.agency_wordpress')}}</label><br>
+                                <label class="xl:text-xl"
+                                       for="wordpress">{{__('contact_page.agency_wordpress')}}</label><br>
                                 <input class="mb-2.5" type="checkbox" name="php" id="php">
                                 <label class="xl:text-xl" for="php">{{__('contact_page.agency_php')}}</label><br>
                                 <input class="mb-2.5" type="checkbox" name="js" id="js">
                                 <label class="xl:text-xl" for="js">{{__('contact_page.agency_js')}}</label><br>
                                 <input class="mb-2.5" type="checkbox" name="flutter" id="flutter">
-                                <label class="xl:text-xl" for="flutter">{{__('contact_page.agency_flutter')}}</label><br>
+                                <label class="xl:text-xl"
+                                       for="flutter">{{__('contact_page.agency_flutter')}}</label><br>
                             </div>
                             <div>
-                                <span class="text-green-500 xl:text-xl">{{__('contact_page.agency_software')}}</span><br>
+                                <span
+                                    class="text-green-500 xl:text-xl">{{__('contact_page.agency_software')}}</span><br>
                                 <input class="mb-2.5 mt-6" type="checkbox" name="ill" id="ill">
                                 <label class="xl:text-xl" for="ill">{{__('contact_page.agency_ill')}}</label><br>
                                 <input class="mb-2.5" type="checkbox" name="ps" id="ps">
@@ -89,14 +98,17 @@
                     </div>
                     <div class="flex flex-col mb-8 mt-6">
                         <p class="text-green-500 text-lg mb-2 xl:text-2xl">{{__('contact_page.agency_offer_title')}}</p>
-                        <div class="flex gap-4 items-center">
-                            <label for="internship" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
+                        <div class="flex gap-x-10">
+                            <label for="internship"
+                                    class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
                                 <span class="flex flex-col justify-center items-center px-12 py-3 xl:py-3 xl:px-16">
-                                    <span class="xl:text-xl text-center text-gray-500">{{__('contact_page.agency_offer')}} </span>
+                                    <span
+                                        class="xl:text-xl text-center text-gray-500">{{__('contact_page.agency_offer')}} </span>
                                 </span>
-                                <input id="internship" type="file" class="hidden" />
+                                <input id="internship" type="file" class="hidden"/>
                             </label>
-                            <img class="sr-only xl:not-sr-only rounded-full -order-2" src="https://placehold.jp/108x108.png" alt="">
+                            <img class="sr-only xl:not-sr-only rounded-full -order-2"
+                                 src="https://placehold.jp/108x108.png" alt="">
                             <img class="xl:sr-only rounded-full -order-2" src="https://placehold.jp/78x78.png" alt="">
                         </div>
                     </div>

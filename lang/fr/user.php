@@ -4,6 +4,7 @@ return [
 
     'user_modify' => 'Modifier le profil',
     'user_favorite' => 'Vos tutos favoris',
+    'user_no_favorite' => 'Vous n\'avez aucun tutoriel mit en favoris',
     'tuto_back' => 'Voir plus de tutos',
     'user_back' => 'Retour',
     'user_question_title' => 'Vos questions',

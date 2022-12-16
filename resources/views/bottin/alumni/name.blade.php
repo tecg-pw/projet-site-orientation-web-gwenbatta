@@ -1,6 +1,6 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content" class="">
-    <section class="mt-20 px-10 xl:px-36 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
+    <section class="mt-20 px-10 2xl:px-48 xl:px-36 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"
                 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{__($alumni->firstname)}} {{__($alumni->name)}}</h2>
@@ -81,7 +81,7 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
+    <article class="bg-yellow-600 2xl:px-48 px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
         <div class="justify-between flex flex-col mb-8 md:flex-row">
             <h2 id="projects" role="heading" aria-level="2"
                 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>

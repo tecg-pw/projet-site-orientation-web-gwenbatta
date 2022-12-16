@@ -4,6 +4,7 @@ return [
 
     'user_modify' => 'Change profile',
     'user_favorite' => 'Your favourite tutorials',
+    'user_no_favorite' => 'You do not have any bookmarked tutorials',
     'tuto_back' => 'See more tutorials',
     'user_back' => 'Back',
     'user_question_title' => 'Your questions',

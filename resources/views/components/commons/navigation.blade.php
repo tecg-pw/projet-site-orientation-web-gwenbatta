@@ -17,14 +17,14 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.ts')
 </head>
-<body class="bg-white-100 bg-red-100 sm:bg-green-300 md:bg-yellow-200 lg:bg-blue-300 2xl:bg-indigo-400" aria-labelledby="body">
+<body class="bg-white-100 xl:bg-red-500 sm:bg-green-300 md:bg-yellow-200 lg:bg-blue-300 2xl:bg-indigo-400" aria-labelledby="body">
 <header>
     <h1 class="sr-only" aria-level="1" role="heading"
         id="body">{{__('nav.main_title')}}</h1>
     <a href="/{{app()->getLocale()}}/#content" class="sr-only">{{__('nav.nav_avoid content')}}</a>
     <nav class="flex flex-col relative fixed" aria-labelledby="navigation">
         <h2 class="sr-only" id="navigation" role="heading" aria-level="2">{{__('nav.nav_title')}}</h2>
-        <div class="bg-green-700 text-white-100 font-sans flex gap-x-10 justify-between xl:px-36 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl">
+        <div class="bg-green-700 text-white-100 font-sans flex gap-x-10 justify-between xl:px-36 2xl:px-48 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl">
             <ul class="flex gap-x-1">
                 @php
                     $segments = Request::segments();
@@ -56,8 +56,7 @@
                 </div>
             @endauth
         </div>
-
-        <div class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-8 xl:px-36 px-5 gap-x-10 xl:pt-8 xl:pb-8">
+        <div class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-8 xl:px-36 2xl:px-48 px-5 gap-x-10 xl:pt-8 xl:pb-8">
             <div class="group ml-4 group relative">
                 <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="170.001" height="77.656"
                      viewBox="0 0 170.001 77.656">

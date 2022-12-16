@@ -1,6 +1,6 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content" >
-    <section class="relative mt-14 px-10 xl:px-36 xl:flex xl:mt-14 xl:mb-36 xl:gap-24 xl:items-center" aria-labelledby="intro">
+    <section class="relative mt-14 px-10 2xl:px-48 xl:px-36 xl:flex xl:mt-14 xl:mb-36 xl:gap-24 xl:items-center" aria-labelledby="intro">
         <div class="xl:flex-1">
             <h2 class="text-2xl leading-8 mb-6 uppercase font-bold text-yellow-800 font-sans md:text-3xl xl:text-4xl xl:mb-16  xl:leading-12" role="heading" aria-level="2"
                 id="intro">
@@ -25,7 +25,7 @@
             </figure>
         </div>
     </section>
-    <section class="px-10 bg-yellow-600 mt-16 xl:mt-40 xl:px-36 xl:grid xl:grid-cols-5 xl:pb-28 xl:gap-20" aria-labelledby="why">
+    <section class="px-10 2xl:px-48 bg-yellow-600 mt-16 xl:mt-40 xl:px-36 xl:grid xl:grid-cols-5 xl:pb-28 xl:gap-20" aria-labelledby="why">
         <div class="border-b-2 pb-14 xl:pb-0 xl:border-b-0 xl:mt-20 xl:border-r-2 border-orange-500/40 xl:col-span-3 xl:pr-14">
             <h2 id="why" aria-level="2" role="heading"
                 class="pt-14 leading-8 mb-6 text-2xl uppercase font-bold font-sans md:text-3xl xl:mb-12 xl:text-4xl ">{{__('home.why_title')}}</h2>
@@ -70,10 +70,10 @@
             </div>
         </div>
     </section>
-    <article class="px-10 mt-16 xl:mt-20 xl:px-36 xl:mb-36" aria-labelledby="projects">
+    <article class="px-10 2xl:px-48 mt-16 xl:mt-20 xl:px-36 xl:mb-36" aria-labelledby="projects">
         <div class="flex flex-col mb-14 md:flex-row xl:mb-28">
             <h2 role="heading" aria-level="2" id="projects"
-                class="text-2xl md:text-3xl md:leading-10 md:max-w-md mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-12 font-sans">
+                class="text-2xl md:text-3xl md:leading-10 2xl:max-w-full md:max-w-md mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-12 font-sans">
                 {{__('home.projects_title')}}
             </h2>
             <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl xl:text-end xl:text-3xl"
@@ -86,7 +86,7 @@
         </div>
     </article>
     <x-questions-forum :latests="$latests" :ratings="$ratings" :subjects="$subjects"></x-questions-forum>
-    <section class="px-10 xl:px-36 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="interrest">
+    <section class="px-10 2xl:px-48 xl:px-36 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="interrest">
         <div class="flex-1">
             <h2 class="pt-14 leading-8 mb-6 text-2xl xl:text-4xl uppercase font-bold text-yellow-800 md:text-3xl xl:mb-16 font-sans" role="heading" aria-level="2"
                 id="interrest">

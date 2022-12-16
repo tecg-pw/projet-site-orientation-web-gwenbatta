@@ -34,7 +34,7 @@
             </fieldset>
         </div>
         <button type="submit"
-                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 py-3 rounded-2xl text-xl font-semibold xl:max-w-[25%] md:max-w-[58%] sm:max-w-[75%]">
+                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 py-3 rounded-2xl text-xl font-semibold xl:max-w-[25%] 2xl:max-w-[32%] md:max-w-[58%] sm:max-w-[75%]">
             {{__('sort.button')}}
         </button>
     </form>
