@@ -2,7 +2,7 @@
 <main id="content">
     <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
-        <div class="px-10 2xl:px-48 xl:px-36 flex md:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
+        <div class="px-10 2xl:px-48 xl:px-3O lg:px-16 flex md:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-2xl md:text-3xl md:self-center xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
             @auth()
@@ -10,8 +10,8 @@
                    class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 md:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
-        <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="px-10 2xl:px-48 xl:px-36 mb-14"></x-sort_by_forum>
-        <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-36">
+        <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="px-10 2xl:px-48 xl:px-3O lg:px-16 mb-14"></x-sort_by_forum>
+        <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-3O lg:px-16">
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
                href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
@@ -23,15 +23,15 @@
                    href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
             @endauth
         </div>
-        <div class="xl:grid xl:grid-cols-5 mb-36">
-            <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 2xl:px-48 xl:px-36 px-10 ">
+        <div class="lg:grid lg:grid-cols-5 mb-36">
+            <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14  2xl:px-48 xl:px-3O lg:px-16 lg:pr-7 px-10 ">
                 @foreach($subjects as $subject)
-                    <article class="group hover:bg-orange-100 bg-yellow-100 relative flex p-6 rounded-xl"
+                    <article class="group hover:bg-orange-100 bg-yellow-100 relative flex p-6 lg:px-3 xl:px-6 rounded-xl"
                              aria-labelledby="{{$subject->slug}}">
-                        <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-2.5 xl:gap-4">
+                        <div class="order-2 flex-1 flex flex-col lg:ml-4 justify-center gap-2.5 xl:gap-4">
                             <div class="flex flex-col gap-4">
                                 <div class="flex gap-2">
-                                    <h3 class="order-2 font-medium text-xl "
+                                    <h3 class="order-2 font-medium text-lg xl:text-xl"
                                         id="{{$subject->slug}}"
                                         role="heading"
                                         aria-level="3">{{$subject->subject}}</h3>
@@ -84,7 +84,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
+                        <img class="sr-only lg:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
                              src="https://placehold.jp/115x115.png"
                              alt="{{$subject->user->slug}}">
                     </article>

@@ -2,7 +2,7 @@
 <main id="content">
     <section class="flex flex-col relative mb-32" aria-labelledby="name">
         <div class="relative">
-            <div class="flex items-center justify-self-end md:mt-32 xl:mt-80 2xl:mt-96 px-10 xl:px-36 2xl:px-48">
+            <div class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-30 2xl:px-48">
                 <div class="order-2 flex-1  ml-8 mt-32">
                     <div>
                         <h2 role="heading" id="name" aria-level="2"
@@ -10,20 +10,20 @@
                         <p class="uppercase text-2xl">{{$user->status}}</p>
                     </div>
                     <div class="text-end">
-                        <a href="/{{str_replace('_','-',app()->getLocale())}}/user/profile/{{$user->slug}}"
+                        <a href="/{{app()->getLocale()}}/user/profile/{{$user->slug}}"
                            class="hover:text-orange-500 font-sans text-center text-green-700 ml-6 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_back')}}</a>
                     </div>
                 </div>
-                <img class="rounded-full md:w-1/4 xl:w-1/4 " src="{{$user->avatar}}" alt="">
+                <img class="rounded-full sm:w-1/4 md:w-1/4 xl:w-1/4 " src="{{$user->avatar}}" alt="">
             </div>
             <img class="absolute -z-10 top-0 bottom-0 left-0 right-0"
                  src="{{$user->back_image}}" alt="">
         </div>
     </section>
-    <section class="xl:px-36 2xl:px-48 px-10 mb-32" aria-labelledby="modify">
+    <section class="xl:px-30 lg:px-16 2xl:px-48 px-10 mb-32" aria-labelledby="modify">
         <h2 role="heading" id="modify" aria-level="2" class="text-4xl text-yellow-800 font-extrabold font-sans uppercase">{{__('user.user_modify_title')}}</h2>
         <div class="flex  mt-14">
-            <form action="/" method="post" enctype="multipart/form-data" class="flex-1 flex flex-col xl:flex-row xl:gap-24">
+            <form action="/" method="post" enctype="multipart/form-data" class="flex-1 flex flex-col lg:flex-row lg:gap-20 xl:gap-24">
                 @csrf
                 <div class="flex-1">
                     <div class="flex flex-1">

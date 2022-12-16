@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main id="content" class="px-10 2xl:px-48 xl:px-36">
+<main id="content" class="px-10 2xl:px-48 xl:px-30 lg:px-16">
     <section class="mt-20 mb-32 xl:mb-64" aria-labelledby="glossary">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="tutos" role="heading" aria-level="2"
@@ -10,7 +10,7 @@
         <article aria-labelledby="list-glossary">
             <h3 id="list-glossary" role="heading" aria-level="3"
                 class="sr-only">{{__('glossary.glossary_list_title')}}</h3>
-            <div class="xl:grid xl:grid-cols-2 flex flex-col gap-y-4 xl:gap-x-24 xl:gap-y-8">
+            <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                 @foreach($termes as $terme_ref)
                     <x-term-glossary :terme_ref="$terme_ref->translation->where('locale',app()->getLocale())->first()"/>
                 @endforeach

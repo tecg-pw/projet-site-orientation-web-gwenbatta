@@ -3,7 +3,7 @@
     'years_end'
 ])
 
-<div {{ $attributes->class(['xl:px-36 2xl:px-48 px-10 mb-8 xl:mb-20']) }}>
+<div {{ $attributes->class(['xl:px-36 lg:px-16 2xl:px-48 px-10 mb-8 xl:mb-20']) }}>
     <p class="text-green-500 text-xl xl:text-3xl font-medium mb-2 xl:mb-4">{{__('sort.sort_by')}}</p>
     <form action="/"
           method="get" class="flex flex-col gap-4">
@@ -35,7 +35,7 @@
             </fieldset>
         </div>
         <button type="submit"
-                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold sm:max-w-[50%] xl:max-w-[27%]">
+                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold sm:max-w-[50%] xl:max-w-[27%] lg:max-w-[30%]">
             {{__('sort.button')}}
         </button>
     </form>

@@ -2,29 +2,29 @@
 <main id="content">
     <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
-        <div class="px-10 2xl:px-48 xl:px-36 flex justify-between mb-8 xl:mb-24 items-center">
+        <div class="px-10 2xl:px-48 xl:px-30 lg:px-16 flex justify-between mb-8 xl:mb-24 items-center">
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('forum.index_title')}}</h2>
             @auth()
-                <a href="/{{str_replace('_','-',app()->getLocale())}}/forum/question"
+                <a href="/{{app()->getLocale()}}/forum/question"
                    class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
-        <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="2xl:px-48 px-10 xl:px-36 mb-14"></x-sort_by_forum>
-        <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-36">
+        <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="2xl:px-48 px-10 xl:px-30 lg:px-16 mb-14"></x-sort_by_forum>
+        <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-30 lg:px-16">
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
+               href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg bg-orange-100 font-sans px-5 py-2"
-               href="/{{str_replace('_','-',app()->getLocale())}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
+               href="/{{app()->getLocale()}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
             @auth()
                 <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-                   href="/{{str_replace('_','-',app()->getLocale())}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
+                   href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
                 <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-                   href="/{{str_replace('_','-',app()->getLocale())}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
+                   href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
             @endauth
         </div>
-        <div class="xl:grid xl:grid-cols-5 mb-36">
-            <div class="xl:col-span-3 flex flex-col gap-y-8 xl:pr-14 2xl:pl-48 xl:px-36 px-10">
+        <div class="lg:grid lg:grid-cols-5 mb-36">
+            <div class="lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-30 lg:px-16 px-10">
                 @foreach($comments as $comment)
                     <article class="flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl" aria-labelledby="{{$comment->slug}}">
                         <div class="hover:bg-orange-100 relative flex mb-5 rounded-xl order-3 bg-white-100 p-3 border-2 border-orange-500 gap-2">
@@ -56,7 +56,7 @@
                                           transform="translate(875.711 1774.888)" fill="#da953a"/>
                                 </g>
                             </svg>
-                            <a class="cursor-pointer linkcard" href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
+                            <a class="cursor-pointer linkcard" href="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
                         </div>
                         <p class="xl:leading-8 xl:mt-6 mt-4">
                             {{$comment->content}}

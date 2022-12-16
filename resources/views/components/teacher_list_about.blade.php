@@ -3,17 +3,17 @@
     'teacher_ref'
 ])
 @if($teacher_ref->isTeacher)
-    <article {{ $attributes->class(['xl:even:mt-36 sm:gap-x-4 xl:odd:mt-0 mt-16 sm:flex xl:block relative group']) }} aria-labelledby="{{$teacher_ref->slug}}">
-        <img class="rounded-lg xl:absolute -z-10 -top-[70%] group-even:-top-[120%] mb-1.5 xl:mb-0" src="{{$teacher_ref->avatar}}"
+    <article {{ $attributes->class(['lg:even:mt-36 lg:even:ml-10 xl:even:ml-0 sm:gap-x-4 lg:odd:mt-0 mt-16 sm:flex xl:max-w-[100%] lg:max-w-[87%] lg:block relative group']) }} aria-labelledby="{{$teacher_ref->slug}}">
+        <img class="rounded-lg lg:absolute -z-10 -top-[70%] group-even:-top-[120%] mb-1.5 lg:mb-0" src="{{$teacher_ref->avatar}}"
              alt="avatar">
-        <div class="relative xl:bg-yellow-100 sm:flex sm:flex-col sm:justify-center xl:block rounded-xl px-4 py-8 xl:left-10">
+        <div class="relative lg:bg-yellow-100 sm:flex sm:flex-col sm:justify-center lg:block rounded-xl px-4 py-8 lg:left-10">
             <h3 class="font-medium text-xl xl:text-2xl mb-2 xl:mb-5" id="{{$teacher_ref->slug}}" aria-level="3" role="heading">
                 <a class="hover:text-orange-500"
                    href="/{{app()->getLocale()}}/bottin/{{$teacher_ref->status === 'teachalumni'? 'teachalumni':'teacher'}}/{{$teacher_ref->slug}}">{{$teacher_ref->firstname}} {{$teacher_ref->name}}</a>
             </h3>
             <a class="hover:text-orange-500 text-lg xl:text-xl underline text-green-700"
                href="mailto:{{$teacher_ref->mail}}">{{$teacher_ref->mail}}</a>
-            <div class="flex xl:flex-row flex-col gap-y-3 {{$teacher_ref->status === 'teachalumni'? 'xl:gap-40': 'xl:gap-60'}} xl:items-center mt-4 ">
+            <div class="flex lg:flex-row flex-col gap-y-3 {{$teacher_ref->status === 'teachalumni'? 'xl:gap-40 lg:gap-24': 'xl:gap-60 lg:gap-44'}} lg:items-center mt-4 ">
                 <div class="flex gap-3">
                     <div class="relative hover:scale-110">
                         <svg class="" xmlns="http://www.w3.org/2000/svg" width="25"

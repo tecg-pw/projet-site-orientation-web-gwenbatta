@@ -4,15 +4,15 @@
     'ratings'
 ])
 
-<article {{ $attributes->class(['px-7 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-36 2xl:px-48 pb-28']) }} aria-labelledby="questions">
+<article {{ $attributes->class(['px-7 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-30 lg:px-16 2xl:px-48 pb-28']) }} aria-labelledby="questions">
     <div class="flex flex-col xl:mt-20 md:flex-row xl:mb-24 mb-12">
         <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl xl:max-w-[50%] 2xl:max-w-full uppercase font-bold xl:mb-12 font-sans xl:leading-12" role="heading" aria-level="2"
             id="questions">{{__('home.forum_title')}}</h2>
-        <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl xl:text-end xl:text-3xl"
+        <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl lg:text-end xl:text-3xl"
            href="forum/index">{{__('home.forum_link')}}</a>
     </div>
-    <div class="xl:grid xl:grid-cols-5 xl:justify-between">
-        <div class="xl:col-span-3 mb-10 sm:mb-16 flex flex-col gap-y-4 xl:gap-y-8 xl:pr-14 xl:border-r-2 border-r-orange-500/40">
+    <div class="lg:grid lg:grid-cols-5 lg:justify-between">
+        <div class="lg:col-span-3 mb-10 sm:mb-16 flex flex-col gap-y-4 lg:gap-y-8 lg:pr-14 lg:border-r-2 border-r-orange-500/40">
             @foreach($subjects as $subject)
                 <article class="group hover:bg-orange-100 bg-white-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
                          aria-labelledby="{{$subject->slug}}">
@@ -55,8 +55,8 @@
                 </article>
             @endforeach
         </div>
-        <div class="col-span-2 flex flex-col sm:gap-y-6 xl:pl-14">
-            <article class="xl:border-t-0 border-b-orange-500/40 border-t-2 border-t-orange-500/40 border-b-2 pb-10 pt-10 xl:pt-0" aria-labelledby="latest">
+        <div class="col-span-2 flex flex-col sm:gap-y-6 lg:pl-14">
+            <article class="lg:border-t-0 border-b-orange-500/40 border-t-2 border-t-orange-500/40 border-b-2 pb-10 pt-10 lg:pt-0" aria-labelledby="latest">
                 <h3 id="latest" aria-level="3" role="heading"
                     class="text-xl md:text-2xl xl:text-3xl font-light text-green-700 underline mb-6">{{__('forum.latest_subject')}}</h3>
                 <div class="flex flex-col gap-y-4 sm:gap-y-8">

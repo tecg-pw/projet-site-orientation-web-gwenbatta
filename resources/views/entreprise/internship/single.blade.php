@@ -79,8 +79,8 @@
                 <section aria-labelledby="needed">
                     <h3 id="needed" role="heading" aria-level="3"
                         class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('agency.offer_aptitude')}}</h3>
-                    <div class="flex flex-col xl:flex-row gap-12 xl:gap-32">
-                        <section class="border-b-2 border-b-orange-500/40 pb-12 md:border-b-0 md:pb-0 xl:pr-24 md:border-r-orange-500/40 xl:border-r-2" aria-labelledby="languages">
+                    <div class="flex flex-col lg:flex-row gap-12 xl:gap-32">
+                        <section class="border-b-2 border-b-orange-500/40 pb-12 md:border-b-0 md:pb-0 lg:pr-12 xl:pr-24 md:border-r-orange-500/40 lg:border-r-2" aria-labelledby="languages">
                             <h4 id="languages" role="heading" aria-level="4"
                                 class="text-green-500 mb-4 text-lg xl:text-xl">{{__('contact_page.agency_language')}}</h4>
                             <ul class="flex flex-col gap-2 list-disc">
@@ -140,7 +140,7 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/entreprise/internship">{{__('agency.offer_other')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($offers as $other_offer)
                 <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
                          aria-labelledby="{{$other_offer->translation->where('locale',app()->getLocale())->first()->slug}}">

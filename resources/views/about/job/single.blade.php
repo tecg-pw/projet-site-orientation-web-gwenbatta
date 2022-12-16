@@ -7,7 +7,7 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/about#jobs">{{__('job.job_back')}}</a>
         </div>
-        <div class="xl:mt-20 2xl:px-48 mt-10 px-10 xl:px-36 xl:grid xl:grid-cols-10 xl:items-center mb-36 xl:gap-x-20">
+        <div class="xl:mt-20 2xl:px-48 mt-10 px-10 xl:px-36 lg:grid lg:grid-cols-10 xl:items-center mb-36 lg:gap-x-10 xl:gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-5" id="description" aria-level="2"
@@ -24,7 +24,7 @@
                     </div>
                 </section>
             </div>
-            <div class="xl:not-sr-only sr-only col-span-5">
+            <div class="lg:not-sr-only sr-only col-span-5">
                 <figure class="grid grid-rows-1 grid-cols-3 gap-6 ">
                     <img class="rounded-3xl row-span-2"
                          src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash.jpg" alt="">
@@ -46,7 +46,7 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/about#jobs">{{__('job.job_other_see')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
+        <div class="lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($jobs as $job_ref)
                 <article aria-labelledby="{{$job_ref->translation->where('locale',app()->getLocale())->first()->slug}}" class="bg-white-100 py-6 px-8 rounded-3xl relative">
                     <h3 id="{{$job_ref->translation->where('locale',app()->getLocale())->first()->slug}}" aria-level="3" role="heading"
@@ -66,7 +66,7 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/bottin/alumni">{{__('about.job_alumni_link')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($alumnis as $alumni_ref)
                 <x-alumni_job_article :job="$job" :alumni_ref="$alumni_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach

@@ -3,7 +3,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
 ?>
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section class="xl:px-36 2xl:px-48 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
+    <section class="xl:px-30 lg:px-16 2xl:px-48 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
         <div class="flex flex-col md:flex-row justify-between mb-8">
             <h2 id="{{$project->slug}}" aria-level="2" role="heading"
                 class="xl:text-4xl md:text-3xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$project->title}}</h2>
@@ -105,7 +105,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
             </div>
 
     </section>
-    <section class="xl:not-sr-only 2xl:px-48 2xl:flex 2xl:justify-center sr-only xl:px-36 px-10 bg-yellow-600" aria-labelledby="photos">
+    <section class="xl:not-sr-only 2xl:px-48 2xl:flex 2xl:justify-center sr-only xl:px-30 lg:px-16 px-10 bg-yellow-600" aria-labelledby="photos">
         <h2 id="photos" aria-level="2" role="heading" class="sr-only">{{__('project.project_pictures')}}</h2>
         <figure class="grid grid-cols-4 grid-rows-2 gap-5 py-24">
             <img class="rounded-xl row-span-2" src="https://placehold.jp/395x584.png" alt="{{__('photo du projet')}}">
@@ -115,11 +115,11 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
             <img class="rounded-xl " src="https://placehold.jp/330x278.png" alt="{{__('photo du projet')}}">
         </figure>
     </section>
-    <article class="px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
-        <div class="justify-between flex flex-col mb-8 xl:flex-row">
+    <article class="px-10 mt-20 xl:px-30 lg:px-16 pb-40 pt-20 bg-yellow-600" aria-labelledby="projects">
+        <div class="justify-between flex flex-col mb-8 md:flex-row">
             <h2 id="projects" role="heading" aria-level="2"
-                class="xl:text-4xl text-yellow-800 text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
+                class="xl:text-4xl text-2xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans text-lg md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div class="md:grid xl:grid-cols-3 md:grid-cols-2 xl:gap-8 2xl:gap-x-5 flex flex-col gap-y-4 justify-center">

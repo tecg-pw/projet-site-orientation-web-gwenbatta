@@ -1,6 +1,6 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section class=" xl:px-36 2xl:px-48 py-20 items-center gap-24 flex justify-center" aria-labelledby="login">
+    <section class=" px-10 lg:px-16 xl:px-30 2xl:px-48 py-20 items-center xl:gap-24 flex justify-center" aria-labelledby="login">
         <div class=" px-10">
             <div class="flex flex-col">
                 <h2 class="text-2xl md:text-3xl xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-7 mb-3 font-sans order-1 mt-6" role="heading" aria-level="2" id="login">

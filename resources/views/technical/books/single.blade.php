@@ -18,7 +18,7 @@
             @endforeach
 
         </div>
-        <div class="xl:mt-20 mt-10 xl:px-36 2xl:px-48 px-10 xl:grid xl:grid-cols-10 items-center mb-36 xl:gap-x-20">
+        <div class="xl:mt-20 mt-10 xl:px-36 2xl:px-48 px-10 lg:grid lg:grid-cols-10 items-center mb-36 lg:gap-x-10 xl:gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading"
@@ -35,7 +35,7 @@
                     </div>
                 </section>
             </div>
-            <div class="xl:not-sr-only sr-only col-span-5">
+            <div class="lg:not-sr-only sr-only col-span-5">
                 <figure class="grid grid-rows-1 grid-cols-3 gap-6">
                     <img class="rounded-3xl row-span-2"
                          src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash.jpg" alt="">

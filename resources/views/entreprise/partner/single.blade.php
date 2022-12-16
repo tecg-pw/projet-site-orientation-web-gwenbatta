@@ -4,7 +4,7 @@
 @endphp
 <x-commons.navigation></x-commons.navigation>
 <main id="content" class="">
-    <section class="xl:mt-20 px-10 xl:px-36 2xl:px-48 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
+    <section class="xl:mt-20 px-10 xl:px-30 lg:px-16 2xl:px-48 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
         <div class="flex flex-col md:flex-row justify-between mt-20">
             <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
                 id="dev-front" aria-level="2" role="heading">{{$partner->name}}</h2>
@@ -90,13 +90,13 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 2xl:px-48 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="internships">
+    <article class="bg-yellow-600 2xl:px-48 xl:px-30 lg:px-16 px-10 pb-24 pt-20" aria-labelledby="internships">
         <div class="flex md:flex-row flex-col justify-between mb-8">
             <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Offres de stages')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/entreprise/internship">{{__('Voir les offres de stage')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
+        <div class="lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8 flex flex-col gap-y-4">
             @if(count($offers) !== 0)
                 @foreach($offers as $offer)
                     <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
@@ -133,14 +133,14 @@
             @endif
         </div>
     </article>
-    <article class="xl:px-36 2xl:px-48 px-10 mt-36 mb-36" aria-labelledby="alumnis">
+    <article class="xl:px-30 lg:px-16 2xl:px-48 px-10 mt-36 mb-36" aria-labelledby="alumnis">
         <div class="flex flex-col md:flex-row justify-between mb-6">
             <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis" aria-level="2"
                 role="heading">{{__('Nos alumnis en stage ici')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($alumnis as $alumni_ref)
                 <x-alumni_article :alumni_ref="$alumni_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach

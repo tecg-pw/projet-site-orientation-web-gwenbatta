@@ -1,10 +1,10 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section class="mt-20" aria-labelledby="sujet">
-        <div class="xl:px-36 2xl:px-48 px-10 flex flex-col md:flex-row gap-5 mb-7 justify-between xl:items-center">
-            <div class="flex gap-5 md:max-w-lg 2xl:max-w-full xl:mb-5 xl:items-center">
+        <div class="xl:px-30 lg:px-16 2xl:px-48 px-10 flex flex-col md:flex-row gap-5 mb-7 justify-between xl:items-center">
+            <div class="flex gap-5 md:max-w-lg xl:max-w-[50%] 2xl:max-w-full xl:mb-5 xl:items-center">
                 <h2 role="heading" id="sujet" aria-level="2"
-                    class="xl:text-4xl 2xl:max-w-full  md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12 xl:max-w-xl">{{$subject->subject}}</h2>
+                    class="xl:text-4xl 2xl:max-w-full md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12">{{$subject->subject}}</h2>
                 @if($subject->resolved)
                     <svg class="xl:not-sr-only sr-only -order-1" xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 34.194 34.196">
                         <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
@@ -31,8 +31,8 @@
             <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 md:text-xl xl:text-2xl font-semibold underline xl:px-4 xl:py-6 2xl:py-2 xl:self-end 2xl:self-start"
                href="/{{app()->getLocale()}}/forum/index">{{__('forum.single_back')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-5 mb-36">
-            <div class="xl:col-span-3 xl:pl-36 2xl:pl-48 xl:pr-14 px-10">
+        <div class="lg:grid lg:grid-cols-5 mb-36">
+            <div class="lg:col-span-3 xl:pl-30 2xl:pl-48 xl:pr-14 lg:pr-7 px-10">
                 <div class="mb-24">
                     <div class="flex items-center gap-y-4 flex-wrap xl:gap-8">
                         <img class="xl:not-sr-only sr-only -order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"

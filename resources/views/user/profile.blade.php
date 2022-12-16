@@ -2,7 +2,7 @@
 <main id="content">
     <section class="flex flex-col relative mb-32" aria-labelledby="name">
         <div class="relative">
-            <div class="flex items-center justify-self-end md:mt-32 xl:mt-80 2xl:mt-96 px-10 xl:px-36 2xl:px-48">
+            <div class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-30 2xl:px-48">
                 <div class="order-2 flex-1 ml-8 mt-32">
                     <div>
                         <h2 role="heading" id="name" aria-level="2"
@@ -20,7 +20,7 @@
                  src="{{$user->back_image}}" alt="">
         </div>
     </section>
-    <article class="bg-yellow-600 px-10 xl:px-36 2xl:px-48 pb-36 pt-20" aria-labelledby="tutos">
+    <article class="bg-yellow-600 px-10 lg:px-16 xl:px-30 2xl:px-48 pb-36 pt-20" aria-labelledby="tutos">
         <div class="flex justify-between">
             <h2 role="heading" id="tutos" aria-level="2"
                 class="xl:text-4xl text-2xl md:text-3xl uppercase font-extrabold font-sans mb-20">{{__('user.user_favorite')}}</h2>
@@ -77,7 +77,7 @@
             @endif
         </div>
     </article>
-    <section class="px-10 xl:px-36 2xl:px-48 mt-36 mb-36" aria-labelledby="questions">
+    <section class="px-10 lg:px-16 xl:px-30 2xl:px-48 mt-36 mb-36" aria-labelledby="questions">
         <h2 role="heading" id="questions" aria-level="2"
             class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('user.user_question_title')}}</h2>
         <p>{{__('user.user_no_question')}}</p>

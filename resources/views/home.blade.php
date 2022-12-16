@@ -1,7 +1,7 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content" >
-    <section class="relative mt-14 px-10 2xl:px-48 xl:px-36 xl:flex xl:mt-14 xl:mb-36 xl:gap-24 xl:items-center" aria-labelledby="intro">
-        <div class="xl:flex-1">
+    <section class="relative mt-14 px-10 2xl:px-48 xl:px-30 lg:px-16 lg:flex xl:mt-14 xl:mb-36 lg:gap-x-12 xl:gap-24 xl:items-center" aria-labelledby="intro">
+        <div class="lg:flex-1">
             <h2 class="text-2xl leading-8 mb-6 uppercase font-bold text-yellow-800 font-sans md:text-3xl xl:text-4xl xl:mb-16  xl:leading-12" role="heading" aria-level="2"
                 id="intro">
                 {{__('home.intro_title')}}
@@ -17,15 +17,15 @@
                 </a>
             </div>
         </div>
-        <div class="xl:flex-1">
-            <figure class=" xl:grid xl:grid-rows-2 xl:grid-cols-2 xl:gap-8">
-                <img class="sr-only xl:not-sr-only xl:rounded-3xl xl:row-span-2 xl:min-h-full" src="/img-redimensions/test.jpg" alt="">
-                <img class="sr-only xl:not-sr-only xl:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438081.jpeg" alt="">
-                <img class="sr-only xl:not-sr-only xl:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438084.jpg" alt="">
+        <div class="lg:flex-1">
+            <figure class=" lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:gap-6 xl:gap-8">
+                <img class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full" src="/img-redimensions/test.jpg" alt="">
+                <img class="sr-only lg:not-sr-only lg:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438081.jpeg" alt="">
+                <img class="sr-only lg:not-sr-only lg:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438084.jpg" alt="">
             </figure>
         </div>
     </section>
-    <section class="px-10 2xl:px-48 bg-yellow-600 mt-16 xl:mt-40 xl:px-36 xl:grid xl:grid-cols-5 xl:pb-28 xl:gap-20" aria-labelledby="why">
+    <section class="px-10 2xl:px-48 bg-yellow-600 mt-16 xl:mt-40 xl:px-30 lg:px-16 xl:grid xl:grid-cols-5 xl:pb-28 xl:gap-20" aria-labelledby="why">
         <div class="border-b-2 pb-14 xl:pb-0 xl:border-b-0 xl:mt-20 xl:border-r-2 border-orange-500/40 xl:col-span-3 xl:pr-14">
             <h2 id="why" aria-level="2" role="heading"
                 class="pt-14 leading-8 mb-6 text-2xl uppercase font-bold font-sans md:text-3xl xl:mb-12 xl:text-4xl ">{{__('home.why_title')}}</h2>
@@ -70,25 +70,25 @@
             </div>
         </div>
     </section>
-    <article class="px-10 2xl:px-48 mt-16 xl:mt-20 xl:px-36 xl:mb-36" aria-labelledby="projects">
+    <article class="px-10 2xl:px-48 mt-16 xl:mt-20 xl:px-30 lg:px-16 xl:mb-36" aria-labelledby="projects">
         <div class="flex flex-col mb-14 md:flex-row xl:mb-28">
             <h2 role="heading" aria-level="2" id="projects"
-                class="text-2xl md:text-3xl md:leading-10 2xl:max-w-full md:max-w-md mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-12 font-sans">
+                class="text-2xl lg:max-w-full md:text-3xl md:leading-10 2xl:max-w-full md:max-w-md mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-12 font-sans">
                 {{__('home.projects_title')}}
             </h2>
-            <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl xl:text-end xl:text-3xl"
+            <a class="hover:text-orange-500 lg:text-end font-sans  text-green-700  font-semibold underline flex-1 md:text-xl xl:text-end xl:text-3xl"
                href="/{{app()->getLocale()}}/project/index">{{__('home.projects_button')}}</a>
         </div>
-        <div class="flex-wrap flex gap-8 justify-center md:grid md:grid-cols-2 xl:flex xl:flex-nowrap">
+        <div class="flex-wrap flex gap-8 justify-center md:grid md:grid-cols-2 lg:flex lg:flex-nowrap">
             @foreach($projects as $project_ref)
                 <x-project :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
         </div>
     </article>
     <x-questions-forum :latests="$latests" :ratings="$ratings" :subjects="$subjects"></x-questions-forum>
-    <section class="px-10 2xl:px-48 xl:px-36 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="interrest">
+    <section class="px-10 2xl:px-48 xl:px-30 lg:px-16 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="interrest">
         <div class="flex-1">
-            <h2 class="pt-14 leading-8 mb-6 text-2xl xl:text-4xl uppercase font-bold text-yellow-800 md:text-3xl xl:mb-16 font-sans" role="heading" aria-level="2"
+            <h2 class="pt-14 flex-1 leading-8 mb-6 text-2xl xl:text-4xl uppercase font-bold text-yellow-800 md:text-3xl xl:mb-16 font-sans" role="heading" aria-level="2"
                 id="interrest">
                 {{__('home.interrest_title')}}
             </h2>
@@ -103,7 +103,7 @@
                 </a>
             </div>
         </div>
-        <div class="sr-only xl:not-sr-only flex-1">
+        <div class="sr-only lg:not-sr-only flex-1">
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
                 <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/girl-260x481.jpg" alt="">
                 <img class="rounded-3xl" src="/img-redimensions/pexels-olya-kobruseva-5428836.jpg" alt="">
