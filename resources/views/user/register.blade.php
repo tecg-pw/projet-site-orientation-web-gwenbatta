@@ -3,12 +3,12 @@
     <section class="mt-20 mb-36 flex justify-center" aria-labelledby="register">
         <div class="xl:px-36 px-10">
             <div class="flex flex-col">
-                <h2 class="text-2xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6" role="heading" aria-level="2" id="register">
+                <h2 class="text-2xl md:text-3xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6" role="heading" aria-level="2" id="register">
                     {{__('login_register.register_title')}}
                 </h2>
             </div>
             <div class="flex flex-1">
-                <a class="hover:text-orange-500 font-sans text-green-700 self-center xl:text-xl font-semibold underline flex-1"
+                <a class="hover:text-orange-500 font-sans text-green-700 self-center md:text-xl xl:text-xl font-semibold underline flex-1"
                    href="/{{app()->getLocale()}}/user/login">{{__('login_register.login_link')}}</a>
             </div>
             <div class="flex mt-14">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="flex flex-1 justify-end mt-8 xl:mt-0">
                         <input
-                            class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex-1 xl:flex-initial"
+                            class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 md:text-xl xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex-1 xl:flex-initial"
                             type="submit" dusk="register-submit" value="{{__('login_register.register_button')}}">
                     </div>
                 </form>

@@ -11,7 +11,7 @@
             @endauth
         </div>
         <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="px-10 xl:px-36 mb-14"></x-sort_by_forum>
-        <div class="flex items-start xl:flex-row flex-col xl:gap-32 mb-12 px-10 xl:px-36">
+        <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 xl:px-36">
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
                href="/{{str_replace('_','-',app()->getLocale())}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg bg-orange-100 font-sans px-5 py-2"

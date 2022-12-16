@@ -6,9 +6,9 @@
          aria-labelledby="{{$new_ref->slug}}">
     <div class="flex-col flex px-4 mt-6">
         <div class="flex justify-between items-center mb-3">
-            <h3 class="text-xl xl:text-3xl " role="heading" aria-level="3"
+            <h3 class="text-xl md:text-2xl xl:text-3xl " role="heading" aria-level="3"
                 id="{{$new_ref->slug}}">{{$new_ref->name}}</h3>
-            <p class="xl:text-xl relative z-30">{{ucwords($new_ref->date->translatedFormat('d/m/Y '))}}</p>
+            <p class="xl:text-xl md:text-lg relative z-30">{{ucwords($new_ref->date->translatedFormat('d/m/Y '))}}</p>
         </div>
         <div class="flex justify-between mb-4">
             <p class="max-w-[80%]">{{__($new_ref->excerpt)}}</p>

@@ -5,7 +5,7 @@ return [
     'agency_title' => 'Les entreprises',
     'partner_link' => 'Partenaires',
     'offer_link' => 'Offres de stage',
-    'offer_back' => 'Retour aux offres de stage',
+    'offer_back' => 'Retour aux offres',
     'offer_pdf' => 'Télécharger le PDF',
     'offer_description' => 'Description de l\'offre',
     'offer_aptitude' => 'Aptitude nécessaire à la mission',

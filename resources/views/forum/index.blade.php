@@ -2,16 +2,16 @@
 <main id="content">
     <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
-        <div class="px-10 xl:px-36 flex xl:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
+        <div class="px-10 xl:px-36 flex md:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
             <h2 id="forum" aria-level="2" role="heading"
-                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
+                class="text-2xl md:text-3xl md:self-center xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
             @auth()
                 <a href="/{{app()->getLocale()}}/forum/question"
-                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
+                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 md:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
         <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="px-10 xl:px-36 mb-14"></x-sort_by_forum>
-        <div class="flex items-start xl:flex-row flex-col xl:gap-32 mb-12 px-10 xl:px-36">
+        <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 xl:px-36">
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
                href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"

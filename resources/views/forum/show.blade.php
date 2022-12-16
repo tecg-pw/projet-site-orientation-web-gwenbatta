@@ -1,10 +1,10 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section class="mt-20" aria-labelledby="sujet">
-        <div class="xl:px-36 px-10 flex flex-col xl:flex-row gap-5 mb-7 justify-between xl:items-center">
-            <div class="flex gap-5 xl:mb-5 xl:items-center">
+        <div class="xl:px-36 px-10 flex flex-col md:flex-row gap-5 mb-7 justify-between xl:items-center">
+            <div class="flex gap-5 md:max-w-lg xl:mb-5 xl:items-center">
                 <h2 role="heading" id="sujet" aria-level="2"
-                    class="xl:text-4xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12 xl:max-w-xl">{{$subject->subject}}</h2>
+                    class="xl:text-4xl md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12 xl:max-w-xl">{{$subject->subject}}</h2>
                 @if($subject->resolved)
                     <svg class="xl:not-sr-only sr-only -order-1" xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 34.194 34.196">
                         <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
@@ -28,7 +28,7 @@
                     </svg>
                 @endif
             </div>
-            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
+            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 md:text-xl xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
                href="/{{app()->getLocale()}}/forum/index">{{__('forum.single_back')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-5 mb-36">
@@ -45,19 +45,19 @@
                             <p class="xl:text-xl text-lg mb-2">{{$subject->user->firstname}} {{$subject->user->name}}</p>
                             <p>{{$subject->created_at->format('d M. Y')}}</p>
                         </div>
-                        <p class="uppercase font-medium bg-orange-500/40 mr-4 px-4 xl:px-6 pb-1 pt-1.5 rounded-lg xl:text-lg text-green-700">
+                        <p class="uppercase font-medium bg-orange-500/40 mr-4 px-4 xl:px-6 pb-1 pt-1.5 rounded-lg md:text-lg text-green-700">
                             {{ucwords($subject->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                     </div>
-                    <p class="leading-8 xl:leading-10 xl:text-lg xl:mt-7 mt-6">
+                    <p class="leading-8 md:leading-9 xl:leading-10 md:text-lg xl:mt-7 mt-6">
                         {{$subject->description}}
                     </p>
                 </div>
                 <article class="flex flex-col gap-y-8 " aria-labelledby="add-comment">
-                    <div class="flex xl:flex-row flex-col justify-between xl:items-center">
+                    <div class="flex md:flex-row flex-col justify-between xl:items-center">
                         <h3 id="add-comment" aria-level="3" role="heading"
-                            class="xl:text-4xl text-2xl uppercase font-extrabold mb-3 text-yellow-800 font-sans ">{{__('forum.comment')}}</h3>
+                            class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold mb-3 text-yellow-800 font-sans ">{{__('forum.comment')}}</h3>
                         @auth()
-                            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
+                            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 md:text-xl xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
                                href="?add-comment#comment">{{__('forum.add_comment')}}</a>
                         @endauth
                     </div>

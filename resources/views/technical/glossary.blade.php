@@ -3,10 +3,10 @@
     <section class="mt-20 mb-32 xl:mb-64" aria-labelledby="glossary">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="tutos" role="heading" aria-level="2"
-                class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('glossary.glossary_title')}}</h2>
+                class="mb-4 text-2xl xl:text-4xl md:text-3xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('glossary.glossary_title')}}</h2>
             <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
         </div>
-        <p class="mb-24 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('glossary.glossary_text')}}</p>
+        <p class="mb-24 md:leading-8 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('glossary.glossary_text')}}</p>
         <article aria-labelledby="list-glossary">
             <h3 id="list-glossary" role="heading" aria-level="3"
                 class="sr-only">{{__('glossary.glossary_list_title')}}</h3>

@@ -1,16 +1,13 @@
 <?php
 $project->person = $project->person->translation->where('locale', app()->getLocale())->first();
-//$project->course = $project->course->translation->where('locale', app()->getLocale())->first();
-
-//dd($project);
 ?>
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section class="xl:px-36 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
-        <div class="flex flex-col xl:flex-row justify-between mb-8">
+        <div class="flex flex-col md:flex-row justify-between mb-8">
             <h2 id="{{$project->slug}}" aria-level="2" role="heading"
-                class="xl:text-4xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$project->title}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
+                class="xl:text-4xl md:text-3xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$project->title}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_button')}}</a>
         </div>
         <div class="flex xl:flex-row flex-col mt-20  xl:mt-0">
@@ -90,8 +87,8 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                         </div>
                         <div class="flex flex-col xl:flex-row xl:gap-32 mt-4 xl:items-center">
                             <a href="{{$project->person->link_portfolio}}"
-                               class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('project.project_portfolio')}}</a>
-                            <a class="group hover:text-orange-500 flex font-sans text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"
+                               class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('project.project_portfolio')}}</a>
+                            <a class="group hover:text-orange-500 flex font-sans text-green-700 md:text-xl xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end"
                                href="{{$project->link_github}}">
                 <span class="mr-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
@@ -125,7 +122,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
             <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 justify-center">
+        <div class="md:grid xl:grid-cols-3 md:grid-cols-2 xl:gap-8 flex flex-col gap-y-4 justify-center">
             @foreach($projects as $project_ref)
                 <x-project :project_ref="$project_ref"></x-project>
             @endforeach

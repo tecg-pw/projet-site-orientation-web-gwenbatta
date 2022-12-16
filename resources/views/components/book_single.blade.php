@@ -11,7 +11,7 @@
     <div class="flex justify-between">
         <div>
             <h4 id="{{$book->slug}}" aria-level="4" role="heading"
-                class="font-medium text-lg xl:text-2xl mb-2">{{$book->name}}</h4>
+                class="font-medium md:text-xl text-lg xl:text-2xl mb-2">{{$book->name}}</h4>
         </div>
     </div>
     <p class="mb-4 xl:mb-10 xl:text-lg">{{$book->excerpt}}</p>

@@ -2,12 +2,12 @@
 <main id="content">
     <section class="px-10 xl:px-36 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="about">
         <div class="flex-1 ">
-            <h2 class="text-2xl leading-8 mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-16 font-sans"
+            <h2 class="text-2xl leading-8 mb-6 md:text-3xl xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-16 font-sans"
                 role="heading" aria-level="2"
                 id="about">
                 {{__('about.about_title')}}
             </h2>
-            <p class="text-lg xl:leading-10 xl:text-xl">
+            <p class="text-lg md:leading-8 xl:leading-10 xl:text-xl">
                 {{__('about.about_text')}}
             </p>
         </div>
@@ -21,7 +21,7 @@
     </section>
     <section class="bg-yellow-600 mt-20 px-10 py-14 xl:py-20 xl:px-36" aria-labelledby="course">
         <h2 id="course" aria-level="2" role="heading"
-            class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.course_title')}}</h2>
+            class="text-2xl md:text-3xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.course_title')}}</h2>
         <div class="flex flex-col gap-y-12 xl:flex-row justify-between">
             <section class="border-b-2 border-b-orange-500/40 pb-10 xl:border-b-0 xl:border-r-2 xl:pr-16 xl:border-r-orange-500/40"
                 aria-labelledby="first-year">
@@ -124,8 +124,8 @@
         </div>
     </section>
     <section class="px-10 xl:px-36 mt-14 mb-36 gap-24 items-center" aria-labelledby="profs">
-        <div class="flex-1 flex flex-col xl:flex-row mt-36 xl:justify-between">
-            <h2 class="text-2xl mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-20 font-sans" role="heading"
+        <div class="flex-1 flex flex-col md:flex-row mt-36 xl:justify-between">
+            <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-20 font-sans" role="heading"
                 aria-level="2"
                 id="profs">
                 {{__('about.teacher_title')}}
@@ -143,7 +143,7 @@
     </section>
     <article class="bg-yellow-600 px-10 xl:px-36 pb-36 pt-20" aria-labelledby="jobs">
         <h2 id="jobs" aria-level="2" role="heading"
-            class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.job_title')}}</h2>
+            class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans md:text-3xl xl:mb-20">{{__('about.job_title')}}</h2>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
         @foreach($jobs as $job_ref)
             <x-job_article :job_ref="$job_ref->translation->where('locale',app()->getLocale())->first()"/>

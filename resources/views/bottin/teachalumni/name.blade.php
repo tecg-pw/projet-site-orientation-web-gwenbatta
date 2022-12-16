@@ -1,21 +1,21 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content" class="">
     <section class="mt-20 px-10 xl:px-36 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
-        <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold xl:flex-row">
+        <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"
-                class="xl:text-4xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$teachalumni->firstname}} {{$teachalumni->name}}</h2>
-            <a class="underline xl:text-2xl hover:text-orange-500"
-               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni">{{__('people.alumni_button')}}</a>
+                class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$teachalumni->firstname}} {{$teachalumni->name}}</h2>
+            <a class="underline md:text-xl xl:text-2xl hover:text-orange-500"
+               href="/{{app()->getLocale()}}/bottin/alumni">{{__('people.alumni_button')}}</a>
         </div>
-        <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mt-16">
+        <div class="flex flex-col md:flex-row gap-6 xl:gap-12 mt-16">
             <div class="mt-4 mb-7 order-2">
                 <div class="flex gap-12">
                     <div>
-                        <div class="mb-4 flex gap-8 xl:flex-row xl:justify-between uppercase text-lg xl:text-xl">
+                        <div class="mb-4 flex gap-8 md:flex-col md:gap-y-2 xl:flex-row xl:justify-between uppercase text-lg xl:text-xl">
                             <p class="uppercase xl:text-lg">{{__('people.teachalumni_status')}}</p>
                             <p>{{$teachalumni->begin->format('Y')}}</p>
                             <a class="hover:text-orange-500 underline text-green-700"
-                               href="/{{str_replace('_','-',app()->getLocale())}}/about/job/single">{{$teachalumni->job}}</a>
+                               href="/{{app()->getLocale()}}/about/job/single">{{$teachalumni->job}}</a>
                         </div>
                         <div class="flex gap-y-1.5 flex-col xl:gap-y-2.5 mb-5 text-xl">
                             <a class="hover:text-orange-500 text-green-700 underline"
@@ -65,7 +65,7 @@
                     </p>
                 @endif
             </div>
-            <div class="min-w-[345px] flex flex-col">
+            <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
                 <img class=" xl:mb-6 rounded-3xl" src="{{$teachalumni->avatar}}" alt="avatar">
                 <div class="flex flex-col mt-8">
                     <a href="{{$teachalumni->link_portfolio}}"
@@ -87,8 +87,8 @@
     </section>
     <article class="bg-yellow-600 xl:px-36 px-10 pb-24 pt-20" aria-labelledby="classes">
         <div class="flex xl:flex-row flex-col justify-between mb-8">
-            <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('people.bottin_course') . ( $teachalumni->firstname . ' ' .$teachalumni->name)}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold" href="/{{str_replace('_','-',app()->getLocale())}}/about#course">{{__('people.teacher_course')}}</a>
+            <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('people.bottin_course') . ( $teachalumni->firstname . ' ' .$teachalumni->name)}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold" href="/{{app()->getLocale()}}/about#course">{{__('people.teacher_course')}}</a>
         </div>
         <div class="xl:grid xl:grid-cols-2 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($courses as $classe_ref)
@@ -97,13 +97,13 @@
         </div>
     </article>
     <article class="px-10 xl:px-36 pb-40 pt-20" aria-labelledby="projects">
-        <div class="justify-between flex flex-col mb-8 xl:flex-row">
+        <div class="justify-between flex flex-col mb-8 md:flex-row">
             <h2 id="projects" role="heading" aria-level="2"
-                class="xl:text-4xl text-yellow-800 text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans xl:text-2xl font-semibold"
-               href="/{{str_replace('_','-',app()->getLocale())}}/project/index">{{__('project.project_see_all')}}</a>
+                class="xl:text-4xl text-yellow-800 md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
+               href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 {{count($projects) !== 0 ? 'items-center' : ''}} justify-center">
+        <div class="md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 {{count($projects) !== 0 ? 'items-center' : ''}} justify-center">
             @foreach($projects as $project_ref)
                 <x-project :project_ref="$project_ref"></x-project>
             @endforeach
