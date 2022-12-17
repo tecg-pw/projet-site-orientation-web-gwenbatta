@@ -80,6 +80,9 @@ return new class extends Migration
         Schema::table('glossarytranslations', function (Blueprint $table) {
             $table->foreignId('glossary_id')->constrained()->onUpdate('cascade');
         });
+        Schema::table('languagetranslations', function (Blueprint $table) {
+            $table->foreignId('language_id')->constrained()->onUpdate('cascade');
+        });
         Schema::table('opportunitytranslations', function (Blueprint $table) {
             $table->foreignId('opportunity_id')->constrained()->onUpdate('cascade');
         });
@@ -111,6 +114,10 @@ return new class extends Migration
         Schema::table('partner_person', function (Blueprint $table) {
             $table->foreignId('people_id')->constrained()->onUpdate('cascade');
             $table->foreignId('partner_id')->constrained()->onUpdate('cascade');
+        });
+        Schema::table('language_offer', function (Blueprint $table) {
+            $table->foreignId('language_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('offer_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('tuto_user', function (Blueprint $table) {
             $table->foreignId('tuto_id')->constrained()->onUpdate('cascade');

@@ -25,7 +25,6 @@ class OfferTranslationSeeder extends Seeder
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name.'_'.$value->locale),
                 "description" => $value->description,
-                "languages" => json_encode($value->languages),
                 "softwares" => json_encode($value->softwares),
                 "others" => json_encode($value->others),
                 "pdf" => $value->pdf,

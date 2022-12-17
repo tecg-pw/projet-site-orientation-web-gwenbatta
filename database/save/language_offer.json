@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 1,
+    "offer_id": 1
+  },
+  {
+    "id": 2,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 2,
+    "offer_id": 1
+  },{
+    "id": 3,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 3,
+    "offer_id": 1
+  },
+  {
+    "id": 4,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 4,
+    "offer_id": 1
+  },{
+    "id": 5,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 5,
+    "offer_id": 1
+  },
+  {
+    "id": 6,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 6,
+    "offer_id": 1
+  },{
+    "id": 7,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 7,
+    "offer_id": 1
+  },
+  {
+    "id": 8,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 8,
+    "offer_id": 1
+  },{
+    "id": 9,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 9,
+    "offer_id": 1
+  },
+  {
+    "id": 10,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 1,
+    "offer_id": 2
+  },
+    {
+    "id": 11,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 2,
+    "offer_id": 2
+  },
+  {
+    "id": 12,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 6,
+    "offer_id": 2
+  },{
+    "id": 13,
+    "created_at": null,
+    "updated_at": null,
+    "language_id": 5,
+    "offer_id": 2
+  }
+]

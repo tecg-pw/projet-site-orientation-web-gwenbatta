@@ -40,6 +40,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PersonTranslationSeeder::class);
         $this->call(OfferSeeder::class);
         $this->call(OfferTranslationSeeder::class);
+        $this->call(LanguageSeeder::class);
+        $this->call(LanguageTranslationSeeder::class);
+        $this->call(LanguageOfferSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(ProjetTranslationSeeder::class);
         $this->call(TagSeeder::class);

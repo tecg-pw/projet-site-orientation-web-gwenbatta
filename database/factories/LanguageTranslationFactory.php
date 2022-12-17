@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\OfferTranslation>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class OfferTranslationFactory extends Factory
+class LanguageTranslationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,14 +19,9 @@ class OfferTranslationFactory extends Factory
         $name = fake()->name;
         return [
             "name" => $name,
+            "locale" => 'fr',
             "slug" => \Str::slug($name),
-            "description" => fake()->sentence(40),
-            "softwares" => [],
-            "others" => [],
-            "pdf" => "",
-            "locale" => "fr",
-            "offer_id" => 1,
-
+            "language_id" => 1,
         ];
     }
 }

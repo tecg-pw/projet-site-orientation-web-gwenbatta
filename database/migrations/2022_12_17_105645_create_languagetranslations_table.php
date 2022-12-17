@@ -13,17 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('offertranslations', function (Blueprint $table) {
+        Schema::create('languagetranslations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->string('locale');
-            $table->text('description');
-            $table->json('softwares')->nullable();
-            $table->json('others')->nullable();
-            $table->text('pdf')->nullable();
+            $table->text('name');
+            $table->text('slug');
+            $table->text('locale');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('offertranslations');
+        Schema::dropIfExists('languagetranslations');
     }
 };

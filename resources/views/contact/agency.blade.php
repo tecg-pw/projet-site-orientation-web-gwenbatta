@@ -17,8 +17,8 @@
             <div class="flex  mt-14">
                 <form action="/" method="post" class="flex-1 px-10 xl:px-0">
                     @csrf
-                    <div class="flex flex-col xl:flex-row flex-1">
-                        <div class="flex flex-col flex-1 xl:mr-10 mb-8">
+                    <div class="flex flex-col  flex-1">
+                        <div class="flex flex-col flex-1 mb-8">
                             <label class="text-green-500 text-lg mb-2 xl:text-2xl"
                                    for="name">{{__('contact_page.agency_name')}}</label>
                             <input

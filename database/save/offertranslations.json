@@ -4,16 +4,6 @@
         "name": "Développeur Front-end",
         "locale": "fr",
         "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
-        "languages": [
-            "PHP",
-            "HTML5",
-            "CSS3",
-            "SASS",
-            "Javascript",
-            "NodeJS",
-            "Wordpress",
-            "MySQL"
-        ],
         "softwares": [
             "Adobe Photoshop",
             "Adobe Illustrator",
@@ -36,16 +26,6 @@
         "name": "Front-end developer",
         "locale": "en",
         "description": "Are you passionate, dynamic and creative?\nAre you looking for a new professional challenge?\nOur young and dynamic team is\nlooking for profiles like yours.",
-        "languages": [
-            "PHP",
-            "HTML5",
-            "CSS3",
-            "SASS",
-            "Javascript",
-            "NodeJS",
-            "Wordpress",
-            "MySQL"
-        ],
         "softwares": [
             "Adobe Photoshop",
             "Adobe Illustrator",
@@ -68,13 +48,6 @@
         "name": "Webdesigner",
         "locale": "fr",
         "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
-        "languages": [
-            "HTML5",
-            "CSS3",
-            "SASS",
-            "Javascript",
-            "Wordpress"
-        ],
         "softwares": [
             "Adobe Photoshop",
             "Adobe Illustrator",
@@ -97,13 +70,6 @@
         "name": "Webdesigner",
         "locale": "en",
         "description": "Are you passionate, dynamic and creative?\nAre you looking for a new professional challenge?\nOur young and dynamic team is\nlooking for profiles like yours.",
-        "languages": [
-            "HTML5",
-            "CSS3",
-            "SASS",
-            "Javascript",
-            "Wordpress"
-        ],
         "softwares": [
             "Adobe Photoshop",
             "Adobe Illustrator",

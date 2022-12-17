@@ -1,7 +1,7 @@
 @php
    // $partner = $offer->partner->translation->where('locale', app()->getLocale())->first();
    $offer_ref = $offer->translation->where('locale',app()->getLocale())->first();
-   $offer_ref->languages = json_decode($offer_ref->languages);
+//   $offer_ref->languages = json_decode($offer_ref->languages);
         $offer_ref->softwares = json_decode($offer_ref->softwares );
         $offer_ref->others = json_decode($offer_ref->others );
 @endphp
@@ -84,13 +84,13 @@
                             <h4 id="languages" role="heading" aria-level="4"
                                 class="text-green-500 mb-4 text-lg xl:text-xl">{{__('contact_page.agency_language')}}</h4>
                             <ul class="flex flex-col gap-2 list-disc">
-                                @foreach($offer_ref->languages as $language)
+                                @foreach($offer->language as $language)
                                     <li class="flex items-center gap-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7">
                                             <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                     fill="#6f704d"/>
                                         </svg>
-                                        <p>{{ucwords($language)}}</p>
+                                        <p>{{ucwords($language->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                                     </li>
                                 @endforeach
                             </ul>
