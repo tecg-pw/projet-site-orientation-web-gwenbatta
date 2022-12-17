@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class TestimonialTranslation extends Resource
@@ -17,6 +19,7 @@ class TestimonialTranslation extends Resource
      * @var string
      */
     public static $model = \App\Models\TestimonialTranslation::class;
+
     public static $displayInNavigation = false;
 
     /**
@@ -46,12 +49,12 @@ class TestimonialTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Textarea::make('Description')->rows(3),
+            Trix::make('Description'),
 
-            Number::make('Person_id'),
-
-            BelongsTo::make('People', 'person', 'App\Nova\Person')
-                ->onlyOnDetail(),
+            Select::make('Langues','locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
 
             BelongsTo::make('Testimonial','testimonial','App\Nova\Testimonial'),
         ];

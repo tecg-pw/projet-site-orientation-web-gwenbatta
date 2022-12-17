@@ -9,8 +9,11 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class PartnerTranslation extends Resource
@@ -48,15 +51,15 @@ class PartnerTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Image::make('Logo')->disk('public')->rounded(),
 
-            Text::make('Name')
+            Text::make('Nom','name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
+            Slug::make('Slug')
                 ->hideFromIndex()
                 ->rules('required', 'max:255'),
 
@@ -70,36 +73,40 @@ class PartnerTranslation extends Resource
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Text::make('Locality')
+            Text::make('Ville','locality')
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Number::make('Locality_number'),
+            Number::make('Localité','locality_number'),
 
-
-            Text::make('Link_linkedin')
+            Text::make('Lien Linkedin','link_linkedin')
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Text::make('Link_instagram')
+            Text::make('Lien Instagram','link_instagram')
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Text::make('Link_facebook')
+            Text::make('Lien Facebook','link_facebook')
                 ->hideFromIndex()
                 ->rules( 'max:255'),
 
-            Text::make('Site_link')
+            Text::make('Lien du site','site_link')
                 ->hideFromIndex()
                 ->rules( 'max:255'),
 
-            Text::make('Members')->hideFromIndex(),
+            Text::make('Membre de l\'équipe','members')->hideFromIndex(),
 
-            Textarea::make('Description')->rows(3),
+            Trix::make('Description'),
+
+            Select::make('Langues','locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
 
             HasMany::make('Offers'),
 
-            BelongsTo::make('Partner','partner','App\Nova\Partner'),
+            BelongsTo::make('Partenaires','partner','App\Nova\Partner'),
         ];
     }
 

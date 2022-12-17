@@ -66,15 +66,15 @@ class Course extends Resource
     {
         return [
 
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
             }),
-            Text::make('Bac', function () {
+            Text::make('Année de Bachelier', function () {
                 return $this->bac();
             }),
-            Text::make('Hours', function () {
+            Text::make('Heures de cours', function () {
                 return $this->hours();
             })->textAlign('right'),
 
@@ -82,15 +82,15 @@ class Course extends Resource
                 return $this->translationList();
             })->textAlign('right'),
 
-            HasMany::make('Translations','translation','App\Nova\CourseTranslation'),
+            HasMany::make('Traduction','translation','App\Nova\CourseTranslation'),
 
-            HasMany::make('People','person','App\Nova\Person'),
+            HasMany::make('Personnes','person','App\Nova\Person'),
 
-            HasMany::make('Docs','docs','App\Nova\Doc'),
+            HasMany::make('Documentation','docs','App\Nova\Doc'),
 
-            HasMany::make('Books','books','App\Nova\Book'),
+            HasMany::make('Livres','books','App\Nova\Book'),
 
-            HasMany::make('Tools','tools','App\Nova\Tool'),
+            HasMany::make('Outils','tools','App\Nova\Tool'),
         ];
     }
 

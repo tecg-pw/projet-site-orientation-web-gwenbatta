@@ -7,6 +7,8 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -47,28 +49,29 @@ class OfferTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name')
+            ID::make(__('ID'), 'id')->hide(),
+            Text::make('Nom','name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
+            Slug::make('Slug')->from('name')
                 ->hideFromIndex()
                 ->rules('required', 'max:255'),
 
             File::make('PDF')->hideFromIndex(),
 
-            Number::make('Partner_id'),
+            Select::make('Langue','locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
 
-            Text::make('Languages')->hideFromIndex(),
-            Text::make('Softwares')->hideFromIndex(),
-            Text::make('Others')->hideFromIndex(),
+            Text::make('Langage de programmation','languages')->hideFromIndex(),
+            Text::make('Logiciels','softwares')->hideFromIndex(),
+            Text::make('Autres','others')->hideFromIndex(),
 
             Textarea::make('Description')->rows(3)->rules('required'),
 
-            BelongsTo::make('Partner')->hideFromIndex(),
-
-            BelongsTo::make('Offer','offer', 'App\Nova\Offer')->hideFromIndex(),
+            BelongsTo::make('Offres','offer', 'App\Nova\Offer')->hideFromIndex(),
         ];
     }
 

@@ -25,10 +25,10 @@ class Tool extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\ToolTranslation::where('locale',app()->getLocale())->where('tool_id',$this->id)->first()->name;
+        return \App\Models\ToolTranslation::where('tool_id',$this->id)->first()->name;
     }
     public function link() {
-        return \App\Models\ToolTranslation::where('locale',app()->getLocale())->where('tool_id',$this->id)->first()->link;
+        return \App\Models\ToolTranslation::where('tool_id',$this->id)->first()->link;
     }
     public function translationList()
     {
@@ -58,10 +58,10 @@ class Tool extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
             }),
-            Text::make('Link', function () {
+            Text::make('Lien', function () {
                 return $this->link();
             }),
 
@@ -69,9 +69,9 @@ class Tool extends Resource
                 return $this->translationList();
             })->textAlign('right'),
 
-            HasMany::make('Translations','translation','App\Nova\ToolTranslation'),
+            HasMany::make('Traductions','translation','App\Nova\ToolTranslation'),
 
-            BelongsToMany::make('Course','courses','App\Nova\Course')
+            BelongsToMany::make('Cours','courses','App\Nova\Course')
         ];
     }
 

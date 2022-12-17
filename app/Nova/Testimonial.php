@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Testimonial extends Resource
@@ -26,9 +27,18 @@ class Testimonial extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\TestimonialTranslation::where('locale',app()->getLocale())->where('testimonial_id',$this->id)->first()->name;
+        return \App\Models\TestimonialTranslation::where('testimonial_id',$this->id)->first()->name;
     }
 
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
+    }
     /**
      * The columns that should be searched.
      *
@@ -48,10 +58,14 @@ class Testimonial extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Textarea::make('description', function () {
+
+            Trix::make('Description', function () {
                 return $this->title();
             }),
-            HasMany::make('Translations','translation','App\Nova\TestimonialTranslation'),
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('center'),
+            HasMany::make('Traductions','translation','App\Nova\TestimonialTranslation'),
         ];
     }
 

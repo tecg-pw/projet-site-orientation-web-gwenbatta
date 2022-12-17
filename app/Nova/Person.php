@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -27,11 +28,34 @@ class Person extends Resource
      *
      * @var string
      */
-    public function title() {
-        return \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->name .' '.                 \App\Models\PersonTranslation::where('locale',app()->getLocale())->where('people_id',$this->id)->first()->firstname;
-;
+    public function title()
+    {
+        return \App\Models\PersonTranslation::where('people_id', $this->id)->first()->name . ' ' . \App\Models\PersonTranslation::where('locale', app()->getLocale())->where('people_id', $this->id)->first()->firstname;
+    }
+    public function status()
+    {
+        return \App\Models\PersonTranslation::where('people_id', $this->id)->first()->status;
     }
 
+    public function projects()
+    {
+        $projects = \App\Models\ProjetTranslation::where('person_id', $this->id)->get();
+        if ($projects !== []) {
+            return count($projects);
+        } else {
+            return null;
+        }
+    }
+
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
+    }
     /**
      * The columns that should be searched.
      *
@@ -44,26 +68,35 @@ class Person extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            Text::make('Name', function () {
-                return \App\Models\PersonTranslation::where('people_id',$this->id)->first()->name;
-            }),
-            Text::make('Firstname', function () {
-                return \App\Models\PersonTranslation::where('people_id',$this->id)->first()->firstname;
+            Text::make('Nom', function () {
+                return $this->title();
             }),
 
-            HasMany::make('Translations','translation','App\Nova\PersonTranslation'),
+            Text::make('Status', function () {
+                return $this->status();
+            }),
 
-            BelongsToMany::make('Course','courses','App\Nova\Course'),
+            Number::make('Nombre de projets', function () {
+                return $this->projects();
+            })->textAlign('center'),
 
-            HasMany::make('Testimonials'),
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('center'),
+
+            HasMany::make('Traductions', 'translation', 'App\Nova\PersonTranslation'),
+
+            BelongsToMany::make('Cours', 'courses', 'App\Nova\Course'),
+
+            HasMany::make('Témoignages', 'testimonials', 'App\Nova\Testimonial'),
 
 
         ];
@@ -72,7 +105,7 @@ class Person extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function cards(Request $request)
@@ -83,7 +116,7 @@ class Person extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function filters(Request $request)
@@ -94,7 +127,7 @@ class Person extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function lenses(Request $request)
@@ -105,7 +138,7 @@ class Person extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function actions(Request $request)

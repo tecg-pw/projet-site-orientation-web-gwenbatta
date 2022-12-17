@@ -26,7 +26,26 @@ class Partner extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\PartnerTranslation::where('locale',app()->getLocale())->where('partner_id',$this->id)->first()->name;
+        return \App\Models\PartnerTranslation::where('partner_id',$this->id)->first()->name;
+    }
+    public function offersCount() {
+        $offers = \App\Models\Offer::where('partner_id',$this->id)->get();
+        if ($offers !== []){
+            return count($offers);
+        }else{
+            return null;
+        }
+
+    }
+
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
     }
 
     /**
@@ -47,14 +66,22 @@ class Partner extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name', function () {
+            ID::make(__('ID'), 'id')->hide(),
+            Text::make('Nom', function () {
                 return $this->title();
             }),
+            Number::make('Nombre d\'offres de stage', function (){
+                return $this->offersCount();
+            })->textAlign('center'),
 
-            HasMany::make('Translations','translation','App\Nova\PartnerTranslation'),
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('center'),
 
-            HasMany::make('Offers','offers','App\Nova\Offer'),
+
+            HasMany::make('Traduction','translation','App\Nova\PartnerTranslation'),
+
+            HasMany::make('Offres','offers','App\Nova\Offer'),
         ];
     }
 

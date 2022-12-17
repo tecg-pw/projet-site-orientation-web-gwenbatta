@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
@@ -50,22 +51,22 @@ class ActualityTranslation extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hideFromIndex(),
 
-            Text::make('Name')
+            Text::make('Nom','name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
+            Slug::make('Slug')->from('name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Select::make('Locale')->options([
+            Select::make('Langue','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
             ])->displayUsingLabels(),
 
-            Trix::make('Excerpt')->rules('required'),
+            Trix::make('Résumé','excerpt')->rules('required'),
 
             Trix::make('Description')->rules('required'),
 
@@ -73,11 +74,11 @@ class ActualityTranslation extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Link')
+            Text::make('Lien','link')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Image::make('Main_pictures')->onlyOnForms(),
+            Image::make('Image Principale','main_pictures')->onlyOnForms(),
 
             Date::make('Date'),
 

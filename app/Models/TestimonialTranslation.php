@@ -12,17 +12,10 @@ class TestimonialTranslation extends Model
     use HasFactory, SoftDeletes;
     protected $table = 'testimonialtranslations';
 
-    protected $with = ["person"];
-
     protected $fillable = [
-        'description', 'person_id','locale'
+        'description', 'locale', 'testimonial_id'
     ];
     protected $dates =['created_at'];
-
-    public function person(): BelongsTo
-    {
-        return $this->belongsTo(People::class);
-    }
 
     public function testimonial(): BelongsTo
     {

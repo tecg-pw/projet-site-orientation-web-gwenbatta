@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -49,23 +50,23 @@ class ProjetTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Title')
+            Text::make('Titre','title')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
+            Slug::make('Slug')->from('title')
                 ->hideFromIndex()
                 ->rules('required', 'max:255'),
 
-            Text::make('Link_Project')
+            Text::make('Lien du projet','link_project')
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Text::make('Link_Github')
+            Text::make('Lien Github','link_github')
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Image::make('Main_pictures')->hideFromIndex(),
+            Image::make('Image principale','main_pictures')->hideFromIndex(),
 
             DateTime::make('Date'),
 
@@ -73,10 +74,10 @@ class ProjetTranslation extends Resource
 
             Textarea::make('Description')->rows(3),
 
-            BelongsTo::make('People', 'person', 'App\Nova\PersonTranslation')
+            BelongsTo::make('Personnes', 'person', 'App\Nova\PersonTranslation')
                 ->onlyOnDetail(),
 
-            BelongsTo::make('Project','project','App\Nova\Project')
+            BelongsTo::make('Projet','project','App\Nova\Project')
                 ->onlyOnDetail(),
         ];
     }

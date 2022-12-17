@@ -5,8 +5,10 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class TutoTranslation extends Resource
@@ -46,25 +48,26 @@ class TutoTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name')
+            Text::make('Nom','name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
+            Slug::make('Slug')
+                ->from('name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Textarea::make('Excerpt')->rows(3)->rules('required'),
+            Trix::make('Résumé','excerpt')->rules('required'),
 
-            Text::make('Link')
+            Text::make('Lien','link')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Languages')
+            Text::make('Langage de programmation','languages')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            BelongsTo::make('Tuto','tuto','App\Nova\Tuto')
+            BelongsTo::make('Tutoriels','tuto','App\Nova\Tuto')
         ];
     }
 

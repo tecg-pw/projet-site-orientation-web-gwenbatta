@@ -25,7 +25,7 @@ class TestimonialTranslationSeeder extends Seeder
                 "description" => $value->description,
                 "locale" => $value->locale,
                 "testimonial_id" => $value->testimonial_id,
-                "person_id" => $value->person_id,
+
             ]);
         }
     }

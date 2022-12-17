@@ -23,11 +23,11 @@ class Doc extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\DocTranslation::where('locale',app()->getLocale())->where('doc_id',$this->id)->first()->name;
+        return \App\Models\DocTranslation::where('doc_id',$this->id)->first()->name;
     }
 
     public function link() {
-        return \App\Models\DocTranslation::where('locale',app()->getLocale())->where('doc_id',$this->id)->first()->link;
+        return \App\Models\DocTranslation::where('doc_id',$this->id)->first()->link;
     }
 
     public function translationList()
@@ -57,13 +57,13 @@ class Doc extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
             }),
 
-            Text::make('Link', function () {
+            Text::make('Lien', function () {
                 return $this->link();
             }),
 
@@ -71,9 +71,9 @@ class Doc extends Resource
                 return $this->translationList();
             })->textAlign('right'),
 
-            HasMany::make('Translations','translation','App\Nova\DocTranslation'),
+            HasMany::make('Traduction','translation','App\Nova\DocTranslation'),
 
-            BelongsToMany::make('Course','courses','App\Nova\Course')
+            BelongsToMany::make('Cours','courses','App\Nova\Course')
         ];
     }
 

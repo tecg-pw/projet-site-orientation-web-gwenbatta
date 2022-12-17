@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('locale');
             $table->text('description')->nullable();
             $table->string('link_portfolio')->nullable();
-            $table->string('link_github');
+            $table->string('link_github')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('instagram')->nullable();
             $table->string('mail');

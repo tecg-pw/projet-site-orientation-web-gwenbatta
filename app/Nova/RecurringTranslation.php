@@ -5,8 +5,10 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class RecurringTranslation extends Resource
@@ -46,17 +48,17 @@ class RecurringTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name')
+            Text::make('Nom','name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
+            Slug::make('Slug')->from('name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Textarea::make('Description')->rows(3)->rules('required'),
+            Trix::make('Description')->rules('required'),
 
-            BelongsTo::make('Recurring','recurring','App\Nova\Recurring'),
+            BelongsTo::make('Questions récurrentes','recurring','App\Nova\Recurring'),
         ];
     }
     /**

@@ -64,12 +64,12 @@ class Actuality extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->hide(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
             }),
-            Text::make('Location', function () {
+            Text::make('Lieu', function () {
                 return $this->location();
             }),
             Date::make('Date', function () {
@@ -80,7 +80,7 @@ class Actuality extends Resource
                 return $this->translationList();
             }),
 
-            HasMany::make('Translations','translation','App\Nova\ActualityTranslation'),
+            HasMany::make('Traduction','translation','App\Nova\ActualityTranslation'),
 
         ];
     }

@@ -9,6 +9,8 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -48,20 +50,20 @@ class PersonTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Avatar::make('Avatar')->rounded(),
 
-
-            Text::make('Name')
+            Text::make('Nom','name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Firstname')
+            Text::make('Prénom','firstname')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
+            Slug::make('Slug')
+                ->from('name')
                 ->hideFromIndex()
                 ->sortable()
                 ->rules('required', 'max:255'),
@@ -78,45 +80,44 @@ class PersonTranslation extends Resource
 
             Textarea::make('Description')->rows(3),
 
-            Text::make('Link_Portfolio')
+            Text::make('Lien du Portfolio','link_Portfolio')
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Text::make('Link_Github')
+            Text::make('Lien Github','link_Github')
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Text::make('Linkedin')
+            Text::make('Lien Linkedin','linkedin')
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Text::make('Instagram')
+            Text::make('Lien Instagram','instagram')
                 ->hideFromIndex()
                 ->rules('max:255'),
-
-            Text::make('Github')
-                ->hideFromIndex()
-                ->rules( 'max:255'),
 
             Text::make('Job')
                 ->hideFromIndex()
                 ->rules( 'max:255'),
 
-            Text::make('Job_slug')
+            Slug::make('Job_slug')->from('job')
                 ->hideFromIndex()
                 ->rules( 'max:255'),
 
-            DateTime::make('Begin')->rules('required'),
+            DateTime::make('Date d\'entrée','begin')->rules('required'),
 
-            DateTime::make('End'),
+            DateTime::make('Date de sortie','end'),
+
+            Select::make('Langues','locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
 
             HasMany::make('Projects'),
 
-            HasMany::make('Testimonials'),
+            BelongsTo::make('Personnes','person','App\Nova\Person'),
 
-            BelongsTo::make('People','person','App\Nova\Person'),
-
-            HasMany::make('Projects','projects','App\Nova\ProjetTranslation'),
+            HasMany::make('Projets','projects','App\Nova\ProjetTranslation'),
         ];
     }
 

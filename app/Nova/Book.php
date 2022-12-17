@@ -73,12 +73,12 @@ class Book extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->hide(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
             }),
-            Text::make('Course', function () {
+            Text::make('Cours', function () {
                 return $this->course();
             }),
             Number::make('Year', function () {
@@ -88,9 +88,9 @@ class Book extends Resource
                 return $this->translationList();
             })->textAlign('right'),
 
-            HasMany::make('Translations', 'translation', 'App\Nova\BookTranslation'),
+            HasMany::make('Traduction', 'translation', 'App\Nova\BookTranslation'),
 
-            BelongsToMany::make('Course','course','App\Nova\Course')
+            BelongsToMany::make('Cours','course','App\Nova\Course')
         ];
     }
 

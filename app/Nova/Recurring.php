@@ -24,7 +24,7 @@ class Recurring extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\RecurringTranslation::where('locale',app()->getLocale())->where('recurring_id',$this->id)->first()->name;
+        return \App\Models\RecurringTranslation::where('recurring_id',$this->id)->first()->name;
     }
 
     /**
@@ -46,10 +46,11 @@ class Recurring extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name', function () {
+
+            Text::make('Nom', function () {
                 return $this->title();
             }),
-            HasMany::make('Translations','translation','App\Nova\RecurringTranslation')
+            HasMany::make('Traductions','translation','App\Nova\RecurringTranslation')
         ];
     }
 

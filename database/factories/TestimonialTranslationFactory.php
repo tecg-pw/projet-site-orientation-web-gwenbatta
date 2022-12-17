@@ -20,7 +20,7 @@ class TestimonialTranslationFactory extends Factory
             "description" => '<p>'.implode('</p><p>', fake()->paragraphs(12)).'</p>',
             "locale" => "fr",
             "testimonial_id" => 1,
-            "person_id" => 1,
+
         ];
     }
 }

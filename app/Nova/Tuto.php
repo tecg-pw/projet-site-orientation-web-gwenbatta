@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -24,9 +25,21 @@ class Tuto extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\TutoTranslation::where('locale',app()->getLocale())->where('tuto_id',$this->id)->first()->name;
+        return \App\Models\TutoTranslation::where('tuto_id',$this->id)->first()->name;
+    }
+    public function language() {
+        return \App\Models\TutoTranslation::where('tuto_id',$this->id)->first()->languages;
     }
 
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
+    }
     /**
      * The columns that should be searched.
      *
@@ -47,9 +60,17 @@ class Tuto extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
             }),
+            Text::make('Langage de programmation', function () {
+                return $this->language();
+            }),
+
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('center'),
+
             HasMany::make('Translations','translation','App\Nova\TutoTranslation')
         ];
     }

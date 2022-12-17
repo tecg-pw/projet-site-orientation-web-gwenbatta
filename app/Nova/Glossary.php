@@ -24,7 +24,7 @@ class Glossary extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\GlossaryTranslation::where('locale',app()->getLocale())->where('glossary_id',$this->id)->first()->name;
+        return \App\Models\GlossaryTranslation::where('glossary_id',$this->id)->first()->name;
     }
 
     public function translationList()
@@ -55,14 +55,14 @@ class Glossary extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name', function () {
+            ID::make(__('ID'), 'id')->hideFromIndex(),
+            Text::make('Nom', function () {
                 return $this->title();
             }),
             Text::make('Traduction', function () {
                 return $this->translationList();
             })->textAlign('right'),
-            HasMany::make('Translations','translation','App\Nova\GlossaryTranslation')
+            HasMany::make('Traduction','translation','App\Nova\GlossaryTranslation')
         ];
     }
 

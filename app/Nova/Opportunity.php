@@ -24,9 +24,17 @@ class Opportunity extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\OpportunityTranslation::where('locale',app()->getLocale())->where('opportunity_id',$this->id)->first()->name;
+        return \App\Models\OpportunityTranslation::where('opportunity_id',$this->id)->first()->name;
     }
-
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
+    }
     /**
      * The columns that should be searched.
      *
@@ -45,11 +53,15 @@ class Opportunity extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name', function () {
+            ID::make(__('ID'), 'id')->hide(),
+            Text::make('Nom', function () {
                 return $this->title();
             }),
-            HasMany::make('Translations','translation', 'App\Nova\OpportunityTranslation'),
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            }),
+
+            HasMany::make('Traductions','translation', 'App\Nova\OpportunityTranslation'),
         ];
     }
 

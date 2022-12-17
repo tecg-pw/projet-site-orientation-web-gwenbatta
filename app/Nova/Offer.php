@@ -28,7 +28,20 @@ class Offer extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\OfferTranslation::where('locale',app()->getLocale())->where('offer_id',$this->id)->first()->name;
+        return \App\Models\OfferTranslation::where('offer_id',$this->id)->first()->name;
+    }
+    public function pdf() {
+        return \App\Models\OfferTranslation::where('offer_id',$this->id)->first()->pdf;
+    }
+
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
     }
 
     /**
@@ -49,13 +62,22 @@ class Offer extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name', function () {
+            ID::make(__('ID'), 'id')->hide(),
+            Text::make('Nom', function () {
                 return $this->title();
             }),
-            HasMany::make('Translations','translation', 'App\Nova\OfferTranslation'),
 
-            BelongsTo::make('Partner','partner','App\Nova\Partner')
+            HasMany::make('Traductions','translation', 'App\Nova\OfferTranslation'),
+
+            BelongsTo::make('Partner','partner','App\Nova\Partner'),
+
+            Text::make('Offre PDF', function () {
+                return $this->pdf();
+            }),
+
+            Text::make('Traductions', function () {
+                return $this->translationList();
+            })->textAlign('right'),
         ];
     }
 

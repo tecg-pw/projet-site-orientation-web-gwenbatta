@@ -51,11 +51,11 @@ class Project extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Title', function () {
+            Text::make('Titre', function () {
                 return $this->title();
             }),
 
-            HasMany::make('Translations','translation','App\Nova\ProjetTranslation'),
+            HasMany::make('Traductions','translation','App\Nova\ProjetTranslation'),
 
         ];
     }

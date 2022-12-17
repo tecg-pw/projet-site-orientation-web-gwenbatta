@@ -13,10 +13,7 @@ class People extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'people';
-
-    //protected $with = ["translation","courses"];
     protected $with = ["translation"];
-
     protected $fillable = [
         'id'
     ];
@@ -29,6 +26,11 @@ class People extends Model
     public function courses(): BelongsToMany
     {
         return $this->belongsToMany(Course::class, 'course_person', 'people_id', 'course_id');
+    }
+
+    public function testimonials(): HasMany
+    {
+        return $this->hasMany(Testimonial::class);
     }
 }
 

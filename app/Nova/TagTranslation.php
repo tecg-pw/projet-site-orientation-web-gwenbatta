@@ -5,6 +5,8 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -44,10 +46,19 @@ class TagTranslation extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('name'),
-            Text::make('slug')->hideFromIndex(),
-            Text::make('locale')->hideFromIndex(),
-            BelongsTo::make('Tag','tag','App\Nova\Tag')
+            Text::make('Nom','name')->rules('required'),
+
+            Slug::make('slug')
+                ->from('name')
+                ->rules('required')
+                ->hideFromIndex(),
+
+            Select::make('Langues','locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
+
+            BelongsTo::make('Tags','tag','App\Nova\Tag')
         ];
     }
 

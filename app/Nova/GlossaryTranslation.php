@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
@@ -47,18 +48,18 @@ class GlossaryTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hide(),
 
-            Text::make('Name')
+            Text::make('Nom','name')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Slug')
+            Slug::make('Slug')->from('name')
                 ->onlyOnForms()
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Select::make('Locale')->options([
+            Select::make('Langues','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
             ])->displayUsingLabels(),

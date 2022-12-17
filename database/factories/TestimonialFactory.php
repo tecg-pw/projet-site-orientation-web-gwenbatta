@@ -18,6 +18,7 @@ class TestimonialFactory extends Factory
     {
         return [
             "id" => 1,
+            "people_id" => 1,
         ];
     }
 }

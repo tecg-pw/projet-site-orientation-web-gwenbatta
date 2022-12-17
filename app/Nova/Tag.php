@@ -23,7 +23,17 @@ class Tag extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\TagTranslation::where('locale',app()->getLocale())->where('tag_id',$this->id)->first()->name;
+        return \App\Models\TagTranslation::where('tag_id',$this->id)->first()->name;
+    }
+
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
     }
 
     /**
@@ -46,11 +56,15 @@ class Tag extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('name', function () {
+            Text::make('Nom', function () {
                 return $this->title();
             }),
 
-            HasMany::make('Translations','translation','App\Nova\TagTranslation'),
+            Text::make('Traduction', function () {
+                return $this->translationList();
+            })->textAlign('center'),
+
+            HasMany::make('Traductions','translation','App\Nova\TagTranslation'),
         ];
     }
 

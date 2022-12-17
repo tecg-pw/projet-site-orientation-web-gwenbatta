@@ -2,13 +2,10 @@
 
 namespace App\Nova\Dashboards;
 
-use App\Nova\Course;
 use App\Nova\Metrics\CountSubject;
 use App\Nova\Metrics\CountUsers;
 use App\Nova\Metrics\SubjectResolved;
 use App\Nova\Metrics\UsersPerDay;
-use Illuminate\Http\Request;
-use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Dashboards\Main as Dashboard;
 
 class Main extends Dashboard
@@ -24,7 +21,6 @@ class Main extends Dashboard
 //            new Help,
             new CountSubject,
             new SubjectResolved,
-
             new CountUsers,
             new UsersPerDay,
         ];
