@@ -15,6 +15,8 @@ class BacYear extends Filter
      */
     public $component = 'select-filter';
 
+    public $name = 'Année de BAC';
+
     /**
      * Apply the filter to the given query.
      *
@@ -25,7 +27,7 @@ class BacYear extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query;
+        return $query->where('bac',$value);
     }
 
     /**
@@ -36,10 +38,10 @@ class BacYear extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $coursesRefs = CourseTranslation::select('course_id', 'bac')->where('locale', "fr")->whereNotNull('bac')->groupBy('bac', 'course_id')->get();
+        $coursesRefs = CourseTranslation::select('bac')->whereNotNull('bac')->groupBy('bac')->get();
         $courses = [];
         foreach ($coursesRefs as $course) {
-            $courses[$course->bac] = $course->course_id;
+            $courses[] = $course->bac;
         }
         return $courses;
     }

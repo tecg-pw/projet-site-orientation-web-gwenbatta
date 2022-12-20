@@ -90,7 +90,9 @@ class DocTranslation extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+        ];
     }
 
     /**

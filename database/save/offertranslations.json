@@ -3,6 +3,7 @@
         "id": 1,
         "name": "Développeur Front-end",
         "locale": "fr",
+        "supervisor": "Olivier Léonard",
         "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
         "softwares": [
             "Adobe Photoshop",
@@ -25,6 +26,7 @@
         "id": 2,
         "name": "Front-end developer",
         "locale": "en",
+        "supervisor": "Olivier Léonard",
         "description": "Are you passionate, dynamic and creative?\nAre you looking for a new professional challenge?\nOur young and dynamic team is\nlooking for profiles like yours.",
         "softwares": [
             "Adobe Photoshop",
@@ -47,6 +49,7 @@
         "id": 3,
         "name": "Webdesigner",
         "locale": "fr",
+        "supervisor": "Olivier Léonard",
         "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
         "softwares": [
             "Adobe Photoshop",
@@ -69,6 +72,7 @@
         "id": 4,
         "name": "Webdesigner",
         "locale": "en",
+        "supervisor": "Olivier Léonard",
         "description": "Are you passionate, dynamic and creative?\nAre you looking for a new professional challenge?\nOur young and dynamic team is\nlooking for profiles like yours.",
         "softwares": [
             "Adobe Photoshop",

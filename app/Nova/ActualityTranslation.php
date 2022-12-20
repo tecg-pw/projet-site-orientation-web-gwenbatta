@@ -21,7 +21,8 @@ class ActualityTranslation extends Resource
      * @var class-string<\App\Models\ActualityTranslation>
      */
     public static $model = \App\Models\ActualityTranslation::class;
-    public static $displayInNavigation = false;
+
+    //public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -75,7 +76,7 @@ class ActualityTranslation extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Image::make('Image Principale','main_pictures')->onlyOnForms(),
+            Image::make('Image Principale','main_picture')->onlyOnForms(),
 
             Date::make('Date'),
 
@@ -102,7 +103,11 @@ class ActualityTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+            new Filters\LocationActu(),
+            new Filters\DateActu(),
+        ];
     }
 
     /**

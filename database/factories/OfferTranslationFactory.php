@@ -20,6 +20,7 @@ class OfferTranslationFactory extends Factory
         return [
             "name" => $name,
             "slug" => \Str::slug($name),
+            "supervisor" => "",
             "description" => fake()->sentence(40),
             "softwares" => [],
             "others" => [],

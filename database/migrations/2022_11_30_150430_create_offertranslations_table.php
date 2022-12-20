@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('locale');
+            $table->string('supervisor')->nullable();
             $table->text('description');
             $table->json('softwares')->nullable();
             $table->json('others')->nullable();

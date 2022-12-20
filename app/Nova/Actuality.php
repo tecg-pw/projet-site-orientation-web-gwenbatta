@@ -23,13 +23,25 @@ class Actuality extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first()->name;
+        $titleRef =  \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first();
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
     public function location() {
-        return \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first()->lieu;
+        $locationRef =  \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first();
+        if (isset($locationRef)){
+            return $locationRef->lieu;
+        }
+        return '';
     }
     public function date() {
-        return \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first()->date;
+        $dateRef =  \App\Models\ActualityTranslation::where('actuality_id',$this->id)->first();
+        if (isset($dateRef)){
+            return $dateRef->date;
+        }
+        return '';
     }
     public function translationList()
     {
@@ -99,7 +111,11 @@ class Actuality extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+//            new Filters\Locale(),
+//            new Filters\LocationActu(),
+//            new Filters\DateActu(),
+        ];
     }
 
     /**

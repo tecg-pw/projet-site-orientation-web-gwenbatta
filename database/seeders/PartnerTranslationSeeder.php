@@ -26,7 +26,6 @@ class PartnerTranslationSeeder extends Seeder
                 "slug" => \Str::slug($value->name.'_'.$value->locale),
                 "mail" => $value->mail,
                 "logo" => $value->logo,
-                "supervisor" => $value->supervisor,
                 "adresse" => $value->adresse,
                 "locality" => $value->locality,
                 "locality_number" => $value->locality_number,

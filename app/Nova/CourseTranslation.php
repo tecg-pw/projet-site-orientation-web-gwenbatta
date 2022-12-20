@@ -20,7 +20,7 @@ class CourseTranslation extends Resource
      */
     public static $model = \App\Models\CourseTranslation::class;
 
-    public static $displayInNavigation = false;
+    //public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -96,7 +96,11 @@ class CourseTranslation extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\Locale(),
+            new Filters\BacYear(),
+            new Filters\HoursCourse(),
+        ];
     }
 
     /**

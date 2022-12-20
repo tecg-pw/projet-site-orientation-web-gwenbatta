@@ -70,14 +70,14 @@ class Course extends Resource
             }),
             Text::make('Année de Bachelier', function () {
                 return $this->bac();
-            }),
+            })->textAlign('center'),
             Text::make('Heures de cours', function () {
                 return $this->hours();
-            })->textAlign('right'),
+            })->textAlign('center'),
 
             Text::make('Traduction', function () {
                 return $this->translationList();
-            })->textAlign('right'),
+            })->textAlign('center'),
 
             HasMany::make('Traduction','translation','App\Nova\CourseTranslation'),
 
@@ -110,7 +110,9 @@ class Course extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\BacYear(),
+        ];
     }
 
     /**

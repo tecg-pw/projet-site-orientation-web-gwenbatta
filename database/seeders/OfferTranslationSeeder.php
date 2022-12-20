@@ -24,6 +24,7 @@ class OfferTranslationSeeder extends Seeder
             OfferTranslation::factory()->create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name.'_'.$value->locale),
+                "supervisor" => $value->supervisor,
                 "description" => $value->description,
                 "softwares" => json_encode($value->softwares),
                 "others" => json_encode($value->others),

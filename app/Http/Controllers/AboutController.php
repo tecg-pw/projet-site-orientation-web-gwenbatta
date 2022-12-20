@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\CourseTranslation;
 use App\Models\Opportunity;
 use App\Models\People;
 use App\Models\User;
+use App\Models\ActualityTranslation;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -17,6 +19,9 @@ class AboutController extends Controller
      */
     public function index(string $locale = null)
     {
+
+
+
         $jobs = Opportunity::all();
         $teachers = People::all();
         $courses = Course::all();

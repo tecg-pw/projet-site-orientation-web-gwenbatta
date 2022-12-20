@@ -6,7 +6,7 @@ use App\Models\CourseTranslation;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Course extends Filter
+class HoursCourse extends Filter
 {
     /**
      * The filter's component.
@@ -14,6 +14,7 @@ class Course extends Filter
      * @var string
      */
     public $component = 'select-filter';
+    public $name = 'Heures de cours';
 
     /**
      * Apply the filter to the given query.
@@ -25,21 +26,21 @@ class Course extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        //return DB::table('book_course')->where('course_id', $value);
-        return  $query->where('course_id', $value)->get();
+        return $query->where('hours',$value);
     }
+
     /**
      * Get the filter's available options.
      *
-     * @param NovaRequest $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
     public function options(NovaRequest $request)
     {
-        $coursesRefs = CourseTranslation::select('course_id', 'name')->where('locale',"fr")->whereNotNull('name')->groupBy('name', 'course_id')->get();
+        $coursesRefs = CourseTranslation::select('hours')->whereNotNull('hours')->groupBy('hours')->get();
         $courses = [];
         foreach ($coursesRefs as $course) {
-            $courses[$course->name] = $course->course_id;
+            $courses[] = $course->hours;
         }
         return $courses;
     }

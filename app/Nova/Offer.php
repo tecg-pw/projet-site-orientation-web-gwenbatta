@@ -25,6 +25,9 @@ class Offer extends Resource
     public function title() {
         return \App\Models\OfferTranslation::where('offer_id',$this->id)->first()->name;
     }
+    public function supervisor() {
+        return \App\Models\OfferTranslation::where('offer_id',$this->id)->first()->supervisor;
+    }
     public function pdf() {
         return \App\Models\OfferTranslation::where('offer_id',$this->id)->first()->pdf;
     }
@@ -65,6 +68,10 @@ class Offer extends Resource
             HasMany::make('Traductions','translation', 'App\Nova\OfferTranslation'),
 
             BelongsTo::make('Partner','partner','App\Nova\Partner'),
+
+            Text::make('Nom du maître de stage', function () {
+                return $this->supervisor();
+            }),
 
             Text::make('Offre PDF', function () {
                 return $this->pdf();
