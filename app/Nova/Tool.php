@@ -23,10 +23,28 @@ class Tool extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\ToolTranslation::where('tool_id',$this->id)->first()->name;
+        $titleRef = \App\Models\ToolTranslation::where('tool_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
     public function link() {
-        return \App\Models\ToolTranslation::where('tool_id',$this->id)->first()->link;
+
+        $linkRef = \App\Models\ToolTranslation::where('tool_id',$this->id)->first();
+
+        if (isset($linkRef)){
+            return $linkRef->link;
+        }
+        return '';
+    }
+    public function course()
+    {
+        $courses = $this->courses;
+        foreach ($courses as $course) {
+            return $course->translation->first()->name;
+        }
     }
     public function translationList()
     {
@@ -55,14 +73,16 @@ class Tool extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
             Text::make('Nom', function () {
                 return $this->title();
             }),
             Text::make('Lien', function () {
                 return $this->link();
             }),
-
+            Text::make('Cours', function () {
+                return $this->course();
+            }),
             Text::make('Traduction', function () {
                 return $this->translationList();
             })->textAlign('right'),
@@ -92,7 +112,9 @@ class Tool extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\CourseTool(),
+        ];
     }
 
     /**

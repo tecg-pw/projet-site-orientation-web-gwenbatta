@@ -2,12 +2,11 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\ActualityTranslation;
-use Carbon\Carbon;
+use App\Models\PartnerTranslation;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class DateActu extends Filter
+class LocationPartner extends Filter
 {
     /**
      * The filter's component.
@@ -15,8 +14,7 @@ class DateActu extends Filter
      * @var string
      */
     public $component = 'select-filter';
-
-    public $name = 'Date';
+    public $name = 'Lieu';
 
     /**
      * Apply the filter to the given query.
@@ -28,18 +26,16 @@ class DateActu extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        $actualities = \App\Models\Actuality::all();
+        $partners = \App\Models\Partner::all();
 
         $ids = [];
-        foreach ($actualities as $actuality) {
-            if ($actuality->translation->where('locale',app()->getLocale())->first()->date == Carbon::parse($value)){
-            $ids[] = $actuality->id;
+        foreach ($partners as $partner) {
+            if ($partner->translation->where('locale',app()->getLocale())->first()->locality == $value){
+                $ids[] = $partner->id;
             }
         }
 
         return $query->whereIn('id', $ids);
-
-
     }
 
     /**
@@ -50,12 +46,12 @@ class DateActu extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $actualityRefs = ActualityTranslation::where('locale',app()->getLocale())->select('date')->get();
-        $actualities = [];
+        $partnerRefs = PartnerTranslation::where('locale',app()->getLocale())->select('locality')->groupBy('locality')->get();
+        $partners = [];
 
-        foreach ($actualityRefs as $actuality) {
-            $actualities[$actuality->date->translatedFormat('d M Y')] = $actuality->date;
+        foreach ($partnerRefs as $partner) {
+            $partners[] = $partner->locality;
         }
-        return $actualities;
+        return $partners;
     }
 }

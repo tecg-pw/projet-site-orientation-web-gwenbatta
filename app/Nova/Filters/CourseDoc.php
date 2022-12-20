@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Nova\Filters;
-
 use App\Models\CourseTranslation;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Course extends Filter
+class CourseDoc extends Filter
 {
     /**
      * The filter's component.
@@ -14,6 +13,8 @@ class Course extends Filter
      * @var string
      */
     public $component = 'select-filter';
+
+    public $name = 'Cours';
 
     /**
      * Apply the filter to the given query.
@@ -25,8 +26,17 @@ class Course extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        //return DB::table('book_course')->where('course_id', $value);
-        return  $query->where('course_id', $value);
+
+        $docs = \App\Models\Course::where('courses.id', '=', $value)->first()->docs;
+
+        $ids = [];
+
+        foreach ($docs as $doc) {
+            $ids[] = $doc->id;
+        }
+
+        return $query->whereIn('id', $ids);
+
     }
     /**
      * Get the filter's available options.
@@ -36,6 +46,11 @@ class Course extends Filter
      */
     public function options(NovaRequest $request)
     {
-
+        $coursesRefs = CourseTranslation::where('locale','fr')->get();
+        $courses = [];
+        foreach ($coursesRefs as $course) {
+            $courses[$course->name . ' ' .$course->bac] = $course->course_id;
+        }
+        return $courses;
     }
 }

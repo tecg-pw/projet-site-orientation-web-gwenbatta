@@ -22,10 +22,21 @@ class Tuto extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\TutoTranslation::where('tuto_id',$this->id)->first()->name;
+        $titleRef = \App\Models\TutoTranslation::where('tuto_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
     public function language() {
-        return \App\Models\TutoTranslation::where('tuto_id',$this->id)->first()->languages;
+
+        $linkRef = \App\Models\TutoTranslation::where('tuto_id',$this->id)->first();
+
+        if (isset($linkRef)){
+            return $linkRef->languages;
+        }
+        return '';
     }
 
     public function translationList()
@@ -55,7 +66,7 @@ class Tuto extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Text::make('Nom', function () {
                 return $this->title();
@@ -91,7 +102,9 @@ class Tuto extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\LanguagesTuto(),
+        ];
     }
 
     /**

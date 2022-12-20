@@ -22,16 +22,26 @@ class Course extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\CourseTranslation::where('course_id',$this->id)->first()->name;
+        $titleRef = \App\Models\CourseTranslation::where('course_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
     public function bac() {
-        return \App\Models\CourseTranslation::where('course_id',$this->id)->first()->bac;
+        $bacRef =  \App\Models\CourseTranslation::where('course_id',$this->id)->first();
+        if (isset($bacRef)){
+            return $bacRef->bac;
+        }
+        return '';
     }
     public function hours() {
-        return \App\Models\CourseTranslation::where('course_id',$this->id)->first()->hours;
-    }
-    public function person(){
-        return \App\Models\Course::find($this->course_id)->person;
+        $hourRef =  \App\Models\CourseTranslation::where('course_id',$this->id)->first();
+        if (isset($hourRef)){
+            return $hourRef->hours;
+        }
+        return '';
     }
 
     public function translationList()
@@ -112,6 +122,7 @@ class Course extends Resource
     {
         return [
             new Filters\BacYear(),
+            new Filters\TeacherCourse(),
         ];
     }
 

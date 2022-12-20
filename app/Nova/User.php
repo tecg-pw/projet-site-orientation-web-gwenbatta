@@ -43,7 +43,7 @@ class User extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hideFromIndex(),
 
             Gravatar::make()->maxWidth(50),
 
@@ -87,7 +87,10 @@ class User extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\UserType(),
+            new Filters\UserStatus(),
+        ];
     }
 
     /**

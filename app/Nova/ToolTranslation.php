@@ -45,7 +45,7 @@ class ToolTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Text::make('Nom','name')
                 ->sortable()

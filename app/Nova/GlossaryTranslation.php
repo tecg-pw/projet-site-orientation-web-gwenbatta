@@ -45,7 +45,7 @@ class GlossaryTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->hide(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Text::make('Nom','name')
                 ->sortable()

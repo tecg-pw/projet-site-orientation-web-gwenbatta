@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -47,7 +48,7 @@ class ProjetTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Text::make('Titre','title')
                 ->sortable()
@@ -65,7 +66,12 @@ class ProjetTranslation extends Resource
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Image::make('Image principale','main_pictures')->hideFromIndex(),
+            Image::make('Image principale','main_picture')->hideFromIndex(),
+
+            Select::make('Langue','locale')->options([
+                'fr' => 'fr',
+                'en' => 'en',
+            ])->displayUsingLabels(),
 
             DateTime::make('Date'),
 

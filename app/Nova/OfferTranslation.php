@@ -46,7 +46,7 @@ class OfferTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->hide(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
             Text::make('Nom','name')
                 ->sortable()
                 ->rules('required', 'max:255'),
@@ -62,7 +62,6 @@ class OfferTranslation extends Resource
                 'en' => 'en',
             ])->displayUsingLabels(),
 
-            Text::make('Langage de programmation','languages')->hideFromIndex(),
             Text::make('Logiciels','softwares')->hideFromIndex(),
             Text::make('Autres','others')->hideFromIndex(),
 

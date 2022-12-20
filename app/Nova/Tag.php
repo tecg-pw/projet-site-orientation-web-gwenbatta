@@ -22,7 +22,12 @@ class Tag extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\TagTranslation::where('tag_id',$this->id)->first()->name;
+        $titleRef = \App\Models\TagTranslation::where('tag_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
 
     public function translationList()
@@ -53,7 +58,7 @@ class Tag extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make()->hideFromIndex(),
 
             Text::make('Nom', function () {
                 return $this->title();

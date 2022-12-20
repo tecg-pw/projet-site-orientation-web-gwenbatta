@@ -22,8 +22,33 @@ class Project extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\ProjetTranslation::where('locale',app()->getLocale())->where('project_id',$this->id)->first()->title;
+        $titleRef = \App\Models\ProjetTranslation::where('project_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->title;
+        }
+        return '';
     }
+    public function author() {
+            $nameRef = \App\Models\ProjetTranslation::where('project_id',$this->id)->first();
+            $firstnameRef = \App\Models\ProjetTranslation::where('project_id',$this->id)->first();
+        if (isset($nameRef)){
+            return $nameRef->person->translation->first()->name.' '.$firstnameRef->person->translation->first()->firstname;
+        }
+        return '';
+
+    }
+
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
+    }
+
 
     /**
      * The columns that should be searched.
@@ -43,12 +68,17 @@ class Project extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Text::make('Titre', function () {
                 return $this->title();
             }),
-
+            Text::make('Auteur', function () {
+                return $this->author();
+            }),
+            Text::make('Traductions', function () {
+                return $this->translationList();
+            })->textAlign('right'),
             HasMany::make('Traductions','translation','App\Nova\ProjetTranslation'),
 
         ];
@@ -73,7 +103,11 @@ class Project extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\ProjectPerson(),
+            new Filters\ProjectCourse(),
+            new Filters\ProjectDate(),
+        ];
     }
 
     /**

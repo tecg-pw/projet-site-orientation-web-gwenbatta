@@ -25,11 +25,21 @@ class Person extends Resource
      */
     public function title()
     {
-        return \App\Models\PersonTranslation::where('people_id', $this->id)->first()->name . ' ' . \App\Models\PersonTranslation::where('locale', app()->getLocale())->where('people_id', $this->id)->first()->firstname;
+        $nameRef = \App\Models\PersonTranslation::where('people_id',$this->id)->first();
+        $firstnameRef = \App\Models\PersonTranslation::where('people_id',$this->id)->first();
+        if (isset($nameRef)){
+            return $nameRef->name.' '.$firstnameRef->firstname;
+        }
+        return '';
     }
     public function status()
     {
-        return \App\Models\PersonTranslation::where('people_id', $this->id)->first()->status;
+        $statusRef = \App\Models\PersonTranslation::where('people_id', $this->id)->first();
+
+        if (isset($statusRef)){
+            return $statusRef->status;
+        }
+        return '';
     }
 
     public function projects()
@@ -116,7 +126,12 @@ class Person extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\PersonTeacher(),
+            new Filters\PersonBegin(),
+            new Filters\PersonEnd(),
+            new Filters\PersonStatus(),
+        ];
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Nova\Filters;
 
+use App\Models\ActualityTranslation;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -25,7 +26,16 @@ class LocationActu extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query->where('lieu',$value);
+        $actualities = \App\Models\Actuality::all();
+
+        $ids = [];
+        foreach ($actualities as $actuality) {
+            if ($actuality->translation->where('locale',app()->getLocale())->first()->lieu == $value){
+                $ids[] = $actuality->id;
+            }
+        }
+
+        return $query->whereIn('id', $ids);
     }
 
     /**
@@ -36,7 +46,7 @@ class LocationActu extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $actualityRefs = \App\Models\ActualityTranslation::select('lieu')->whereNotNull('lieu')->groupBy('lieu')->get();
+        $actualityRefs = ActualityTranslation::where('locale',app()->getLocale())->select('lieu')->get();
         $actualities = [];
 
         foreach ($actualityRefs as $actuality) {

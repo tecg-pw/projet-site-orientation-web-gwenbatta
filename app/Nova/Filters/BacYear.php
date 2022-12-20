@@ -27,7 +27,16 @@ class BacYear extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query->where('bac',$value);
+        $courses = \App\Models\Course::all();
+
+        $ids = [];
+        foreach ($courses as $course) {
+            if ($course->translation->where('locale',app()->getLocale())->first()->bac == $value){
+                $ids[] = $course->id;
+            }
+        }
+
+        return $query->whereIn('id', $ids);
     }
 
     /**

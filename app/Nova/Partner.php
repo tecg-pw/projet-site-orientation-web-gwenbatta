@@ -23,7 +23,12 @@ class Partner extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\PartnerTranslation::where('partner_id',$this->id)->first()->name;
+        $titleRef = \App\Models\PartnerTranslation::where('partner_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
     public function offersCount() {
         $offers = \App\Models\Offer::where('partner_id',$this->id)->get();
@@ -63,7 +68,7 @@ class Partner extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->hide(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
             Text::make('Nom', function () {
                 return $this->title();
             }),
@@ -101,7 +106,9 @@ class Partner extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\LocationPartner()
+        ];
     }
 
     /**

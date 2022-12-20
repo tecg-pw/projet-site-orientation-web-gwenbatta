@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -23,7 +24,13 @@ class Testimonial extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\TestimonialTranslation::where('testimonial_id',$this->id)->first()->name;
+        $titleRef = \App\Models\TestimonialTranslation::where('testimonial_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->description;
+        }
+        return '';
+
     }
 
     public function translationList()
@@ -53,7 +60,7 @@ class Testimonial extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Trix::make('Description', function () {
                 return $this->title();
@@ -61,7 +68,10 @@ class Testimonial extends Resource
             Text::make('Traduction', function () {
                 return $this->translationList();
             })->textAlign('center'),
+
             HasMany::make('Traductions','translation','App\Nova\TestimonialTranslation'),
+
+            BelongsTo::make('Auteur','person','App\Nova\Person')
         ];
     }
 
@@ -84,7 +94,9 @@ class Testimonial extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\TestimonialAuthor()
+        ];
     }
 
     /**

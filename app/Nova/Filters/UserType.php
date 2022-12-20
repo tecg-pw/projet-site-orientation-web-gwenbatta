@@ -2,21 +2,12 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\CourseTranslation;
-use Laravel\Nova\Filters\Filter;
+use Laravel\Nova\Filters\BooleanFilter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class HoursCourse extends Filter
+class UserType extends BooleanFilter
 {
-    /**
-     * The filter's component.
-     *
-     * @var string
-     */
-    public $component = 'select-filter';
-
-    public $name = 'Heures de cours';
-
+    public $name = 'Voir les Administrateur ?';
     /**
      * Apply the filter to the given query.
      *
@@ -27,7 +18,9 @@ class HoursCourse extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query->where('hours',$value);
+        // $value = ['admin' => true / false, 'editor' => true / false]
+
+        return $query->where('is_admin', $value['admin']);
     }
 
     /**
@@ -38,11 +31,8 @@ class HoursCourse extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $coursesRefs = CourseTranslation::select('hours')->whereNotNull('hours')->groupBy('hours')->get();
-        $courses = [];
-        foreach ($coursesRefs as $course) {
-            $courses[] = $course->hours;
-        }
-        return $courses;
+        return [
+            'Administrateur' => 'admin',
+        ];
     }
 }

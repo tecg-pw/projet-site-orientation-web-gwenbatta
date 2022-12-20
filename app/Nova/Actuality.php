@@ -112,9 +112,8 @@ class Actuality extends Resource
     public function filters(Request $request)
     {
         return [
-//            new Filters\Locale(),
-//            new Filters\LocationActu(),
-//            new Filters\DateActu(),
+            new Filters\LocationActu(),
+            new Filters\DateActu(),
         ];
     }
 

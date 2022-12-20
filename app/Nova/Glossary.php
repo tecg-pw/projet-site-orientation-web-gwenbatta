@@ -22,7 +22,13 @@ class Glossary extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\GlossaryTranslation::where('glossary_id',$this->id)->first()->name;
+
+        $titleRef = \App\Models\GlossaryTranslation::where('glossary_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
 
     public function translationList()

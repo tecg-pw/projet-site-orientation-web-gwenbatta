@@ -2,12 +2,12 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\ActualityTranslation;
-use Carbon\Carbon;
+use App\Models\CourseTranslation;
+use App\Models\PersonTranslation;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class DateActu extends Filter
+class TeacherCourse extends Filter
 {
     /**
      * The filter's component.
@@ -15,8 +15,7 @@ class DateActu extends Filter
      * @var string
      */
     public $component = 'select-filter';
-
-    public $name = 'Date';
+    public $name = 'Professeurs';
 
     /**
      * Apply the filter to the given query.
@@ -28,18 +27,15 @@ class DateActu extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        $actualities = \App\Models\Actuality::all();
+        $people = \App\Models\People::where('people.id', '=', $value)->first()->courses;
 
         $ids = [];
-        foreach ($actualities as $actuality) {
-            if ($actuality->translation->where('locale',app()->getLocale())->first()->date == Carbon::parse($value)){
-            $ids[] = $actuality->id;
-            }
+
+        foreach ($people as $person) {
+            $ids[] = $person->id;
         }
 
         return $query->whereIn('id', $ids);
-
-
     }
 
     /**
@@ -50,12 +46,11 @@ class DateActu extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $actualityRefs = ActualityTranslation::where('locale',app()->getLocale())->select('date')->get();
-        $actualities = [];
-
-        foreach ($actualityRefs as $actuality) {
-            $actualities[$actuality->date->translatedFormat('d M Y')] = $actuality->date;
+        $peopleRefs = PersonTranslation::where('locale','fr')->where('isTeacher',true)->get();
+        $people = [];
+        foreach ($peopleRefs as $person) {
+            $people[$person->name . ' ' .$person->firstname] = $person->people_id;
         }
-        return $actualities;
+        return $people;
     }
 }

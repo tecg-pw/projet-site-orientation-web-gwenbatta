@@ -20,8 +20,6 @@ class ProjectController extends Controller
     public function index(string $locale = null)
     {
 
-
-
         $projects = Project::paginate(9);
 
         //$projects = ProjetTranslation::latest('date')->where('locale', $locale)->paginate(9);
@@ -61,6 +59,7 @@ class ProjectController extends Controller
         $locales = [];
 
         $project = Project::find($project->project_id);
+        return $project;
         $course  = $project->course;
 
         foreach ($project->translation as $projet_ref){

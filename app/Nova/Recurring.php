@@ -22,7 +22,22 @@ class Recurring extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\RecurringTranslation::where('recurring_id',$this->id)->first()->name;
+        $titleRef = \App\Models\RecurringTranslation::where('recurring_id',$this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
+    }
+
+    public function translationList()
+    {
+        $locales = [];
+        $translations = $this->translation;
+        foreach ($translations as $translation) {
+            $locales[] = $translation->locale;
+        }
+        return implode(' , ',$locales);
     }
 
     /**
@@ -43,11 +58,15 @@ class Recurring extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
 
             Text::make('Nom', function () {
                 return $this->title();
             }),
+            Text::make('Traductions', function () {
+                return $this->translationList();
+            })->textAlign('right'),
+
             HasMany::make('Traductions','translation','App\Nova\RecurringTranslation')
         ];
     }

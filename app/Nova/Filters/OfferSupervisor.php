@@ -2,12 +2,12 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\ActualityTranslation;
-use Carbon\Carbon;
+use App\Models\OfferTranslation;
+use App\Models\PartnerTranslation;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class DateActu extends Filter
+class OfferSupervisor extends Filter
 {
     /**
      * The filter's component.
@@ -16,7 +16,7 @@ class DateActu extends Filter
      */
     public $component = 'select-filter';
 
-    public $name = 'Date';
+    public $name = 'Maitre de stage';
 
     /**
      * Apply the filter to the given query.
@@ -28,18 +28,16 @@ class DateActu extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        $actualities = \App\Models\Actuality::all();
+        $offers = \App\Models\Offer::all();
 
         $ids = [];
-        foreach ($actualities as $actuality) {
-            if ($actuality->translation->where('locale',app()->getLocale())->first()->date == Carbon::parse($value)){
-            $ids[] = $actuality->id;
+        foreach ($offers as $offer) {
+            if ($offer->translation->where('locale',app()->getLocale())->first()->supervisor == $value){
+                $ids[] = $offer->id;
             }
         }
 
         return $query->whereIn('id', $ids);
-
-
     }
 
     /**
@@ -50,12 +48,12 @@ class DateActu extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $actualityRefs = ActualityTranslation::where('locale',app()->getLocale())->select('date')->get();
-        $actualities = [];
+        $offerRefs = OfferTranslation::where('locale',app()->getLocale())->select('supervisor')->groupBy('supervisor')->get();
+        $offers = [];
 
-        foreach ($actualityRefs as $actuality) {
-            $actualities[$actuality->date->translatedFormat('d M Y')] = $actuality->date;
+        foreach ($offerRefs as $offer) {
+            $offers[] = $offer->supervisor;
         }
-        return $actualities;
+        return $offers;
     }
 }

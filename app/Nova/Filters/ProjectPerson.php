@@ -2,12 +2,13 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\ActualityTranslation;
-use Carbon\Carbon;
+use App\Models\OfferTranslation;
+use App\Models\PersonTranslation;
+use App\Models\ProjetTranslation;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class DateActu extends Filter
+class ProjectPerson extends Filter
 {
     /**
      * The filter's component.
@@ -15,8 +16,7 @@ class DateActu extends Filter
      * @var string
      */
     public $component = 'select-filter';
-
-    public $name = 'Date';
+    public $name = 'Auteur';
 
     /**
      * Apply the filter to the given query.
@@ -28,18 +28,16 @@ class DateActu extends Filter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        $actualities = \App\Models\Actuality::all();
+        $projects = \App\Models\Project::all();
 
         $ids = [];
-        foreach ($actualities as $actuality) {
-            if ($actuality->translation->where('locale',app()->getLocale())->first()->date == Carbon::parse($value)){
-            $ids[] = $actuality->id;
+        foreach ($projects as $project) {
+            if ($project->translation->where('locale',app()->getLocale())->first()->person_id == $value){
+                $ids[] = $project->id;
             }
         }
 
         return $query->whereIn('id', $ids);
-
-
     }
 
     /**
@@ -50,12 +48,12 @@ class DateActu extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $actualityRefs = ActualityTranslation::where('locale',app()->getLocale())->select('date')->get();
-        $actualities = [];
+        $projectRefs = ProjetTranslation::where('locale',app()->getLocale())->select('person_id')->get();
+        $projects = [];
 
-        foreach ($actualityRefs as $actuality) {
-            $actualities[$actuality->date->translatedFormat('d M Y')] = $actuality->date;
+        foreach ($projectRefs as $project) {
+            $projects[$project->person->translation->first()->name .' ' .$project->person->translation->first()->firstname] = $project->person_id;
         }
-        return $actualities;
+        return $projects;
     }
 }

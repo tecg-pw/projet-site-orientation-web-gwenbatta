@@ -23,13 +23,25 @@ class Offer extends Resource
      * @var string
      */
     public function title() {
-        return \App\Models\OfferTranslation::where('offer_id',$this->id)->first()->name;
+        $titleRef =  \App\Models\OfferTranslation::where('offer_id',$this->id)->first();
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
     public function supervisor() {
-        return \App\Models\OfferTranslation::where('offer_id',$this->id)->first()->supervisor;
+        $supervisorRef = \App\Models\OfferTranslation::where('offer_id',$this->id)->first();
+        if (isset($supervisorRef)){
+            return $supervisorRef->supervisor;
+        }
+        return '';
     }
     public function pdf() {
-        return \App\Models\OfferTranslation::where('offer_id',$this->id)->first()->pdf;
+        $pdfRef =  \App\Models\OfferTranslation::where('offer_id',$this->id)->first();
+        if (isset($pdfRef)){
+            return $pdfRef->pdf;
+        }
+        return '';
     }
 
     public function translationList()
@@ -60,7 +72,7 @@ class Offer extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->hide(),
+            ID::make(__('ID'), 'id')->hideFromIndex(),
             Text::make('Nom', function () {
                 return $this->title();
             }),
@@ -102,7 +114,10 @@ class Offer extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\OfferSupervisor(),
+            new Filters\OfferPartner(),
+        ];
     }
 
     /**

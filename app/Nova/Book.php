@@ -84,7 +84,7 @@ class Book extends Resource
             Text::make('Cours', function () {
                 return $this->course();
             }),
-            Number::make('Year', function () {
+            Number::make('Année de BAC', function () {
                 return $this->year();
             })->sortable(),
             Text::make('Traduction', function () {
@@ -117,7 +117,7 @@ class Book extends Resource
     public function filters(Request $request)
     {
         return [
-           new Filters\Course(),
+           new Filters\BookCourse(),
             new Filters\BacYear(),
         ];
     }
