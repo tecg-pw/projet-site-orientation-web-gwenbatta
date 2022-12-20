@@ -79,6 +79,7 @@ class Project extends Resource
             Text::make('Traductions', function () {
                 return $this->translationList();
             })->textAlign('right'),
+
             HasMany::make('Traductions','translation','App\Nova\ProjetTranslation'),
 
         ];

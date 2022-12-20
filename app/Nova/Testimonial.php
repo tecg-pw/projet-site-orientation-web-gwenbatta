@@ -33,6 +33,16 @@ class Testimonial extends Resource
 
     }
 
+    public function author() {
+        $nameRef = \App\Models\TestimonialTranslation::where('testimonial_id',$this->id)->first();
+        $firstnameRef = \App\Models\TestimonialTranslation::where('testimonial_id',$this->id)->first();
+        if (isset($nameRef)){
+            return $nameRef->person->translation->first()->name.' '.$firstnameRef->person->translation->first()->firstname;
+        }
+        return '';
+
+    }
+
     public function translationList()
     {
         $locales = [];
@@ -65,13 +75,17 @@ class Testimonial extends Resource
             Trix::make('Description', function () {
                 return $this->title();
             }),
+
+            Text::make('Auteur', function () {
+                return $this->author();
+            }),
+
             Text::make('Traduction', function () {
                 return $this->translationList();
             })->textAlign('center'),
 
             HasMany::make('Traductions','translation','App\Nova\TestimonialTranslation'),
 
-            BelongsTo::make('Auteur','person','App\Nova\Person')
         ];
     }
 

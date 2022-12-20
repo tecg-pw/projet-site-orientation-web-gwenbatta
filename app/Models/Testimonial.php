@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Testimonial extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $with = ["translation"];
+    protected $with = ["translation","person"];
     protected $fillable = [
         'id', 'people_id'
     ];

@@ -28,7 +28,7 @@ class People extends Model
         return $this->belongsToMany(Course::class, 'course_person', 'people_id', 'course_id');
     }
 
-    public function testimonials(): HasMany
+    public function testimonial(): HasMany
     {
         return $this->hasMany(Testimonial::class);
     }

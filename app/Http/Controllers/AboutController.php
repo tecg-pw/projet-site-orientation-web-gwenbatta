@@ -19,12 +19,11 @@ class AboutController extends Controller
     public function index(string $locale = null)
     {
 
-
         $jobs = Opportunity::all();
         $teachers = People::all();
         $courses = Course::all();
 
-        return view('about', compact( 'jobs','teachers','courses'));
+        return view('about', compact('jobs', 'teachers', 'courses'));
     }
 
     /**
