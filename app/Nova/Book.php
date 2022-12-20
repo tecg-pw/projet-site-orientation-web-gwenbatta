@@ -25,7 +25,12 @@ class Book extends Resource
      */
     public function title()
     {
-        return \App\Models\BookTranslation::where('book_id', $this->id)->first()->name;
+        $titleRef =  \App\Models\BookTranslation::where('book_id', $this->id)->first();
+
+        if (isset($titleRef)){
+            return $titleRef->name;
+        }
+        return '';
     }
 
     public function course()

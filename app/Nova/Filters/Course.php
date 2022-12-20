@@ -26,7 +26,7 @@ class Course extends Filter
     public function apply(NovaRequest $request, $query, $value)
     {
         //return DB::table('book_course')->where('course_id', $value);
-        return  $query->where('course_id', $value)->get();
+        return  $query->where('course_id', $value);
     }
     /**
      * Get the filter's available options.
@@ -36,11 +36,6 @@ class Course extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $coursesRefs = CourseTranslation::select('course_id', 'name')->where('locale',"fr")->whereNotNull('name')->groupBy('name', 'course_id')->get();
-        $courses = [];
-        foreach ($coursesRefs as $course) {
-            $courses[$course->name] = $course->course_id;
-        }
-        return $courses;
+
     }
 }

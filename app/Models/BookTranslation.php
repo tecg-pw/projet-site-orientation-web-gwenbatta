@@ -18,8 +18,6 @@ class BookTranslation extends Model
         'name', 'slug' , 'locale', 'excerpt', 'description', 'gallery'
     ];
 
-
-
     public function book(): BelongsTo
     {
         return $this->belongsTo(Book::class);

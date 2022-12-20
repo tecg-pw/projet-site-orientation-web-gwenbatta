@@ -22,7 +22,7 @@ class ActualityTranslation extends Resource
      */
     public static $model = \App\Models\ActualityTranslation::class;
 
-    //public static $displayInNavigation = false;
+    public static $displayInNavigation = false;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
