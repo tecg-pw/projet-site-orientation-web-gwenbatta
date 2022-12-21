@@ -31,7 +31,7 @@ return new class extends Migration
             $table->foreignId('tag_id')->constrained()->onUpdate('cascade');
         });
         Schema::table('testimonials', function (Blueprint $table) {
-            $table->foreignId('people_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('people_id')->constrained('people')->onUpdate('cascade');
         });
 
 

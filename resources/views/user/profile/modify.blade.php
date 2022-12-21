@@ -2,7 +2,7 @@
 <main id="content">
     <section class="flex flex-col relative mb-32" aria-labelledby="name">
         <div class="relative">
-            <div class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-30 2xl:px-48">
+            <div class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48">
                 <div class="order-2 flex-1  ml-8 mt-32">
                     <div>
                         <h2 role="heading" id="name" aria-level="2"

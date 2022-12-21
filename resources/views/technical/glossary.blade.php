@@ -1,5 +1,5 @@
 <x-commons.navigation></x-commons.navigation>
-<main id="content" class="px-10 2xl:px-48 xl:px-30 lg:px-16">
+<main id="content" class="px-10 2xl:px-48 xl:px-32 lg:px-16">
     <section class="mt-20 mb-32 xl:mb-64" aria-labelledby="glossary">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="tutos" role="heading" aria-level="2"

@@ -69,7 +69,7 @@
             </ul>
         </section>
     </div>
-    <div class="px-10 2xl:px-48 xl:px-30 lg:px-16 items-center flex-col flex flex-1 justify-between my-14 gap-y-3 md:flex-row md:items-start xl:gap-y-0">
+    <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 items-center flex-col flex flex-1 justify-between my-14 gap-y-3 md:flex-row md:items-start xl:gap-y-0">
         <p class="xl:flex-1">{{__('nav.nav_footer_copyright')}}</p>
         <div class="flex-1 flex gap-8 md:justify-end">
         <a class=" hover:text-orange-500 xl:mr-4" href="/{{app()->getLocale()}}/legals">{{__('nav.nav_footer_legals')}}</a>

@@ -1,7 +1,7 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section class="mt-20" aria-labelledby="sujet">
-        <div class="xl:px-30 lg:px-16 2xl:px-48 px-10 flex flex-col md:flex-row gap-5 mb-7 justify-between xl:items-center">
+        <div class="xl:px-32 lg:px-16 2xl:px-48 px-10 flex flex-col md:flex-row gap-5 mb-7 justify-between xl:items-center">
             <div class="flex gap-5 md:max-w-lg xl:max-w-[50%] 2xl:max-w-full xl:mb-5 xl:items-center">
                 <h2 role="heading" id="sujet" aria-level="2"
                     class="xl:text-4xl 2xl:max-w-full md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12">{{$subject->subject}}</h2>

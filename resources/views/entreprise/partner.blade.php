@@ -1,6 +1,6 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content" class="">
-    <section class="xl:px-30 lg:px-16 2xl:px-48 px-10 mt-20" aria-labelledby="company">
+    <section class="xl:px-32 lg:px-16 2xl:px-48 px-10 mt-20" aria-labelledby="company">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="company" role="heading" aria-level="2"
                 class="mb-4 text-2xl md:text-3xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('agency.agency_title')}}</h2>
@@ -14,7 +14,7 @@
                href="/{{app()->getLocale()}}/entreprise/internship">{{__('agency.offer_link')}}</a>
         </div>
     </section>
-    <article class="xl:px-30 lg:px-16 2xl:px-48 px-10  pt-20 pb-36 bg-yellow-600" aria-labelledby="list-partner">
+    <article class="xl:px-32 lg:px-16 2xl:px-48 px-10  pt-20 pb-36 bg-yellow-600" aria-labelledby="list-partner">
         <h2 id="list-partner" role="heading" aria-level="2" class="sr-only">{{__('agency.partner_list')}}</h2>
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($partners as $partner_ref)

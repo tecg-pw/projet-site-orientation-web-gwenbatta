@@ -23,6 +23,6 @@ class Testimonial extends Model
 
     public function person(): BelongsTo
     {
-        return $this->belongsTo(People::class);
+        return $this->belongsTo(People::class,'people_id');
     }
 }

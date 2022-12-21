@@ -1,6 +1,6 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section class="xl:px-30 lg:px-16 px-10 2xl:px-48 flex mt-14 xl:mb-36 lg:gap-x-12 xl:gap-24 items-center" aria-labelledby="technical">
+    <section class="xl:px-32 lg:px-16 px-10 2xl:px-48 flex mt-14 xl:mb-36 lg:gap-x-12 xl:gap-24 items-center" aria-labelledby="technical">
         <div class="flex-1">
             <h2 class="xl:text-4xl md:text-3xl text-2xl leading-8 mb-6 uppercase font-bold text-yellow-800 xl:mb-16 font-sans"
                 role="heading" aria-level="2"
@@ -20,7 +20,7 @@
         </div>
     </section>
     <x-questions-forum :latests="$latests" :ratings="$ratings" :subjects="$subjects"></x-questions-forum>
-    <article class="px-10 mt-14 mb-20 xl:px-30 lg:px-16 xl:mt-36 xl:mb-36" aria-labelledby="glossary">
+    <article class="px-10 mt-14 mb-20 xl:px-32 lg:px-16 xl:mt-36 xl:mb-36" aria-labelledby="glossary">
         <div class="flex flex-col mb-8 md:flex-row justify-between">
             <h2 id="glossary" aria-level="2" role="heading"
                 class="xl:text-4xl md:text-3xl md:max-w-md md:leading-10 text-2xl uppercase font-bold text-yellow-800 mb-4 xl:mb-16 font-sans">{{__('technicals.glossary_title')}}</h2>
@@ -33,7 +33,7 @@
             @endforeach
         </div>
     </article>
-    <article class="bg-yellow-600 px-10 xl:px-30 lg:px-16 pt-20 pb-28" aria-labelledby="tutos">
+    <article class="bg-yellow-600 px-10 xl:px-32 lg:px-16 pt-20 pb-28" aria-labelledby="tutos">
         <div class="flex flex-col mb-8 md:flex-row justify-between">
             <h2 id="tutos" aria-level="2" role="heading"
                 class="text-2xl md:text-3xl xl:text-4xl uppercase font-bold mb-4 xl:mb-16 font-sans">{{__('technicals.tuto_title')}}</h2>
@@ -46,7 +46,7 @@
             @endforeach
         </div>
     </article>
-    <article class="xl:px-30 lg:px-16 px-10 mt-36 mb-36">
+    <article class="xl:px-32 lg:px-16 px-10 mt-36 mb-36">
         <div class="flex flex-col mb-8 md:flex-row justify-between">
             <h2 id="tutos" aria-level="2" role="heading"
                 class="xl:text-4xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 mb-4 xl:mb-16 font-sans">{{__('technicals.doc_title')}}</h2>

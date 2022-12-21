@@ -1,7 +1,7 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section class="mt-20 mb-36 flex " aria-labelledby="question">
-        <div class="px-10 2xl:px-48 xl:px-30 lg:px-16 flex-1">
+        <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex-1">
             <div class="flex flex-col mb-14 xl:mb-28">
                 <div class="flex flex-col md:flex-row order-1">
                     <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 font-sans mt-6" aria-level="2"

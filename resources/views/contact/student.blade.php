@@ -1,7 +1,7 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section class="mt-20 mb-20 xl:mb-0 xl:flex lg:grid lg:grid-cols-9 lg:items-center lg:justify-center justify-center" aria-labelledby="contact">
-        <div class="xl:px-36 2xl:pl-48 mt-10 flex-1 lg:col-span-4">
+        <div class="xl:px-32 2xl:pl-48 mt-10 flex-1 lg:col-span-4">
             <div class="px-10 xl:px-0 flex flex-col">
                 <h2 class="text-2xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6"
                     id="contact" role="heading" aria-level="2">

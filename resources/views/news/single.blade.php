@@ -1,19 +1,19 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section aria-labelledby="{{$new->slug}}">
-        <div class="flex md:flex-row flex-col px-10 xl:px-30 lg:px-16 2xl:px-48 justify-between mt-20">
+    <section class="mb-20" aria-labelledby="{{$new->slug}}">
+        <div class="flex md:flex-row flex-col px-10 xl:px-32 lg:px-16 2xl:px-48 justify-between mt-20">
             <h2 id="{{$new->slug}}" aria-level="2" role="heading"
                 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-3 xl:mb-11">{{$new->name}}</h2>
             <a class="hover:text-orange-500 mb-5 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/news/index">{{__('actu.actu_single_back')}}</a>
         </div>
-        <div class="xl:px-30 lg:px-16 2xl:px-48 px-10 flex gap-20 md:text-lg xl:text-xl mb-5">
+        <div class="xl:px-32 lg:px-16 2xl:px-48 px-10 flex gap-20 md:text-lg xl:text-xl mb-5">
             @if($new->date !== null)
                 <p>{{ucwords($new->date->translatedFormat('d F Y '))}}</p>
             @endif
             <p>{{$new->lieu}}</p>
         </div>
-        <div class="xl:px-30 lg:px-16 2xl:px-48 px-10 lg:grid lg:grid-cols-10 items-center mb-30 lg:px-16 lg:gap-x-10 xl:gap-x-20">
+        <div class="xl:px-32 lg:px-16 2xl:px-48 px-10 lg:grid lg:grid-cols-10 items-center mb-30 lg:px-16 lg:gap-x-10 xl:gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading"

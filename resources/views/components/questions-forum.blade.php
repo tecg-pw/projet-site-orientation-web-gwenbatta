@@ -18,12 +18,43 @@
                          aria-labelledby="{{$subject->slug}}">
                     <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                         <div class="flex flex-col  xl:gap-4">
-                            <h3 class="order-2 font-medium sm:text-lg xl:text-xl" id="{{$subject->slug}}"
-                                role="heading"
-                                aria-level="3">{{$subject->subject}}</h3>
-                            <div class="flex relative justify-between xl:justify-between">
+                            <div class="flex gap-2">
+                                <h3 class="order-2 font-medium text-lg xl:text-xl"
+                                    id="{{$subject->slug}}"
+                                    role="heading"
+                                    aria-level="3">{{$subject->subject}}</h3>
+                                @if($subject->resolved)
+                                    <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
+                                         viewBox="0 0 34.194 34.196">
+                                        <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                            <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                  data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                  d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                  transform="translate(873 1771)" fill="#da953a"/>
+                                            <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                  data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                  d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                  transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                        </g>
+                                    </svg>
+                                    <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
+                                         viewBox="0 0 34.194 34.196">
+                                        <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                            <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                  data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                  d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                  transform="translate(873 1771)" fill="#da953a"/>
+                                            <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                  data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                  d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                  transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                        </g>
+                                    </svg>
+                                @endif
+                            </div>
+                            <div class="flex -order-2 relative justify-between xl:justify-between">
                                 <p class="md:text-base sm:text-sm text-base uppercase self-end ">{{$subject->user->firstname}} {{$subject->user->name}}</p>
-                                <p class="md:text-base sm:text-sm self-end">{{$subject->created_at->format('d M. Y')}}</p>
+                                <p class="md:text-base sm:text-sm self-end">{{$subject->created_at->translatedFormat('d M Y')}}</p>
                             </div>
                         </div>
                         <div class="order-3 flex flex-row justify-between">
@@ -65,12 +96,42 @@
                                  aria-labelledby="{{$latest->slug}}">
                             <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                                 <div class="flex-col flex xl:gap-4">
+                                    <div class="flex gap-2">
                                     <h4 class="order-2 font-medium sm:text-lg xl:text-xl" id="{{$latest->slug}}"
                                         role="heading"
                                         aria-level="4">{{$latest->subject}}</h4>
-                                    <div class="flex relative justify-between">
+                                    @if($latest->resolved)
+                                        <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
+                                             viewBox="0 0 34.194 34.196">
+                                            <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                      transform="translate(873 1771)" fill="#da953a"/>
+                                                <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                      data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                      d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                      transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                            </g>
+                                        </svg>
+                                        <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
+                                             viewBox="0 0 34.194 34.196">
+                                            <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                      transform="translate(873 1771)" fill="#da953a"/>
+                                                <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                      data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                      d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                      transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                            </g>
+                                        </svg>
+                                    @endif
+                                    </div>
+                                    <div class="flex -order-2 relative justify-between">
                                         <p class="sm:text-sm md:text-base uppercase self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
-                                        <p class="sm:text-sm md:text-base self-end">{{$latest->created_at->format('d M. Y')}}</p>
+                                        <p class="sm:text-sm md:text-base self-end">{{$latest->created_at->translatedFormat('d M Y')}}</p>
                                     </div>
                                 </div>
                                 <div class="order-3 flex justify-between">
@@ -109,12 +170,42 @@
                                  aria-labelledby="{{$rating->slug}}">
                             <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                                 <div class="flex-col flex xl:gap-4">
-                                    <h4 class="order-2 font-medium sm:text-lg xl:text-xl" id="{{$rating->slug}}"
-                                        role="heading"
-                                        aria-level="4">{{$rating->subject}}</h4>
-                                    <div class="flex relative justify-between">
+                                    <div class="flex gap-2">
+                                        <h4 class="order-2 font-medium sm:text-lg xl:text-xl" id="{{$rating->slug}}"
+                                            role="heading"
+                                            aria-level="4">{{$rating->subject}}</h4>
+                                        @if($rating->resolved)
+                                            <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
+                                                 viewBox="0 0 34.194 34.196">
+                                                <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                    <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                          data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                          d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                          transform="translate(873 1771)" fill="#da953a"/>
+                                                    <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                          data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                          d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                          transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                                </g>
+                                            </svg>
+                                            <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
+                                                 viewBox="0 0 34.194 34.196">
+                                                <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                    <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                          data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                          d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                          transform="translate(873 1771)" fill="#da953a"/>
+                                                    <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                          data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                          d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                          transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                                </g>
+                                            </svg>
+                                        @endif
+                                    </div>
+                                    <div class="flex -order-2 relative justify-between">
                                         <p class="sm:text-sm md:text-base uppercase self-end">{{$rating->user->firstname}} {{$rating->user->name}} </p>
-                                        <p class="sm:text-sm md:text-base self-end">{{$rating->created_at->format('d M. Y')}}</p>
+                                        <p class="sm:text-sm md:text-base self-end">{{$rating->created_at->translatedFormat('d M Y')}}</p>
                                     </div>
                                 </div>
                                 <div class="order-3 flex justify-between">

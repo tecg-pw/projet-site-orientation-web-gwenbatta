@@ -59,7 +59,6 @@ class ProjectController extends Controller
         $locales = [];
 
         $project = Project::find($project->project_id);
-        return $project;
         $course  = $project->course;
 
         foreach ($project->translation as $projet_ref){

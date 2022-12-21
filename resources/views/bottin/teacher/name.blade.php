@@ -1,6 +1,6 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content" class="">
-    <section class="mt-20 px-10 2xl:px-48 xl:px-30 lg:px-16 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
+    <section class="mt-20 px-10 2xl:px-48 xl:px-32 lg:px-16 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"
                 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$teacher->firstname}} {{$teacher->name}}</h2>
@@ -77,7 +77,7 @@
             </div>
         </div>
     </section>
-    <article class="2xl:px-48 bg-yellow-600 xl:px-30 lg:px-16 px-10 pb-24 pt-20" aria-labelledby="classes">
+    <article class="2xl:px-48 bg-yellow-600 xl:px-32 lg:px-16 px-10 pb-24 pt-20" aria-labelledby="classes">
         <div class="flex xl:flex-row flex-col justify-between mb-8">
             <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('people.bottin_course') . ( $teacher->firstname . ' ' .$teacher->name)}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold" href="/{{app()->getLocale()}}/about#course">{{__('people.teacher_course')}}</a>

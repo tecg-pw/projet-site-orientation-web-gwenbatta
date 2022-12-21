@@ -1,6 +1,6 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
-    <section class="px-10 2xl:px-48 xl:px-30 lg:px-16 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="about">
+    <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="about">
         <div class="flex-1 ">
             <h2 class="text-2xl leading-8 mb-6 md:text-3xl xl:text-4xl uppercase font-bold text-yellow-800 xl:mb-16 font-sans"
                 role="heading" aria-level="2"
@@ -19,7 +19,7 @@
             </figure>
         </div>
     </section>
-    <section class="bg-yellow-600 mt-20 px-10 py-14 xl:py-20 xl:px-30 lg:px-16 2xl:px-48" aria-labelledby="course">
+    <section class="bg-yellow-600 mt-20 px-10 py-14 xl:py-20 xl:px-32 lg:px-16 2xl:px-48" aria-labelledby="course">
         <h2 id="course" aria-level="2" role="heading"
             class="text-2xl md:text-3xl mb-10 xl:text-4xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.course_title')}}</h2>
         <div class="flex flex-col lg:gap-y-2 xl:gap-y-12 lg:flex-row justify-between">
@@ -123,7 +123,7 @@
             </section>
         </div>
     </section>
-    <section class="px-10 2xl:px-48 xl:px-30 lg:px-16 lg:px-16 mt-14 mb-36 gap-24 items-center" aria-labelledby="profs">
+    <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 lg:px-16 mt-14 mb-36 gap-24 items-center" aria-labelledby="profs">
         <div class="flex-1 flex flex-col md:flex-row mt-36 lg:justify-between">
             <h2 class="text-2xl md:text-3xl md:max-w-xl lg:max-w-full md:leading-10 mb-6 xl:text-4xl 2xl:max-w-full uppercase font-bold text-yellow-800 xl:mb-20 font-sans" role="heading"
                 aria-level="2"
@@ -141,7 +141,7 @@
             @endforeach
         </div>
     </section>
-    <article class="bg-yellow-600 2xl:px-48 px-10 xl:px-30 lg:px-16 pb-36 pt-20" aria-labelledby="jobs">
+    <article class="bg-yellow-600 2xl:px-48 px-10 xl:px-32 lg:px-16 pb-36 pt-20" aria-labelledby="jobs">
         <h2 id="jobs" aria-level="2" role="heading"
             class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans md:text-3xl xl:mb-20">{{__('about.job_title')}}</h2>
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">

@@ -1,13 +1,13 @@
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <section aria-labelledby="dev-front">
-        <div class="flex flex-col px-10 2xl:px-48 xl:px-36 md:flex-row justify-between mt-20">
+        <div class="flex flex-col px-10 2xl:px-48 xl:px-32 md:flex-row justify-between mt-20">
             <h2 class="xl:text-4xl md:text-3xl flex-1 max-w-[50%] xl:leading-12 text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
                 id="dev-front" aria-level="2" role="heading">{{$job->name}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/about#jobs">{{__('job.job_back')}}</a>
         </div>
-        <div class="xl:mt-20 2xl:px-48 mt-10 px-10 xl:px-36 lg:grid lg:grid-cols-10 xl:items-center mb-36 lg:gap-x-10 xl:gap-x-20">
+        <div class="xl:mt-20 2xl:px-48 mt-10 px-10 xl:px-32 lg:grid lg:grid-cols-10 xl:items-center mb-36 lg:gap-x-10 xl:gap-x-20">
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-5" id="description" aria-level="2"
@@ -39,7 +39,7 @@
             </div>
         </div>
     </section>
-    <article class="bg-yellow-600 2xl:px-48 xl:px-36 px-10 pb-36 pt-20" aria-labelledby="other">
+    <article class="bg-yellow-600 2xl:px-48 xl:px-32 px-10 pb-36 pt-20" aria-labelledby="other">
         <div class="flex flex-col md:flex-row justify-between mb-8">
             <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20" id="other" aria-level="2"
                 role="heading">{{__('job.job_other')}}</h2>
@@ -58,7 +58,7 @@
             @endforeach
         </div>
     </article>
-    <article class="xl:px-36 2xl:px-48 px-10 mt-36 mb-36" aria-labelledby="alumnis">
+    <article class="xl:px-32 2xl:px-48 px-10 mt-36 mb-36" aria-labelledby="alumnis">
         <div class="flex flex-col md:flex-row justify-between mb-6">
             <h2 class="xl:text-4xl md:text-3xl md:max-w-md md:leading-10 text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis"
                 aria-level="2"
