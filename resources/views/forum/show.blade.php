@@ -2,7 +2,7 @@
 <main id="content">
     <section class="" aria-labelledby="sujet" id="sujet">
         @if(request()->has('delete-comment'))
-            <div class="absolute z-30 bg-green-200 w-full h-full flex items-center justify-center">
+            <div class="delete-element absolute z-30 bg-green-200 w-full h-full flex items-center justify-center">
                 <div class="flex px-10 py-10 items-center flex-col rounded-lg bg-white-100">
                     <form class="flex items-center flex-col" action="/{{app()->getLocale()}}/forum/{{$subject->slug}}/comment/destroy/{{Request::query('delete-comment')}}"
                           method="post">
@@ -18,7 +18,7 @@
             </div>
         @endif
             @if(request()->has('delete-subject'))
-            <div class="absolute z-30 bg-green-200 w-full h-full flex items-center justify-center">
+            <div class="delete-element absolute z-30 bg-green-200 w-full h-full flex items-center justify-center">
                 <div class="flex px-10 py-10 items-center flex-col rounded-lg bg-white-100">
                     <form class="flex items-center flex-col" action="/{{app()->getLocale()}}/forum/subject/destroy/{{Request::query('delete-subject')}}" method="post">
                         @csrf
