@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('slug');
             $table->text('locale');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

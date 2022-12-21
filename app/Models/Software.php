@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Language extends Model
+class Software extends Model
 {
     use HasFactory, SoftDeletes;
+    protected $table = 'softwares';
 
     protected $fillable = [
         'id'
@@ -19,10 +20,10 @@ class Language extends Model
 
     public function translation(): HasMany
     {
-        return $this->hasMany(LanguageTranslation::class);
+        return $this->hasMany(SoftwareTranslation::class);
     }
     public function offers(): BelongsToMany
     {
-        return $this->belongsToMany(Offer::class,'language_offer','language_id','offer_id');
+        return $this->belongsToMany(Offer::class,'offer_software','software_id','offer_id');
     }
 }

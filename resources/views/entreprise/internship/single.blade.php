@@ -100,30 +100,14 @@
                                 <h4 id="software" role="heading" aria-level="4"
                                     class="text-xl text-green-500 mb-4">{{__('agency.offer_software')}}</h4>
                                 <ul class="flex flex-col gap-2 list-disc">
-                                    @foreach($offer_ref->softwares as $software)
+                                    @foreach($offer->software as $software)
                                         <li class="flex items-center gap-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7"
                                                  viewBox="0 0 7 7">
                                                 <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                         fill="#6f704d"/>
                                             </svg>
-                                            <p>{{$software}}</p>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </section>
-                            <section class="" aria-labelledby="assets">
-                                <h4 id="assets" role="heading" aria-level="4"
-                                    class="text-xl text-green-500 mb-4">{{__('agency.offer_plus')}}</h4>
-                                <ul class="flex flex-col gap-2 list-disc">
-                                    @foreach($offer_ref->others as $other)
-                                        <li class="flex items-center gap-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7"
-                                                 viewBox="0 0 7 7">
-                                                <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
-                                                        fill="#6f704d"/>
-                                            </svg>
-                                            <p>{{$other}}</p>
+                                            <p>{{ucwords($software->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                                         </li>
                                     @endforeach
                                 </ul>

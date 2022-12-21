@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class LanguageTranslation extends Model
+class SoftwareTranslation extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'languagetranslations';
+    protected $table = 'softwaretranslations';
 
     protected $fillable = [
         'name', 'slug' ,'locale'
@@ -19,6 +19,6 @@ class LanguageTranslation extends Model
 
     public function language(): BelongsTo
     {
-        return $this->belongsTo(Language::class);
+        return $this->belongsTo(Software::class);
     }
 }

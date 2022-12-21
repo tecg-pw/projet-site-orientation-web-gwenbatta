@@ -16,7 +16,7 @@ class Offer extends Model
     protected $fillable = [
         'id'
     ];
-    protected $with = ["translation","partner","language"];
+    protected $with = ["translation","partner","language","software"];
 
     public function translation(): HasMany
     {
@@ -30,6 +30,10 @@ class Offer extends Model
     public function language(): BelongsToMany
     {
         return $this->belongsToMany(Language::class,'language_offer','offer_id','language_id');
+    }
+    public function software(): BelongsToMany
+    {
+        return $this->belongsToMany(Language::class,'offer_software','offer_id','software_id');
     }
 
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Coordinate;
+use App\Models\Language;
+use App\Models\Software;
 
 class AgencyContactController extends Controller
 {
@@ -16,6 +18,8 @@ class AgencyContactController extends Controller
     {
 
         $coordinates = Coordinate::all();
-        return view('contact.agency', compact('coordinates'));
+        $languages = Language::all();
+        $softwares = Software::all();
+        return view('contact.agency', compact('coordinates','languages','softwares'));
     }
 }

@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "name": "Photoshop",
+        "locale": "fr",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Illustrator",
+        "locale": "fr",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 2
+    },
+    {
+        "id": 3,
+        "name": "Indesign",
+        "locale": "fr",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 3
+    },{
+        "id": 4,
+        "name": "Figma",
+        "locale": "fr",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 4
+    },
+    {
+        "id": 5,
+        "name": "Adobe XD",
+        "locale": "fr",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 5
+    },
+    {
+        "id": 6,
+        "name": "Sktech",
+        "locale": "fr",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 6
+    },
+    {
+        "id": 7,
+        "name": "After Effect",
+        "locale": "fr",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 7
+    },
+    {
+        "id": 8,
+        "name": "Adobe Première",
+        "locale": "fr",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 8
+    },
+    {
+        "id": 10,
+        "name": "Photoshop",
+        "locale": "en",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 1
+    },
+    {
+        "id": 11,
+        "name": "Illustrator",
+        "locale": "en",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 2
+    },
+    {
+        "id": 12,
+        "name": "Indesign",
+        "locale": "en",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 3
+    },{
+        "id": 13,
+        "name": "Figma",
+        "locale": "en",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 4
+    },
+    {
+        "id": 14,
+        "name": "Adobe XD",
+        "locale": "en",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 5
+    },
+    {
+        "id": 15,
+        "name": "Sketch",
+        "locale": "en",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 6
+    },
+    {
+        "id": 16,
+        "name": "After Effect",
+        "locale": "en",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 7
+    },
+    {
+        "id": 17,
+        "name": "Adobe Première",
+        "locale": "en",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 8
+    }
+]
