@@ -3,6 +3,7 @@
 return [
 
     'title' => 'Ask a question',
+    'title_modify' => 'Modify my question',
     'back' => 'Back to the forum',
     'question' => 'Question',
     'question_placeholder' => 'How do birds fly?',

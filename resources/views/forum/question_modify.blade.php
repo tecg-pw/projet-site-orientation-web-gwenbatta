@@ -7,7 +7,7 @@
                     <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 font-sans mt-6"
                         aria-level="2"
                         role="heading" id="question">
-                        {{__('forum_question.title')}}
+                        {{__('forum_question.title_modify')}}
                     </h2>
                     <a class="hover:text-orange-500 font-sans mt-3 md:text-xl self-end xl:mt-6 md:text-end text-green-700 xl:text-3xl font-semibold underline flex-1"
                        href="/{{app()->getLocale()}}/forum/index">{{__('forum_question.back')}}</a>
@@ -28,7 +28,7 @@
                         </div>
                         @enderror
                         <input class="border border-orange-500 rounded-xl py-2 px-3  @error('subject') outline outline-3 outline-red-600 @enderror text-gray-700 leading-tight focus:outline focus:outline-2 focus:outline-green-700 border focus:bg-orange-100"
-                            name="subject" id="subject" type="text" placeholder="{{__('forum_question.question_placeholder')}}" value="{{old('subject')}}">
+                            name="subject" id="subject" type="text" placeholder="{{__('forum_question.question_placeholder')}}" value="{{$subject->subject}}">
                     </div>
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl"
@@ -45,16 +45,16 @@
                             cols="30" rows="10"
                             class="border border-orange-500 rounded-xl @error('description') outline outline-3 outline-red-600 @enderror py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="description" id="description"
-                            placeholder="{{__('forum_question.description_placeholder')}}">{{old('description')}}</textarea>
+                            placeholder="{{__('forum_question.description_placeholder')}}">{{$subject->description}}</textarea>
                     </div>
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="tag_id">{{__('forum_question.tag')}}</label>
-
+                        <p>{{$subject->tag_id}}</p>
                         <select name="tag_id" id="tag_id"
                                 class="appearance-none max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
                             @foreach($tags as $tag)
-                                <option
-                                    value="{{$tag->translation->where('locale',app()->getLocale())->first()->tag_id}}">{{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->name)}}</option>
+                                <option @selected($tag->id === $subject->tag_id)
+                                    value="{{$tag->translation->where('locale',app()->getLocale())->first()->tag_id}}">{{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->name)}} {{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->tag_id)}}</option>
                             @endforeach
                         </select>
                     </div>

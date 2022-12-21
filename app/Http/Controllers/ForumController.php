@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SubjectRequest;
+use App\Models\Comment;
 use App\Models\Subject;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -71,9 +72,11 @@ class ForumController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(string $locale = null,Subject $subject)
     {
-        //
+        $tags = Tag::all();
+
+        return view('forum.question_modify',compact('tags','subject'));
     }
 
     /**
@@ -83,9 +86,13 @@ class ForumController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(string $locale = null,Subject $subject,SubjectRequest $request)
     {
-        //
+        $validatedData =  $request->safe()->only('subject', 'description','tag_id');
+        $validatedData['slug'] = Str::slug($validatedData['subject']);
+        $subject->update($validatedData);
+
+        return redirect('/'.$locale.'/forum/'.$subject->slug);
     }
 
     /**
@@ -94,8 +101,9 @@ class ForumController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    public function destroy(string $locale = null, Subject $subject)
+{
+    $subject->delete();
+    return  redirect('/'.$locale.'/forum/index');
+}
 }

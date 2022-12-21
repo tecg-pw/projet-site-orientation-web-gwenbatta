@@ -3,7 +3,7 @@
 return [
 
     'label' => 'Search',
-    'latest' => 'Latest subject',
+    'latest' => 'Latest subjects',
     'rating' => 'Popular topics',
 
 ];

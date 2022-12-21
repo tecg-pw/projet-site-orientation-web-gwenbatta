@@ -23,7 +23,9 @@ class User extends Resource
      *
      * @var string
      */
-    public static $title = 'email';
+    public function title() {
+        return $this->firstname . ' ' . $this->name;
+    }
 
     /**
      * The columns that should be searched.

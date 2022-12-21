@@ -12,7 +12,7 @@ class Comment extends Model
     use HasFactory, SoftDeletes;
     protected $dates = ['created_at'];
     protected $fillable = [
-        'content', 'slug' , 'like'
+        'content', 'slug' , 'like', 'user_id','subject_id'
     ];
     public function subject(): BelongsTo
     {

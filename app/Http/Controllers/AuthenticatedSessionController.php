@@ -29,13 +29,6 @@ class AuthenticatedSessionController extends Controller
                 'password' => trans('auth.password'),
             ])
             ->withInput();
-
-//        $user = User::where('email',request('email'))
-//            ->first();
-//        if (\Hash::check(request('password'),$user->password)){
-//                \Auth::login($user);
-//                return Redirect::to('/')->with('success','Vous êtes connecté');
-//            }
     }
 
     public function destroy()

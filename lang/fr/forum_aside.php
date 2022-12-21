@@ -3,7 +3,7 @@
 return [
 
     'label' => 'Rechercher',
-    'latest' => 'Dernier sujet',
-    'rating' => 'Sujets populaire',
+    'latest' => 'Derniers sujets',
+    'rating' => 'Sujets populaires',
 
 ];

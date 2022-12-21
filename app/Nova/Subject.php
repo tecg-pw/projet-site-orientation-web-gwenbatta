@@ -2,43 +2,29 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\HasMany;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Tag extends Resource
+class Subject extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Tag>
+     * @var class-string<\App\Models\Subject>
      */
-    public static $model = \App\Models\Tag::class;
+    public static $model = \App\Models\Subject::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public function title() {
-        $titleRef = \App\Models\TagTranslation::where('tag_id',$this->id)->first();
-
-        if (isset($titleRef)){
-            return $titleRef->name;
-        }
-        return '';
-    }
-
-    public function translationList()
-    {
-        $locales = [];
-        $translations = $this->translation;
-        foreach ($translations as $translation) {
-            $locales[] = $translation->locale;
-        }
-        return implode(' , ',$locales);
-    }
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -60,17 +46,18 @@ class Tag extends Resource
         return [
             ID::make()->hideFromIndex(),
 
-            Text::make('Nom', function () {
-                return $this->title();
-            }),
+            Text::make('Sujet','subject'),
 
-            Text::make('Traduction', function () {
-                return $this->translationList();
-            })->textAlign('center'),
+            Text::make('Slug')->hideFromIndex(),
 
-            HasMany::make('Traductions','translation','App\Nova\TagTranslation'),
+            Trix::make('Description'),
 
-            HasMany::make('Sujet','subjects','App\Nova\Subject'),
+            BelongsTo::make('User'),
+
+            BelongsTo::make('Tag'),
+
+            Boolean::make('Résolu','resolved'),
+
         ];
     }
 
