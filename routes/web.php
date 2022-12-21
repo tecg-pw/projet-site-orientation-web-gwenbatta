@@ -101,7 +101,7 @@ Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'index'
 
 
 Route::get('/{locale?}/forum/question', [ForumController::class, 'create'])->middleware(['auth','locale']);
-Route::post('/subject', [ForumController::class, 'store'])->middleware('auth');
+Route::post('/{locale?}/subject', [ForumController::class, 'store'])->middleware(['auth','locale']);
 Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index'])->middleware('locale');

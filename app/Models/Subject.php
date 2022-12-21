@@ -15,7 +15,7 @@ class Subject extends Model
     protected $with = ['comments', 'user','tag'];
     protected $withCount = ['comments'];
     protected $fillable = [
-        'subject', 'slug' , 'description', 'tag', 'resolved'
+        'subject', 'slug' , 'description', 'tag_id', 'resolved', 'user_id', 'user_id'
     ];
     public function comments(): HasMany
     {

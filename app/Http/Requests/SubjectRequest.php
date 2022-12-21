@@ -25,8 +25,8 @@ class SubjectRequest extends FormRequest
     {
         return [
             'subject' => 'required|max:50',
-            'descritpion' => 'required|min:8|max:120',
-            'tag' => 'required',
+            'description' => 'required|min:8|max:120',
+            'tag_id' => 'required',
         ];
     }
 }

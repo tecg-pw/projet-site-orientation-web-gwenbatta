@@ -21,7 +21,7 @@
                         @enderror
                         <input
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                            name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value=" {{old('email')}}">
+                            name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value="{{old('email')}}">
                     </div>
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl" for="password">{{__('login_register.password')}}</label>

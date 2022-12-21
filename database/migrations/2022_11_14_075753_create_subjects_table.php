@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('subject');
             $table->string('slug');
             $table->text('description');
-            $table->boolean('resolved');
+            $table->boolean('resolved')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

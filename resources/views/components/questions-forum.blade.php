@@ -9,7 +9,7 @@
         <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl xl:max-w-[50%] 2xl:max-w-full uppercase font-bold xl:mb-12 font-sans xl:leading-12" role="heading" aria-level="2"
             id="questions">{{__('home.forum_title')}}</h2>
         <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl lg:text-end xl:text-3xl"
-           href="forum/index">{{__('home.forum_link')}}</a>
+           href="/{{app()->getLocale()}}/forum/index">{{__('home.forum_link')}}</a>
     </div>
     <div class="lg:grid lg:grid-cols-5 lg:justify-between">
         <div class="lg:col-span-3 mb-10 sm:mb-16 flex flex-col gap-y-4 lg:gap-y-8 lg:pr-14 lg:border-r-2 border-r-orange-500/40">

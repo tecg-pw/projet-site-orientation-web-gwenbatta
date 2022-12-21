@@ -6,6 +6,7 @@ use App\Http\Requests\SubjectRequest;
 use App\Models\Subject;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Str;
 
 class ForumController extends Controller
 {
@@ -40,9 +41,14 @@ class ForumController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SubjectRequest $request)
+    public function store(string $locale = null,SubjectRequest $request)
     {
-        //
+         $validatedData =  $request->safe()->only('subject', 'description','tag_id');
+        $validatedData['user_id'] = auth()->id();
+        $validatedData['slug'] = Str::slug($validatedData['subject']);
+        $subject = Subject::create($validatedData);
+
+        return redirect('/'.$locale.'/forum/'.$subject->slug);
     }
 
     /**
