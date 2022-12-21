@@ -10,7 +10,7 @@ return [
     'latest_subject' => 'Latest topics',
     'latest_answer' => 'Latest responses',
     'my_subject' => 'My subjects',
-    'my_talks' => 'My talks',
+    'my_talks' => 'My comments',
     'single_back' => 'Back to the forum',
     'button_back' => 'Cancel',
     'value__add' => 'Add',

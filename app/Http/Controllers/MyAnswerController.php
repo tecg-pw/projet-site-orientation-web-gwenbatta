@@ -19,7 +19,7 @@ class MyAnswerController extends Controller
     {
 
         $recurrings = Recurring::all();
-        $comments = Comment::latest()->paginate(3);
+        $comments = Comment::where('user_id',auth()->user()->id)->orderBy('created_at')->paginate(8);
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();

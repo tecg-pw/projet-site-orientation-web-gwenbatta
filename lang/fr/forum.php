@@ -12,7 +12,7 @@ return [
     'latest_subject' => 'Derniers sujets',
     'latest_answer' => 'Dernières réponses',
     'my_subject' => 'Mes sujets',
-    'my_talks' => 'Mes discussions',
+    'my_talks' => 'Mes commentaires',
     'single_back' => 'Retour au forum',
     'button_back' => 'Annuler',
     'value__add' => 'Ajouter',
