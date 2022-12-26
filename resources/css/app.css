@@ -8,6 +8,9 @@
         color: #DA953A;
         outline-color: rgba(78,100,88,0.7);
     }
+    .no-js .show-password {
+        display: none;
+    }
     html {
         font-family: Hind, sans-serif;
         font-weight: 200;

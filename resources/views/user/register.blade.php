@@ -44,15 +44,27 @@
                             name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value="{{old('email')}}">
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl" for="password">{{__('login_register.password')}}</label>
+                        <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl" for="password">
+                            {{__('login_register.password')}}
+                        </label>
                         @error('password')
                         <p class="text-red-400 my-2">{{ $message }}</p>
                         @enderror
-                        <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('password') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                            name="password" dusk="password-field" id="password" type="password" placeholder="azerty">
-                        <a class="hover:text-orange-500 mt-2 text-green-700 underline font-sans self-end text-sm"
-                           href="/{{app()->getLocale()}}/user/password">{{__('login_register.forgot')}}</a>
+                        <div class="flex-1 px-3 items-center  @error('password') outline-red-600 @enderror flex border leading-tight border-orange-500 rounded-xl focus-within:border focus-within:border-2 focus-within:border-green-700 focus-within:bg-orange-100">
+                            <input
+                                class="password outline-none font-mono focus:bg-orange-100 py-2 text-gray-700 h-full w-full "
+                                name="password" dusk="password-field" id="password" type="password" placeholder="azerty">
+                            <span class="show-password cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="20" height="20"
+                             class="fill-orange">
+                                <path class="show"
+                                      d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"/>
+                                <path class="hidden hide"
+                                      d="M10.94,6.08A6.93,6.93,0,0,1,12,6c3.18,0,6.17,2.29,7.91,6a15.23,15.23,0,0,1-.9,1.64,1,1,0,0,0-.16.55,1,1,0,0,0,1.86.5,15.77,15.77,0,0,0,1.21-2.3,1,1,0,0,0,0-.79C19.9,6.91,16.1,4,12,4a7.77,7.77,0,0,0-1.4.12,1,1,0,1,0,.34,2ZM3.71,2.29A1,1,0,0,0,2.29,3.71L5.39,6.8a14.62,14.62,0,0,0-3.31,4.8,1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20a9.26,9.26,0,0,0,5.05-1.54l3.24,3.25a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Zm6.36,9.19,2.45,2.45A1.81,1.81,0,0,1,12,14a2,2,0,0,1-2-2A1.81,1.81,0,0,1,10.07,11.48ZM12,18c-3.18,0-6.17-2.29-7.9-6A12.09,12.09,0,0,1,6.8,8.21L8.57,10A4,4,0,0,0,14,15.43L15.59,17A7.24,7.24,0,0,1,12,18Z"/>
+                        </svg>
+                    </span>
+                        </div>
+
                     </div>
                     <div class="flex flex-1 justify-end mt-8 xl:mt-0">
                         <input

@@ -14,7 +14,7 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.ts')
 </head>
-<body class="bg-white-100" aria-labelledby="body">
+<body class="no-js bg-white-100 selection:bg-green-200" aria-labelledby="body">
 <header>
     <h1 class="sr-only" aria-level="1" role="heading"
         id="body">{{__('nav.main_title')}}</h1>
