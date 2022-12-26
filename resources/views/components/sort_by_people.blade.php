@@ -12,9 +12,10 @@
                 <select id="status"
                         name="status"
                         class="appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
+                    <option value="all">{{strtoupper('Toutes')}}</option>
                     @foreach($status as $filter)
                         <option value="nothings">
-                            {{$filter->status}}
+                            {{mb_strtoupper($filter->status)}}
                         </option>
                     @endforeach
                 </select>
@@ -25,9 +26,10 @@
                     class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold pl-2 pr-8 py-1"
                     id="year"
                     name="year">
+                    <option value="all">{{strtoupper('Toutes')}}</option>
                     @foreach($years_end as $filter)
                         <option value="nothings">
-                            {{$filter->end->format('Y')}}
+                            {{mb_strtoupper($filter->end->format('Y'))}}
                         </option>
                     @endforeach
                 </select>

@@ -18,7 +18,7 @@
                     <x-tuto class="bg-yellow-100" :tuto="$tuto_ref" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
                 @endforeach
             </div>
-            {{$tutos->links()}}
+{{--            {{$tutos->withQueryString()->links()}}--}}
         </article>
     </section>
 </main>

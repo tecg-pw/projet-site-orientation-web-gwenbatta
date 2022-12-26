@@ -21,8 +21,6 @@ class LatestSubjectController extends Controller
         $sortTags = request()->input('tags') ?? 'all';
         $sortYear = request()->input('year') ?? 'all';
 
-        $recurrings = Recurring::all();
-
         if ($searchTerm) {
             $subjects = Subject::query()
                 ->where('subject', 'like', '%' . $searchTerm . '%')
@@ -73,7 +71,7 @@ class LatestSubjectController extends Controller
                 ->where('created_at', $sortYear)
                 ->paginate(8);
         }
-
+        $recurrings = Recurring::all();
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
