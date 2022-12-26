@@ -16,6 +16,9 @@ module.exports = {
                 '10': '2.5rem',
                 '12': '3rem',
             },
+            zIndex:{
+                '60': '60'
+            },
             colors: {
                 white : {
                     100: '#FFFFFF'

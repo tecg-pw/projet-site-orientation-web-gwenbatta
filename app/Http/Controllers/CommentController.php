@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LikeCommentRequest;
 use App\Http\Requests\StoreCommentRequest;
-use App\Http\Requests\UpdateCommentRequest;
 use App\Models\Comment;
 use App\Models\Subject;
+use DB;
 
 class CommentController extends Controller
 {
@@ -51,5 +52,28 @@ class CommentController extends Controller
         $comment = Comment::find($id);
         $comment->delete();
         return  redirect('/'.$locale.'/forum/'.$slug);
+    }
+
+
+    public function like(string $locale = null, LikeCommentRequest $request, $slug ,$id)
+    {
+
+        $data_comment = $request->safe()->only('like');
+        $data_comment['comment_id'] = $id;
+        $data_comment['user_id'] = auth()->user()->id;
+
+        if (DB::table('comment_user')->where('comment_id', $id)->where('user_id', auth()->user()->id)->count() > 0) {
+            DB::table('comment_user')->where('comment_id', $id)->where('user_id', auth()->user()->id)->delete();
+        }else {
+            DB::table('comment_user')->insert([
+                "comment_id" => $data_comment['comment_id'],
+                "user_id" => $data_comment['user_id']
+            ]);
+        }
+
+
+
+        return  redirect('/'.$locale.'/forum/'.$slug);
+
     }
 }

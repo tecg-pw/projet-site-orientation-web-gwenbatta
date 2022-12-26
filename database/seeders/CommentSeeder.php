@@ -23,7 +23,6 @@ class CommentSeeder extends Seeder
             Comment::factory()->create([
                 "content" => $value->content,
                 "slug" => \Str::slug($value->content),
-                "like" => $value->like,
                 "user_id" => $value->user_id,
                 "subject_id" => $value->subject_id,
             ]);

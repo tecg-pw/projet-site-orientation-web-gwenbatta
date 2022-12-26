@@ -32,6 +32,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Tuto::class, 'tuto_user', 'user_id', 'tuto_id');
     }
+    public function commentsLike(): BelongsToMany
+    {
+        return $this->belongsToMany(Comment::class, 'comment_user', 'user_id', 'comment_id');
+    }
 
     public function subjects(): HasMany
     {

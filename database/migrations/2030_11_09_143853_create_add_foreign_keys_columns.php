@@ -130,6 +130,10 @@ return new class extends Migration
             $table->foreignId('tuto_id')->constrained()->onUpdate('cascade');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
         });
+        Schema::table('comment_user', function (Blueprint $table) {
+            $table->foreignId('comment_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade');
+        });
     }
 
     /**

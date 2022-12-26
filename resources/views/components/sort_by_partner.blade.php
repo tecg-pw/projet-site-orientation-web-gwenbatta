@@ -5,8 +5,7 @@
 
 <div {{ $attributes->class(['xl:mb-20 mb-8']) }}>
     <p class="text-green-500 text-xl xl:text-3xl font-medium mb-2 xl:mb-4">{{__('sort.sort_by')}}</p>
-    <form action="/"
-          method="get" class="flex flex-col gap-4">
+    <form action="/" method="get" class="flex flex-col gap-4">
         <div class="flex justify-between sm:justify-start xl:justify-start">
             <fieldset class="flex flex-col">
                 <label for="cities" class="xl:text-lg text-green-500 mb-2">{{__('sort.city')}}</label>

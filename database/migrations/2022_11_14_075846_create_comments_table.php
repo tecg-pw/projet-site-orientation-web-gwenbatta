@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->text('content');
             $table->text('slug');
-            $table->integer('like')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

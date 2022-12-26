@@ -1,3 +1,7 @@
+@php
+    $urlAction = "/".app()->getLocale()."/forum/my-subject"
+@endphp
+
 <x-commons.navigation></x-commons.navigation>
 <main id="content">
     <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
@@ -100,8 +104,7 @@
                 @endif
 
             </div>
-            <x-aside_forum :latests="$latests" :ratings="$ratings"></x-aside_forum>
-        </div>
+            <x-aside_forum :urlAction="$urlAction" :latests="$latests" :ratings="$ratings"></x-aside_forum>        </div>
     </section>
 </main>
 <x-commons.footer></x-commons.footer>

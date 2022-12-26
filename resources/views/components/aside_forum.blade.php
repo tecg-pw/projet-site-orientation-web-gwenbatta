@@ -1,13 +1,15 @@
 @props([
     'latests',
-    'ratings'
-
+    'ratings',
+    'urlAction'
 ])
+
+
 <div {{ $attributes->class(['lg:not-sr-only sr-only col-span-2 bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14']) }}>
     <article class="pl-14 pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
         <h3 id="search" aria-level="3" role="heading"
             class="text-3xl font-sans font-light text-green-700 underline mb-6 mt-20">{{__('forum_aside.label')}}</h3>
-        <x-search_bar></x-search_bar>
+        <x-search :urlAction="$urlAction"/>
     </article>
     <article class="px-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="latest">
         <h3 id="latest" aria-level="3" role="heading"

@@ -17,10 +17,6 @@ class TutoTranslation extends Model
     protected $fillable = [
         'name', 'slug' ,'locale', 'link', 'excerpt','languages'
     ];
-    public function user(): BelongsToMany
-    {
-        return $this->belongsToMany(User::class, 'tuto_person', 'tuto_id', 'user_id');
-    }
 
     public function tuto(): BelongsTo
     {

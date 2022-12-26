@@ -1,12 +1,10 @@
 @props([
     'languages',
-    'date'
+    'date',
 ])
-
 <div {{ $attributes->class([' xl:mb-20']) }}>
     <p class="text-green-500 text-xl xl:text-3xl font-medium mb-2 xl:mb-4">{{__('sort.sort_by')}}</p>
-    <form action="/"
-          method="get" class="flex flex-col gap-4">
+    <form action="/" method="get" class="flex flex-col gap-4">
         <div class="flex flex-1 justify-between sm:justify-start sm:gap-x-10 xl:justify-start">
             <fieldset class="flex flex-col">
                 <label for="languages" class="text-lg text-green-500 mb-2">{{__('sort.languages')}}</label>

@@ -1,10 +1,14 @@
+@php
+    $urlAction = "/".app()->getLocale()."/bottin/alumni"
+@endphp
+
 <x-commons.navigation></x-commons.navigation>
 <main id="content" class="">
     <section class="mt-20" aria-labelledby="alumni">
         <div class="px-10 flex flex-col xl:px-32 lg:px-16 2xl:px-48 xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="almuni" role="heading" aria-level="2"
                 class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('people.alumni_title')}}</h2>
-            <x-search_bar class="xl:min-w-[23%] xl:not-sr-only sr-only"></x-search_bar>
+            <x-search :urlAction="$urlAction"/>
         </div>
         <p class="px-10 xl:pl-32 lg:px-16 2xl:pl-48 mb-7 xl:max-w-[47%] xl:text-xl xl:leading-10">{{__('people.alumni_text')}}</p>
         <x-sort_by :status="$status" :years_end="$years_end"/>

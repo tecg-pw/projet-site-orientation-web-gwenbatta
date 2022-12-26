@@ -42,7 +42,7 @@
         </div>
         <div class="flex gap-y-4 flex-col lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8">
             @foreach($tutos as $tuto_ref)
-                <x-tuto class="bg-yellow-100" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
+                <x-tuto class="bg-yellow-100" :tuto="$tuto_ref" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </article>

@@ -67,6 +67,7 @@ Route::get('/{locale?}/technical/glossary', [GlossaryController::class, 'index']
 Route::get('/{locale?}/technical/tuto', [TutoController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/technical/docandtool/doc', [DocController::class, 'index', BookController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/technical/docandtool/tool', [ToolController::class, 'index', BookController::class, 'index'] )->middleware('locale');
+Route::post('/{locale?}/technical/tuto/favorite/{tuto:id}', [TutoController::class, 'favorite'])->middleware(['locale','auth']);
 
 
 Route::get('/{locale?}/entreprise/partner', [PartnerController::class, 'index'])->middleware('locale');
@@ -118,6 +119,7 @@ Route::get('/{locale?}/forum/{subject:slug}', [CommentController::class, 'create
 Route::post('/{locale?}/forum/{subject:slug}', [CommentController::class, 'store'])->middleware(['auth','locale']);
 Route::post('/{locale?}/forum/{subject:slug}/comment/{comment:id}', [CommentController::class, 'update'])->middleware(['auth','locale']);
 Route::post('/{locale?}/forum/{subject:slug}/comment/destroy/{comment:id}', [CommentController::class, 'destroy'])->middleware('auth');
+Route::post('/{locale?}/forum/{subject:slug}/comment/like/{comment:id}', [CommentController::class, 'like'])->middleware(['auth','locale']);
 
 
 Route::get('/{locale?}/news/index', [ActualityController::class, 'index'])->middleware('locale');

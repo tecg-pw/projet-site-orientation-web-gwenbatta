@@ -19,7 +19,6 @@ class CommentFactory extends Factory
         return [
             "content" => fake()->sentence(40),
             "slug" => \Str::slug(fake()->sentence(40)),
-            "like" => 1,
             "user_id" => 1,
             "subject_id" => 1,
         ];

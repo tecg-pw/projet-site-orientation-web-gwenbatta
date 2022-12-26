@@ -69,5 +69,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BookCourseSeeder::class);
         $this->call(PartnerPersonSeeder::class);
         $this->call(TutoUserSeeder::class);
+        $this->call(CommentUserSeeder::class);
     }
 }
