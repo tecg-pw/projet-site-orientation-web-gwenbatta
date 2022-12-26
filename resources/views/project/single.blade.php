@@ -16,7 +16,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                 <div class="relative xl:bg-yellow-100 rounded-xl py-4 px-4 xl:py-8 xl:left-10">
                     <h3 id="{{$project->person->slug}}" aria-level="3" role="heading"
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl"><a
-                            href="/{{app()->getLocale()}}/bottin/alumni/{{$project->person->slug}}">{{$project->person->firstname}} {{$project->person->name}}</a>
+                            href="/{{app()->getLocale()}}/bottin/{{$project->person->status === "étudiant"? "student" : $project->person->status}}/{{$project->person->slug}}">{{$project->person->firstname}} {{$project->person->name}}</a>
                     </h3>
                     <p class="mb-2 mt-2 xl:text-xl">{{$project->person->begin->format('Y')}}
                         -{{$project->person->end->format('Y')}}</p>

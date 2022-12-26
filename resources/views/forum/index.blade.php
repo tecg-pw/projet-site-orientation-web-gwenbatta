@@ -12,14 +12,14 @@
         </div>
         <x-sort_by_forum :status="$status" :tags="$tags" :created="$created" class="px-10 2xl:px-48 xl:px-32 lg:px-16 mb-14"></x-sort_by_forum>
         <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-32 lg:px-16">
-            <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
+            <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
                href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
-            <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
+            <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/{{app()->getLocale()}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
             @auth()
-                <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
+                <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                    href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
-                <a class="xl:text-xl text-lg text-center underline text-green-700 font-semibold font-sans px-5 py-2"
+                <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                    href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
             @endauth
         </div>

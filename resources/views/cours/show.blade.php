@@ -11,7 +11,7 @@
             <p class="uppercase">{{$course->bac}}e{{$course->bac===1?'r':''}} {{__('course.course_year')}}</p>
             <div class="flex flex-wrap sm:gap-x-10 xl:gap-x-24 xl:gap-y-3 max-w-[50%]">
             @foreach($teachers as $teacher)
-            <a class="underline text-green-700 uppercase hover:text-orange-500" href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->translation->where('locale',app()->getLocale())->first()->slug}}">{{$teacher->translation->where('locale',app()->getLocale())->first()->firstname}} {{$teacher->translation->where('locale',app()->getLocale())->first()->name}}</a>
+            <a class="underline text-green-700 uppercase hover:text-orange-500" href="/{{app()->getLocale()}}/bottin/{{$teacher->translation->where('locale',app()->getLocale())->first()->status==="professeur" ? "teacher" : $teacher->translation->where('locale',app()->getLocale())->first()->status}}/{{$teacher->translation->where('locale',app()->getLocale())->first()->slug}}">{{$teacher->translation->where('locale',app()->getLocale())->first()->firstname}} {{$teacher->translation->where('locale',app()->getLocale())->first()->name}}</a>
             @endforeach
             </div>
         </div>
