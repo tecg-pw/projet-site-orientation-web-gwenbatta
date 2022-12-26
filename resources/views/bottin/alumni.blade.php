@@ -11,7 +11,7 @@
             <x-search :urlAction="$urlAction"/>
         </div>
         <p class="px-10 xl:pl-32 lg:px-16 2xl:pl-48 mb-7 xl:max-w-[47%] xl:text-xl xl:leading-10">{{__('people.alumni_text')}}</p>
-        <x-sort_by :status="$status" :years_end="$years_end"/>
+        <x-sort_by_people :status="$status" :years_end="$years_end"/>
         <article class="px-10 flex flex-col gap-y-4 xl:px-32 lg:px-16 2xl:px-48 lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8"
                  aria-labelledby="list-bottin">
             <h3 id="list-bottin" role="heading" aria-level="3" class="sr-only">{{__('people.alumni_list_title')}}</h3>

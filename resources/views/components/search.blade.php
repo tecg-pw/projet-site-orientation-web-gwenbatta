@@ -1,7 +1,6 @@
 @props([
     'urlAction'
 ])
-
 <div {{ $attributes }}>
     <form action="{{$urlAction}}" method="GET" class="flex flex-col relative">
         <label class="hidden" for="search">{{__('search.label')}}</label>

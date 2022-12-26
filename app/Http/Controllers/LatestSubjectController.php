@@ -17,64 +17,62 @@ class LatestSubjectController extends Controller
      */
     public function index(string $locale = null)
     {
-        $sortStatus = request()->input('status') ?? 'all';
         $searchTerm = request()->input('search') ?? '';
+        $sortStatus = request()->input('status') ?? 'all';
         $sortTags = request()->input('tags') ?? 'all';
         $sortYear = request()->input('year') ?? 'all';
 
         $recurrings = Recurring::all();
-        //OK
-        if ($sortStatus === 'all' && $sortTags == 'all' && $sortYear==='all') {
+
+        if ($searchTerm) {
             $subjects = Subject::query()
                 ->where('subject', 'like', '%' . $searchTerm . '%')
                 ->paginate(8);
-        }
-        //OK
+        } //OK
+        elseif ($sortStatus === 'all' && $sortTags == 'all' && $sortYear === 'all') {
+
+            $subjects = Subject::query()->paginate(8);
+        } //OK
         elseif ($sortYear === 'all' && $sortTags == 'all') {
             $subjects = Subject::query()
                 ->where('resolved', $sortStatus)
                 ->paginate(8);
-        }
-        //OK
+        } //OK
         elseif ($sortStatus === 'all' && $sortTags == 'all') {
             $subjects = Subject::query()
-                ->where('created_at',$sortYear)
+                ->where('created_at', $sortYear)
                 ->paginate(8);
-        }
-        //OK
+        } //OK
         elseif ($sortYear === 'all' && $sortStatus === 'all') {
             $subjects = Subject::query()
-                ->where('tag_id',$sortTags)
+                ->where('tag_id', $sortTags)
                 ->paginate(8);
-        }
-        //OK
-        elseif($sortStatus === 'all'){
+        } //OK
+        elseif ($sortStatus === 'all') {
             $subjects = Subject::query()
-                ->where('tag_id',$sortTags)
-                ->where('created_at',$sortYear)
+                ->where('tag_id', $sortTags)
+                ->where('created_at', $sortYear)
                 ->paginate(8);
-        }
-        //OK
-        elseif($sortYear === 'all'){
+        } //OK
+        elseif ($sortYear === 'all') {
             $subjects = Subject::query()
-                ->where('tag_id',$sortTags)
+                ->where('tag_id', $sortTags)
                 ->where('resolved', $sortStatus)
                 ->paginate(8);
-        }
-        //OK
-        elseif($sortTags === 'all'){
+        } //OK
+        elseif ($sortTags === 'all') {
             $subjects = Subject::query()
-                ->where('created_at',$sortYear)
+                ->where('created_at', $sortYear)
                 ->where('resolved', $sortStatus)
                 ->paginate(8);
-        }
-        //OK
+        } elseif ($searchTerm === '') {
+            $subjects = Subject::query()->paginate(8);
+        } //OK
         else {
             $subjects = Subject::query()
                 ->where('resolved', $sortStatus)
-                ->where('tag_id',$sortTags)
-                ->where('created_at',$sortYear)
-
+                ->where('tag_id', $sortTags)
+                ->where('created_at', $sortYear)
                 ->paginate(8);
         }
 
@@ -83,6 +81,7 @@ class LatestSubjectController extends Controller
         $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
         $tags = Tag::all();
         $created = Subject::select('created_at')->groupBy('created_at')->get();
+
         return view('forum.index', compact('recurrings', 'subjects', 'latests', 'status', 'tags', 'created', 'ratings'));
     }
 }
