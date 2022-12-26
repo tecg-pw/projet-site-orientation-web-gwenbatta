@@ -99,7 +99,7 @@
                                 alt="{{$subject->user->slug}}">
                         </article>
                     @endforeach
-                        {{$subjects->links()}}
+                        {{$subjects->withQueryString()->links()}}
                 @endif
 
             </div>

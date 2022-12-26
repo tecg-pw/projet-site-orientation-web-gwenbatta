@@ -20,8 +20,7 @@ class MySubjectController extends Controller
         $sortStatus = request()->input('status') ?? 'all';
         $sortTags = request()->input('tags') ?? 'all';
         $sortYear = request()->input('year') ?? 'all';
-
-        $recurrings = Recurring::all();
+        
 
         //OK
         if ($searchTerm) {
@@ -76,7 +75,6 @@ class MySubjectController extends Controller
                 ->paginate(8);
         }
         $recurrings = Recurring::all();
-        //$subjects = Subject::where('user_id',auth()->user()->id)->paginate(8);
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();

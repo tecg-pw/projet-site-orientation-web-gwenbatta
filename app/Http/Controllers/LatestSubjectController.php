@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Recurring;
 use App\Models\Subject;
 use App\Models\Tag;
-use Carbon\Carbon;
 
 class LatestSubjectController extends Controller
 {
@@ -30,7 +29,6 @@ class LatestSubjectController extends Controller
                 ->paginate(8);
         } //OK
         elseif ($sortStatus === 'all' && $sortTags == 'all' && $sortYear === 'all') {
-
             $subjects = Subject::query()->paginate(8);
         } //OK
         elseif ($sortYear === 'all' && $sortTags == 'all') {

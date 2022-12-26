@@ -14,7 +14,7 @@
                    class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
-        <x-sort_by_forum :status="$status" :tags="$tags" :created="$created"
+        <x-sort_by_forum :urlAction="$urlAction" :status="$status" :tags="$tags" :created="$created"
                          class="2xl:px-48 px-10 xl:px-32 lg:px-16 mb-14"></x-sort_by_forum>
         <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-32 lg:px-16">
             <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
@@ -41,32 +41,34 @@
                                         class="order-2 font-medium xl:text-xl">
                                         {{$comment->subject->subject}}
                                     </h3>
-                                    <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
-                                         viewBox="0 0 34.194 34.196">
-                                        <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
-                                            <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
-                                                  data-name="106780bf1ed9964c2ffe0eda53fe07ea"
-                                                  d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
-                                                  transform="translate(873 1771)" fill="#da953a"/>
-                                            <path id="_846e0b1f246b76024f36d97f9864a9c8"
-                                                  data-name="846e0b1f246b76024f36d97f9864a9c8"
-                                                  d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
-                                                  transform="translate(875.711 1774.888)" fill="#da953a"/>
-                                        </g>
-                                    </svg>
-                                    <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
-                                         viewBox="0 0 34.194 34.196">
-                                        <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
-                                            <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
-                                                  data-name="106780bf1ed9964c2ffe0eda53fe07ea"
-                                                  d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
-                                                  transform="translate(873 1771)" fill="#da953a"/>
-                                            <path id="_846e0b1f246b76024f36d97f9864a9c8"
-                                                  data-name="846e0b1f246b76024f36d97f9864a9c8"
-                                                  d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
-                                                  transform="translate(875.711 1774.888)" fill="#da953a"/>
-                                        </g>
-                                    </svg>
+                                    @if($comment->subject->resolved)
+                                        <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
+                                             viewBox="0 0 34.194 34.196">
+                                            <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                      transform="translate(873 1771)" fill="#da953a"/>
+                                                <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                      data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                      d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                      transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                            </g>
+                                        </svg>
+                                        <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
+                                             viewBox="0 0 34.194 34.196">
+                                            <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                      d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                      transform="translate(873 1771)" fill="#da953a"/>
+                                                <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                      data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                      d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                      transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                            </g>
+                                        </svg>
+                                    @endif
                                     <a class="cursor-pointer linkcard"
                                        href="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
                                 </div>
@@ -101,7 +103,7 @@
                             </article>
                         @endforeach
                     @endif
-                    {{$comments->links()}}
+                    {{$comments->withQueryString()->links()}}
                 @endauth
             </div>
             <x-aside_forum :urlAction="$urlAction" :latests="$latests" :ratings="$ratings"></x-aside_forum>        </div>

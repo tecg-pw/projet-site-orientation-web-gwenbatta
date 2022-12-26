@@ -93,7 +93,7 @@
                              alt="{{$subject->user->slug}}">
                     </article>
                 @endforeach
-                    {{$subjects->links()}}
+                    {{$subjects->withQueryString()->links()}}
             </div>
             <x-aside_forum :urlAction="$urlAction" :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>

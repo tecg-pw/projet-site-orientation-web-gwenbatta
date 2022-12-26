@@ -2,7 +2,7 @@
     'status',
     'tags',
     'created',
-    'urlAction'
+    'urlAction',
 ])
 
 <div {{ $attributes }}>
