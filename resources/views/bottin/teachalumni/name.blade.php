@@ -1,5 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
-<main id="content" class="">
+<x-commons.navigation :page="$teachalumni->firstname.' '.$teachalumni->name"></x-commons.navigation><main id="content" class="">
     <section class="mt-20 px-10 2xl:px-48 xl:px-32 lg:px-16 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"

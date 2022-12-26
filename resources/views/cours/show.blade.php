@@ -1,5 +1,4 @@
-
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="$course->name"></x-commons.navigation>
 <main id="content">
     <section aria-labelledby="slug">
         <div class="flex md:flex-row flex-col 2xl:px-48 xl:px-32 lg:px-16 px-10 justify-between mt-20 mb-8">

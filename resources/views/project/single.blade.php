@@ -1,7 +1,7 @@
 <?php
 $project->person = $project->person->translation->where('locale', app()->getLocale())->first();
 ?>
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="$project->title"></x-commons.navigation>
 <main id="content">
     <section class="xl:px-32 lg:px-16 2xl:px-48 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
         <div class="flex flex-col md:flex-row justify-between mb-8">

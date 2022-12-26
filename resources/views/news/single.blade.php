@@ -1,4 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="$new->name"></x-commons.navigation>
 <main id="content">
     <section class="mb-20" aria-labelledby="{{$new->slug}}">
         <div class="flex md:flex-row flex-col px-10 xl:px-32 lg:px-16 2xl:px-48 justify-between mt-20">

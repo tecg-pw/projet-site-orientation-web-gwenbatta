@@ -2,7 +2,7 @@
     $urlAction = "/".app()->getLocale()."/bottin/alumni"
 @endphp
 
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('nav.nav_navigation.alumni')"></x-commons.navigation>
 <main id="content" class="">
     <section class="mt-20" aria-labelledby="alumni">
         <div class="px-10 flex flex-col xl:px-32 lg:px-16 2xl:px-48 xl:flex-row justify-between mb-7 xl:items-center">

@@ -2,7 +2,7 @@
     $urlAction = "/".app()->getLocale()."/forum/my-talks"
 @endphp
 
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('forum.my_talks')"></x-commons.navigation>
 <main id="content">
     <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">

@@ -2,7 +2,7 @@
     $urlAction = "/".app()->getLocale()."/technical/tuto"
 @endphp
 
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('nav.nav_navigation.tuto')"></x-commons.navigation>
 <main id="content" class="xl:px-32 lg:px-16 2xl:px-48 px-10">
     <section class="mt-20 mb-32 xl:mb-64" aria-labelledby="tutos">
         <div class="flex flex-col md:flex-row justify-between mb-7 xl:items-center">

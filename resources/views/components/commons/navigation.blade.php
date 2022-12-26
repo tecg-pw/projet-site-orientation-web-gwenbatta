@@ -1,3 +1,10 @@
+@props([
+    'page'
+])
+    @php
+        $urlAction = "/"
+    @endphp
+
 <!doctype html>
 <html lang="{{app()->getLocale()}}">
 <head>
@@ -10,7 +17,7 @@
     <meta name="keywords"
           content="web, HEPL, infographie, HTML, CSS, Javascript, PHP, Tailwind, Multimédia, design web, front-end, back-end, développement web">
     <meta name="author" content="Gwenaëlle Batta">
-    <title>{{__('TecWeb')}}</title>
+    <title>{{__('TecWeb – '.$page)}}</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.ts')
 </head>
@@ -262,8 +269,8 @@
                                     transform="translate(-19 -8.001)" fill="#ffffff"/>
                             </svg>
                         </a></li>
-                    <span><x-search_bar
-                            class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-search_bar></span>
+                    <span><x-search :urlAction="$urlAction"
+                            class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-search></span>
                 </ul>
             </div>
         </div>

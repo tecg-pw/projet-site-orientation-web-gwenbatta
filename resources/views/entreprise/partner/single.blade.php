@@ -2,7 +2,7 @@
     $partner = $partner->translation->where('locale',app()->getLocale())->first();
     $partner->members = json_decode($partner->members);
 @endphp
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="$partner->name"></x-commons.navigation>
 <main id="content" class="">
     <section class="xl:mt-20 px-10 xl:px-32 lg:px-16 2xl:px-48 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
         <div class="flex flex-col md:flex-row justify-between mt-20">

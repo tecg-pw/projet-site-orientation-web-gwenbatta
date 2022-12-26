@@ -1,4 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="$job->name"></x-commons.navigation>
 <main id="content">
     <section aria-labelledby="dev-front">
         <div class="flex flex-col px-10 2xl:px-48 xl:px-32 md:flex-row justify-between mt-20">

@@ -14,7 +14,7 @@ return [
     'student_message_value' => 'My message',
     'contact_button' => 'Sent',
     'agency_name' => 'Agency name',
-    'agency_supervisor_name' => 'Name of the intership supervisor',
+    'agency_supervisor_name' => 'Name of the supervisor',
     'agency_title' => 'Title',
     'agency_title_value' => 'I propose an internship',
     'agency_description' => 'Description of the opportunities',

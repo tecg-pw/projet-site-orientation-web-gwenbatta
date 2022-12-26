@@ -1,4 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('docandtool.doc_tool_title')"></x-commons.navigation>
 <main id="content" class="">
     <section class="xl:px-32 lg:px-16 2xl:px-48 px-10 mt-20 mb-32 xl:mb-64" aria-labelledby="doc-and-tool">
         <div class="flex justify-between mb-7 items-center">

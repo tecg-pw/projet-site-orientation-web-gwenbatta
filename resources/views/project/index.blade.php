@@ -2,7 +2,7 @@
     $urlAction = "/".app()->getLocale()."/project/index"
 @endphp
 
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('nav.nav_navigation.project')"></x-commons.navigation>
 <main id="content">
     <section class="px-10 lg:px-16 xl:px-32 2xl:px-48 mt-20 mb-64" aria-labelledby="projects">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">

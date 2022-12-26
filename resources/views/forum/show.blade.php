@@ -1,4 +1,8 @@
-<x-commons.navigation></x-commons.navigation>
+@php
+    $urlAction = "/".app()->getLocale()."/forum/index"
+@endphp
+
+<x-commons.navigation :page="$subject->subject"></x-commons.navigation>
 <main id="content">
     <section class="" aria-labelledby="sujet" id="sujet">
         @if(request()->has('delete-comment'))
@@ -273,7 +277,7 @@
 
                 </article>
             </div>
-            <x-aside_forum :latests="$latests" :ratings="$ratings"></x-aside_forum>
+            <x-aside_forum :urlAction="$urlAction" :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>
     </section>
 </main>

@@ -1,4 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('nav.nav_footer_legals')"></x-commons.navigation>
 <main id="content" class="flex flex-col lg:flex-row gap-x-20 mb-60">
     <section class="bg-yellow-600 xl:mt-20 py-20 px-10 lg:px-16 xl:px-32 2xl:px-48" aria-labelledby="informations">
         <h2 class="xl:text-4xl 2xl:leading-12 md:text-3xl text-2xl uppercase font-extrabold font-sans mb-11" role="heading" aria-level="2"

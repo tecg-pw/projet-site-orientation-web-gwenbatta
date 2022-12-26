@@ -1,4 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('nav.nav_navigation.about')"></x-commons.navigation>
 <main id="content">
     <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="about">
         <div class="flex-1 ">

@@ -1,4 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('login_register.login_title')"></x-commons.navigation>
 <main id="content">
     <section class=" px-10 lg:px-16 xl:px-32 2xl:px-48 py-20 items-center xl:gap-24 flex justify-center" aria-labelledby="login">
         <div class=" px-10">

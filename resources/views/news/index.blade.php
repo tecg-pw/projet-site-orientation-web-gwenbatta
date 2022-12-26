@@ -2,7 +2,7 @@
     $urlAction = "/".app()->getLocale()."/news/index"
 @endphp
 
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('nav.nav_navigation.actualities')"></x-commons.navigation>
 <main id="content">
     <article class="xl:px-32 lg:px-16 2xl:px-48 px-10 mb-64" aria-labelledby="projects">
         <div class="flex flex-col md:flex-row justify-between mb-10 mt-14 xl:items-center xl:mt-30 xl:mb-32">

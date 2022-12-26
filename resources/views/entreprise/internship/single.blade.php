@@ -1,12 +1,10 @@
 @php
-   // $partner = $offer->partner->translation->where('locale', app()->getLocale())->first();
    $offer_ref = $offer->translation->where('locale',app()->getLocale())->first();
-//   $offer_ref->languages = json_decode($offer_ref->languages);
         $offer_ref->softwares = json_decode($offer_ref->softwares );
         $offer_ref->others = json_decode($offer_ref->others );
 @endphp
 
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="$offer_ref->name"></x-commons.navigation>
 <main id="content">
     <section class="xl:px-32 2xl:px-48 px-10 mt-20 mb-20 xl:mb-40" aria-labelledby="{{$offer_ref->slug}}">
         <div class="flex md:flex-row flex-col justify-between mb-8">

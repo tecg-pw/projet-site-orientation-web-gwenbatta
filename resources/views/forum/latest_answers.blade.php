@@ -3,7 +3,7 @@
 @endphp
 
 
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('forum.latest_answer')"></x-commons.navigation>
 <main id="content">
     <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">

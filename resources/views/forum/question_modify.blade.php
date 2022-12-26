@@ -1,4 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('forum_question.title_modify')"></x-commons.navigation>
 <main id="content">
     <section class="mt-20 mb-36 flex " aria-labelledby="question">
         <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex-1">

@@ -1,4 +1,4 @@
-<x-commons.navigation></x-commons.navigation>
+<x-commons.navigation :page="__('contact_page.student_link')"></x-commons.navigation>
 <main id="content">
     <section class="mt-20 mb-20 xl:mb-0 xl:flex lg:grid lg:grid-cols-9 lg:items-center lg:justify-center justify-center" aria-labelledby="contact">
         <div class="xl:px-32 2xl:pl-48 mt-10 flex-1 lg:col-span-4">
