@@ -3,11 +3,14 @@
 return [
 
     'user_modify' => 'Modifier le profil',
-    'user_favorite' => 'Vos tutos favoris',
+    'user_my_profile' => 'Mon profil',
+    'user_favorite_auth' => 'Vos tutos favoris',
+    'user_favorite_guest' => 'Leurs tutos favoris',
     'user_no_favorite' => 'Vous n\'avez aucun tutoriel mit en favoris',
     'tuto_back' => 'Voir plus de tutos',
     'user_back' => 'Retour',
-    'user_question_title' => 'Vos questions',
+    'user_question_title_auth' => 'Vos questions',
+    'user_question_title_guest' => 'Leurs questions',
     'user_no_question' => 'Vous n\'avez aucune questions',
     'user_save' => 'Sauvegarder',
     'user_modify_title' => 'Modifier le profil',

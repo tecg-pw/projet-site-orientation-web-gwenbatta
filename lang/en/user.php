@@ -3,11 +3,14 @@
 return [
 
     'user_modify' => 'Change profile',
-    'user_favorite' => 'Your favourite tutorials',
+    'user_my_profile' => 'My profile',
+    'user_favorite_auth' => 'Your favourite tutorials',
+    'user_favorite_guest' => 'His favourite tutorials',
     'user_no_favorite' => 'You do not have any bookmarked tutorials',
     'tuto_back' => 'See more tutorials',
     'user_back' => 'Back',
-    'user_question_title' => 'Your questions',
+    'user_question_title_auth' => 'Your questions',
+    'user_question_title_guest' => 'His questions',
     'user_no_question' => 'You have no question',
     'user_save' => 'Save',
     'user_modify_title' => 'Change profile',

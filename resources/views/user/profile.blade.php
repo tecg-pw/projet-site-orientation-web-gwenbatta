@@ -26,7 +26,7 @@
     <article class="bg-yellow-600 px-10 lg:px-16 xl:px-32 2xl:px-48 pb-36 pt-20" aria-labelledby="tutos">
         <div class="flex justify-between">
             <h2 role="heading" id="tutos" aria-level="2"
-                class="xl:text-4xl text-2xl md:text-3xl uppercase font-extrabold font-sans mb-20">{{__('user.user_favorite')}}</h2>
+                class="xl:text-4xl text-2xl md:text-3xl uppercase font-extrabold font-sans mb-20">{{$user->slug === auth()->user()->slug ? __('user.user_favorite_auth') : __('user.user_favorite_guest')}}</h2>
             <a class="hover:text-orange-500  font-sans text-green-700 text-lg md:text-xl xl:text-3xl font-semibold underline px-4"
                href="/{{app()->getLocale()}}/technical/tuto">{{__('user.tuto_back')}}</a>
         </div>
@@ -84,7 +84,7 @@
     </article>
     <section class="px-10 lg:px-16 xl:px-30 2xl:px-48 mt-36 mb-36" aria-labelledby="questions">
         <h2 role="heading" id="questions" aria-level="2"
-            class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('user.user_question_title')}}</h2>
+            class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{$user->slug === auth()->user()->slug ? __('user.user_question_title_auth') : __('user.user_question_title_guest')}}</h2>
         <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 ">
             @foreach($subjects as $subject)
                 <article
