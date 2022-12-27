@@ -25,8 +25,8 @@
             <a class="xl:text-xl text-lg text-center hover:text-orange-500 underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
         </div>
-        <div class="lg:grid lg:grid-cols-5 xl:gap-24 mb-36">
-            <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:px-48 px-10 xl:px-32 lg:px-16 ">
+        <div class="lg:grid lg:grid-cols-5 mb-36">
+            <div class="lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10">
                 @if(count($subjects)===0)
                     <p>{{__('forum.no_subject')}}</p>
                     @else
@@ -37,10 +37,12 @@
                             <div class="order-2 flex-1 flex flex-col lg:ml-4 justify-center gap-2.5 xl:gap-4">
                                 <div class="flex flex-col gap-4">
                                     <div class="flex gap-2">
-                                        <h3 class="order-2 font-medium text-lg xl:text-xl"
+                                        <h3 class="order-2 hover:text-orange-500 font-medium text-lg xl:text-xl"
                                             id="{{$subject->slug}}"
                                             role="heading"
-                                            aria-level="3">{{$subject->subject}}</h3>
+                                            aria-level="3">
+                                            <a href="/{{app()->getLocale()}}/forum/{{$subject->slug}}">{{$subject->subject}}</a>
+                                        </h3>
                                         @if($subject->resolved)
                                             <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg"
                                                  width="25"
@@ -72,7 +74,7 @@
                                         @endif
                                     </div>
                                     <div class="flex relative -order-2 justify-between">
-                                        <p class="text-base uppercase self-end">{{$subject->user->firstname}} {{$subject->user->name}}</p>
+                                        <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="text-base hover:text-orange-500 uppercase self-end">{{$subject->user->firstname}} {{$subject->user->name}} </a>
                                         <p class="text-base self-end">{{$subject->created_at->format('d M. Y')}}</p>
                                     </div>
                                 </div>
@@ -82,8 +84,6 @@
                                             {{ucwords($subject->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                                         <p class="sr-only xl:not-sr-only text-lg"> {{__('forum.number_comment') . $subject->comments_count}}</p>
                                     </div>
-                                    <a class="linkcard underline text-green-700 font-sans font-semibold"
-                                       href="/{{app()->getLocale()}}/forum/{{$subject->slug}}">{{__('forum.see_subject')}}</a>
                                     <svg class="group-hover:mr-0 mr-4 xl:self-end " xmlns="http://www.w3.org/2000/svg"
                                          width="25"
                                          viewBox="0 0 32 27.417">

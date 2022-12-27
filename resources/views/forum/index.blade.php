@@ -28,7 +28,7 @@
             @endauth
         </div>
         <div class="lg:grid lg:grid-cols-5 mb-36">
-            <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14  2xl:px-48 xl:px-32 lg:px-16 lg:pr-7 px-10 ">
+            <div class="lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10">
                 @foreach($subjects as $subject)
                     <article class="bg-yellow-100 relative flex p-6 lg:px-3 xl:px-6 rounded-xl"
                              aria-labelledby="{{$subject->slug}}">

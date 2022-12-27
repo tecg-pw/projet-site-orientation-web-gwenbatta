@@ -16,14 +16,16 @@
             class="text-3xl font-light text-green-700 underline mb-6">{{__('forum_aside.latest')}}</h3>
         <div class="flex flex-col gap-y-8">
             @foreach($latests as $latest)
-                <article class="hover:bg-orange-100 group bg-white-100 relative flex p-6 lg:px-3 xl:px-6 rounded-xl"
+                <article class=" bg-white-100 relative flex p-6 lg:px-3 xl:px-6 rounded-xl"
                          aria-labelledby="{{$latest->slug}}">
                     <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
                         <div class="flex-col flex gap-4">
                             <div class="flex gap-2">
-                            <h4 class="order-2 font-medium text-lg xl:text-xl" id="{{$latest->slug}}"
+                            <h4 class="order-2 hover:text-orange-500 font-medium text-lg xl:text-xl" id="{{$latest->slug}}"
                                 role="heading"
-                                aria-level="4">{{$latest->subject}}</h4>
+                                aria-level="4">
+                                <a href="/{{app()->getLocale()}}/forum/{{$latest->slug}}">{{$latest->subject}}</a>
+                            </h4>
                                 @if($latest->resolved)
                                     <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
                                          viewBox="0 0 34.194 34.196">
@@ -54,7 +56,7 @@
                                 @endif
                             </div>
                             <div class="flex -order-2 relative justify-between">
-                                <p class="text-base uppercase self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
+                                <a href="/{{app()->getLocale()}}/user/profile/{{$latest->user->slug}}" class="text-base hover:text-orange-500 uppercase self-end">{{$latest->user->firstname}} {{$latest->user->name}} </a>
                                 <p class="text-base self-end">{{$latest->created_at->format('d M. Y')}}</p>
                             </div>
                         </div>
@@ -63,8 +65,6 @@
                                 <p class="text-base uppercase font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
                                     {{ucwords($latest->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                             </div>
-                            <a class="linkcard underline text-green-700 font-sans font-semibold"
-                               href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$latest->slug}}">{{__('forum.see_subject')}}</a>
                             <svg class="mr-4 self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                  width="25"
                                  viewBox="0 0 32 27.417">
@@ -83,14 +83,16 @@
             class="text-3xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
         <div class="flex flex-col gap-y-8">
             @foreach($ratings as $rating)
-                <article class="hover:bg-orange-100 group bg-white-100 relative flex p-6 lg:px-3 xl:px-6 rounded-xl"
+                <article class="bg-white-100 relative flex p-6 lg:px-3 xl:px-6 rounded-xl"
                          aria-labelledby="{{$rating->slug}}">
                     <div class="order-2 flex-1 flex flex-col ml-4 justify-center gap-4">
                         <div class="flex-col flex gap-4">
                             <div class="flex gap-2">
-                                <h4 class="order-2 font-medium text-xl" id="{{$rating->slug}}"
+                                <h4 class="order-2 hover:text-orange-500 font-medium text-lg xl:text-xl" id="{{$rating->slug}}"
                                     role="heading"
-                                    aria-level="4">{{$rating->subject}}</h4>
+                                    aria-level="4">
+                                    <a href="/{{app()->getLocale()}}/forum/{{$rating->slug}}">{{$rating->subject}}</a>
+                                </h4>
                                 @if($rating->resolved)
                                     <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
                                          viewBox="0 0 34.194 34.196">
@@ -121,7 +123,7 @@
                                 @endif
                             </div>
                             <div class="flex -order-2 relative justify-between">
-                                <p class="text-base uppercase self-end">{{$rating->user->firstname}} {{$rating->user->name}} </p>
+                                <a href="/{{app()->getLocale()}}/user/profile/{{$rating->user->slug}}" class="text-base hover:text-orange-500 uppercase self-end">{{$rating->user->firstname}} {{$rating->user->name}} </a>
                                 <p class="text-base self-end">{{$rating->created_at->format('d M. Y')}}</p>
                             </div>
                         </div>
@@ -130,8 +132,6 @@
                                 <p class="text-base uppercase font-medium bg-orange-500/40 mr-4 px-6 pb-1 pt-1.5 rounded-lg text-lg text-green-700">
                                     {{ucwords($rating->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                             </div>
-                            <a class="linkcard underline text-green-700 font-sans font-semibold"
-                               href="/{{str_replace('_','-',app()->getLocale())}}/forum/{{$rating->slug}}">{{__('forum.see_subject')}}</a>
                             <svg class="mr-4 self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                  width="25"
                                  viewBox="0 0 32 27.417">
