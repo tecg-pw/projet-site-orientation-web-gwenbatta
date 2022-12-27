@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -19,10 +20,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $with= ["status"];
     protected $fillable = [
         'name',
         'firstname',
         'slug',
+        'status_id',
+        'back_image',
+        'description',
         'avatar',
         'email',
         'is_admin',
@@ -45,6 +50,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+    public function status(): BelongsTo
+    {
+        return $this->belongsTo(Status::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

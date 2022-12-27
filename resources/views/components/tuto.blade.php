@@ -1,6 +1,5 @@
 @props([
     'tuto_ref',
-    'tutoUserConnect',
     'tuto'
 ])
 <article

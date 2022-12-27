@@ -3,7 +3,6 @@
         "id": 1,
         "name": "Caron",
         "firstname": "Jordan",
-        "status":null,
         "avatar": "https://placehold.jp/276x276.png",
         "back_image": "https://placehold.jp/1920x550.png",
         "email": "jordan.caron@gmail.com",
@@ -12,13 +11,13 @@
         "remember_token": null,
         "created_at": null,
         "updated_at": null,
-        "deleted_at": null
+        "deleted_at": null,
+        "status_id": 1
     },
     {
         "id": 2,
         "name": "Morel",
         "firstname": "Julien",
-        "status": null,
         "avatar": "https://placehold.jp/276x276.png",
         "back_image": "https://placehold.jp/1920x550.png",
         "email": "julien.morel@gmail.com",
@@ -27,13 +26,13 @@
         "remember_token": null,
         "created_at": null,
         "updated_at": null,
-        "deleted_at": null
+        "deleted_at": null,
+        "status_id": 1
     },
     {
         "id": 3,
         "name": "Brisbois",
         "firstname": "Noé",
-        "status": null,
         "avatar": "https://placehold.jp/276x276.png",
         "back_image": "https://placehold.jp/1920x550.png",
         "email": "noe.brisbois@gmail.com",
@@ -42,13 +41,13 @@
         "remember_token": null,
         "created_at": null,
         "updated_at": null,
-        "deleted_at": null
+        "deleted_at": null,
+        "status_id": 1
     },
     {
         "id": 4,
         "name": "Clébant",
         "firstname": "Laure",
-        "status": null,
         "avatar": "https://placehold.jp/276x276.png",
         "back_image": "https://placehold.jp/1920x550.png",
         "email": "laure.clebant@gmail.com",
@@ -57,13 +56,13 @@
         "remember_token": null,
         "created_at": null,
         "updated_at": null,
-        "deleted_at": null
+        "deleted_at": null,
+        "status_id": 1
     },
     {
         "id": 5,
         "name": "Vilain",
         "firstname": "Dominique",
-        "status": "professeur",
         "avatar": "/img-redimensions/vilain-dom-avatar.jpg",
         "back_image": "https://placehold.jp/1920x550.png",
         "email": "dominique.vilain@hepl.be",
@@ -72,13 +71,13 @@
         "remember_token": null,
         "created_at": null,
         "updated_at": null,
-        "deleted_at": null
+        "deleted_at": null,
+        "status_id": 4
     },
     {
         "id": 6,
         "name": "Schreurs",
         "firstname": "Daniel",
-        "status": "professeur",
         "avatar": "/img-redimensions/schreurs-daniel-avatar.jpg",
         "back_image": "https://placehold.jp/1920x550.png",
         "email": "daniel.schreurs@hepl.be",
@@ -87,13 +86,13 @@
         "remember_token": null,
         "created_at": null,
         "updated_at": null,
-        "deleted_at": null
+        "deleted_at": null,
+        "status_id": 4
     },
     {
         "id": 6,
         "name": "Batta",
         "firstname": "Gwenaëlle",
-        "status": "ancien",
         "avatar": "/img-redimensions/gwen-avatar.jpg",
         "back_image": "https://placehold.jp/1920x550.png",
         "email": "gwenaellebatta@gmail.com",
@@ -102,6 +101,7 @@
         "remember_token": null,
         "created_at": null,
         "updated_at": null,
-        "deleted_at": null
+        "deleted_at": null,
+        "status_id": 3
     }
 ]

@@ -17,6 +17,9 @@ return new class extends Migration
         Schema::table('comments', function (Blueprint $table) {
             $table->foreignId('subject_id')->constrained()->onUpdate('cascade');
         });
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('status_id')->constrained('status')->onUpdate('cascade');
+        });
         Schema::table('comments', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
         });
@@ -85,6 +88,9 @@ return new class extends Migration
         });
         Schema::table('softwaretranslations', function (Blueprint $table) {
             $table->foreignId('software_id')->constrained('softwares')->onUpdate('cascade');
+        });
+        Schema::table('statustranslations', function (Blueprint $table) {
+            $table->foreignId('status_id')->constrained('status')->onUpdate('cascade');
         });
         Schema::table('opportunitytranslations', function (Blueprint $table) {
             $table->foreignId('opportunity_id')->constrained()->onUpdate('cascade');

@@ -93,6 +93,7 @@ Route::post('/register', [RegisterSessionController::class, 'store'])->middlewar
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
 Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show'])->middleware(['auth','locale']);
 Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit'])->middleware(['auth','locale']);
+Route::post('/{locale?}/user/modify/{user:slug}', [UserController::class, 'update'])->middleware(['auth','locale']);
 Route::get('/{locale?}/user/password', function () {
     return view('user.password');
 });

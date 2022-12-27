@@ -18,13 +18,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('firstname');
             $table->string('slug')->unique();
-            $table->string('status')->nullable();
-            $table->string('avatar')->nullable();
-            $table->string('back_image')->nullable();
+            $table->string('avatar')->default("https://placehold.jp/276x276.png");
+            $table->string('back_image')->default("https://placehold.jp/1920x500.png");
             $table->string('email')->unique();
             $table->boolean('is_admin')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->text('description')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

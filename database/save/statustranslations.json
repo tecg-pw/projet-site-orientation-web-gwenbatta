@@ -1,0 +1,66 @@
+[
+    {
+        "id": 0,
+        "name": "visiteur",
+        "locale": "fr",
+        "status_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 1,
+        "name": "étudiant",
+        "locale": "fr",
+        "status_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 2,
+        "name": "ancien",
+        "locale": "fr",
+        "status_id": 3,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 3,
+        "name": "professeur",
+        "locale": "fr",
+        "status_id": 4,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 4,
+        "name": "visitor",
+        "locale": "en",
+        "status_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 5,
+        "name": "student",
+        "locale": "en",
+        "status_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 6,
+        "name": "alumni",
+        "locale": "en",
+        "status_id": 3,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 7,
+        "name": "teacher",
+        "locale": "en",
+        "status_id": 4,
+        "created_at": null,
+        "updated_at": null
+    }
+]

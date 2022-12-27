@@ -20,17 +20,17 @@ class UserSeeder extends Seeder
         $users = json_decode($json);
 
         foreach ($users as $key => $value) {
-            User::create([
+            User::factory()->create([
                 "name" => $value->name,
                 "firstname" => $value->firstname,
                 "slug" => \Str::slug($value->firstname.$value->name),
-                "status" => $value->status,
                 "avatar" => $value->avatar,
                 "back_image" => $value->back_image,
                 "email" => $value->email,
                 "is_admin" => $value->is_admin,
                 "email_verified_at" => $value->email_verified_at,
                 "password" => password_hash('change_this',PASSWORD_DEFAULT),
+                "status_id"=>$value->status_id
             ]);
         }
     }
