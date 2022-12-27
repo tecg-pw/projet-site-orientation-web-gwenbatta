@@ -91,7 +91,7 @@
                             src="https://placehold.jp/84x84.png"
                             alt="Nom">
                         <div class="flex mr-4 sm:mr-0 flex-1 flex-col">
-                            <p class="xl:text-xl text-lg mb-2">{{$subject->user->firstname}} {{$subject->user->name}}</p>
+                            <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 xl:text-xl text-lg mb-2">{{$subject->user->firstname}} {{$subject->user->name}}</a>
                             <p>{{$subject->created_at->format('d M. Y')}}</p>
                         </div>
                         <div>
@@ -240,7 +240,7 @@
                                     @endif
                                     <div class="flex -order-1 items-center">
                                         <div class="order-2 sm:ml-2 xl:ml-4">
-                                            <p class="text-lg uppercase">{{$comment->user->firstname}} {{$comment->user->name}}</p>
+                                            <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 text-lg uppercase">{{$comment->user->firstname}} {{$comment->user->name}}</a>
                                             <p class="">{{$comment->created_at->format('d M. Y')}}</p>
                                         </div>
                                         <img

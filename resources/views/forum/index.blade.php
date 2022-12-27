@@ -72,7 +72,6 @@
                                 </div>
                                 <div class="flex relative -order-2 justify-between">
                                     <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="text-base hover:text-orange-500 uppercase self-end">
-
                                         {{$subject->user->firstname}} {{$subject->user->name}}
                                     </a>
                                     <p class="text-base self-end">{{$subject->created_at->format('d M. Y')}}</p>
