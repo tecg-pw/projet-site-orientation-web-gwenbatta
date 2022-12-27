@@ -25,6 +25,7 @@ class UserSeeder extends Seeder
                 "firstname" => $value->firstname,
                 "slug" => \Str::slug($value->firstname.$value->name),
                 "avatar" => $value->avatar,
+                "avatar_thumb" => $value->avatar_thumb,
                 "back_image" => $value->back_image,
                 "email" => $value->email,
                 "is_admin" => $value->is_admin,

@@ -27,7 +27,8 @@ class UserFactory extends Factory
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
             "slug" => \Str::slug($firstname.$name),
-            "avatar" => 'https://placehold.jp/150x150.png',
+            "avatar" => 'https://placehold.jp/276x276.png',
+            "avatar_thumb" => 'https://placehold.jp/115x115.png',
             "back_image" => 'https://placehold.jp/1920x550.png',
             "is_admin" => 0,
             "status_id"=>0

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('slug')->unique();
             $table->string('avatar')->default("https://placehold.jp/276x276.png");
+            $table->string('avatar_thumb')->default("https://placehold.jp/115x115.png");
             $table->string('back_image')->default("https://placehold.jp/1920x500.png");
             $table->string('email')->unique();
             $table->boolean('is_admin')->default(false);

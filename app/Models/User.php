@@ -29,6 +29,7 @@ class User extends Authenticatable
         'back_image',
         'description',
         'avatar',
+        'avatar_thumb',
         'email',
         'is_admin',
         'password',

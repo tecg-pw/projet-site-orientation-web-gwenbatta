@@ -27,7 +27,7 @@ class UpdateUserRequest extends FormRequest
             'name' => 'required',
             'firstname' => 'required',
             'status_id' => 'required',
-            'description'=>'max:300|nullable',
+            'description'=>'min:20|max:300|nullable',
             'avatar' => 'nullable',
             'back_image'=> 'nullable',
             'email' => 'required|email',

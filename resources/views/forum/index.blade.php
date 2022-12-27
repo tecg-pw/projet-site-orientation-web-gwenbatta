@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <img class="sr-only lg:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                             src="https://placehold.jp/115x115.png"
+                             src="{{$subject->user->avatar_thumb}}"
                              alt="{{$subject->user->slug}}">
                     </article>
                 @endforeach

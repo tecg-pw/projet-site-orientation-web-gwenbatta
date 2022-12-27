@@ -19,6 +19,7 @@ use App\Http\Controllers\LegalController;
 use App\Http\Controllers\MyAnswerController;
 use App\Http\Controllers\MySubjectController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\OtherUserController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
@@ -91,11 +92,12 @@ Route::get('/{locale?}/user/register', [RegisterSessionController::class, 'creat
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
 Route::post('/register', [RegisterSessionController::class, 'store'])->middleware('guest');
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
-Route::get('/{locale?}/user/profile/{user:slug}', [UserController::class, 'show'])->middleware(['auth','locale']);
-Route::get('/{locale?}/user/profile/modify/{user:slug}', [UserController::class, 'edit'])->middleware(['auth','locale']);
-Route::post('/{locale?}/user/modify/{user:slug}', [UserController::class, 'update'])->middleware(['auth','locale']);
+Route::get('/{locale?}/user/profile/{user:slug}', [OtherUserController::class, 'show'])->middleware('locale');
+Route::get('/{locale?}/user/profile', [UserController::class, 'show'])->middleware(['auth','locale']);
+Route::get('/{locale?}/user/profile/modify/form', [UserController::class, 'edit'])->middleware(['auth','locale']);
+Route::post('/{locale?}/user/modify', [UserController::class, 'update'])->middleware(['auth','locale']);
 Route::get('/{locale?}/user/password', function () {
-    return view('user.password');
+    return view('user.reset_password');
 });
 
 

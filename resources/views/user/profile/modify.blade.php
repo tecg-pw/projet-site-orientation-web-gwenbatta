@@ -23,7 +23,7 @@
     <section class="xl:px-30 lg:px-16 2xl:px-48 px-10 mb-32" aria-labelledby="modify">
         <h2 role="heading" id="modify" aria-level="2" class="text-4xl text-yellow-800 font-extrabold font-sans uppercase">{{__('user.user_modify_title')}}</h2>
         <div class="flex  mt-14">
-            <form action="/{{app()->getLocale()}}/user/modify/{{$user->slug}}" method="post" enctype="multipart/form-data" class="flex-1 flex flex-col lg:flex-row lg:gap-20 xl:gap-24">
+            <form action="/{{app()->getLocale()}}/user/modify" method="post" enctype="multipart/form-data" class="flex-1 flex flex-col lg:flex-row lg:gap-20 xl:gap-24">
                 @csrf
                 <div class="flex-1">
                     <div class="flex flex-1">

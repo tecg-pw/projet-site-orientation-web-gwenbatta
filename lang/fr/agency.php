@@ -3,6 +3,9 @@
 return [
 
     'agency_title' => 'Les entreprises',
+    'partner_alumni_title'=>'Nos alumnis en stage ici',
+    'partner_alumni_link'=>'Voir plus d\'alumnis',
+    'partner_alumni_no'=>'Aucun alumni n\'a fait son stage ici',
     'partner_link' => 'Partenaires',
     'offer_link' => 'Offres de stage',
     'offer_back' => 'Retour aux offres',

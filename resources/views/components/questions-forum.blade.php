@@ -4,7 +4,7 @@
     'ratings'
 ])
 
-<article {{ $attributes->class(['px-7 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-30 lg:px-16 2xl:px-48 pb-28']) }} aria-labelledby="questions">
+<article {{ $attributes->class(['px-7 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-32 lg:px-16 2xl:px-48 pb-28']) }} aria-labelledby="questions">
     <div class="flex flex-col xl:mt-20 md:flex-row xl:mb-24 mb-12">
         <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl xl:max-w-[50%] 2xl:max-w-full uppercase font-bold xl:mb-12 font-sans xl:leading-12" role="heading" aria-level="2"
             id="questions">{{__('home.forum_title')}}</h2>
@@ -92,45 +92,47 @@
                     class="text-xl md:text-2xl xl:text-3xl font-light text-green-700 underline mb-6">{{__('forum.latest_subject')}}</h3>
                 <div class="flex flex-col gap-y-4 sm:gap-y-8">
                     @foreach($latests as $latest)
-                        <article class="hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
+                        <article class="bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
                                  aria-labelledby="{{$latest->slug}}">
-                            <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
+                            <div class="order-2 flex-1 flex flex-col  justify-center gap-y-2 xl:gap-4">
                                 <div class="flex-col flex xl:gap-4">
                                     <div class="flex gap-2">
-                                    <h4 class="order-2 font-medium sm:text-lg xl:text-xl" id="{{$latest->slug}}"
-                                        role="heading"
-                                        aria-level="4">{{$latest->subject}}</h4>
+                                        <h4 class="order-2 hover:text-orange-500 font-medium text-lg xl:text-xl" id="{{$latest->slug}}"
+                                            role="heading"
+                                            aria-level="4">
+                                            <a href="/{{app()->getLocale()}}/forum/{{$latest->slug}}">{{$latest->subject}}</a>
+                                        </h4>
                                     @if($latest->resolved)
-                                        <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
-                                             viewBox="0 0 34.194 34.196">
-                                            <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
-                                                <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
-                                                      data-name="106780bf1ed9964c2ffe0eda53fe07ea"
-                                                      d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
-                                                      transform="translate(873 1771)" fill="#da953a"/>
-                                                <path id="_846e0b1f246b76024f36d97f9864a9c8"
-                                                      data-name="846e0b1f246b76024f36d97f9864a9c8"
-                                                      d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
-                                                      transform="translate(875.711 1774.888)" fill="#da953a"/>
-                                            </g>
-                                        </svg>
-                                        <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
-                                             viewBox="0 0 34.194 34.196">
-                                            <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
-                                                <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
-                                                      data-name="106780bf1ed9964c2ffe0eda53fe07ea"
-                                                      d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
-                                                      transform="translate(873 1771)" fill="#da953a"/>
-                                                <path id="_846e0b1f246b76024f36d97f9864a9c8"
-                                                      data-name="846e0b1f246b76024f36d97f9864a9c8"
-                                                      d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
-                                                      transform="translate(875.711 1774.888)" fill="#da953a"/>
-                                            </g>
-                                        </svg>
+                                            <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
+                                                 viewBox="0 0 34.194 34.196">
+                                                <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                    <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                          data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                          d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                          transform="translate(873 1771)" fill="#da953a"/>
+                                                    <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                          data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                          d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                          transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                                </g>
+                                            </svg>
+                                            <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
+                                                 viewBox="0 0 34.194 34.196">
+                                                <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                    <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                                          data-name="106780bf1ed9964c2ffe0eda53fe07ea"
+                                                          d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
+                                                          transform="translate(873 1771)" fill="#da953a"/>
+                                                    <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                                          data-name="846e0b1f246b76024f36d97f9864a9c8"
+                                                          d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
+                                                          transform="translate(875.711 1774.888)" fill="#da953a"/>
+                                                </g>
+                                            </svg>
                                     @endif
                                     </div>
                                     <div class="flex -order-2 relative justify-between">
-                                        <p class="sm:text-sm md:text-base uppercase self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
+                                        <a href="/{{app()->getLocale()}}/user/profile/{{$latest->user->slug}}" class="text-base hover:text-orange-500 uppercase self-end">{{$latest->user->firstname}} {{$latest->user->name}} </a>
                                         <p class="sm:text-sm md:text-base self-end">{{$latest->created_at->translatedFormat('d M Y')}}</p>
                                     </div>
                                 </div>
@@ -139,8 +141,6 @@
                                         <p class=" font-medium bg-orange-500/40 mr-4 px-3 xl:px-6 pb-1 pt-1.5 rounded-lg text-sm md:text-base uppercase text-green-700">
                                             {{ucwords($latest->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                                     </div>
-                                    <a class="linkcard underline text-green-700 font-sans font-semibold"
-                                       href="/{{app()->getLocale()}}/forum/{{$latest->slug}}">{{__('forum.see_subject')}}</a>
                                     <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                          width="25"
                                          viewBox="0 0 32 27.417">
@@ -166,14 +166,16 @@
                     class="text-xl md:text-2xl xl:text-3xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
                 <div class="flex flex-col gap-y-8">
                     @foreach($ratings as $rating)
-                        <article class="hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
+                        <article class="bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
                                  aria-labelledby="{{$rating->slug}}">
-                            <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
+                            <div class="order-2 flex-1 flex flex-col justify-center gap-y-2 xl:gap-4">
                                 <div class="flex-col flex xl:gap-4">
                                     <div class="flex gap-2">
-                                        <h4 class="order-2 font-medium sm:text-lg xl:text-xl" id="{{$rating->slug}}"
+                                        <h4 class="order-2 hover:text-orange-500 font-medium text-lg xl:text-xl" id="{{$rating->slug}}"
                                             role="heading"
-                                            aria-level="4">{{$rating->subject}}</h4>
+                                            aria-level="4">
+                                            <a href="/{{app()->getLocale()}}/forum/{{$rating->slug}}">{{$rating->subject}}</a>
+                                        </h4>
                                         @if($rating->resolved)
                                             <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
                                                  viewBox="0 0 34.194 34.196">
@@ -204,7 +206,7 @@
                                         @endif
                                     </div>
                                     <div class="flex -order-2 relative justify-between">
-                                        <p class="sm:text-sm md:text-base uppercase self-end">{{$rating->user->firstname}} {{$rating->user->name}} </p>
+                                        <a href="/{{app()->getLocale()}}/user/profile/{{$rating->user->slug}}" class="text-base hover:text-orange-500 uppercase self-end">{{$rating->user->firstname}} {{$rating->user->name}} </a>
                                         <p class="sm:text-sm md:text-base self-end">{{$rating->created_at->translatedFormat('d M Y')}}</p>
                                     </div>
                                 </div>
@@ -213,8 +215,6 @@
                                         <p class=" font-medium bg-orange-500/40 mr-4 px-3 xl:px-6 pb-1 pt-1.5 rounded-lg text-sm md:text-base uppercase text-green-700">
                                             {{ucwords($rating->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                                     </div>
-                                    <a class="linkcard underline text-green-700 font-sans font-semibold"
-                                       href="/{{app()->getLocale()}}/forum/{{$rating->slug}}">{{__('forum.see_subject')}}</a>
                                     <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                          width="25"
                                          viewBox="0 0 32 27.417">

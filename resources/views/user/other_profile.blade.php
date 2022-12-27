@@ -10,10 +10,6 @@
                             class="xl:text-4xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mb-3">{{$user->firstname}} {{$user->name}}</h2>
                         <p class="uppercase text-2xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
                     </div>
-                        <div class="text-end">
-                            <a href="/{{app()->getLocale()}}/user/profile/modify/form"
-                               class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-lg md:text-xl xl:text-2xl font-semibold mb-32">{{__('user.user_modify')}}</a>
-                        </div>
                 </div>
                 <img class="rounded-full md:w-1/4 xl:w-1/4" src="{{$user->avatar}}" alt="">
             </div>
@@ -24,7 +20,7 @@
     <article class="bg-yellow-600 px-10 lg:px-16 xl:px-32 2xl:px-48 pb-36 pt-20" aria-labelledby="tutos">
         <div class="flex justify-between">
             <h2 role="heading" id="tutos" aria-level="2"
-                class="xl:text-4xl text-2xl md:text-3xl uppercase font-extrabold font-sans mb-20">{{__('user.user_favorite_auth')}}</h2>
+                class="xl:text-4xl text-2xl md:text-3xl uppercase font-extrabold font-sans mb-20">{{__('user.user_favorite_guest')}}</h2>
             <a class="hover:text-orange-500  font-sans text-green-700 text-lg md:text-xl xl:text-3xl font-semibold underline px-4"
                href="/{{app()->getLocale()}}/technical/tuto">{{__('user.tuto_back')}}</a>
         </div>
@@ -41,21 +37,6 @@
                                    href="{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->link}}">{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->name}}</a>
                             </h3>
                         </div>
-                            <form
-                                action="/{{app()->getLocale()}}/technical/tuto/favorite/{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->tuto_id}}"
-                                method="post">
-                                @csrf
-                                <button type="submit" class="flex">
-                                    <span class="sr-only">{{__('Enlever des favoris')}}</span>
-                                    <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24"
-                                         width="30px"
-                                         fill="#da953a"><path d="M0 0h24v24H0z" fill="none"/><path
-                                            d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
-                                    </svg>
-                                    </span>
-                                </button>
-                            </form>
                     </div>
                     <p class="mb-2.5 xl:mb-6 xl:text-lg">{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->excerpt}}</p>
                     <div class="flex justify-between">
@@ -80,7 +61,7 @@
     </article>
     <section class="px-10 lg:px-16 xl:px-32 2xl:px-48 mt-36 mb-36" aria-labelledby="questions">
         <h2 role="heading" id="questions" aria-level="2"
-            class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('user.user_question_title_auth')}}</h2>
+            class="text-4xl text-yellow-800 uppercase font-extrabold font-sans mb-20">{{__('user.user_question_title_guest')}}</h2>
         <div class="col-span-3 flex flex-col gap-y-8 xl:pr-14 ">
             @foreach($subjects as $subject)
                 <article
@@ -146,7 +127,7 @@
                     </div>
                     <img
                         class="sr-only lg:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                        src="{{$user->avatar}}"
+                        src="{{$user->avatar_thumb}}"
                         alt="{{$user->slug}}">
                 </article>
             @endforeach

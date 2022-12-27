@@ -81,17 +81,27 @@
                                  alt="Nom">
 
                             <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
-                                 src="https://placehold.jp/98x98.png"
-                                 alt="Nom">
+                                 src="{{$comment->user->avatar_thumb}}"
+                                 alt="{{$comment->user->slug}}">
                         </div>
                         <div class="relative flex order-7 gap-1.5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24.998 25">
-                                <path id="_55875de67f0001d7695d7cadee652fba"
-                                      data-name="55875de67f0001d7695d7cadee652fba"
-                                      d="M26.125,12.1a3.75,3.75,0,0,0-2.875-1.35h-5.7l.7-1.787A5.162,5.162,0,0,0,13.387,2a1.25,1.25,0,0,0-1.137.737L8.687,10.75H5.75A3.75,3.75,0,0,0,2,14.5v8.75A3.75,3.75,0,0,0,5.75,27H21.662a3.75,3.75,0,0,0,3.687-3.075l1.587-8.75A3.75,3.75,0,0,0,26.125,12.1ZM8.25,24.5H5.75A1.25,1.25,0,0,1,4.5,23.25V14.5a1.25,1.25,0,0,1,1.25-1.25h2.5ZM24.5,14.725l-1.587,8.75a1.25,1.25,0,0,1-1.25,1.025H10.75V12.262l3.4-7.65a2.637,2.637,0,0,1,1.725,3.475l-.663,1.787A2.5,2.5,0,0,0,17.55,13.25h5.7a1.276,1.276,0,0,1,1.25,1.475Z"
-                                      transform="translate(-2 -2)" fill="#da953a"/>
-                            </svg>
-                            <p class="pt-1">{{$comment->like}}</p>
+                            <form action="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}/comment/like/{{$comment->id}}" method="post">
+                                @csrf
+                                <label class="sr-only" for="like">Liker</label>
+                                <button name="like" id="like" type="submit">
+                                    <span class="sr-only">Liker</span>
+                                    <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                         viewBox="0 0 24.998 25">
+                                                        <path id="_55875de67f0001d7695d7cadee652fba"
+                                                              data-name="55875de67f0001d7695d7cadee652fba"
+                                                              d="M26.125,12.1a3.75,3.75,0,0,0-2.875-1.35h-5.7l.7-1.787A5.162,5.162,0,0,0,13.387,2a1.25,1.25,0,0,0-1.137.737L8.687,10.75H5.75A3.75,3.75,0,0,0,2,14.5v8.75A3.75,3.75,0,0,0,5.75,27H21.662a3.75,3.75,0,0,0,3.687-3.075l1.587-8.75A3.75,3.75,0,0,0,26.125,12.1ZM8.25,24.5H5.75A1.25,1.25,0,0,1,4.5,23.25V14.5a1.25,1.25,0,0,1,1.25-1.25h2.5ZM24.5,14.725l-1.587,8.75a1.25,1.25,0,0,1-1.25,1.025H10.75V12.262l3.4-7.65a2.637,2.637,0,0,1,1.725,3.475l-.663,1.787A2.5,2.5,0,0,0,17.55,13.25h5.7a1.276,1.276,0,0,1,1.25,1.475Z"
+                                                              transform="translate(-2 -2)" fill="#da953a"/>
+                                                    </svg>
+                                                </span>
+                                </button>
+                            </form>
+                            <p class="pt-1">{{$comment->user_like_count}}</p>
                         </div>
                     </article>
                 @endforeach

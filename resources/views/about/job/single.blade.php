@@ -60,7 +60,7 @@
     </article>
     <article class="xl:px-32 2xl:px-48 px-10 mt-36 mb-36" aria-labelledby="alumnis">
         <div class="flex flex-col md:flex-row justify-between mb-6">
-            <h2 class="xl:text-4xl md:text-3xl md:max-w-md md:leading-10 text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis"
+            <h2 class="xl:text-4xl md:text-3xl md:max-w-md md:leading-10 text-2xl uppercase font-bold text-yellow-800 mb-6 lg:max-w-full xl:mb-16 font-sans" id="alumnis"
                 aria-level="2"
                 role="heading">{{__('about.job_alumni_title')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
@@ -70,6 +70,9 @@
             @foreach($alumnis as $alumni_ref)
                 <x-alumni_job_article :job="$job" :alumni_ref="$alumni_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
+            @if(count($alumnis)===0)
+                <p>{{__('job.job_no_alumni')}}</p>
+            @endif
         </div>
     </article>
 </main>

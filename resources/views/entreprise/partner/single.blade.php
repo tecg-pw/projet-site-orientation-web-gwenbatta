@@ -92,9 +92,9 @@
     </section>
     <article class="bg-yellow-600 2xl:px-48 xl:px-32 lg:px-16 px-10 pb-24 pt-20" aria-labelledby="internships">
         <div class="flex md:flex-row flex-col justify-between mb-8">
-            <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('Offres de stages')}}</h2>
+            <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('agency.offer_link')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
-               href="/{{app()->getLocale()}}/entreprise/internship">{{__('Voir les offres de stage')}}</a>
+               href="/{{app()->getLocale()}}/entreprise/internship">{{__('agency.offer_other')}}</a>
         </div>
         <div class="lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8 flex flex-col gap-y-4">
             @if(count($offers) !== 0)
@@ -136,14 +136,17 @@
     <article class="xl:px-32 lg:px-16 2xl:px-48 px-10 mt-36 mb-36" aria-labelledby="alumnis">
         <div class="flex flex-col md:flex-row justify-between mb-6">
             <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis" aria-level="2"
-                role="heading">{{__('Nos alumnis en stage ici')}}</h2>
+                role="heading">{{__('agency.partner_alumni_title')}}</h2>
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
-               href="/{{app()->getLocale()}}/bottin/alumni">{{__('Voir plus d\'alumnis')}}</a>
+               href="/{{app()->getLocale()}}/bottin/alumni">{{__('agency.partner_alumni_link')}}</a>
         </div>
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($alumnis as $alumni_ref)
                 <x-alumni_article :alumni_ref="$alumni_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
+                @if(count($alumnis)===0)
+                    <p>{{__('agency.partner_alumni_no')}}</p>
+                @endif
         </div>
     </article>
 </main>

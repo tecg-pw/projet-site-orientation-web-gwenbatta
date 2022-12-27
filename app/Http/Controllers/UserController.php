@@ -48,11 +48,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(string $locale=null, User $user)
+    public function show(string $locale=null)
     {
+        $user =  auth()->user();
         $tutos = User::find($user->id)->tutos()->get();
         $subjects =  User::find($user->id)->subjects()->get();
-
         return view('user.profile', compact('user', 'tutos','subjects'));
     }
 
@@ -62,8 +62,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(string $locale=null, User $user)
+    public function edit(string $locale=null)
     {
+        $user =  auth()->user();
         $status = Status::all();
         return view('user.profile.modify', compact('user','status'));
     }
@@ -75,15 +76,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(string $locale=null, UpdateUserRequest $request,User $user)
+    public function update(string $locale=null, UpdateUserRequest $request)
     {
-        $validatedData =  $request->safe()->only('name', 'description','firstname','status_id','email','password','avatar','back_image');
+        $validatedData =  $request->safe()->all();
         $validatedData['slug'] = Str::slug($validatedData['firstname'].$validatedData['name']);
 
-        $user->update($validatedData);
+        auth()->user()->update($validatedData);
 
 
-        return redirect('/'.$locale.'/user/profile/'.$user->slug);
+        return redirect('/'.$locale.'/user/profile/');
     }
 
     /**

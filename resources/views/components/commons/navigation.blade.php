@@ -50,7 +50,7 @@
                     <div class="bg-green-700 hover_section absolute z-40 flex-1 rounded-lg flex gap-2 pt-14 p-3 flex-col">
                         <a dusk="logged-user-name"
                            class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
-                           href="/{{app()->getLocale()}}/user/profile/{{auth()->user()->slug}}">{{__('user.user_my_profile')}}</a>
+                           href="/{{app()->getLocale()}}/user/profile">{{__('user.user_my_profile')}}</a>
                         <form action="/logout"
                               method="post">
                             @csrf

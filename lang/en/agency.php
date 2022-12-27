@@ -3,6 +3,9 @@
 return [
 
     'agency_title' => 'The companies',
+    'partner_alumni_title'=>'Our alumni on placement here',
+    'partner_alumni_link'=>'See more alumni',
+    'partner_alumni_no'=>'No alumni did their internship here',
     'partner_link' => 'Partners',
     'offer_link' => 'Internship opportunities',
     'offer_back' => 'Back to internship opportunities',
