@@ -6,6 +6,7 @@ use App\Http\Requests\SubjectRequest;
 use App\Models\Comment;
 use App\Models\Subject;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Str;
 
@@ -23,7 +24,6 @@ class ForumController extends Controller
     }
 
 
-
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +33,7 @@ class ForumController extends Controller
     {
         $tags = Tag::all();
 
-        return view('forum.question',compact('tags'));
+        return view('forum.question', compact('tags'));
     }
 
     /**
@@ -42,14 +42,15 @@ class ForumController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(string $locale = null,SubjectRequest $request)
+    public function store(string $locale = null, SubjectRequest $request)
     {
-         $validatedData =  $request->safe()->only('subject', 'description','tag_id');
+        $validatedData = $request->safe()->only('subject', 'description', 'tag_id');
         $validatedData['user_id'] = auth()->id();
-        $validatedData['slug'] = Str::slug($validatedData['subject']);
+        $user = User::find($validatedData['user_id']);
+            $validatedData['slug'] = Str::slug($validatedData['subject'] .uuid_create());
         $subject = Subject::create($validatedData);
 
-        return redirect('/'.$locale.'/forum/'.$subject->slug);
+        return redirect('/' . $locale . '/forum/' . $subject->slug);
     }
 
     /**
@@ -63,7 +64,7 @@ class ForumController extends Controller
 
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
-        return view('forum.show', compact('subject','latests', 'ratings'));
+        return view('forum.show', compact('subject', 'latests', 'ratings'));
     }
 
     /**
@@ -72,11 +73,11 @@ class ForumController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(string $locale = null,Subject $subject)
+    public function edit(string $locale = null, Subject $subject)
     {
         $tags = Tag::all();
 
-        return view('forum.question_modify',compact('tags','subject'));
+        return view('forum.question_modify', compact('tags', 'subject'));
     }
 
     /**
@@ -86,13 +87,13 @@ class ForumController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(string $locale = null,Subject $subject,SubjectRequest $request)
+    public function update(string $locale = null, Subject $subject, SubjectRequest $request)
     {
-        $validatedData =  $request->safe()->only('subject', 'description','tag_id');
-        $validatedData['slug'] = Str::slug($validatedData['subject']);
+        $validatedData = $request->safe()->only('subject', 'description', 'tag_id');
+        $validatedData['slug'] = Str::slug($validatedData['subject'].uuid_create());
         $subject->update($validatedData);
 
-        return redirect('/'.$locale.'/forum/'.$subject->slug);
+        return redirect('/' . $locale . '/forum/' . $subject->slug);
     }
 
     /**
@@ -102,8 +103,8 @@ class ForumController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(string $locale = null, Subject $subject)
-{
-    $subject->delete();
-    return  redirect('/'.$locale.'/forum/index');
-}
+    {
+        $subject->delete();
+        return redirect('/' . $locale . '/forum/index');
+    }
 }

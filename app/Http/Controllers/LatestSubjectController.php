@@ -61,16 +61,16 @@ class LatestSubjectController extends Controller
                 ->where('created_at', $sortYear)
                 ->where('resolved', $sortStatus)
                 ->paginate(8);
-        } elseif ($searchTerm === '') {
-            $subjects = Subject::query()->paginate(8);
-        } //OK
-        else {
+        }elseif($sortStatus && $sortTags && $sortYear) {
             $subjects = Subject::query()
                 ->where('resolved', $sortStatus)
                 ->where('tag_id', $sortTags)
                 ->where('created_at', $sortYear)
                 ->paginate(8);
         }
+         else{
+            $subjects = Subject::query()->paginate(8);
+        } //OK
         $recurrings = Recurring::all();
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();

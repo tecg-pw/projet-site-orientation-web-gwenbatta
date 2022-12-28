@@ -11,7 +11,7 @@
                 <select id="languages"
                         name="languages"
                         class="appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
-                    <option value="all">{{strtoupper('Toutes')}}</option>
+                    <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
                     @foreach($languages as $filter)
                         <option value="{{$filter->languages}}">
                             {{$filter->languages}}
@@ -25,7 +25,7 @@
                     class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold pl-2 pr-8 py-1"
                     id="date"
                     name="date">
-                    <option value="all">{{strtoupper('Toutes')}}</option>
+                    <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
                     @foreach($date as $filter)
                         <option value="{{$filter->created_at}}">
                             {{$filter->created_at->format('Y')}}

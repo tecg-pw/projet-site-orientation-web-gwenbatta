@@ -19,10 +19,25 @@ class ProjectController extends Controller
      */
     public function index(string $locale = null)
     {
+        $searchTerm = request()->input('search') ?? '';
+        $ids = [];
+        if ($searchTerm) {
+            $references = ProjetTranslation::query()
+                ->where('locale', $locale)
+                ->where(function ($query) use ($searchTerm) {
+                    $query->where('title', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('date', 'like', '%' . $searchTerm . '%');
+                })->get();
 
+            foreach ($references as $reference) {
+                $ids [] = $reference->project_id;
+            }
+            $projects = Project::whereIn('id', $ids)->paginate(9);
+
+        }
+        else{
         $projects = Project::paginate(9);
-
-        //$projects = ProjetTranslation::latest('date')->where('locale', $locale)->paginate(9);
+        }
 
         return view('project.index', compact('projects'));
     }

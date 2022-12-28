@@ -6,7 +6,9 @@ use App\Http\Requests\LikeCommentRequest;
 use App\Http\Requests\StoreCommentRequest;
 use App\Models\Comment;
 use App\Models\Subject;
+use App\Notifications\AnswerSubject;
 use DB;
+use Illuminate\Support\Facades\Notification;
 
 class CommentController extends Controller
 {
@@ -31,7 +33,7 @@ class CommentController extends Controller
         $data_comment['user_id'] = auth()->user()->id;
 
         $comment = Comment::create($data_comment);
-
+        Notification::send($subject->user, new AnswerSubject());
 
         return  redirect('/'.$locale.'/forum/'.$subject->slug);
     }

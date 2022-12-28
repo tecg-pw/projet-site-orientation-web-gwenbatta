@@ -4,6 +4,15 @@
 
 <x-commons.navigation :page="$subject->subject"></x-commons.navigation>
 <main id="content">
+    <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
+        <a href="/{{app()->getLocale()}}/forum/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{__('nav.nav_navigation.forum')}}
+        </a>
+        <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
+        <a href="/" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{$subject->subject}}
+        </a>
+    </div>
     <section class="" aria-labelledby="sujet" id="sujet">
         @if(request()->has('delete-comment'))
             <div class="delete-element absolute z-30 bg-green-200 w-full h-full flex items-center justify-center">

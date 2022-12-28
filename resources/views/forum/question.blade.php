@@ -1,5 +1,14 @@
 <x-commons.navigation :page="__('forum_question.title')"></x-commons.navigation>
 <main id="content">
+    <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
+        <a href="/{{app()->getLocale()}}/forum/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{__('nav.nav_navigation.forum')}}
+        </a>
+        <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
+        <a href="/" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{__('forum_question.title')}}
+        </a>
+    </div>
     <section class="mt-20 mb-36 flex " aria-labelledby="question">
         <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex-1">
             <div class="flex flex-col mb-14 xl:mb-28">

@@ -13,8 +13,8 @@
             aria-labelledby="{{$alumni_ref->slug}}">
             <div class="flex flex-1 items-center">
                 <div class="flex-1 order-2 ml-4">
-                    <h4 id="{{$alumni_ref->slug}}" role="heading" aria-level="4"
-                        class="text-xl xl:text-2xl">{{$alumni_ref->firstname}} {{$alumni_ref->name}}</h4>
+                    <h3 id="{{$alumni_ref->slug}}" role="heading" aria-level="3"
+                        class="text-xl xl:text-2xl">{{$alumni_ref->firstname}} {{$alumni_ref->name}}</h3>
                     <div class="mt-1 flex justify-between">
                         <div class="flex flex-col xl:flex-row xl:gap-4">
                             <p class="uppercase xl:text-lg">{{$alumni_ref->status}}</p>

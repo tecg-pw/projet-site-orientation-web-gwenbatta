@@ -14,9 +14,7 @@
             <select id="status"
                     name="status"
                     class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1">
-                <option value="all">
-                    {{mb_strtoupper('Toutes')}}
-                </option>
+                <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
                     <option value="1">
                         {{mb_strtoupper(__('Résolu'))}}
                     </option>
@@ -30,8 +28,8 @@
             <label for="tags" class="xl:text-lg text-green-500 xl:mb-2">{{__('sort.tags')}}</label>
             <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1" id="tags"
                     name="tags">
-                <option value="all">{{strtoupper('Toutes')}}</option>
-                @foreach($tags as $tag)
+                <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
+            @foreach($tags as $tag)
                     <option value="{{$tag->translation->where('locale',app()->getLocale())->first()->tag_id}}">
                         {{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->name)}}
                     </option>
@@ -43,8 +41,8 @@
             <label for="year" class="xl:text-lg text-green-500 xl:mb-2">{{__('sort.year')}}</label>
             <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1" id="year"
                     name="year">
-                <option value="all">{{strtoupper('Toutes')}}</option>
-                @foreach($created as $filter)
+                <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
+            @foreach($created as $filter)
                     <option value="{{$filter->created_at}}">
                         {{$filter->created_at->format('Y')}}
                     </option>

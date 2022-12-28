@@ -15,7 +15,27 @@ class ActualityController extends Controller
      */
     public function index(string $locale = null)
     {
-        $news = Actuality::latest()->paginate(9);
+        $searchTerm = request()->input('search') ?? '';
+        $ids = [];
+        if ($searchTerm) {
+            $references = ActualityTranslation::query()
+                ->where('locale', $locale)
+                ->where(function ($query) use ($searchTerm) {
+                    $query->where('name', 'like', '%' . $searchTerm . '%')
+                          ->orWhere('excerpt', 'like', '%' . $searchTerm . '%')
+                          ->orWhere('date', 'like', '%' . $searchTerm . '%');
+                })->get();
+
+            foreach ($references as $reference) {
+                $ids [] = $reference->actuality_id;
+            }
+            $news = Actuality::whereIn('id', $ids)->paginate(9);
+
+        }
+        else{
+            $news = Actuality::latest()->paginate(9);
+        }
+
         return view('news.index', compact('news'));
     }
 

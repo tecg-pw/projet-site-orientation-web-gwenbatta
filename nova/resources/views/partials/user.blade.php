@@ -7,7 +7,7 @@
     @endisset
 
     <span class="text-90">
-        {{ $user->firstname ?? $user->name ?? $user->email ?? __('Nova User') }}
+        {{$user->email ?? __('Nova User') }}
     </span>
 </dropdown-trigger>
 

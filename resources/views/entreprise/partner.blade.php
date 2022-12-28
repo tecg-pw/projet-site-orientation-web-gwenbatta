@@ -8,9 +8,9 @@
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="company" role="heading" aria-level="2"
                 class="mb-4 text-2xl md:text-3xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('agency.agency_title')}}</h2>
-            <x-search :urlAction="$urlAction"/>
+            <x-search class="min-w-[20%]" :urlAction="$urlAction"/>
         </div>
-        <x-sort_by_partner :cities="$cities" :agencies="$agencies"/>
+        <x-sort_by_partner :urlAction="$urlAction" :cities="$cities" :agencies="$agencies"/>
         <div class="flex xl:gap-20 md:justify-start md:gap-x-10 mb-12 justify-between xl:justify-start">
             <a class="xl:text-xl text-lg underline rounded-lg text-green-700 font-semibold font-sans bg-orange-100 px-5 py-2"
                href="/{{app()->getLocale()}}/entreprise/partner">{{__('agency.partner_link')}}</a>
@@ -25,8 +25,11 @@
                 <x-partner_article
                     :partner_ref="$partner_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
+                @if(count($partners)===0)
+                    <p>{{__('search.no_result')}}</p>
+                @endif
         </div>
-        {{$partners->links()}}
+        {{$partners->withQueryString()->links()}}
     </article>
 </main>
 <x-commons.footer></x-commons.footer>

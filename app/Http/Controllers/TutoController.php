@@ -19,44 +19,54 @@ class TutoController extends Controller
         $searchTerm = request()->input('search') ?? '';
         $sortLanguages = request()->input('languages') ?? 'all';
         $sortDate = request()->input('date') ?? 'all';
-        if ($searchTerm){
-            $tutos = [];
-            $references = TutoTranslation::where('locale',$locale)
-                ->where('name', 'like', '%' . $searchTerm . '%')
-                ->orWhere('languages', 'like', '%' . $searchTerm . '%')
-                ->orWhere('excerpt', 'like', '%' . $searchTerm . '%')
-                ->paginate(8);
-            foreach ($references as $reference){
-                $tutos [] = Tuto::find($reference->tuto_id);
+        $ids = [];
+        if ($searchTerm) {
+            $references = TutoTranslation::query()
+                ->where('locale', $locale)
+                ->where(function ($query) use ($searchTerm) {
+                    $query->where('name', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('languages', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('excerpt', 'like', '%' . $searchTerm . '%');
+                })->get();
+            foreach ($references as $reference) {
+                $ids [] = $reference->tuto_id;
             };
-        }
+            $tutos = Tuto::whereIn('id', $ids)->paginate(8);
+        } //OK
         elseif ($sortLanguages === 'all' && $sortDate === 'all') {
             $tutos = Tuto::paginate(8);
-        } elseif ($sortLanguages === 'all') {
-            $tutos = [];
-            $references = TutoTranslation::where('locale',$locale)->where('created_at',$sortDate)->paginate(8);
-            foreach ($references as $reference){
-                $tutos [] = Tuto::find($reference->tuto_id);
-            };
-        }elseif ($sortDate === 'all') {
-            $tutos = [];
-            $references = TutoTranslation::where('locale',$locale)->where('languages',$sortLanguages)->paginate(8);
-            foreach ($references as $reference){
-                $tutos [] = Tuto::find($reference->tuto_id);
-            }
-        }elseif ($searchTerm === ''){
-            $tutos = Tuto::paginate(8);
         }
-        else{
-            $tutos = [];
-            $references = TutoTranslation::where('locale',$locale)
-                ->where('languages',$sortLanguages)
-                ->where('created_at',$sortDate)
-                ->paginate(8);
-            foreach ($references as $reference){
-                $tutos [] = Tuto::find($reference->tuto_id);
-            }
-            return $tutos->paginate(8);
+        elseif ($sortLanguages === 'all') {
+            $references = TutoTranslation::query()
+                ->where('locale', $locale)
+                ->where('created_at', $sortDate)->get();
+            foreach ($references as $reference) {
+                $ids [] = $reference->tuto_id;
+            };
+            $tutos = Tuto::whereIn('id', $ids)->paginate(8);
+        } elseif ($sortDate === 'all') {
+            $references = TutoTranslation::query()
+                ->where('locale', $locale)
+                ->where('languages', $sortLanguages)
+                ->get();
+            foreach ($references as $reference) {
+                $ids [] = $reference->tuto_id;
+            };
+            $tutos = Tuto::whereIn('id', $ids)->paginate(8);
+
+        } elseif ($sortLanguages && $sortDate) {
+            $references = TutoTranslation::query()
+                ->where('locale', $locale)
+                ->where('languages', $sortLanguages)
+                ->where('created_at', $sortDate)
+                ->get();
+
+            foreach ($references as $reference) {
+                $ids [] = $reference->tuto_id;
+            };
+            $tutos = Tuto::whereIn('id', $ids)->paginate(8);
+        } else {
+            $tutos = Tuto::paginate(8);
         }
         $languages = TutoTranslation::select('languages')->where('locale', $locale)->groupBy('languages')->get();
         $date = TutoTranslation::select('created_at')->where('locale', $locale)->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at', 'DESC')->get();

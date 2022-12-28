@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\SubjectCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,6 +12,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Subject extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $dispatchesEvents = [
+        'created' => SubjectCreated::class,
+    ];
+
+
+
     protected $dates = ['created_at'];
     protected $with = ['comments', 'user','tag'];
     protected $withCount = ['comments'];

@@ -17,8 +17,60 @@ class PartnerController extends Controller
      */
     public function index(string  $locale=null)
     {
+        $searchTerm = request()->input('search') ?? '';
+        $sortCities = request()->input('cities') ?? 'all';
+        $sortAgency = request()->input('agency') ?? 'all';
+        $ids = [];
+        if ($searchTerm){
+            $references = PartnerTranslation::query()
+                ->where('locale', $locale)
+                ->where(function ($query) use ($searchTerm) {
+                    $query->where('name', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('locality', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('locality_number', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('adresse', 'like', '%' . $searchTerm . '%');
+                })->get();
+            foreach ($references as $reference) {
+                $ids [] = $reference->partner_id;
+            };
+            $partners = Partner::whereIn('id', $ids)->paginate(8);
+        }
+        elseif ($sortCities === 'all' && $sortAgency === 'all') {
+            $partners = Partner::paginate(8);
+        }
+        elseif ($sortCities === 'all') {
+            $references = PartnerTranslation::query()
+                ->where('locale', $locale)
+                ->where('name', $sortAgency)->get();
+            foreach ($references as $reference) {
+                $ids [] = $reference->partner_id;
+            };
+            $partners = Partner::whereIn('id', $ids)->paginate(8);
+        } elseif ($sortAgency === 'all') {
+            $references = PartnerTranslation::query()
+                ->where('locale', $locale)
+                ->where('locality', $sortCities)
+                ->get();
+            foreach ($references as $reference) {
+                $ids [] = $reference->partner_id;
+            };
+            $partners = Partner::whereIn('id', $ids)->paginate(8);
 
-        $partners = Partner::paginate(8);
+        } elseif ($sortCities && $sortAgency) {
+            $references = PartnerTranslation::query()
+                ->where('locale', $locale)
+                ->where('locality', $sortCities)
+                ->where('name', $sortAgency)
+                ->get();
+
+            foreach ($references as $reference) {
+                $ids [] = $reference->partner_id;
+            };
+            $partners = Partner::whereIn('id', $ids)->paginate(8);
+        }
+        else{
+            $partners = Partner::paginate(8);
+        }
 
         $cities = PartnerTranslation::select('locality')->groupBy('locality')->get();
         $agencies = PartnerTranslation::select('name')->groupBy('name')->get();

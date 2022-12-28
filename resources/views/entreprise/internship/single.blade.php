@@ -6,6 +6,15 @@
 
 <x-commons.navigation :page="$offer_ref->name"></x-commons.navigation>
 <main id="content">
+    <div class="flex items-center px-10 xl:px-32 lg:px-16 2xl:px-48 mt-20">
+        <a href="/{{app()->getLocale()}}/entreprise/internship" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{__('agency.offer_link')}}
+        </a>
+        <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
+        <a href="/" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{$offer_ref->name}}
+        </a>
+    </div>
     <section class="xl:px-32 2xl:px-48 px-10 mt-20 mb-20 xl:mb-40" aria-labelledby="{{$offer_ref->slug}}">
         <div class="flex md:flex-row flex-col justify-between mb-8">
             <h2 id="{{$offer_ref->slug}}" role="heading" aria-level="2"

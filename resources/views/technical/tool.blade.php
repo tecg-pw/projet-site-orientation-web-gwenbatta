@@ -1,5 +1,14 @@
 <x-commons.navigation :page="__('docandtool.doc_tool_title')"></x-commons.navigation>
 <main id="content" class="">
+    <div class="flex items-center xl:px-32 lg:px-16 2xl:px-48 px-10 mt-20">
+        <a href="/{{app()->getLocale()}}/technical/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{__('nav.nav_navigation.technical')}}
+        </a>
+        <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
+        <a href="/" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{__('docandtool.tool_link')}}
+        </a>
+    </div>
     <section class="xl:px-32 lg:px-16 2xl:px-48 px-10 mt-20 mb-32 xl:mb-64" aria-labelledby="doc-and-tool">
         <div class="flex justify-between mb-7 items-center">
             <h2 id="doc-and-tool" role="heading" aria-level="2"

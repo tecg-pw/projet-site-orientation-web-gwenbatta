@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
             $table->string('subject');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->text('description');
             $table->boolean('resolved')->default(false);
             $table->timestamps();

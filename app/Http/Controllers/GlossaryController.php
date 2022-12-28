@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Glossary;
+use App\Models\GlossaryTranslation;
 
 class GlossaryController extends Controller
 {
@@ -13,8 +14,25 @@ class GlossaryController extends Controller
      */
     public function index(string $locale=null)
     {
+        $searchTerm = request()->input('search') ?? '';
+        $ids = [];
+        if ($searchTerm) {
+            $references = GlossaryTranslation::query()
+                ->where('locale', $locale)
+                ->where(function ($query) use ($searchTerm) {
+                    $query->where('name', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('definition', 'like', '%' . $searchTerm . '%');
+                })->get();
 
-        $termes = Glossary::paginate(8);
+            foreach ($references as $reference) {
+                $ids [] = $reference->glossary_id;
+            }
+            $termes = Glossary::whereIn('id', $ids)->paginate(9);
+
+        }
+        else {
+            $termes = Glossary::paginate(8);
+        }
         return view('technical.glossary', compact('termes'));
     }
 }

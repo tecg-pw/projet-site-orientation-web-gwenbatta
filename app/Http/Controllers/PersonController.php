@@ -20,60 +20,64 @@ class PersonController extends Controller
         $sortStatus = request()->input('status') ?? 'all';
         $sortYear = request()->input('year') ?? 'all';
         $searchTerm = request()->input('search') ?? '';
-        $people = [];
+        $ids = [];
 
         if ($searchTerm) {
             $references = PersonTranslation::query()
+                ->where('locale', $locale)
                 ->where('name', 'like', '%' . $searchTerm . '%')
                 ->orWhere('firstname', 'like', '%' . $searchTerm . '%')
+                ->where('locale', $locale)
                 ->orWhere('status', 'like', '%' . $searchTerm . '%')
+                ->where('locale', $locale)
                 ->orWhere('begin', 'like', '%' . $searchTerm . '%')
+                ->where('locale', $locale)
                 ->orWhere('end', 'like', '%' . $searchTerm . '%')
                 ->where('locale', $locale)
                 ->paginate(8);
 
             foreach ($references as $reference) {
-                    $people [] = People::find($reference->people_id);
+                $ids [] = $reference->people_id;
             }
+            $people = People::whereIn('id', $ids)->paginate(8);
 
         }
-//        elseif ($sortStatus === 'all' && $sortYear === 'all') {
-//            $references = People::query()->paginate(8);
-//            foreach ($references as $reference) {
-//                $people [] = People::find($reference->people_id);
-//            }
-//        }
-//        elseif ($sortStatus === 'all') {
-//            $references = PersonTranslation::query()
-//                ->where('begin', $sortYear)
-//                ->paginate(8);
-//
-//            foreach ($references as $reference) {
-//                $people [] = People::find($reference->people_id);
-//            }
-//        } //OK
-//        elseif ($sortYear === 'all') {
-//            $references = PersonTranslation::query()
-//                ->where('status', $sortStatus)
-//                ->paginate(8);
-//
-//            foreach ($references as $reference) {
-//                $people [] = People::find($reference->people_id);
-//            }
-//        }
-//        elseif ($searchTerm === '') {
-//            $references = People::query()->paginate(8);
-//            foreach ($references as $reference) {
-//                $people [] = People::find($reference->people_id);
-//            }
-//        } //OK
-        else {
-            $references = PersonTranslation::query();
+        elseif ($sortStatus === 'all' && $sortYear === 'all') {
+            $people = People::paginate(8);
+        }
+        elseif ($sortStatus === 'all') {
+            $references = PersonTranslation::query()
+                ->where('end', $sortYear)
+                ->get();
 
             foreach ($references as $reference) {
-                $people [] = People::find($reference->people_id);
+                $ids [] = $reference->people_id;
             }
+            $people = People::whereIn('id', $ids)->paginate(8);
+        }
+        elseif ($sortYear === 'all') {
+            $references = PersonTranslation::query()
+                ->where('status', $sortStatus)
+                ->get();
 
+            foreach ($references as $reference) {
+                $ids [] = $reference->people_id;
+            }
+            $people = People::whereIn('id', $ids)->paginate(8);
+        }
+        elseif ($sortYear && $sortStatus) {
+            $references = PersonTranslation::query()
+                ->where('status', $sortStatus)
+                ->where('end', $sortYear)
+                ->get();
+
+            foreach ($references as $reference) {
+                $ids [] = $reference->people_id;
+            }
+            $people = People::whereIn('id', $ids)->paginate(8);
+        }
+        else {
+            $people = People::paginate(8);
         }
 
         $testimonials = Testimonial::take(4)->orderBy('created_at')->get();

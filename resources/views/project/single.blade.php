@@ -3,6 +3,15 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
 ?>
 <x-commons.navigation :page="$project->title"></x-commons.navigation>
 <main id="content">
+    <div class="flex items-center px-10 2xl:px-48 xl:px-32 mt-20">
+        <a href="/{{app()->getLocale()}}/project/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{__('nav.nav_navigation.project')}}
+        </a>
+        <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
+        <a href="/" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{$project->title}}
+        </a>
+    </div>
     <section class="xl:px-32 lg:px-16 2xl:px-48 px-10 mt-20 xl:mb-40" aria-labelledby="{{$project->slug}}">
         <div class="flex flex-col md:flex-row justify-between mb-8">
             <h2 id="{{$project->slug}}" aria-level="2" role="heading"
