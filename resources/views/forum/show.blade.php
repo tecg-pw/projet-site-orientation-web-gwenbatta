@@ -84,12 +84,12 @@
                     <div class="flex items-center gap-y-4 flex-wrap xl:gap-8">
                         <img
                             class="xl:not-sr-only sr-only -order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                            src="https://placehold.jp/108x108.png"
-                            alt="Nom">
+                            src="{{$subject->user->avatar_thumb}}"
+                            alt="{{$subject->user->slug}}">
                         <img
                             class="xl:sr-only -order-1 mr-4 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
                             src="https://placehold.jp/84x84.png"
-                            alt="Nom">
+                            alt="{{$subject->user->slug}}">
                         <div class="flex mr-4 sm:mr-0 flex-1 flex-col">
                             <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 xl:text-xl text-lg mb-2">{{$subject->user->firstname}} {{$subject->user->name}}</a>
                             <p>{{$subject->created_at->format('d M. Y')}}</p>
@@ -245,9 +245,8 @@
                                         </div>
                                         <img
                                             class="order-1 row-span-3 order-1 justify-self-center row-span-2 sr-only sm:not-sr-only xl:w-[98px] sm:w-[78px] rounded-full"
-                                            width="98"
-                                            src="{{$comment->user->avatar}}"
-                                            alt="{{$comment->user->firstname}} {{$comment->user->name}}">
+                                            src="{{$comment->user->avatar_thumb}}"
+                                            alt="{{$comment->user->slug}}">
                                     </div>
                                 </div>
                                 <div class="flex gap-20 mt-4">
