@@ -17,7 +17,7 @@
                     <p>{{__('search.no_result')}}</p>
                 @endif
                 <div class="col-span-2 items-center justify-center flex-1">
-                    {{$people->withQueryString()->links()}}
+                    {{$news->withQueryString()->links()}}
                 </div>
         </div>
     </article>

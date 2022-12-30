@@ -9,6 +9,16 @@ function init(){
     burgerMenu()
 }
 
+let buttonSearches = document.querySelectorAll('#searchButton') as NodeListOf<HTMLButtonElement>;
+console.log(buttonSearches);
+
+// @ts-ignore
+for (const buttonSearchElement of buttonSearches) {
+    buttonSearchElement.classList.add('sr-only');
+}
+
+
+
 function burgerMenu(){
     let checkbox = document.getElementById('burger') as HTMLInputElement;
     let deleteElement = document.querySelector('.delete-element') as HTMLDivElement;
@@ -27,8 +37,6 @@ function burgerMenu(){
         body.classList.add('overflow-hidden')
     }
 }
-
-
 
 function handlePassword() {
     let inputs = document.getElementsByClassName('password') as HTMLCollection;

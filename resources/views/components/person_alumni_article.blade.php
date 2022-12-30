@@ -38,16 +38,16 @@
         </div>
         @if($person_ref->status === 'ancien' || $person_ref->status === 'alumni')
             <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
+               href="/{{app()->getLocale()}}/bottin/alumni/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
         @elseif($person_ref->status === 'professeur' || $person_ref->status === 'teacher')
             <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
+               href="/{{app()->getLocale()}}/bottin/teacher/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
         @elseif($person_ref->status === 'étudiante' || $person_ref->status === 'student')
             <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/student/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
+               href="/{{app()->getLocale()}}/bottin/student/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
         @elseif($person_ref->status === 'teachalumni')
             <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-               href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teachalumni/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
+               href="/{{app()->getLocale()}}/bottin/teachalumni/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
         @endif
 
     </article>

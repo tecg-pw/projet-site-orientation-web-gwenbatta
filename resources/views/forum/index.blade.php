@@ -39,7 +39,7 @@
                                         id="{{$subject->slug}}"
                                         role="heading"
                                         aria-level="3">
-                                        <a href="/{{app()->getLocale()}}/forum/{{$subject->slug}}">{{$subject->subject}}</a>
+                                        <a href="/{{app()->getLocale()}}/forum/question/{{$subject->slug}}">{{$subject->subject}}</a>
                                     </h3>
                                     @if($subject->resolved)
                                         <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"

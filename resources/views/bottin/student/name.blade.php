@@ -4,7 +4,7 @@
             {{__('nav.nav_navigation.people')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/bottin/student/{{$student->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{$student->firstname}} {{$student->name}}
         </a>
     </div>
@@ -63,13 +63,13 @@
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[80%]">
                         {{$student->description}}
                     </p>
                 @endif
 
             </div>
-            <div class="xl:max-w-[345px] 2xl:max-w-[400px] md:max-w-[250px] flex-1 flex flex-col">
+            <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
                 <img class=" xl:mb-6 rounded-3xl" src="{{$student->avatar}}" alt="avatar">
                 <div class="flex flex-col mt-8">
                     <a href="{{$student->link_portfolio}}"

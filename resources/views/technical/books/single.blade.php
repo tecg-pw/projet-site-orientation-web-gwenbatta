@@ -49,16 +49,16 @@
                 </section>
             </div>
             <div class="lg:not-sr-only sr-only col-span-5">
-                <figure class="grid grid-rows-1 grid-cols-3 gap-6">
+                <figure class="grid grid-rows-1 grid-cols-3 gap-6 ">
                     <img class="rounded-3xl row-span-2"
-                         src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash.jpg" alt="">
+                         src="/img-redimensions/girl-on-computer-526.jpg" alt="">
                     <img class="rounded-3xl col-span-2 order-1"
-                         src="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash.jpg" alt="">
-                    <img class="rounded-3xl order-2" src="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash.jpg"
+                         src="/img-redimensions/ux-468.jpg" alt="">
+                    <img class="rounded-3xl order-2" src="/img-redimensions/coding-picture.jpg"
                          alt="">
-                    <img class="rounded-3xl order-3" src="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash.jpg"
+                    <img class="rounded-3xl order-3" src="/img-redimensions/coding-person-picture.jpg"
                          alt="">
-                    <img class="col-span-3 rounded-3xl order-4" src="https://placehold.jp/721x239.png" alt="">
+                    <img class="col-span-3 rounded-3xl order-4" src="/img-redimensions/class-group.jpg" alt="">
                 </figure>
             </div>
         </div>

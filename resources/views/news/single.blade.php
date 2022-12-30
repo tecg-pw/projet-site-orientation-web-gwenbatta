@@ -1,5 +1,14 @@
 <x-commons.navigation :page="$new->name"></x-commons.navigation>
 <main id="content">
+    <div class="flex items-center px-10 2xl:px-48 xl:px-32 mt-20">
+        <a href="/{{app()->getLocale()}}/news/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{__('nav.nav_navigation.actualities')}}
+        </a>
+        <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
+        <a href="/{{app()->getLocale()}}/news/{{$new->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+            {{$new->name}}
+        </a>
+    </div>
     <section class="mb-20" aria-labelledby="{{$new->slug}}">
         <div class="flex md:flex-row flex-col px-10 xl:px-32 lg:px-16 2xl:px-48 justify-between mt-20">
             <h2 id="{{$new->slug}}" aria-level="2" role="heading"
@@ -34,17 +43,17 @@
                     </div>
                 </section>
             </div>
-            <div class="sr-only lg:not-sr-only lg:self-start xl:self-center col-span-5">
+            <div class="sr-only lg:not-sr-only lg:self-start xl:mt-8 col-span-5">
                 <figure class="grid grid-rows-1 grid-cols-3 gap-6 ">
                     <img class="rounded-3xl row-span-2"
-                         src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash.jpg" alt="">
+                         src="/img-redimensions/girl-on-computer-526.jpg" alt="">
                     <img class="rounded-3xl col-span-2 order-1"
-                         src="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash.jpg" alt="">
-                    <img class="rounded-3xl order-2" src="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash.jpg"
+                         src="/img-redimensions/ux-468.jpg" alt="">
+                    <img class="rounded-3xl order-2" src="/img-redimensions/coding-picture.jpg"
                          alt="">
-                    <img class="rounded-3xl order-3" src="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash.jpg"
+                    <img class="rounded-3xl order-3" src="/img-redimensions/coding-person-picture.jpg"
                          alt="">
-                    <img class="col-span-3 rounded-3xl order-4" src="https://placehold.jp/721x239.png" alt="">
+                    <img class="col-span-3 rounded-3xl order-4" src="/img-redimensions/class-group.jpg" alt="">
                 </figure>
             </div>
         </div>

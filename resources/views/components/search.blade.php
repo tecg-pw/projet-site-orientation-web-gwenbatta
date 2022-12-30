@@ -16,7 +16,7 @@
         <div class="self-end mt-2">
             <button
                 class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold"
-                type="submit" value="search">{{__('search.button')}}</button>
+                type="submit" id="searchButton" value="search">{{__('search.button')}}</button>
         </div>
     </form>
 </div>

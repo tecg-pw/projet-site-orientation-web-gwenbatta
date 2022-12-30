@@ -11,7 +11,7 @@
             {{__('agency.offer_link')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/entreprise/internship/{{$offer_ref->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{$offer_ref->name}}
         </a>
     </div>

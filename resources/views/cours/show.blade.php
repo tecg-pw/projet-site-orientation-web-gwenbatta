@@ -5,7 +5,7 @@
             {{__('nav.nav_navigation.about')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/cours/{{$course->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{$course->name}}
         </a>
     </div>
@@ -35,12 +35,12 @@
             <div class="lg:not-sr-only sr-only col-span-5">
                 <figure class="grid grid-rows-1 grid-cols-3 gap-6 ">
                     <img class="rounded-3xl row-span-2"
-                         src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash.jpg" alt="">
+                         src="/img-redimensions/girl-on-computer-526.jpg" alt="">
                     <img class="rounded-3xl col-span-2 order-1"
-                         src="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash.jpg" alt="">
-                    <img class="rounded-3xl order-2" src="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash.jpg"
+                         src="/img-redimensions/ux-468.jpg" alt="">
+                    <img class="rounded-3xl order-2" src="/img-redimensions/coding-picture.jpg"
                          alt="">
-                    <img class="rounded-3xl order-3" src="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash.jpg"
+                    <img class="rounded-3xl order-3" src="/img-redimensions/coding-person-picture.jpg"
                          alt="">
                 </figure>
             </div>

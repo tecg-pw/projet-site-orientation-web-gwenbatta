@@ -105,16 +105,17 @@ Route::get('/{locale?}/contact/student', [StudentContactController::class, 'inde
 Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'index'])->middleware('locale');
 
 
+
+Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/my-talks', [MyAnswerController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/question/{subject:slug}', [ForumController::class, 'show'])->middleware('locale');
 Route::get('/{locale?}/forum/question', [ForumController::class, 'create'])->middleware(['auth','locale']);
 Route::get('/{locale?}/forum/question/modify/{subject:slug}', [ForumController::class, 'edit'])->middleware(['auth','locale']);
 Route::get('/{locale?}/modify', [ForumController::class, 'update'])->middleware(['auth','locale']);
 Route::post('/{locale?}/subject', [ForumController::class, 'store'])->middleware(['auth','locale']);
 Route::post('/{locale?}/forum/subject/destroy/{subject:id}', [ForumController::class, 'destroy'])->middleware(['auth','locale']);
-Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index'])->middleware('locale');
-Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index'])->middleware('locale');
-Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index'])->middleware('locale');
-Route::get('/{locale?}/forum/my-talks', [MyAnswerController::class, 'index'])->middleware('locale');
-Route::get('/{locale?}/forum/{subject:slug}', [ForumController::class, 'show'])->middleware('locale');
 
 
 
