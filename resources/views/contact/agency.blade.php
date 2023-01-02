@@ -1,8 +1,7 @@
-<x-commons.navigation :page="__('contact_page.agency_link')"></x-commons.navigation>
+<x-commons.navigation :page="__('contact_page.student_link')"></x-commons.navigation>
 <main id="content">
-    <section class="mt-20 mb-20 xl:mb-0 xl:flex lg:grid lg:grid-cols-9 "
-             aria-labelledby="contact">
-        <div class="xl:px-32 2xl:pl-48 mt-10 flex-1 lg:col-span-4">
+    <section class="mt-20 mb-20 xl:mb-0 xl:flex lg:grid lg:grid-cols-9 " aria-labelledby="contact">
+        <div class="xl:px-32 2xl:pl-48 mt-16 flex-1 lg:col-span-4">
             <div class="px-10 xl:px-0 flex flex-col">
                 <h2 class="text-2xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6"
                     id="contact" role="heading" aria-level="2">
@@ -10,20 +9,25 @@
                 </h2>
             </div>
             <div class="flex flex-1 justify-between px-10 xl:px-0">
-                <a class="hover:text-orange-500   font-sans text-green-700 text-xl rounded-lg font-semibold underline  py-2.5"
+                <a class="hover:text-orange-500 bg-orange-200 rounded-lg font-sans text-green-700 text-xl rounded-lg font-semibold underline  py-2.5 px-6"
                    href="/{{app()->getLocale()}}/contact/student">{{__('contact_page.student_link')}}</a>
-                <a class="hover:text-orange-500 bg-orange-200 rounded-lg font-sans text-green-700 text-en xl:text-start self-center text-xl font-semibold underline py-2.5  px-6"
+                <a class=" font-sans text-green-700 text-en xl:text-start self-center text-xl font-semibold underline py-2.5 "
                    href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             @if(session('success'))
                 <div class="mt-12 mb-4 bg-orange-200 rounded-lg flex items-center gap-x-2 px-4 py-2.5">
-                    <svg class="h-8 w-8 text-green-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <path d="M9 12l2 2l4 -4"/></svg>
+                    <svg class="h-8 w-8 text-green-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z"/>
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M9 12l2 2l4 -4"/>
+                    </svg>
                     <p class="mt-1 text-green-700 text-xl">{{session('success')}}</p>
                 </div>
             @else
                 <div class="flex  mt-14">
-                    <p></p>
-                    <form action="/{{app()->getLocale()}}/contact/agency" method="post" class="flex-1 px-10 xl:px-0" enctype="multipart/form-data">
+                    <form action="/{{app()->getLocale()}}/contact/agency" method="post" class="flex-1 px-10 xl:px-0"
+                          enctype="multipart/form-data">
                         @csrf
                         <div class="flex flex-col xl:flex-row flex-1">
                             <div class="flex flex-col flex-1 xl:mr-10 mb-8">
@@ -31,14 +35,17 @@
                                        for="name">{{__('contact_page.agency_name')}}</label>
                                 @error('name')
                                 <div class="flex gap-1.5 items-center">
-                                    <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                     </svg>
                                     <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                                 </div>
                                 @enderror
                                 <input
-                                    class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100" value="{{old('name')}}"
+                                    class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                                    value="{{old('name')}}"
                                     placeholder="Whitecube" name="name" id="name" type="text">
                             </div>
                             <div class="flex flex-col flex-1 mb-8">
@@ -46,15 +53,19 @@
                                        for="name_supervisor">{{__('contact_page.agency_supervisor_name')}}</label>
                                 @error('name_supervisor')
                                 <div class="flex gap-1.5 items-center">
-                                    <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                     </svg>
                                     <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                                 </div>
                                 @enderror
                                 <input
-                                    class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100" value="{{old('name_supervisor')}}"
-                                    name="name_supervisor" id="name_supervisor" type="text" placeholder="Toon Van den Bos">
+                                    class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                                    value="{{old('name_supervisor')}}"
+                                    name="name_supervisor" id="name_supervisor" type="text"
+                                    placeholder="Toon Van den Bos">
                             </div>
                         </div>
                         <div class="flex flex-col mb-8">
@@ -62,14 +73,16 @@
                                    for="email">{{__('contact_page.mail')}}</label>
                             @error('email')
                             <div class="flex gap-1.5 items-center">
-                                <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                                 <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                             </div>
                             @enderror
                             <input
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100" value="{{old('email')}}"
+                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                                value="{{old('email')}}"
                                 name="email" id="email" type="email" placeholder="email@example.be">
                         </div>
                         <div class="flex flex-col mb-8">
@@ -77,23 +90,27 @@
                                    for="subject">{{__('contact_page.agency_title')}}</label>
                             @error('subject')
                             <div class="flex gap-1.5 items-center">
-                                <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                                 <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                             </div>
                             @enderror
                             <input
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100" value="{{old('subject')}}"
-                                name="subject" id="subject" type="text" placeholder="{{__('contact_page.agency_title_value')}}">
+                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                                value="{{old('subject')}}"
+                                name="subject" id="subject" type="text"
+                                placeholder="{{__('contact_page.agency_title_value')}}">
                         </div>
                         <div class="flex flex-col mb-8">
                             <label class="text-green-500 text-lg xl:text-2xl"
                                    for="message">{{__('contact_page.agency_description')}}</label>
                             @error('message')
                             <div class="flex gap-1.5 items-center">
-                                <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                                 <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                             </div>
@@ -106,32 +123,88 @@
                         <div>
                         <span
                             class="text-green-500 text-lg mb-12 xl:text-2xl">{{__('contact_page.agency_aptitude_value')}}</span>
-                            <div class="flex mt-6">
-                                <div class="border-r border-orange-500 pr-6">
-                                <span
-                                    class="text-green-500 xl:text-xl mb-4">{{__('contact_page.agency_language')}}</span><br>
+                            <div class="flex mt-6 ">
+                                <div class="border-r border-orange-500 pr-20">
+                                    <span class="text-green-500 xl:text-xl mb-4">{{__('contact_page.agency_language')}}</span><br>
                                     <div class="flex flex-col mt-4">
                                         @foreach($languages as $language)
                                             <div class="flex items-center gap-x-2">
-                                                <input class="mb-1" type="checkbox"
+                                                <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox"
                                                        value="{{$language->translation->where('locale',app()->getLocale(),)->first()->slug}}"
                                                        name="languages[]"
                                                        id="{{$language->translation->where('locale',app()->getLocale(),)->first()->slug}}">
-                                                <label class="xl:text-xl"
+                                                <span class="notCheck">
+                                                    <svg data-name="Composant 7 – 1"
+                                                           xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                           viewBox="0 0 24 24">
+                                                      <g data-name="Rectangle 275" fill="#fff" stroke="#707070" stroke-width="1">
+                                                        <rect width="24" height="24" rx="6" stroke="none"/>
+                                                        <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" fill="none"/>
+                                                      </g>
+                                                      <path id="d62ff70270774c6e6e679f7a8c643f83"
+                                                            d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z"
+                                                            transform="translate(-2 -2)" fill="#da953a"/>
+                                                      <path id="d62ff70270774c6e6e679f7a8c643f83-2" data-name="d62ff70270774c6e6e679f7a8c643f83"
+                                                            d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z"
+                                                            transform="translate(-2 -2)" fill="#da953a"/>
+                                                    </svg>
+                                                </span>
+                                                <span class="isCheck">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                                      <g data-name="Composant 7 – 2" transform="translate(0.5 0.5)">
+                                                        <g data-name="Rectangle 275" transform="translate(0 0)" fill="#da953a" stroke="#da953a" stroke-width="1">
+                                                          <rect width="24" height="24" rx="6" stroke="none"/>
+                                                          <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" fill="none"/>
+                                                        </g>
+                                                        <path d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#da953a" stroke="#da953a" stroke-width="1"/>
+                                                        <path data-name="d62ff70270774c6e6e679f7a8c643f83" d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#fff" stroke="#da953a" stroke-width="1"/>
+                                                      </g>
+                                                    </svg>
+                                                </span>
+                                                <label class="xl:text-xl relative"
                                                        for="{{$language->translation->where('locale',app()->getLocale(),)->first()->slug}}">{{$language->translation->where('locale',app()->getLocale(),)->first()->name}}</label>
                                             </div>
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="pl-7">
-                                <span
+                                <div class="pl-20">
+                                    <span
                                     class="text-green-500 xl:text-xl">{{__('contact_page.agency_software')}}</span><br>
                                     <div class="flex flex-col mt-4">
                                         @foreach($softwares as $software)
                                             <div class="flex items-center gap-x-2">
-                                                <input class="mb-1" type="checkbox" @checked(in_array($software->translation->where('locale',app()->getLocale())->first()->slug,old('softwares'))??[])
-                                                       name="softwares[]" value="{{$software->translation->where('locale',app()->getLocale(),)->first()->slug}}"
+                                                <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox"
+                                                       name="softwares[]"
+                                                       value="{{$software->translation->where('locale',app()->getLocale(),)->first()->slug}}"
                                                        id="{{$software->translation->where('locale',app()->getLocale(),)->first()->slug}}">
+                                                <span class="notCheck">
+                                                    <svg data-name="Composant 7 – 1"
+                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                         viewBox="0 0 24 24">
+                                                      <g data-name="Rectangle 275" fill="#fff" stroke="#707070" stroke-width="1">
+                                                        <rect width="24" height="24" rx="6" stroke="none"/>
+                                                        <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" fill="none"/>
+                                                      </g>
+                                                      <path
+                                                            d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z"
+                                                            transform="translate(-2 -2)" fill="#da953a"/>
+                                                      <path data-name="d62ff70270774c6e6e679f7a8c643f83"
+                                                            d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z"
+                                                            transform="translate(-2 -2)" fill="#da953a"/>
+                                                    </svg>
+                                                </span>
+                                                <span class="isCheck">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                                      <g data-name="Composant 7 – 2" transform="translate(0.5 0.5)">
+                                                        <g data-name="Rectangle 275" transform="translate(0 0)" fill="#da953a" stroke="#da953a" stroke-width="1">
+                                                          <rect width="24" height="24" rx="6" stroke="none"/>
+                                                          <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" fill="none"/>
+                                                        </g>
+                                                        <path id="d62ff70270774c6e6e679f7a8c643f83" d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#da953a" stroke="#da953a" stroke-width="1"/>
+                                                        <path id="d62ff70270774c6e6e679f7a8c643f83-2" data-name="d62ff70270774c6e6e679f7a8c643f83" d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#fff" stroke="#da953a" stroke-width="1"/>
+                                                      </g>
+                                                    </svg>
+                                                </span>
                                                 <label class="xl:text-xl"
                                                        for="{{$software->translation->where('locale',app()->getLocale(),)->first()->slug}}">{{$software->translation->where('locale',app()->getLocale(),)->first()->name}}</label>
                                             </div>
@@ -145,12 +218,12 @@
                             <div class="flex gap-x-10">
                                 <label for="pdf"
                                        class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
-                                <span class="flex flex-col justify-center items-center px-12 py-3 xl:py-3 xl:px-16">
-                                    <span
-                                        class="xl:text-xl text-center text-gray-500">{{__('contact_page.agency_offer')}} </span>
-                                </span>
-                                    <input id="pdf" type="file" class="hidden"/>
+                                    {{--                                <span class="flex flex-col justify-center items-center px-12 py-3 xl:py-3 xl:px-16">--}}
+                                    {{--                                    <span--}}
+                                    {{--                                        class="xl:text-xl text-center text-gray-500">{{__('contact_page.agency_offer')}} </span>--}}
+                                    {{--                                </span>--}}
                                 </label>
+                                <input id="pdf" name="pdf" type="file"/>
                             </div>
                         </div>
                         <div class="flex flex-1 justify-end mb-20">
