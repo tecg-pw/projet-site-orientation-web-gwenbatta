@@ -43,7 +43,7 @@
                          alt="">
                     <img class="rounded-3xl order-3" src="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash.jpg"
                          alt="">
-                    <img class="col-span-3 rounded-3xl order-4" src="https://placehold.jp/721x239.png" alt="">
+                    <img class="col-span-3 rounded-3xl order-4" src="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="">
                 </figure>
             </div>
         </div>

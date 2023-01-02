@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Opportunity;
 use App\Models\People;
+use App\Models\PersonTranslation;
 use App\Models\ProjetTranslation;
 use App\Models\Status;
 use App\Models\User;
@@ -20,9 +21,15 @@ class AboutController extends Controller
      */
     public function index(string $locale = null)
     {
-
+        $ids = [];
         $jobs = Opportunity::all();
-        $teachers = People::all();
+        $references = PersonTranslation::all();
+        foreach ($references as $reference) {
+            if ($reference->isTeacher){
+                $ids [] = $reference->people_id;
+            }
+        }
+        $teachers = People::whereIn('id', $ids)->paginate(8);
         $courses = Course::all();
 
         return view('about', compact('jobs', 'teachers', 'courses'));
