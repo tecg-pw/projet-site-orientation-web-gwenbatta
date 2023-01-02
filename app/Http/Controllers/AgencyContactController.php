@@ -11,7 +11,7 @@ use App\Models\Software;
 
 class AgencyContactController extends Controller
 {
-    //use HandlesPDFUploads;
+    use HandlesPDFUploads;
     /**
      * Handle the incoming request.
      *

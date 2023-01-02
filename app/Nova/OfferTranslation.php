@@ -63,6 +63,9 @@ class OfferTranslation extends Resource
             ])->displayUsingLabels(),
 
             Text::make('Logiciels','softwares')->hideFromIndex(),
+
+            Text::make('Language','languages')->hideFromIndex(),
+
             Text::make('Autres','others')->hideFromIndex(),
 
             Textarea::make('Description')->rows(3)->rules('required'),

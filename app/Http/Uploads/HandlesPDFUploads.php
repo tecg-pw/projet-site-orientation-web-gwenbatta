@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Uploads;
-use Intervention\Image\Facades\Image;
+use Barryvdh\DomPDF\PDF;
+use Symfony\Component\Console\Input\Input;
 
 trait HandlesPDFUploads
 {
@@ -9,7 +10,7 @@ trait HandlesPDFUploads
     {
         $ext = $uploaded_pdf->getClientOriginalExtension();
         $name = sha1_file($uploaded_pdf);
-        //$pdf = Image::make($uploaded_pdf);
+        //$pdf = ::make($uploaded_pdf);
 
         $uploaded_pdf->save( 'offer/pdf/'.$name.'.'.$ext);
         return $name.'.'.$ext;

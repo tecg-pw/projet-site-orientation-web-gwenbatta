@@ -1,4 +1,4 @@
-<x-commons.navigation :page="__('contact_page.student_link')"></x-commons.navigation>
+<x-commons.navigation :page="__('contact_page.agency_link')"></x-commons.navigation>
 <main id="content">
     <section class="mt-20 mb-20 xl:mb-0 xl:flex lg:grid lg:grid-cols-9 " aria-labelledby="contact">
         <div class="xl:px-32 2xl:pl-48 mt-16 flex-1 lg:col-span-4">
@@ -9,9 +9,9 @@
                 </h2>
             </div>
             <div class="flex flex-1 justify-between px-10 xl:px-0">
-                <a class="hover:text-orange-500 bg-orange-200 rounded-lg font-sans text-green-700 text-xl rounded-lg font-semibold underline  py-2.5 px-6"
+                <a class="font-sans text-green-700 text-xl rounded-lg font-semibold underline  py-2.5 px-6"
                    href="/{{app()->getLocale()}}/contact/student">{{__('contact_page.student_link')}}</a>
-                <a class=" font-sans text-green-700 text-en xl:text-start self-center text-xl font-semibold underline py-2.5 "
+                <a class="hover:text-orange-500 bg-orange-200 rounded-lg py-2.5 px-6 font-sans text-green-700 text-en xl:text-start self-center text-xl font-semibold underline py-2.5 "
                    href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             @if(session('success'))
@@ -215,15 +215,16 @@
                         </div>
                         <div class="flex flex-col mb-8 mt-10">
                             <p class="text-green-500 text-lg mb-2 xl:text-2xl">{{__('contact_page.agency_offer_title')}}</p>
-                            <div class="flex gap-x-10">
-                                <label for="pdf"
-                                       class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
-                                    {{--                                <span class="flex flex-col justify-center items-center px-12 py-3 xl:py-3 xl:px-16">--}}
-                                    {{--                                    <span--}}
-                                    {{--                                        class="xl:text-xl text-center text-gray-500">{{__('contact_page.agency_offer')}} </span>--}}
-                                    {{--                                </span>--}}
+                            <div class="flex items-center justify-center w-full">
+                                <label for="pdf" class="flex flex-col items-center justify-center w-full h-64 border-2 border-orange-500 rounded-lg cursor-pointer bg-yellow-100 hover:bg-gray-100">
+                                    <div class=" flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg aria-hidden="true" class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                        <p class="mb-2 text-sm text-green-700"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                        <p class="text-xs">SVG, PNG, JPG</p>
+                                        <div class="textInput"></div>
+                                    </div>
+                                    <input id="pdf" name="pdf" type="file"/>
                                 </label>
-                                <input id="pdf" name="pdf" type="file"/>
                             </div>
                         </div>
                         <div class="flex flex-1 justify-end mb-20">
