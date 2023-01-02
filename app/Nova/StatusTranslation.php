@@ -2,27 +2,22 @@
 
 namespace App\Nova;
 
-
-use Ctessier\NovaAdvancedImageField\AdvancedImage;
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class ActualityTranslation extends Resource
+class StatusTranslation extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\ActualityTranslation>
+     * @var class-string<\App\Models\StatusTranslation>
      */
-    public static $model = \App\Models\ActualityTranslation::class;
-
+    public static $model = \App\Models\StatusTranslation::class;
     public static $displayInNavigation = false;
 
     /**
@@ -52,41 +47,19 @@ class ActualityTranslation extends Resource
         return [
             ID::make()->hideFromIndex(),
 
-            Text::make('Nom','name')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            Text::make('Nom','name')->rules('required'),
 
-            Slug::make('Slug')->from('name')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            Slug::make('slug')
+                ->from('name')
+                ->rules('required')
+                ->hideFromIndex(),
 
-            Select::make('Langue','locale')->options([
+            Select::make('Langues','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
             ])->displayUsingLabels(),
 
-            Trix::make('Résumé','excerpt')->rules('required'),
-
-            Trix::make('Description')->rules('required'),
-
-            Text::make('Lieu')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Text::make('Lien','link')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            AdvancedImage::make('Image principale','main_picture')
-                ->croppable(1)
-                ->rounded()
-                ->resize(370,370)
-                ->disk('public')
-                ->path('/img-redimensions/actu'),
-
-            Date::make('Date'),
-
-            BelongsTo::make('Actuality', 'actuality', 'App\Nova\Actuality')
+            BelongsTo::make('Status','status','App\Nova\Status')
         ];
     }
 
@@ -109,11 +82,7 @@ class ActualityTranslation extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [
-            new Filters\Locale(),
-            new Filters\LocationActu(),
-            new Filters\DateActu(),
-        ];
+        return [];
     }
 
     /**

@@ -6,6 +6,8 @@ use App\Models\Course;
 use App\Models\Opportunity;
 use App\Models\People;
 use App\Models\ProjetTranslation;
+use App\Models\Status;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -18,6 +20,7 @@ class AboutController extends Controller
      */
     public function index(string $locale = null)
     {
+
         $jobs = Opportunity::all();
         $teachers = People::all();
         $courses = Course::all();

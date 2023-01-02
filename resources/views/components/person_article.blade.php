@@ -38,7 +38,7 @@
                 </svg>
             </div>
         </div>
-        <img class="order-1 rounded-full" width="98" src="{{$person_ref->avatar}}" alt="avatar">
+        <img class="order-1 rounded-full" width="98" src="{{str_contains($person_ref->avatar,'http')? $person_ref->avatar : '/'.$person_ref->avatar}}" alt="avatar">
     </div>
     @if($person_ref->status === 'ancien' || $person_ref->status === 'alumni')
         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"

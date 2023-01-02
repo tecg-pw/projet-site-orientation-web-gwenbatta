@@ -15,10 +15,10 @@
                                class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-lg md:text-xl xl:text-2xl font-semibold mb-32">{{__('user.user_modify')}}</a>
                         </div>
                 </div>
-                <img class="rounded-full md:w-1/4 xl:w-1/4" src="{{$user->avatar}}" alt="">
+                <img class="rounded-full md:w-1/4 xl:w-1/4" src="{{str_contains($user->avatar,'http')? $user->avatar : '/'.$user->avatar}}" alt="">
             </div>
             <img class="absolute -z-10 top-0 bottom-0 left-0 right-0"
-                 src="{{$user->back_image}}" alt="">
+                 src="{{str_contains($user->back_image,'http')? $user->back_image : '/'.$user->back_image}}" alt="">
         </div>
     </section>
     <article class="bg-yellow-600 px-10 lg:px-16 xl:px-32 2xl:px-48 pb-36 pt-20" aria-labelledby="tutos">
@@ -146,7 +146,7 @@
                     </div>
                     <img
                         class="sr-only lg:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                        src="{{$user->avatar_thumb}}"
+                        src="{{str_contains($user->avatar_thumb,'http')? $user->avatar_thumb : '/'.$user->avatar_thumb}}"
                         alt="{{$user->slug}}">
                 </article>
             @endforeach

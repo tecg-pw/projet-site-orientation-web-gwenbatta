@@ -16,12 +16,12 @@ class PersonTranslation extends Model
     protected $table = 'persontranslations';
     protected $dates =['begin','end'];
     protected $fillable = [
-        'name', 'firstname', 'slug', 'status','isTeacher', 'avatar', 'description', 'link_portfolio', 'link_github', 'linkedin', 'instagram', 'mail', 'job', 'begin', 'end','person_id'
+        'name', 'firstname', 'slug', 'status','isTeacher', 'avatar', 'description', 'link_portfolio', 'link_github', 'linkedin', 'instagram', 'mail', 'job', 'begin', 'end','people_id'
     ];
 
     public function person(): BelongsTo
     {
-        return $this->belongsTo(People::class);
+        return $this->belongsTo(People::class, 'people_id');
     }
 
     public function projects(): HasMany

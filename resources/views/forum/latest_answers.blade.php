@@ -78,10 +78,10 @@
                             </div>
                             <img class="xl:sr-only order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
                                  src="https://placehold.jp/75x75.png"
-                                 alt="Nom">
+                                 alt="{{$comment->user->slug}}">
 
                             <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
-                                 src="{{$comment->user->avatar_thumb}}"
+                                 src="{{str_contains($comment->user->avatar_thumb,'http')? $comment->user->avatar_thumb : '/'.$comment->user->avatar_thumb}}"
                                  alt="{{$comment->user->slug}}">
                         </div>
                         <div class="relative flex order-7 gap-1.5">

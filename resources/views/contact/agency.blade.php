@@ -129,7 +129,7 @@
                                     <div class="flex flex-col mt-4">
                                         @foreach($languages as $language)
                                             <div class="flex items-center gap-x-2">
-                                                <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox"
+                                                <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox" @if(old('softwares'))@checked(in_array($language->translation->where('locale',app()->getLocale(),)->first()->slug,old('languages')))@endif
                                                        value="{{$language->translation->where('locale',app()->getLocale(),)->first()->slug}}"
                                                        name="languages[]"
                                                        id="{{$language->translation->where('locale',app()->getLocale(),)->first()->slug}}">
@@ -174,7 +174,7 @@
                                         @foreach($softwares as $software)
                                             <div class="flex items-center gap-x-2">
                                                 <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox"
-                                                       name="softwares[]"
+                                                       name="softwares[]" @if(old('softwares'))@checked(in_array($software->translation->where('locale',app()->getLocale(),)->first()->slug,old('softwares')))@endif
                                                        value="{{$software->translation->where('locale',app()->getLocale(),)->first()->slug}}"
                                                        id="{{$software->translation->where('locale',app()->getLocale(),)->first()->slug}}">
                                                 <span class="notCheck">

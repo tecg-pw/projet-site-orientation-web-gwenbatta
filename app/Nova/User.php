@@ -2,8 +2,12 @@
 
 namespace App\Nova;
 
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
@@ -47,7 +51,19 @@ class User extends Resource
         return [
             ID::make()->hideFromIndex(),
 
-            Gravatar::make()->maxWidth(50),
+            AdvancedImage::make('Avatar','avatar')
+                ->croppable(1)
+                ->rounded()
+                ->resize(314,314)
+                ->disk('public')
+                ->path('/img-redimensions/avatar'),
+
+            AdvancedImage::make('Avatar_thumb','avatar_thumb')
+                ->croppable(1)
+                ->rounded()
+                ->resize(115,115)
+                ->disk('public')
+                ->path('/img-redimensions/avatar'),
 
             Text::make('Name')
                 ->sortable()
@@ -67,6 +83,11 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
+            Boolean::make('Administrateur','is_admin'),
+
+            BelongsTo::make('Status','status','App\Nova\Status'),
+
+            HasMany::make('Sujet','subjects','App\Nova\Subject')
         ];
     }
 

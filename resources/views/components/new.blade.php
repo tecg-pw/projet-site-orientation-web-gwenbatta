@@ -2,16 +2,16 @@
     /** @var \mixed */
     'new_ref'
 ])
-<article {{ $attributes->class(['group hover:bg-orange-100 flex-col sm:max-w-[93%] flex bg-yellow-100 rounded-3xl relative']) }}
+<article {{ $attributes->class(['group hover:bg-orange-100 flex-col sm:max-w-[93%] min-h-full flex bg-yellow-100 rounded-3xl relative']) }}
          aria-labelledby="{{$new_ref->slug}}">
-    <div class="flex-col flex px-4 mt-6">
+    <div class="flex-col flex  px-4 mt-6">
         <div class="flex justify-between items-center mb-3">
             <h3 class="text-xl md:text-2xl xl:text-3xl " role="heading" aria-level="3"
                 id="{{$new_ref->slug}}">{{$new_ref->name}}</h3>
             <p class="xl:text-xl md:text-lg relative z-30">{{ucwords($new_ref->date->translatedFormat('d/m/Y '))}}</p>
         </div>
         <div class="flex justify-between mb-4">
-            <p class="max-w-[80%]">{{__($new_ref->excerpt)}}</p>
+            <p class="max-w-[80%] text-start">{!!__($new_ref->excerpt)  !!}</p>
             <svg class="group-hover:mr-0 mr-2 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                  viewBox="0 0 32 27.417">
                 <path
@@ -23,6 +23,6 @@
            href="/{{app()->getLocale()}}/news/{{$new_ref->slug}}">{{__('actu.actu_link')}}</a>
     </div>
     <figure class="order-first">
-        <img class="rounded-t-3xl" src="{{$new_ref->main_picture}}" alt="">
+        <img class="rounded-t-3xl" src="/{{$new_ref->main_picture}}" alt="">
     </figure>
 </article>

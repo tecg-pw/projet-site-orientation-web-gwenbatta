@@ -69,7 +69,7 @@
                 @endif
             </div>
             <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
-                <img class=" xl:mb-6 rounded-3xl" src="{{$teacher->avatar}}" alt="avatar">
+                <img class=" xl:mb-6 rounded-3xl" src="/{{$teacher->avatar}}" alt="avatar">
                 <div class="flex flex-col mt-8">
                     <a class="group hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex justify-center"
                        href="{{$teacher->link_github}}">

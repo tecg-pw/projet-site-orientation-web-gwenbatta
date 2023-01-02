@@ -2,9 +2,11 @@
 
 namespace App\Nova;
 
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -50,7 +52,12 @@ class PersonTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            Avatar::make('Avatar')->rounded(),
+            AdvancedImage::make('Avatar','avatar')
+                ->croppable(1)
+                ->rounded()
+                ->resize(276,276)
+                ->disk('public')
+                ->path('/img-redimensions/avatar'),
 
             Text::make('Nom','name')
                 ->sortable()
@@ -102,9 +109,9 @@ class PersonTranslation extends Resource
                 ->hideFromIndex()
                 ->rules( 'max:255'),
 
-            DateTime::make('Date d\'entrée','begin')->rules('required'),
+            Date::make('Date d\'entrée','begin')->rules('required'),
 
-            DateTime::make('Date de sortie','end'),
+            Date::make('Date de sortie','end'),
 
             Select::make('Langues','locale')->options([
                 'fr' => 'fr',

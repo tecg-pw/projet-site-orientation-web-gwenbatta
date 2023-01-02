@@ -2,6 +2,8 @@
 
 namespace App\Nova\Filters;
 
+use App\Models\Status;
+use App\Models\StatusTranslation;
 use App\Models\User;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -19,30 +21,36 @@ class UserStatus extends Filter
     /**
      * Apply the filter to the given query.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  mixed  $value
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param mixed $value
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query->where('status',$value);
+        $users = User::all();
+        $ids = [];
+        foreach ($users as $statusRef) {
+            if ($statusRef->status_id == $value) {
+                $ids [] = $statusRef->id;
+            }
+        }
+        return $query->whereIn('id', $ids);
     }
 
     /**
      * Get the filter's available options.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
      * @return array
      */
     public function options(NovaRequest $request)
     {
-        $status = User::select('status')->whereNotNull('status')->groupBy('status')->get();
-        $users = [];
-
-        foreach ($status as $user) {
-            $users[$user->status] = $user->id;
+        $statusRefs = User::select('status_id')->get();
+        $status = [];
+        foreach ($statusRefs as $statusSingle) {
+            $status[$statusSingle->status->translation->first()->name] = $statusSingle->status_id;
         }
-        return $users;
+        return $status;
     }
 }

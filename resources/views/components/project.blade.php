@@ -18,6 +18,6 @@
         <a class="self-end linkcard" href="/{{app()->getLocale()}}/project/{{$project_ref->slug}}">{{__('project_ref.project_ref_view'). $project_ref->title}}</a>
     </div>
     <figure class="order-first">
-        <img class="rounded-t-3xl" src="{{$project_ref->main_picture}}" alt="">
+        <img class="rounded-t-3xl" src="/{{$project_ref->main_picture}}" alt="">
     </figure>
 </article>

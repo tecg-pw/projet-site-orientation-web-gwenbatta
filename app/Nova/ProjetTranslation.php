@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
@@ -67,7 +68,12 @@ class ProjetTranslation extends Resource
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            Image::make('Image principale','main_picture')->hideFromIndex(),
+            AdvancedImage::make('Image principale','main_picture')
+                ->croppable(1)
+                ->rounded()
+                ->resize(370,370)
+                ->disk('public')
+                ->path('/img-redimensions/project'),
 
             Select::make('Langue','locale')->options([
                 'fr' => 'fr',

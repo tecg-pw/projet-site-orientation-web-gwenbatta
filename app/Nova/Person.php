@@ -101,7 +101,7 @@ class Person extends Resource
 
             BelongsToMany::make('Cours', 'courses', 'App\Nova\Course'),
 
-            HasMany::make('Témoignages', 'testimonials', 'App\Nova\Testimonial'),
+            HasMany::make('Témoignages', 'testimonial', 'App\Nova\Testimonial'),
 
 
         ];

@@ -33,7 +33,7 @@
                 </svg>
             </div>
         </div>
-        <img class="order-1 rounded-full" width="98" src="{{$alumni_ref->avatar}}" alt="avatar">
+        <img class="order-1 rounded-full" width="98" src="{{str_contains($alumni_ref->avatar,'http')? $alumni_ref->avatar : '/'.$alumni_ref->avatar}}" alt="avatar">
     </div>
     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
        href="/{{app()->getLocale()}}/bottin/{{$alumni_ref->status === 'teachalumni'? 'teachalumni' : 'alumni'}}/{{$alumni_ref->slug}}">{{__('En savoir plus sur' . $alumni_ref->name)}}</a>
