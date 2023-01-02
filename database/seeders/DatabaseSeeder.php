@@ -74,5 +74,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TutoUserSeeder::class);
         $this->call(CommentUserSeeder::class);
         $this->call(ContactAgencySeeder::class);
+        $this->call(ContactSeeder::class);
     }
 }

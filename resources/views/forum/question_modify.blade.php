@@ -37,7 +37,7 @@
                         </div>
                         @enderror
                         <input class="border border-orange-500 rounded-xl py-2 px-3  @error('subject') outline outline-3 outline-red-600 @enderror text-gray-700 leading-tight focus:outline focus:outline-2 focus:outline-green-700 border focus:bg-orange-100"
-                            name="subject" id="subject" type="text" placeholder="{{__('forum_question.question_placeholder')}}" value="{{$subject->subject}}">
+                            name="subject" id="subject" type="text" placeholder="{{__('forum_question.question_placeholder')}}" value="{{old('subject')?:$subject->subject}}">
                     </div>
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl"
@@ -54,11 +54,10 @@
                             cols="30" rows="10"
                             class="border border-orange-500 rounded-xl @error('description') outline outline-3 outline-red-600 @enderror py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="description" id="description"
-                            placeholder="{{__('forum_question.description_placeholder')}}">{{$subject->description}}</textarea>
+                            placeholder="{{__('forum_question.description_placeholder')}}">{{old('description')?:$subject->description}}</textarea>
                     </div>
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="tag_id">{{__('forum_question.tag')}}</label>
-                        <p>{{$subject->tag_id}}</p>
                         <select name="tag_id" id="tag_id"
                                 class="appearance-none max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
                             @foreach($tags as $tag)

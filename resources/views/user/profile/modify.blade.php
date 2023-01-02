@@ -31,23 +31,31 @@
                             <label class="text-green-500 text-2xl" for="name">{{__('user.user_modify_name')}}</label>
                             <input
                                 class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight"
-                                placeholder="{{__('user.user_modify_name_placeholder')}}" name="name" id="name" type="text" value="{{$user->name}}">
+                                placeholder="{{__('user.user_modify_name_placeholder')}}" name="name" id="name" type="text" value="{{old('name')?:$user->name}}">
                         </div>
                         <div class="flex flex-col flex-1 mb-8">
                             <label class="text-green-500 text-2xl" for="firstname">{{__('user.user_modify_firstname')}}</label>
                             <input
                                 class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                                name="firstname" id="firstname" type="text" placeholder="{{__('user.user_modify_firstname_placeholder')}}" value="{{$user->firstname}} ">
+                                name="firstname" id="firstname" type="text" placeholder="{{__('user.user_modify_firstname_placeholder')}}" value="{{old('firstname')?:$user->firstname}} ">
                         </div>
                     </div>
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 text-2xl" for="email">{{__('user.user_modify_mail')}}</label>
                         <input
                             class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                            name="email" id="email" type="email" placeholder="{{__('user.user_modify_mail_placeholder')}}" value="{{$user->email}}">
+                            name="email" id="email" type="email" placeholder="{{__('user.user_modify_mail_placeholder')}}" value="{{old('email')?:$user->email}}">
                     </div>
                     <div class="flex flex-col mb-8">
                         <p class="text-green-500 text-2xl" >{{__('user.user_modify_picture')}}</p>
+                        @error('avatar')
+                        <div class="flex gap-1.5 items-center">
+                            <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                        </div>
+                        @enderror
                         <div class="flex gap-4 items-center">
                             <label for="avatar" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
 {{--                                <span class="flex flex-col justify-center items-center py-5 px-32">--}}
@@ -55,12 +63,20 @@
 {{--                                </span>--}}
 {{--                                <input id="avatar" name="avatar" type="file" class="hidden" />--}}
                             </label>
-                            <input type="file" id="avatar" name="avatar">
-                                <img class="rounded-full -order-2" width="108" src="{{$user->avatar}}" alt="">
+                            <input type="file" id="avatar" name="avatar" value="{{old('avatar')}}">
+                                <img class="rounded-full -order-2" width="108" src="{{old('avatar')?:$user->avatar}}" alt="">
                         </div>
                     </div>
                     <div class="flex flex-col mb-8 mt-4">
                         <p class="text-green-500 text-2xl">{{__('user.user_modify_banner')}}</p>
+                        @error('back_image')
+                        <div class="flex gap-1.5 items-center">
+                            <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                        </div>
+                        @enderror
                         <div class="flex gap-4 items-center">
                             <label for="back_image" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
 {{--                                <span class="flex flex-col justify-center items-center py-5 px-32">--}}
@@ -68,8 +84,8 @@
 {{--                                </span>--}}
 {{--                                <input id="back_image" name="back_image" type="file" class="hidden" />--}}
                             </label>
-                            <input id="back_image" name="back_image" type="file" />
-                                <img class="rounded-full -order-2" src="https://placehold.jp/108x108.png" alt="">
+                            <input id="back_image" name="back_image" type="file" value="{{old('avatar')}}">
+                                <img width="400" class="rounded-full -order-2" src="{{old('back_image')?:$user->back_image}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -89,7 +105,7 @@
                         <textarea
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="description" id="description" cols="30" rows="10"
-                            placeholder="{{__('user.user_modify_description')}}"></textarea>
+                            placeholder="{{__('user.user_modify_description')}}">{{old('description')?:$user->description}}</textarea>
                     </div>
                     <button
                        class="border-2 mt-4 self-end border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_save')}}</button>

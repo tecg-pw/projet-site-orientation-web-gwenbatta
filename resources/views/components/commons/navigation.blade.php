@@ -46,7 +46,11 @@
             @endguest
             @auth()
                 <div class="-order-2 min-w-[15%] gap-3 relative user_name">
-                    <a href="#" class="relative z-50">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
+                    @if(session('success'))
+                        <a href="#" class="relative z-50">{{session('success')}}</a>
+                    @else
+                        <a href="#" class="relative z-50">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
+                    @endif
                     <div class="bg-green-700 hover_section absolute z-40 flex-1 rounded-lg flex gap-2 pt-14 p-3 flex-col">
                         <a dusk="logged-user-name"
                            class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"

@@ -18,7 +18,12 @@
                         <div class="flex flex-1 flex-col xl:mr-10 mb-8">
                             <label class="text-green-500 @error('name') text-red-400 @enderror text-lg xl:text-2xl" for="name">{{__('login_register.name')}}</label>
                             @error('name')
-                            <p class="text-red-400 my-2">{{ $message }}</p>
+                            <div class="flex gap-1.5 items-center">
+                                <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                            </div>
                             @enderror
                             <input
                                 class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
@@ -27,7 +32,12 @@
                         <div class="flex flex-1 flex-col mb-8">
                             <label class="text-green-500 @error('firstname') text-red-400 @enderror text-lg xl:text-2xl" for="firstname">{{__('login_register.firstname')}}</label>
                             @error('firstname')
-                            <p class="text-red-400 my-2">{{ $message }}</p>
+                            <div class="flex gap-1.5 items-center">
+                                <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                            </div>
                             @enderror
                             <input
                                 class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
@@ -37,7 +47,12 @@
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 @error('email') text-red-400 @enderror text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>
                         @error('email')
-                        <p class="text-red-400 my-2">{{ $message }}</p>
+                        <div class="flex gap-1.5 items-center">
+                            <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                        </div>
                         @enderror
                         <input
                             class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
@@ -48,7 +63,12 @@
                             {{__('login_register.password')}}
                         </label>
                         @error('password')
-                        <p class="text-red-400 my-2">{{ $message }}</p>
+                        <div class="flex gap-1.5 items-center">
+                            <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                        </div>
                         @enderror
                         <div class="flex-1 px-3 items-center  @error('password') outline-red-600 @enderror flex border leading-tight border-orange-500 rounded-xl focus-within:border focus-within:border-2 focus-within:border-green-700 focus-within:bg-orange-100">
                             <input

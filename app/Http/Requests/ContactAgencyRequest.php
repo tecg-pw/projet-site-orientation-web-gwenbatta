@@ -29,7 +29,7 @@ class ContactAgencyRequest extends FormRequest
             'email' =>'required|email',
             'subject'=>'required|min:5|max:50',
             'message' => 'required|min:8|max:500',
-            'pdf'=>'nullable',
+            'pdf'=>'nullable|mimes:pdf',
             'softwares'=>'nullable',
             'languages'=>'nullable',
         ];
