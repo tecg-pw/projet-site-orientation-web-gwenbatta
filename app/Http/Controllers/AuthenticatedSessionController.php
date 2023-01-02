@@ -18,7 +18,7 @@ class AuthenticatedSessionController extends Controller
     {
         $validated = $request->validated();
 
-        if (auth()->attempt($validated)) {
+        if (auth()->attempt($validated, $request['remember']==='on')) {
             request()->session()->regenerate();
             return redirect('/')->with('success', 'Welcome back, ' . auth()->user()->name);
         }
