@@ -1,7 +1,8 @@
 <?php
 
 return [
-
+    'success_login'=>'Ravis de vous revoir, ',
+    'success_register'=>'Bienvenue, ',
     'intro_title' => 'Un choix à faire ? Choisis le web !',
     'intro_text' => 'TecWeb est le site de l’option web de la HEPL (Haute École de la Province de Liège). Nous te proposons ici de découvrir cette merveilleuse option, de voir ce qu’elle a à t’offrir et de te faire une idée sur ce qui t’attends avant de nous rejoindre. Bonne visite et à bientôt dans les couloirs !',
     'intro_button_about' => 'En savoir plus',

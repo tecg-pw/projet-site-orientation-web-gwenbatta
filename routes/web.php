@@ -89,8 +89,8 @@ Route::get('/{locale?}/cours/{course:slug}', [CourseController::class, 'show'])-
 
 Route::get('/{locale?}/user/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware(['guest','locale']);
 Route::get('/{locale?}/user/register', [RegisterSessionController::class, 'create'])->name('register')->middleware(['guest','locale']);
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])->middleware('guest');
-Route::post('/register', [RegisterSessionController::class, 'store'])->middleware('guest');
+Route::post('/{locale?}/login', [AuthenticatedSessionController::class, 'store'])->middleware(['guest','locale']);
+Route::post('/{locale?}/register', [RegisterSessionController::class, 'store'])->middleware(['guest','locale']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth');
 Route::get('/{locale?}/user/profile/{user:slug}', [OtherUserController::class, 'show'])->middleware('locale');
 Route::get('/{locale?}/user/profile', [UserController::class, 'show'])->middleware(['auth','locale']);

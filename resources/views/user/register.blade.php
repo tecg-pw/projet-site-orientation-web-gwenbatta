@@ -12,7 +12,7 @@
                    href="/{{app()->getLocale()}}/user/login">{{__('login_register.login_link')}}</a>
             </div>
             <div class="flex mt-14">
-                <form class="flex-1" action="/register" method="post">
+                <form class="flex-1" action="/{{app()->getLocale()}}/register" method="post">
                     @csrf
                     <div class="xl:flex-row flex-col flex flex-1">
                         <div class="flex flex-1 flex-col xl:mr-10 mb-8">

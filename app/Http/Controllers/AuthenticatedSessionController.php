@@ -14,13 +14,13 @@ class AuthenticatedSessionController extends Controller
         return view('user.login');
     }
 
-    public function store(LoginRequest $request)
+    public function store(string $locale = null,LoginRequest $request)
     {
         $validated = $request->validated();
 
         if (auth()->attempt($validated, $request['remember']==='on')) {
             request()->session()->regenerate();
-            return redirect('/')->with('success', 'Rebonjour, ' . auth()->user()->name .' '. auth()->user()->firstname);
+            return redirect('/'.$locale)->with('success', __('home.success_login') . auth()->user()->firstname .' '. auth()->user()->name);
         }
 
         return back()

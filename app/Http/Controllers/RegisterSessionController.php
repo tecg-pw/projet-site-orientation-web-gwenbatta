@@ -14,7 +14,7 @@ class RegisterSessionController extends Controller
         return view('user.register');
     }
 
-    public function store(RegisterRequest $request)
+    public function store(string $locale = null,RegisterRequest $request)
     {
         $validated = $request->validated();
         $validated['slug'] = \Str::slug($validated['firstname'].$validated['name']);
@@ -23,7 +23,7 @@ class RegisterSessionController extends Controller
 
             $user = User::create($validated);
             \Auth::login($user);
-            return redirect('/');
+            return redirect('/'.$locale)->with('success', __('home.success_register') . auth()->user()->firstname .' '. auth()->user()->name);
 
     }
 }
