@@ -23,8 +23,8 @@
                 </svg>
             </div>
         </div>
-        <img class="order-1 rounded-full" src="{{$partner_ref->logo}}" alt="avatar">
+        <img class="order-1 rounded-full" src="/{{$partner_ref->logo_thumb}}" alt="avatar">
     </div>
     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-       href="/{{str_replace('_','-',app()->getLocale())}}/entreprise/partner/{{$partner_ref->slug}}">{{__('En savoir plus') . $partner_ref->name}}</a>
+       href="/{{app()->getLocale()}}/entreprise/partner/{{$partner_ref->slug}}">{{__('En savoir plus') . $partner_ref->name}}</a>
 </article>

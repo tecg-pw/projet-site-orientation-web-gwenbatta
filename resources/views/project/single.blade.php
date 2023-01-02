@@ -117,9 +117,9 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
     <section class="xl:not-sr-only 2xl:px-48 2xl:flex 2xl:justify-center sr-only xl:px-32 lg:px-16 px-10 bg-yellow-600" aria-labelledby="photos">
         <h2 id="photos" aria-level="2" role="heading" class="sr-only">{{__('project.project_pictures')}}</h2>
         <figure class="grid grid-cols-4 grid-rows-2 gap-5 py-24">
-            <img class="rounded-xl row-span-2" src="https://placehold.jp/395x584.png" alt="{{__('photo du projet')}}">
-            <img class="rounded-xl col-span-2" src="https://placehold.jp/723x278.png" alt="{{__('photo du projet')}}">
-            <img class="rounded-xl row-span-2" src="https://placehold.jp/395x584.png" alt="{{__('photo du projet')}}">
+            <img class="rounded-xl row-span-2" src="https://placehold.jp/395x700.png" alt="{{__('photo du projet')}}">
+            <img class="rounded-xl col-span-2" src="https://placehold.jp/723x300.png" alt="{{__('photo du projet')}}">
+            <img class="rounded-xl row-span-2" src="https://placehold.jp/395x700.png" alt="{{__('photo du projet')}}">
             <img class="rounded-xl " src="https://placehold.jp/330x278.png" alt="{{__('photo du projet')}}">
             <img class="rounded-xl " src="https://placehold.jp/330x278.png" alt="{{__('photo du projet')}}">
         </figure>

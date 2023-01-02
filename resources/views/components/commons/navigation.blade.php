@@ -17,7 +17,7 @@
     <meta name="keywords"
           content="web, HEPL, infographie, HTML, CSS, Javascript, PHP, Tailwind, Multimédia, design web, front-end, back-end, développement web">
     <meta name="author" content="Gwenaëlle Batta">
-    <title>{{__('TecWeb – '.$page)}}</title>
+    <title>{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.ts')
 </head>
@@ -51,6 +51,9 @@
                         <a dusk="logged-user-name"
                            class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
                            href="/{{app()->getLocale()}}/user/profile">{{__('user.user_my_profile')}}</a>
+                        <a dusk="logged-user-name"
+                           class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
+                           href="/{{app()->getLocale()}}/user/profile/modify/form">{{__('user.user_modify')}}</a>
                         <form action="/logout"
                               method="post">
                             @csrf

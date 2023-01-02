@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('slug');
             $table->string('locale');
             $table->string('mail')->nullable();
-            $table->string('logo')->nullable();
+            $table->string('logo_full')->nullable();
+            $table->string('logo_thumb')->nullable();
             $table->string('adresse');
             $table->string('locality')->index();
             $table->string('locality_number');

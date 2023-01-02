@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Uploads\HandlesBackImagesUploads;
+use App\Http\Uploads\HandlesImagesUploads;
 use App\Models\Status;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,6 +13,7 @@ use Str;
 
 class UserController extends Controller
 {
+    use HandlesImagesUploads, HandlesBackImagesUploads;
     /**
      * Display a listing of the resource.
      *
@@ -80,6 +83,14 @@ class UserController extends Controller
     {
         $validatedData =  $request->safe()->all();
         $validatedData['slug'] = Str::slug($validatedData['firstname'].$validatedData['name']);
+        $uploaded_image = $request->file('avatar');
+        if ($uploaded_image){
+            $validatedData['avatar'] = '/img-redimensions/avatars/' . $this->resizeAndSave($uploaded_image);
+        }
+        $uploaded_back_image = $request->file('back_image');
+        if ($uploaded_back_image){
+        $validatedData['back_image'] = '/img-redimensions/back/' . $this->resizeAndSaveBack($uploaded_back_image);
+        }
 
         auth()->user()->update($validatedData);
 

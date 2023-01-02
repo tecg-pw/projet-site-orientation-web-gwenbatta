@@ -43,7 +43,7 @@
                         </div>
                             <form
                                 action="/{{app()->getLocale()}}/technical/tuto/favorite/{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->tuto_id}}"
-                                method="post">
+                                method="post" enctype="multipart/form-data">
                                 @csrf
                                 <button type="submit" class="flex">
                                     <span class="sr-only">{{__('Enlever des favoris')}}</span>
@@ -146,7 +146,7 @@
                     </div>
                     <img
                         class="sr-only lg:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                        src="{{$user->avatar}}"
+                        src="{{$user->avatar_thumb}}"
                         alt="{{$user->slug}}">
                 </article>
             @endforeach

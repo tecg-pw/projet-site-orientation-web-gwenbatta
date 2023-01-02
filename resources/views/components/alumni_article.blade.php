@@ -12,7 +12,7 @@
             <div class="mt-1 flex justify-between">
                 <div class="flex flex-col xl:flex-row xl:gap-4">
                     @if($alumni_ref->status === 'teachalumni')
-                        <p class="uppercase xl:text-lg">{{__('Ancien - Professeur')}}</p>
+                        <p class="uppercase xl:text-lg">{{__('people.teachalumni_status')}}</p>
                     @else
                         <p class="uppercase xl:text-lg">{{$alumni_ref->status}}</p>
                     @endif

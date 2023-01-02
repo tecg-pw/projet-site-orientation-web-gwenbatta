@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
@@ -50,7 +51,19 @@ class PartnerTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            Image::make('Logo')->disk('public')->rounded(),
+            AdvancedImage::make('Logo_Full')
+                ->croppable(1)
+                ->rounded()
+                ->resize(345,345)
+                ->disk('public')
+                ->path('/img-redimensions/logo'),
+
+            AdvancedImage::make('Logo_Thumb')
+                ->croppable(1)
+                ->rounded()
+                ->resize(98,98)
+                ->disk('public')
+                ->path('/img-redimensions/logo'),
 
             Text::make('Nom','name')
                 ->sortable()

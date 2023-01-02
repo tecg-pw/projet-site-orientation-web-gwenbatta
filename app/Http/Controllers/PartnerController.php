@@ -108,7 +108,7 @@ class PartnerController extends Controller
     public function show(string $locale=null, PartnerTranslation $partner)
     {
 
-        $offers = Offer::where('partner_id', $partner->id)->get();
+        $offers = Offer::where('partner_id', $partner->partner_id)->get();
         $alumnis = PartnerTranslation::find($partner->id)->person()->get();
         $partner = Partner::find($partner->partner_id);
         return view('entreprise.partner.single', compact('partner','offers','alumnis'));

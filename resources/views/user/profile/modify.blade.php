@@ -50,11 +50,12 @@
                         <p class="text-green-500 text-2xl" >{{__('user.user_modify_picture')}}</p>
                         <div class="flex gap-4 items-center">
                             <label for="avatar" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
-                                <span class="flex flex-col justify-center items-center py-5 px-32">
-                                    <span class="text-xl text-gray-500">{{__('user.user_modify_jpg')}} </span>
-                                </span>
-                                <input id="avatar" name="avatar" type="file" class="hidden" />
+{{--                                <span class="flex flex-col justify-center items-center py-5 px-32">--}}
+{{--                                    <span class="text-xl text-gray-500">{{__('user.user_modify_jpg')}} </span>--}}
+{{--                                </span>--}}
+{{--                                <input id="avatar" name="avatar" type="file" class="hidden" />--}}
                             </label>
+                            <input type="file" id="avatar" name="avatar">
                                 <img class="rounded-full -order-2" width="108" src="{{$user->avatar}}" alt="">
                         </div>
                     </div>
@@ -62,11 +63,12 @@
                         <p class="text-green-500 text-2xl">{{__('user.user_modify_banner')}}</p>
                         <div class="flex gap-4 items-center">
                             <label for="back_image" class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
-                                <span class="flex flex-col justify-center items-center py-5 px-32">
-                                    <span class="text-xl text-gray-500">{{__('user.user_modify_jpg')}} </span>
-                                </span>
-                                <input id="back_image" name="back_image" type="file" class="hidden" />
+{{--                                <span class="flex flex-col justify-center items-center py-5 px-32">--}}
+{{--                                    <span class="text-xl text-gray-500">{{__('user.user_modify_jpg')}} </span>--}}
+{{--                                </span>--}}
+{{--                                <input id="back_image" name="back_image" type="file" class="hidden" />--}}
                             </label>
+                            <input id="back_image" name="back_image" type="file" />
                                 <img class="rounded-full -order-2" src="https://placehold.jp/108x108.png" alt="">
                         </div>
                     </div>

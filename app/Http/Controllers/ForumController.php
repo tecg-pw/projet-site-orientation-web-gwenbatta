@@ -47,7 +47,7 @@ class ForumController extends Controller
         $validatedData = $request->safe()->only('subject', 'description', 'tag_id');
         $validatedData['user_id'] = auth()->id();
         $user = User::find($validatedData['user_id']);
-            $validatedData['slug'] = Str::slug($validatedData['subject'] .uuid_create());
+        $validatedData['slug'] = Str::slug($validatedData['subject'] .uuid_create());
         $subject = Subject::create($validatedData);
 
         return redirect('/' . $locale . '/forum/' . $subject->slug);

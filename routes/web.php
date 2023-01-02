@@ -101,8 +101,10 @@ Route::get('/{locale?}/user/password', function () {
 });
 
 
-Route::get('/{locale?}/contact/student', [StudentContactController::class, 'index'])->middleware('locale');
-Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/contact/student', [StudentContactController::class, 'create'])->middleware('locale');
+//Route::post('/{locale?}/contact/student', [StudentContactController::class, 'store'])->middleware('locale');
+Route::get('/{locale?}/contact/agency', [AgencyContactController::class, 'create'])->middleware('locale');
+Route::post('/{locale?}/contact/agency', [AgencyContactController::class, 'store'])->middleware('locale');
 
 
 

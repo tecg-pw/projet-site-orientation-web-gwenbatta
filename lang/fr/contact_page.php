@@ -20,7 +20,7 @@ return [
     'agency_description' => 'Description de l\'offre',
     'agency_description_value' => 'Mon offre de stage',
     'agency_aptitude_value' => 'Aptitude nécessaire à la mission',
-    'agency_language' => 'Langage de programmation',
+    'agency_language' => 'Maîtrise des langages',
     'agency_html' => 'HTML5',
     'agency_css' => 'CSS3',
     'agency_laravel' => 'Laravel',
