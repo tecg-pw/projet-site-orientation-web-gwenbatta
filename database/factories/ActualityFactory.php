@@ -16,7 +16,6 @@ class ActualityFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = Actuality::class;
 
     public function definition()
     {
