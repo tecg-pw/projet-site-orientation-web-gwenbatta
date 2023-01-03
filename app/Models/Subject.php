@@ -18,7 +18,6 @@ class Subject extends Model
     ];
 
 
-
     protected $dates = ['created_at'];
     protected $with = ['comments', 'user','tag'];
     protected $withCount = ['comments'];

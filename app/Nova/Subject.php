@@ -2,7 +2,7 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
+use App\Nova\Actions\ResolvedSubject;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
@@ -102,6 +102,8 @@ class Subject extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            //
+        ];
     }
 }

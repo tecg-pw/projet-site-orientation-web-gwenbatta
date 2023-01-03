@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SubjectRequest;
-use App\Models\Comment;
 use App\Models\Subject;
 use App\Models\Tag;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Str;
 
 class ForumController extends Controller
@@ -91,6 +89,7 @@ class ForumController extends Controller
     {
         $validatedData = $request->safe()->only('subject', 'description', 'tag_id');
         $validatedData['slug'] = Str::slug($validatedData['subject'].uuid_create());
+
         $subject->update($validatedData);
 
         return redirect('/' . $locale . '/forum/' . $subject->slug);

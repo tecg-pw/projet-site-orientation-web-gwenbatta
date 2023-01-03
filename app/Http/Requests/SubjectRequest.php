@@ -27,6 +27,7 @@ class SubjectRequest extends FormRequest
             'subject' => 'required|max:50',
             'description' => 'required|min:8|max:500',
             'tag_id' => 'required',
+            'resolved' =>'nullable'
         ];
     }
 }
