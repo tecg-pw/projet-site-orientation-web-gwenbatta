@@ -2,25 +2,23 @@
 
 namespace App\Notifications;
 
-use App\Models\Comment;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class AnswerSubject extends Notification
+class ResolvedSubject extends Notification
 {
     use Queueable;
 
-    public Comment $comment;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Comment $comment)
+    public function __construct()
     {
-        $this->comment = $comment;
+        //
     }
 
     /**
@@ -43,10 +41,9 @@ class AnswerSubject extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('On vous a répondu !')
-                    ->line('Une nouveau commentaire a été créer sous votre question « ' .$this->comment->subject->subject.' »')
-                    ->action('Je veux aller voir le commentaire', url('/'.app()->getLocale().'/forum/'.$this->comment->subject->slug))
-                    ->line('Bien à vous,');
+                    ->line('The introduction to the notification.')
+                    ->action('Notification Action', url('/'))
+                    ->line('Thank you for using our application!');
     }
 
     /**
