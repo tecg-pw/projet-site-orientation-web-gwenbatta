@@ -11,7 +11,7 @@
     <div class="flex flex-1 items-center">
         <div class="flex-1 order-2 ml-4">
             <div class="md:flex-row flex-col flex justify-between">
-                <h3 id="{{$offer->slug}}" role="heading" aria-level="4"
+                <h3 id="{{$offer->slug}}" role="heading" aria-level="3"
                     class="text-lg md:text-xl xl:text-2xl">{{$offer->name}}</h3>
                 <p class="xl:text-lg">{{ucwords($offer->created_at->translatedFormat('d F Y'))}}</p>
             </div>

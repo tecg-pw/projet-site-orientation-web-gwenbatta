@@ -21,7 +21,7 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
         </div>
         <div class="flex xl:flex-row flex-col mt-20  xl:mt-0">
             <article class="xl:relative xl:block sm:mb-8 xl:mb-0 sm:flex sm:gap-x-4 sm:items-center xl:mt-48" aria-labelledby="{{$project->person->slug}}">
-                <img class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 2xl:-top-52 mb-2" src="{{$project->person->avatar}}" alt="avatar">
+                <img class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 2xl:-top-52 mb-2" src="{{str_contains($project->person->avatar,'http')? $project->person->avatar : '/'.$project->person->avatar}}" alt="avatar">
                 <div class="relative xl:bg-yellow-100 rounded-xl py-4 px-4 xl:py-8 xl:left-10">
                     <h3 id="{{$project->person->slug}}" aria-level="3" role="heading"
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl"><a

@@ -2,6 +2,7 @@
     /** @var \mixed */
     'new_ref'
 ])
+@if(isset($new_ref))
 <article {{ $attributes->class(['group hover:bg-orange-100 flex-col sm:max-w-[93%] min-h-full flex bg-yellow-100 rounded-3xl relative']) }}
          aria-labelledby="{{$new_ref->slug}}">
     <div class="flex-col flex  px-4 mt-6">
@@ -26,3 +27,4 @@
         <img class="rounded-t-3xl" src="/{{$new_ref->main_picture}}" alt="">
     </figure>
 </article>
+@endif

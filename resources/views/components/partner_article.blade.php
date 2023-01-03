@@ -8,8 +8,8 @@
         aria-labelledby="{{$partner_ref->slug}}">
     <div class="flex flex-1 items-center">
         <div class="flex-1 order-2 ml-4">
-            <h4 id="{{$partner_ref->slug}}" role="heading" aria-level="4"
-                class="text-lg xl:text-2xl">{{$partner_ref->name}}</h4>
+            <h3 id="{{$partner_ref->slug}}" role="heading" aria-level="3"
+                class="text-lg xl:text-2xl">{{$partner_ref->name}}</h3>
             <div class="mt-1 flex justify-between">
                 <div class="flex flex-col xl:flex-row xl:gap-2">
                     <p class="xl:text-lg">{{$partner_ref->adresse}},</p>

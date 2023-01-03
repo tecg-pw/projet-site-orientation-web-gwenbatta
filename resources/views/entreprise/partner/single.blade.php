@@ -113,7 +113,7 @@
                         <div class="flex flex-1 items-center">
                             <div class="flex-1 order-2 ml-4">
                                 <div class="md:flex-row flex-col flex justify-between">
-                                    <h3 id="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="4" class="text-lg md:text-xl xl:text-2xl">{{$offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
+                                    <h3 id="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="text-lg md:text-xl xl:text-2xl">{{$offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
                                     <p class="xl:text-lg">{{$offer->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d M Y')}}</p>
                                 </div>
                                 <div class="mt-1 flex justify-between">

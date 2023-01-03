@@ -9,8 +9,8 @@
         aria-labelledby="{{$doc->slug}}" {{ $attributes->class(['group hover:bg-orange-100 relative bg-yellow-100 py-6 px-8 rounded-3xl']) }}>
     <div class="flex justify-between">
         <div>
-            <h4 id="{{$doc->slug}}" aria-level="4" role="heading"
-                class="font-medium text-lg md:text-xl xl:text-2xl mb-2">{{$doc->name}}</h4>
+            <h3 id="{{$doc->slug}}" aria-level="3" role="heading"
+                class="font-medium text-lg md:text-xl xl:text-2xl mb-2">{{$doc->name}}</h3>
         </div>
     </div>
     <p class="mb-4 xl:mb-10 xl:text-lg">{{$doc->excerpt}}</p>

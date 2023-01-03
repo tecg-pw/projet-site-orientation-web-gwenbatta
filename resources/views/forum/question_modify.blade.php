@@ -62,7 +62,7 @@
                                 class="appearance-none max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
                             @foreach($tags as $tag)
                                 <option @selected($tag->id === $subject->tag_id)
-                                    value="{{$tag->translation->where('locale',app()->getLocale())->first()->tag_id}}">{{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->name)}} {{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->tag_id)}}</option>
+                                    value="{{$tag->translation->where('locale',app()->getLocale())->first()->tag_id}}">{{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->name)}}</option>
                             @endforeach
                         </select>
                     </div>

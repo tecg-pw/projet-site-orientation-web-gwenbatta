@@ -93,7 +93,7 @@
                     <div class="flex items-center gap-y-4 flex-wrap xl:gap-8">
                         <img
                             class="xl:not-sr-only sr-only -order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                            src="{{$subject->user->avatar_thumb}}"
+                            src="{{str_contains($subject->user->avatar_thumb,'http')? $subject->user->avatar_thumb : '/'.$subject->user->avatar_thumb }}"
                             alt="{{$subject->user->slug}}">
                         <img
                             class="xl:sr-only -order-1 mr-4 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
@@ -254,7 +254,7 @@
                                         </div>
                                         <img
                                             class="order-1 row-span-3 order-1 justify-self-center row-span-2 sr-only sm:not-sr-only xl:w-[98px] sm:w-[78px] rounded-full"
-                                            src="{{$comment->user->avatar_thumb}}"
+                                            src="{{str_contains($comment->user->avatar_thumb,'http')? $comment->user->avatar_thumb : '/'.$comment->user->avatar_thumb}}"
                                             alt="{{$comment->user->slug}}">
                                     </div>
                                 </div>
