@@ -45,7 +45,7 @@ class AnswerSubject extends Notification
         return (new MailMessage)
                     ->subject('On vous a répondu !')
                     ->line('Une nouveau commentaire a été créer sous votre question « ' .$this->comment->subject->subject.' »')
-                    ->action('Je veux aller voir le commentaire', url('/'.app()->getLocale().'/forum/'.$this->comment->subject->slug))
+                    ->action('Je veux aller voir le commentaire', url('/'.app()->getLocale().'/forum/show/'.$this->comment->subject->slug))
                     ->line('Bien à vous,');
     }
 

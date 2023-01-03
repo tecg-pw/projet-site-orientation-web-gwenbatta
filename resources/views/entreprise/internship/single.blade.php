@@ -71,9 +71,11 @@
                 <div class="flex flex-col xl:gap-10 mb-12 xl:mb-0">
                     <a href="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->site_link}}"
                        class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('agency.partner_view_site')}}</a>
-                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline self-end"
-                       href="{{$offer_ref->pdf}}">{{__('agency.offer_pdf')}}
+                    @if($offer_ref->pdf)
+                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline self-end" download="{{$offer_ref->slug}}" title="{{$offer_ref->slug}}"
+                       href="/{{$offer_ref->pdf}}">{{__('agency.offer_pdf')}}
                     </a>
+                    @endif
                 </div>
             </div>
             <div class="xl:ml-20 flex flex-col gap-16">

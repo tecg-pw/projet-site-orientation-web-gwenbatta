@@ -55,18 +55,13 @@ class OfferTranslation extends Resource
                 ->hideFromIndex()
                 ->rules('required', 'max:255'),
 
-            File::make('PDF')->hideFromIndex(),
+            File::make('PDF')->hideFromIndex()->disk('public')
+                ->path('/offer/pdf'),
 
             Select::make('Langue','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
             ])->displayUsingLabels(),
-
-            Text::make('Logiciels','softwares')->hideFromIndex(),
-
-            Text::make('Language','languages')->hideFromIndex(),
-
-            Text::make('Autres','others')->hideFromIndex(),
 
             Textarea::make('Description')->rows(3)->rules('required'),
 

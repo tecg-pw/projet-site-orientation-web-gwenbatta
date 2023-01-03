@@ -32,8 +32,8 @@ class UpdateUserRequest extends FormRequest
             'avatar' => 'nullable|mimes:jpg,png,webp,svg',
             'back_image'=> 'nullable|mimes:jpg,png,webp,jpeg,svg,tif',
             'email' => 'required|email',
-//            'password' => ['nullable', new MatchOldPassword],
-//            'password_new' => 'nullable|min:8|max:64',
+            'password_old' => ['required_with:password_new','nullable', new MatchOldPassword],
+            'password_new' => 'nullable|min:8|max:64',
 
         ];
     }

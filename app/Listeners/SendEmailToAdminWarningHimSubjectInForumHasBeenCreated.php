@@ -35,6 +35,6 @@ class SendEmailToAdminWarningHimSubjectInForumHasBeenCreated
 //        }
 
         Mail::to('gwenaellebatta@gmail.com')
-            ->queue(new \App\Mail\SubjectCreated($event->subject));
+            ->send(new \App\Mail\SubjectCreated($event->subject));
     }
 }

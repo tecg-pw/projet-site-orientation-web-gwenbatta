@@ -9,7 +9,7 @@
             {{__('nav.nav_navigation.forum')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/forum/{{$subject->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{$subject->subject}}
         </a>
     </div>
@@ -18,14 +18,14 @@
             <div class="delete-element absolute z-30 bg-green-200 w-full h-full flex items-center justify-center">
                 <div class="flex px-10 py-10 items-center flex-col rounded-lg bg-white-100">
                     <form class="flex items-center flex-col"
-                          action="/{{app()->getLocale()}}/forum/{{$subject->slug}}/comment/destroy/{{Request::query('delete-comment')}}"
+                          action="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}/comment/destroy/{{Request::query('delete-comment')}}"
                           method="post">
                         @csrf
                         <label class="text-green-500 text-lg font-medium mb-4 "
                                for="delete">{{__('forum.verify_delete_label_comment')}}</label>
                         <div class="flex gap-x-10">
                             <a class="hover:text-orange-500 font-sans self-center text-green-700 text-xl font-semibold underline "
-                               href="/{{app()->getLocale()}}/forum/{{$subject->slug}}#sujet">{{__('forum.button_back')}}</a>
+                               href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}#sujet">{{__('forum.button_back')}}</a>
                             <input
                                 class="text-white-100 bg-red-600 px-6 border-2 border-red-600 hover:bg-white-100 hover:text-red-600 py-2 rounded-lg text-xl font-sans font-semibold"
                                 name="delete" id="delete" type="submit" value="{{__('forum.value__delete')}}">
@@ -45,7 +45,7 @@
                                for="delete">{{__('forum.verify_delete_label')}}</label>
                         <div class="flex gap-x-10">
                             <a class="hover:text-orange-500 font-sans self-center text-green-700 text-xl font-semibold underline "
-                               href="/{{app()->getLocale()}}/forum/{{$subject->slug}}#sujet">{{__('forum.button_back')}}</a>
+                               href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}#sujet">{{__('forum.button_back')}}</a>
                             <input
                                 class="text-white-100 bg-red-600 px-6 border-2 border-red-600 hover:bg-white-100 hover:text-red-600 py-2 rounded-lg text-xl font-sans font-semibold"
                                 name="delete" id="delete" type="submit" value="{{__('forum.value__delete')}}">
@@ -108,7 +108,7 @@
                                 {{ucwords($subject->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                             @if($subject->user->id === auth()->id())
                                 <div class="flex justify-end pr-4">
-                                    <a href="/{{app()->getLocale()}}/forum/question/modify/{{$subject->slug}}">
+                                    <a href="/{{app()->getLocale()}}/forum/show/modify/{{$subject->slug}}">
                                         <span class="sr-only">{{__('forum.value__modify')}}</span>
                                         <span><svg class="h-8 w-8 text-green-700" width="24" height="24"
                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -150,11 +150,11 @@
                     </div>
                     @if(request()->has('add-comment'))
                         <div class="flex flex-col bg-yellow-100 py-6 px-10 rounded-xl">
-                            <form action="/{{app()->getLocale()}}/forum/{{$subject->slug}}" method="post"
+                            <form action="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}" method="post"
                                   class="relative">
                                 @csrf
                                 <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
-                                   href="/{{app()->getLocale()}}/forum/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
+                                   href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
                                 <div class="flex-col flex">
                                     <label class="text-green-500 text-lg font-medium mb-4 "
                                            for="content">{{__('forum.label_comment')}}</label>
@@ -187,12 +187,12 @@
                                 @if(\Request::query('edit-comment')===$comment->slug)
                                     <div class="flex flex-col bg-yellow-100 rounded-xl mt-6">
                                         <form
-                                            action="/{{app()->getLocale()}}/forum/{{$subject->slug}}/comment/{{$comment->id}}"
+                                            action="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}/comment/{{$comment->id}}"
                                             method="post"
                                             class="relative">
                                             @csrf
                                             <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
-                                               href="/{{app()->getLocale()}}/forum/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
+                                               href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
                                             <div class="flex-col flex">
                                                 <label class="text-green-500 text-lg font-medium"
                                                        for="content">{{__('forum.label_modify')}}</label>
@@ -260,7 +260,7 @@
                                 </div>
                                 <div class="flex gap-20 mt-4">
                                     <div class="relative flex order-7 gap-1.5">
-                                        <form action="/{{app()->getLocale()}}/forum/{{$subject->slug}}/comment/like/{{$comment->id}}" method="post">
+                                        <form action="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}/comment/like/{{$comment->id}}" method="post">
                                             @csrf
                                             <label class="sr-only" for="like">Liker</label>
                                             <button name="like" id="like" type="submit">

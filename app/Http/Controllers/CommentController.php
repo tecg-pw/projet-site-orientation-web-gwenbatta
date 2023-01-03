@@ -35,7 +35,7 @@ class CommentController extends Controller
         $comment = Comment::create($data_comment);
         Notification::send($subject->user, new AnswerSubject($comment));
 
-        return  redirect('/'.$locale.'/forum/'.$subject->slug);
+        return  redirect('/'.$locale.'/forum/show/'.$subject->slug);
     }
 
     public function update(string $locale = null, StoreCommentRequest $request, $slug ,$id)
@@ -45,7 +45,7 @@ class CommentController extends Controller
         $data_comment['slug'] = \Str::slug($data_comment['content']);
         $comment->update($data_comment);
 
-        return  redirect('/'.$locale.'/forum/'.$slug);
+        return  redirect('/'.$locale.'/forum/show/'.$slug);
 
     }
 
@@ -53,7 +53,7 @@ class CommentController extends Controller
     {
         $comment = Comment::find($id);
         $comment->delete();
-        return  redirect('/'.$locale.'/forum/'.$slug);
+        return  redirect('/'.$locale.'/forum/show/'.$slug);
     }
 
 
@@ -73,9 +73,7 @@ class CommentController extends Controller
             ]);
         }
 
-
-
-        return  redirect('/'.$locale.'/forum/'.$slug);
+        return  redirect('/'.$locale.'/forum/show/'.$slug);
 
     }
 }

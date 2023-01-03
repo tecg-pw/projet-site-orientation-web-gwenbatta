@@ -44,7 +44,7 @@ class ResolvedSubject extends Notification
         return (new MailMessage)
             ->subject('Votre sujet est résolu !')
             ->line('Il semblerait que votre sujet « ' .$this->subject->subject.' » aie été résolu')
-            ->action('Je veux aller voir mon sujet', url('/'.app()->getLocale().'/forum/question/'.$this->subject->slug))
+            ->action('Je veux aller voir mon sujet', url('/'.app()->getLocale().'/forum/show/'.$this->subject->slug))
             ->line('Bien à vous,');
     }
 

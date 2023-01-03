@@ -8,11 +8,11 @@ trait HandlesPDFUploads
 {
     public function save($uploaded_pdf)
     {
-        $ext = $uploaded_pdf->getClientOriginalExtension();
-        $name = sha1_file($uploaded_pdf);
-        //$pdf = ::make($uploaded_pdf);
+        $name = $uploaded_pdf->getClientOriginalName();
+        $filepath = 'offer/pdf/'.$name;
 
-        $uploaded_pdf->save( 'offer/pdf/'.$name.'.'.$ext);
-        return $name.'.'.$ext;
+        \Storage::disk('public')->put($filepath, file_get_contents($uploaded_pdf));
+
+        return $filepath;
     }
 }

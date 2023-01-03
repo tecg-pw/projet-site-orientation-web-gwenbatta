@@ -48,7 +48,7 @@ class ForumController extends Controller
         $validatedData['slug'] = Str::slug($validatedData['subject'] .uuid_create());
         $subject = Subject::create($validatedData);
 
-        return redirect('/' . $locale . '/forum/' . $subject->slug);
+        return redirect('/' . $locale . '/forum/show/' . $subject->slug);
     }
 
     /**
@@ -92,7 +92,7 @@ class ForumController extends Controller
 
         $subject->update($validatedData);
 
-        return redirect('/' . $locale . '/forum/' . $subject->slug);
+        return redirect('/' . $locale . '/forum/show/' . $subject->slug);
     }
 
     /**

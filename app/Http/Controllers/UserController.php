@@ -83,7 +83,18 @@ class UserController extends Controller
     public function update(string $locale = null, UpdateUserRequest $request)
     {
 
-        $validatedData = $request->safe()->all();
+        $validatedData = $request->safe()->only('name',
+            'firstname',
+            'status_id',
+            'description',
+            'avatar',
+            'back_image',
+            'email');
+
+        if ($request->input('password_old')!==null) {
+            $validatedData = $request->safe()->all();
+            $validatedData['password'] = password_hash($validatedData['password_new'],PASSWORD_DEFAULT);
+        }
         $validatedData['slug'] = Str::slug($validatedData['firstname'] . $validatedData['name']);
         $uploaded_image = $request->file('avatar');
         if ($uploaded_image) {
@@ -95,7 +106,6 @@ class UserController extends Controller
         }
 
         auth()->user()->update($validatedData);
-
 
         return redirect('/' . $locale . '/user/profile/');
     }

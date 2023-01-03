@@ -32,7 +32,7 @@ class SubjectCreated extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'A new post has been created !',
+            subject: 'Un nouveau sujet vient d\'être publié sur le forum !',
         );
     }
 

@@ -36,8 +36,10 @@ class AgencyContactController extends Controller
         }
         $uploaded_pdf = $request->file('pdf');
         if ($uploaded_pdf){
-            $validatedData['pdf'] = '/offer/pdf/' . $this->save($uploaded_pdf);
+
+            $validatedData['pdf'] = $this->save($uploaded_pdf);
         }
+
         $contact = ContactAgency::create($validatedData);
 
         return redirect('/' . $locale . '/contact/agency')->with('success', 'Message envoyé avec succès');
