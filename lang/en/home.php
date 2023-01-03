@@ -2,6 +2,7 @@
 
 return [
     'success_login'=>'Nice to see you again, ',
+    'success_reset'=>'Password successfully reset, ',
     'success_register'=>'Welcome, ',
     'intro_title' => 'A choice to make? Choose the web!',
     'intro_text' => 'TecWeb is the website of the web option of the HEPL (Haute École de la Province de Liège). We propose you here to discover this wonderful option, to see what it has to offer you and to make you an idea on what waits for you before joining us. Enjoy your visit and see you soon in the corridors!',

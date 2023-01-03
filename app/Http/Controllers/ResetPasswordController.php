@@ -26,8 +26,8 @@ class ResetPasswordController extends Controller
         );
 
         return $status === Password::RESET_LINK_SENT
-            ? back()->with(['status' => ($status)])
-            : back()->withErrors(['email' => ($status)]);
+            ? back()->with(['status' => __($status)])
+            : back()->withErrors(['email' => __($status)]);
     }
 
     public function edit(string $locale, $token)
@@ -46,13 +46,14 @@ class ResetPasswordController extends Controller
                 ])->setRememberToken(Str::random(60));
 
                 $user->save();
-
                 event(new PasswordReset($user));
+
+                \Auth::login($user);
             }
         );
 
         return $status === Password::PASSWORD_RESET
-            ? redirect('/'.$locale)->with('status', __($status))
+            ? redirect('/'.$locale)->with('success', __('home.success_reset'). auth()->user()->firstname .' '. auth()->user()->name)
             : back()->withErrors(['email' => [__($status)]]);
 
     }

@@ -3,6 +3,7 @@
 return [
     'success_login'=>'Schön, Sie wiederzusehen, ',
     'success_register'=>'Herzlich willkommen, ',
+    'success_reset'=>'Passwort erfolgreich zurückgesetzt, ',
     'intro_title' => 'Haben Sie eine Wahl zu treffen? Wählen Sie das Web!',
     'intro_text' => 'TecWeb ist die Website der Weboption der HEPL (Haute École de la Province de Liège). Wir schlagen Ihnen hier vor, diese wunderbare Option zu entdecken, um zu sehen, was sie Ihnen zu bieten hat und um Ihnen eine Vorstellung davon zu geben, was Sie erwartet, bevor Sie zu uns kommen. Viel Spaß bei Ihrem Besuch und bis bald in den Fluren!',
     'intro_button_about' => 'Mehr lesen',

@@ -1,11 +1,11 @@
 @props([
     'page'
 ])
-    @php
-        $urlAction = "/"
-    @endphp
+@php
+    $urlAction = "/"
+@endphp
 
-<!doctype html>
+    <!doctype html>
 <html lang="{{app()->getLocale()}}">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,8 @@
     <a href="/{{app()->getLocale()}}/#content" class="sr-only">{{__('nav.nav_avoid content')}}</a>
     <nav class="flex flex-col relative fixed" aria-labelledby="navigation">
         <h2 class="sr-only" id="navigation" role="heading" aria-level="2">{{__('nav.nav_title')}}</h2>
-        <div class="bg-green-700 text-white-100 font-sans flex gap-x-10 justify-between lg:px-16 xl:px-32 2xl:px-48 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl">
+        <div
+            class="bg-green-700 text-white-100 font-sans flex gap-x-10 justify-between lg:px-16 xl:px-32 2xl:px-48 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl">
             <ul class="flex gap-x-1">
                 @php
                     $segments = Request::segments();
@@ -42,32 +43,35 @@
                 @endforeach
             </ul>
             @guest()
-                <a class="-order-2 hover:text-orange-500" href="/{{app()->getLocale()}}/user/login">{{__('nav.connexion')}}</a>
+                <a class="-order-2 hover:text-orange-500"
+                   href="/{{app()->getLocale()}}/user/login">{{__('nav.connexion')}}</a>
             @endguest
             @auth()
                 <div class="-order-2 min-w-[15%] gap-3 relative user_name">
                     @if(session('success'))
                         <a href="#" class="relative z-50">{{session('success')}}</a>
                     @else
-                        <a href="#" class="relative z-50">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
-                    @endif
-                    <div class="bg-green-700 hover_section absolute z-40 flex-1 rounded-lg flex gap-2 pt-14 p-3 flex-col">
-                        <a dusk="logged-user-name"
-                           class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
-                           href="/{{app()->getLocale()}}/user/profile">{{__('user.user_my_profile')}}</a>
-                        <a dusk="logged-user-name"
-                           class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
-                           href="/{{app()->getLocale()}}/user/profile/modify/form">{{__('user.user_modify')}}</a>
-                        <form action="/logout"
-                              method="post">
-                            @csrf
-                            <button class="hover:text-orange-500" type="submit">{{__('nav.logout')}}</button>
-                        </form>
-                    </div>
+                            <a href="#" class="relative z-50">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
+                        @endif
+                        <div
+                            class="bg-green-700 hover_section absolute z-40 flex-1 rounded-lg flex gap-2 pt-14 p-3 flex-col">
+                            <a dusk="logged-user-name"
+                               class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
+                               href="/{{app()->getLocale()}}/user/profile">{{__('user.user_my_profile')}}</a>
+                            <a dusk="logged-user-name"
+                               class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
+                               href="/{{app()->getLocale()}}/user/profile/modify/form">{{__('user.user_modify')}}</a>
+                            <form action="/logout"
+                                  method="post">
+                                @csrf
+                                <button class="hover:text-orange-500" type="submit">{{__('nav.logout')}}</button>
+                            </form>
+                        </div>
                 </div>
             @endauth
         </div>
-        <div class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-8 lg:px-16 xl:px-32 2xl:px-48 px-5 lg:gap-x-7 xl:pt-8 xl:pb-8">
+        <div
+            class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-8 lg:px-16 xl:px-32 2xl:px-48 px-5 lg:gap-x-7 xl:pt-8 xl:pb-8">
             <div class="group ml-4 group relative">
                 <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="170.001" height="77.656"
                      viewBox="0 0 170.001 77.656">
@@ -89,7 +93,8 @@
                         </g>
                     </g>
                 </svg>
-                <svg class="lg:not-sr-only sr-only xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="140.001" height="77.656"
+                <svg class="lg:not-sr-only sr-only xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="140.001"
+                     height="77.656"
                      viewBox="0 0 170.001 77.656">
                     <g id="Groupe_284" data-name="Groupe 284" transform="translate(-230.999 -70.345)">
                         <path id="Soustraction_1" data-name="Soustraction 1"
@@ -131,12 +136,18 @@
                 <a href="/{{app()->getLocale()}}" class="linkcard">{{__('nav.nav_link_home')}}</a>
             </div>
             <ul class="sr-only lg:not-sr-only flex xl:justify-start lg:gap-x-3 xl:gap-x-5 text-green-700 lg:text-lg xl:text-xl lg:justify-start flex-1 font-sans font-semibold">
-                <li><a class="hover:text-orange-500" href="/{{app()->getLocale()}}/bottin/alumni"> {{__('nav.nav_navigation.alumni')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/{{app()->getLocale()}}/project/index"> {{__('nav.nav_navigation.project')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/{{app()->getLocale()}}/forum/index"> {{__('nav.nav_navigation.forum')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/{{app()->getLocale()}}/about"> {{__('nav.nav_navigation.about')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/{{app()->getLocale()}}/news/index"> {{__('nav.nav_navigation.actualities')}}</a></li>
-                <li><a class="hover:text-orange-500" href="/{{app()->getLocale()}}/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
+                <li><a class="hover:text-orange-500"
+                       href="/{{app()->getLocale()}}/bottin/alumni"> {{__('nav.nav_navigation.alumni')}}</a></li>
+                <li><a class="hover:text-orange-500"
+                       href="/{{app()->getLocale()}}/project/index"> {{__('nav.nav_navigation.project')}}</a></li>
+                <li><a class="hover:text-orange-500"
+                       href="/{{app()->getLocale()}}/forum/index"> {{__('nav.nav_navigation.forum')}}</a></li>
+                <li><a class="hover:text-orange-500"
+                       href="/{{app()->getLocale()}}/about"> {{__('nav.nav_navigation.about')}}</a></li>
+                <li><a class="hover:text-orange-500"
+                       href="/{{app()->getLocale()}}/news/index"> {{__('nav.nav_navigation.actualities')}}</a></li>
+                <li><a class="hover:text-orange-500"
+                       href="/{{app()->getLocale()}}/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
             </ul>
             <x-search_bar_nav class="xl:min-w-[20%] lg:max-w-[17%] lg:not-sr-only sr-only"></x-search_bar_nav>
             <input class="absolute cursor-pointer opacity-0 z-30 w-8 h-8 " type="checkbox" name="burger" id="burger">
@@ -277,7 +288,7 @@
                             </svg>
                         </a></li>
                     <span><x-search :urlAction="$urlAction"
-                            class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-search></span>
+                                    class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-search></span>
                 </ul>
             </div>
         </div>

@@ -67,7 +67,7 @@
                                             </g>
                                         </svg>
                                     @endif
-                                    <a class="cursor-pointer linkcard" href="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
+                                    <a class="cursor-pointer linkcard" href="/{{app()->getLocale()}}/forum/show/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
                                 </div>
                                 <p class="xl:leading-8 xl:mt-6 mt-4">
                                     {{$comment->content}}

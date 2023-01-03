@@ -11,7 +11,18 @@
                 <a class="hover:text-orange-500 font-sans text-green-700 self-center md:text-xl xl:text-xl font-semibold underline flex-1"
                    href="/{{app()->getLocale()}}/user/register">{{__('login_register.login_back')}}</a>
             </div>
-            <div class="flex mt-14">
+            @if(session('status'))
+                <div class="mt-12 mb-4 bg-orange-200 rounded-lg flex items-center gap-x-2 px-4 py-2.5">
+                    <svg class="h-8 w-8 text-green-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z"/>
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M9 12l2 2l4 -4"/>
+                    </svg>
+                    <p class="mt-1 text-green-700 text-xl">{{session('status')}}</p>
+                </div>
+            @else
+            <div class="flex mt-14 min-w-[500px]">
                 <form action="/{{app()->getLocale()}}/user/password" method="post" class="flex flex-col xl:block min-w-full">
                     @csrf
                     <div class="flex flex-col mb-4">
@@ -35,6 +46,7 @@
                     </div>
                 </form>
             </div>
+            @endif
         </div>
         <x-login.commons.aside></x-login.commons.aside>
     </section>

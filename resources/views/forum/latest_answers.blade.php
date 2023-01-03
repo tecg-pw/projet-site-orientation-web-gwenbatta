@@ -5,14 +5,14 @@
 
 <x-commons.navigation :page="__('forum.latest_answer')"></x-commons.navigation>
 <main id="content">
-    <x-recurrent_questions :recurrings="$recurrings"></x-recurrent_questions>
+    <x-recurrent_shows :recurrings="$recurrings"></x-recurrent_shows>
     <section class="mt-20" aria-labelledby="forum">
         <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex justify-between mb-8 xl:mb-24 items-center">
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('forum.index_title')}}</h2>
             @auth()
-                <a href="/{{app()->getLocale()}}/forum/question"
-                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
+                <a href="/{{app()->getLocale()}}/forum/show"
+                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_show')}}</a>
             @endauth
         </div>
         <x-sort_by_forum :urlAction="$urlAction" :status="$status" :tags="$tags" :created="$created" class="2xl:px-48 px-10 xl:px-32 lg:px-16 mb-14"></x-sort_by_forum>
@@ -65,7 +65,7 @@
                                     </g>
                                 </svg>
                             @endif
-                            <a class="cursor-pointer linkcard" href="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
+                            <a class="cursor-pointer linkcard" href="/{{app()->getLocale()}}/forum/show/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
                         </div>
                         <p class="xl:leading-8 xl:mt-6 mt-4">
                             {{$comment->content}}

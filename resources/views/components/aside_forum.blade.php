@@ -64,7 +64,7 @@
                                     {{ucwords($latest->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                             </div>
                             <a class="linkcard underline text-green-700 font-sans font-semibold"
-                               href="/{{app()->getLocale()}}/forum/{{$latest->slug}}">{{__('forum.see_subject')}}</a>
+                               href="/{{app()->getLocale()}}/forum/show/{{$latest->slug}}">{{__('forum.see_subject')}}</a>
                             <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                  width="25"
                                  viewBox="0 0 32 27.417">
@@ -138,7 +138,7 @@
                                     {{ucwords($rating->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                             </div>
                             <a class="linkcard underline text-green-700 font-sans font-semibold"
-                               href="/{{app()->getLocale()}}/forum/{{$rating->slug}}">{{__('forum.see_subject')}}</a>
+                               href="/{{app()->getLocale()}}/forum/show/{{$rating->slug}}">{{__('forum.see_subject')}}</a>
                             <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                  width="25"
                                  viewBox="0 0 32 27.417">
