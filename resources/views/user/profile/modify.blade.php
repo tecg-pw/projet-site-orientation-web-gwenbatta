@@ -114,6 +114,7 @@
                             @endforeach
                         </select>
                     </div>
+
                     <div class="flex flex-col mb-8 ">
                         <label class="text-green-500 text-2xl"
                                for="description">{{__('user.user_modify_description')}}</label>

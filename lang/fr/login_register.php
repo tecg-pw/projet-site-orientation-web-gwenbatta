@@ -8,6 +8,7 @@ return [
     'register_title' => 'Création de votre compte',
     'register_button' => 'Créer un compte',
     'reset_button' => 'Réinitialiser',
+    'send_email_reset' => 'M’envoyer un mail',
     'name' => 'Nom',
     'firstname' => 'Prénom',
     'mail' => 'Email',

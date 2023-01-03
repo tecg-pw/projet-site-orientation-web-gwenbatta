@@ -8,6 +8,7 @@ return [
     'register_title' => 'Create your account',
     'register_button' => 'Register',
     'reset_button' => 'Reset',
+    'send_email_reset' => 'Send me an email',
     'name' => 'Name',
     'firstname' => 'Firstname',
     'mail' => 'Email',

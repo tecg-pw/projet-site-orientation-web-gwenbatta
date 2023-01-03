@@ -71,11 +71,11 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('/img-redimensions/avatars') => storage_path('app/public/img-redimensions/avatars'),
-        public_path('/img-redimensions/back') => storage_path('app/public/img-redimensions/back'),
-        public_path('/img-redimensions/logo') => storage_path('app/public/img-redimensions/logo'),
-        public_path('/img-redimensions/actu') => storage_path('app/public/img-redimensions/actu'),
-        public_path('/img-redimensions/project') => storage_path('app/public/img-redimensions/project'),
+        public_path('img-redimensions/avatars') => storage_path('app/public/img-redimensions/avatars'),
+        public_path('img-redimensions/back') => storage_path('app/public/img-redimensions/back'),
+        public_path('img-redimensions/logo') => storage_path('app/public/img-redimensions/logo'),
+        public_path('img-redimensions/actu') => storage_path('app/public/img-redimensions/actu'),
+        public_path('img-redimensions/project') => storage_path('app/public/img-redimensions/project'),
         public_path('offer/pdf') => storage_path('app/public/offer/pdf'),
     ],
 

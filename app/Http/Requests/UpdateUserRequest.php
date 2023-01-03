@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\MatchOldPassword;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateUserRequest extends FormRequest
@@ -31,6 +32,8 @@ class UpdateUserRequest extends FormRequest
             'avatar' => 'nullable|mimes:jpg,png,webp,svg',
             'back_image'=> 'nullable|mimes:jpg,png,webp,jpeg,svg,tif',
             'email' => 'required|email',
+//            'password' => ['nullable', new MatchOldPassword],
+//            'password_new' => 'nullable|min:8|max:64',
 
         ];
     }

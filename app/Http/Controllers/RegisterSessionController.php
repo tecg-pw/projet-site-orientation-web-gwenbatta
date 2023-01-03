@@ -19,7 +19,7 @@ class RegisterSessionController extends Controller
         $validated = $request->validated();
         $validated['slug'] = \Str::slug($validated['firstname'].$validated['name']);
         $validated['status_id'] = 1;
-        $validated['password'] = bcrypt($validated['password']);
+        $validated['password'] = password_hash($validated['password'],PASSWORD_DEFAULT);
 
             $user = User::create($validated);
             \Auth::login($user);

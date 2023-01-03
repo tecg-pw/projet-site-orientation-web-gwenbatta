@@ -24,6 +24,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RegisterSessionController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\StudentContactController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeachAlumniController;
@@ -86,7 +87,8 @@ Route::get('/{locale?}/bottin/student/{student:slug}', [StudentController::class
 
 Route::get('/{locale?}/cours/{course:slug}', [CourseController::class, 'show'])->middleware('locale');
 
-
+Route::get('/{locale?}/user/password', [ResetPasswordController::class, 'create'])->middleware(['guest','locale']);
+Route::post('/{locale?}/user/password', [ResetPasswordController::class, 'store'])->middleware(['guest','locale']);
 Route::get('/{locale?}/user/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware(['guest','locale']);
 Route::get('/{locale?}/user/register', [RegisterSessionController::class, 'create'])->name('register')->middleware(['guest','locale']);
 Route::post('/{locale?}/login', [AuthenticatedSessionController::class, 'store'])->middleware(['guest','locale']);
@@ -96,9 +98,8 @@ Route::get('/{locale?}/user/profile/{user:slug}', [OtherUserController::class, '
 Route::get('/{locale?}/user/profile', [UserController::class, 'show'])->middleware(['auth','locale']);
 Route::get('/{locale?}/user/profile/modify/form', [UserController::class, 'edit'])->middleware(['auth','locale']);
 Route::post('/{locale?}/user/modify', [UserController::class, 'update'])->middleware(['auth','locale']);
-Route::get('/{locale?}/user/password', function () {
-    return view('user.reset_password');
-});
+Route::get('/{locale?}/user/reset-password/{token}', [ResetPasswordController::class, 'edit'])->middleware('guest', 'locale')->name('password.reset');
+Route::post('/{locale?}/user/reset-password', [ResetPasswordController::class, 'update'])->middleware('guest', 'locale')->name('password.reset');
 
 
 Route::get('/{locale?}/contact/student', [StudentContactController::class, 'create'])->middleware('locale');

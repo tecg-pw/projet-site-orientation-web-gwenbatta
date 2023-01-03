@@ -20,6 +20,8 @@ return [
     'user_modify_firstname_placeholder' => 'Jordan',
     'user_modify_mail' => 'E-Mail',
     'user_modify_status' => 'Status',
+    'user_modify_password_old' => 'Altes Passwort',
+    'user_modify_password_new' => 'Neues Passwort',
     'user_modify_status_placeholder' => 'Studenten',
     'user_modify_mail_placeholder' => 'example@mail.com',
     'user_modify_year' => 'Akademisches Jahr',
