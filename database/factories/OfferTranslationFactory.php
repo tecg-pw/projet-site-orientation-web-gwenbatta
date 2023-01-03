@@ -22,8 +22,6 @@ class OfferTranslationFactory extends Factory
             "slug" => \Str::slug($name),
             "supervisor" => "",
             "description" => fake()->sentence(40),
-            "softwares" => [],
-            "others" => [],
             "pdf" => "",
             "locale" => "fr",
             "offer_id" => 1,

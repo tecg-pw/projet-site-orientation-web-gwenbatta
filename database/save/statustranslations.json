@@ -62,5 +62,37 @@
         "status_id": 4,
         "created_at": null,
         "updated_at": null
+    },
+    {
+        "id": 8,
+        "name": "Besucher",
+        "locale": "de",
+        "status_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 9,
+        "name": "Studenten",
+        "locale": "de",
+        "status_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 10,
+        "name": "alumni",
+        "locale": "de",
+        "status_id": 3,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 11,
+        "name": "Lehrer",
+        "locale": "de",
+        "status_id": 4,
+        "created_at": null,
+        "updated_at": null
     }
 ]

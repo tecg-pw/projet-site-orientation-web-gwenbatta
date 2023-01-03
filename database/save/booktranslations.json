@@ -166,5 +166,89 @@
         "updated_at": null,
         "deleted_at": null,
         "book_id": 7
+    },
+    {
+        "id": 15,
+        "name": "Web Ergonomics & UX Design",
+        "locale": "de",
+        "excerpt": "Buch im ersten Jahr erforderlich.",
+        "description": "SEIEN SIE ENDLICH ERFOLGREICH BEI IHREN NUTZERN!\nJeder digitale Dienst muss die schwierige Herausforderung meistern, seine Nutzer zufrieden zu stellen. Aber wie kann man sie verstehen und sich in ihre Lage versetzen? Wie gestaltet man eine Website, die so angenehm und effizient ist, dass man gerne wiederkommt? Dank der praktischen und methodischen Ratschläge von Amélie Boucher in diesem Buch, das zur französischen Referenz geworden ist, können Sie die Web-Ergonomie in der Praxis anwenden!\n- Regeln und theoretische Grundlagen der Benutzerfreundlichkeit (Gestalttheorien, Affordanzen, Fitts'sches Gesetz, usw.)\n- Methoden der Nutzerforschung (Beobachtungen, Interviews, Kartensortierung, Nutzertests, Personas, Erfahrungskarten...)\n- Praktische Ratschläge für Informationsarchitektur, Benutzerpfade und detailliertes Design\nUX DESIGN ANHAND VON BEISPIELEN\n- Lassen Sie sich von echten Websites inspirieren, um Ihre Benutzerfreundlichkeit zu verbessern\n- Über 350 Illustrationen, die gute und schlechte Praktiken aufschlüsseln\n- Interviews mit Fachleuten",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 1
+    },
+    {
+        "id": 16,
+        "name": "Responsive Web Design",
+        "locale": "de",
+        "excerpt": "Buch im zweiten Jahr erforderlich.",
+        "description": "Sind Ihre Designs bereit? Lernen Sie, wie Sie über den Desktop hinaus denken und großartige Designs erstellen können, die die Bedürfnisse Ihrer Nutzer vorhersehen und erfüllen. Ethan Marcotte wird CSS-Techniken und Designprinzipien erforschen, einschließlich fließender Raster, flexibler Bilder und Multimedia-Abfragen, und zeigen, wie Sie Ihren Nutzern ein hochwertiges Erlebnis bieten können, unabhängig davon, wie groß (oder klein) ihr Bildschirm ist.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 7
+    },
+    {
+        "id": 17,
+        "name": "HTML a reference for the developer",
+        "locale": "de",
+        "excerpt": "Buch wird im ersten Jahr benötigt. ",
+        "description": "Dieses Buch beleuchtet die anspruchsvollen Spezifikationen von HTML 5 und erforscht alle neuen Funktionen und Tags, einschließlich derer, die sich seit den vorherigen Versionen weiterentwickelt haben. Der Autor erinnert an die turbulente Geschichte von HTML 5 beim W3C und der WhatWG und erklärt, wie man leistungsstarke, barrierefreie Websites und Anwendungen entwirft, Medienelemente (Audio, Video) einbindet, interaktive Zeichenflächen und Animationen mit Canvas erstellt und Mikroformate für semantisches Markup verwendet, um den Datenaustausch und die Referenzierung zu verbessern. Schritt für Schritt werden Mikroformate, APIs für die Dateiverwaltung, Geolokalisierung, Drag-and-Drop-Unterstützung und die Speicherung lokaler Daten im Browser, die Kommunikation in Echtzeit oder der Austausch von Dokumenten mithilfe der erweiterten Web Storage, Web Sockets, Server-Sent Events und Web Messaging APIs erläutert. Schließlich werden Web Worker, die eine Multithreading-JavaScript-Ausführung ermöglichen, SQL- oder NoSQL-Datenbanken (Indexed Database und Web SQL Database) sowie ein Anwendungscache für die Offline-Ausführung (Offline Web Applications) und eine erweiterte Verlaufsmanipulation (History API) behandelt. Das reich bebilderte Buch ist reich an Ratschlägen und Best Practices und wird durch eine komprimierte Referenz zu JavaScript und DOM-Management ergänzt. Der Anhang enthält ein ausführliches Kapitel über ARIA und Barrierefreiheit sowie eine Liste veralteter HTML4-Elemente und eine Zusammenfassung von CSS. Für wen ist dieses Buch gedacht? Webentwickler und -integratoren, die die neuen HTML5-APIs implementieren und ihre Best Practices für die Webentwicklung modernisieren möchten; Webdesigner, die alle Möglichkeiten von HTML5 entdecken möchten; alle, die eine kohärente Webentwicklungsmethodik erwerben möchten, die Qualität und Zugänglichkeit vereint.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 2
+    },
+    {
+        "id": 18,
+        "name": "CSS Pocket Reference",
+        "locale": "de",
+        "excerpt": "Buch wird im ersten Jahr benötigt.",
+        "description": "Wenn Sie mit CSS arbeiten und eine schnelle Antwort brauchen, ist die CSS Pocket Reference für Sie da. Dieses handliche, prägnante Buch bietet alle wichtigen Informationen, die Sie benötigen, um CSS spontan zu implementieren. Die 4. Auflage ist ideal für fortgeschrittene Webdesigner und -entwickler und wurde für CSS3, die neueste Version der Cascading Style Sheet-Spezifikation, überarbeitet und aktualisiert. Neben einer umfassenden alphabetischen Referenz zu CSS3-Selektoren und -Eigenschaften finden Sie auch eine kurze Einführung in die wichtigsten CSS-Konzepte.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 3
+    },
+    {
+        "id": 19,
+        "name": "HTML Pocket Reference",
+        "locale": "de",
+        "excerpt": "Buch wird im ersten Jahr benötigt.",
+        "description": "Detaillierte Informationen zu Tag-Attributen Informationen zur Unterstützung von Browsern wie Netscape Navigator, Microsoft Internet Explorer, Opera und WebTV Informationen zur Unterstützung von HTML 4.0, einschließlich der Angabe, ob das Tag in der aktuellen Spezifikation veraltet ist Zusätzlich zu den Beschreibungen der einzelnen Tags finden Sie nützliche Grafiken zu Themen wie:\n\n\nZeicheneinheiten Umwandlung von Dezimal- in Hexadezimalzeichen Farbnamen Niederst bietet auch Kontext für Tags, indem er angibt, welche Tags zusammen gruppiert sind und rudimentäre Beispiele für den Aufbau von Standard-Webseitenelementen.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 4
+    },
+    {
+        "id": 20,
+        "name": "Flexbox",
+        "locale": "de",
+        "excerpt": "Buch im zweiten Jahr erforderlich. ",
+        "description": "Flexbox ist auf dem besten Weg, unsere Art, Designs und Komponenten in CSS zu entwerfen, grundlegend und dauerhaft zu revolutionieren. Warum sollte man ihr ein Buch widmen? Weil Flexbox, wenn es richtig eingesetzt wird, vielen Webentwicklern die Arbeit erleichtert.\n\nEin Standardwerk für Webdesigner und Integratoren\n\n\"Flexible Box Layout Module\", besser bekannt als \"Flexbox\", ist eine CSS-3-Spezifikation des W3C, die ein neues, bislang unbekanntes Box- und Positionierungsmodell definiert. Es beinhaltet eine natürliche Verwaltung von flüssigen Elementen und Responsive und macht die Verwendung von komplexen Anzeigerastern oder gar Frameworks überflüssig - wahre Gaswerke, bei denen man nur knapp 10% des Werkzeugs nutzen kann. Vergessen Sie also alles, was Sie bisher über CSS gelernt haben, und verlieben Sie sich wie ich in Flexbox!\n\nNeben der Vereinfachung von Positionierungsschemata bietet Flexbox perfekte Lösungen für ein Problem, das tief in unserer Zeit verwurzelt ist: Responsive Webdesign. Das flexible Elementdesign, die Neuorganisation von Blöcken und die Möglichkeit, ganz einfach zwischen horizontaler und vertikaler Darstellung zu wechseln, machen Flexflex zu einem großartigen Verbündeten bei der Anpassung an Tablets und Smartphones.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 5
+    },
+    {
+        "id": 21,
+        "name": "Grid Layout",
+        "locale": "de",
+        "excerpt": "Buch im zweiten Jahr erforderlich. ",
+        "description": "Ergänzend zu Flexbox ist das Grid-Layout-Modul eine W3C-Spezifikation im Stadium der Candidate Recommendation, deren erste Entwürfe auf das Jahr 2004 zurückgehen. Das allgemeine Konzept des Grid-Layouts, das inzwischen in allen Browsern in der Produktion eingesetzt werden kann, besteht darin, den Raum in wichtigen Bereichen einer Webseite oder einer Anwendung zu strukturieren. Ein virtuelles Raster, unabhängig von den HTML-Elementen, die darauf platziert werden können, hat den offensichtlichen Vorteil, dass es sehr flexibel ist, wenn man es je nach Kontext ändern möchte.\n\nDas Grid-Layout ist perfekt an das responsive Webdesign angepasst und ermöglicht die sofortige Anpassung Ihrer Seite an unterschiedliche Bildschirmgrößen. In Kombination mit CSS 3 Media Queries ist das Grid-Layout-Modell sehr leistungsfähig, insbesondere wenn Sie sich für eine Template-Variante entschieden haben. Es muss nur die Ausgangsvorlage geändert werden: Es besteht keine Notwendigkeit, in die HTML-Struktur oder gar in die Positionierung der einzelnen Seitenelemente einzugreifen.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 6
     }
 ]

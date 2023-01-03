@@ -94,5 +94,53 @@
         "updated_at": null,
         "deleted_at": null,
         "actuality_id" : 3
+    },
+    {
+        "id": 7,
+        "name": "Meta Connect",
+        "locale": "de",
+        "excerpt": "Ziel dieses Web-Events ist es, den Aufbau des Metaversums, seine Zukunft und die neuesten eingesetzten Technologien zu erkunden.",
+        "description": "Meta Connect, eine eintägige virtuelle Veranstaltung, wird Ihnen die Zukunft des Metaverse und die Zukunft der virtuellen und erweiterten Realität vorstellen. Branchenführer werden über die neuesten Technologien sprechen, während sich die Entwicklungssitzungen auf deren Umsetzung konzentrieren werden. Unser Ziel ist es, die Welt zusammenzubringen und menschliche Verbindungen durch neue Erfahrungen zu stärken.",
+        "lieu": "Online",
+        "link": "https://metaconnect.com/fr-fr/",
+        "main_picture": "img-redimensions/metaconnect.jpg",
+        "gallery": null,
+        "date": "2020-09-10 00:00:00",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "actuality_id" : 3
+    },
+    {
+        "id": 8,
+        "name": "Paris Web",
+        "locale": "de",
+        "excerpt": "Die Veranstaltung für ein zugängliches und hochwertiges Web. Zahlreiche Konferenzen und Aktivitäten warten auf Sie!",
+        "description": "Paris Web ist ein französischer gemeinnütziger Verein, der 2005 von Éric Daspet, Stéphane Deschamps und Adrien Leygues gegründet wurde. Jedes Jahr organisiert der Verein eine Reihe von Konferenzen und Workshops, die drei Tage lang in Paris stattfinden.\n\nÜber diese Veranstaltung hinaus ist es das Ziel von Paris Web, die Qualität der Webentwicklung im weitesten Sinne zu fördern: Standards, Normen, Zugänglichkeit, Ergonomie und Designmethoden. Der Verband nimmt an Veranstaltungen und Foren teil und fördert Initiativen, die diese Grundsätze unterstützen.\n\nDer Verband hat sich zum Ziel gesetzt, alle Ebenen der Web-Produktionskette anzusprechen: Anfänger wie Experten, Techniker wie Entscheidungsträger, Kreative wie Qualitätsspezialisten.",
+        "lieu": "Paris",
+        "link": "https://www.paris-web.fr/",
+        "main_picture": "img-redimensions/paris-web.jpg",
+        "gallery": null,
+        "date": "2020-09-10 00:00:00",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "actuality_id" : 2
+    },
+    {
+        "id": 9,
+        "name": "Offene Tür",
+        "locale": "de",
+        "excerpt": "Der Tag der offenen Tür bei HEPL bietet Ihnen die Möglichkeit, die Schule Ihrer Wahl zu besuchen und die Lehrer kennenzulernen",
+        "description": "Der Tag der offenen Tür im Parc des Marêts findet am Samstag, den 30. April 2022 statt. An diesem Tag können Sie die Lehrkräfte der Option, ehemalige Schüler, die über ihre Erfahrungen berichten werden, aber auch das gesamte Lehrpersonal kennenlernen. Sie können mit ihnen sprechen und alle Ihre Fragen stellen.\n\nWir hoffen, dass wir viele von Ihnen dort sehen werden!",
+        "lieu": "Liège",
+        "link": "https://www.hepl.be/fr/jpo",
+        "main_picture": "img-redimensions/porte-ouverte-picture.jpg",
+        "gallery": null,
+        "date": "2020-09-10 00:00:00",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "actuality_id" : 1
     }
 ]

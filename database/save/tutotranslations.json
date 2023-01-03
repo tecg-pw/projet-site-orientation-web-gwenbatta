@@ -238,5 +238,116 @@
         "updated_at": null,
         "deleted_at": null,
         "tuto_id": 10
-    }
+    },
+    {
+        "id": 21,
+        "name": "Froggy",
+        "locale": "de",
+        "excerpt": "Einführung in Flexbox, eine CSS-Technik",
+        "link": "https://flexboxfroggy.com/#fr",
+        "languages": "CSS",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "tuto_id": 1
+    },{
+    "id": 22,
+    "name": "Grid Garden",
+    "locale": "de",
+    "excerpt": "Einführung in das Grid-Layout, eine CSS-Technik",
+    "link": "https://codepip.com/games/grid-garden/",
+    "languages": "CSS",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 2
+},{
+    "id": 23,
+    "name": "Bugdroid",
+    "locale": "de",
+    "excerpt": "Einführende HTML-Übung zur Vorstellung von Bugdroid.",
+    "link": "https://github.com/tecg-cpw/html-bugdroid",
+    "languages": "HTML",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 3
+},{
+    "id": 24,
+    "name": "HTML List Base",
+    "locale": "de",
+    "excerpt": "Einführende Übung zur HTML-Sprache, die den Begriff der Liste erklärt.",
+    "link": "https://github.com/tecg-cpw/html-lists-base",
+    "languages": "HTML",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 4
+},{
+    "id": 25,
+    "name": "Movies App",
+    "locale": "de",
+    "excerpt": "Übung, die in der Sitzungsperiode im Juni 2022 durchgeführt wird",
+    "link": "https://github.com/tecg-cpw/css-MovieApp",
+    "languages": "CSS",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 5
+},{
+    "id": 26,
+    "name": "Instagram",
+    "locale": "de",
+    "excerpt": "Übung für den Kurs Web Page Design",
+    "link": "https://github.com/tecg-cpw/css-instagram",
+    "languages": "CSS",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 6
+},{
+    "id": 27,
+    "name": "Slide on Scroll",
+    "locale": "de",
+    "excerpt": "Wes Bos' Übung zur Erstellung einer Js-Animation in Ihren Seiten",
+    "link": "https://www.youtube.com/watch?v=uzRsENVD3W8&list=PLu8EoSxDXHP6CGK4YVJhL_VWetA865GOH&index=13",
+    "languages": "javascript",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 7
+},{
+    "id": 28,
+    "name": "Svg Clock",
+    "locale": "de",
+    "excerpt": "Wes Bos' Übung zur Erstellung einer Uhr mit JS",
+    "link": "https://www.youtube.com/watch?v=xu87YWbr4X0&list=PLu8EoSxDXHP6CGK4YVJhL_VWetA865GOH&index=2",
+    "languages": "javascript",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 8
+}, {
+    "id": 29,
+    "name": "10 screens",
+    "locale": "de",
+    "excerpt": "Einführungsübung, um sich mit Adobe XD vertraut zu machen",
+    "link": "https://github.com/tecg-dwm/dwm-10screens",
+    "languages": "xd",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 9
+},{
+    "id": 20,
+    "name": "Calculette",
+    "locale": "de",
+    "excerpt": "Im Unterricht durchgeführte Einführungsübung in die Sprache PHP",
+    "link": "https://github.com/tecg-dcs/calculette",
+    "languages": "php",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "tuto_id": 10
+}
 ]

@@ -113,7 +113,7 @@
         "id": 12,
         "name": "CSS",
         "locale": "en",
-        "definition": "Acronyme de Cascading Style Sheets. C’est un langage informatique utilisé sur internet pour la mise en forme de fichiers et pages HTML.",
+        "definition": "Acronym for Cascading Style Sheets. It is a computer language used on the Internet for formatting HTML files and pages..",
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
@@ -198,5 +198,96 @@
         "updated_at": null,
         "deleted_at": null,
         "glossary_id": 10
-    }
+    },
+    {
+        "id": 21,
+        "name": "Erreichbarkeit",
+        "locale": "de",
+        "definition": "1. Die Eigenschaft von etwas oder einem Ort, der zugänglich ist: Die Zugänglichkeit eines Busses, eines Gebäudes für Behinderte.\n\n2. Recht, Möglichkeit, dass jemand Zugang zu etwas hat: Zugänglichkeit zu einem Arbeitsplatz.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "glossary_id": 1
+    },{
+    "id": 22,
+    "name": "Back-end",
+    "locale": "de",
+    "definition": "Eine Reihe von Teilen der Konstruktion einer Website, die die Entwicklung von Datenbanken umfasst. Unsichtbar, der Benutzer sieht es nicht.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 2
+},{
+    "id": 23,
+    "name": "Wirkungsgrad",
+    "locale": "de",
+    "definition": "Effizienz ist die Fähigkeit einer Person oder eines Arbeitssystems, bei einer bestimmten Art von Aufgabe gute Leistungen zu erbringen.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 3
+},{
+    "id": 24,
+    "name": "Effektivität",
+    "locale": "de",
+    "definition": "Effektivität ist die Fähigkeit einer Person, einer Gruppe oder eines Systems, ihre Ziele zu erreichen.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 4
+},{
+    "id": 25,
+    "name": "CMS",
+    "locale": "de",
+    "definition": "Content Management System, eine Gruppe von Lösungen zur Erstellung, Verwaltung und Aktualisierung einer Website (Beispiel: WordPress).",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 5
+},{
+    "id": 26,
+    "name": "CSS",
+    "locale": "de",
+    "definition": "Akronym für Cascading Style Sheets. Es handelt sich um eine Computersprache, die im Internet zur Formatierung von HTML-Dateien und -Seiten verwendet wird.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 6
+},{
+    "id": 28,
+    "name": "Modularisierung",
+    "locale": "de",
+    "definition": "Die Modularisierung besteht in der Unterteilung von Ausbildungskursen in verschiedene Module und ermöglicht die Strukturierung von Kursen, die sowohl die Ausbildungsziele als auch die Vorkenntnisse der Lernenden berücksichtigen. Sie ist eine wesentliche Voraussetzung für die Individualisierung von Bildungswegen.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 7
+},{
+    "id": 29,
+    "name": "Aufruf zum Handeln",
+    "locale": "de",
+    "definition": "Ein CTA oder Call to Action ist eine Schaltfläche, die einen Text enthält, der den Nutzer auffordert, darauf zu klicken. Sie wird in der Regel auf einer Website verwendet, um den Nutzer zu einer Umwandlung zu bewegen.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 8
+},{
+    "id": 30,
+    "name": "Rahmenwerk",
+    "locale": "de",
+    "definition": "Eine Reihe von Software-Tools und -Komponenten, die die Grundlage für ein Softwareprogramm oder eine Anwendung bilden. Sie bilden das Fundament einer Software oder ihres Anwendungsskeletts.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 9
+},{
+    "id": 31,
+    "name": "Tagline",
+    "locale": "de",
+    "definition": "Die Tagline, die mit dem Titel der Website verbunden ist, definiert die Identität der Website. Der Titel fasst zusammen, worum es auf der Website geht, während die Tagline den Titel in einem beschreibenden Satz erweitert, indem sie weitere Informationen über die Tätigkeit des Unternehmens liefert.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "glossary_id": 10
+}
 ]

@@ -337,5 +337,188 @@
         "updated_at": null,
         "deleted_at": null,
         "course_id": 14
-    }
+    },
+    {
+        "id": 29,
+        "name": "Web-Projekt",
+        "locale": "de",
+        "hours": "240",
+        "bac": "3",
+        "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "course_id": 1
+    },
+    {
+        "id": 30,
+        "name": "Mobile application development",
+        "locale": "de",
+        "hours": "45",
+        "bac": "3",
+        "description": "This course aims to extend the learning from the Server Side Development course and the Web Design B2 course. In this course, you will learn the Laravel Framework, which is your overlay to the PHP language, and you will spend time working on a project for an external client in Laravel, to be presented at the January jury. This course takes place in the first semester only and consists of 16 hours per week.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "course_id": 2
+    },
+    {
+        "id": 31,
+        "name": "End of studies project",
+        "locale": "de",
+        "hours": "210",
+        "bac": "3",
+        "description": "This course aims to extend the learning from the Server Side Development course and the Web Design B2 course. In this course, you will learn the Laravel Framework, which is your overlay to the PHP language, and you will spend time working on a project for an external client in Laravel, to be presented at the January jury. This course takes place in the first semester only and consists of 16 hours per week. ",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "course_id": 3
+
+    },
+    {
+        "id": 32,
+        "name": "Entwicklung mobiler Anwendungen",
+        "locale": "de",
+        "hours": "45",
+        "bac": "3",
+        "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "course_id": 2
+    },
+    {
+        "id": 33,
+        "name": "Projekt zum Abschluss des Studiums",
+        "locale": "de",
+        "hours": "210",
+        "bac": "3",
+        "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "course_id": 3
+
+    },{
+    "id": 34,
+    "name": "Intership",
+    "locale": "de",
+    "hours": "140",
+    "bac": "3",
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche. ",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 4
+},{
+    "id": 35,
+    "name": "Web-Design-Kurs",
+    "locale": "de",
+    "hours": "165",
+    "bac": "2",
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 5
+},{
+    "id": 36,
+    "name": "Gestaltung mobiler Anwendungen",
+    "locale": "de",
+    "hours": "30",
+    "bac": "2",
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 6
+},{
+    "id": 37,
+    "name": "Client-seitige Entwicklung",
+    "locale": "de",
+    "hours": "75",
+    "bac": "2",
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 7
+},{
+    "id": 38,
+    "name": "Serverseitige Entwicklung",
+    "locale": "de",
+    "hours": "75",
+    "bac": "2",
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 8
+},{
+    "id": 39,
+    "name": "Multimedia",
+    "locale": "de",
+    "hours": "60",
+    "bac": "2",
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 9
+},{
+    "id": 40,
+    "name": "Inhaltsverwaltungssystem",
+    "locale": "de",
+    "hours": "45",
+    "bac": "2",
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 10
+},{
+    "id": 41,
+    "name": "HTML",
+    "locale": "de",
+    "hours": 60,
+    "bac": 1,
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 11
+},{
+    "id": 42,
+    "name": "CSS",
+    "locale": "de",
+    "hours": 60,
+    "bac": 1,
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 12
+},{
+    "id": 43,
+    "name": "Web-Design-Kurs",
+    "locale": "de",
+    "hours": 30,
+    "bac": 1,
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 13
+},{
+    "id": 44,
+    "name": "Einführung in die Programmierung",
+    "locale": "de",
+    "hours": 30,
+    "bac": 1,
+    "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "course_id": 14
+}
 ]

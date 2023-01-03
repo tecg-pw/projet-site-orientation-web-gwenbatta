@@ -140,5 +140,76 @@
         "created_at": null,
         "updated_at": null,
         "language_id": 9
+    },
+    {
+        "id": 19,
+        "name": "HTML",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 1
+    },
+    {
+        "id": 20,
+        "name": "CSS",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 2
+    },
+    {
+        "id": 21,
+        "name": "Laravel",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 3
+    },{
+        "id": 22,
+        "name": "PHP",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 4
+    },
+    {
+        "id": 23,
+        "name": "Wordpress",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 5
+    },
+    {
+        "id": 24,
+        "name": "Javascript",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 6
+    },
+    {
+        "id": 25,
+        "name": "Flutter",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 7
+    },
+    {
+        "id": 26,
+        "name": "MySQL",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 8
+    },
+    {
+        "id": 27,
+        "name": "NodeJS",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 9
     }
 ]

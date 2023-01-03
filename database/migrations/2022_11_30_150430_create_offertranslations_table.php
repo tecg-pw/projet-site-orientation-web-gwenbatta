@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('locale');
             $table->string('supervisor')->nullable();
             $table->text('description');
-            $table->json('softwares')->nullable();
-            $table->json('others')->nullable();
             $table->text('pdf')->nullable();
             $table->timestamps();
             $table->softDeletes();

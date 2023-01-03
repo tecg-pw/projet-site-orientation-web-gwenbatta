@@ -5,17 +5,6 @@
         "locale": "fr",
         "supervisor": "Olivier Léonard",
         "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
-        "softwares": [
-            "Adobe Photoshop",
-            "Adobe Illustrator",
-            "Adobe XD"
-        ],
-        "others": [
-            "Compétences en design web",
-            "Compétence en infographie",
-            "VueJS",
-            "ReactJS"
-        ],
         "pdf": null,
         "created_at": null,
         "updated_at": null,
@@ -28,17 +17,6 @@
         "locale": "en",
         "supervisor": "Olivier Léonard",
         "description": "Are you passionate, dynamic and creative?\nAre you looking for a new professional challenge?\nOur young and dynamic team is\nlooking for profiles like yours.",
-        "softwares": [
-            "Adobe Photoshop",
-            "Adobe Illustrator",
-            "Adobe XD"
-        ],
-        "others": [
-            "Web design skills",
-            "Computer graphics skills",
-            "VueJS",
-            "ReactJS"
-        ],
         "pdf": null,
         "created_at": null,
         "updated_at": null,
@@ -51,17 +29,6 @@
         "locale": "fr",
         "supervisor": "Olivier Léonard",
         "description": "Tu es passionné, dynamique et créatif ?\nTu désires relever un nouveau challenge professionnel ?\nNotre jeune et dynamique équipe est\nà la recherche de profils comme le tien.",
-        "softwares": [
-            "Adobe Photoshop",
-            "Adobe Illustrator",
-            "Adobe XD"
-        ],
-        "others": [
-            "PHP",
-            "MySQL",
-            "Adobe Première",
-            "After Effect"
-        ],
         "pdf": null,
         "created_at": null,
         "updated_at": null,
@@ -74,21 +41,33 @@
         "locale": "en",
         "supervisor": "Olivier Léonard",
         "description": "Are you passionate, dynamic and creative?\nAre you looking for a new professional challenge?\nOur young and dynamic team is\nlooking for profiles like yours.",
-        "softwares": [
-            "Adobe Photoshop",
-            "Adobe Illustrator",
-            "Adobe XD"
-        ],
-        "others": [
-            "PHP",
-            "MySQL",
-            "Adobe Première",
-            "After Effect"
-        ],
         "pdf": null,
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
         "offer_id": 2
-    }
+    },
+    {
+        "id": 5,
+        "name": "Front-End-Entwickler",
+        "locale": "de",
+        "supervisor": "Olivier Léonard",
+        "description": "Sind Sie leidenschaftlich, dynamisch und kreativ?\nSind Sie auf der Suche nach einer neuen beruflichen Herausforderung?\nUnser junges und dynamisches Team ist\nist auf der Suche nach Profilen wie dem Ihren.",
+        "pdf": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "offer_id": 1
+    },{
+    "id": 6,
+    "name": "Webdesigner",
+    "locale": "de",
+    "supervisor": "Olivier Léonard",
+    "description": "Sind Sie leidenschaftlich, dynamisch und kreativ?\nSind Sie auf der Suche nach einer neuen beruflichen Herausforderung?\nUnser junges und dynamisches Team ist\nist auf der Suche nach Profilen wie dem Ihren.",
+    "pdf": null,
+    "created_at": null,
+    "updated_at": null,
+    "deleted_at": null,
+    "offer_id": 2
+}
 ]

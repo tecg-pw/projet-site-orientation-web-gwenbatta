@@ -124,5 +124,68 @@
         "created_at": null,
         "updated_at": null,
         "software_id": 8
+    },
+    {
+        "id": 18,
+        "name": "Photoshop",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 1
+    },
+    {
+        "id": 19,
+        "name": "Illustrator",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 2
+    },
+    {
+        "id": 20,
+        "name": "Indesign",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 3
+    },{
+        "id": 21,
+        "name": "Figma",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 4
+    },
+    {
+        "id": 22,
+        "name": "Adobe XD",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 5
+    },
+    {
+        "id": 23,
+        "name": "Sketch",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 6
+    },
+    {
+        "id": 24,
+        "name": "After Effect",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 7
+    },
+    {
+        "id": 25,
+        "name": "Adobe Première",
+        "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 8
     }
 ]

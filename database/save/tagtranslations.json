@@ -130,5 +130,71 @@
         "name": "end-of-studies project",
         "locale": "en",
         "tag_id": 11
+    },
+    {
+        "id": 23,
+        "name": "allgemein",
+        "locale": "de",
+        "tag_id": 1
+    },
+    {
+        "id": 24,
+        "name": "php",
+        "locale": "de",
+        "tag_id": 2
+    },
+    {
+        "id": 25,
+        "name": "html",
+        "locale": "de",
+        "tag_id": 3
+    },
+    {
+        "id": 26,
+        "name": "css",
+        "locale": "de",
+        "tag_id": 4
+    },
+    {
+        "id": 27,
+        "name": "javascript",
+        "locale": "de",
+        "tag_id": 5
+    },
+    {
+        "id": 28,
+        "name": "sgbd",
+        "locale": "de",
+        "tag_id": 6
+    },
+    {
+        "id": 29,
+        "name": "multimedia",
+        "locale": "de",
+        "tag_id": 7
+    },
+    {
+        "id": 30,
+        "name": "Web-Design",
+        "locale": "de",
+        "tag_id": 8
+    },
+    {
+        "id": 31,
+        "name": "flutter",
+        "locale": "de",
+        "tag_id": 9
+    },
+    {
+        "id": 32,
+        "name": "intership",
+        "locale": "de",
+        "tag_id": 10
+    },
+    {
+        "id": 33,
+        "name": "Projekt zum Abschluss des Studiums",
+        "locale": "de",
+        "tag_id": 11
     }
 ]

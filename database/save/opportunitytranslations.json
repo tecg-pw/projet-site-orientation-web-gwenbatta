@@ -9,7 +9,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 1
-    },{
+    },
+    {
         "id": 2,
         "name": "Front-end developper",
         "locale": "en",
@@ -30,7 +31,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 2
-    },{
+    },
+    {
         "id": 4,
         "name": "Back-end developper",
         "locale": "en",
@@ -51,7 +53,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 3
-    },{
+    },
+    {
         "id": 6,
         "name": "User Experience Designer (UX Designer)",
         "locale": "en",
@@ -72,7 +75,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 4
-    },{
+    },
+    {
         "id": 8,
         "name": "Multimédia Designer",
         "locale": "en",
@@ -93,7 +97,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 5
-    },{
+    },
+    {
         "id": 10,
         "name": "Multimédia Developper",
         "locale": "en",
@@ -114,7 +119,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 6
-    },{
+    },
+    {
         "id": 12,
         "name": "Interface Designer (UI Designer)",
         "locale": "en",
@@ -135,7 +141,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 7
-    },{
+    },
+    {
         "id": 14,
         "name": "Web Developer",
         "locale": "en",
@@ -156,7 +163,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 8
-    },{
+    },
+    {
         "id": 16,
         "name": "Web Designer",
         "locale": "en",
@@ -177,7 +185,8 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 9
-    },{
+    },
+    {
         "id": 18,
         "name": "Mobile Developer",
         "locale": "en",
@@ -198,12 +207,123 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 10
-    },{
+    },
+    {
         "id": 20,
         "name": "Mobile Designer",
         "locale": "en",
         "excerpt": "The mobile designer is the creator and developer of mobile applications and company interfaces. They put their creativity and knowledge at the service of their clients. They create designs, videos and sounds to highlight their clients' products and services..",
         "description": "Front-end web development refers to the HTML, CSS and JavaScript productions of a web page or application that a user can see and interact with directly.\n\nThe main challenge of front-end web development is to always be up to date with the latest developments; development tools and techniques are constantly evolving.\n\nThe design of websites must also be able to offer good usability by making it easy to navigate and obtain information. This objective is further complicated by the fact that devices come in a variety of formats and sizes. The developer must therefore ensure that the website appears correctly on all available web browsers and devices.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 10
+    },
+    {
+        "id": 21,
+        "name": "Front-end developper",
+        "locale": "de",
+        "excerpt": "Der Front-End-Entwickler programmiert den sichtbaren Teil, die Benutzeroberfläche einer App oder einer Website, im Gegensatz zum Back-End-Entwickler, der im Hintergrund arbeitet. Seine Aufgabe ähnelt der eines Webintegrators, aber er hat eine wichtigere Rolle bei der Erstellung einer Weblösung.",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 1
+    },
+    {
+        "id": 22,
+        "name": "Back-end developper",
+        "locale": "de",
+        "excerpt": "Der Backend-Entwickler befasst sich mit der technischen und funktionellen Seite einer Website. Im Gegensatz zum Frontend-Entwickler arbeitet er im Hintergrund und kümmert sich um das Back-Office, d. h. um die Elemente, die für das Funktionieren der Website unerlässlich sind, aber für die Internetnutzer nicht sichtbar sind.",
+        "description": "Die Aufgabe des Backend-Entwicklers besteht darin, alle technischen Elemente zu entwerfen, die für das Funktionieren einer Website oder einer Anwendung unerlässlich sind. Sie müssen daher über fundierte IT-Kenntnisse verfügen, z. B. durch die Beherrschung von Programmiersprachen wie Python, Ruby, PHP, Java usw. Sie sind auch für die Verwaltung von Datenbanken zuständig. Aus diesem Grund ist es unerlässlich, dass sie mit SQL Server und MySQL vertraut sind. Der Backend-Entwickler muss auch in der Lage sein, die Content-Management-Plattform zu entwickeln und Webanwendungen zu erstellen. Bei anhaltenden Problemen empfiehlt der Backend-Entwickler dem Kunden Lösungen und bietet technische Unterstützung für die Website sowie reaktive Wartung. Es ist auch die Aufgabe des Entwicklers, dem Kunden zu helfen, wenn der Kunde eine Website liefert.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 2
+    },
+    {
+        "id": 23,
+        "name": "User Experience Designer (UX Designer)",
+        "locale": "de",
+        "excerpt": "UX-Design ist der Prozess der Gestaltung von Produkten, die nützlich, einfach und angenehm zu benutzen sind. Die Wurzeln des UX-Designs liegen im Erlebnisdesign. Es geht darum, die Erfahrung der Nutzer zu verbessern, die mit Ihrem (digitalen oder physischen) Produkt interagieren.",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 3
+    },
+    {
+        "id": 24,
+        "name": "Multimédia Designer",
+        "locale": "de",
+        "excerpt": "Der Grafik- und Multimediadesigner (auch Webdesigner genannt) ist ein Zeichner und Layouter, der an elektronischen Medien arbeitet: Webseiten, CD-ROMs, TV- oder Videoverpackungen. Ihre Aufgabe? Diesen verschiedenen Medien eine starke Identität zu verleihen.",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 4
+    },
+    {
+        "id": 25,
+        "name": "Multimédia Developper",
+        "locale": "de",
+        "excerpt": "Der Multimedia-Entwickler sorgt für die technische Leitung des Projekts, d.h. für die Anwendung des Szenarios, die Handhabung der grafischen Werkzeuge und die Implementierung des Internets. Seine Aufgabe liegt an der Schnittstelle von drei Bereichen, nämlich Computergrafik, Web-Interface und Multimedia, die er mit Perfektion beherrscht.",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 5
+    },
+    {
+        "id": 26,
+        "name": "Interface Designer (UI Designer)",
+        "locale": "de",
+        "excerpt": "UI steht für Benutzeroberfläche. UI-Design bezieht sich also auf die grafische Umgebung, in der sich der Benutzer einer Software, Website oder Anwendung bewegt. Die Aufgabe des UI-Designers besteht darin, eine angenehme und praktische Schnittstelle zu schaffen, die einfach zu bedienen ist.",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 6
+    },
+    {
+        "id": 27,
+        "name": "Web Developer",
+        "locale": "de",
+        "excerpt": "Er kümmert sich um den technischen Teil der Websites. Auf Anfrage eines Kunden oder eines Unternehmens und auf der Grundlage einer Reihe von Spezifikationen. Als Spezialist für Computersprachen kümmert er sich um alle Funktionalitäten der Website, ihre Architektur, den Datenzugriff und das Schreiben der Codezeilen.",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 7
+    },
+    {
+        "id": 28,
+        "name": "Web Designer",
+        "locale": "de",
+        "excerpt": "Halb Grafiker, halb Informatiker, ist der Webdesigner auf die Erstellung von Webseiten spezialisiert. Er kümmert sich um den gesamten grafischen Aspekt einer Internetseite (Illustrationen, Animationen, Typografie...). Er wählt die Platzierung der Fotos, die Größe der Zeichen und die Farben, die die Konsultation für den Benutzer angenehm machen...",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 8
+    },
+    {
+        "id": 29,
+        "name": "Mobile Developer",
+        "locale": "de",
+        "excerpt": "Der iOS/Android-Mobilentwickler widmet sich der Erstellung oder Aktualisierung von Anwendungen, die auf mobilen Geräten mit einem dieser Betriebssysteme laufen.",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 9
+    },
+    {
+        "id": 30,
+        "name": "Mobile Designer",
+        "locale": "de",
+        "excerpt": "Der Mobile Designer ist der Schöpfer und Entwickler von mobilen Anwendungen und Unternehmensoberflächen. Sie stellen ihre Kreativität und ihr Wissen in den Dienst ihrer Kunden. Sie erstellen Designs, Videos und Sounds, um die Produkte und Dienstleistungen ihrer Kunden hervorzuheben...",
+        "description": "Front-End-Webentwicklung bezieht sich auf die HTML-, CSS- und JavaScript-Produktionen einer Webseite oder Anwendung, die ein Benutzer sehen und mit der er direkt interagieren kann.\n\nDie größte Herausforderung bei der Front-End-Webentwicklung besteht darin, immer mit den neuesten Entwicklungen Schritt zu halten; die Entwicklungstools und -techniken werden ständig weiterentwickelt.\n\nDas Design von Websites muss auch eine gute Benutzerfreundlichkeit bieten, indem es die Navigation und den Zugang zu Informationen erleichtert. Dieses Ziel wird durch die Tatsache erschwert, dass es Geräte in verschiedenen Formaten und Größen gibt. Der Entwickler muss daher sicherstellen, dass die Website auf allen verfügbaren Webbrowsern und Geräten korrekt angezeigt wird.",
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,

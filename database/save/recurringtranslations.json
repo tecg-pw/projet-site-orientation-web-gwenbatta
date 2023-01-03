@@ -18,5 +18,15 @@
         "updated_at": null,
         "deleted_at": null,
         "recurring_id": 1
+    },
+    {
+        "id": 3,
+        "name": "Ist ein Mac unerlässlich?",
+        "locale": "de",
+        "description": "Nein, ein Mac ist für Webkurse nicht zwingend erforderlich. Wenn Sie jedoch einen neuen Computer kaufen müssen und einen Webkurs belegen wollen, raten wir Ihnen zu einem Mac. Die meisten Weblehrer verwenden nämlich Apple und können Ihnen bei Problemen besser helfen, da sie mit diesen Computern besser vertraut sind und sie ein besseres Werkzeug für die Webentwicklung sind...",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "recurring_id": 1
     }
 ]
