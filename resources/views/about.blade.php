@@ -77,7 +77,7 @@
                     </div>
                 </section>
             </section>
-            <section class="border-b-2 border-b-orange-500/40 pb-10 lg:border-b-0 lg:border-r-2 lg:pr-16 lg:pl-10 xl:pl-0 lg:border-r-orange-500/40"
+            <section class="border-b-2 border-b-orange-500/40 pb-10 mt-10 lg:mt-0 lg:border-b-0 lg:border-r-2 lg:pr-16 lg:pl-10 xl:pl-0 lg:border-r-orange-500/40"
                 aria-labelledby="second-year">
                 <h3 class="text-xl mb-7 xl:text-2xl uppercase font-medium xl:mb-14" id="second-year" aria-level="3"
                     role="heading">{{__('about.course_second')}}</h3>
@@ -99,7 +99,7 @@
                     </div>
                 </section>
             </section>
-            <section class="border-b-2 border-b-orange-500/40 pb-10 lg:pl-10 xl:pl-0 lg:border-b-0 "
+            <section class="border-b-2 border-b-orange-500/40 pb-10  mt-10 lg:mt-0  lg:pl-10 xl:pl-0 lg:border-b-0 "
                 aria-labelledby="third-year">
                 <h3 class="text-xl mb-7 xl:text-2xl uppercase font-medium xl:mb-14" id="third-year" aria-level="3"
                     role="heading">{{__('about.course_third')}}</h3>

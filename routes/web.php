@@ -122,7 +122,7 @@ Route::post('/{locale?}/forum/subject/destroy/{subject:id}', [ForumController::c
 
 
 
-Route::get('/{locale?}/forum/show/{subject:slug}', [CommentController::class, 'create'])->middleware(['auth','locale']);
+Route::get('/{locale?}/forum/show/{subject:slug}', [CommentController::class, 'create'])->middleware('locale');
 Route::post('/{locale?}/forum/show/{subject:slug}', [CommentController::class, 'store'])->middleware(['auth','locale']);
 Route::post('/{locale?}/forum/show/{subject:slug}/comment/{comment:id}', [CommentController::class, 'update'])->middleware(['auth','locale']);
 Route::post('/{locale?}/forum/show/{subject:slug}/comment/destroy/{comment:id}', [CommentController::class, 'destroy'])->middleware('auth');
