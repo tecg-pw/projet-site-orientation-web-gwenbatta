@@ -25,7 +25,7 @@ class GlossaryTranslationSeeder extends Seeder
                 "name" => $value->name,
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),
-                "definition" => $value->definition,
+                "definition" => '<p>'.$value->definition/'</p>',
                 "glossary_id" => $value->glossary_id,
             ]);
         }

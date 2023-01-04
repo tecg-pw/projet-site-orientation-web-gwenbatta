@@ -25,8 +25,8 @@ class BookTranslationSeeder extends Seeder
                 "name" => $value->name,
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),
-                "excerpt" => $value->excerpt,
-                "description" => $value->description,
+                "excerpt" => '<p>'.$value->excerpt.'</p>',
+                "description" => '<p>'.$value->description.'</p>',
                 "gallery" => $value->gallery,
                 "book_id" => $value->book_id,
             ]);

@@ -24,7 +24,7 @@ class RecurringTranslationSeeder extends Seeder
             RecurringTranslation::factory()->create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
-                "description" => $value->description,
+                "description" => '<p>'.$value->description.'</p>',
                 "locale" => $value->locale,
                 "recurring_id" => $value->recurring_id,
             ]);

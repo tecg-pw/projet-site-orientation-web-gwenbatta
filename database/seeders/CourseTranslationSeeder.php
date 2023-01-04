@@ -27,7 +27,7 @@ class CourseTranslationSeeder extends Seeder
                 "locale" => $value->locale,
                 "hours" => $value->hours,
                 "bac" => $value->bac,
-                "description" => $value->description,
+                "description" => '<p>'.$value->description.'</p>',
                 "course_id"=>$value->course_id
             ]);
         }

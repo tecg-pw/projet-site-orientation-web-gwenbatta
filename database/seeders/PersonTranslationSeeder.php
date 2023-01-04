@@ -30,7 +30,7 @@ class PersonTranslationSeeder extends Seeder
                 "isTeacher" => $value->isTeacher,
                 "avatar" => $value->avatar,
                 "locale" => $value->locale,
-                "description" => $value->description,
+                "description" => '<p>'.$value->description.'</p>',
                 "link_portfolio" => $value->link_portfolio,
                 "link_github" => $value->link_github,
                 "linkedin" => $value->linkedin,

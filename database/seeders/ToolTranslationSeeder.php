@@ -26,7 +26,7 @@ class ToolTranslationSeeder extends Seeder
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),
                 "link" => $value->link,
-                "excerpt" => $value->excerpt,
+                "excerpt" => '<p>'.$value->excerpt.'</p>',
                 "tool_id"=>$value->tool_id
             ]);
         }

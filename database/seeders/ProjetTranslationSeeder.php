@@ -26,7 +26,7 @@ class ProjetTranslationSeeder extends Seeder
                 "title" => $value->title,
                 "slug" => \Str::slug($value->title.$value->project_id),
                 "locale" => $value->locale,
-                "description" => $value->description,
+                "description" => '<p>'.$value->description.'</p>',
                 "link_project" => $value->link_project,
                 "link_github" => $value->link_github,
                 "date" => Carbon::parse($value->date)->toDateTimeString(),

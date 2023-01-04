@@ -24,8 +24,8 @@ class OpportunityTranslationSeeder extends Seeder
             OpportunityTranslation::factory()->create([
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
-                "description" => $value->description,
-                "excerpt" => $value->excerpt,
+                "description" =>'<p>'. $value->description.'</p>',
+                "excerpt" => '<p>'.$value->excerpt.'</p>',
                 "locale" => $value->locale,
                 "opportunity_id" => $value->opportunity_id,
             ]);

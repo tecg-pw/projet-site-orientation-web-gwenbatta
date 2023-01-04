@@ -22,7 +22,7 @@ class TestimonialTranslationSeeder extends Seeder
 
         foreach ($partners as $key => $value) {
             TestimonialTranslation::create([
-                "description" => $value->description,
+                "description" => '<p>'.$value->description.'</p>',
                 "locale" => $value->locale,
                 "testimonial_id" => $value->testimonial_id,
 

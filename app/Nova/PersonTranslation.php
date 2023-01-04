@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 
 class PersonTranslation extends Resource
 {
@@ -83,7 +84,7 @@ class PersonTranslation extends Resource
                 ->sortable()
                 ->rules('required','max:255'),
 
-            Textarea::make('Description')->rows(3),
+            Trix::make('Description')->rows(3),
 
             Text::make('Lien du Portfolio','link_Portfolio')
                 ->hideFromIndex()

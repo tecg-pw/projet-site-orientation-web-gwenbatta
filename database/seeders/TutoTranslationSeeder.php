@@ -26,7 +26,7 @@ class TutoTranslationSeeder extends Seeder
                 "name" => $value->name,
                 "slug" => \Str::slug($value->name),
                 "link" => $value->link,
-                "excerpt" => $value->excerpt,
+                "excerpt" => '<p>'.$value->excerpt.'</p>',
                 "languages" => $value->languages,
                 "tuto_id"=>$value->tuto_id
             ]);

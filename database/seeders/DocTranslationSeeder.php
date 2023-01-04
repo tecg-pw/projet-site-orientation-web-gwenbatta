@@ -26,7 +26,7 @@ class DocTranslationSeeder extends Seeder
                 "locale" => $value->locale,
                 "slug" => \Str::slug($value->name),
                 "link" => $value->link,
-                "excerpt" => $value->excerpt,
+                "excerpt" => '<p>'.$value->excerpt.'</p>',
                 "doc_id"=>$value->doc_id
             ]);
         }

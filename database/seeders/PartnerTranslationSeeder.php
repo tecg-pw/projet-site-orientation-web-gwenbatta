@@ -30,7 +30,7 @@ class PartnerTranslationSeeder extends Seeder
                 "adresse" => $value->adresse,
                 "locality" => $value->locality,
                 "locality_number" => $value->locality_number,
-                "description" => $value->description,
+                "description" => '<p>'.$value->description.'</p>',
                 "site_link" => $value->site_link,
                 "link_facebook" => $value->link_facebook,
                 "link_linkedin" => $value->link_linkedin,

@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 
 class OfferTranslation extends Resource
 {
@@ -63,7 +64,7 @@ class OfferTranslation extends Resource
                 'en' => 'en',
             ])->displayUsingLabels(),
 
-            Textarea::make('Description')->rows(3)->rules('required'),
+            Trix::make('Description')->rows(3)->rules('required'),
 
             BelongsTo::make('Offres','offer', 'App\Nova\Offer')->hideFromIndex(),
         ];

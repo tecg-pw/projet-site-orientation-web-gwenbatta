@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 
 class ProjetTranslation extends Resource
 {
@@ -84,7 +85,7 @@ class ProjetTranslation extends Resource
 
             Number::make('Person_id'),
 
-            Textarea::make('Description')->rows(3),
+            Trix::make('Description')->rows(3),
 
             BelongsTo::make('Personnes', 'person', 'App\Nova\PersonTranslation')
                 ->onlyOnDetail(),
