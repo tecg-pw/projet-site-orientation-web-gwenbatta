@@ -94,5 +94,37 @@
         "status_id": 4,
         "created_at": null,
         "updated_at": null
+    },
+    {
+        "id": 12,
+        "name": "Bezoekers",
+        "locale": "nl",
+        "status_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 13,
+        "name": "Studenten",
+        "locale": "de",
+        "status_id": 2,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 14,
+        "name": "alumni",
+        "locale": "nl",
+        "status_id": 3,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 15,
+        "name": "Leraar",
+        "locale": "nl",
+        "status_id": 4,
+        "created_at": null,
+        "updated_at": null
     }
 ]

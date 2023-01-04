@@ -22,7 +22,8 @@
         "created_at": null,
         "updated_at": null,
         "software_id": 3
-    },{
+    },
+    {
         "id": 4,
         "name": "Figma",
         "locale": "fr",
@@ -85,7 +86,8 @@
         "created_at": null,
         "updated_at": null,
         "software_id": 3
-    },{
+    },
+    {
         "id": 13,
         "name": "Figma",
         "locale": "en",
@@ -148,7 +150,8 @@
         "created_at": null,
         "updated_at": null,
         "software_id": 3
-    },{
+    },
+    {
         "id": 21,
         "name": "Figma",
         "locale": "de",
@@ -184,6 +187,70 @@
         "id": 25,
         "name": "Adobe Première",
         "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 8
+    },
+    {
+        "id": 26,
+        "name": "Photoshop",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 1
+    },
+    {
+        "id": 27,
+        "name": "Illustrator",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 2
+    },
+    {
+        "id": 28,
+        "name": "Indesign",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 3
+    },
+    {
+        "id": 29,
+        "name": "Figma",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 4
+    },
+    {
+        "id": 30,
+        "name": "Adobe XD",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 5
+    },
+    {
+        "id": 31,
+        "name": "Sketch",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 6
+    },
+    {
+        "id": 32,
+        "name": "After Effect",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "software_id": 7
+    },
+    {
+        "id": 33,
+        "name": "Adobe Première",
+        "locale": "nl",
         "created_at": null,
         "updated_at": null,
         "software_id": 8

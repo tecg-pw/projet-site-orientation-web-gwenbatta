@@ -328,5 +328,115 @@
         "updated_at": null,
         "deleted_at": null,
         "opportunity_id": 10
+    },
+    {
+        "id": 31,
+        "name": "Front-end ontwikkelaar",
+        "locale": "nl",
+        "excerpt": "De front-end ontwikkelaar programmeert het zichtbare deel, de gebruikersinterface van een app of een website, in tegenstelling tot de back-end ontwikkelaar die op de achtergrond werkt. Zijn taak is vergelijkbaar met die van een webintegrator, maar hij heeft een belangrijkere rol bij het creëren van een weboplossing.",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een website of toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 1
+    },
+    {
+        "id": 32,
+        "name": "Back-end ontwikkelaar",
+        "locale": "nl",
+        "excerpt": "De back-end ontwikkelaar houdt zich bezig met de technische en functionele kant van een website. In tegenstelling tot de front-end ontwikkelaar werkt hij op de achtergrond en zorgt hij voor de back-office, dat wil zeggen de elementen die essentieel zijn voor het functioneren van de website maar die niet zichtbaar zijn voor internetgebruikers.",
+        "description": "De taak van de backend developer is het ontwerpen van alle technische elementen die essentieel zijn voor het functioneren van een website of applicatie. Daarom moeten zij over gedegen IT-vaardigheden beschikken, bijvoorbeeld door het beheersen van programmeertalen als Python, Ruby, PHP, Java, enz. Zij zijn ook verantwoordelijk voor het beheer van databanken. Daarom is het essentieel dat zij vertrouwd zijn met SQL Server en MySQL. De backend developer moet ook het content management platform kunnen ontwikkelen en webapplicaties maken. Als er problemen blijven bestaan, beveelt de backend developer oplossingen aan voor de klant en biedt hij technische ondersteuning voor de website en reactief onderhoud. Het is ook de taak van de ontwikkelaar om de klant te helpen wanneer deze een website oplevert.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 2
+    },
+    {
+        "id": 33,
+        "name": "User Experience Designer (UX Designer)",
+        "locale": "nl",
+        "excerpt": "UX-ontwerp is het proces van het ontwerpen van producten die nuttig, gemakkelijk en aangenaam zijn om te gebruiken. De wortels van UX design liggen in experience design. Het gaat om het verbeteren van de ervaring van gebruikers die met uw product (digitaal of fysiek) omgaan.",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een website of toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 3
+    },
+    {
+        "id": 34,
+        "name": "Multimedia Ontwerper",
+        "locale": "nl",
+        "excerpt": "De grafisch en multimediaontwerper (ook wel webdesigner genoemd) is een tekenaar en opmaker die werkt aan elektronische media: Websites, cd-roms, tv- of videoverpakkingen. Hun werk? Om deze verschillende media een sterke identiteit te geven.",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een website of toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 4
+    },
+    {
+        "id": 35,
+        "name": "Multimedia Ontwikkelaar",
+        "locale": "nl",
+        "excerpt": "De multimediaontwikkelaar zorgt voor het technische beheer van het project, d.w.z. de toepassing van het scenario, het hanteren van de grafische hulpmiddelen en de implementatie van het web. Zijn taak ligt op het snijvlak van drie gebieden, namelijk computer graphics, web interface en multimedia, die hij met perfectie beheerst.",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een website of toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 5
+    },
+    {
+        "id": 36,
+        "name": "Interface-ontwerper (UI-ontwerper)",
+        "locale": "nl",
+        "excerpt": "UI staat voor user interface. UI-ontwerp verwijst dus naar de grafische omgeving waarin de gebruiker van een software, website of applicatie zich beweegt. De taak van de UI-ontwerper bestaat erin een aangename en praktische interface te creëren die gemakkelijk te gebruiken is.",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een website of toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 6
+    },
+    {
+        "id": 37,
+        "name": "Web Ontwikkelaar",
+        "locale": "nl",
+        "excerpt": "Hij zorgt voor het technische gedeelte van de websites. Op verzoek van een klant of een bedrijf en op basis van een bestek. Als specialist in computertalen zorgt hij voor alle functionaliteiten van de website, de architectuur ervan, de gegevenstoegang en het schrijven van de regels code.",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een website of toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 7
+    },
+    {
+        "id": 38,
+        "name": "Web Designer",
+        "locale": "nl",
+        "excerpt": "Half grafisch ontwerper, half computerwetenschapper, de webdesigner is gespecialiseerd in het maken van websites. Hij verzorgt het hele grafische aspect van een website (illustraties, animaties, typografie...). Hij kiest de plaatsing van de foto's, de grootte van de letters en de kleuren die de raadpleging aangenaam maken voor de gebruiker...",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een website of toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 8
+    },
+    {
+        "id": 39,
+        "name": "Mobiele Ontwikkelaar",
+        "locale": "nl",
+        "excerpt": "De mobiele iOS/Android-ontwikkelaar houdt zich bezig met het maken of bijwerken van toepassingen die draaien op mobiele apparaten met een van deze besturingssystemen.",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een webpagina of -toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 9
+    },
+    {
+        "id": 30,
+        "name": "Mobile Designer",
+        "locale": "nl",
+        "excerpt": "De mobiele ontwerper is de bedenker en ontwikkelaar van mobiele toepassingen en bedrijfsinterfaces. Zij stellen hun creativiteit en kennis ten dienste van hun klanten. Ze creëren ontwerpen, video's en geluiden om de producten en diensten van hun klanten onder de aandacht te brengen....",
+        "description": "Front-end webontwikkeling verwijst naar de HTML-, CSS- en JavaScript-producties van een webpagina of -toepassing die een gebruiker kan zien en waarmee hij rechtstreeks kan interageren.\n\nDe grootste uitdaging bij front-end webontwikkeling is om altijd mee te gaan met de nieuwste ontwikkelingen; ontwikkeltools en technieken ontwikkelen zich voortdurend.\n\nHet ontwerp van een website moet ook een goede gebruikerservaring bieden door de navigatie en de toegang tot informatie te vergemakkelijken. Dit doel wordt bemoeilijkt door het feit dat apparaten er in verschillende formaten en groottes zijn. De ontwikkelaar moet er daarom voor zorgen dat de website correct wordt weergegeven op alle beschikbare webbrowsers en apparaten.",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "opportunity_id": 10
     }
 ]

@@ -83,4 +83,33 @@
         "deleted_at": null,
         "coordinate_id": 2
     }
+,
+    {
+        "id": 7,
+        "locale": "nl",
+        "organization": "hepl",
+        "employee_name": "paggen",
+        "employee_firstname": "sophie",
+        "phone": "04 279 55 20",
+        "mail": "tech.secretariat@hepl.be",
+        "job": "Secretaris van de HEPL",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "coordinate_id": 1
+    },
+    {
+        "id": 8,
+        "locale": "nl",
+        "organization": "hepl",
+        "employee_name": "vilain",
+        "employee_firstname": "dominique",
+        "phone": "04 279 55 20",
+        "mail": "dominique.vilain@hepl.be",
+        "job": "Optie leraar",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "coordinate_id": 2
+    }
 ]

@@ -152,7 +152,8 @@
         "deleted_at": null,
         "project_id": 6,
         "person_id": 2
-    },{
+    },
+    {
         "id": 12,
         "title": "CV",
         "locale": "en",
@@ -164,7 +165,7 @@
         "gallery": null,
         "deleted_at": null,
         "project_id": 6,
-    "person_id": 2
+        "person_id": 2
     },
     {
         "id": 13,
@@ -179,7 +180,8 @@
         "deleted_at": null,
         "project_id": 7,
         "person_id": 11
-    },{
+    },
+    {
         "id": 14,
         "title": "Portfolio",
         "locale": "en",
@@ -191,7 +193,7 @@
         "gallery": null,
         "deleted_at": null,
         "project_id": 7,
-    "person_id": 11
+        "person_id": 11
     },
     {
         "id": 15,
@@ -206,7 +208,8 @@
         "deleted_at": null,
         "project_id": 8,
         "person_id": 11
-    },{
+    },
+    {
         "id": 16,
         "title": "CV",
         "locale": "en",
@@ -218,7 +221,7 @@
         "gallery": null,
         "deleted_at": null,
         "project_id": 8,
-    "person_id": 11
+        "person_id": 11
     },
     {
         "id": 17,
@@ -233,7 +236,8 @@
         "deleted_at": null,
         "project_id": 9,
         "person_id": 12
-    },{
+    },
+    {
         "id": 18,
         "title": "CV",
         "locale": "en",
@@ -245,7 +249,7 @@
         "gallery": null,
         "deleted_at": null,
         "project_id": 9,
-    "person_id": 12
+        "person_id": 12
     },
     {
         "id": 19,
@@ -288,122 +292,271 @@
         "deleted_at": null,
         "project_id": 1,
         "person_id": 1
-    },{
-    "id": 22,
-    "title": "Ecosph'air",
-    "locale": "de",
-    "description": "«Diese Website wurde für den Kurs Web Design B2 erstellt, um meine im Laufe des Jahres geleistete Arbeit zu präsentieren. Die Seite wurde hauptsächlich mit Wordpress, CSS3 und Javascript kodiert.\n\nDieses Projekt wurde auf Anfrage eines externen Kunden entwickelt. Der Kunde wollte verschiedene Module zur Messung des CO2-Gehalts in der Luft vorstellen und bekannt machen, um potenzielle Kunden zu gewinnen. Ziel der Website war es auch, den Elektronikbereich der HEPL zu fördern, damit die zukünftigen Studenten dieser Option sich selbst vorstellen und die Module entdecken können, mit denen sie arbeiten werden...»",
-    "link_project": "https://ecosphair.gwenaelle-batta.be/",
-    "link_github": "https://github.com/GwenaelleBatta/projet-antilope",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/ecosphair-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "project_id": 2,
-    "person_id": 1
-}, {
-    "id": 23,
-    "title": "CV",
-    "locale": "de",
-    "description": "«Diese Website wurde im Rahmen des Web-Design-Kurses erstellt, um uns mit einem Lebenslauf zu präsentieren. Diese Seite wurde hauptsächlich mit HTML5, CSS3 und Javascript programmiert.\n\nDieses Projekt ist das erste des Jahres und bestand darin, die Verwendung der neuen Tools wie Flexbox und Grid-Layout zu üben, die in diesem Jahr eingeführt wurden. Wir mussten eine bestehende Website auswählen und sie an unseren Inhalt anpassen und sicherstellen, dass sie die CSS- und HTML-Regeln einhält. Wenn dies nicht der Fall war, mussten wir dies korrigieren. Meine Inspiration war die Website von Win, die ich über die Website von Knok gefunden habe.»",
-    "link_project": "https://projet-cv.gwenaelle-batta.be/",
-    "link_github": "https://github.com/GwenaelleBatta/CV-project",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/cv-gwen-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "person_id": 1,
-    "project_id": 3
-},{
-    "id": 24,
-    "title": "Portfolio",
-    "locale": "de",
-    "description": "«Sie sind dabei! Eines der großen Projekte im Web-Optionskurs des 2. Jahres ist ein Portfolio, in dem alle unsere Projekte zu finden sind. Die Website musste mit dem CMS WordPress erstellt werden und wird während der Jury am Ende des Jahres präsentiert.»",
-    "link_project": "https://noemie-vincent.be/fr/",
-    "link_github": "https://github.com/noemievincent/portfolio",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/portfolio-noemie-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "project_id": 4,
-    "person_id": 2
-},{
-    "id": 25,
-    "title": "Antilope",
-    "locale": "de",
-    "description": "«Im Rahmen des Web-Design-Kurses wurden wir gebeten, eine Website für einen externen Kunden zu erstellen, die dann im Juni der Jury präsentiert werden sollte. In diesem Jahr sollte die Website eine Vorzeigeseite sein, auf der wir die verschiedenen Module zur Messung der Luftverschmutzung, aber auch die verschiedenen Partner des Projekts vorstellen. Sie wirbt auch für die Elektronikabteilung des HEPL, die mit dem ISSeP zusammengearbeitet hat.»",
-    "link_project": "https://antilope.noemie-vincent.be/fr/",
-    "link_github": "https://github.com/noemievincent/antilope",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/antilope-noemie-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "project_id": 5,
-    "person_id": 2
-},{
-    "id": 26,
-    "title": "CV",
-    "locale": "de",
-    "description": "«Dies war die erste Website, die ich für den Web-Design-Kurs entwerfen musste. Die Anweisungen lauteten, eine bestehende Website zu reproduzieren, indem ich ihren Inhalt so anpasste, dass er wie ein Lebenslauf aussah.»",
-    "link_project": "https://cv.noemie-vincent.be/",
-    "link_github": "https://github.com/noemievincent/cv",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/cv-noemie-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "project_id": 6,
-    "person_id": 2
-},{
-    "id": 27,
-    "title": "Portfolio",
-    "locale": "de",
-    "description": "«Diese Website wurde für den Kurs Web Design B2 erstellt, um meine im Laufe des Jahres geleistete Arbeit zu präsentieren. Diese Seite wurde hauptsächlich mit Wordpress, CSS3 und Javascript programmiert.\n\nDieses Projekt ist eine Website, die dazu dient, den Jurys am Ende des Jahres 2021 unsere verschiedenen Websites zu präsentieren und unser Know-how in Wordpress zu zeigen, einer Sprache, die wir während des Kurses Web Design B2 gelernt haben. Es ist auch das Projekt, das Unternehmen während unserer Bewerbungen besuchen werden, um zu sehen, wer wir sind und was wir können.»",
-    "link_project": "https://aline-db.be/",
-    "link_github": "https://github.com/AlineDB/portfolio-V2",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/portfolio-nathan-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "project_id": 7,
-    "person_id": 11
-},{
-    "id": 28,
-    "title": "CV",
-    "locale": "de",
-    "description": "«Diese Website wurde für den Kurs Web Design B2 erstellt, um meine im Laufe des Jahres geleistete Arbeit zu präsentieren. Diese Seite wurde hauptsächlich mit Wordpress, CSS3 und Javascript programmiert.\n\nDieses Projekt ist eine Website, die dazu dient, den Jurys am Ende des Jahres 2021 unsere verschiedenen Websites zu präsentieren und unser Know-how in Wordpress zu zeigen, einer Sprache, die wir während des Kurses Web Design B2 gelernt haben. Es ist auch das Projekt, das Unternehmen während unserer Bewerbungen besuchen werden, um zu sehen, wer wir sind und was wir können.»",
-    "link_project": "https://aline-db.be/",
-    "link_github": "https://github.com/AlineDB/Aline_CV",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/ecosphair-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "project_id": 8,
-    "person_id": 11
-},{
-    "id": 29,
-    "title": "CV",
-    "locale": "de",
-    "description": "«Im Rahmen des Webdesign-Kurses wurden wir gebeten, aus einer bestehenden Webseite einen Lebenslauf zu erstellen. Da ich meine Fähigkeiten als Illustratorin präsentieren wollte, suchte ich eine Seite, auf der ich sowohl einige Elemente neu zeichnen als auch einige meiner alten Entwürfe zeigen konnte. So wählte ich die alte Projektseite von Denise Chandler, einer amerikanischen Typografin und Webdesignerin, weil sie alle Anforderungen erfüllte, die ich suchte. Außerdem gefällt mir ihr einfaches und klares Design sehr gut!\n\nBei diesem Projekt stieß ich auf mehrere Schwierigkeiten. Die erste bestand darin, einen Ersatz für dieses seltsame Tier zu finden. Die sehr spezielle Form machte es in der Tat ziemlich schwierig, aber nach mehreren Versuchen habe ich schließlich das richtige Design gefunden! Ich kämpfte auch mit der ganzen Sache mit dem Canvas-Tag und seiner Platzierung im Hintergrund der Hauptillustration.»",
-    "link_project": "https://cv.nathan-schyns.be/",
-    "link_github": "https://github.com/SCHYNS-Nathan/web_design-CVs",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/ecosphair-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "project_id": 9,
-    "person_id": 12
-},{
-    "id": 30,
-    "title": "Portfolio",
-    "locale": "de",
-    "description": "«Diese Website wurde für den Kurs Web Design B2 erstellt, um meine im Laufe des Jahres geleistete Arbeit zu präsentieren. Diese Seite wurde hauptsächlich mit Wordpress, CSS3 und Javascript programmiert.\n\nDieses Projekt ist eine Website, die dazu dient, den Jurys am Ende des Jahres 2021 unsere verschiedenen Websites zu präsentieren und unser Know-how in Wordpress zu zeigen, einer Sprache, die wir während des Kurses Web Design B2 gelernt haben. Es ist auch das Projekt, das Unternehmen während unserer Bewerbungen besuchen werden, um zu sehen, wer wir sind und was wir können.»",
-    "link_project": "https://nathan-schyns.be/",
-    "link_github": "https://github.com/SCHYNS-Nathan/portfolio",
-    "date": "2022-06-17 15:24:59",
-    "main_picture": "img-redimensions/portfolio-nathan-526.jpg",
-    "gallery": null,
-    "deleted_at": null,
-    "project_id": 10,
-    "person_id": 12
-}
+    },
+    {
+        "id": 22,
+        "title": "Ecosph'air",
+        "locale": "de",
+        "description": "«Diese Website wurde für den Kurs Web Design B2 erstellt, um meine im Laufe des Jahres geleistete Arbeit zu präsentieren. Die Seite wurde hauptsächlich mit Wordpress, CSS3 und Javascript kodiert.\n\nDieses Projekt wurde auf Anfrage eines externen Kunden entwickelt. Der Kunde wollte verschiedene Module zur Messung des CO2-Gehalts in der Luft vorstellen und bekannt machen, um potenzielle Kunden zu gewinnen. Ziel der Website war es auch, den Elektronikbereich der HEPL zu fördern, damit die zukünftigen Studenten dieser Option sich selbst vorstellen und die Module entdecken können, mit denen sie arbeiten werden...»",
+        "link_project": "https://ecosphair.gwenaelle-batta.be/",
+        "link_github": "https://github.com/GwenaelleBatta/projet-antilope",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/ecosphair-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 2,
+        "person_id": 1
+    },
+    {
+        "id": 23,
+        "title": "CV",
+        "locale": "de",
+        "description": "«Diese Website wurde im Rahmen des Web-Design-Kurses erstellt, um uns mit einem Lebenslauf zu präsentieren. Diese Seite wurde hauptsächlich mit HTML5, CSS3 und Javascript programmiert.\n\nDieses Projekt ist das erste des Jahres und bestand darin, die Verwendung der neuen Tools wie Flexbox und Grid-Layout zu üben, die in diesem Jahr eingeführt wurden. Wir mussten eine bestehende Website auswählen und sie an unseren Inhalt anpassen und sicherstellen, dass sie die CSS- und HTML-Regeln einhält. Wenn dies nicht der Fall war, mussten wir dies korrigieren. Meine Inspiration war die Website von Win, die ich über die Website von Knok gefunden habe.»",
+        "link_project": "https://projet-cv.gwenaelle-batta.be/",
+        "link_github": "https://github.com/GwenaelleBatta/CV-project",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/cv-gwen-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "person_id": 1,
+        "project_id": 3
+    },
+    {
+        "id": 24,
+        "title": "Portfolio",
+        "locale": "de",
+        "description": "«Sie sind dabei! Eines der großen Projekte im Web-Optionskurs des 2. Jahres ist ein Portfolio, in dem alle unsere Projekte zu finden sind. Die Website musste mit dem CMS WordPress erstellt werden und wird während der Jury am Ende des Jahres präsentiert.»",
+        "link_project": "https://noemie-vincent.be/fr/",
+        "link_github": "https://github.com/noemievincent/portfolio",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/portfolio-noemie-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 4,
+        "person_id": 2
+    },
+    {
+        "id": 25,
+        "title": "Antilope",
+        "locale": "de",
+        "description": "«Im Rahmen des Web-Design-Kurses wurden wir gebeten, eine Website für einen externen Kunden zu erstellen, die dann im Juni der Jury präsentiert werden sollte. In diesem Jahr sollte die Website eine Vorzeigeseite sein, auf der wir die verschiedenen Module zur Messung der Luftverschmutzung, aber auch die verschiedenen Partner des Projekts vorstellen. Sie wirbt auch für die Elektronikabteilung des HEPL, die mit dem ISSeP zusammengearbeitet hat.»",
+        "link_project": "https://antilope.noemie-vincent.be/fr/",
+        "link_github": "https://github.com/noemievincent/antilope",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/antilope-noemie-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 5,
+        "person_id": 2
+    },
+    {
+        "id": 26,
+        "title": "CV",
+        "locale": "de",
+        "description": "«Dies war die erste Website, die ich für den Web-Design-Kurs entwerfen musste. Die Anweisungen lauteten, eine bestehende Website zu reproduzieren, indem ich ihren Inhalt so anpasste, dass er wie ein Lebenslauf aussah.»",
+        "link_project": "https://cv.noemie-vincent.be/",
+        "link_github": "https://github.com/noemievincent/cv",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/cv-noemie-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 6,
+        "person_id": 2
+    },
+    {
+        "id": 27,
+        "title": "Portfolio",
+        "locale": "de",
+        "description": "«Diese Website wurde für den Kurs Web Design B2 erstellt, um meine im Laufe des Jahres geleistete Arbeit zu präsentieren. Diese Seite wurde hauptsächlich mit Wordpress, CSS3 und Javascript programmiert.\n\nDieses Projekt ist eine Website, die dazu dient, den Jurys am Ende des Jahres 2021 unsere verschiedenen Websites zu präsentieren und unser Know-how in Wordpress zu zeigen, einer Sprache, die wir während des Kurses Web Design B2 gelernt haben. Es ist auch das Projekt, das Unternehmen während unserer Bewerbungen besuchen werden, um zu sehen, wer wir sind und was wir können.»",
+        "link_project": "https://aline-db.be/",
+        "link_github": "https://github.com/AlineDB/portfolio-V2",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/portfolio-nathan-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 7,
+        "person_id": 11
+    },
+    {
+        "id": 28,
+        "title": "CV",
+        "locale": "de",
+        "description": "«Diese Website wurde für den Kurs Web Design B2 erstellt, um meine im Laufe des Jahres geleistete Arbeit zu präsentieren. Diese Seite wurde hauptsächlich mit Wordpress, CSS3 und Javascript programmiert.\n\nDieses Projekt ist eine Website, die dazu dient, den Jurys am Ende des Jahres 2021 unsere verschiedenen Websites zu präsentieren und unser Know-how in Wordpress zu zeigen, einer Sprache, die wir während des Kurses Web Design B2 gelernt haben. Es ist auch das Projekt, das Unternehmen während unserer Bewerbungen besuchen werden, um zu sehen, wer wir sind und was wir können.»",
+        "link_project": "https://aline-db.be/",
+        "link_github": "https://github.com/AlineDB/Aline_CV",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/ecosphair-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 8,
+        "person_id": 11
+    },
+    {
+        "id": 29,
+        "title": "CV",
+        "locale": "de",
+        "description": "«Im Rahmen des Webdesign-Kurses wurden wir gebeten, aus einer bestehenden Webseite einen Lebenslauf zu erstellen. Da ich meine Fähigkeiten als Illustratorin präsentieren wollte, suchte ich eine Seite, auf der ich sowohl einige Elemente neu zeichnen als auch einige meiner alten Entwürfe zeigen konnte. So wählte ich die alte Projektseite von Denise Chandler, einer amerikanischen Typografin und Webdesignerin, weil sie alle Anforderungen erfüllte, die ich suchte. Außerdem gefällt mir ihr einfaches und klares Design sehr gut!\n\nBei diesem Projekt stieß ich auf mehrere Schwierigkeiten. Die erste bestand darin, einen Ersatz für dieses seltsame Tier zu finden. Die sehr spezielle Form machte es in der Tat ziemlich schwierig, aber nach mehreren Versuchen habe ich schließlich das richtige Design gefunden! Ich kämpfte auch mit der ganzen Sache mit dem Canvas-Tag und seiner Platzierung im Hintergrund der Hauptillustration.»",
+        "link_project": "https://cv.nathan-schyns.be/",
+        "link_github": "https://github.com/SCHYNS-Nathan/web_design-CVs",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/ecosphair-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 9,
+        "person_id": 12
+    },
+    {
+        "id": 30,
+        "title": "Portfolio",
+        "locale": "de",
+        "description": "«Diese Website wurde für den Kurs Web Design B2 erstellt, um meine im Laufe des Jahres geleistete Arbeit zu präsentieren. Diese Seite wurde hauptsächlich mit Wordpress, CSS3 und Javascript programmiert.\n\nDieses Projekt ist eine Website, die dazu dient, den Jurys am Ende des Jahres 2021 unsere verschiedenen Websites zu präsentieren und unser Know-how in Wordpress zu zeigen, einer Sprache, die wir während des Kurses Web Design B2 gelernt haben. Es ist auch das Projekt, das Unternehmen während unserer Bewerbungen besuchen werden, um zu sehen, wer wir sind und was wir können.»",
+        "link_project": "https://nathan-schyns.be/",
+        "link_github": "https://github.com/SCHYNS-Nathan/portfolio",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/portfolio-nathan-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 10,
+        "person_id": 12
+    },
+    {
+        "id": 31,
+        "title": "Portfolio",
+        "locale": "nl",
+        "description": "«Deze website is gemaakt voor de cursus Web Design B2 om het werk dat ik in de loop van het jaar heb gedaan te laten zien. Deze site is voornamelijk geprogrammeerd met wordpress, CSS3 en javascript.\n\nDit project is een website die zal worden gebruikt om onze verschillende websites te presenteren aan de jury's eind 2021 en om onze expertise in Wordpress te tonen, een taal die we hebben geleerd tijdens de cursus Webdesign B2. Het is ook het project dat bedrijven zullen bezoeken tijdens onze sollicitaties om te zien wie we zijn en wat we kunnen.»",
+        "link_project": "https://gwenaelle-batta.be/",
+        "link_github": "https://github.com/GwenaelleBatta/portfolio/tree/main/wordpress",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/portfolio-gwen-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 1,
+        "person_id": 1
+    },
+    {
+        "id": 32,
+        "title": "Ecosph'air",
+        "locale": "nl",
+        "description": "«Deze website is gemaakt voor de cursus Web Design B2 om het werk dat ik in de loop van het jaar heb gedaan te laten zien. De site werd voornamelijk gecodeerd met Wordpress, CSS3 en Javascript.\n\nDit project werd ontwikkeld op verzoek van een externe klant. De klant wilde verschillende modules voor het meten van het CO2-niveau in de lucht presenteren en bekendmaken om potentiële klanten aan te trekken. Het doel van de website was ook om het elektronicagedeelte van HEPL te promoten, zodat toekomstige studenten van deze optie zich kunnen voorstellen en ontdekken met welke modules ze zullen werken...»",
+        "link_project": "https://ecosphair.gwenaelle-batta.be/",
+        "link_github": "https://github.com/GwenaelleBatta/projet-antilope",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/ecosphair-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 2,
+        "person_id": 1
+    },
+    {
+        "id": 33,
+        "title": "CV",
+        "locale": "nl",
+        "description": "«Deze website is gemaakt als onderdeel van de cursus webdesign om onszelf te presenteren met een CV. Deze site is voornamelijk geprogrammeerd met HTML5, CSS3 en Javascript.\n\nDit project is het eerste van het jaar en bestond uit het oefenen met de nieuwe hulpmiddelen zoals flexbox en rasteropmaak die dit jaar werden geïntroduceerd. We moesten een bestaande website kiezen en die aanpassen aan onze inhoud en ervoor zorgen dat hij voldeed aan de CSS- en HTML-regels. Als dat niet zo was, moesten we dat corrigeren. Mijn inspiratie was de website van Win, die ik vond via de website van Knok.»",
+        "link_project": "https://projet-cv.gwenaelle-batta.be/",
+        "link_github": "https://github.com/GwenaelleBatta/CV-project",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/cv-gwen-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "person_id": 1,
+        "project_id": 3
+    },
+    {
+        "id": 34,
+        "title": "Portfolio",
+        "locale": "nl",
+        "description": "«Je bent binnen! Een van de grote projecten in het 2e jaar weboptie is een portfolio waarin al onze projecten te vinden zijn. De website moest worden gemaakt met het CMS WordPress en zal worden gepresenteerd tijdens de jury aan het eind van het jaar.»",
+        "link_project": "https://noemie-vincent.be/fr/",
+        "link_github": "https://github.com/noemievincent/portfolio",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/portfolio-noemie-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 4,
+        "person_id": 2
+    },
+    {
+        "id": 35,
+        "title": "Antilope",
+        "locale": "nl",
+        "description": "«Als onderdeel van de cursus webdesign werd ons gevraagd een website te maken voor een externe klant, die vervolgens in juni aan de jury moest worden gepresenteerd. Dit jaar moet de website een showcase-site worden waar we de verschillende modules voor het meten van luchtverontreiniging presenteren, maar ook de verschillende partners van het project. Het promoot ook de afdeling elektronica van de HEPL, die samenwerkte met het ISSeP.»",
+        "link_project": "https://antilope.noemie-vincent.be/fr/",
+        "link_github": "https://github.com/noemievincent/antilope",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/antilope-noemie-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 5,
+        "person_id": 2
+    },
+    {
+        "id": 36,
+        "title": "CV",
+        "locale": "nl",
+        "description": "«Dit was de eerste website die ik moest ontwerpen voor de cursus webdesign. De instructies waren om een bestaande website te reproduceren door de inhoud ervan aan te passen zodat hij op een CV leek.»",
+        "link_project": "https://cv.noemie-vincent.be/",
+        "link_github": "https://github.com/noemievincent/cv",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/cv-noemie-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 6,
+        "person_id": 2
+    },
+    {
+        "id": 37,
+        "title": "Portfolio",
+        "locale": "nl",
+        "description": "«Deze website is gemaakt voor de cursus Web Design B2 om het werk dat ik in de loop van het jaar heb gedaan te laten zien. Deze site is voornamelijk geprogrammeerd met wordpress, CSS3 en javascript.\n\nDit project is een website die zal worden gebruikt om onze verschillende websites te presenteren aan de jury's eind 2021 en om onze expertise in Wordpress te tonen, een taal die we hebben geleerd tijdens de cursus Webdesign B2. Het is ook het project dat bedrijven zullen bezoeken tijdens onze sollicitaties om te zien wie we zijn en wat we kunnen.»",
+        "link_project": "https://aline-db.be/",
+        "link_github": "https://github.com/AlineDB/portfolio-V2",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/portfolio-nathan-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 7,
+        "person_id": 11
+    },
+    {
+        "id": 38,
+        "title": "CV",
+        "locale": "nl",
+        "description": "«Deze website is gemaakt voor de cursus Web Design B2 om het werk dat ik in de loop van het jaar heb gedaan te laten zien. Deze site is voornamelijk geprogrammeerd met wordpress, CSS3 en javascript.\n\nDit project is een website die zal worden gebruikt om onze verschillende websites te presenteren aan de jury's eind 2021 en om onze expertise in Wordpress te tonen, een taal die we hebben geleerd tijdens de cursus Webdesign B2. Het is ook het project dat bedrijven zullen bezoeken tijdens onze sollicitaties om te zien wie we zijn en wat we kunnen.»",
+        "link_project": "https://aline-db.be/",
+        "link_github": "https://github.com/AlineDB/Aline_CV",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/ecosphair-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 8,
+        "person_id": 11
+    },
+    {
+        "id": 39,
+        "title": "CV",
+        "locale": "nl",
+        "description": "«Als onderdeel van de cursus webdesign werd ons gevraagd een CV te maken van een bestaande website. Omdat ik mijn vaardigheden als illustrator wilde laten zien, zocht ik een pagina waar ik zowel enkele elementen opnieuw kon tekenen als enkele van mijn oude ontwerpen kon laten zien. Dus koos ik de oude projectsite van Denise Chandler, een Amerikaanse typografe en webdesigner, omdat die voldeed aan alle eisen die ik zocht. Ik hou ook erg van haar eenvoudige en duidelijke ontwerp!\n\nIk ondervond verschillende moeilijkheden met dit project. De eerste was het vinden van een vervanger voor dit vreemde dier. De zeer specifieke vorm maakte het inderdaad vrij moeilijk, maar na verschillende pogingen vond ik eindelijk het juiste ontwerp! Ik worstelde ook met het hele canvas tag ding en de plaatsing ervan in de achtergrond van de hoofdillustratie.»",
+        "link_project": "https://cv.nathan-schyns.be/",
+        "link_github": "https://github.com/SCHYNS-Nathan/web_design-CVs",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/ecosphair-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 9,
+        "person_id": 12
+    },
+    {
+        "id": 40,
+        "title": "Portfolio",
+        "locale": "nl",
+        "description": "«Deze website is gemaakt voor de cursus Web Design B2 om het werk dat ik in de loop van het jaar heb gedaan te laten zien. Deze site is voornamelijk geprogrammeerd met wordpress, CSS3 en javascript.\n\nDit project is een website die zal worden gebruikt om onze verschillende websites te presenteren aan de jury's eind 2021 en om onze expertise in Wordpress te tonen, een taal die we hebben geleerd tijdens de cursus Webdesign B2. Het is ook het project dat bedrijven zullen bezoeken tijdens onze sollicitaties om te zien wie we zijn en wat we kunnen.»",
+        "link_project": "https://nathan-schyns.be/",
+        "link_github": "https://github.com/SCHYNS-Nathan/portfolio",
+        "date": "2022-06-17 15:24:59",
+        "main_picture": "img-redimensions/portfolio-nathan-526.jpg",
+        "gallery": null,
+        "deleted_at": null,
+        "project_id": 10,
+        "person_id": 12
+    }
 ]

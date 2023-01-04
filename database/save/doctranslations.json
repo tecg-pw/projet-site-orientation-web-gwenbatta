@@ -328,5 +328,115 @@
         "updated_at": null,
         "deleted_at": null,
         "doc_id": 10
+    },
+    {
+        "id": 30,
+        "name": "Laravel",
+        "locale": "nl",
+        "excerpt": "Link naar de Laravel documentatie vertaald in het Frans",
+        "link": "https://laravel.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 1
+    },
+    {
+        "id": 31,
+        "name": "CSS",
+        "locale": "nl",
+        "excerpt": "Link naar de CSS-documentatie",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 2
+    },
+    {
+        "id": 32,
+        "name": "HTML",
+        "locale": "nl",
+        "excerpt": "Link naar de HTML-documentatie",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 3
+    },
+    {
+        "id": 33,
+        "name": "Wordpress",
+        "locale": "nl",
+        "excerpt": "Link naar de Wordpress documentatie",
+        "link": "https://en.wordpress.org/support/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 4
+    },
+    {
+        "id": 34,
+        "name": "Javascript",
+        "locale": "nl",
+        "excerpt": "Link naar de Javascript documentatie",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 5
+    },
+    {
+        "id": 35,
+        "name": "PHP",
+        "locale": "nl",
+        "excerpt": "Link naar de PHP-documentatie",
+        "link": "https://www.php.net/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 6
+    },
+    {
+        "id": 36,
+        "name": "Flutter",
+        "locale": "nl",
+        "excerpt": "Link naar de Flutter documentatie",
+        "link": "https://docs.flutter.dev/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 7
+    },
+    {
+        "id": 37,
+        "name": "MySQL",
+        "locale": "nl",
+        "excerpt": "Link naar MySQL documentatie",
+        "link": "https://dev.mysql.com/doc/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 8
+    },
+    {
+        "id": 38,
+        "name": "Tailwind",
+        "locale": "nl",
+        "excerpt": "Link naar de Tailwind documentatie",
+        "link": "https://tailwindcss.com/docs/installation",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 9
+    },
+    {
+        "id": 39,
+        "name": "A Book Appart",
+        "locale": "nl",
+        "excerpt": "Link naar de website van \" A book Appart \", met een lijst van naslagwerken van het internet.",
+        "link": "https://abookapart.com/",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "doc_id": 10
     }
 ]

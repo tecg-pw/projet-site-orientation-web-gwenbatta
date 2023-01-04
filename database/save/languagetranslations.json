@@ -22,7 +22,8 @@
         "created_at": null,
         "updated_at": null,
         "language_id": 3
-    },{
+    },
+    {
         "id": 4,
         "name": "PHP",
         "locale": "fr",
@@ -93,7 +94,8 @@
         "created_at": null,
         "updated_at": null,
         "language_id": 3
-    },{
+    },
+    {
         "id": 13,
         "name": "PHP",
         "locale": "en",
@@ -164,7 +166,8 @@
         "created_at": null,
         "updated_at": null,
         "language_id": 3
-    },{
+    },
+    {
         "id": 22,
         "name": "PHP",
         "locale": "de",
@@ -208,6 +211,78 @@
         "id": 27,
         "name": "NodeJS",
         "locale": "de",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 9
+    },
+    {
+        "id": 28,
+        "name": "HTML",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 1
+    },
+    {
+        "id": 29,
+        "name": "CSS",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 2
+    },
+    {
+        "id": 30,
+        "name": "Laravel",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 3
+    },
+    {
+        "id": 31,
+        "name": "PHP",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 4
+    },
+    {
+        "id": 32,
+        "name": "Wordpress",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 5
+    },
+    {
+        "id": 33,
+        "name": "Javascript",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 6
+    },
+    {
+        "id": 34,
+        "name": "Flutter",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 7
+    },
+    {
+        "id": 35,
+        "name": "MySQL",
+        "locale": "nl",
+        "created_at": null,
+        "updated_at": null,
+        "language_id": 8
+    },
+    {
+        "id": 36,
+        "name": "NodeJS",
+        "locale": "nl",
         "created_at": null,
         "updated_at": null,
         "language_id": 9

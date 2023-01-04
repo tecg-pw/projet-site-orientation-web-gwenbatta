@@ -58,16 +58,41 @@
         "updated_at": null,
         "deleted_at": null,
         "offer_id": 1
-    },{
-    "id": 6,
-    "name": "Webdesigner",
-    "locale": "de",
-    "supervisor": "Olivier Léonard",
-    "description": "Sind Sie leidenschaftlich, dynamisch und kreativ?\nSind Sie auf der Suche nach einer neuen beruflichen Herausforderung?\nUnser junges und dynamisches Team ist\nist auf der Suche nach Profilen wie dem Ihren.",
-    "pdf": null,
-    "created_at": null,
-    "updated_at": null,
-    "deleted_at": null,
-    "offer_id": 2
-}
+    },
+    {
+        "id": 6,
+        "name": "Webdesigner",
+        "locale": "de",
+        "supervisor": "Olivier Léonard",
+        "description": "Sind Sie leidenschaftlich, dynamisch und kreativ?\nSind Sie auf der Suche nach einer neuen beruflichen Herausforderung?\nUnser junges und dynamisches Team ist\nist auf der Suche nach Profilen wie dem Ihren.",
+        "pdf": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "offer_id": 2
+    },
+    {
+        "id": 7,
+        "name": "Front-end ontwikkelaar",
+        "locale": "nl",
+        "supervisor": "Olivier Léonard",
+        "description": "Ben je gepassioneerd, dynamisch en creatief?\nBen je op zoek naar een nieuwe professionele uitdaging?\nOns jong en dynamisch team is\nis op zoek naar profielen zoals die van jou.",
+        "pdf": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "offer_id": 1
+    },
+    {
+        "id": 8,
+        "name": "Webdesigner",
+        "locale": "nl",
+        "supervisor": "Olivier Léonard",
+        "description": "Ben je gepassioneerd, dynamisch en creatief?\nBen je op zoek naar een nieuwe professionele uitdaging?\nOns jong en dynamisch team is\nis op zoek naar profielen zoals die van jou.",
+        "pdf": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "offer_id": 2
+    }
 ]

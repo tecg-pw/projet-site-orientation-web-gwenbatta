@@ -28,5 +28,15 @@
         "updated_at": null,
         "deleted_at": null,
         "recurring_id": 1
+    },
+    {
+        "id": 4,
+        "name": "Is een Mac essentieel?",
+        "locale": "nl",
+        "description": "Nee, een Mac is niet verplicht voor webcursussen. Als u echter een nieuwe computer moet kopen en een webcursus wilt volgen, adviseren wij u een Mac aan te schaffen. Dit komt omdat de meeste webleraren Apple gebruiken en u beter kunnen helpen met problemen, omdat ze meer vertrouwd zijn met deze computers en ze een beter hulpmiddel zijn voor webontwikkeling...",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "recurring_id": 1
     }
 ]

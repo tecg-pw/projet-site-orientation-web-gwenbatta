@@ -250,5 +250,89 @@
         "updated_at": null,
         "deleted_at": null,
         "book_id": 6
+    },
+    {
+        "id": 22,
+        "name": "Web Ergonomics & UX Design",
+        "locale": "nl",
+        "excerpt": "Boek vereist in het eerste jaar.",
+        "description": "EINDELIJK SUCCES HEBBEN MET UW GEBRUIKERS!\nElke digitale dienst moet de moeilijke uitdaging aangaan om zijn gebruikers tevreden te stellen. Maar hoe kun je ze begrijpen en je in hun schoenen verplaatsen? Hoe ontwerp je een website die zo aangenaam en efficiënt is dat mensen terug willen komen? Dankzij de praktische en methodische adviezen van Amélie Boucher in dit boek, dat een Franse referentie is geworden, kunt u webergonomie in de praktijk brengen!\n- Regels en theoretische grondslagen van bruikbaarheid (ontwerptheorieën, affordances, de wet van Fitts, enz.)\n- Methoden van gebruikersonderzoek (observaties, interviews, card sorting, gebruikerstests, persona's, experience maps...)\n- Praktisch advies voor informatiearchitectuur, gebruikerspaden en gedetailleerd ontwerp\nUX DESIGN BY EXAMPLE\n- Doe inspiratie op bij echte websites om uw gebruikerservaring te verbeteren\n- Meer dan 350 illustraties waarin goede en slechte praktijken worden beschreven\n- Interviews met deskundigen",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 1
+    },
+    {
+        "id": 23,
+        "name": "Responsive Web Design",
+        "locale": "nl",
+        "excerpt": "Boek vereist in het tweede jaar.",
+        "description": "Zijn je ontwerpen klaar? Leer hoe u verder kunt denken dan de desktop en geweldige ontwerpen kunt maken die anticiperen op en voldoen aan de behoeften van uw gebruikers. Ethan Marcotte verkent CSS-technieken en ontwerpprincipes, waaronder vloeiende rasters, flexibele afbeeldingen en multimedia queries, en laat zien hoe u uw gebruikers een kwaliteitservaring kunt bieden, ongeacht hoe groot (of klein) hun scherm is..",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 7
+    },
+    {
+        "id": 24,
+        "name": "HTML a reference for the developer",
+        "locale": "nl",
+        "excerpt": "Boek is vereist in het eerste jaar. ",
+        "description": "Dit boek belicht de uitdagende specificaties van HTML 5 en verkent alle nieuwe functies en tags, inclusief die welke sinds vorige versies zijn geëvolueerd. De auteur memoreert de turbulente geschiedenis van HTML 5 bij het W3C en WhatWG en legt uit hoe je krachtige, toegankelijke websites en toepassingen ontwerpt, media-elementen (audio, video) insluit, interactieve artboards en animaties maakt met Canvas, en microformats gebruikt voor semantische opmaak om het delen van gegevens en het verwijzen ernaar te verbeteren. Stap voor stap worden microformats, API's voor bestandsbeheer, geolocatie, drag-and-drop ondersteuning en het opslaan van lokale gegevens in de browser, het communiceren in real time of het uitwisselen van documenten met behulp van de geavanceerde Web Storage, Web Sockets, Server-Sent Events en Web Messaging API's uitgelegd. Ten slotte worden Web Workers behandeld die multithreaded JavaScript-uitvoering, SQL- of NoSQL-databases (Indexed Database en Web SQL Database), alsmede een toepassingscache voor offline uitvoering (Offline Web Applications) en geavanceerde geschiedenismanipulatie (History API) mogelijk maken. Het rijk geïllustreerde boek is rijk aan advies en beste praktijken en wordt aangevuld met een beknopte referentie over JavaScript en DOM-beheer. De bijlage bevat een uitgebreid hoofdstuk over ARIA en toegankelijkheid, alsmede een lijst van verouderde HTML4-elementen en een overzicht van CSS. Voor wie is dit boek? Webontwikkelaars en integratoren die de nieuwe HTML5 API's willen implementeren en hun best practices voor webontwikkeling willen moderniseren; webdesigners die alle mogelijkheden van HTML5 willen ontdekken; iedereen die zich een coherente webontwikkelingsmethode eigen wil maken die kwaliteit en toegankelijkheid combineert.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 2
+    },
+    {
+        "id": 25,
+        "name": "CSS Pocket Reference",
+        "locale": "nl",
+        "excerpt": "Boek is vereist in het eerste jaar.",
+        "description": "Als u met CSS werkt en snel een antwoord nodig hebt, is de CSS Pocket Reference iets voor u. Dit handige, beknopte boek biedt alle essentiële informatie die u nodig hebt om CSS on the fly te implementeren. De 4e editie is ideaal voor gevorderde webontwerpers en -ontwikkelaars en is herzien en bijgewerkt voor CSS3, de nieuwste versie van de Cascading Style Sheet-specificatie. Naast een uitgebreide alfabetische verwijzing naar CSS3-selectors en -eigenschappen vindt u ook een korte inleiding tot de belangrijkste CSS-concepten.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 3
+    },
+    {
+        "id": 26,
+        "name": "HTML Pocket Reference",
+        "locale": "nl",
+        "excerpt": "Boek is vereist in het eerste jaar.",
+        "description": "Gedetailleerde informatie over tag-attributen Informatie over ondersteuning voor browsers zoals Netscape Navigator, Microsoft Internet Explorer, Opera en WebTV Informatie over ondersteuning voor HTML 4.0, inclusief of de tag in de huidige specificatie verouderd is Naast beschrijvingen van afzonderlijke tags vindt u nuttige grafieken over onderwerpen als:\n\n\nTekeneenheden Decimale naar hexadecimale tekenconversie Kleurnamen Niederst biedt ook context voor tags door aan te geven welke tags gegroepeerd zijn en rudimentaire voorbeelden van de structuur van standaard webpagina-elementen.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 4
+    },
+    {
+        "id": 27,
+        "name": "Flexbox",
+        "locale": "nl",
+        "excerpt": "Boek vereist in het tweede jaar. ",
+        "description": "Flexbox is goed op weg om de manier waarop we ontwerpen en componenten maken in CSS fundamenteel en permanent te veranderen. Waarom er een boek aan wijden? Omdat Flexbox, mits goed gebruikt, het werk van veel webontwikkelaars vergemakkelijkt.\n\nEen standaardwerk voor webdesigners en integratoren\n\n\"Flexible Box Layout Module\", beter bekend als \"Flexbox\", is een CSS 3-specificatie van het W3C die een nieuw, voorheen onbekend box- en positioneringsmodel definieert. Het omvat een natuurlijk beheer van vloeiende elementen en Responsive en elimineert de noodzaak van complexe weergavegrids of zelfs kaders - echte gaswerken waar u nauwelijks 10% van het gereedschap kunt gebruiken. Dus vergeet alles wat je tot nu toe over CSS hebt geleerd en word verliefd op Flexbox zoals ik deed!\n\nNaast het vereenvoudigen van positioneringsschema's, biedt Flexbox perfecte oplossingen voor een probleem dat diep in onze tijd geworteld is: responsive web design. Het flexibele elementontwerp, de reorganisatie van blokken en de mogelijkheid om gemakkelijk te schakelen tussen horizontale en verticale weergave maken Flexflex een geweldige bondgenoot bij de aanpassing aan tablets en smartphones.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 5
+    },
+    {
+        "id": 28,
+        "name": "Grid Layout",
+        "locale": "nl",
+        "excerpt": "Boek vereist in het tweede jaar. ",
+        "description": "Als aanvulling op Flexbox is de module Grid Layout een W3C-specificatie in het stadium van kandidaat-aanbeveling, waarvan de eerste ontwerpen dateren van 2004. Het algemene concept van rasterindeling, dat nu in productie in alle browsers kan worden gebruikt, is het structureren van de ruimte in belangrijke gebieden van een webpagina of -toepassing. Een virtueel raster, onafhankelijk van de HTML-elementen die erop kunnen worden geplaatst, heeft het voor de hand liggende voordeel dat het zeer flexibel is als je het wilt veranderen afhankelijk van de context.\n\nDe rasterindeling is perfect aangepast aan responsief webdesign en laat u toe uw pagina onmiddellijk aan te passen aan verschillende schermformaten. In combinatie met CSS 3 Media Queries is het grid layout model zeer krachtig, vooral als je een template variant hebt gekozen. Alleen het oorspronkelijke sjabloon moet worden gewijzigd: Er hoeft niet te worden ingegrepen in de HTML-structuur of zelfs in de positionering van de afzonderlijke pagina-elementen.",
+        "gallery": null,
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "book_id": 6
     }
 ]

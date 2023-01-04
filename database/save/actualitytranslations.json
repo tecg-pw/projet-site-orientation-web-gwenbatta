@@ -142,5 +142,53 @@
         "updated_at": null,
         "deleted_at": null,
         "actuality_id" : 1
+    },
+    {
+        "id": 10,
+        "name": "Meta Connect",
+        "locale": "nl",
+        "excerpt": "Het doel van dit webevenement is het verkennen van de structuur van de metaverse, de toekomst ervan en de nieuwste technologieën die worden gebruikt.",
+        "description": "Meta Connect, een eendaags virtueel evenement, laat je kennismaken met de toekomst van de metaverse en de toekomst van virtuele en augmented reality. Industrieleiders zullen spreken over de nieuwste technologieën, terwijl de ontwikkelingssessies zich zullen toespitsen op de toepassing ervan. Ons doel is de wereld samen te brengen en menselijke banden te versterken door nieuwe ervaringen.",
+        "lieu": "Online",
+        "link": "https://metaconnect.com/fr-fr/",
+        "main_picture": "img-redimensions/metaconnect.jpg",
+        "gallery": null,
+        "date": "2020-09-10 00:00:00",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "actuality_id" : 3
+    },
+    {
+        "id": 11,
+        "name": "Paris Web",
+        "locale": "nl",
+        "excerpt": "Het evenement voor een toegankelijk en hoogwaardig web. Talrijke conferenties en activiteiten wachten op u!",
+        "description": "Paris Web is een Franse non-profitorganisatie die in 2005 is opgericht door Éric Daspet, Stéphane Deschamps en Adrien Leygues. Elk jaar organiseert de vereniging een reeks conferenties en workshops die drie dagen lang in Parijs plaatsvinden.\n\nNaast dit evenement is het doel van Paris Web het bevorderen van de kwaliteit van webontwikkeling in de breedste zin van het woord: normen, standaarden, toegankelijkheid, ergonomie en ontwerpmethoden. De vereniging neemt deel aan evenementen en fora en bevordert initiatieven die deze beginselen ondersteunen.\n\nDe vereniging richt zich op alle niveaus van de webproductieketen: Zowel beginners als deskundigen, zowel technici als besluitvormers, zowel creatieven als kwaliteitsspecialisten.",
+        "lieu": "Paris",
+        "link": "https://www.paris-web.fr/",
+        "main_picture": "img-redimensions/paris-web.jpg",
+        "gallery": null,
+        "date": "2020-09-10 00:00:00",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "actuality_id" : 2
+    },
+    {
+        "id": 12,
+        "name": "Open de deur",
+        "locale": "nl",
+        "excerpt": "De HEPL Open Dag geeft je de mogelijkheid om de school van je keuze te bezoeken en de docenten te ontmoeten.",
+        "description": "De Open Dag van Parc des Marêts vindt plaats op zaterdag 30 april 2022. Op deze dag kunt u de docenten van de optie ontmoeten, oud-studenten die over hun ervaringen zullen vertellen, maar ook al het onderwijzend personeel. Je kunt met ze praten en al je vragen stellen.\n\nWe hopen velen van jullie daar te zien!",
+        "lieu": "Liège",
+        "link": "https://www.hepl.be/fr/jpo",
+        "main_picture": "img-redimensions/porte-ouverte-picture.jpg",
+        "gallery": null,
+        "date": "2020-09-10 00:00:00",
+        "created_at": null,
+        "updated_at": null,
+        "deleted_at": null,
+        "actuality_id" : 1
     }
 ]

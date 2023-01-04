@@ -196,5 +196,71 @@
         "name": "Projekt zum Abschluss des Studiums",
         "locale": "de",
         "tag_id": 11
+    },
+    {
+        "id": 34,
+        "name": "algemeen",
+        "locale": "nl",
+        "tag_id": 1
+    },
+    {
+        "id": 35,
+        "name": "php",
+        "locale": "nl",
+        "tag_id": 2
+    },
+    {
+        "id": 36,
+        "name": "html",
+        "locale": "nl",
+        "tag_id": 3
+    },
+    {
+        "id": 37,
+        "name": "css",
+        "locale": "nl",
+        "tag_id": 4
+    },
+    {
+        "id": 38,
+        "name": "javascript",
+        "locale": "nl",
+        "tag_id": 5
+    },
+    {
+        "id": 39,
+        "name": "sgbd",
+        "locale": "nl",
+        "tag_id": 6
+    },
+    {
+        "id": 40,
+        "name": "multimedia",
+        "locale": "nl",
+        "tag_id": 7
+    },
+    {
+        "id": 41,
+        "name": "Webdesign",
+        "locale": "nl",
+        "tag_id": 8
+    },
+    {
+        "id": 42,
+        "name": "flutter",
+        "locale": "de",
+        "tag_id": 9
+    },
+    {
+        "id": 43,
+        "name": "intership",
+        "locale": "nl",
+        "tag_id": 10
+    },
+    {
+        "id": 44,
+        "name": "Project voor de voltooiing van de studies",
+        "locale": "de",
+        "tag_id": 11
     }
 ]
