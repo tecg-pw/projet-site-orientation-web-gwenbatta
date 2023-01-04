@@ -2,16 +2,16 @@
 
 return [
 
-    'project_title' => 'Our students\' projects',
-    'project_button' => 'See all projects',
-    'project_make_course' => 'Done in the course of :',
-    'project_make_with' => 'With :',
-    'project_available' => 'This project is available in :',
-    'project_portfolio' => 'See the portfolio',
-    'project_github' => 'See the Github',
-    'project_pictures' => 'Project photos',
-    'project_view' => 'See the project',
-    'project_other' => 'Some projects',
-    'project_see_all' => 'See all projects',
+    'project_title' => 'De projecten van onze studenten',
+    'project_button' => 'Bekijk alle projecten',
+    'project_make_course' => 'Gedaan in de loop van :',
+    'project_make_with' => 'Met:',
+    'project_available' => 'Dit project is beschikbaar in :',
+    'project_portfolio' => 'Bekijk de portefeuille',
+    'project_github' => 'Zie de Github',
+    'project_pictures' => 'Projectfoto\'s',
+    'project_view' => 'Bekijk het project',
+    'project_other' => 'Sommige projecten',
+    'project_see_all' => 'Bekijk alle projecten',
 
 ];

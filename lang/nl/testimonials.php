@@ -2,6 +2,6 @@
 
 return [
 
-    'testimonials_title' => 'Some testimonials from our alumni',
+    'testimonials_title' => 'Enkele getuigenissen van onze alumni',
 
 ];

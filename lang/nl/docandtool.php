@@ -2,12 +2,12 @@
 
 return [
 
-    'doc_tool_title' => 'Documentation and tools',
-    'doc_tool_text' => 'On this page you will find documentation and tools that will be useful during your studies, both in your first year and in the web option.',
-    'doc_link' => 'Documentation',
-    'doc_title' => 'List of documents',
-    'tool_title' => 'List of tools',
-    'tool_link' => 'Tools',
-    'book_title' => 'Essential books',
+    'doc_tool_title' => 'Documentatie en hulpmiddelen',
+    'doc_tool_text' => 'Op deze pagina vind je documentatie en hulpmiddelen die van pas komen tijdens je studie, zowel in het eerste jaar als in de weboptie.',
+    'doc_link' => 'Documentatie',
+    'doc_title' => 'Lijst van documenten',
+    'tool_title' => 'Lijst van instrumenten',
+    'tool_link' => 'Gereedschap',
+    'book_title' => 'Essentiële boeken',
 
 ];

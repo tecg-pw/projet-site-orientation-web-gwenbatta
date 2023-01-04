@@ -2,10 +2,10 @@
 
 return [
 
-    'tuto_title' => 'List of tutorials',
-    'tuto_text' => 'You will find on this page a list of tutorials which are proposed to you in order to introduce you some languages which you will discover within our orientation',
-    'tuto_list_title' => 'Tutorials list',
-    'tuto_do' => 'Doing the exercise',
+    'tuto_title' => 'Lijst van tutorials',
+    'tuto_text' => 'Op deze pagina vindt u een lijst met tutorials die u worden voorgesteld om u kennis te laten maken met enkele talen die u in onze oriëntatie zult ontdekken.',
+    'tuto_list_title' => 'Tutorials lijst',
+    'tuto_do' => 'De oefening doen',
 
 
 ];

@@ -2,11 +2,11 @@
 
 return [
 
-    'label' => 'Search',
-    'placeholder' => 'Wordpress | Math | Jordan Caron',
-    'button' => 'Confirm',
-    'actu_single_back' => 'Back to news',
-    'actu_single_more' => 'Read more',
-    'no_result'=>'No results found for your search'
+    'label' => 'Zoek op',
+    'placeholder' => 'Wordpress | Wiskunde | Jordan Caron',
+    'button' => 'Bevestig',
+    'actu_single_back' => 'Terug naar nieuws',
+    'actu_single_more' => 'Meer lezen',
+    'no_result'=>'Geen resultaten gevonden voor uw zoekopdracht'
 
 ];

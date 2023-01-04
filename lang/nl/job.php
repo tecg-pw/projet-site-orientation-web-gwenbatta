@@ -2,11 +2,11 @@
 
 return [
 
-    'job_back' => 'Back to the list of professions',
-    'job_subtitle' => 'Description',
-    'job_other' => 'Other jobs',
-    'job_other_see' => 'See all jobs',
-    'job_no_alumni' => 'No alumni do this job',
+    'job_back' => 'Terug naar de lijst van beroepen',
+    'job_subtitle' => 'Beschrijving',
+    'job_other' => 'Andere banen',
+    'job_other_see' => 'Bekijk alle banen',
+    'job_no_alumni' => 'Geen alumni doen dit werk',
 
 
 ];

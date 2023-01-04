@@ -2,16 +2,16 @@
 
 return [
 
-    'sort_by' => 'Sort by',
-    'city' => 'Cities',
-    'job' => 'Jobs',
-    'all' => 'All',
-    'agency' => 'Agencies',
-    'year' => 'Year',
+    'sort_by' => 'Sorteren op',
+    'city' => 'Steden',
+    'job' => 'Banen',
+    'all' => 'Alle',
+    'agency' => 'Agentschappen',
+    'year' => 'Jaar',
     'status' => 'Status',
-    'date' => 'Date',
-    'languages' => 'Languages',
-    'tags' => 'Tags',
-    'button' => 'Confirm'
+    'date' => 'Datum',
+    'languages' => 'Talen',
+    'tags' => 'Tages',
+    'button' => 'Bevestig'
 
 ];

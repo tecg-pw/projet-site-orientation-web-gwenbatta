@@ -2,14 +2,14 @@
 
 return [
 
-    'title' => 'Ask a question',
-    'title_modify' => 'Modify my question',
-    'back' => 'Back to the forum',
-    'question' => 'Question',
-    'question_placeholder' => 'How do birds fly?',
-    'description' => 'Description',
+    'title' => 'Stel een vraag',
+    'title_modify' => 'Wijzig mijn vraag',
+    'back' => 'Terug naar het forum',
+    'question' => 'Vraag',
+    'question_placeholder' => 'Hoe vliegen vogels?',
+    'description' => 'Beschrijving',
     'tag' => 'Tag',
-    'description_placeholder' => 'I describe my question',
-    'button' => 'Ask my question',
+    'description_placeholder' => 'Ik beschrijf mijn vraag',
+    'button' => 'Stel mijn vraag',
 
 ];

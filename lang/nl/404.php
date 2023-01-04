@@ -2,9 +2,9 @@
 
 return [
 
-    '404_title' => 'Error 404',
-    '404_text' => 'Page not find',
-    '404_back' => 'Come back to the',
-    '404_link' => 'home page',
+    '404_title' => 'Fout 404',
+    '404_text' => 'Pagina niet gevonden',
+    '404_back' => 'Kom terug naar de',
+    '404_link' => 'startpagina',
 
 ];

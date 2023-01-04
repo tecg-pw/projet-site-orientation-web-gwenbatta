@@ -2,8 +2,8 @@
 
 return [
 
-    'recurring_title' => 'Some recurring questions',
-    'recurring_link' => 'See the answer',
+    'recurring_title' => 'Enkele terugkerende vragen',
+    'recurring_link' => 'Zie het antwoord',
 
 
 ];

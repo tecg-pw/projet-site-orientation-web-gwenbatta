@@ -2,22 +2,22 @@
 
 return [
 
-    'login_title' => 'Login to your account',
-    'reset_title' => 'Forgot Password',
-    'login_button' => 'Login',
-    'register_title' => 'Create your account',
-    'register_button' => 'Register',
+    'login_title' => 'Inloggen op uw account',
+    'reset_title' => 'Wachtwoord vergeten',
+    'login_button' => 'Inloggen',
+    'register_title' => 'Maak uw account aan',
+    'register_button' => 'Registreer',
     'reset_button' => 'Reset',
-    'send_email_reset' => 'Send me an email',
-    'name' => 'Name',
-    'firstname' => 'Firstname',
-    'mail' => 'Email',
-    'password' => 'Password',
-    'forgot' => 'Forgot Password',
-    'remind' => 'Remembering me',
-    'register_link' => 'I don\'t have an account',
-    'login_link' => 'I already have an account',
-    'login_back' => 'Back to login form',
+    'send_email_reset' => 'Stuur me een e-mail',
+    'name' => 'Naam',
+    'firstname' => 'Voornaam',
+    'mail' => 'E-mail',
+    'password' => 'Wachtwoord',
+    'forgot' => 'Wachtwoord vergeten',
+    'remind' => 'Mij herinneren',
+    'register_link' => 'Ik heb geen account.',
+    'login_link' => 'Ik heb al een account',
+    'login_back' => 'Terug naar inlogformulier',
 
 
 ];
