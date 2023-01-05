@@ -58,14 +58,14 @@
                         </div>
                     </div>
                 </div>
-                @if($teacher->description === null)
+                @if(strip_tags($teacher->description) === "")
                     <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
-                        {{$teacher->description}}
-                    </p>
+                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                        {!!$teacher->description!!}
+                    </div>
                 @endif
             </div>
             <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">

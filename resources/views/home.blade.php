@@ -19,9 +19,48 @@
         </div>
         <div class="lg:flex-1">
             <figure class=" lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:gap-6 xl:gap-8">
-                <img class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full" src="/img-redimensions/test.jpg" alt="">
-                <img class="sr-only lg:not-sr-only lg:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438081.jpeg" alt="">
-                <img class="sr-only lg:not-sr-only lg:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438084.jpg" alt="">
+                <img class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full" src="/img-redimensions/pexels-buro-millennial-1438072-878.jpg"
+                     srcset="
+                     /img-redimensions/pexels-buro-millennial-1438072-481.jpg 1024w,
+                     /img-redimensions/pexels-buro-millennial-1438072-524.jpg 1250w,
+                     /img-redimensions/pexels-buro-millennial-1438072-588.jpg 1520w,
+                     /img-redimensions/pexels-buro-millennial-1438072-733.jpg 2040w,
+                     /img-redimensions/pexels-buro-millennial-1438072-878.jpg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w"
+                     alt="">
+                <img class="sr-only lg:not-sr-only lg:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438081-504.jpg"
+                     srcset="
+                     /img-redimensions/pexels-buro-millennial-1438081-274.jpg 1024w,
+                     /img-redimensions/pexels-buro-millennial-1438081-302.jpg 1250w,
+                     /img-redimensions/pexels-buro-millennial-1438081-330.jpg 1520w,
+                     /img-redimensions/pexels-buro-millennial-1438081-417.jpg 2040w,
+                     /img-redimensions/pexels-buro-millennial-1438081-504.jpg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w"
+                     alt="">
+                <img class="sr-only lg:not-sr-only lg:rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438084-504.jpg"
+                     srcset="
+                     /img-redimensions/pexels-buro-millennial-1438084-274.jpg 1024w,
+                     /img-redimensions/pexels-buro-millennial-1438084-302.jpg 1250w,
+                     /img-redimensions/pexels-buro-millennial-1438084-330.jpg 1520w,
+                     /img-redimensions/pexels-buro-millennial-1438084-417.jpg 2040w,
+                     /img-redimensions/pexels-buro-millennial-1438084-504.jpg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w"
+                     alt="">
             </figure>
         </div>
     </section>
@@ -105,9 +144,48 @@
         </div>
         <div class="sr-only lg:not-sr-only flex-1">
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
-                <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/girl-260x481.jpg" alt="">
-                <img class="rounded-3xl" src="/img-redimensions/pexels-olya-kobruseva-5428836.jpg" alt="">
-                <img class="rounded-3xl" src="/img-redimensions/student-g0a8698c9e_1920.jpg" alt="">
+                <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/windows-VMPhyAoVqqk-unsplash-878.jpg"
+                     srcset="
+                     /img-redimensions/windows-VMPhyAoVqqk-unsplash-481.jpg 1024w,
+                     /img-redimensions/windows-VMPhyAoVqqk-unsplash-534.jpg 1250w,
+                     /img-redimensions/windows-VMPhyAoVqqk-unsplash-588.jpg 1520w,
+                     /img-redimensions/windows-VMPhyAoVqqk-unsplash-733.jpg 2040w,
+                     /img-redimensions/windows-VMPhyAoVqqk-unsplash-878.jpg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w"
+                     alt="">
+                <img class="rounded-3xl" src="/img-redimensions/pexels-olya-kobruseva-5428836-504.jpg"
+                     srcset="
+                     /img-redimensions/pexels-olya-kobruseva-5428836-274.jpg 1024w,
+                     /img-redimensions/pexels-olya-kobruseva-5428836-302.jpg 1250w,
+                     /img-redimensions/pexels-olya-kobruseva-5428836-330.jpg 1520w,
+                     /img-redimensions/pexels-olya-kobruseva-5428836-417.jpg 2040w,
+                     /img-redimensions/pexels-olya-kobruseva-5428836-504.jpg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w"
+                     alt="">
+                <img class="rounded-3xl" src="/img-redimensions/student-g0a8698c9e_1920-504.jpg"
+                     srcset="
+                     /img-redimensions/student-g0a8698c9e_1920-274.jpg 1024w,
+                     /img-redimensions/student-g0a8698c9e_1920-302.jpg 1250w,
+                     /img-redimensions/student-g0a8698c9e_1920-330.jpg 1520w,
+                     /img-redimensions/student-g0a8698c9e_1920-417.jpg 2040w,
+                     /img-redimensions/student-g0a8698c9e_1920-504.jpg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w"
+                     alt="">
             </figure>
         </div>
     </section>

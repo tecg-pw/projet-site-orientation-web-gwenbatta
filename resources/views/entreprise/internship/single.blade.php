@@ -81,9 +81,9 @@
             <div class="xl:ml-20 flex flex-col gap-16">
                 <div>
                     <p class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('agency.offer_description')}}</p>
-                    <p class="text-lg leading-8 xl:max-w-[75%]">
-                        {{$offer_ref->description}}
-                    </p>
+                    <div class="text-lg leading-8 xl:max-w-[75%]">
+                        {!!$offer_ref->description!!}
+                    </div>
                 </div>
                 <section aria-labelledby="needed">
                     <h3 id="needed" role="heading" aria-level="3"
@@ -145,7 +145,7 @@
                             </div>
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col gap-2 max-w-[80%]">
-                                    <p class="text">{{$other_offer->translation->where('locale',app()->getLocale())->first()->description}}</p>
+                                    <div class="text">{!!$other_offer->translation->where('locale',app()->getLocale())->first()->description!!}</div>
                                     <p class="font-medium xl:text-lg">{{$other_offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"

@@ -14,7 +14,7 @@
                 class="font-medium text-lg md:text-xl xl:text-2xl mb-2">{{$tool->name}}</h4>
         </div>
     </div>
-    <p class="mb-4 xl:mb-10 xl:text-lg">{{$tool->excerpt}}</p>
+    <div class="mb-4 xl:mb-10 xl:text-lg">{!!$tool->excerpt!!}</div>
     <div class="flex flex- justify-between">
         <p class="xl:text-lg flex gap-x-3 font-medium">
             {{__('technicals.doc_course')}}

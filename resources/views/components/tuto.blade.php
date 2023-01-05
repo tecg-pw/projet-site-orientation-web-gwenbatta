@@ -3,12 +3,11 @@
     'tuto'
 ])
 <article
-    {{ $attributes->class(['group  relative py-6 px-8 rounded-3xl']) }} aria-labelledby="{{$tuto_ref->slug}}">
+    {{ $attributes->class(['group hover:bg-orange-100 relative py-6 px-8 rounded-3xl']) }} aria-labelledby="{{$tuto_ref->slug}}">
     <div class="flex justify-between">
         <div class="flex-1 flex justify-between">
             <h3 id="{{$tuto_ref->slug}}" aria-level="3" role="heading" class="hover-within:text-orange-500 text-lg font-medium xl:text-2xl mb-1.5">
-                <a class="hover:text-orange-500"
-                   href="{{$tuto_ref->link}}">{{$tuto_ref->name}}</a>
+                {{$tuto_ref->name}}
                 </h3>
         </div>
         @auth()
@@ -35,13 +34,15 @@
                 @endif
         @endauth
     </div>
-    <p class="mb-2.5 xl:mb-6 xl:text-lg">{{$tuto_ref->excerpt}}</p>
+    <div class="mb-2.5 xl:mb-6 xl:text-lg">{!!$tuto_ref->excerpt!!}</div>
     <div class="flex justify-between">
         <div class="flex gap-5 items-center">
             <p class="text-orange-500 font-sans xl:text-lg font-medium">{{ucwords($tuto_ref->languages)}}</p>
             <p>{{ucwords($tuto_ref->created_at->translatedFormat('d F Y'))}}</p>
         </div>
-        <svg class="mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
+        <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
+           href="{{$tuto_ref->link}}">{{__('tuto_ref.tuto_ref_do')}}</a>
+        <svg class="mr-4 group-hover:mr-0 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
              viewBox="0 0 32 27.417">
             <path
                 d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"

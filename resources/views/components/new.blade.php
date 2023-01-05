@@ -12,7 +12,7 @@
             <p class="xl:text-xl md:text-lg relative z-30">{{ucwords($new_ref->date->translatedFormat('d/m/Y '))}}</p>
         </div>
         <div class="flex justify-between mb-4">
-            <p class="max-w-[80%] text-start">{!!__($new_ref->excerpt)  !!}</p>
+            <div class="max-w-[80%] text-start">{!!__($new_ref->excerpt)  !!}</div>
             <svg class="group-hover:mr-0 mr-2 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                  viewBox="0 0 32 27.417">
                 <path

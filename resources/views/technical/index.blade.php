@@ -13,9 +13,43 @@
         </div>
         <div class="sr-only lg:not-sr-only flex-1">
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
-                <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/windows-97pJ_0CkVEY-unsplash-584.jpeg" alt="">
-                <img class="rounded-3xl" src="/img-redimensions/christopher-gower-m_HRfLhgABo-unsplash.jpg" alt="">
-                <img class="rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438081.jpeg" alt="">
+                <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/windows-97pJ_0CkVEY-unsplash-878.jpeg" srcset="
+                     /img-redimensions/windows-97pJ_0CkVEY-unsplash-481.jpeg 1024w,
+                     /img-redimensions/windows-97pJ_0CkVEY-unsplash-534.jpeg 1250w,
+                     /img-redimensions/windows-97pJ_0CkVEY-unsplash-588.jpeg 1520w,
+                     /img-redimensions/windows-97pJ_0CkVEY-unsplash-733.jpeg 2040w,
+                     /img-redimensions/windows-97pJ_0CkVEY-unsplash-878.jpeg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w" alt="">
+                <img class="rounded-3xl" src="/img-redimensions/christopher-gower-m_HRfLhgABo-unsplash-504.jpeg" srcset="
+                     /img-redimensions/christopher-gower-m_HRfLhgABo-unsplash-274.jpeg 1024w,
+                     /img-redimensions/christopher-gower-m_HRfLhgABo-unsplash-302.jpeg 1250w,
+                     /img-redimensions/christopher-gower-m_HRfLhgABo-unsplash-330.jpeg 1520w,
+                     /img-redimensions/christopher-gower-m_HRfLhgABo-unsplash-417.jpeg 2040w,
+                     /img-redimensions/christopher-gower-m_HRfLhgABo-unsplash-504.jpeg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w" alt="">
+                <img class="rounded-3xl" src="/img-redimensions/pexels-buro-millennial-1438081-504.jpg"
+                     srcset="
+                     /img-redimensions/pexels-buro-millennial-1438081-274.jpg 1024w,
+                     /img-redimensions/pexels-buro-millennial-1438081-302.jpg 1250w,
+                     /img-redimensions/pexels-buro-millennial-1438081-330.jpg 1520w,
+                     /img-redimensions/pexels-buro-millennial-1438081-417.jpg 2040w,
+                     /img-redimensions/pexels-buro-millennial-1438081-504.jpg 2560w"
+                     sizes="
+                         (min-width : 1024px) 1024w,
+                         (min-width : 1250px) 1250w,
+                         (min-width : 1520px) 1520w,
+                         (min-width : 2040px) 2040w,
+                         2560w" alt="">
             </figure>
         </div>
     </section>

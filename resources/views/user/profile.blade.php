@@ -30,15 +30,14 @@
         </div>
         <div class="mt-12 grid grid-cols-2 gap-x-24 gap-y-8">
             @foreach($tutos as $tuto_ref)
-                <article class="group bg-white-100 relative py-6 px-8 rounded-3xl"
+                <article class="group hover:bg-orange-100 bg-white-100 relative flex flex-col py-6 px-8 rounded-3xl"
                          aria-labelledby="{{$tuto_ref->slug}}">
                     <div class="flex justify-between">
                         <div class="flex-1 flex justify-between">
                             <h3 id="{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->slug}}"
                                 aria-level="3" role="heading"
                                 class="hover-within:text-orange-500 text-lg font-medium xl:text-2xl mb-1.5">
-                                <a class="hover:text-orange-500"
-                                   href="{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->link}}">{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->name}}</a>
+                                {{$tuto_ref->translation->where('locale',app()->getLocale())->first()->name}}
                             </h3>
                         </div>
                             <form
@@ -57,13 +56,15 @@
                                 </button>
                             </form>
                     </div>
-                    <p class="mb-2.5 xl:mb-6 xl:text-lg">{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->excerpt}}</p>
-                    <div class="flex justify-between">
-                        <div class="flex gap-5 items-center">
+                    <div class="mb-2.5 xl:mb-6 xl:text-lg">{!!$tuto_ref->translation->where('locale',app()->getLocale())->first()->excerpt!!}</div>
+                    <div class="flex justify-between flex-1 justify-end">
+                        <div class="flex gap-5 flex-1 self-end items-center">
                             <p class="text-orange-500 font-sans xl:text-lg font-medium">{{ucwords($tuto_ref->translation->where('locale',app()->getLocale())->first()->languages)}}</p>
                             <p>{{ucwords($tuto_ref->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d F Y'))}}</p>
                         </div>
-                        <svg class="mr-4 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
+                        <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
+                           href="{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->link}}">{{__('tuto_ref.tuto_ref_do')}}</a>
+                        <svg class="mr-4 group-hover:mr-0 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                              viewBox="0 0 32 27.417">
                             <path
                                 d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
@@ -71,7 +72,6 @@
                         </svg>
                     </div>
                 </article>
-
             @endforeach
             @if(count($tutos) === 0)
                 <p>{{__('user.user_no_favorite')}}</p>

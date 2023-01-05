@@ -76,14 +76,14 @@
                         </ul>
                     </section>
                 </div>
-                @if($partner->description === null)
+                @if(strip_tags($partner->description) === null)
                     <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
-                        {{$partner->description}}
-                    </p>
+                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                        {!!$partner->description!!}
+                    </div>
                 @endif
             </div>
             <div class="min-w-[313px]">
@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="mt-1 flex justify-between">
                                     <div class="flex flex-col gap-2 max-w-[80%]">
-                                        <p class="text">{{$offer->translation->where('locale',app()->getLocale())->first()->description}}</p>
+                                        <div class="text">{!!$offer->translation->where('locale',app()->getLocale())->first()->description!!}</div>
                                         <p class="font-medium xl:text-lg">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                                     </div>
                                     <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"

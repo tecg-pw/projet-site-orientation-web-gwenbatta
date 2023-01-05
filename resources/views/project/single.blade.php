@@ -67,9 +67,9 @@ $project->person = $project->person->translation->where('locale', app()->getLoca
                 </div>
             </article>
             <div class="xl:ml-28 xl:mt-0">
-                <p class="text-lg xl:text-xl xl:max-w-[85%] 2xl:max-w-[90%] 2xl:leading-10 flex flex-col gap-8 leading-8">
-                    {{$project->description}}
-                </p>
+                <div class="text-lg xl:text-xl xl:max-w-[85%] 2xl:max-w-[90%] 2xl:leading-10 flex flex-col gap-8 leading-8">
+                    {!!$project->description!!}
+                </div>
                 <div class="mt-6">
                     <div class="flex flex-col xl:gap-2 text-lg">
                         <div class="flex xl:flex-row flex-col xl:gap-3 mb-3">

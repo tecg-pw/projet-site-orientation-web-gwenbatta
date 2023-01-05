@@ -27,8 +27,8 @@
             <div class="mb-7 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading" class="font-sans text-lg md:text-xl xl:text-2xl font-medium mb-5">{{__('course.course_subtitle')}}</h3>
-                    <div class="flex flex-col gap-6">
-                        <p class="text-lg leading-8 xl:text-xl xl:leading-10 ">{{$course->description}}</p>
+                    <div class="flex flex-col gap-6text-lg leading-8 xl:text-xl xl:leading-10">
+                        {!!$course->description!!}
                     </div>
                 </section>
             </div>
@@ -36,11 +36,37 @@
                 <figure class="grid grid-rows-1 grid-cols-3 gap-6 ">
                     <img class="rounded-3xl row-span-2"
                          src="/img-redimensions/girl-on-computer-526.jpg" alt="">
+
                     <img class="rounded-3xl col-span-2 order-1"
                          src="/img-redimensions/ux-468.jpg" alt="">
+
+
                     <img class="rounded-3xl order-2" src="/img-redimensions/coding-picture.jpg"
+                         srcset="/img-redimensions/pexels-pixabay-270373-1716-274.jpg 1024w,
+             /img-redimensions/pexels-pixabay-270373-1716-302.jpg 1250w,
+             /img-redimensions/pexels-pixabay-270373-1716-330.jpg 1520w,
+             /img-redimensions/pexels-pixabay-270373-1716-417.jpg 2040w,
+             /img-redimensions/pexels-pixabay-270373-1716-504.jpg 2560w"
+                         sizes="
+                        (min-width : 1024px) 1024w,
+                     (min-width : 1250px) 1250w,
+                     (min-width : 1520px) 1520w,
+                     (min-width : 2040px) 2040w,
+                     2560w"
                          alt="">
-                    <img class="rounded-3xl order-3" src="/img-redimensions/coding-person-picture.jpg"
+                    <img class="rounded-3xl order-3"
+                         srcset="/img-redimensions/student-g0a8698c9e_1920-274.jpg 1024w,
+             /img-redimensions/student-g0a8698c9e_1920-1280-302.jpg 1250w,
+             /img-redimensions/student-g0a8698c9e_1920-1280-330.jpg 1520w,
+             /img-redimensions/student-g0a8698c9e_1920-1280-417.jpg 2040w,
+             /img-redimensions/student-g0a8698c9e_1920-1280-504.jpg 2560w"
+                         sizes="
+                        (min-width : 1024px) 1024w,
+                     (min-width : 1250px) 1250w,
+                     (min-width : 1520px) 1520w,
+                     (min-width : 2040px) 2040w,
+                     2560w"
+                         src="/img-redimensions/student-g0a8698c9e_1920-1280-504.jpg"
                          alt="">
                 </figure>
             </div>

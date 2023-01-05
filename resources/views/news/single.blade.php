@@ -28,9 +28,9 @@
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-lg xl:text-xl font-medium mb-5">{{__('actu.actu_single_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
-                        <p class="xl:text-lg xl:leading-10 leading-8 flex flex-col gap-10">
-                            {{$new->description}}
-                        </p>
+                        <div class="xl:text-lg xl:leading-10 leading-8 flex flex-col gap-10">
+                            {!!$new->description!!}
+                        </div>
                         <div class="mb-10">
                             <p class="flex gap-3 xl:text-lg"> {{__('project.project_available')}}
                                 @foreach($locales as $locale)
