@@ -27,6 +27,8 @@ class ActualityTranslationFactory extends Factory
             "lieu" => 'Liège',
             "link" => '',
             "main_picture" => "",
+            'pictures' => json_encode(''),
+            'srcset' => json_encode(''),
             "date" => Carbon::now()->toDateTimeString(),
             "gallery" => [],
             "actuality_id" => 1,

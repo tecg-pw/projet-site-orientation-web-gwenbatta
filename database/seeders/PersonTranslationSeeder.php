@@ -29,6 +29,8 @@ class PersonTranslationSeeder extends Seeder
                 "status" => $value->status,
                 "isTeacher" => $value->isTeacher,
                 "avatar" => $value->avatar,
+                "avatars" => $value->avatars,
+                "srcset" => $value->srcset,
                 "locale" => $value->locale,
                 "description" => '<p>'.$value->description.'</p>',
                 "link_portfolio" => $value->link_portfolio,

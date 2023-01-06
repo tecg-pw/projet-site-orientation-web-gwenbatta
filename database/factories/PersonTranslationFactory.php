@@ -24,6 +24,8 @@ class PersonTranslationFactory extends Factory
             "status" => fake()->jobTitle,
             "isTeacher" => false,
             "avatar" => "",
+            'avatars' => json_encode(''),
+            'srcset' => json_encode(''),
             "locale" =>"fr",
             "description" => '<p>'.implode('</p><p>', fake()->paragraphs(12)).'</p>',
             "link_portfolio" => "",

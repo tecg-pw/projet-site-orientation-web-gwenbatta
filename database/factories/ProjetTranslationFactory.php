@@ -27,6 +27,8 @@ class ProjetTranslationFactory extends Factory
             "link_github" => "",
             "date" => Carbon::now()->toDateTimeString(),
             "main_picture" => "",
+            'pictures' => json_encode(''),
+            'srcset' => json_encode(''),
             "gallery" => [],
             "project_id" => 1,
         ];

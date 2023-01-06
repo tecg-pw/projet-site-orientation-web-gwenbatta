@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions\ResolvedSubject;
 use App\Nova\Filters\SubjectResolved;
 use App\Nova\Filters\SubjectTag;
 use Laravel\Nova\Fields\BelongsTo;

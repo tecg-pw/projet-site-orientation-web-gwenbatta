@@ -28,7 +28,8 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             "slug" => \Str::slug($firstname.$name),
             "avatar" => 'https://placehold.jp/276x276.png',
-            "avatar_thumb" => 'https://placehold.jp/115x115.png',
+            'avatars' => json_encode(''),
+            'srcset' => json_encode(''),
             "back_image" => 'https://placehold.jp/1920x550.png',
             "is_admin" => 0,
             "status_id"=>0

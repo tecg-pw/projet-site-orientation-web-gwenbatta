@@ -2,8 +2,6 @@
 
 namespace App\Nova\Filters;
 
-use App\Models\Status;
-use App\Models\StatusTranslation;
 use App\Models\User;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;

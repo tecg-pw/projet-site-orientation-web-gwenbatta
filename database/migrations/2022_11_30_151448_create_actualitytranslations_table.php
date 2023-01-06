@@ -22,7 +22,9 @@ return new class extends Migration
             $table->text('description');
             $table->string('lieu');
             $table->string('link');
-            $table->string('main_picture');
+            $table->string('main_picture')->nullable();
+            $table->json('pictures')->nullable();
+            $table->json('srcset')->nullable();
             $table->json('gallery')->nullable();
             $table->timestamps();
             $table->timestamp('date')->nullable()->index();

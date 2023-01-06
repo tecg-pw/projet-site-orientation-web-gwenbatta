@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('link_github');
             $table->timestamp('date')->nullable()->index();
             $table->string('main_picture')->nullable();
+            $table->json('pictures')->nullable();
+            $table->json('srcset')->nullable();
             $table->json('gallery')->nullable();
             $table->timestamps();
             $table->softDeletes();

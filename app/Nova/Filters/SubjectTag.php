@@ -3,7 +3,6 @@
 namespace App\Nova\Filters;
 
 use App\Models\Subject;
-use App\Models\User;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 

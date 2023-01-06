@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('status');
             $table->boolean('isTeacher')->default(false);
             $table->string('avatar')->nullable();
+            $table->json('avatars')->nullable();
+            $table->json('srcset')->nullable();
             $table->string('locale');
             $table->text('description')->nullable();
             $table->string('link_portfolio')->nullable();
