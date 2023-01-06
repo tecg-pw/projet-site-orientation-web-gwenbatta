@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCommentRequest;
 use App\Models\Comment;
 use App\Models\Subject;
 use App\Notifications\AnswerSubject;
+use App\Notifications\LikeComment;
 use DB;
 use Illuminate\Support\Facades\Notification;
 
@@ -72,7 +73,8 @@ class CommentController extends Controller
                 "user_id" => $data_comment['user_id']
             ]);
         }
-
+        $comment = Comment::find($id);
+        Notification::send($comment->user, new LikeComment($comment));
         return  redirect('/'.$locale.'/forum/show/'.$slug);
 
     }
