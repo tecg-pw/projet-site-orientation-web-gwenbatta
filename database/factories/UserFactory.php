@@ -31,6 +31,8 @@ class UserFactory extends Factory
             'avatars' => json_encode(''),
             'srcset' => json_encode(''),
             "back_image" => 'https://placehold.jp/1920x550.png',
+            "back_images" => json_encode(''),
+            'srcset_back' => json_encode(''),
             "is_admin" => 0,
             "status_id"=>0
         ];

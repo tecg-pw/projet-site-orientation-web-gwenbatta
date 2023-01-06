@@ -15,10 +15,29 @@
                                class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-lg md:text-xl xl:text-2xl font-semibold mb-32">{{__('user.user_modify')}}</a>
                         </div>
                 </div>
-                <img class="rounded-full md:w-1/4 xl:w-1/4" src="{{str_contains($user->avatar,'http')? $user->avatar : '/'.$user->avatar}}" alt="">
+                <picture>
+                    @if($user->srcset && $user->srcset['full'])
+                        @foreach($user->srcset['full'] as $size => $path)
+                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                    srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$user->avatars && $user->avatars['full'] ? '/' . $user->avatars['full'] : '/'.$user->avatar}}"
+                        alt="{{$user->title}}" class="rounded-full">
+                </picture>
             </div>
-            <img class="absolute -z-10 top-0 bottom-0 left-0 right-0"
-                 src="{{str_contains($user->back_image,'http')? $user->back_image : '/'.$user->back_image}}" alt="">
+            <picture class="absolute -z-10 top-0 bottom-0 left-0 right-0">
+                @if($user->srcset_back && $user->srcset_back['full'])
+                    @foreach($user->srcset_back['full'] as $size => $path)
+                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                srcset="/{{$path}}">
+                    @endforeach
+                @endif
+                <img
+                    src="{{$user->back_images && $user->back_images['full'] ? '/' . $user->back_images['full'] : '/'.$user->back_image}}"
+                    alt="{{$user->title}}" class="">
+            </picture>
         </div>
     </section>
     <article class="bg-yellow-600 px-10 lg:px-16 xl:px-32 2xl:px-48 pb-36 pt-20" aria-labelledby="tutos">

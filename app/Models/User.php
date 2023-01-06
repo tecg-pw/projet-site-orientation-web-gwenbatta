@@ -27,6 +27,9 @@ class User extends Authenticatable
         'slug',
         'status_id',
         'back_image',
+        'srcset',
+        'avatars' ,
+        'srcset',
         'description',
         'avatar',
         'avatar_thumb',
@@ -73,5 +76,9 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        "avatars" => 'array',
+        "back_images" => 'array',
+        "srcset" => 'array',
+        "srcset_back" => 'array'
     ];
 }

@@ -34,7 +34,16 @@
                     </svg>
                 </div>
             </div>
-            <img class="order-1 rounded-full" width="98" src="/{{$person_ref->avatar}}" alt="avatar">
+            <picture>
+                @if($person_ref->srcset && $person_ref->srcset['thumbnail'])
+                    @foreach($person_ref->srcset['thumbnail'] as $size => $path)
+                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                    @endforeach
+                @endif
+                <img
+                    src="{{$person_ref->logos && $person_ref->logos['thumbnail'] ? '/' . $person_ref->logos['thumbnail'] : '/'.$person_ref->logo}}"
+                    alt="{{$person_ref->title}}" class="order-1 rounded-full">
+            </picture>
         </div>
         @if($person_ref->status === 'ancien' || $person_ref->status === 'alumni')
             <a class="linkcard underline text-green-700 font-sans font-semibold self-end"

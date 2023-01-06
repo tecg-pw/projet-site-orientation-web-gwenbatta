@@ -15,6 +15,10 @@ class PersonTranslation extends Model
 
     protected $table = 'persontranslations';
     protected $dates =['begin','end'];
+    protected $casts = [
+        'avatars' => 'array',
+        'srcset' => 'array',
+    ];
     protected $fillable = [
         'name', 'firstname', 'slug', 'status','isTeacher', 'avatar', 'description', 'link_portfolio', 'link_github', 'linkedin', 'instagram', 'mail', 'job', 'begin', 'end','people_id'
     ];
@@ -23,7 +27,6 @@ class PersonTranslation extends Model
     {
         return $this->belongsTo(People::class, 'people_id');
     }
-
 
     public function partners(): BelongsToMany
     {

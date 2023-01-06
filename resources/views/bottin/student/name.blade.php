@@ -70,7 +70,17 @@
 
             </div>
             <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
-                <img class=" xl:mb-6 rounded-3xl" src="{{str_contains($student->avatar,'http') ? $student->avatar :'/'.$student->avatar}}" alt="avatar">
+                <picture>
+                    @if($student->srcset && $student->srcset['thumbnail'])
+                        @foreach($student->srcset['thumbnail'] as $size => $path)
+                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                    srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$student->logos && $student->logos['thumbnail'] ? '/' . $student->logos['thumbnail'] : '/'.$student->logo}}"
+                        alt="{{$student->title}}" class="xl:mb-6 rounded-3xl">
+                </picture>
                 <div class="flex flex-col mt-8">
                     <a href="{{$student->link_portfolio}}"
                        class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('people.bottin_portfolio')}}</a>

@@ -1,32 +1,44 @@
 <x-commons.navigation :page="$alumni->firstname.' '.$alumni->name"></x-commons.navigation>
 <main id="content" class="">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
-        <a href="/{{app()->getLocale()}}/bottin" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/bottin"
+           class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{__('nav.nav_navigation.people')}}
         </a>
-        <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/bottin/alumni/{{$alumni->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <svg class="h-7 w-7 text-green-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+             stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z"/>
+            <polyline points="9 6 15 12 9 18"/>
+        </svg>
+        <a href="/{{app()->getLocale()}}/bottin/alumni/{{$alumni->slug}}"
+           class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{$alumni->firstname}} {{$alumni->name}}
         </a>
     </div>
-    <section class="mt-20 px-10 2xl:px-48 xl:px-32 lg:px-16 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
+    <section class="mt-20 px-10 2xl:px-48 xl:px-32 lg:px-16 flex flex-col mb-20 xl:mb-36 gap-x-11"
+             aria-labelledby="name">
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"
                 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{__($alumni->firstname)}} {{__($alumni->name)}}</h2>
-            <a class="underline md:text-xl xl:text-2xl hover:text-orange-500" href="/{{app()->getLocale()}}/bottin/alumni">{{__('people.alumni_button')}}</a>
+            <a class="underline md:text-xl xl:text-2xl hover:text-orange-500"
+               href="/{{app()->getLocale()}}/bottin/alumni">{{__('people.alumni_button')}}</a>
         </div>
         <div class="flex flex-col md:flex-row gap-6 xl:gap-12 mt-16">
             <div class="mt-4 mb-7 order-2">
                 <div class="flex gap-12">
                     <div>
-                        <div class="mb-4 flex gap-8 md:flex-col md:gap-y-2 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
+                        <div
+                            class="mb-4 flex gap-8 md:flex-col md:gap-y-2 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
                             <p class="">{{__($alumni->status)}}</p>
                             <p>{{($alumni->begin->format('Y'))}} - {{($alumni->end->format('Y'))}}</p>
-                            <a class="hover:text-orange-500 underline text-green-700" href="/{{app()->getLocale()}}/about/job/{{__($alumni->job_slug)}}">{{__($alumni->job)}}</a>
+                            <a class="hover:text-orange-500 underline text-green-700"
+                               href="/{{app()->getLocale()}}/about/job/{{__($alumni->job_slug)}}">{{__($alumni->job)}}</a>
                         </div>
                         <div class="flex gap-y-1.5 flex-col xl:gap-y-2.5 mb-5 text-xl">
-                            <a class="hover:text-orange-500 text-green-700 underline" href="mailto:{{__($alumni->mail)}}">{{__($alumni->mail)}}</a>
-                            <a class="hover:text-orange-500 text-green-700 underline text-xl" href="{{__($alumni->link_portfolio)}}">{{__($alumni->link_portfolio)}}</a>
+                            <a class="hover:text-orange-500 text-green-700 underline"
+                               href="mailto:{{__($alumni->mail)}}">{{__($alumni->mail)}}</a>
+                            <a class="hover:text-orange-500 text-green-700 underline text-xl"
+                               href="{{__($alumni->link_portfolio)}}">{{__($alumni->link_portfolio)}}</a>
                         </div>
                         <div class="flex flex-1 mb-6 gap-5">
                             <div class="relative group">
@@ -71,7 +83,17 @@
                 @endif
             </div>
             <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
-                <img class=" xl:mb-6 rounded-3xl" src="/{{$alumni->avatar}}" alt="avatar">
+                <picture>
+                    @if($alumni->srcset && $alumni->srcset['thumbnail'])
+                        @foreach($alumni->srcset['thumbnail'] as $size => $path)
+                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                    srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$alumni->logos && $alumni->logos['thumbnail'] ? '/' . $alumni->logos['thumbnail'] : '/'.$alumni->logo}}"
+                        alt="{{$alumni->title}}" class="xl:mb-6 rounded-3xl">
+                </picture>
                 <div class="flex flex-col mt-8">
                     <a href="{{$alumni->link_portfolio}}"
                        class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('people.bottin_portfolio')}}</a>
@@ -97,9 +119,11 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
-        <div class="md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8 flex flex-col {{count($projects) !== 0 ? 'items-center' : ''}} gap-y-4 justify-center">
+        <div
+            class="md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8 flex flex-col {{count($projects) !== 0 ? 'items-center' : ''}} gap-y-4 justify-center">
             @foreach($projects as $project)
-                <x-project  :person="$alumni" :project_ref="$project->translation->where('locale',app()->getLocale())->first()"></x-project>
+                <x-project :person="$alumni"
+                           :project_ref="$project->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
             @if(count($projects) === 0)
                 <p class="xl:text-xl text-lg">{{__('people.bottin_no_project')}}</p>

@@ -4,10 +4,12 @@ namespace App\Nova;
 
 use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
@@ -53,12 +55,104 @@ class PersonTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            AdvancedImage::make('Avatar','avatar')
-                ->croppable(1)
-                ->rounded()
-                ->resize(276,276)
-                ->disk('public')
-                ->path('/img-redimensions/avatar'),
+            File::make('Logo de l\'entreprise', 'avatar')->store(function (Request $request, $model) {
+                $ext = $request->avatar->getClientOriginalExtension();
+                $name = sha1_file($request->avatar);
+
+                $thumbnail_path = 'img-redimensions/avatars/' . 'thumbnail-' . $name . '.' . $ext;
+                $thumbnail = \Intervention\Image\Facades\Image::make($request->avatar)->fit(120, 120)->save($thumbnail_path);
+
+                $thumbnail_srcset_640_path = 'img-redimensions/avatars/srcset/' . 'thumbnail-640-' . $name . '.' . $ext;
+                $thumbnail_srcset_768_path = 'img-redimensions/avatars/srcset/' . 'thumbnail-768-' . $name . '.' . $ext;
+                $thumbnail_srcset_1024_path = 'img-redimensions/avatars/srcset/' . 'thumbnail-1024-' . $name . '.' . $ext;
+                $thumbnail_srcset_1280_path = 'img-redimensions/avatars/srcset/' . 'thumbnail-1280-' . $name . '.' . $ext;
+                $thumbnail_srcset_1520_path = 'img-redimensions/avatars/srcset/' . 'thumbnail-1520-' . $name . '.' . $ext;
+                $thumbnail_srcset_2040_path = 'img-redimensions/avatars/srcset/' . 'thumbnail-2040-' . $name . '.' . $ext;
+                $thumbnail_srcset_2560_path = 'img-redimensions/avatars/srcset/' . 'thumbnail-2560-' . $name . '.' . $ext;
+
+                Image::make($thumbnail)->resize(120, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_2560_path);
+                Image::make($thumbnail)->resize(105, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_2040_path);
+                Image::make($thumbnail)->resize(98, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_1520_path);
+                Image::make($thumbnail)->resize(87, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_1280_path);
+                Image::make($thumbnail)->resize(85, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_1024_path);
+                Image::make($thumbnail)->resize(98, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_768_path);
+                Image::make($thumbnail)->resize(98, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_640_path);
+
+
+                $full_path = 'img-redimensions/avatars/' . 'full-' . $name . '.' . $ext;
+                $full = \Intervention\Image\Facades\Image::make($request->avatar)->fit(560, 560)->save($full_path);
+
+                $full_srcset_640_path = 'img-redimensions/avatars/srcset/' . 'full-640-' . $name . '.' . $ext;
+                $full_srcset_768_path = 'img-redimensions/avatars/srcset/' . 'full-768-' . $name . '.' . $ext;
+                $full_srcset_1024_path = 'img-redimensions/avatars/srcset/' . 'full-1024-' . $name . '.' . $ext;
+                $full_srcset_1280_path = 'img-redimensions/avatars/srcset/' . 'full-1280-' . $name . '.' . $ext;
+                $full_srcset_1520_path = 'img-redimensions/avatars/srcset/' . 'full-1520-' . $name . '.' . $ext;
+                $full_srcset_2040_path = 'img-redimensions/avatars/srcset/' . 'full-2040-' . $name . '.' . $ext;
+                $full_srcset_2560_path = 'img-redimensions/avatars/srcset/' . 'full-2560-' . $name . '.' . $ext;
+
+                Image::make($full)->resize(560, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($full_srcset_640_path);
+                Image::make($full)->resize(500, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($full_srcset_2560_path);
+                Image::make($full)->resize(420, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($full_srcset_2040_path);
+                Image::make($full)->resize(345, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($full_srcset_1520_path);
+                Image::make($full)->resize(345, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($full_srcset_1280_path);
+                Image::make($full)->resize(290, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($full_srcset_1024_path);
+                Image::make($full)->resize(276, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($full_srcset_768_path);
+
+                return [
+                    'avatar' => $thumbnail_path,
+                    'avatars' => [
+                        'thumbnail' => $thumbnail_path,
+                        'full' => $full_path,
+                    ],
+                    'srcset' => [
+                        'thumbnail' => [
+                            '640' => $thumbnail_srcset_640_path,
+                            '768' => $thumbnail_srcset_768_path,
+                            '1024' => $thumbnail_srcset_1024_path,
+                            '1280' => $thumbnail_srcset_1280_path,
+                            '1520' => $thumbnail_srcset_1520_path,
+                            '2040' => $thumbnail_srcset_2040_path,
+                            '2560' => $thumbnail_srcset_2560_path,
+                        ],'full' => [
+                            '640' => $full_srcset_640_path,
+                            '768' => $full_srcset_768_path,
+                            '1024' => $full_srcset_1024_path,
+                            '1280' => $full_srcset_1280_path,
+                            '1520' => $full_srcset_1520_path,
+                            '2040' => $full_srcset_2040_path,
+                            '2560' => $full_srcset_2560_path,
+                        ],
+                    ],
+                ];
+            }),
 
             Text::make('Nom','name')
                 ->sortable()

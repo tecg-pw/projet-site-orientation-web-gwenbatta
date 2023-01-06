@@ -16,10 +16,29 @@
                            class="hover:text-orange-500 font-sans text-center text-green-700 ml-6 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_back')}}</a>
                     </div>
                 </div>
-                <img class="rounded-full sm:w-1/4 md:w-1/4 xl:w-1/4 " src="{{str_contains($user->avatar,'http')? $user->avatar : '/'.$user->avatar}}" alt="">
+                <picture>
+                    @if($user->srcset && $user->srcset['full'])
+                        @foreach($user->srcset['full'] as $size => $path)
+                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                    srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$user->avatars && $user->avatars['full'] ? '/' . $user->avatars['full'] : '/'.$user->avatar}}"
+                        alt="{{$user->title}}" class="rounded-full">
+                </picture>
             </div>
-            <img class="absolute -z-10 top-0 bottom-0 left-0 right-0"
-                 src="{{str_contains($user->back_image,'http')? $user->back_image : '/'.$user->back_image}}" alt="">
+            <picture class="absolute -z-10 top-0 bottom-0 left-0 right-0">
+                @if($user->srcset_back && $user->srcset_back['full'])
+                    @foreach($user->srcset_back['full'] as $size => $path)
+                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                srcset="/{{$path}}">
+                    @endforeach
+                @endif
+                <img
+                    src="{{$user->back_images && $user->back_images['full'] ? '/' . $user->back_images['full'] : '/'.$user->back_image}}"
+                    alt="{{$user->title}}" class="">
+            </picture>
         </div>
     </section>
     <section class="xl:px-30 lg:px-16 2xl:px-48 px-10 mb-32" aria-labelledby="modify">
@@ -75,8 +94,17 @@
                                 </span>
                                 <input id="avatar" name="avatar" type="file"/>
                             </label>
-                            <img id="avatarUpdate" class="rounded-full -order-2" width="108" src="{{old('avatar')? old('avatar') : (str_contains($user->avatar,'http')? $user->avatar : '/'.$user->avatar)}}"
-                                 alt="">
+                            <picture>
+                                @if($user->srcset && $user->srcset['tiny'])
+                                    @foreach($user->srcset['tiny'] as $size => $path)
+                                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                                srcset="/{{$path}}">
+                                    @endforeach
+                                @endif
+                                <img
+                                    src="{{$user->avatars && $user->avatars['tiny'] ? '/' . $user->avatars['tiny'] : '/'.$user->avatar}}"
+                                    alt="{{$user->title}}" class="rounded-full -order-2">
+                            </picture>
                         </div>
                     </div>
                     <div class="flex flex-col mb-8 mt-4">
@@ -98,8 +126,17 @@
                                 </span>
                                 <input id="back_image" name="back_image" type="file"/>
                             </label>
-                            <img id="backUpdate" width="200" class="rounded-full -order-2"
-                                 src="{{old('back_image')?: (str_contains($user->back_image,'http')? $user->back_image : '/'.$user->back_image)}}" alt="">
+                            <picture>
+                                @if($user->srcset_back && $user->srcset_back['tiny'])
+                                    @foreach($user->srcset_back['tiny'] as $size => $path)
+                                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                                srcset="/{{$path}}">
+                                    @endforeach
+                                @endif
+                                <img
+                                    src="{{$user->back_images && $user->back_images['tiny'] ? '/' . $user->back_images['tiny'] : '/'.$user->back_image}}"
+                                    alt="{{$user->title}}" class="rounded-full -order-2">
+                            </picture>
                         </div>
                     </div>
                 </div>

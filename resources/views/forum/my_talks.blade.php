@@ -78,13 +78,17 @@
                                         <a href="/{{app()->getLocale()}}/user/profile/{{$comment->user->slug}}" class="text-base hover:text-orange-500 uppercase self-end">{{$comment->user->firstname}} {{$comment->user->name}} </a>
                                         <p class="xl:text-base">{{$comment->created_at-> format('d M. Y')}}</p>
                                     </div>
-                                    <img class="xl:sr-only order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
-                                         src="https://placehold.jp/75x75.png"
-                                         alt="Nom">
-
-                                    <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2  rounded-full"
-                                         src="{{$comment->user->avatar_thumb}}"
-                                         alt="Nom">
+                                    <picture>
+                                        @if($comment->user->srcset && $comment->user->srcset['thumbnail'])
+                                            @foreach($comment->user->srcset['thumbnail'] as $size => $path)
+                                                <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                                        srcset="/{{$path}}">
+                                            @endforeach
+                                        @endif
+                                        <img
+                                            src="{{$comment->user->avatars && $comment->user->avatars['thumbnail'] ? '/' . $comment->user->avatars['thumbnail'] : '/'.$comment->user->avatar}}"
+                                            alt="{{$comment->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
+                                    </picture>
                                 </div>
                                 <div class="relative flex order-7 gap-1.5">
                                     <form action="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}/comment/like/{{$comment->id}}" method="post">

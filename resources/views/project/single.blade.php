@@ -1,7 +1,6 @@
 <?php
 $person = $person->translation->where('locale', app()->getLocale())->first();
 ?>
-
 <x-commons.navigation :page="$project->title"></x-commons.navigation>
 <main id="content">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 mt-20">
@@ -28,8 +27,8 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl"><a
                             href="/{{app()->getLocale()}}/bottin/{{$person->status === "étudiant"? "student" : $person->status}}/{{$person->slug}}">{{$person->firstname}} {{$person->name}}</a>
                     </h3>
-                    <p class="mb-2 mt-2 xl:text-xl">{{$person->begin->format('Y')}}
-                        -{{$person->end->format('Y')}}</p>
+                    <p class="mb-2 mt-2 xl:text-xl">{{$person->begin->translatedFormat('Y')}}
+                        - {{$person->end !== null? $person->end->translatedFormat('Y') : __('people.bottin_today')}}</p>
                     <a class="underline text-green-700 text-lg xl:text-xl hover:text-orange-500"
                        href="{{$person->link_portfolio}}">{{$person->link_portfolio}}</a>
                     <div class="flex xl:flex-row flex-col justify-between xl:gap-32 xl:items-center mt-4 mb-2 ">
@@ -81,6 +80,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                         </div>
                         <div class="flex xl:flex-row flex-col mb-3 xl:gap-3">
                             <p>{{__('project.project_make_with')}}</p>
+
                             @foreach($teachers as $teacher_ref)
                                 <a class=" underline text-green-700 uppercase hover:text-orange-500"
                                    href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher_ref->translation->where('locale',app()->getLocale())->first()->slug}}">{{$teacher_ref->translation->where('locale',app()->getLocale())->first()->firstname}} {{$teacher_ref->translation->where('locale',app()->getLocale())->first()->name}}</a>
@@ -136,6 +136,9 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
             @foreach($projects as $project_ref)
                 <x-project :person="$person" :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
+            @if(count($projects) === 0)
+                <p>{{__('people.bottin_no_project')}}</p>
+            @endif
         </div>
     </article>
 </main>

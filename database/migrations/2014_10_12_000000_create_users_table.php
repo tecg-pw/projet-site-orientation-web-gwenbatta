@@ -22,6 +22,8 @@ return new class extends Migration
             $table->json('avatars')->nullable();
             $table->json('srcset')->nullable();
             $table->string('back_image')->default("https://placehold.jp/1920x500.png");
+            $table->json('srcset_back')->nullable();
+            $table->json('back_images')->nullable();
             $table->string('email')->unique();
             $table->boolean('is_admin')->default(false);
             $table->timestamp('email_verified_at')->nullable();

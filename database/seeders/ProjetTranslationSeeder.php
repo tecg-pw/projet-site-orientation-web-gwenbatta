@@ -31,7 +31,7 @@ class ProjetTranslationSeeder extends Seeder
                 "link_github" => $value->link_github,
                 "date" => Carbon::parse($value->date)->toDateTimeString(),
                 "main_picture" => $value->main_picture,
-                "picture" => $value->pictures,
+                "pictures" => $value->pictures,
                 "srcset" => $value->srcset,
                 "gallery" => $value->gallery,
                 "project_id" => $value->project_id,

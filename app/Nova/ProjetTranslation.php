@@ -2,18 +2,15 @@
 
 namespace App\Nova;
 
-use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 
 class ProjetTranslation extends Resource
@@ -69,12 +66,61 @@ class ProjetTranslation extends Resource
                 ->hideFromIndex()
                 ->rules('max:255'),
 
-            AdvancedImage::make('Image principale','main_picture')
-                ->croppable(1)
-                ->rounded()
-                ->resize(370,370)
-                ->disk('public')
-                ->path('/img-redimensions/project'),
+            File::make('Image principale','main_picture')->store(function (Request $request, $model){
+                $ext = $request->main_picture->getClientOriginalExtension();
+                $name =  sha1_file($request->main_picture);
+
+                $thumbnail_path = 'img-redimensions/project/' . 'thumbnail-' .  $name . '.' . $ext;
+                $thumbnail = \Intervention\Image\Facades\Image::make($request->main_picture)->fit(655, 655)->save($thumbnail_path);
+
+                $thumbnail_srcset_640_path = 'img-redimensions/project/srcset/' . 'thumbnail-640-' .  $name . '.' . $ext;
+                $thumbnail_srcset_768_path = 'img-redimensions/project/srcset/' . 'thumbnail-768-' .  $name . '.' . $ext;
+                $thumbnail_srcset_1024_path = 'img-redimensions/project/srcset/' . 'thumbnail-1024-' .  $name . '.' . $ext;
+                $thumbnail_srcset_1280_path = 'img-redimensions/project/srcset/' . 'thumbnail-1280-' .  $name . '.' . $ext;
+                $thumbnail_srcset_1520_path = 'img-redimensions/project/srcset/' . 'thumbnail-1520-' .  $name . '.' . $ext;
+                $thumbnail_srcset_2040_path = 'img-redimensions/project/srcset/' . 'thumbnail-2040-' .  $name . '.' . $ext;
+                $thumbnail_srcset_2560_path = 'img-redimensions/project/srcset/' . 'thumbnail-2560-' .  $name . '.' . $ext;
+
+                Image::make($thumbnail)->resize(655, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_2560_path);
+                Image::make($thumbnail)->resize(494, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_2040_path);
+                Image::make($thumbnail)->resize(370, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_1520_path);
+                Image::make($thumbnail)->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_1280_path);
+                Image::make($thumbnail)->resize(405, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_1024_path);
+                Image::make($thumbnail)->resize(308, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_768_path);
+                Image::make($thumbnail)->resize(520, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($thumbnail_srcset_640_path);
+
+                return [
+                    'main_picture' => $thumbnail_path,
+                    'pictures' => [
+                        'thumbnail' => $thumbnail_path,
+                    ],
+                    'srcset' => [
+                        'thumbnail' => [
+                            '640' => $thumbnail_srcset_640_path,
+                            '768' => $thumbnail_srcset_768_path,
+                            '1024' => $thumbnail_srcset_1024_path,
+                            '1280' => $thumbnail_srcset_1280_path,
+                            '1520' => $thumbnail_srcset_1520_path,
+                            '2040' => $thumbnail_srcset_2040_path,
+                            '2560' => $thumbnail_srcset_2560_path,
+                        ],
+                    ],
+                ];
+            }),
 
             Select::make('Langue','locale')->options([
                 'fr' => 'fr',
@@ -84,8 +130,6 @@ class ProjetTranslation extends Resource
             Date::make('Date'),
 
             Trix::make('Description'),
-
-
 
             BelongsTo::make('Projet','project','App\Nova\Project')
                 ->onlyOnDetail(),

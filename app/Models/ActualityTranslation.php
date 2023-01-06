@@ -13,9 +13,13 @@ class ActualityTranslation extends Model
 
     protected $table = 'actualitytranslations';
     protected $dates = ['date'];
+    protected $casts = [
+        "pictures" => 'array',
+        "srcset" => 'array'
+    ];
 
     protected $fillable = [
-        'name', 'slug' , 'locale', 'excerpt', 'description', 'lieu', 'link','gallery','actuality_id'
+        'name', 'slug' , 'locale', 'excerpt', 'description', 'lieu', 'link','gallery','actuality_id','pictures','srcset'
     ];
 
     public function actuality(): BelongsTo

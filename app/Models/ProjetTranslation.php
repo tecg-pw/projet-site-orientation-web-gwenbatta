@@ -12,8 +12,11 @@ class ProjetTranslation extends Model
 {
     use HasFactory, SoftDeletes;
     protected $table = 'projecttranslations';
-
     protected $dates = ['date'];
+    protected $casts = [
+        "pictures" => 'array',
+        "srcset" => 'array'
+    ];
 
     protected $fillable = [
         'title', 'slug','locale', 'description', 'link_project', 'link_github', 'date', 'main_picture', 'gallery','project_id'

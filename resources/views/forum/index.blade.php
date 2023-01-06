@@ -96,9 +96,17 @@
                                 </svg>
                             </div>
                         </div>
-                        <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                             src="{{str_contains($subject->user->avatar_thumb,'http')? $subject->user->avatar_thumb : '/'.$subject->user->avatar_thumb}}"
-                             alt="Nom">
+                        <picture>
+                            @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
+                                @foreach($subject->user->srcset['thumbnail'] as $size => $path)
+                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                            srcset="/{{$path}}">
+                                @endforeach
+                            @endif
+                            <img
+                                src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
+                                alt="{{$subject->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
+                        </picture>
                     </article>
                 @endforeach
                     {{$subjects->withQueryString()->links()}}

@@ -28,6 +28,8 @@ class UserSeeder extends Seeder
                 "avatars" => $value->avatars,
                 "srcset" => $value->srcset,
                 "back_image" => $value->back_image,
+                "back_images" => $value->back_images,
+                "srcset_back" => $value->srcset_back,
                 "email" => $value->email,
                 "is_admin" => $value->is_admin,
                 "email_verified_at" => $value->email_verified_at,

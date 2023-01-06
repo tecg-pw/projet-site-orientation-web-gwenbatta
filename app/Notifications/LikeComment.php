@@ -42,7 +42,8 @@ class LikeComment extends Notification
     {
         return (new MailMessage)
             ->subject('On aime votre commentaire !')
-            ->line('On a aimé votre commentaire « ' .$this->comment->content.' »')
+            ->line('On a aimé votre commentaire')
+            ->line( '« ' .$this->comment->content.' »')
             ->action('Je veux aller voir le commentaire', url('/'.app()->getLocale().'/forum/show/'.$this->comment->subject->slug))
             ->line('Bien à vous,');
     }

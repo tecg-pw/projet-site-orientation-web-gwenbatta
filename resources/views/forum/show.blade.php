@@ -91,14 +91,17 @@
             <div class="lg:col-span-3 xl:pl-32 2xl:pl-48 xl:pr-14 lg:pr-7 px-10 mb-36">
                 <div class="mb-24">
                     <div class="flex items-center gap-y-4 flex-wrap xl:gap-8">
-                        <img
-                            class="xl:not-sr-only sr-only -order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                            src="{{str_contains($subject->user->avatar_thumb,'http')? $subject->user->avatar_thumb : '/'.$subject->user->avatar_thumb }}"
-                            alt="{{$subject->user->slug}}">
-                        <img
-                            class="xl:sr-only -order-1 mr-4 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                            src="https://placehold.jp/84x84.png"
-                            alt="{{$subject->user->slug}}">
+                        <picture>
+                            @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
+                                @foreach($subject->user->srcset['thumbnail'] as $size => $path)
+                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                            srcset="/{{$path}}">
+                                @endforeach
+                            @endif
+                            <img
+                                src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
+                                alt="{{$subject->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
+                        </picture>
                         <div class="flex mr-4 sm:mr-0 flex-1 flex-col">
                             <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 xl:text-xl text-lg mb-2">{{$subject->user->firstname}} {{$subject->user->name}}</a>
                             <p>{{$subject->created_at->format('d M. Y')}}</p>
@@ -252,10 +255,17 @@
                                             <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 text-lg uppercase">{{$comment->user->firstname}} {{$comment->user->name}}</a>
                                             <p class="">{{$comment->created_at->format('d M. Y')}}</p>
                                         </div>
-                                        <img
-                                            class="order-1 row-span-3 order-1 justify-self-center row-span-2 sr-only sm:not-sr-only xl:w-[98px] sm:w-[78px] rounded-full"
-                                            src="{{str_contains($comment->user->avatar_thumb,'http')? $comment->user->avatar_thumb : '/'.$comment->user->avatar_thumb}}"
-                                            alt="{{$comment->user->slug}}">
+                                        <picture>
+                                            @if($comment->user->srcset && $comment->user->srcset['thumbnail'])
+                                                @foreach($comment->user->srcset['thumbnail'] as $size => $path)
+                                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                                            srcset="/{{$path}}">
+                                                @endforeach
+                                            @endif
+                                            <img
+                                                src="{{$comment->user->avatars && $comment->user->avatars['thumbnail'] ? '/' . $comment->user->avatars['thumbnail'] : '/'.$comment->user->avatar}}"
+                                                alt="{{$comment->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
+                                        </picture>
                                     </div>
                                 </div>
                                 <div class="flex gap-20 mt-4">

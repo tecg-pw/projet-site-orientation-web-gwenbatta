@@ -86,8 +86,17 @@
                     </div>
                 @endif
             </div>
-            <div class="min-w-[313px]">
-                <img class="xl:mb-16 mb-6 rounded-3xl" src="{{str_contains($partner->logo_full,'http')? $partner->logo_full : '/'.$partner->logo_full}}" alt="avatar">
+            <div>
+                <picture>
+                    @if($partner->srcset && $partner->srcset['full'])
+                        @foreach($partner->srcset['full'] as $size => $path)
+                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$partner->logos && $partner->logos['full'] ? '/' . $partner->logos['full'] : '/'.$partner_ref->logo}}"
+                        alt="{{$partner->title}}" class="xl:mb-16 mb-6 rounded-3xl">
+                </picture>
                 <div class="flex flex-col">
                     <a href="{{$partner->site_link}}"
                        class="hover:bg-white-100 hover:text-green-700 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-4 py-4 rounded-2xl text-2xl font-semibold ">{{__('agency.partner_view_site')}}</a>

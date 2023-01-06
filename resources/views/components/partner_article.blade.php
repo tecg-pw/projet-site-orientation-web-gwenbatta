@@ -23,7 +23,16 @@
                 </svg>
             </div>
         </div>
-        <img class="order-1 rounded-full" src="/{{$partner_ref->logo_thumb}}" alt="avatar">
+        <picture>
+            @if($partner_ref->srcset && $partner_ref->srcset['thumbnail'])
+                @foreach($partner_ref->srcset['thumbnail'] as $size => $path)
+                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                @endforeach
+            @endif
+        <img
+            src="{{$partner_ref->logos && $partner_ref->logos['thumbnail'] ? '/' . $partner_ref->logos['thumbnail'] : '/'.$partner_ref->logo}}"
+            alt="{{$partner_ref->title}}" class="rounded-full order-first">
+        </picture>
     </div>
     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
        href="/{{app()->getLocale()}}/entreprise/partner/{{$partner_ref->slug}}">{{__('En savoir plus') . $partner_ref->name}}</a>

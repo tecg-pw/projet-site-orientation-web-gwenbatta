@@ -30,7 +30,7 @@ class ActualityTranslationSeeder extends Seeder
                 "lieu" => $value->lieu,
                 "link" => $value->link,
                 "main_picture" => $value->main_picture,
-                "picture" => $value->pictures,
+                "pictures" => $value->pictures,
                 "srcset" => $value->srcset,
                 "date" => Carbon::parse($value->date)->toDateTimeString(),
                 "gallery" => $value->gallery,

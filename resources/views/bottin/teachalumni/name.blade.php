@@ -75,7 +75,17 @@
                 @endif
             </div>
             <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
-                <img class=" xl:mb-6 rounded-3xl" src="/{{$teachalumni->avatar}}" alt="avatar">
+                <picture>
+                    @if($teachalumni->srcset && $teachalumni->srcset['thumbnail'])
+                        @foreach($teachalumni->srcset['thumbnail'] as $size => $path)
+                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                    srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$teachalumni->logos && $teachalumni->logos['thumbnail'] ? '/' . $teachalumni->logos['thumbnail'] : '/'.$teachalumni->logo}}"
+                        alt="{{$teachalumni->title}}" class="xl:mb-6 rounded-3xl">
+                </picture>
                 <div class="flex flex-col mt-8">
                     <a href="{{$teachalumni->link_portfolio}}"
                        class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('people.bottin_portfolio')}}</a>

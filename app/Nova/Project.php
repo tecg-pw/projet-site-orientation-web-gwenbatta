@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -81,6 +82,8 @@ class Project extends Resource
             })->textAlign('right'),
 
             HasMany::make('Traductions','translation','App\Nova\ProjetTranslation'),
+
+            BelongsToMany::make('Cours','course','App\Nova\Course'),
 
             BelongsTo::make('Personnes', 'person', 'App\Nova\Person'),
 

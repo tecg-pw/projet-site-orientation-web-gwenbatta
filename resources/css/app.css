@@ -64,5 +64,9 @@
     .checkbox:checked ~ .isCheck{
         display: block;
     }
+    .wrapping *{
+        display: flex;
+        flex-wrap: wrap;
+    }
 
 }
