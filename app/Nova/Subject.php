@@ -3,6 +3,8 @@
 namespace App\Nova;
 
 use App\Nova\Actions\ResolvedSubject;
+use App\Nova\Filters\SubjectResolved;
+use App\Nova\Filters\SubjectTag;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
@@ -81,7 +83,10 @@ class Subject extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new SubjectResolved(),
+            new SubjectTag(),
+        ];
     }
 
     /**

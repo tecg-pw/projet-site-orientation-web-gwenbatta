@@ -5,9 +5,14 @@ namespace App\Nova\Filters;
 use Laravel\Nova\Filters\BooleanFilter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class UserType extends BooleanFilter
+class SubjectResolved extends BooleanFilter
 {
-    public $name = 'Voir les Administrateur ?';
+    public $name = 'Voir les Sujets résolus ?';
+    /**
+     * The filter's component.
+     *
+     * @var string
+     */
     /**
      * Apply the filter to the given query.
      *
@@ -18,7 +23,7 @@ class UserType extends BooleanFilter
      */
     public function apply(NovaRequest $request, $query, $value)
     {
-        return $query->where('is_admin', $value['admin']);
+        return $query->where('resolved', $value['true']);
     }
 
     /**
@@ -30,7 +35,7 @@ class UserType extends BooleanFilter
     public function options(NovaRequest $request)
     {
         return [
-            'Administrateur' => 'admin',
+            'Resolu' => 'true',
         ];
     }
 }
