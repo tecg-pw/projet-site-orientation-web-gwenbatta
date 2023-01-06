@@ -18,6 +18,7 @@ class ProjectFactory extends Factory
     {
         return [
             "id" => 1,
+            "person_id" => 1,
         ];
     }
 }

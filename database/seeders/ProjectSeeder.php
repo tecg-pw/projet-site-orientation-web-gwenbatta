@@ -23,6 +23,7 @@ class ProjectSeeder extends Seeder
         foreach ($projects as $key => $value) {
             Project::factory()->create([
                 "id" => $value->id,
+                "person_id" => $value->person_id,
             ]);
         }
     }

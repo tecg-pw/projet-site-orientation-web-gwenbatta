@@ -32,5 +32,9 @@ class People extends Model
     {
         return $this->hasMany(Testimonial::class);
     }
+    public function projects(): HasMany
+    {
+        return $this->hasMany(Project::class, 'person_id');
+    }
 }
 

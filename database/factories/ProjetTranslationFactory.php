@@ -29,7 +29,6 @@ class ProjetTranslationFactory extends Factory
             "main_picture" => "",
             "gallery" => [],
             "project_id" => 1,
-            "person_id" => 1,
         ];
     }
 }

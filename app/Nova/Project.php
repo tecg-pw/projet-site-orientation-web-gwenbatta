@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -30,10 +31,9 @@ class Project extends Resource
         return '';
     }
     public function author() {
-            $nameRef = \App\Models\ProjetTranslation::where('project_id',$this->id)->first();
-            $firstnameRef = \App\Models\ProjetTranslation::where('project_id',$this->id)->first();
+            $nameRef = \App\Models\Project::where('id',$this->id)->first();
         if (isset($nameRef)){
-            return $nameRef->person->translation->first()->name.' '.$firstnameRef->person->translation->first()->firstname;
+            return $nameRef->person->translation->where('locale',app()->getLocale())->first()->name.' '.$nameRef->person->translation->where('locale',app()->getLocale())->first()->firstname;
         }
         return '';
 
@@ -81,6 +81,8 @@ class Project extends Resource
             })->textAlign('right'),
 
             HasMany::make('Traductions','translation','App\Nova\ProjetTranslation'),
+
+            BelongsTo::make('Personnes', 'person', 'App\Nova\Person'),
 
         ];
     }

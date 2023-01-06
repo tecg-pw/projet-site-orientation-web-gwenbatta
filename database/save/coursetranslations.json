@@ -376,18 +376,6 @@
 
     },
     {
-        "id": 32,
-        "name": "Entwicklung mobiler Anwendungen",
-        "locale": "de",
-        "hours": "45",
-        "bac": "3",
-        "description": "Dieser Kurs zielt darauf ab, die Kenntnisse aus dem Kurs Server Side Development und dem Kurs Web Design B2 zu erweitern. In diesem Kurs lernen Sie das Laravel-Framework kennen, das die PHP-Sprache überlagert, und Sie werden Zeit damit verbringen, ein Projekt für einen externen Kunden in Laravel zu bearbeiten, das bei der Jury im Januar präsentiert wird. Dieser Kurs findet nur im ersten Semester statt und umfasst 16 Stunden pro Woche.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null,
-        "course_id": 2
-    },
-    {
         "id": 33,
         "name": "Projekt zum Abschluss des Studiums",
         "locale": "de",
@@ -544,44 +532,6 @@
         "updated_at": null,
         "deleted_at": null,
         "course_id": 2
-    },
-    {
-        "id": 47,
-        "name": "Einde studieproject",
-        "locale": "nl",
-        "hours": "210",
-        "bac": "3",
-        "description": "Deze cursus is bedoeld als uitbreiding van het geleerde uit de cursus Server Side Development en de cursus Web Design B2. In deze cursus leer je het Laravel Framework, dat je overlapt met de PHP-taal, en werk je tijd aan een project voor een externe klant in Laravel, dat je tijdens de jury in januari presenteert. Deze cursus vindt alleen plaats in het eerste semester en bestaat uit 16 uur per week.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null,
-        "course_id": 3
-
-    },
-    {
-        "id": 48,
-        "name": "Ontwikkeling van mobiele toepassingen",
-        "locale": "nl",
-        "hours": "45",
-        "bac": "3",
-        "description": "Deze cursus bouwt voort op de kennis die is opgedaan in de cursus Server Side Development en de cursus Web Design B2. In deze cursus leer je over het Laravel framework dat de PHP taal overlapt en werk je tijd aan een project voor een externe klant in Laravel dat in januari aan de jury wordt gepresenteerd. Deze cursus vindt alleen plaats in het eerste semester en duurt 16 uur per week.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null,
-        "course_id": 2
-    },
-    {
-        "id": 49,
-        "name": "Project voor de voltooiing van de studies",
-        "locale": "nl",
-        "hours": "210",
-        "bac": "3",
-        "description": "Deze cursus bouwt voort op de kennis die is opgedaan in de cursus Server Side Development en de cursus Web Design B2. In deze cursus leer je over het Laravel framework dat de PHP taal overlapt en werk je tijd aan een project voor een externe klant in Laravel dat in januari aan de jury wordt gepresenteerd. Deze cursus vindt alleen plaats in het eerste semester en duurt 16 uur per week.",
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null,
-        "course_id": 3
-
     },{
     "id": 50,
     "name": "Intership",

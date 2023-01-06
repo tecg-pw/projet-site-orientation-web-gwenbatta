@@ -15,8 +15,6 @@ class ProjetTranslation extends Model
 
     protected $dates = ['date'];
 
-    protected $with = ["person"];
-
     protected $fillable = [
         'title', 'slug','locale', 'description', 'link_project', 'link_github', 'date', 'main_picture', 'gallery','project_id'
     ];
@@ -25,9 +23,6 @@ class ProjetTranslation extends Model
     {
         return $this->belongsTo(Project::class);
     }
-    public function person(): BelongsTo
-    {
-        return $this->belongsTo(People::class);
-    }
+
 
 }

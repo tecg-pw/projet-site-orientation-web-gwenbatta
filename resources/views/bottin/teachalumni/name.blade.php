@@ -114,7 +114,7 @@
         </div>
         <div class="md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8 flex flex-col gap-y-4 {{count($projects) !== 0 ? 'items-center' : ''}} justify-center">
             @foreach($projects as $project_ref)
-                <x-project :project_ref="$project_ref"></x-project>
+                <x-project :person="$teachalumni" :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
             @if(count($projects) === 0)
                 <p class="xl:text-xl text-lg">{{__('people.bottin_no_project')}}</p>

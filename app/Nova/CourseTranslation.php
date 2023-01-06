@@ -47,7 +47,7 @@ class CourseTranslation extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->hideFromIndex(),
+            ID::make(__('ID'), 'id'),
 
             Text::make('Nom','name')
                 ->sortable()

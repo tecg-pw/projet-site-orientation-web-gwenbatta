@@ -83,12 +83,9 @@ class ProjetTranslation extends Resource
 
             Date::make('Date'),
 
-            Number::make('Person_id'),
+            Trix::make('Description'),
 
-            Trix::make('Description')->rows(3),
 
-            BelongsTo::make('Personnes', 'person', 'App\Nova\PersonTranslation')
-                ->onlyOnDetail(),
 
             BelongsTo::make('Projet','project','App\Nova\Project')
                 ->onlyOnDetail(),

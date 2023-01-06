@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -91,7 +92,7 @@ class Course extends Resource
 
             HasMany::make('Traduction','translation','App\Nova\CourseTranslation'),
 
-            HasMany::make('Personnes','person','App\Nova\Person'),
+            // BelongsToMany::make('Professeurs','person','App\Nova\Person'),
 
             HasMany::make('Documentation','docs','App\Nova\Doc'),
 

@@ -4,6 +4,7 @@ namespace App\Nova\Filters;
 
 use App\Models\OfferTranslation;
 use App\Models\PersonTranslation;
+use App\Models\Project;
 use App\Models\ProjetTranslation;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -32,7 +33,7 @@ class ProjectPerson extends Filter
 
         $ids = [];
         foreach ($projects as $project) {
-            if ($project->translation->where('locale',app()->getLocale())->first()->person_id == $value){
+            if ($project->person_id == $value){
                 $ids[] = $project->id;
             }
         }
@@ -48,7 +49,7 @@ class ProjectPerson extends Filter
      */
     public function options(NovaRequest $request)
     {
-        $projectRefs = ProjetTranslation::where('locale',app()->getLocale())->select('person_id')->get();
+        $projectRefs = Project::select('person_id')->get();
         $projects = [];
 
         foreach ($projectRefs as $project) {

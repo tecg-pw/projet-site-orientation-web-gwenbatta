@@ -44,7 +44,7 @@ class Person extends Resource
 
     public function projects()
     {
-        $projects = \App\Models\ProjetTranslation::where('person_id', $this->id)->get();
+        $projects = \App\Models\Project::where('person_id', $this->id)->get();
         if ($projects !== []) {
             return count($projects);
         } else {
@@ -100,6 +100,8 @@ class Person extends Resource
             HasMany::make('Traductions', 'translation', 'App\Nova\PersonTranslation'),
 
             BelongsToMany::make('Cours', 'courses', 'App\Nova\Course'),
+
+            HasMany::make('Projets','projects','App\Nova\Project'),
 
             HasMany::make('Témoignages', 'testimonial', 'App\Nova\Testimonial'),
 

@@ -84,7 +84,7 @@ class PersonTranslation extends Resource
                 ->sortable()
                 ->rules('required','max:255'),
 
-            Trix::make('Description')->rows(3),
+            Trix::make('Description'),
 
             Text::make('Lien du Portfolio','link_Portfolio')
                 ->hideFromIndex()
@@ -119,11 +119,9 @@ class PersonTranslation extends Resource
                 'en' => 'en',
             ])->displayUsingLabels(),
 
-            HasMany::make('Projects'),
+//            HasMany::make('Projects'),
 
-            BelongsTo::make('Personnes','person','App\Nova\Person'),
-
-            HasMany::make('Projets','projects','App\Nova\ProjetTranslation'),
+            BelongsTo::make('Personnes','person','App\Nova\Person')
         ];
     }
 

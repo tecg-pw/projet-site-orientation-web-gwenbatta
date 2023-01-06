@@ -18,13 +18,11 @@ class TeachAlumniController extends Controller
     {
 
         $teachalumni = People::find($teachalumni->people_id);
+        $projects = $teachalumni->projects;
         $courses = $teachalumni->courses;
         $teachalumni = $teachalumni->translation->where('locale',$locale)->first();
 
-        $projects = ProjetTranslation::where('person_id', $teachalumni->people_id)->where('locale',$locale)->orderBy('date')->take(6)->get();
 
-
-        //return $teachalumni->id;
         return view('bottin.teachalumni.name', compact('teachalumni', 'projects','courses'));
     }
 }

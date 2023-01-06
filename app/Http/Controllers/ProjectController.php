@@ -75,20 +75,21 @@ class ProjectController extends Controller
 
         $project = Project::find($project->project_id);
         $course  = $project->course;
-
+        $person = $project->person;
         foreach ($project->translation as $projet_ref){
             $locales[] = $projet_ref->locale;
         }
 
+        $projects = $person->projects->where('id','!=', $project->id)->take(6);
+
         $project = $project->translation->where('locale',$locale)->first();
 
-        $projects = ProjetTranslation::where('person_id', $project->person_id)->where('locale',$locale)->orderBy('date')->take(6)->get();
 
         foreach ($course as $classe){
         $teachers = Course::find($classe->translation->where('locale',$locale)->first()->course_id)->person()->get();
     }
 
-        return view('project.single', compact('project', 'projects','teachers','locales','course'));
+        return view('project.single', compact('project', 'person', 'projects','teachers','locales','course'));
     }
 
     /**

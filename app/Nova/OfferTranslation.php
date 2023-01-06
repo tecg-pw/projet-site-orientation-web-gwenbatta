@@ -48,7 +48,11 @@ class OfferTranslation extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->hideFromIndex(),
-            Text::make('Nom','name')
+            Text::make('Nom du poste','name')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Nom du maître de stage','supervisor')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
@@ -64,7 +68,7 @@ class OfferTranslation extends Resource
                 'en' => 'en',
             ])->displayUsingLabels(),
 
-            Trix::make('Description')->rows(3)->rules('required'),
+            Trix::make('Description')->rules('required'),
 
             BelongsTo::make('Offres','offer', 'App\Nova\Offer')->hideFromIndex(),
         ];

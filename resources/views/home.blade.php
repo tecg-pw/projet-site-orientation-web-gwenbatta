@@ -120,7 +120,7 @@
         </div>
         <div class="flex-wrap flex gap-8 justify-center md:grid md:grid-cols-2 lg:flex lg:flex-nowrap">
             @foreach($projects as $project_ref)
-                <x-project :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
+                <x-project :person="$project_ref->person" :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
         </div>
     </article>

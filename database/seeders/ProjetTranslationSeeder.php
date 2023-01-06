@@ -33,7 +33,7 @@ class ProjetTranslationSeeder extends Seeder
                 "main_picture" => $value->main_picture,
                 "gallery" => $value->gallery,
                 "project_id" => $value->project_id,
-                "person_id" => $value->person_id,
+
             ]);
         }
     }

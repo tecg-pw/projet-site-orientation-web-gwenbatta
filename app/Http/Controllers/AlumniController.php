@@ -142,9 +142,9 @@ class AlumniController extends Controller
     {
 
         $alumni = People::find($alumni->people_id);
+        $projects = $alumni->projects;
         $alumni = $alumni->translation->where('locale', $locale)->first();
 
-        $projects = ProjetTranslation::where('person_id', $alumni->people_id)->where('locale', $locale)->orderBy('date')->take(6)->get();
 
         return view('bottin.alumni.name', compact('alumni', 'projects'));
     }

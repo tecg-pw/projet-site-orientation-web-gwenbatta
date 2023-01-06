@@ -70,6 +70,7 @@ class PartnerTranslation extends Resource
                 ->rules('required', 'max:255'),
 
             Slug::make('Slug')
+                ->from('name')
                 ->hideFromIndex()
                 ->rules('required', 'max:255'),
 
@@ -113,8 +114,6 @@ class PartnerTranslation extends Resource
                 'fr' => 'fr',
                 'en' => 'en',
             ])->displayUsingLabels(),
-
-            HasMany::make('Offers'),
 
             BelongsTo::make('Partenaires','partner','App\Nova\Partner'),
         ];

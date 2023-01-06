@@ -24,10 +24,7 @@ class PersonTranslation extends Model
         return $this->belongsTo(People::class, 'people_id');
     }
 
-    public function projects(): HasMany
-    {
-        return $this->hasMany(ProjetTranslation::class);
-    }
+
     public function partners(): BelongsToMany
     {
         return $this->belongsToMany(Partner::class, 'partner_person', 'people_id', 'partner_id');

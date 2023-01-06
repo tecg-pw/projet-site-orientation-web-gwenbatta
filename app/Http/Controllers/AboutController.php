@@ -21,6 +21,7 @@ class AboutController extends Controller
      */
     public function index(string $locale = null)
     {
+
         $ids = [];
         $jobs = Opportunity::all();
         $references = PersonTranslation::all();

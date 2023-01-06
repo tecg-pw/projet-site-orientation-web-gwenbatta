@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -71,6 +72,11 @@ class User extends Resource
 
             Text::make('Firstname')
                 ->sortable()
+                ->rules('required', 'max:255'),
+
+            Slug::make('Slug')
+                ->from('name')
+                ->hideFromIndex()
                 ->rules('required', 'max:255'),
 
             Text::make('Email')
