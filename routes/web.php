@@ -25,6 +25,7 @@ use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RegisterSessionController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StudentContactController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeachAlumniController;
@@ -53,14 +54,15 @@ Route::get('/', function () {
 
 Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('locale');
 
-Route::get('/{locale?}/legals',[LegalController::class, 'index'])->middleware('locale')->middleware('locale');
+Route::get('/{locale?}/legals',[LegalController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/search',[SearchController::class, 'index'])->middleware('locale');
 
 
-Route::get('/{locale?}/about', [AboutController::class, 'index'])->middleware('locale')->middleware('locale');
-Route::get('/{locale?}/about/job/{job:slug}', [JobController::class, 'show'])->middleware('locale')->middleware('locale');
+Route::get('/{locale?}/about', [AboutController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/about/job/{job:slug}', [JobController::class, 'show'])->middleware('locale');
 
-Route::get('/{locale?}/project/index', [ProjectController::class, 'index'])->middleware('locale')->middleware('locale');
-Route::get('/{locale?}/project/{project:slug}', [ProjectController::class, 'show'])->middleware('locale')->middleware('locale');
+Route::get('/{locale?}/project/index', [ProjectController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/project/{project:slug}', [ProjectController::class, 'show'])->middleware('locale');
 
 Route::get('/{locale?}/technical/index', [TechnicalController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/technical/books/{book:slug}', [BookController::class, 'show'])->middleware('locale');

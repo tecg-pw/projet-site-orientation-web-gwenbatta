@@ -29,5 +29,6 @@ return [
     'user_modify_picture' => 'Your Photo',
     'user_modify_banner' => 'Your Banner',
     'user_modify_jpg' => 'Drag a JPG',
+    'user_modify_success' => 'Your information has been updated',
 
 ];

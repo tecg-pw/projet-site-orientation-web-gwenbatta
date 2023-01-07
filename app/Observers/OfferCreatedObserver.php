@@ -4,7 +4,6 @@ namespace App\Observers;
 
 use App\Models\Actuality;
 use App\Models\OfferTranslation;
-use App\Models\Subject;
 use App\Models\User;
 use App\Models\ActualityTranslation;
 use Illuminate\Support\Facades\Mail;
@@ -12,9 +11,9 @@ use Illuminate\Support\Facades\Mail;
 class OfferCreatedObserver
 {
     /**
-     * Handle the Subject "created" event.
+     * Handle the OfferTranslation "created" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\OfferTranslation $subject
      * @return void
      */
     public function created(OfferTranslation $offer)
@@ -28,46 +27,46 @@ class OfferCreatedObserver
     }
 
     /**
-     * Handle the Subject "updated" event.
+     * Handle the OfferTranslation "updated" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\OfferTranslation $subject
      * @return void
      */
-    public function updated(Subject $subject)
+    public function updated(OfferTranslation $subject)
     {
        //
 
     }
 
     /**
-     * Handle the Subject "deleted" event.
+     * Handle the OfferTranslation "deleted" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\OfferTranslation $subject
      * @return void
      */
-    public function deleted(Subject $subject)
+    public function deleted(OfferTranslation $subject)
     {
         //
     }
 
     /**
-     * Handle the Subject "restored" event.
+     * Handle the OfferTranslation "restored" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\OfferTranslation $subject
      * @return void
      */
-    public function restored(Subject $subject)
+    public function restored(OfferTranslation $subject)
     {
         //
     }
 
     /**
-     * Handle the Subject "force deleted" event.
+     * Handle the OfferTranslation "force deleted" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\OfferTranslation $subject
      * @return void
      */
-    public function forceDeleted(Subject $subject)
+    public function forceDeleted(OfferTranslation $subject)
     {
         //
     }

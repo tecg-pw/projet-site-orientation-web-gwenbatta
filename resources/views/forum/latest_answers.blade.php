@@ -5,17 +5,17 @@
 
 <x-commons.navigation :page="__('forum.latest_answer')"></x-commons.navigation>
 <main id="content">
-    <x-recurrent_shows :recurrings="$recurrings"></x-recurrent_shows>
+    <x-recurring.recurrent_questions :recurrings="$recurrings"></x-recurring.recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
         <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex justify-between mb-8 xl:mb-24 items-center">
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('forum.index_title')}}</h2>
             @auth()
                 <a href="/{{app()->getLocale()}}/forum/show"
-                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_show')}}</a>
+                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
-        <x-sort_by_forum :urlAction="$urlAction" :status="$status" :tags="$tags" :created="$created" class="2xl:px-48 px-10 xl:px-32 lg:px-16 mb-14"></x-sort_by_forum>
+        <x-sort_search.sort_by_forum :urlAction="$urlAction" :status="$status" :tags="$tags" :created="$created" class="2xl:px-48 px-10 xl:px-32 lg:px-16 mb-14"></x-sort_search.sort_by_forum>
         <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-32 lg:px-16">
             <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
                href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>

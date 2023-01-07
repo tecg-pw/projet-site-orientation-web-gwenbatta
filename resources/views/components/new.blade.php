@@ -32,8 +32,11 @@
                 <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
             @endforeach
         @endif
+{{--            <img--}}
+{{--                src="{{$new_ref->pictures && $new_ref->pictures['thumbnail'] ? '/' . $new_ref->pictures['thumbnail'] : '/'.$new_ref->main_picture}}"--}}
+{{--                alt="{{$new_ref->title}}" class="rounded-t-3xl order-first">--}}
             <img
-                src="{{$new_ref->pictures && $new_ref->pictures['thumbnail'] ? '/' . $new_ref->pictures['thumbnail'] : '/'.$new_ref->main_picture}}"
+                src="{{'/'.$new_ref->main_picture}}"
                 alt="{{$new_ref->title}}" class="rounded-t-3xl order-first">
     </picture>
 </article>

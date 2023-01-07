@@ -14,9 +14,9 @@
     </div>
     <section class="mt-20 mb-32 xl:mb-64" aria-labelledby="glossary">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
-            <h2 id="tutos" role="heading" aria-level="2"
+            <h2 id="glossary" role="heading" aria-level="2"
                 class="mb-4 text-2xl xl:text-4xl md:text-3xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('glossary.glossary_title')}}</h2>
-            <x-search class="min-w-[20%]" :urlAction="$urlAction"/>
+            <x-sort_search.search class="min-w-[20%]" :urlAction="$urlAction"/>
         </div>
         <p class="mb-24 md:leading-8 xl:max-w-[55%] xl:text-xl xl:leading-10">{{__('glossary.glossary_text')}}</p>
         <article aria-labelledby="list-glossary">
@@ -24,7 +24,7 @@
                 class="sr-only">{{__('glossary.glossary_list_title')}}</h3>
             <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                 @foreach($termes as $terme_ref)
-                    <x-term-glossary :terme_ref="$terme_ref->translation->where('locale',app()->getLocale())->first()"/>
+                    <x-technical.term-glossary :terme_ref="$terme_ref->translation->where('locale',app()->getLocale())->first()"/>
                 @endforeach
                     @if(count($termes)===0)
                         <p>{{__('search.no_result')}}</p>

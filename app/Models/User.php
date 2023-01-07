@@ -35,6 +35,7 @@ class User extends Authenticatable
         'avatar_thumb',
         'email',
         'is_admin',
+        'newsletter',
         'password',
     ];
     public function tutos(): BelongsToMany

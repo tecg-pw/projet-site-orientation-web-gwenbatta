@@ -28,6 +28,7 @@ class UpdateUserRequest extends FormRequest
             'name' => 'required',
             'firstname' => 'required',
             'status_id' => 'required',
+            'newsletter' => 'nullable',
             'description'=>'min:20|max:300|nullable',
             'avatar' => 'nullable|mimes:jpg,png,webp,svg',
             'back_image'=> 'nullable|mimes:jpg,png,webp,jpeg,svg,tif',

@@ -82,12 +82,12 @@ class UserController extends Controller
      */
     public function update(string $locale = null, UpdateUserRequest $request)
     {
-
         $validatedData = $request->safe()->only('name',
             'firstname',
             'status_id',
             'description',
             'avatar',
+            'newsletter',
             'back_image',
             'email');
 
@@ -95,6 +95,8 @@ class UserController extends Controller
             $validatedData = $request->safe()->all();
             $validatedData['password'] = password_hash($validatedData['password_new'],PASSWORD_DEFAULT);
         }
+        $request['newsletter'] === 'on' ? $validatedData['newsletter'] = true : $validatedData['newsletter'] = false;
+
         $validatedData['slug'] = Str::slug($validatedData['firstname'] . $validatedData['name']);
         $uploaded_image = $request->file('avatar');
         if ($uploaded_image) {
@@ -107,7 +109,7 @@ class UserController extends Controller
 
         auth()->user()->update($validatedData);
 
-        return redirect('/' . $locale . '/user/profile/');
+        return redirect('/' . $locale . '/user/profile/')->with('status', __('user.user_modify_success'));
     }
 
     /**

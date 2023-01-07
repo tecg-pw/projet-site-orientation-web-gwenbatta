@@ -176,7 +176,7 @@
         </div>
         <div class="lg:grid lg:grid-cols-2 flex flex-col lg:gap-y-48 xl:gap-y-60 lg:mt-60 xl:gap-y-40 xl:gap-x-60">
             @foreach($teachers as $teacher_ref)
-                <x-teacher_list_about :teacher_ref="$teacher_ref->translation->where('locale',app()->getLocale())->first()"/>
+                <x-people.teacher_list_about :teacher_ref="$teacher_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </section>
@@ -185,7 +185,7 @@
             class="text-2xl mb-10 xl:text-4xl uppercase font-extrabold font-sans md:text-3xl xl:mb-20">{{__('about.job_title')}}</h2>
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
         @foreach($jobs as $job_ref)
-            <x-job_article :job_ref="$job_ref->translation->where('locale',app()->getLocale())->first()"/>
+            <x-job_article class="bg-white-100" :job_ref="$job_ref->translation->where('locale',app()->getLocale())->first()"/>
         @endforeach
         </div>
     </article>

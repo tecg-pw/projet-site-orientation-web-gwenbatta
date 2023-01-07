@@ -31,5 +31,5 @@
         </div>
     </div>
     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-       href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->slug}}">{{__('agency.offer_more') . $offer->slug}}</a>
+       href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->slug}}">{{offer_article.blade}}</a>
 </article>

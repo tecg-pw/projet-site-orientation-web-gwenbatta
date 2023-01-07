@@ -25,7 +25,7 @@
             </div>
             <div class="mt-12 lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
                 @foreach($docs as $doc_ref)
-                    <x-doc_single :doc_ref="$doc_ref"/>
+                    <x-technical.doc_single :doc_ref="$doc_ref"/>
                 @endforeach
             </div>
         </article>
@@ -35,7 +35,7 @@
             class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-20">{{__('docandtool.book_title')}}</h2>
         <div class="mt-12 lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($books as $book_ref)
-                <x-book_single :book_ref="$book_ref"/>
+                <x-technical.book_single class="bg-white-100" :book_ref="$book_ref"/>
             @endforeach
         </div>
     </article>

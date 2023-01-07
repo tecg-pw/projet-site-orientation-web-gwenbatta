@@ -29,5 +29,6 @@ return [
     'user_modify_picture' => 'Votre Photo',
     'user_modify_banner' => 'Votre Banière',
     'user_modify_jpg' => 'Glisser un JPG',
+    'user_modify_success' => 'Vos informations ont bien été mise a jour',
 
 ];

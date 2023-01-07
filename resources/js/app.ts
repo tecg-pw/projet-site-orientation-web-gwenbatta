@@ -1,19 +1,23 @@
 import './bootstrap';
 
 window.addEventListener('load', init);
-
+let buttonSearches = document.querySelectorAll('#searchButton') as NodeListOf<HTMLButtonElement>;
+let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
+let searchGlobalForm = document.querySelector('#searchGlobalForm') as HTMLFormElement;
 function init() {
     document.body.classList.remove('no-js');
     document.body.classList.add('js-only');
-    handlePassword()
-    burgerMenu()
-    pdfInputTextValue()
+
+     handlePassword()
+     burgerMenu()
+     pdfInputTextValue()
+
 }
-    updateImageModifyProfil()
-    updateImageModifyBackImage()
+     updateImageModifyProfil()
+     updateImageModifyBackImage()
 
 
-let buttonSearches = document.querySelectorAll('#searchButton') as NodeListOf<HTMLButtonElement>;
+
 
 // @ts-ignore
 for (const buttonSearchElement of buttonSearches) {

@@ -2,18 +2,29 @@
 <main id="content">
     <section class="flex flex-col relative mb-32" aria-labelledby="name">
         <div class="relative">
-            <div
-                class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48">
-                <div class="order-2 flex-1 ml-8 mt-32">
+            <div class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48">
+                <div class="order-2 flex-1 flex-col flex ml-8 mt-32">
                     <div>
                         <h2 role="heading" id="name" aria-level="2"
                             class="xl:text-4xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mb-3">{{$user->firstname}} {{$user->name}}</h2>
                         <p class="uppercase text-2xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
                     </div>
+                    @if(session('status'))
+                    <div class="mb-4 bg-orange-200 rounded-lg flex  items-center gap-x-2 px-4 py-2.5">
+                        <svg class="h-8 w-8 text-green-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                             stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"/>
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M9 12l2 2l4 -4"/>
+                        </svg>
+                        <p class="mt-1 text-green-700 text-xl">{{session('status')}}</p>
+                    </div>
+                    @else
                         <div class="text-end">
                             <a href="/{{app()->getLocale()}}/user/profile/modify/form"
                                class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-lg md:text-xl xl:text-2xl font-semibold mb-32">{{__('user.user_modify')}}</a>
                         </div>
+                    @endif
                 </div>
                 <picture>
                     @if($user->srcset && $user->srcset['full'])

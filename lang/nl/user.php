@@ -29,5 +29,6 @@ return [
     'user_modify_picture' => 'Uw foto',
     'user_modify_banner' => 'Uw banner',
     'user_modify_jpg' => 'Een JPG slepen',
+    'user_modify_success' => 'Uw informatie is bijgewerkt',
 
 ];

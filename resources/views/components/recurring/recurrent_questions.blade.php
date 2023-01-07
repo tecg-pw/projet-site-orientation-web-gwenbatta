@@ -3,7 +3,7 @@
         class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-8 xl:mb-20">{{__('recurring.recurring_title')}}</h2>
     <div class="lg:grid lg:grid-cols-3 lg:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
         @foreach($recurrings as $recurring_ref)
-           <x-recurring_article :recurring_ref="$recurring_ref->translation->where('locale',app()->getLocale())->first()"/>
+           <x-recurring.recurring_article :recurring_ref="$recurring_ref->translation->where('locale',app()->getLocale())->first()"/>
         @endforeach
     </div>
 </article>

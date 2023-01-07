@@ -147,7 +147,7 @@
         </div>
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($alumnis as $alumni_ref)
-                <x-alumni_job_article :job="$job"
+                <x-people.alumni_job_article :job="$job"
                                       :alumni_ref="$alumni_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
             @if(count($alumnis)===0)

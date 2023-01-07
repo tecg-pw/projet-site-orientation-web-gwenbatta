@@ -4,7 +4,6 @@ namespace App\Observers;
 
 use App\Models\Actuality;
 use App\Models\ProjetTranslation;
-use App\Models\Subject;
 use App\Models\User;
 use App\Models\ActualityTranslation;
 use Illuminate\Support\Facades\Mail;
@@ -12,9 +11,9 @@ use Illuminate\Support\Facades\Mail;
 class ProjectCreatedObserver
 {
     /**
-     * Handle the Subject "created" event.
+     * Handle the ProjetTranslation "created" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\ProjetTranslation $subject
      * @return void
      */
     public function created(ProjetTranslation $project)
@@ -28,46 +27,46 @@ class ProjectCreatedObserver
     }
 
     /**
-     * Handle the Subject "updated" event.
+     * Handle the ProjetTranslation "updated" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\ProjetTranslation $subject
      * @return void
      */
-    public function updated(Subject $subject)
+    public function updated(ProjetTranslation $subject)
     {
        //
 
     }
 
     /**
-     * Handle the Subject "deleted" event.
+     * Handle the ProjetTranslation "deleted" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\ProjetTranslation $subject
      * @return void
      */
-    public function deleted(Subject $subject)
+    public function deleted(ProjetTranslation $subject)
     {
         //
     }
 
     /**
-     * Handle the Subject "restored" event.
+     * Handle the ProjetTranslation "restored" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\ProjetTranslation $subject
      * @return void
      */
-    public function restored(Subject $subject)
+    public function restored(ProjetTranslation $subject)
     {
         //
     }
 
     /**
-     * Handle the Subject "force deleted" event.
+     * Handle the ProjetTranslation "force deleted" event.
      *
-     * @param \App\Models\Subject $subject
+     * @param \App\Models\ProjetTranslation $subject
      * @return void
      */
-    public function forceDeleted(Subject $subject)
+    public function forceDeleted(ProjetTranslation $subject)
     {
         //
     }

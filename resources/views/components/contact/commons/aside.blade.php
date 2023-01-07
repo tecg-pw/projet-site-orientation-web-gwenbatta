@@ -70,7 +70,7 @@
             id="coordinate">{{__('contact_page.aside_title')}}</h3>
         <div class="flex gap-24 mb-24">
             @foreach($coordinates as $coordinate_ref)
-                <x-contact_coordinate :coordinate_ref="$coordinate_ref->translation->where('locale',app()->getLocale())->first()"/>
+                <x-contact.contact_coordinate :coordinate_ref="$coordinate_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </section>

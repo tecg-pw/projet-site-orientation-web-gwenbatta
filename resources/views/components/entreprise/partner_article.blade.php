@@ -29,11 +29,11 @@
                     <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
                 @endforeach
             @endif
-        <img
-            src="{{$partner_ref->logos && $partner_ref->logos['thumbnail'] ? '/' . $partner_ref->logos['thumbnail'] : '/'.$partner_ref->logo}}"
-            alt="{{$partner_ref->title}}" class="rounded-full order-first">
+            <img
+                    src="{{$partner_ref->logos && $partner_ref->logos['thumbnail'] ? '/' . $partner_ref->logos['thumbnail'] : '/'.$partner_ref->logo}}"
+                    alt="{{$partner_ref->title}}" class="rounded-full order-first">
         </picture>
     </div>
     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-       href="/{{app()->getLocale()}}/entreprise/partner/{{$partner_ref->slug}}">{{__('En savoir plus') . $partner_ref->name}}</a>
+       href="/{{app()->getLocale()}}/entreprise/partner/{{$partner_ref->slug}}">{{partner_article.blade}}</a>
 </article>

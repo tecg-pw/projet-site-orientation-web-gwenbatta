@@ -63,7 +63,7 @@
         </div>
         <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8">
             @foreach($termes as $terme_ref)
-                <x-term-glossary :terme_ref="$terme_ref->translation->where('locale',app()->getLocale())->first()"/>
+                <x-technical.term-glossary :terme_ref="$terme_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </article>
@@ -76,7 +76,7 @@
         </div>
         <div class="flex gap-y-4 flex-col lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8">
             @foreach($tutos as $tuto_ref)
-                <x-tuto class="bg-yellow-100" :tuto="$tuto_ref" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
+                <x-technical.tuto class="bg-yellow-100" :tuto="$tuto_ref" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
         </div>
     </article>
@@ -89,7 +89,7 @@
         </div>
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4 ">
             @foreach($docs as $doc_ref)
-                <x-doc_single :doc_ref="$doc_ref"/>
+                <x-technical.doc_single :doc_ref="$doc_ref"/>
             @endforeach
         </div>
     </article>

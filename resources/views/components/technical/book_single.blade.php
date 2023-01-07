@@ -1,12 +1,11 @@
 @props([
     /** @var \Illuminate\Database\Eloquent\Model */
     'book_ref',
-    'course'
 ])
 @php
     $book = $book_ref->translation->where('locale',app()->getLocale())->first();
 @endphp
-<article {{ $attributes->class(['group relative bg-white-100 hover:bg-orange-100 py-6 px-8 rounded-3xl']) }}
+<article {{ $attributes->class(['group relative hover:bg-orange-100 py-6 px-8 rounded-3xl']) }}
          aria-labelledby="{{$book->slug}}">
     <div class="flex justify-between">
         <div>

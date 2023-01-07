@@ -1,4 +1,4 @@
-@props([
+ @props([
     'page'
 ])
 @php
@@ -149,7 +149,7 @@
                 <li><a class="hover:text-orange-500"
                        href="/{{app()->getLocale()}}/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
             </ul>
-            <x-search_bar_nav class="xl:min-w-[20%] lg:max-w-[17%] lg:not-sr-only sr-only"></x-search_bar_nav>
+            <x-sort_search.search_bar_nav class="xl:min-w-[20%] lg:max-w-[17%] lg:not-sr-only sr-only"></x-sort_search.search_bar_nav>
             <input class="absolute cursor-pointer opacity-0 z-30 w-8 h-8 " type="checkbox" name="burger" id="burger">
             <div class="relative -order-1">
                 <label class="sr-only" for="burger">{{__('nav.nav_burger')}}</label>
@@ -287,8 +287,8 @@
                                     transform="translate(-19 -8.001)" fill="#ffffff"/>
                             </svg>
                         </a></li>
-                    <span><x-search :urlAction="$urlAction"
-                                    class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-search></span>
+                    <span><x-sort_search.search :urlAction="$urlAction"
+                                    class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-sort_search.search></span>
                 </ul>
             </div>
         </div>
