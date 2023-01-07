@@ -7,6 +7,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            screens:{
+                "2xl": "2040px"
+            },
             fontFamily: {
                 body: ['Hind', 'sans-serif'],
                 sans: ['Montserrat', 'sans-serif']

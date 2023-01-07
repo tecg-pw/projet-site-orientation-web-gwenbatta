@@ -9,7 +9,7 @@
     <article class="pl-14 pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
         <h3 id="search" aria-level="3" role="heading"
             class="text-3xl font-sans font-light text-green-700 underline mb-6 mt-20">{{__('forum_aside.label')}}</h3>
-        <x-search :urlAction="$urlAction"/>
+        <x-sort_search.search :urlAction="$urlAction"/>
     </article>
     <article class="px-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="latest">
         <h3 id="latest" aria-level="3" role="heading"

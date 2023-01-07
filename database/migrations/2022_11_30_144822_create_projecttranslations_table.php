@@ -25,7 +25,16 @@ return new class extends Migration
             $table->string('main_picture')->nullable();
             $table->json('pictures')->nullable();
             $table->json('srcset')->nullable();
-            $table->json('gallery')->nullable();
+            $table->string('gallery_vertical_1')->nullable();
+            $table->json('srcset_gallery_vertical_1')->nullable();
+            $table->string('gallery_vertical_2')->nullable();
+            $table->json('srcset_gallery_vertical_2')->nullable();
+            $table->string('gallery_large')->nullable();
+            $table->json('srcset_gallery_large')->nullable();
+            $table->string('gallery_small_1')->nullable();
+            $table->json('srcset_gallery_small_1')->nullable();
+            $table->string('gallery_small_2')->nullable();
+            $table->json('srcset_gallery_small_2')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -1,29 +1,27 @@
 import './bootstrap';
 
 window.addEventListener('load', init);
-let buttonSearches = document.querySelectorAll('#searchButton') as NodeListOf<HTMLButtonElement>;
+let buttonSearches = document.getElementsByClassName('test');
+console.log(buttonSearches);
 let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
 let searchGlobalForm = document.querySelector('#searchGlobalForm') as HTMLFormElement;
 function init() {
     document.body.classList.remove('no-js');
     document.body.classList.add('js-only');
-
      handlePassword()
      burgerMenu()
      pdfInputTextValue()
-
 }
-     updateImageModifyProfil()
-     updateImageModifyBackImage()
+    updateImageModifyProfil()
 
 
 
 
-// @ts-ignore
-for (const buttonSearchElement of buttonSearches) {
-    buttonSearchElement.classList.add('sr-only');
+
+
+for (let i = 0; i < buttonSearches.length; i++) {
+    buttonSearches[i].classList.add('sr-only')
 }
-
 
 function pdfInputTextValue() {
     let pdf = document.getElementById('pdf') as HTMLInputElement;
@@ -107,3 +105,6 @@ function handlePassword() {
         });
     });
 }
+updateImageModifyBackImage()
+
+

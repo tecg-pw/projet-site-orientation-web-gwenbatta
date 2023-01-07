@@ -29,7 +29,16 @@ class ProjetTranslationFactory extends Factory
             "main_picture" => "",
             'pictures' => json_encode(''),
             'srcset' => json_encode(''),
-            "gallery" => [],
+            'gallery_vertical_1' => "",
+            'srcset_gallery_vertical_1' => json_encode(''),
+            'gallery_vertical_2' => "",
+            'srcset_gallery_vertical_2' => json_encode(''),
+            'gallery_large' => "",
+            'srcset_gallery_large' => json_encode(''),
+            'gallery_small_1' => "",
+            'srcset_gallery_small_1' => json_encode(''),
+            'gallery_small_2' =>"",
+            'srcset_gallery_small_2' => json_encode(''),
             "project_id" => 1,
         ];
     }
