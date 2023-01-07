@@ -221,6 +221,41 @@
                             name="description" id="description" cols="30" rows="10"
                             placeholder="{{__('user.user_modify_description')}}">{{old('description')?:$user->description}}</textarea>
                     </div>
+                    <div class="flex mb-8 items-center gap-3">
+                        <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox"  @if($user->newsletter) checked @endif
+                        name="newsletter"
+                               id="newsletter">
+                        <span class="notCheck">
+                                                    <svg data-name="Composant 7 – 1"
+                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                         viewBox="0 0 24 24">
+                                                      <g data-name="Rectangle 275" fill="#fff" stroke="#707070" stroke-width="1">
+                                                        <rect width="24" height="24" rx="6" stroke="none"/>
+                                                        <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" fill="none"/>
+                                                      </g>
+                                                      <path id="d62ff70270774c6e6e679f7a8c643f83"
+                                                            d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z"
+                                                            transform="translate(-2 -2)" fill="#da953a"/>
+                                                      <path id="d62ff70270774c6e6e679f7a8c643f83-2" data-name="d62ff70270774c6e6e679f7a8c643f83"
+                                                            d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z"
+                                                            transform="translate(-2 -2)" fill="#da953a"/>
+                                                    </svg>
+                                                </span>
+                        <span class="isCheck">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                                      <g data-name="Composant 7 – 2" transform="translate(0.5 0.5)">
+                                                        <g data-name="Rectangle 275" transform="translate(0 0)" fill="#da953a" stroke="#da953a" stroke-width="1">
+                                                          <rect width="24" height="24" rx="6" stroke="none"/>
+                                                          <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" fill="none"/>
+                                                        </g>
+                                                        <path d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#da953a" stroke="#da953a" stroke-width="1"/>
+                                                        <path data-name="d62ff70270774c6e6e679f7a8c643f83" d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#fff" stroke="#da953a" stroke-width="1"/>
+                                                      </g>
+                                                    </svg>
+                                                </span>
+                        <label class="mt-1 text-green-500 text-lg xl:text-2xl"
+                               for="newsletter">{{__('login_register.newsletter')}}</label>
+                    </div>
                     <button
                         class="border-2 mt-4 self-end border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_save')}}</button>
                 </div>

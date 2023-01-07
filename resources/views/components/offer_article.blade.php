@@ -17,7 +17,7 @@
             </div>
             <div class="mt-1 flex justify-between">
                 <div class="flex flex-col gap-2 max-w-[80%]">
-                    <p class="text">{{$offer->description}}</p>
+                    {!!$offer->description!!}
                     <p class="font-medium xl:text-lg">{{$offer_ref->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                 </div>
                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"

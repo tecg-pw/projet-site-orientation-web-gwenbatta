@@ -15,6 +15,7 @@ return [
     'password' => 'Wachtwoord',
     'forgot' => 'Wachtwoord vergeten',
     'remind' => 'Mij herinneren',
+    'newsletter' => 'Abonneren op de nieuwsbrief',
     'register_link' => 'Ik heb geen account.',
     'login_link' => 'Ik heb al een account',
     'login_back' => 'Terug naar inlogformulier',

@@ -66,7 +66,7 @@
                         <a class="hover:text-orange-500 mt-2 text-green-700 underline font-sans self-end text-sm" href="/{{app()->getLocale()}}/user/password">{{__('login_register.forgot')}}</a>
                     </div>
                     <div class="flex mb-8 items-center gap-3">
-                        <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox" @if(old('softwares'))@checked(in_array($language->translation->where('locale',app()->getLocale(),)->first()->slug,old('languages')))@endif
+                        <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox"
                                name="remember"
                                id="remember">
                                                     <span class="notCheck">

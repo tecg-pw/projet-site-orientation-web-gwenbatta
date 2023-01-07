@@ -2,7 +2,19 @@
 
 namespace App\Providers;
 
+use App\Events\OfferCreated;
+use App\Listeners\SendEmailToAgencyToConfirmHisOfferHasBeenCreated;
+use App\Models\Actuality;
+use App\Models\Offer;
+use App\Models\OfferTranslation;
+use App\Models\Project;
+use App\Models\ProjetTranslation;
 use App\Models\Subject;
+use App\Models\ActualityTranslation;
+use App\Observers\ActualityCreatedObserver;
+use App\Observers\OfferCreatedObserver;
+use App\Observers\ProjectCreatedObserver;
+use App\Observers\SubjectCreatedObserver;
 use App\Observers\ResolvedSubjectObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -24,6 +36,9 @@ class EventServiceProvider extends ServiceProvider
         SubjectCreated::class => [
             SendEmailToAdminWarningHimSubjectInForumHasBeenCreated::class
         ],
+        OfferCreated::class => [
+            SendEmailToAgencyToConfirmHisOfferHasBeenCreated::class
+        ],
     ];
 
     /**
@@ -34,6 +49,10 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         Subject::observe(ResolvedSubjectObserver::class);
+        Subject::observe(SubjectCreatedObserver::class);
+        ActualityTranslation::observe(ActualityCreatedObserver::class);
+        ProjetTranslation::observe(ProjectCreatedObserver::class);
+        OfferTranslation::observe(OfferCreatedObserver::class);
     }
 
     /**

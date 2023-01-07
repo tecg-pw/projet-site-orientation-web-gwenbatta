@@ -7,6 +7,7 @@ return [
     'login_button' => 'Login',
     'register_title' => 'Create your account',
     'register_button' => 'Register',
+    'newsletter' => 'Subscribe to the newsletter',
     'reset_button' => 'Reset',
     'send_email_reset' => 'Send me an email',
     'name' => 'Name',

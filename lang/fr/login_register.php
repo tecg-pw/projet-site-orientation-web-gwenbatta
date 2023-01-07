@@ -15,6 +15,7 @@ return [
     'password' => 'Mot de passe',
     'forgot' => 'Mot de passe oublié',
     'remind' => 'Se souvenir de moi',
+    'newsletter' => 'S\'inscrire à la  newsletter',
     'register_link' => 'Je n\'ai pas de compte',
     'login_link' => 'J\'ai déjà un compte',
     'login_back' => 'Retour à la connexion',

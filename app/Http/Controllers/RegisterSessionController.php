@@ -19,6 +19,12 @@ class RegisterSessionController extends Controller
         $validated = $request->validated();
         $validated['slug'] = \Str::slug($validated['firstname'].$validated['name']);
         $validated['status_id'] = 1;
+
+        if ($validated['newsletter'] === 'on'){
+            $validated['newsletter'] = 1;
+        }else{
+            $validated['newsletter'] = 0;
+        }
         $validated['password'] = password_hash($validated['password'],PASSWORD_DEFAULT);
 
             $user = User::create($validated);

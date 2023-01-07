@@ -16,6 +16,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "predis/predis": "^2.0",
+        "spatie/laravel-newsletter": "^5.0",
         "spatie/laravel-translatable": "^6.1",
         "spatie/nova-translatable": "^3.0.4"
     },

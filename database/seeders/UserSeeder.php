@@ -31,6 +31,7 @@ class UserSeeder extends Seeder
                 "back_images" => $value->back_images,
                 "srcset_back" => $value->srcset_back,
                 "email" => $value->email,
+                "newsletter" => $value->newsletter,
                 "is_admin" => $value->is_admin,
                 "email_verified_at" => $value->email_verified_at,
                 "password" => password_hash('change_this',PASSWORD_DEFAULT),

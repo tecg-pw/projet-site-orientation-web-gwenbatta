@@ -28,6 +28,7 @@ class RegisterRequest extends FormRequest
             'firstname' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:8|max:64',
+            'newsletter' =>'nullable'
         ];
     }
 }
