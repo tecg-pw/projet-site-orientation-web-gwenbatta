@@ -1,11 +1,10 @@
- @props([
-    'page'
+@props([
+   'page'
 ])
 @php
     $urlAction = "/"
 @endphp
-
-    <!doctype html>
+<!doctype html>
 <html lang="{{app()->getLocale()}}">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +16,25 @@
     <meta name="keywords"
           content="web, HEPL, infographie, HTML, CSS, Javascript, PHP, Tailwind, Multimédia, design web, front-end, back-end, développement web">
     <meta name="author" content="Gwenaëlle Batta">
+    <!-- Primary Meta Tags -->
     <title>{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}</title>
+    <meta name="title" content="{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}">
+    <meta name="description" content="Site de l'option web infographique de la HEPL à Seraing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tecweb.be/">
+    <meta property="og:title" content="{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}">
+    <meta property="og:description" content="Site de l'option web infographique de la HEPL à Seraing">
+    <meta property="og:image" content="/img/tecweb_overview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tecweb.be/">
+    <meta property="twitter:title" content="{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}">
+    <meta property="twitter:description" content="Site de l'option web infographique de la HEPL à Seraing">
+    <meta property="twitter:image" content="/img/tecweb_overview.png">
+
     @vite('resources/css/app.css')
     @vite('resources/js/app.ts')
 </head>
@@ -51,22 +68,22 @@
                     @if(session('success'))
                         <a href="#" class="relative z-50">{{session('success')}}</a>
                     @else
-                            <a href="#" class="relative z-50">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
-                        @endif
-                        <div
-                            class="bg-green-700 hover_section absolute z-40 flex-1 rounded-lg flex gap-2 pt-14 p-3 flex-col">
-                            <a dusk="logged-user-name"
-                               class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
-                               href="/{{app()->getLocale()}}/user/profile">{{__('user.user_my_profile')}}</a>
-                            <a dusk="logged-user-name"
-                               class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
-                               href="/{{app()->getLocale()}}/user/profile/modify/form">{{__('user.user_modify')}}</a>
-                            <form action="/logout"
-                                  method="post">
-                                @csrf
-                                <button class="hover:text-orange-500" type="submit">{{__('nav.logout')}}</button>
-                            </form>
-                        </div>
+                        <a href="#" class="relative z-50">{{auth()->user()->firstname}} {{auth()->user()->name}}</a>
+                    @endif
+                    <div
+                        class="bg-green-700 hover_section absolute z-40 flex-1 rounded-lg flex gap-2 pt-14 p-3 flex-col">
+                        <a dusk="logged-user-name"
+                           class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
+                           href="/{{app()->getLocale()}}/user/profile">{{__('user.user_my_profile')}}</a>
+                        <a dusk="logged-user-name"
+                           class="border-b-2 border-b-white-100/40 pb-2 flex-1 hover:text-orange-500"
+                           href="/{{app()->getLocale()}}/user/profile/modify/form">{{__('user.user_modify')}}</a>
+                        <form action="/logout"
+                              method="post">
+                            @csrf
+                            <button class="hover:text-orange-500" type="submit">{{__('nav.logout')}}</button>
+                        </form>
+                    </div>
                 </div>
             @endauth
         </div>
@@ -149,7 +166,8 @@
                 <li><a class="hover:text-orange-500"
                        href="/{{app()->getLocale()}}/contact/student"> {{__('nav.nav_navigation.contact')}}</a></li>
             </ul>
-            <x-sort_search.search_bar_nav class="xl:min-w-[20%] lg:max-w-[17%] lg:not-sr-only sr-only"></x-sort_search.search_bar_nav>
+            <x-sort_search.search_bar_nav
+                class="xl:min-w-[20%] lg:max-w-[17%] lg:not-sr-only sr-only"></x-sort_search.search_bar_nav>
             <input class="absolute cursor-pointer opacity-0 z-30 w-8 h-8 " type="checkbox" name="burger" id="burger">
             <div class="relative -order-1">
                 <label class="sr-only" for="burger">{{__('nav.nav_burger')}}</label>
@@ -288,7 +306,7 @@
                             </svg>
                         </a></li>
                     <span><x-sort_search.search :urlAction="$urlAction"
-                                    class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-sort_search.search></span>
+                                                class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-sort_search.search></span>
                 </ul>
             </div>
         </div>

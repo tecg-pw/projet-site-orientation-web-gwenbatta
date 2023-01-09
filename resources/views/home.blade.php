@@ -6,7 +6,7 @@
                 id="intro">
                 {{__('home.intro_title')}}
             </h2>
-            <p class="text-lg md:leading-8 xl:leading-10 xl:text-xl">
+            <p class="text-lg md:leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
                 {{__('home.intro_text')}}
             </p>
             <div class="mt-6 flex flex-col xl:justify-between xl:flex-row xl:items-center xl:mt-20 ">
