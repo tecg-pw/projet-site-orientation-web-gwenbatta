@@ -25,16 +25,16 @@
                 <a href="/{{app()->getLocale()}}" class="linkcard">{{__('nav.nav_link_home')}}</a>
             </div>
             <div class="mt-6" itemscope itemtype="https://schema.org/Organization">
-                <p itemprop="legalName" class="mb-2">{{__('nav.nav_informations.name')}}</p>
+                <p itemprop="legalName" class="mb-2 2xl:text-lg">{{__('nav.nav_informations.name')}}</p>
                 <div itemscope itemtype="https://schema.org/PostalAddress">
-                    <p itemprop="streetAddress" class="mb-2">{{__('nav.nav_informations.street')}}</p>
-                    <p itemprop="postalCode" class="mb-2">{{__('nav.nav_informations.city')}}</p>
+                    <p itemprop="streetAddress" class="mb-2 2xl:text-lg">{{__('nav.nav_informations.street')}}</p>
+                    <p itemprop="postalCode" class="mb-2 2xl:text-lg">{{__('nav.nav_informations.city')}}</p>
                 </div>
             </div>
         </div>
         <nav class="flex-1 flex-col items-center justify-center flex md:block border-y-2 border-y-orange-500/40 md:border-y-0 py-12 md:py-0 md:border-r-2 md:border-r-orange-500/40 md:border-l-2 md:border-l-orange-500/40 md:px-12 xl:px-24" aria-labelledby="navigation">
-            <h2 class="text-green-500 font-medium md:text-xl text-2xl text-center mb-8 font-sans " role="heading" aria-level="2" id="navigation">{{__('nav.nav_footer_nav')}}</h2>
-            <ul class="flex flex-1 justify-between items-center text-xl text-green-500">
+            <h2 class="text-green-500 font-medium md:text-xl text-2xl 2xl:text-3xl text-center mb-8 font-sans" role="heading" aria-level="2" id="navigation">{{__('nav.nav_footer_nav')}}</h2>
+            <ul class="flex flex-1 justify-between items-center text-xl 2xl:text-2xl text-green-500">
                 <ul class="mr-14">
                     <li class="hover:text-orange-500 mb-6"><a href="/{{app()->getLocale()}}/forum/index">{{__('nav.nav_navigation.forum')}}</a></li>
                     <li class="hover:text-orange-500 mb-6"><a href="/{{app()->getLocale()}}/news/index">{{__('nav.nav_navigation.actualities')}}</a></li>
@@ -50,8 +50,8 @@
             </ul>
         </nav>
         <section class="flex-1 flex-col items-center justify-center flex xl:block py-12 xl:py-0" aria-labelledby="navigation">
-            <h2 class="text-green-500 font-medium md:text-xl text-2xl text-center mb-8 font-sans " role="heading" aria-level="2" id="navigation">{{__('nav.nav_footer_socials')}}</h2>
-            <ul class="flex flex-1 justify-between items-center xl:items-start xl:ml-16 flex-col text-xl text-green-500">
+            <h2 class="text-green-500 font-medium md:text-xl text-2xl 2xl:text-3xl text-center mb-8 font-sans " role="heading" aria-level="2" id="navigation">{{__('nav.nav_footer_socials')}}</h2>
+            <ul class="flex flex-1 justify-between items-center xl:items-start xl:ml-16 flex-col text-xl 2xl:text-2xl text-green-500">
                     <li class="hover:text-orange-500 mb-6 flex">
                         <svg class="group-hover:scale-110 mr-2" width="20" viewBox="0 0 3.88 3.88" xmlns="http://www.w3.org/2000/svg"><path d="m2.98.67c-.13 0-.23.1-.23.23s.1.23.23.23.23-.1.23-.23-.1-.23-.23-.23zm.89.47c0-.16-.03-.32-.09-.47-.05-.13-.13-.25-.23-.34-.1-.1-.21-.18-.34-.22-.15-.06-.31-.09-.47-.09-.21-.01-.27-.01-.8-.01s-.59 0-.8.01c-.16 0-.32.03-.47.09-.13.05-.25.12-.34.22-.1.1-.18.21-.22.34-.06.15-.1.31-.1.47-.01.21-.01.27-.01.8s0 .59.01.8c0 .16.03.32.09.47.05.13.12.25.22.34.1.1.21.18.34.22.15.06.31.09.47.09.21.01.27.01.8.01s.59 0 .8-.01c.16 0 .32-.03.47-.09.13-.05.25-.12.34-.22.1-.1.18-.21.23-.34.06-.15.09-.31.09-.47 0-.21.01-.27.01-.8s0-.59-.01-.8zm-.35 1.58c0 .12-.02.25-.07.36-.03.08-.08.16-.15.22-.06.06-.14.11-.22.15-.12.04-.24.06-.36.07-.19 0-.27.01-.78.01s-.58 0-.78-.01c-.13 0-.26-.02-.38-.06-.08-.03-.15-.08-.21-.15-.06-.06-.11-.14-.14-.22-.05-.12-.07-.24-.08-.37 0-.19-.01-.27-.01-.78s0-.58.01-.78c0-.13.02-.25.07-.37.03-.08.09-.15.15-.21.06-.07.13-.12.21-.16.12-.04.24-.06.37-.07.19 0 .27-.01.78-.01s.58 0 .78.01c.12 0 .25.02.36.07.09.03.17.09.23.16.06.06.11.13.15.21.04.12.07.24.07.37 0 .19.01.27.01.78s0 .58-.01.78zm-1.58-1.78c-.55 0-.99.45-.99 1s.45.99 1 .99.99-.45.99-1-.44-.99-.99-1zm0 1.64c-.36 0-.65-.29-.65-.65s.29-.65.65-.65.65.29.65.65c0 .36-.29.65-.65.65z" fill="#da953a"/></svg>
                         <a href="/{{app()->getLocale()}}">{{__('nav.nav_socials.instagram')}}</a>

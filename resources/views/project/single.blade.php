@@ -24,8 +24,8 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                 <img class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 2xl:-top-52 mb-2" src="{{str_contains($person->avatar,'http')? $person->avatar : '/'.$person->avatar}}" alt="avatar">
                 <div class="relative xl:bg-yellow-100 rounded-xl py-4 px-4 xl:py-8 xl:left-10">
                     <h3 id="{{$person->slug}}" aria-level="3" role="heading"
-                        class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl 2xl:text-3xl"><a
-                            href="/{{app()->getLocale()}}/bottin/{{$person->status === "étudiant"? "student" : $person->status}}/{{$person->slug}}">{{$person->firstname}} {{$person->name}}</a>
+                        class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl 2xl:text-3xl">
+                        <a href="/{{app()->getLocale()}}/bottin/{{$person->status === "étudiant"? "student" : $person->status}}/{{$person->slug}}">{{$person->firstname}} {{$person->name}}</a>
                     </h3>
                     <p class="mb-2 mt-2 xl:text-xl 2xl:text-2xl">{{$person->begin->translatedFormat('Y')}}
                         - {{$person->end !== null? $person->end->translatedFormat('Y') : __('people.bottin_today')}}</p>

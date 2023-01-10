@@ -3,15 +3,15 @@
     <section class="mt-20 mb-20 xl:mb-0 xl:flex lg:grid lg:grid-cols-9 " aria-labelledby="contact">
         <div class="xl:px-32 2xl:pl-48 mt-16 flex-1 lg:col-span-4">
             <div class="px-10 xl:px-0 flex flex-col">
-                <h2 class="text-2xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6"
+                <h2 class="text-2xl xl:text-4xl 2xl:text-5xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6"
                     id="contact" role="heading" aria-level="2">
                     {{__('contact_page.contact_title')}}
                 </h2>
             </div>
             <div class="flex flex-1 justify-between px-10 xl:px-0">
-                <a class="font-sans text-green-700 text-xl rounded-lg font-semibold underline  py-2.5 px-6"
+                <a class="font-sans text-green-700 xl:text-xl 2xl:text-2xl text-lg rounded-lg font-semibold underline  py-2.5 px-6"
                    href="/{{app()->getLocale()}}/contact/student">{{__('contact_page.student_link')}}</a>
-                <a class="hover:text-orange-500 bg-orange-200 rounded-lg py-2.5 px-6 font-sans text-green-700 text-en xl:text-start self-center text-xl font-semibold underline py-2.5 "
+                <a class="hover:text-orange-500 bg-orange-200 rounded-lg py-2.5 px-6 font-sans text-green-700 text-en xl:text-start self-center xl:text-xl 2xl:text-2xl text-lg font-semibold underline py-2.5 "
                    href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             @if(session('success'))
@@ -31,7 +31,7 @@
                         @csrf
                         <div class="flex flex-col xl:flex-row flex-1">
                             <div class="flex flex-col flex-1 xl:mr-10 mb-8">
-                                <label class="text-green-500 text-lg xl:text-2xl"
+                                <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                        for="name">{{__('contact_page.agency_name')}}</label>
                                 @error('name')
                                 <div class="flex gap-1.5 items-center">
@@ -49,7 +49,7 @@
                                     placeholder="Whitecube" name="name" id="name" type="text">
                             </div>
                             <div class="flex flex-col flex-1 mb-8">
-                                <label class="text-green-500 text-lg xl:text-2xl"
+                                <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                        for="name_supervisor">{{__('contact_page.agency_supervisor_name')}}</label>
                                 @error('name_supervisor')
                                 <div class="flex gap-1.5 items-center">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col mb-8">
-                            <label class="text-green-500 text-lg xl:text-2xl"
+                            <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                    for="email">{{__('contact_page.mail')}}</label>
                             @error('email')
                             <div class="flex gap-1.5 items-center">
@@ -86,7 +86,7 @@
                                 name="email" id="email" type="email" placeholder="email@example.be">
                         </div>
                         <div class="flex flex-col mb-8">
-                            <label class="text-green-500 text-lg xl:text-2xl"
+                            <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                    for="subject">{{__('contact_page.agency_title')}}</label>
                             @error('subject')
                             <div class="flex gap-1.5 items-center">
@@ -104,7 +104,7 @@
                                 placeholder="{{__('contact_page.agency_title_value')}}">
                         </div>
                         <div class="flex flex-col mb-8">
-                            <label class="text-green-500 text-lg xl:text-2xl"
+                            <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                    for="message">{{__('contact_page.agency_description')}}</label>
                             @error('message')
                             <div class="flex gap-1.5 items-center">
@@ -122,10 +122,10 @@
                         </div>
                         <div>
                         <span
-                            class="text-green-500 text-lg mb-12 xl:text-2xl">{{__('contact_page.agency_aptitude_value')}}</span>
+                            class="text-green-500 text-lg mb-12 xl:text-2xl 2xl:text-3xl">{{__('contact_page.agency_aptitude_value')}}</span>
                             <div class="flex mt-6 ">
                                 <div class="border-r border-orange-500 pr-20">
-                                    <span class="text-green-500 xl:text-xl mb-4">{{__('contact_page.agency_language')}}</span><br>
+                                    <span class="text-green-500 xl:text-xl 2xl:text-2xl mb-4">{{__('contact_page.agency_language')}}</span><br>
                                     <div class="flex flex-col mt-4">
                                         @foreach($languages as $language)
                                             <div class="flex items-center gap-x-2">
@@ -161,15 +161,14 @@
                                                       </g>
                                                     </svg>
                                                 </span>
-                                                <label class="xl:text-xl relative"
+                                                <label class="text-lg xl:text-xl 2xl:text-2xl relative"
                                                        for="{{$language->translation->where('locale',app()->getLocale(),)->first()->slug}}">{{$language->translation->where('locale',app()->getLocale(),)->first()->name}}</label>
                                             </div>
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="pl-20">
-                                    <span
-                                    class="text-green-500 xl:text-xl">{{__('contact_page.agency_software')}}</span><br>
+                                    <span class="text-green-500 xl:text-xl 2xl:text-2xl">{{__('contact_page.agency_software')}}</span><br>
                                     <div class="flex flex-col mt-4">
                                         @foreach($softwares as $software)
                                             <div class="flex items-center gap-x-2">
@@ -205,7 +204,7 @@
                                                       </g>
                                                     </svg>
                                                 </span>
-                                                <label class="xl:text-xl"
+                                                <label class="text-lg xl:text-xl 2xl:text-2xl"
                                                        for="{{$software->translation->where('locale',app()->getLocale(),)->first()->slug}}">{{$software->translation->where('locale',app()->getLocale(),)->first()->name}}</label>
                                             </div>
                                         @endforeach
@@ -214,13 +213,12 @@
                             </div>
                         </div>
                         <div class="flex flex-col mb-8 mt-10">
-                            <p class="text-green-500 text-lg mb-2 xl:text-2xl">{{__('contact_page.agency_offer_title')}}</p>
+                            <p class="text-green-500 text-lg mb-2 xl:text-2xl 2xl:text-3xl">{{__('contact_page.agency_offer_title')}}</p>
                             <div class="flex items-center justify-center w-full">
                                 <label for="pdf" class="flex flex-col items-center justify-center w-full h-64 border-2 border-orange-500 rounded-lg cursor-pointer bg-yellow-100 hover:bg-gray-100">
                                     <div class=" flex flex-col items-center justify-center pt-5 pb-6">
                                         <svg aria-hidden="true" class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                        <p class="mb-2 text-sm text-green-700"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                        <p class="text-xs">SVG, PNG, JPG</p>
+                                        <p class="mb-2 text-sm text-green-700"><span class="font-semibold">{{__('contact_page.agency_offer')}}</p>
                                         <div class="textInput"></div>
                                     </div>
                                     <input id="pdf" name="pdf" type="file"/>
@@ -229,7 +227,7 @@
                         </div>
                         <div class="flex flex-1 justify-end mb-20">
                             <input
-                                class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex-1 xl:flex-initial"
+                                class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl flex-1 xl:flex-initial"
                                 type="submit" value="{{__('contact_page.contact_button')}}">
                         </div>
                     </form>

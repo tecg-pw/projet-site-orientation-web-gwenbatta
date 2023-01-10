@@ -12,13 +12,13 @@
         <div class="flex-1 order-2 ml-4">
             <div class="md:flex-row flex-col flex justify-between">
                 <h3 id="{{$offer->slug}}" role="heading" aria-level="3"
-                    class="text-lg md:text-xl xl:text-2xl">{{$offer->name}}</h3>
+                    class="text-lg md:text-xl xl:text-2xl  2xl:text-3xl">{{$offer->name}}</h3>
                 <p class="xl:text-lg">{{ucwords($offer->created_at->translatedFormat('d F Y'))}}</p>
             </div>
             <div class="mt-1 flex justify-between">
-                <div class="flex flex-col gap-2 max-w-[80%]">
+                <div class="flex flex-col gap-2 max-w-[80%] xl:text-lg 2xl:text-2xl">
                     {!!$offer->description!!}
-                    <p class="font-medium xl:text-lg">{{$offer_ref->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
+                    <p class="font-medium xl:text-lg 2xl:text-2xl">{{$offer_ref->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                 </div>
                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                      width="25"
@@ -31,5 +31,5 @@
         </div>
     </div>
     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-       href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->slug}}">{{offer_article.blade}}</a>
+       href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->slug}}">{{__('agency.offer_link')}}</a>
 </article>

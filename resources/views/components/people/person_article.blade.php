@@ -13,19 +13,19 @@
     <div class="flex flex-1 items-center">
         <div class="flex-1 order-2 ml-4">
             <h4 id="{{$person_ref->slug}}" role="heading" aria-level="4"
-                class="text-xl xl:text-2xl">{{$person_ref->firstname}} {{$person_ref->name}}</h4>
+                class="text-xl xl:text-2xl 2xl:text-3xl">{{$person_ref->firstname}} {{$person_ref->name}}</h4>
             <div class="mt-1 flex justify-between">
                 <div class="flex flex-col xl:flex-row xl:gap-4">
                     @if($person_ref->status === 'teachalumni')
-                        <p class="uppercase xl:text-lg">{{__('people.teachalumni_status')}}</p>
+                        <p class="uppercase xl:text-lg 2xl:text-xl">{{__('people.teachalumni_status')}}</p>
                     @else
-                        <p class="uppercase xl:text-lg">{{$person_ref->status}}</p>
+                        <p class="uppercase xl:text-lg 2xl:text-xl">{{$person_ref->status}}</p>
                     @endif
                     @if($person_ref->end === null)
-                        <p class="xl:text-lg">{{$person_ref->begin->format('Y')}}
+                        <p class="xl:text-lg 2xl:text-xl">{{$person_ref->begin->format('Y')}}
                             - {{__('people.bottin_today')}}</p>
                     @else
-                        <p class="uppercase xl:text-lg">{{$person_ref->begin->format('Y')}}
+                        <p class="uppercase xl:text-lg 2xl:text-xl">{{$person_ref->begin->format('Y')}}
                             -{{$person_ref->end->format('Y')}}</p>
                     @endif
                 </div>
@@ -42,16 +42,16 @@
     </div>
     @if($person_ref->status === 'ancien' || $person_ref->status === 'alumni')
         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-           href="/{{str_replace('_','-',app()->getLocale())}}/bottin/alumni/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
+           href="/{{app()->getLocale()}}/bottin/alumni/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
     @elseif($person_ref->status === 'professeur' || $person_ref->status === 'teacher')
         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-           href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teacher/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
+           href="/{{app()->getLocale()}}/bottin/teacher/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
     @elseif($person_ref->status === 'étudiant' || $person_ref->status === 'student')
         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-           href="/{{str_replace('_','-',app()->getLocale())}}/bottin/student/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
+           href="/{{app()->getLocale()}}/bottin/student/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
     @elseif($person_ref->status === 'teachalumni')
         <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-           href="/{{str_replace('_','-',app()->getLocale())}}/bottin/teachalumni/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
+           href="/{{app()->getLocale()}}/bottin/teachalumni/{{$person_ref->slug}}">{{__('En savoir plus sur' . $person_ref->name)}}</a>
     @endif
 
 </article>

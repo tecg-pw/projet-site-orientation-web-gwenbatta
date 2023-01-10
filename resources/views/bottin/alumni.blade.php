@@ -7,10 +7,10 @@
     <section class="mt-20" aria-labelledby="alumni">
         <div class="px-10 flex flex-col xl:px-32 lg:px-16 2xl:px-48 xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="almuni" role="heading" aria-level="2"
-                class="mb-4 text-2xl xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('people.alumni_title')}}</h2>
-            <x-sort_search.search :urlAction="$urlAction"/>
+                class="mb-4 text-2xl xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('people.alumni_title')}}</h2>
+            <x-sort_search.search class="min-w-[20%]" :urlAction="$urlAction"/>
         </div>
-        <p class="px-10 xl:pl-32 lg:px-16 2xl:pl-48 mb-7 xl:max-w-[47%] xl:text-xl xl:leading-10">{{__('people.alumni_text')}}</p>
+        <p class="px-10 xl:pl-32 lg:px-16 2xl:pl-48 mb-7 xl:max-w-[47%] xl:text-xl 2xl:text-2xl 2xl:leading-12 xl:leading-10">{{__('people.alumni_text')}}</p>
         <x-sort_search.sort_by_people :urlAction="$urlAction" :status="$status" :years_end="$years_end"/>
         <article class="px-10 flex flex-col gap-y-4 xl:px-32 lg:px-16 2xl:px-48 lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8"
                  aria-labelledby="list-bottin">

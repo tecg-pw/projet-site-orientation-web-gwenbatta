@@ -5,11 +5,11 @@
 <x-commons.navigation :page="$subject->subject"></x-commons.navigation>
 <main id="content">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
-        <a href="/{{app()->getLocale()}}/forum/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/forum/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{__('nav.nav_navigation.forum')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{$subject->subject}}
         </a>
     </div>
@@ -58,7 +58,7 @@
             class="xl:px-32 lg:px-16 2xl:px-48 mt-20 px-10 flex flex-col md:flex-row gap-5 mb-7 justify-between xl:items-center">
             <div class="flex gap-5 md:max-w-lg xl:max-w-[50%] 2xl:max-w-full xl:mb-5 xl:items-center">
                 <h2 role="heading" id="sujet" aria-level="2"
-                    class="xl:text-4xl  2xl:max-w-full md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12">{{$subject->subject}}</h2>
+                    class="xl:text-4xl 2xl:text-5xl  2xl:max-w-full md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12">{{$subject->subject}}</h2>
                 @if($subject->resolved)
                     <svg class="xl:not-sr-only sr-only -order-1" xmlns="http://www.w3.org/2000/svg" width="40"
                          viewBox="0 0 34.194 34.196">
@@ -84,7 +84,7 @@
                     </svg>
                 @endif
             </div>
-            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 md:text-xl xl:text-2xl font-semibold underline xl:px-4 xl:py-6 2xl:py-2 xl:self-end 2xl:self-start"
+            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 md:text-xl xl:text-2xl font-semibold underline xl:px-4 xl:py-6 2xl:py-2 xl:self-end 2xl:self-start 2xl:text-3xl"
                href="/{{app()->getLocale()}}/forum/index">{{__('forum.single_back')}}</a>
         </div>
         <div class="lg:grid lg:grid-cols-5 ">
@@ -103,11 +103,11 @@
                                 alt="{{$subject->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
                         </picture>
                         <div class="flex mr-4 sm:mr-0 flex-1 flex-col">
-                            <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 xl:text-xl text-lg mb-2">{{$subject->user->firstname}} {{$subject->user->name}}</a>
-                            <p>{{$subject->created_at->format('d M. Y')}}</p>
+                            <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 xl:text-xl text-lg mb-2 2xl:text-2xl">{{$subject->user->firstname}} {{$subject->user->name}}</a>
+                            <p class="xl:text-lg 2xl:text-xl">{{$subject->created_at->format('d M. Y')}}</p>
                         </div>
                         <div>
-                            <p class="uppercase font-medium bg-orange-500/40 mb-3 mr-4 px-4 xl:px-6 pb-1 pt-1.5 rounded-lg md:text-lg text-green-700">
+                            <p class="uppercase font-medium bg-orange-500/40 mb-3 mr-4 px-4 xl:px-6 pb-1 pt-1.5 rounded-lg md:text-lg text-green-700 xl:text-lg 2xl:text-xl">
                                 {{ucwords($subject->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                             @if($subject->user->id === auth()->id())
                                 <div class="flex justify-end pr-4">
@@ -138,16 +138,16 @@
                             @endif
                         </div>
                     </div>
-                    <p class="leading-8 md:leading-9 xl:leading-10 md:text-lg xl:mt-7 mt-6">
+                    <p class="leading-8 md:leading-9 xl:leading-10 xl:text-xl 2xl:text-2xl 2xl:leading-12 md:text-lg xl:mt-7 mt-6">
                         {{$subject->description}}
                     </p>
                 </div>
                 <article class="flex flex-col gap-y-8 " aria-labelledby="add-comment">
                     <div class="flex md:flex-row flex-col justify-between xl:items-center">
                         <h3 id="add-comment" aria-level="3" role="heading"
-                            class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold mb-3 text-yellow-800 font-sans ">{{__('forum.comment')}}</h3>
+                            class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl uppercase font-extrabold mb-3 text-yellow-800 font-sans ">{{__('forum.comment')}}</h3>
                         @auth()
-                            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 md:text-xl xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end"
+                            <a class="hover:text-orange-500 xl:self-center flex font-sans xl:text-end text-green-700 md:text-xl xl:text-2xl font-semibold underline xl:px-4 xl:py-6 xl:self-end 2xl:text-3xl"
                                href="?add-comment#comment">{{__('forum.add_comment')}}</a>
                         @endauth
                     </div>
@@ -156,10 +156,10 @@
                             <form action="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}" method="post"
                                   class="relative">
                                 @csrf
-                                <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
+                                <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-lg font-semibold underline px-4 py-6 self-end xl:text-xl 2xl:text-2xl"
                                    href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
                                 <div class="flex-col flex">
-                                    <label class="text-green-500 text-lg font-medium mb-4 "
+                                    <label class="text-green-500 text-lg xl:text-xl 2xl:text-2xl font-medium mb-4 "
                                            for="content">{{__('forum.label_comment')}}</label>
                                     @error('content')
                                     <div class="flex gap-1.5 items-center">
@@ -177,12 +177,12 @@
                                         cols="55" rows="7"></textarea>
                                 </div>
                                 <button type="submit"
-                                        class="text-white-100 bg-green-700 px-6 mt-4 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl font-sans font-semibold">{{__('forum.value__add')}}</button>
+                                        class="text-white-100 bg-green-700 px-6 mt-4 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl xl:text-2xl  font-sans font-semibold">{{__('forum.value__add')}}</button>
                             </form>
                         </div>
                     @endif
                     @if($subject->comments_count === 0)
-                        <p>{{__('forum.no_comment')}}</p>
+                        <p class="text-lg xl:text-xl 2xl:text-2xl">{{__('forum.no_comment')}}</p>
                     @else
                         @foreach($subject->comments as $comment)
                             <div id="{{$comment->slug}}"
@@ -194,10 +194,10 @@
                                             method="post"
                                             class="relative">
                                             @csrf
-                                            <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end"
+                                            <a class="hover:text-orange-500 absolute -top-6 right-1 font-sans text-end text-green-700 text-xl font-semibold underline px-4 py-6 self-end 2xl:text-2xl"
                                                href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}#comment">{{__('forum.button_back')}}</a>
                                             <div class="flex-col flex">
-                                                <label class="text-green-500 text-lg font-medium"
+                                                <label class="text-green-500 text-lg xl:text-xl 2xl:text-2xl font-medium"
                                                        for="content">{{__('forum.label_modify')}}</label>
                                                 @error('content')
                                                 <div class="flex gap-1.5 items-center">
@@ -215,11 +215,11 @@
                                                     name="content" id="content"
                                                     cols="55" rows="7">{{$comment->content}}</textarea>
                                             </div>
-                                            <button type="submit" class="text-white-100 bg-green-700 px-6 mt-4 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl font-sans font-semibold">{{__('forum.value__modify')}}</button>
+                                            <button type="submit" class="text-white-100 bg-green-700 px-6 mt-4 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl font-sans font-semibold 2xl:text-2xl">{{__('forum.value__modify')}}</button>
                                         </form>
                                     </div>
                                 @else
-                                    <p class="sm:leading-8 mt-3 sm:mt-6 leading-6 text-sm sm:text-base">
+                                    <p class="sm:leading-8 mt-3 sm:mt-6 leading-6 text-sm xl:text-base 2xl:text-lg sm:text-base">
                                         {{$comment->content}}
                                     </p>
                                 @endif
@@ -286,7 +286,7 @@
                                                 </span>
                                             </button>
                                         </form>
-                                        <p class="pt-1">{{$comment->user_like_count}}</p>
+                                        <p class="pt-1 xl:pt-0 xl:text-lg 2xl:text-xl">{{$comment->user_like_count}}</p>
                                     </div>
                                 </div>
                             </div>

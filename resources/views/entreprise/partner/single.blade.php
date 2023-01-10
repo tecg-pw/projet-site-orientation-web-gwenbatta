@@ -5,29 +5,29 @@
 <x-commons.navigation :page="$partner->name"></x-commons.navigation>
 <main id="content" class="">
     <div class="flex items-center px-10 xl:px-32 lg:px-16 2xl:px-48 mt-20">
-        <a href="/{{app()->getLocale()}}/entreprise/partner" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/entreprise/partner" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{__('nav.nav_navigation.partner')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/entreprise/partner/{{$partner->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/entreprise/partner/{{$partner->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{$partner->name}}
         </a>
     </div>
     <section class="px-10 xl:px-32 lg:px-16 2xl:px-48 flex flex-col mb-36 gap-x-11" aria-labelledby="name">
         <div class="flex flex-col md:flex-row justify-between mt-20">
-            <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11"
+            <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans mb-6 xl:mb-11 2xl:text-5xl"
                 id="dev-front" aria-level="2" role="heading">{{$partner->name}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold  2xl:text-3xl"
                href="/{{app()->getLocale()}}/entreprise/partner">{{__('agency.partner_back')}}</a>
         </div>
         <div class="flex flex-col md:flex-row md:gap-12 mt-16">
             <div class="mb-7 order-2 xl:gap-y-10">
                 <div class="flex mb-10 xl:gap-12 2xl:gap-20 gap-8 xl:justify-start">
                     <section aria-labelledby="informations">
-                        <h3 id="informations" role="heading" aria-level="3" class="text-xl xl:text-2xl mb-5 font-semibold">{{__('agency.partner_informations')}}</h3>
+                        <h3 id="informations" role="heading" aria-level="3" class="text-xl xl:text-2xl  2xl:text-3xl mb-5 font-semibold">{{__('agency.partner_informations')}}</h3>
                         <div class="flex flex-col gap-y-2.5 mb-5">
-                            <a class="hover:text-orange-500 text-green-700 underline xl:text-lg" href="mailto:{{$partner->mail}}">{{$partner->mail}}</a>
-                            <div class="xl:text-xl">
+                            <a class="hover:text-orange-500 text-green-700 underline xl:text-lg  2xl:text-xl" href="mailto:{{$partner->mail}}">{{$partner->mail}}</a>
+                            <div class="xl:text-xl  2xl:text-2xl 2xl:leading-8">
                                 <p>{{$partner->adresse}}</p>
                                 <p class="uppercase">{{$partner->locality}}</p>
                             </div>
@@ -58,7 +58,7 @@
                         </div>
                     </section>
                     <section aria-labelledby="members">
-                        <h3 id="members" role="heading" aria-level="3" class="xl:text-2xl text-xl mb-5 font-semibold">{{__('agency.partner_members')}}</h3>
+                        <h3 id="members" role="heading" aria-level="3" class="xl:text-2xl  2xl:text-3xl text-xl mb-5 font-semibold">{{__('agency.partner_members')}}</h3>
                         <ul class="flex flex-col xl:gap-3 gap-y-1.5 list-disc">
                             @if($partner->members === null)
                             <p>{{__('Aucun partenaire connu')}}</p>
@@ -69,7 +69,7 @@
                                             <circle id="Ellipse_50" data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                     fill="#6f704d"/>
                                         </svg>
-                                        <p>{{ucwords($member)}}</p>
+                                        <p class="text-lg  xl:text-xl  2xl:text-2xl">{{ucwords($member)}}</p>
                                     </li>
                                 @endforeach
                             @endif
@@ -81,7 +81,7 @@
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl  2xl:text-2xl xl:leading-10  2xl:leading-12 xl:max-w-[65%]">
                         {!!$partner->description!!}
                     </div>
                 @endif
@@ -110,8 +110,8 @@
     </section>
     <article class="bg-yellow-600 2xl:px-48 xl:px-32 lg:px-16 px-10 pb-24 pt-20" aria-labelledby="internships">
         <div class="flex md:flex-row flex-col justify-between mb-8">
-            <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('agency.offer_link')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
+            <h2 id="internships" role="heading" aria-level="2" class="xl:text-4xl  2xl:text-5xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('agency.offer_link')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl 2xl:text-3xl font-semibold"
                href="/{{app()->getLocale()}}/entreprise/internship">{{__('agency.offer_other')}}</a>
         </div>
         <div class="lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8 flex flex-col gap-y-4">
@@ -122,13 +122,13 @@
                         <div class="flex flex-1 items-center">
                             <div class="flex-1 order-2 ml-4">
                                 <div class="md:flex-row flex-col flex justify-between">
-                                    <h3 id="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="text-lg md:text-xl xl:text-2xl">{{$offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
+                                    <h3 id="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="text-lg md:text-xl xl:text-2xl  2xl:text-3xl">{{$offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
                                     <p class="xl:text-lg">{{$offer->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d M Y')}}</p>
                                 </div>
                                 <div class="mt-1 flex justify-between">
                                     <div class="flex flex-col gap-2 max-w-[80%]">
-                                        <div class="text">{!!$offer->translation->where('locale',app()->getLocale())->first()->description!!}</div>
-                                        <p class="font-medium xl:text-lg">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
+                                        <div class="xl:text-lg 2xl:text-2xl 2xl:leading-10">{!!$offer->translation->where('locale',app()->getLocale())->first()->description!!}</div>
+                                        <p class="font-medium xl:text-lg  2xl:text-xl">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                                     </div>
                                     <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                          width="25"
@@ -153,9 +153,9 @@
     </article>
     <article class="xl:px-32 lg:px-16 2xl:px-48 px-10 mt-36 mb-36" aria-labelledby="alumnis">
         <div class="flex flex-col md:flex-row justify-between mb-6">
-            <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis" aria-level="2"
+            <h2 class="xl:text-4xl  2xl:text-5xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 mb-6 xl:mb-16 font-sans" id="alumnis" aria-level="2"
                 role="heading">{{__('agency.partner_alumni_title')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl  2xl:text-3xl font-semibold"
                href="/{{app()->getLocale()}}/bottin/alumni">{{__('agency.partner_alumni_link')}}</a>
         </div>
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">

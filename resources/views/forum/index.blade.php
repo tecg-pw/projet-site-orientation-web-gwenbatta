@@ -8,34 +8,34 @@
     <section class="mt-20" aria-labelledby="forum">
         <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex md:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
             <h2 id="forum" aria-level="2" role="heading"
-                class="text-2xl md:text-3xl md:self-center xl:text-4xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
+                class="text-2xl md:text-3xl md:self-center xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
             @auth()
                 <a href="/{{app()->getLocale()}}/forum/question"
-                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 md:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
+                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl xl:text-2xl 2xl:text-3xl font-semibold mt-4 md:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
         <x-sort_search.sort_by_forum :urlAction="$urlAction"  :status="$status" :tags="$tags" :created="$created" class="px-10 2xl:px-48 xl:px-32 lg:px-16 mb-14"></x-sort_search.sort_by_forum>
         <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-32 lg:px-16">
-            <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
+            <a class="xl:text-xl 2xl:text-2xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
                href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
-            <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
+            <a class="xl:text-xl 2xl:text-2xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/{{app()->getLocale()}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
             @auth()
-                <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
+                <a class="xl:text-xl 2xl:text-2xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                    href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
-                <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
+                <a class="xl:text-xl 2xl:text-2xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                    href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
             @endauth
         </div>
         <div class="lg:grid lg:grid-cols-5 mb-36">
             <div class="lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10">
                 @foreach($subjects as $subject)
-                    <article class="group hover:bg-orange-100 bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
+                    <article class="group hover:bg-orange-100  bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
                              aria-labelledby="{{$subject->slug}}">
                         <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                             <div class="flex flex-col  xl:gap-4">
                                 <div class="flex gap-2">
-                                    <h3 class="order-2 font-medium text-lg xl:text-xl"
+                                    <h3 class="order-2 font-medium text-lg xl:text-xl 2xl:text-2xl"
                                         id="{{$subject->slug}}"
                                         role="heading"
                                         aria-level="3">{{$subject->subject}}</h3>
@@ -69,15 +69,15 @@
                                     @endif
                                 </div>
                                 <div class="flex -order-2 relative justify-between xl:justify-between">
-                                    <p class="md:text-base sm:text-sm text-base uppercase self-end ">{{$subject->user->firstname}} {{$subject->user->name}}</p>
-                                    <p class="md:text-base sm:text-sm self-end">{{$subject->created_at->translatedFormat('d M Y')}}</p>
+                                    <p class="md:text-base sm:text-sm text-base uppercase self-end 2xl:text-lg">{{$subject->user->firstname}} {{$subject->user->name}}</p>
+                                    <p class="md:text-base sm:text-sm self-end 2xl:text-lg">{{$subject->created_at->translatedFormat('d M Y')}}</p>
                                 </div>
                             </div>
                             <div class="order-3 flex flex-row justify-between">
                                 <div class="flex gap-4 items-center">
-                                    <p class="md:text-base text-sm uppercase font-medium bg-orange-500/40 mr-4 px-3 xl:px-6 pb-1 pt-1.5 rounded-lg text-green-700">
+                                    <p class="md:text-base text-sm uppercase font-medium bg-orange-500/40 mr-4 px-3 xl:px-6 pb-1 pt-1.5 rounded-lg text-green-700 2xl:text-lg">
                                         {{ucwords($subject->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
-                                    <p class="md:text-lg sm:text-base">{{__('forum.number_comment').$subject->comments_count}}</p>
+                                    <p class="md:text-lg sm:text-base 2xl:text-lg">{{__('forum.number_comment').$subject->comments_count}}</p>
                                 </div>
                                 <a class="linkcard underline text-green-700 font-sans font-semibold" href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
                                 <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
@@ -96,17 +96,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <picture>
-                            @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
-                                @foreach($subject->user->srcset['thumbnail'] as $size => $path)
-                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
-                                            srcset="/{{$path}}">
-                                @endforeach
-                            @endif
-                            <img
-                                src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
-                                alt="{{$subject->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
-                        </picture>
+                        <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
+                             src="{{$subject->user->avatar_thumb}}"
+                             alt="Nom">
                     </article>
                 @endforeach
                     {{$subjects->withQueryString()->links()}}

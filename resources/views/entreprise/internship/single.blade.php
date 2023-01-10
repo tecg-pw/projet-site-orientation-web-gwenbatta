@@ -7,19 +7,19 @@
 <x-commons.navigation :page="$offer_ref->name"></x-commons.navigation>
 <main id="content">
     <div class="flex items-center px-10 xl:px-32 lg:px-16 2xl:px-48 mt-20">
-        <a href="/{{app()->getLocale()}}/entreprise/internship" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/entreprise/internship" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl ">
             {{__('agency.offer_link')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/entreprise/internship/{{$offer_ref->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/entreprise/internship/{{$offer_ref->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{$offer_ref->name}}
         </a>
     </div>
     <section class="xl:px-32 2xl:px-48 px-10 mt-20 mb-20 xl:mb-40" aria-labelledby="{{$offer_ref->slug}}">
         <div class="flex md:flex-row flex-col justify-between mb-8">
             <h2 id="{{$offer_ref->slug}}" role="heading" aria-level="2"
-                class="xl:text-4xl md:text-3xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$offer_ref->name}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
+                class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl text-yellow-800 uppercase font-extrabold font-sans mb-4 xl:mb-20">{{$offer_ref->name}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl 2xl:text-3xl font-semibold"
                href="/{{app()->getLocale()}}/entreprise/internship">{{__('agency.offer_back')}}</a>
         </div>
         <div class="flex md:flex-row flex-col md:gap-x-10">
@@ -28,16 +28,16 @@
                     <img class="rounded-lg xl:absolute -z-10 xl:bottom-36" src="/{{$offer->partner->translation->where('locale',app()->getLocale())->first()->logo_full}}"
                          alt="avatar">
                     <div class="relative xl:bg-yellow-100 rounded-xl px-4 py-8 xl:left-10">
-                        <h3 id="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="underline font-medium text-xl xl:text-2xl mb-2">
+                        <h3 id="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="underline font-medium text-xl xl:text-2xl 2xl:text-3xl mb-2">
                             <a class="text-green-700 hover:text-orange-500" href="/{{app()->getLocale()}}/entreprise/partner/{{$offer->partner->translation->where('locale',app()->getLocale())->first()->slug}}">
                                 {{$offer->partner->translation->where('locale',app()->getLocale())->first()->name}}
                             </a>
                         </h3>
                         <div>
-                            <p class="xl:text-lg">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->adresse}},</p>
-                            <p class="mb-4 xl:text-lg">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->locality_number}} {{$offer->partner->translation->where('locale',app()->getLocale())->first()->locality}}</p>
+                            <p class="text-lg xl:text-xl 2xl:text-2xl">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->adresse}},</p>
+                            <p class="mb-4 text-lg xl:text-xl 2xl:text-2xl">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->locality_number}} {{$offer->partner->translation->where('locale',app()->getLocale())->first()->locality}}</p>
                         </div>
-                        <a class="hover:text-orange-500 underline text-green-700 text-lg xl:text-xl" href="mailto:{{$offer->partner->translation->where('locale',app()->getLocale())->first()->mail}}">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->mail}}</a>
+                        <a class="hover:text-orange-500 underline text-green-700 text-lg xl:text-xl 2xl:text-2xl" href="mailto:{{$offer->partner->translation->where('locale',app()->getLocale())->first()->mail}}">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->mail}}</a>
                         <div class="flex justify-between gap-24 xl:gap-32 items-center mt-4 ">
                             <div class="flex flex-1 gap-3">
                                 <div class="relative group">
@@ -64,13 +64,13 @@
                                 </div>
 
                             </div>
-                            <p class="justify-self-end text-green-500 uppercase xl:text-lg">Partenaire</p>
+                            <p class="justify-self-end text-green-500 uppercase xl:text-lg 2xl:text-xl">{{__('nav.nav_navigation.partner')}}</p>
                         </div>
                     </div>
                 </article>
                 <div class="flex flex-col xl:gap-10 mb-12 xl:mb-0">
                     <a href="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->site_link}}"
-                       class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('agency.partner_view_site')}}</a>
+                       class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl">{{__('agency.partner_view_site')}}</a>
                     @if($offer_ref->pdf)
                     <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline self-end" download="{{$offer_ref->slug}}" title="{{$offer_ref->slug}}"
                        href="/{{$offer_ref->pdf}}">{{__('agency.offer_pdf')}}
@@ -80,18 +80,18 @@
             </div>
             <div class="xl:ml-20 flex flex-col gap-16">
                 <div>
-                    <p class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('agency.offer_description')}}</p>
-                    <div class="text-lg leading-8 xl:max-w-[75%]">
+                    <p class="font-sans text-xl xl:text-2xl 2xl:text-3xl xl:leading-10  2xl:leading-12 font-medium mb-5">{{__('agency.offer_description')}}</p>
+                    <div class="text-lg xl:text-xl  2xl:text-2xl xl:leading-10  2xl:leading-12 leading-8 xl:max-w-[75%]">
                         {!!$offer_ref->description!!}
                     </div>
                 </div>
                 <section aria-labelledby="needed">
                     <h3 id="needed" role="heading" aria-level="3"
-                        class="font-sans text-xl xl:text-2xl font-medium mb-5">{{__('agency.offer_aptitude')}}</h3>
+                        class="font-sans text-xl xl:text-2xl 2xl:text-3xl font-medium mb-5">{{__('agency.offer_aptitude')}}</h3>
                     <div class="flex flex-col lg:flex-row gap-12 xl:gap-32">
                         <section class="border-b-2 border-b-orange-500/40 pb-12 md:border-b-0 md:pb-0 lg:pr-12 xl:pr-24 md:border-r-orange-500/40 lg:border-r-2" aria-labelledby="languages">
                             <h4 id="languages" role="heading" aria-level="4"
-                                class="text-green-500 mb-4 text-lg xl:text-xl">{{__('contact_page.agency_language')}}</h4>
+                                class="text-green-500 mb-4 text-lg xl:text-xl 2xl:text-2xl">{{__('contact_page.agency_language')}}</h4>
                             <ul class="flex flex-col gap-2 list-disc">
                                 @foreach($offer->language as $language)
                                     <li class="flex items-center gap-3">
@@ -99,7 +99,7 @@
                                             <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                     fill="#6f704d"/>
                                         </svg>
-                                        <p>{{ucwords($language->translation->where('locale',app()->getLocale())->first()->name)}}</p>
+                                        <p class="text-lg xl:text-xl 2xl:text-2xl">{{ucwords($language->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                                     </li>
                                 @endforeach
                             </ul>
@@ -107,7 +107,7 @@
                         <div class="flex flex-col xl:gap-12">
                             <section class="border-b-2 border-b-orange-500/40 pb-12 md:border-b-0 xl:pb-0 " aria-labelledby="software">
                                 <h4 id="software" role="heading" aria-level="4"
-                                    class="text-xl text-green-500 mb-4">{{__('agency.offer_software')}}</h4>
+                                    class="text-lg xl:text-xl 2xl:text-2xl text-green-500 mb-4">{{__('agency.offer_software')}}</h4>
                                 <ul class="flex flex-col gap-2 list-disc">
                                     @foreach($offer->software as $software)
                                         <li class="flex items-center gap-3">
@@ -116,7 +116,7 @@
                                                 <circle data-name="Ellipse 50" cx="3.5" cy="3.5" r="3.5"
                                                         fill="#6f704d"/>
                                             </svg>
-                                            <p>{{ucwords($software->translation->where('locale',app()->getLocale())->first()->name)}}</p>
+                                            <p class="text-lg xl:text-xl 2xl:text-2xl">{{ucwords($software->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -140,13 +140,13 @@
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">
                             <div class="md:flex-row flex-col flex justify-between">
-                                <h3 id="{{$other_offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="text-lg md:text-xl xl:text-2xl">{{$other_offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
-                                <p class="xl:text-lg">{{$other_offer->translation->where('locale',app()->getLocale())->first()->created_at->format('d M. Y')}}</p>
+                                <h3 id="{{$other_offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="text-lg md:text-xl xl:text-2xl  2xl:text-3xl">{{$other_offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
+                                <p class="xl:text-lg">{{$other_offer->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d M Y')}}</p>
                             </div>
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col gap-2 max-w-[80%]">
-                                    <div class="text">{!!$other_offer->translation->where('locale',app()->getLocale())->first()->description!!}</div>
-                                    <p class="font-medium xl:text-lg">{{$other_offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
+                                    <div class="xl:text-lg 2xl:text-2xl 2xl:leading-10">{!!$other_offer->translation->where('locale',app()->getLocale())->first()->description!!}</div>
+                                    <p class="font-medium xl:text-lg  2xl:text-xl">{{$other_offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                      width="25"

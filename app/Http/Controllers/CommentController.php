@@ -34,7 +34,7 @@ class CommentController extends Controller
         $data_comment['user_id'] = auth()->user()->id;
 
         $comment = Comment::create($data_comment);
-        Notification::send($subject->user, new AnswerSubject($comment));
+        //Notification::send($subject->user, new AnswerSubject($comment));
 
         return  redirect('/'.$locale.'/forum/show/'.$subject->slug);
     }

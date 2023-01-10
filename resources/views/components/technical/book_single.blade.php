@@ -10,12 +10,12 @@
     <div class="flex justify-between">
         <div>
             <h3 id="{{$book->slug}}" aria-level="3" role="heading"
-                class="font-medium md:text-xl text-lg xl:text-2xl mb-2">{{$book->name}}</h3>
+                class="font-medium md:text-xl text-lg xl:text-2xl 2xl:text-3xl mb-2">{{$book->name}}</h3>
         </div>
     </div>
-    <div class="mb-4 xl:mb-10 xl:text-lg">{!!$book->excerpt!!}</div>
+    <div class="mb-4 xl:mb-10 xl:text-lg 2xl:text-xl">{!!$book->excerpt!!}</div>
     <div class="flex justify-between">
-        <p class="xl:text-lg flex gap-x-3 font-medium">
+        <p class="xl:text-lg 2xl:text-xl flex gap-x-3 font-medium">
             {{__('technicals.doc_course')}}
             <span class="flex gap-2">
                 @foreach($book_ref->course as $course)

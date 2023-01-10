@@ -14,11 +14,11 @@
             <div class="flex flex-1 items-center">
                 <div class="flex-1 order-2 ml-4">
                     <h3 id="{{$alumni_ref->slug}}" role="heading" aria-level="3"
-                        class="text-xl xl:text-2xl">{{$alumni_ref->firstname}} {{$alumni_ref->name}}</h3>
+                        class="text-xl xl:text-2xl 2xl:text-3xl">{{$alumni_ref->firstname}} {{$alumni_ref->name}}</h3>
                     <div class="mt-1 flex justify-between">
                         <div class="flex flex-col xl:flex-row xl:gap-4">
-                            <p class="uppercase xl:text-lg">{{$alumni_ref->status}}</p>
-                            <p class="uppercase xl:text-lg">{{$alumni_ref->begin->format('Y')}}
+                            <p class="uppercase xl:text-lg 2xl:text-xl">{{$alumni_ref->status}}</p>
+                            <p class="uppercase xl:text-lg 2xl:text-xl">{{$alumni_ref->begin->format('Y')}}
                                 -{{$alumni_ref->end->format('Y')}}</p>
                         </div>
                         <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"

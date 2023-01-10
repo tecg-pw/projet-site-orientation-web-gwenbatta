@@ -9,10 +9,10 @@
     <form action="{{$urlAction}}" method="get" class="flex flex-col gap-4">
         <div class="flex justify-between sm:justify-start xl:justify-start">
             <fieldset class="flex flex-col">
-                <label for="jobs" class="xl:text-lg text-green-500 mb-2">{{__('sort.job')}}</label>
+                <label for="jobs" class="text-lg xl:text-xl 2xl:text-2xl text-green-500 mb-2">{{__('sort.job')}}</label>
                 <select id="jobs"
                         name="jobs"
-                        class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1">
+                        class="appearance-none  rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1 2xl:text-xl">
                     <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
                     @foreach($jobs as $job)
                         <option value="{{$job->name}}">
@@ -22,8 +22,8 @@
                 </select>
             </fieldset>
             <fieldset class="flex flex-col ml-16">
-                <label for="agency" class="xl:text-lg text-green-500 mb-2">{{__('sort.agency')}}</label>
-                <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1"
+                <label for="agency" class="text-lg xl:text-xl 2xl:text-2xl text-green-500 mb-2">{{__('sort.agency')}}</label>
+                <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1 2xl:text-xl"
                         id="agency"
                         name="agency">
                     <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
@@ -36,7 +36,7 @@
             </fieldset>
         </div>
         <button type="submit"
-                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 py-3 rounded-2xl text-xl font-semibold xl:max-w-[25%] lg:max-w-[45%] 2xl:max-w-[32%] md:max-w-[58%] sm:max-w-[75%]">
+                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl 2xl:text-2xl font-semibold xl:max-w-[27%] 2xl:max-w-[23%] sm:max-w-[45%] md:max-w-[40%]">
             {{__('sort.button')}}
         </button>
     </form>

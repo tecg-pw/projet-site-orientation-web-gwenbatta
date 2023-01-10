@@ -5,7 +5,7 @@
 <article aria-labelledby="{{$recurring_ref->slug}}"
         {{ $attributes->class(['col-span-2 flex flex-col justify-between bg-white-100 p-5 xl:py-10 xl:px-8 rounded-3xl']) }}>
     <h3 role="heading" aria-level="3" id="{{$recurring_ref->slug}}"
-        class="xl:text-2xl text-xl font-sans font-medium">{{$recurring_ref->name}}</h3>
+        class="xl:text-2xl 2xl:text-3xl text-xl font-sans font-medium">{{$recurring_ref->name}}</h3>
     @if(!(request()->has('show-reponse-'.$recurring_ref->slug)))
         <div class="justify-end flex">
             <a href="?show-reponse-{{$recurring_ref->slug}}#{{$recurring_ref->slug}}" class="">
@@ -21,9 +21,9 @@
         </div>
     @endif
     @if(request()->has('show-reponse-'.$recurring_ref->slug))
-        <p class="mt-8 text-lg leading-8 xl:text-xl xl:mr-36">{{$recurring_ref->description}}</p>
+        <div class="mt-8 text-lg 2xl:text-2xl leading-8 xl:text-xl xl:mr-36">{!! $recurring_ref->description !!}</div>
         <div class="flex justify-end">
-            <a href="/{{str_replace('_','-',app()->getLocale())}}/forum/index#{{$recurring_ref->slug}}"
+            <a href="/{{app()->getLocale()}}/forum/index#{{$recurring_ref->slug}}"
                class="justify-self-end">
                 <span class="sr-only">{{__('recurring.recurring_link')}}</span>
                 <span>

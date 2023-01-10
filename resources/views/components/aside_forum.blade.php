@@ -8,12 +8,12 @@
 <div {{ $attributes->class(['lg:not-sr-only sr-only col-span-2 bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14']) }}>
     <article class="pl-14 pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
         <h3 id="search" aria-level="3" role="heading"
-            class="text-3xl font-sans font-light text-green-700 underline mb-6 mt-20">{{__('forum_aside.label')}}</h3>
+            class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl  font-light text-green-700 underline mb-6 mt-20">{{__('forum_aside.label')}}</h3>
         <x-sort_search.search :urlAction="$urlAction"/>
     </article>
     <article class="px-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="latest">
         <h3 id="latest" aria-level="3" role="heading"
-            class="text-3xl font-light text-green-700 underline mb-6">{{__('forum_aside.latest')}}</h3>
+            class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum_aside.latest')}}</h3>
         <div class="flex flex-col gap-y-8">
             @foreach($latests as $latest)
                 <article class="hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
@@ -21,7 +21,7 @@
                     <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                         <div class="flex-col flex xl:gap-4">
                             <div class="flex gap-2">
-                                <h4 class="order-2 font-medium sm:text-lg xl:text-xl" id="{{$latest->slug}}"
+                                <h4 class="order-2 font-medium sm:text-lg xl:text-xl 2xl:text-2xl" id="{{$latest->slug}}"
                                     role="heading"
                                     aria-level="4">{{$latest->subject}}</h4>
                                 @if($latest->resolved)
@@ -54,13 +54,13 @@
                                 @endif
                             </div>
                             <div class="flex -order-2 relative justify-between">
-                                <p class="sm:text-sm md:text-base uppercase self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
-                                <p class="sm:text-sm md:text-base self-end">{{$latest->created_at->translatedFormat('d M Y')}}</p>
+                                <p class="sm:text-sm md:text-base 2xl:text-lg uppercase self-end">{{$latest->user->firstname}} {{$latest->user->name}} </p>
+                                <p class="sm:text-sm md:text-base 2xl:text-lg self-end">{{$latest->created_at->translatedFormat('d M Y')}}</p>
                             </div>
                         </div>
                         <div class="order-3 flex justify-between">
                             <div class="flex gap-4">
-                                <p class=" font-medium bg-orange-500/40 mr-4 px-3 xl:px-6 pb-1 pt-1.5 rounded-lg text-sm md:text-base uppercase text-green-700">
+                                <p class=" font-medium bg-orange-500/40 mr-4 px-3 xl:px-6 pb-1 pt-1.5 rounded-lg text-sm 2xl:text-lg md:text-base uppercase text-green-700">
                                     {{ucwords($latest->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                             </div>
                             <a class="linkcard underline text-green-700 font-sans font-semibold"
@@ -87,7 +87,7 @@
     </article>
     <article class="px-14 pb-10 mt-8" aria-labelledby="best-rating">
         <h3 id="best-rating" aria-level="3" role="heading"
-            class="text-3xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
+            class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
         <div class="flex flex-col gap-y-8">
             @foreach($ratings as $rating)
                 <article class="hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
@@ -95,7 +95,7 @@
                     <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                         <div class="flex-col flex xl:gap-4">
                             <div class="flex gap-2">
-                                <h4 class="order-2 font-medium sm:text-lg xl:text-xl" id="{{$rating->slug}}"
+                                <h4 class="order-2 font-medium sm:text-lg xl:text-xl 2xl:text-2xl" id="{{$rating->slug}}"
                                     role="heading"
                                     aria-level="4">{{$rating->subject}}</h4>
                                 @if($rating->resolved)
@@ -128,13 +128,13 @@
                                 @endif
                             </div>
                             <div class="flex -order-2 relative justify-between">
-                                <p class="sm:text-sm md:text-base uppercase self-end">{{$rating->user->firstname}} {{$rating->user->name}} </p>
-                                <p class="sm:text-sm md:text-base self-end">{{$rating->created_at->translatedFormat('d M Y')}}</p>
+                                <p class="sm:text-sm md:text-base uppercase 2xl:text-lg self-end">{{$rating->user->firstname}} {{$rating->user->name}} </p>
+                                <p class="sm:text-sm md:text-base self-end 2xl:text-lg">{{$rating->created_at->translatedFormat('d M Y')}}</p>
                             </div>
                         </div>
                         <div class="order-3 flex justify-between">
                             <div class="flex gap-4">
-                                <p class=" font-medium bg-orange-500/40 mr-4 px-3 xl:px-6 pb-1 pt-1.5 rounded-lg text-sm md:text-base uppercase text-green-700">
+                                <p class=" font-medium bg-orange-500/40 mr-4 px-3 xl:px-6 pb-1 pt-1.5 rounded-lg 2xl:text-lg text-sm md:text-base uppercase text-green-700">
                                     {{ucwords($rating->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                             </div>
                             <a class="linkcard underline text-green-700 font-sans font-semibold"

@@ -9,11 +9,11 @@
     <div class="flex flex-1 items-center">
         <div class="flex-1 order-2 ml-4">
             <h3 id="{{$partner_ref->slug}}" role="heading" aria-level="3"
-                class="text-lg xl:text-2xl">{{$partner_ref->name}}</h3>
+                class="text-lg xl:text-2xl 2xl:text-3xl">{{$partner_ref->name}}</h3>
             <div class="mt-1 flex justify-between">
                 <div class="flex flex-col xl:flex-row xl:gap-2">
-                    <p class="xl:text-lg">{{$partner_ref->adresse}},</p>
-                    <p class="uppercase xl:text-lg">{{$partner_ref->locality_number}} {{$partner_ref->locality}}</p>
+                    <p class="xl:text-lg 2xl:text-xl">{{$partner_ref->adresse}},</p>
+                    <p class="uppercase xl:text-lg 2xl:text-xl">{{$partner_ref->locality_number}} {{$partner_ref->locality}}</p>
                 </div>
                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg" width="25"
                      viewBox="0 0 32 27.417">
@@ -35,5 +35,5 @@
         </picture>
     </div>
     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-       href="/{{app()->getLocale()}}/entreprise/partner/{{$partner_ref->slug}}">{{partner_article.blade}}</a>
+       href="/{{app()->getLocale()}}/entreprise/partner/{{$partner_ref->slug}}">{{__('agency.partner_link')}}</a>
 </article>
