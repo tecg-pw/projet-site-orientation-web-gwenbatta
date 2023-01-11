@@ -101,10 +101,12 @@
                                                 srcset="/{{$path}}">
                                     @endforeach
                                 @endif
-                                <img
-                                    src="{{$user->avatars && $user->avatars['tiny'] ? '/' . $user->avatars['tiny'] : '/'.$user->avatar}}"
+                                <img id="avatarSrcset" src="{{$user->avatars && $user->avatars['tiny'] ? '/' . $user->avatars['tiny'] : '/'.$user->avatar}}"
                                     alt="{{$user->title}}" class="rounded-full -order-2">
                             </picture>
+                            <img id="avatarUpdate"
+                                 src=""
+                                 alt="" class="sr-only rounded-full -order-2">
                         </div>
                     </div>
                     <div class="flex flex-col mb-8 mt-4">
@@ -133,10 +135,13 @@
                                                 srcset="/{{$path}}">
                                     @endforeach
                                 @endif
-                                <img
+                                <img id="backSrcset"
                                     src="{{$user->back_images && $user->back_images['tiny'] ? '/' . $user->back_images['tiny'] : '/'.$user->back_image}}"
                                     alt="{{$user->title}}" class="rounded-full -order-2">
                             </picture>
+                            <img id="backUpdate"
+                                 src=""
+                                 alt="" class="sr-only rounded-full -order-2">
                         </div>
                     </div>
                 </div>

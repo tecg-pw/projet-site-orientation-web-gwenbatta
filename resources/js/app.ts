@@ -12,11 +12,6 @@ function init() {
      burgerMenu()
      pdfInputTextValue()
 }
-    updateImageModifyProfil()
-
-
-
-
 
 
 for (let i = 0; i < buttonSearches.length; i++) {
@@ -40,13 +35,22 @@ function pdfInputTextValue() {
 function updateImageModifyProfil() {
     let avatar = document.getElementById('avatar') as HTMLInputElement;
     let imgAvatar = document.querySelector('#avatarUpdate') as HTMLImageElement;
-
+    let imgSrc = document.querySelector('#avatarSrcset') as HTMLImageElement;
+    console.log(imgAvatar);
     avatar.classList.add('sr-only')
 
     function showPreview(event){
+        imgSrc.classList.add('sr-only')
+        imgAvatar.classList.remove('sr-only')
         if(event.target.files.length > 0){
             imgAvatar.src = URL.createObjectURL(event.target.files[0]);
             imgAvatar.style.display = "block";
+            console.log(document.body.clientWidth)
+            if (document.body.clientWidth < 2040){
+            imgAvatar.style.width = '108px'
+            }else{
+                imgAvatar.style.width = '140px'
+            }
         }
     }
     avatar.addEventListener('change', (e) => {
@@ -56,13 +60,21 @@ function updateImageModifyProfil() {
 function updateImageModifyBackImage() {
     let backImage = document.getElementById('back_image') as HTMLInputElement;
     let backAvatar = document.querySelector('#backUpdate') as HTMLImageElement;
+    let imgSrc = document.querySelector('#backSrcset') as HTMLImageElement;
 
     backImage.classList.add('sr-only')
 
     function showPreview(event){
+        imgSrc.classList.add('sr-only')
+        backAvatar.classList.remove('sr-only')
         if(event.target.files.length > 0){
             backAvatar.src = URL.createObjectURL(event.target.files[0]);
             backAvatar.style.display = "block";
+            if (document.body.clientWidth < 2040){
+                backAvatar.style.width = '108px'
+            }else{
+                backAvatar.style.width = '140px'
+            }
         }
     }
     backImage.addEventListener('change', (e) => {
@@ -105,6 +117,6 @@ function handlePassword() {
         });
     });
 }
+
 updateImageModifyBackImage()
-
-
+updateImageModifyProfil()

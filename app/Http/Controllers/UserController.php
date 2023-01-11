@@ -87,13 +87,17 @@ class UserController extends Controller
             'status_id',
             'description',
             'avatar',
+            'avatars',
+            'srcset',
             'newsletter',
             'back_image',
+            'back_images',
+            'srcset_back',
             'email');
 
-        if ($request->input('password_old')!==null) {
+        if ($request->input('password_old') !== null) {
             $validatedData = $request->safe()->all();
-            $validatedData['password'] = password_hash($validatedData['password_new'],PASSWORD_DEFAULT);
+            $validatedData['password'] = password_hash($validatedData['password_new'], PASSWORD_DEFAULT);
         }
         $request['newsletter'] === 'on' ? $validatedData['newsletter'] = true : $validatedData['newsletter'] = false;
 
@@ -101,10 +105,24 @@ class UserController extends Controller
         $uploaded_image = $request->file('avatar');
         if ($uploaded_image) {
             $validatedData['avatar'] = 'img-redimensions/avatars/' . $this->resizeAndSave($uploaded_image);
+            $validatedData['avatars']['thumbnail'] = 'img-redimensions/avatars/' . 'thumbnail-' . $this->resizeAndSaveThumb($uploaded_image);
+            $validatedData['avatars']['full'] = 'img-redimensions/avatars/' . 'full-' . $this->resizeAndSaveFull($uploaded_image);
+            $validatedData['avatars']['tiny'] = 'img-redimensions/avatars/' . 'tiny-' . $this->resizeAndSaveTiny($uploaded_image);
+            $validatedData['srcset'] = [
+                'thumbnail' => $this->srcsetThumb($uploaded_image),
+                'full' => $this->srcsetFull($uploaded_image),
+                'tiny' => $this->srcsetTiny($uploaded_image),
+            ];
         }
         $uploaded_back_image = $request->file('back_image');
         if ($uploaded_back_image) {
             $validatedData['back_image'] = 'img-redimensions/back/' . $this->resizeAndSaveBack($uploaded_back_image);
+            $validatedData['back_images']['full'] = 'img-redimensions/back/' . 'full-' . $this->resizeAndSaveBackFull($uploaded_back_image);
+            $validatedData['back_images']['tiny'] = 'img-redimensions/back/' . 'tiny-' . $this->resizeAndSaveBackTiny($uploaded_back_image);
+            $validatedData['srcset_back'] = [
+                'full' => $this->srcsetBackFull($uploaded_back_image),
+                'tiny' => $this->srcsetBackTiny($uploaded_back_image),
+            ];
         }
 
         auth()->user()->update($validatedData);
