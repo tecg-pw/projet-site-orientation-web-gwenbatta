@@ -6,7 +6,8 @@
 <main id="content">
     <x-recurring.recurrent_questions :recurrings="$recurrings"></x-recurring.recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
-        <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex md:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
+        <div
+            class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex md:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-2xl md:text-3xl md:self-center xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
             @auth()
@@ -14,7 +15,8 @@
                    class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl xl:text-2xl 2xl:text-3xl font-semibold mt-4 md:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
-        <x-sort_search.sort_by_forum :urlAction="$urlAction"  :status="$status" :tags="$tags" :created="$created" class="px-10 2xl:px-48 xl:px-32 lg:px-16 mb-14"></x-sort_search.sort_by_forum>
+        <x-sort_search.sort_by_forum :urlAction="$urlAction" :status="$status" :tags="$tags" :created="$created"
+                                     class="px-10 2xl:px-48 xl:px-32 lg:px-16 mb-14"></x-sort_search.sort_by_forum>
         <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-32 lg:px-16">
             <a class="xl:text-xl 2xl:text-2xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold rounded-lg font-sans bg-orange-100 px-5 py-2"
                href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
@@ -40,7 +42,8 @@
                                         role="heading"
                                         aria-level="3">{{$subject->subject}}</h3>
                                     @if($subject->resolved)
-                                        <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
+                                        <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg"
+                                             width="25"
                                              viewBox="0 0 34.194 34.196">
                                             <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
                                                 <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
@@ -79,8 +82,10 @@
                                         {{ucwords($subject->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                                     <p class="md:text-lg sm:text-base 2xl:text-lg">{{__('forum.number_comment').$subject->comments_count}}</p>
                                 </div>
-                                <a class="linkcard underline text-green-700 font-sans font-semibold" href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
-                                <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
+                                <a class="linkcard underline text-green-700 font-sans font-semibold"
+                                   href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
+                                <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0"
+                                     xmlns="http://www.w3.org/2000/svg"
                                      width="25"
                                      viewBox="0 0 32 27.417">
                                     <path
@@ -103,12 +108,14 @@
                                 @endforeach
                             @endif
                             <img
-                                src="{{$subject->user->logos && $subject->user->logos['thumbnail'] ? '/' . $subject->user->logos['thumbnail'] : '/'.$subject->user->logo}}"
+                                src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
                                 alt="{{$subject->user->title}}" class="rounded-full order-first">
                         </picture>
                     </article>
                 @endforeach
+                <div>
                     {{$subjects->withQueryString()->links()}}
+                </div>
             </div>
             <x-aside_forum :urlAction="$urlAction" :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>

@@ -26,7 +26,7 @@
                             </div>
                             @enderror
                             <input
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                                class="2xl:text-xl border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                                 placeholder="Caron" dusk="name" name="name" id="name" type="text" value="{{old('name')}}">
                         </div>
                         <div class="flex flex-1 flex-col mb-8">
@@ -40,7 +40,7 @@
                             </div>
                             @enderror
                             <input
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                                class="2xl:text-xl border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                                 name="firstname" id="firstname" dusk="firstname" type="text" placeholder="Jordan" value="{{old('firstname')}}">
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         </div>
                         @enderror
                         <input
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            class="2xl:text-xl border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value="{{old('email')}}">
                     </div>
                     <div class="flex flex-col mb-8">
@@ -72,7 +72,7 @@
                         @enderror
                         <div class="flex-1 px-3 items-center  @error('password') outline-red-600 @enderror flex border leading-tight border-orange-500 rounded-xl focus-within:border focus-within:border-2 focus-within:border-green-700 focus-within:bg-orange-100">
                             <input
-                                class="password outline-none font-mono focus:bg-orange-100 py-2 text-gray-700 h-full w-full "
+                                class="2xl:text-xl password outline-none font-mono focus:bg-orange-100 py-2 text-gray-700 h-full w-full "
                                 name="password" dusk="password-field" id="password" type="password" placeholder="azerty">
                             <span class="show-password cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="20" height="20"

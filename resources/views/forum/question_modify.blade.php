@@ -36,7 +36,7 @@
                             <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                         </div>
                         @enderror
-                        <input class="border border-orange-500 rounded-xl py-2 px-3  @error('subject') outline outline-3 outline-red-600 @enderror text-gray-700 leading-tight focus:outline focus:outline-2 focus:outline-green-700 border focus:bg-orange-100"
+                        <input class="2xl:text-xl border border-orange-500 rounded-xl py-2 px-3  @error('subject') outline outline-3 outline-red-600 @enderror text-gray-700 leading-tight focus:outline focus:outline-2 focus:outline-green-700 border focus:bg-orange-100"
                             name="subject" id="subject" type="text" placeholder="{{__('forum_question.question_placeholder')}}" value="{{old('subject')?:$subject->subject}}">
                     </div>
                     <div class="flex flex-col mb-8">
@@ -52,7 +52,7 @@
                         @enderror
                         <textarea
                             cols="30" rows="10"
-                            class="border border-orange-500 rounded-xl @error('description') outline outline-3 outline-red-600 @enderror py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            class="2xl:text-xl border border-orange-500 rounded-xl @error('description') outline outline-3 outline-red-600 @enderror py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="description" id="description"
                             placeholder="{{__('forum_question.description_placeholder')}}">{{old('description')?:$subject->description}}</textarea>
                     </div>

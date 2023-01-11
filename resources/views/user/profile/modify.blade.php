@@ -8,12 +8,12 @@
                 <div class="order-2 flex-1  ml-8 mt-32">
                     <div>
                         <h2 role="heading" id="name" aria-level="2"
-                            class="xl:text-4xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mb-3">{{$user->firstname}} {{$user->name}}</h2>
-                        <p class="uppercase text-2xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
+                            class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mb-3">{{$user->firstname}} {{$user->name}}</h2>
+                        <p class="uppercase text-lg xl:text-2xl 2xl:text-3xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
                     </div>
                     <div class="text-end">
                         <a href="/{{app()->getLocale()}}/user/profile/{{$user->slug}}"
-                           class="hover:text-orange-500 font-sans text-center text-green-700 ml-6 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_back')}}</a>
+                           class="hhover:text-orange-500  font-sans text-green-700 text-lg md:text-xl xl:text-3xl font-semibold underline px-4">{{__('user.user_back')}}</a>
                     </div>
                 </div>
                 <picture>
@@ -41,9 +41,9 @@
             </picture>
         </div>
     </section>
-    <section class="xl:px-30 lg:px-16 2xl:px-48 px-10 mb-32" aria-labelledby="modify">
+    <section class="xl:px-32 lg:px-16 2xl:px-48 px-10 mb-32" aria-labelledby="modify">
         <h2 role="heading" id="modify" aria-level="2"
-            class="text-4xl text-yellow-800 font-extrabold font-sans uppercase">{{__('user.user_modify_title')}}</h2>
+            class="text-2xl md:text-3xl md:self-center xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans mb-20">{{__('user.user_modify_title')}}</h2>
         <div class="flex  mt-14">
             <form action="/{{app()->getLocale()}}/user/modify" method="post" enctype="multipart/form-data"
                   class="flex-1 flex flex-col lg:flex-row lg:gap-20 xl:gap-24">
@@ -51,32 +51,59 @@
                 <div class="flex-1">
                     <div class="flex flex-1">
                         <div class="flex flex-col flex-1 mr-10 mb-8">
-                            <label class="text-green-500 text-2xl" for="name">{{__('user.user_modify_name')}}</label>
+                            <label class="text-green-500 @error('name') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="name">{{__('user.user_modify_name')}}</label>
+                            @error('name')
+                            <div class="flex gap-1.5 items-center">
+                                <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                            </div>
+                            @enderror
                             <input
-                                class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight"
+                                class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight 2xl:text-xl"
                                 placeholder="{{__('user.user_modify_name_placeholder')}}" name="name" id="name"
                                 type="text" value="{{old('name')?:$user->name}}">
                         </div>
                         <div class="flex flex-col flex-1 mb-8">
-                            <label class="text-green-500 text-2xl"
+                            <label class="text-green-500 @error('firstname') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl"
                                    for="firstname">{{__('user.user_modify_firstname')}}</label>
+                            @error('firstname')
+                            <div class="flex gap-1.5 items-center">
+                                <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                            </div>
+                            @enderror
                             <input
-                                class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                                class="2xl:text-xl focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                                 name="firstname" id="firstname" type="text"
                                 placeholder="{{__('user.user_modify_firstname_placeholder')}}"
                                 value="{{old('firstname')?:$user->firstname}} ">
                         </div>
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-2xl" for="email">{{__('user.user_modify_mail')}}</label>
+                        <label class="text-green-500 @error('email') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="email">{{__('user.user_modify_mail')}}</label>
+                        @error('email')
+                        <div class="flex gap-1.5 items-center">
+                            <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
+                        </div>
+                        @enderror
                         <input
-                            class="focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            class="2xl:text-xl focus:outline-3 focus:outline-green-700 border focus:bg-orange-100 border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="email" id="email" type="email"
                             placeholder="{{__('user.user_modify_mail_placeholder')}}"
                             value="{{old('email')?:$user->email}}">
                     </div>
                     <div class="flex flex-col mb-8">
-                        <p class="text-green-500 text-2xl">{{__('user.user_modify_picture')}}</p>
+                        <p class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl">{{__('user.user_modify_picture')}}</p>
                         @error('avatar')
                         <div class="flex gap-1.5 items-center">
                             <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -110,7 +137,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col mb-8 mt-4">
-                        <p class="text-green-500 text-2xl">{{__('user.user_modify_banner')}}</p>
+                        <p class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl">{{__('user.user_modify_banner')}}</p>
                         @error('back_image')
                         <div class="flex gap-1.5 items-center">
                             <svg class="h-7 w-7 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -147,9 +174,9 @@
                 </div>
                 <div class="flex-1 flex flex-col">
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-2xl" for="status_id">{{__('user.user_modify_status')}}</label>
+                        <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl" for="status_id">{{__('user.user_modify_status')}}</label>
                         <select name="status_id" id="status_id"
-                                class="appearance-none max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
+                                class="2xl:text-xl appearance-none max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
                             @foreach($status as $status_ref)
                                 <option @selected($status_ref->id === $user->status_id)
                                         value="{{$status_ref->id}}">{{mb_strtoupper($status_ref->translation->where('locale',app()->getLocale())->first()->name)}}</option>
@@ -157,7 +184,7 @@
                         </select>
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl"
+                        <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl"
                                for="password_old">
                             {{__('Old Password')}}
                         </label>
@@ -173,7 +200,7 @@
                         <div
                             class="flex-1 px-3 items-center  @error('password') outline-red-600 @enderror flex border leading-tight border-orange-500 rounded-xl focus-within:border focus-within:border-2 focus-within:border-green-700 focus-within:bg-orange-100">
                             <input
-                                class="password outline-none font-mono focus:bg-orange-100 py-2 text-gray-700 h-full w-full "
+                                class="2xl:text-xl password outline-none font-mono focus:bg-orange-100 py-2 text-gray-700 h-full w-full "
                                 name="password_old" dusk="password-field" id="password_old" type="password"
                                 placeholder="azerty">
                             <span class="show-password cursor-pointer">
@@ -188,7 +215,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl"
+                        <label class="2xl:text-3xl text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl"
                                for="password_new">
                             {{__('New Password')}}
                         </label>
@@ -204,7 +231,7 @@
                         <div
                             class="flex-1 px-3 items-center  @error('password') outline-red-600 @enderror flex border leading-tight border-orange-500 rounded-xl focus-within:border focus-within:border-2 focus-within:border-green-700 focus-within:bg-orange-100">
                             <input
-                                class="password outline-none font-mono focus:bg-orange-100 py-2 text-gray-700 h-full w-full "
+                                class="2xl:text-xl password outline-none font-mono focus:bg-orange-100 py-2 text-gray-700 h-full w-full "
                                 name="password_new" dusk="password-field" id="password_new" type="password"
                                 placeholder="azerty">
                             <span class="show-password cursor-pointer">
@@ -219,10 +246,10 @@
                         </div>
                     </div>
                     <div class="flex flex-col mb-8 ">
-                        <label class="text-green-500 text-2xl"
+                        <label class="2xl:text-3xl text-green-500 text-2xl"
                                for="description">{{__('user.user_modify_description')}}</label>
                         <textarea
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            class="2xl:text-xl border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="description" id="description" cols="30" rows="10"
                             placeholder="{{__('user.user_modify_description')}}">{{old('description')?:$user->description}}</textarea>
                     </div>
@@ -258,11 +285,11 @@
                                                       </g>
                                                     </svg>
                                                 </span>
-                        <label class="mt-1 text-green-500 text-lg xl:text-2xl"
+                        <label class="2xl:text-3xl mt-1 text-green-500 text-lg xl:text-2xl"
                                for="newsletter">{{__('login_register.newsletter')}}</label>
                     </div>
                     <button
-                        class="border-2 mt-4 self-end border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_save')}}</button>
+                        class="2xl:text-3xl border-2 mt-4 self-end border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-2xl font-semibold mb-32">{{__('user.user_save')}}</button>
                 </div>
             </form>
         </div>

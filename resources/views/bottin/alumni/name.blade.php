@@ -2,7 +2,7 @@
 <main id="content" class="">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
         <a href="/{{app()->getLocale()}}/bottin"
-           class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+           class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{__('nav.nav_navigation.people')}}
         </a>
         <svg class="h-7 w-7 text-green-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -11,7 +11,7 @@
             <polyline points="9 6 15 12 9 18"/>
         </svg>
         <a href="/{{app()->getLocale()}}/bottin/alumni/{{$alumni->slug}}"
-           class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+           class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{$alumni->firstname}} {{$alumni->name}}
         </a>
     </div>
@@ -19,22 +19,21 @@
              aria-labelledby="name">
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"
-                class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{__($alumni->firstname)}} {{__($alumni->name)}}</h2>
-            <a class="underline md:text-xl xl:text-2xl hover:text-orange-500"
+                class="2xl:text-5xl xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{__($alumni->firstname)}} {{__($alumni->name)}}</h2>
+            <a class="underline md:text-xl xl:text-2xl 2xl:text-3xl hover:text-orange-500"
                href="/{{app()->getLocale()}}/bottin/alumni">{{__('people.alumni_button')}}</a>
         </div>
         <div class="flex flex-col md:flex-row gap-6 xl:gap-12 mt-16">
             <div class="mt-4 mb-7 order-2">
                 <div class="flex gap-12">
                     <div>
-                        <div
-                            class="mb-4 flex gap-8 md:flex-col md:gap-y-2 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
-                            <p class="">{{__($alumni->status)}}</p>
+                        <div class="mb-4 flex gap-8 md:flex-col md:gap-y-2 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl 2xl:text-2xl">
+                            <p>{{__($alumni->status)}}</p>
                             <p>{{($alumni->begin->format('Y'))}} - {{($alumni->end->format('Y'))}}</p>
                             <a class="hover:text-orange-500 underline text-green-700"
                                href="/{{app()->getLocale()}}/about/job/{{__($alumni->job_slug)}}">{{__($alumni->job)}}</a>
                         </div>
-                        <div class="flex gap-y-1.5 flex-col xl:gap-y-2.5 mb-5 text-xl">
+                        <div class="flex gap-y-1.5 flex-col xl:gap-y-2.5 mb-5 text-lg xl:text-xl 2xl:text-2xl">
                             <a class="hover:text-orange-500 text-green-700 underline"
                                href="mailto:{{__($alumni->mail)}}">{{__($alumni->mail)}}</a>
                             <a class="hover:text-orange-500 text-green-700 underline text-xl"
@@ -73,31 +72,31 @@
                     </div>
                 </div>
                 @if(strip_tags($alumni->description) === "")
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 2xl:text-2xl 2xl:leading-12">
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl 2xl:text-2xl 2xl:leading-12 xl:leading-10 xl:max-w-[65%]">
                         {!! $alumni->description !!}
                     </div>
                 @endif
             </div>
             <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
                 <picture>
-                    @if($alumni->srcset && $alumni->srcset['thumbnail'])
-                        @foreach($alumni->srcset['thumbnail'] as $size => $path)
+                    @if($alumni->srcset && $alumni->srcset['full'])
+                        @foreach($alumni->srcset['full'] as $size => $path)
                             <source media="(max-width: {{$size}}px)"
                                     srcset="/{{$path}}">
                         @endforeach
                     @endif
                     <img
-                        src="{{$alumni->logos && $alumni->logos['thumbnail'] ? '/' . $alumni->logos['thumbnail'] : '/'.$alumni->logo}}"
+                        src="{{$alumni->logos && $alumni->logos['full'] ? '/' . $alumni->logos['full'] : '/'.$alumni->logo}}"
                         alt="{{$alumni->title}}" class="xl:mb-6 rounded-3xl">
                 </picture>
                 <div class="flex flex-col mt-8">
                     <a href="{{$alumni->link_portfolio}}"
-                       class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('people.bottin_portfolio')}}</a>
-                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-end"
+                       class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl">{{__('people.bottin_portfolio')}}</a>
+                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-end 2xl:text-3xl"
                        href="{{$alumni->link_github}}">
                 <span class="mr-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
@@ -106,7 +105,7 @@
                               transform="translate(-1.999 -2.247)" fill="#4e6458"/>
                         </svg>
                     </span>
-                        <span class="xl:mt-0 mt-1.5">{{__('people.bottin_github')}}</span>
+                        <span class="xl:mt-0 mt-1.5 ">{{__('people.bottin_github')}}</span>
                     </a>
                 </div>
             </div>
@@ -115,8 +114,8 @@
     <article class="bg-yellow-600 2xl:px-48 px-10 xl:px-32 lg:px-16 pb-40 pt-20" aria-labelledby="projects">
         <div class="justify-between flex flex-col mb-8 md:flex-row">
             <h2 id="projects" role="heading" aria-level="2"
-                class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
+                class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
+            <a class="2xl:text-3xl hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div
@@ -126,7 +125,7 @@
                            :project_ref="$project->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
             @if(count($projects) === 0)
-                <p class="xl:text-xl text-lg">{{__('people.bottin_no_project')}}</p>
+                <p class="xl:text-xl 2xl:text-2xl text-lg">{{__('people.bottin_no_project')}}</p>
             @endif
         </div>
     </article>

@@ -1,29 +1,29 @@
 <x-commons.navigation :page="$teacher->firstname.' '.$teacher->name"></x-commons.navigation>
 <main id="content" class="">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
-        <a href="/{{app()->getLocale()}}/bottin" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/bottin" class="2xl:text-2xl hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{__('nav.nav_navigation.people')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher->slug}}" class="2xl:text-2xl underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{$teacher->firstname}} {{$teacher->name}}
         </a>
     </div>
     <section class="mt-20 px-10 2xl:px-48 xl:px-32 lg:px-16 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
         <div class=" flex flex-col justify-between text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"
-                class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$teacher->firstname}} {{$teacher->name}}</h2>
-            <a class="underline md:text-xl xl:text-2xl hover:text-orange-500" href="/{{app()->getLocale()}}/bottin">{{__('people.teacher_button')}}</a>
+                class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$teacher->firstname}} {{$teacher->name}}</h2>
+            <a class="2xl:text-3xl underline md:text-xl xl:text-2xl hover:text-orange-500" href="/{{app()->getLocale()}}/bottin">{{__('people.teacher_button')}}</a>
         </div>
         <div class="flex flex-col md:flex-row gap-6 xl:gap-12 mt-16">
             <div class="mt-4 mb-7 order-2">
                 <div class="flex gap-12">
                     <div>
-                        <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
+                        <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl 2xl:text-2xl">
                             <p class="">{{$teacher->status}}</p>
                             <p>{{$teacher->begin->format('Y')}}</p>
                         </div>
-                        <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-xl">
+                        <div class="flex gap-14 xl:flex-col xl:gap-y-2.5 mb-5 text-lg xl:text-xl 2xl:text-2xl">
                             <a class="hover:text-orange-500 text-green-700 underline" href="mailto:{{$teacher->mail}}">{{$teacher->mail}}</a>
                         </div>
                         <div class="flex flex-1 mb-6 gap-5">
@@ -59,25 +59,25 @@
                     </div>
                 </div>
                 @if(strip_tags($teacher->description) === "")
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 2xl:text-2xl">
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%]">
+                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[65%] 2xl:text-2xl 2xl:leading-12">
                         {!!$teacher->description!!}
                     </div>
                 @endif
             </div>
             <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
                 <picture>
-                    @if($teacher->srcset && $teacher->srcset['thumbnail'])
-                        @foreach($teacher->srcset['thumbnail'] as $size => $path)
+                    @if($teacher->srcset && $teacher->srcset['full'])
+                        @foreach($teacher->srcset['full'] as $size => $path)
                             <source media="(max-width: {{$size}}px)"
                                     srcset="/{{$path}}">
                         @endforeach
                     @endif
                     <img
-                        src="{{$teacher->logos && $teacher->logos['thumbnail'] ? '/' . $teacher->logos['thumbnail'] : '/'.$teacher->logo}}"
+                        src="{{$teacher->logos && $teacher->logos['full'] ? '/' . $teacher->logos['full'] : '/'.$teacher->logo}}"
                         alt="{{$teacher->title}}" class="xl:mb-6 rounded-3xl">
                 </picture>
                 <div class="flex flex-col mt-8">
@@ -98,8 +98,8 @@
     </section>
     <article class="2xl:px-48 bg-yellow-600 xl:px-32 lg:px-16 px-10 pb-24 pt-20" aria-labelledby="classes">
         <div class="flex xl:flex-row flex-col justify-between mb-8">
-            <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('people.bottin_course') . ( $teacher->firstname . ' ' .$teacher->name)}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold" href="/{{app()->getLocale()}}/about#course">{{__('people.teacher_course')}}</a>
+            <h2 id="classes" role="heading" aria-level="2" class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('people.bottin_course') . ( $teacher->firstname . ' ' .$teacher->name)}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl 2xl:text-3xl font-semibold" href="/{{app()->getLocale()}}/about#course">{{__('people.teacher_course')}}</a>
         </div>
         <div  class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($courses as $classe_ref)

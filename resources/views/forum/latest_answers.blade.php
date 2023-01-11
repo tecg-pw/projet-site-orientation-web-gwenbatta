@@ -1,38 +1,38 @@
 @php
-    $urlAction = "/".app()->getLocale()."/forum/latest-answers"
+    $urlAction = "/".app()->getLocale()."/forum/my-talks"
 @endphp
 
-
-<x-commons.navigation :page="__('forum.latest_answer')"></x-commons.navigation>
+<x-commons.navigation :page="__('forum.my_talks')"></x-commons.navigation>
 <main id="content">
     <x-recurring.recurrent_questions :recurrings="$recurrings"></x-recurring.recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
-        <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex justify-between mb-8 xl:mb-24 items-center">
+        <div class="px-10 xl:px-32 lg:px-16 2xl:px-48 flex justify-between mb-8 xl:mb-24 items-center">
             <h2 id="forum" aria-level="2" role="heading"
-                class="text-4xl uppercase font-extrabold text-yellow-800 font-sans text-center">{{__('forum.index_title')}}</h2>
+                class="text-2xl md:text-3xl md:self-center xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
             @auth()
-                <a href="/{{app()->getLocale()}}/forum/show"
-                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
+                <a href="/{{app()->getLocale()}}/forum/question"
+                   class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl xl:text-2xl 2xl:text-3xl font-semibold mt-4 md:mt-0 xl:max-w-[27%]">{{__('forum.add_question')}}</a>
             @endauth
         </div>
-        <x-sort_search.sort_by_forum :urlAction="$urlAction" :status="$status" :tags="$tags" :created="$created" class="2xl:px-48 px-10 xl:px-32 lg:px-16 mb-14"></x-sort_search.sort_by_forum>
+        <x-sort_search.sort_by_forum :urlAction="$urlAction" :status="$status" :tags="$tags" :created="$created"
+                                     class="2xl:px-48 px-10 xl:px-32 lg:px-16 mb-14"></x-sort_search.sort_by_forum>
         <div class="flex items-start md:flex-row flex-col xl:gap-32 mb-12 px-10 2xl:px-48 xl:px-32 lg:px-16">
-            <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
+            <a class="2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans  px-5 py-2"
                href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
-            <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold rounded-lg bg-orange-100 font-sans px-5 py-2"
+            <a class="rounded-lg bg-orange-100 2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/{{app()->getLocale()}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
-            @auth()
-                <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-                   href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
-                <a class="xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-                   href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
-            @endauth
+            <a class="2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
+               href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
+            <a class="2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
+               href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
         </div>
         <div class="lg:grid lg:grid-cols-5 mb-36">
             <div class="lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10">
                 @foreach($comments as $comment)
-                    <article class="flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl" aria-labelledby="{{$comment->slug}}">
-                        <div class="hover:bg-orange-100 relative flex mb-5 rounded-xl order-3 bg-white-100 p-3 border-2 border-orange-500 gap-2">
+                    <article class="flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl"
+                             aria-labelledby="{{$comment->slug}}">
+                        <div
+                            class="hover:bg-orange-100 relative flex mb-5 rounded-xl order-3 bg-white-100 p-3 border-2 border-orange-500 gap-2">
                             <h3 id="{{$comment->subject->slug}}" aria-level="3" role="heading"
                                 class="order-2 font-medium xl:text-xl">
                                 {{$comment->subject->subject}}
@@ -65,7 +65,8 @@
                                     </g>
                                 </svg>
                             @endif
-                            <a class="cursor-pointer linkcard" href="/{{app()->getLocale()}}/forum/show/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
+                            <a class="cursor-pointer linkcard"
+                               href="/{{app()->getLocale()}}/forum/show/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
                         </div>
                         <p class="xl:leading-8 xl:mt-6 mt-4">
                             {{$comment->content}}
@@ -73,7 +74,8 @@
                         <p class="text-green-500 font-medium xl:text-lg mt-4 mb-0.5 xl:mb-2">{{__('forum.latest_comment')}}</p>
                         <div class="flex -order-1 items-center ">
                             <div class="order-2 ml-2 mt-1 xl:ml-4 xl:mt-0">
-                                <a href="/{{app()->getLocale()}}/user/profile/{{$comment->user->slug}}" class="text-base hover:text-orange-500 uppercase self-end">{{$comment->user->firstname}} {{$comment->user->name}} </a>
+                                <a href="/{{app()->getLocale()}}/user/profile/{{$comment->user->slug}}"
+                                   class="text-base hover:text-orange-500 uppercase self-end">{{$comment->user->firstname}} {{$comment->user->name}} </a>
                                 <p class="xl:text-base">{{$comment->created_at-> format('d M. Y')}}</p>
                             </div>
                             <picture>
@@ -84,12 +86,15 @@
                                     @endforeach
                                 @endif
                                 <img
-                                    src="{{$comment->user->avatars && $comment->user->avatars['thumbnail'] ? '/' . $comment->user->avatars['thumbnail'] : '/'.$comment->user->avatar}}"
-                                    alt="{{$comment->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
+                                    src="{{$comment->user->avatars && $comment->user->avatars['thumbnail'] ? '/' . $comment->user->avatars['tiny'] : '/'.$comment->user->avatar}}"
+                                    alt="{{$comment->user->title}}"
+                                    class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
                             </picture>
                         </div>
                         <div class="relative flex order-7 gap-1.5">
-                            <form action="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}/comment/like/{{$comment->id}}" method="post">
+                            <form
+                                action="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}/comment/like/{{$comment->id}}"
+                                method="post">
                                 @csrf
                                 <label class="sr-only" for="like">Liker</label>
                                 <button name="like" id="like" type="submit">

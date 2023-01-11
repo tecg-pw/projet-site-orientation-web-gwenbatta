@@ -5,7 +5,7 @@
 ])
 
 
-<div {{ $attributes->class(['lg:not-sr-only sr-only col-span-2 bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14']) }}>
+<div {{ $attributes->class(['lg:not-sr-only sr-only col-span-2 bg-yellow-600 flex flex-col gap-y-6 pl-14 pb-14'])}}>
     <article class="pl-14 pr-14 border-b-orange-500/40 border-b-2 pb-10" aria-labelledby="search">
         <h3 id="search" aria-level="3" role="heading"
             class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl  font-light text-green-700 underline mb-6 mt-20">{{__('forum_aside.label')}}</h3>

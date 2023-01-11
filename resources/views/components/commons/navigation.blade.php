@@ -45,8 +45,7 @@
     <a href="/{{app()->getLocale()}}/#content" class="sr-only">{{__('nav.nav_avoid content')}}</a>
     <nav class="flex flex-col relative fixed" aria-labelledby="navigation">
         <h2 class="sr-only" id="navigation" role="heading" aria-level="2">{{__('nav.nav_title')}}</h2>
-        <div
-            class="bg-green-700 text-white-100 font-sans flex gap-x-10 justify-between lg:px-16 xl:px-32 2xl:px-48 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl">
+        <div class="bg-green-700 text-white-100 font-sans flex gap-x-10 justify-between lg:px-16 xl:px-32 2xl:px-48 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl 2xl:text-2xl">
             <ul class="flex gap-x-1">
                 @php
                     $segments = Request::segments();
@@ -87,8 +86,7 @@
                 </div>
             @endauth
         </div>
-        <div
-            class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-8 lg:px-16 xl:px-32 2xl:px-48 px-5 lg:gap-x-7 xl:pt-8 xl:pb-8">
+        <div class="relative z-30 flex flex-1 items-center justify-between order-2 bg-yellow-100 py-8 lg:px-16 xl:px-32 2xl:px-48 px-5 lg:gap-x-7 xl:pt-8 xl:pb-8">
             <div class="group ml-4 group relative">
                 <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="170.001" height="77.656"
                      viewBox="0 0 170.001 77.656">
@@ -152,7 +150,7 @@
                 </svg>
                 <a href="/{{app()->getLocale()}}" class="linkcard">{{__('nav.nav_link_home')}}</a>
             </div>
-            <ul class="sr-only lg:not-sr-only flex xl:justify-start lg:gap-x-3 xl:gap-x-5 text-green-700 lg:text-lg xl:text-xl lg:justify-start flex-1 font-sans font-semibold">
+            <ul class="sr-only lg:not-sr-only flex xl:justify-start lg:gap-x-3 xl:gap-x-5 text-green-700 lg:text-lg xl:text-xl 2xl:text-2xl lg:justify-start flex-1 font-sans font-semibold">
                 <li><a class="hover:text-orange-500"
                        href="/{{app()->getLocale()}}/bottin/alumni"> {{__('nav.nav_navigation.alumni')}}</a></li>
                 <li><a class="hover:text-orange-500"
@@ -178,7 +176,7 @@
                 </div>
             </div>
             <div class="burger_position bg-green-200 min-w-full min-h-full z-20 ">
-                <ul class="xl:max-w-[30%] flex-1 bg-green-700 font-sans text-lg xl:text-xl text-white-100 font-semibold flex flex-col justify-between py-6 gap-4 xl:gap-6 xl:py-7 px-5 h-full">
+                <ul class="xl:max-w-[30%] flex-1 bg-green-700 font-sans text-lg xl:text-xl 2xl:text-2xl text-white-100 font-semibold flex flex-col justify-between py-6 gap-4 xl:gap-6 xl:py-7 2xl:py-10 px-5 h-full">
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2">
                         <a class="group flex flex-1 justify-between" href="/{{app()->getLocale()}}/project/index">
                             <span>

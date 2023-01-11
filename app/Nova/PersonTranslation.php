@@ -55,7 +55,7 @@ class PersonTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            File::make('Logo de l\'entreprise', 'avatar')->store(function (Request $request, $model) {
+            File::make('Avatar', 'avatar')->store(function (Request $request, $model) {
                 $ext = $request->avatar->getClientOriginalExtension();
                 $name = sha1_file($request->avatar);
 

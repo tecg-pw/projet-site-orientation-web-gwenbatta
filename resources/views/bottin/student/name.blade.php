@@ -1,28 +1,28 @@
 <x-commons.navigation :page="$student->firstname.' '.$student->name"></x-commons.navigation><main id="content" class="">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
-        <a href="/{{app()->getLocale()}}/bottin" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/bottin" class="2xl:text-2xl hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{__('nav.nav_navigation.people')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/bottin/student/{{$student->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/bottin/student/{{$student->slug}}" class="2xl:text-2xl underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{$student->firstname}} {{$student->name}}
         </a>
     </div>
     <section class="mt-20 px-10 2xl:px-48 xl:px-32 lg:px-16 flex flex-col mb-20 xl:mb-36 gap-x-11" aria-labelledby="name">
         <div class=" flex flex-col justify-between gap-y-2 text-green-700 font-sans font-semibold md:flex-row">
             <h2 id="name" role="heading" aria-level="2"
-                class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$student->firstname}} {{$student->name}}</h2>
-            <a class="underline md:text-xl xl:text-2xl hover:text-orange-500" href="/{{app()->getLocale()}}/bottin">{{__('people.bottin_button')}}</a>
+                class="2xl:text-5xl xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold text-yellow-800 font-sans">{{$student->firstname}} {{$student->name}}</h2>
+            <a class="underline md:text-xl xl:text-2xl hover:text-orange-500 2xl:text-3xl" href="/{{app()->getLocale()}}/bottin">{{__('people.bottin_button')}}</a>
         </div>
         <div class="flex flex-col md:flex-row gap-6 xl:gap-12 mt-16">
             <div class="xl:mt-4 mb-8 order-2">
                 <div class="flex gap-12">
                     <div>
-                        <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl">
+                        <div class="mb-4 flex gap-8 xl:flex-row xl:gap-24 uppercase text-lg xl:text-xl 2xl:text-2xl">
                             <p class="">{{$student->status}}</p>
                             <p>{{$student->begin->format('Y')}}</p>
                         </div>
-                        <div class="flex flex-col gap-y-1.5 xl:gap-y-2.5 mb-5 text-xl">
+                        <div class="flex flex-col gap-y-1.5 xl:gap-y-2.5 mb-5 text-lg xl:text-xl 2xl:text-2xl">
                             <a class="hover:text-orange-500 text-green-700 underline" href="mailto:{{$student->mail}}">{{$student->mail}}</a>
                             <a class="hover:text-orange-500 text-green-700 underline text-xl" href="{{$student->link_portfolio}}">{{$student->link_portfolio}}</a>
                         </div>
@@ -59,32 +59,32 @@
                     </div>
                 </div>
                 @if(strip_tags($student->description) === "")
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl 2xl:text-2xl xl:leading-10">
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10 xl:max-w-[80%]">
+                    <div class="flex flex-col gap-6 text-lg leading-8 2xl:text-2xl 2xl:leading-12 xl:text-xl xl:leading-10 xl:max-w-[80%]">
                         {!!$student->description!!}
                     </div>
                 @endif
 
             </div>
-            <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col">
+            <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col 2xl:min-w-[500px]">
                 <picture>
-                    @if($student->srcset && $student->srcset['thumbnail'])
-                        @foreach($student->srcset['thumbnail'] as $size => $path)
+                    @if($student->srcset && $student->srcset['full'])
+                        @foreach($student->srcset['full'] as $size => $path)
                             <source media="(max-width: {{$size}}px)"
                                     srcset="/{{$path}}">
                         @endforeach
                     @endif
                     <img
-                        src="{{$student->logos && $student->logos['thumbnail'] ? '/' . $student->logos['thumbnail'] : '/'.$student->logo}}"
+                        src="{{$student->logos && $student->logos['full'] ? '/' . $student->logos['full'] : '/'.$student->logo}}"
                         alt="{{$student->title}}" class="xl:mb-6 rounded-3xl">
                 </picture>
                 <div class="flex flex-col mt-8">
                     <a href="{{$student->link_portfolio}}"
-                       class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl">{{__('people.bottin_portfolio')}}</a>
-                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-end"
+                       class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl">{{__('people.bottin_portfolio')}}</a>
+                    <a class="group hover:text-orange-500 self-center flex font-sans text-end text-green-700 xl:text-2xl font-semibold underline px-4 py-6 self-end 2xl:text-3xl"
                        href="{{$student->link_github}}">
                 <span class="mr-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
@@ -102,8 +102,8 @@
     <article class="bg-yellow-600 2xl:px-48 px-10 xl:px-32 lg:px-16 pb-40 pt-20" aria-labelledby="projects">
         <div class="justify-between flex flex-col mb-8 md:flex-row">
             <h2 id="projects" role="heading" aria-level="2"
-                class="xl:text-4xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
-            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl font-semibold"
+                class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl uppercase font-extrabold font-sans mb-4 xl:mb-20">{{__('project.project_other')}}</h2>
+            <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl 2xl:text-3xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div class="md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8 flex flex-col items-center gap-y-4 justify-center">
