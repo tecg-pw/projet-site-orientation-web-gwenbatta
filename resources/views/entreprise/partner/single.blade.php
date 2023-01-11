@@ -81,16 +81,16 @@
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl  2xl:text-2xl xl:leading-10  2xl:leading-12 xl:max-w-[65%]">
+                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl  2xl:text-2xl xl:leading-10  2xl:leading-12 ">
                         {!!$partner->description!!}
                     </div>
                 @endif
             </div>
-            <div>
+            <div class="lg:min-w-[345px]">
                 <picture>
                     @if($partner->srcset && $partner->srcset['full'])
                         @foreach($partner->srcset['full'] as $size => $path)
-                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                            <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
                         @endforeach
                     @endif
                     <img

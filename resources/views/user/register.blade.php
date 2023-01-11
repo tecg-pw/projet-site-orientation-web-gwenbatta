@@ -1,14 +1,14 @@
 <x-commons.navigation :page="__('login_register.register_title')"></x-commons.navigation>
 <main id="content">
-    <section class="mt-20 mb-36 px-10 lg:px-16 xl:px-32 2xl:px-48 flex 2xl:px-48 items-center gap-x-10" aria-labelledby="register">
-        <div>
+    <section class="px-10 lg:px-16 xl:px-32 2xl:px-48 py-20 items-center xl:gap-24 flex justify-center" aria-labelledby="register">
+        <div class="px-10">
             <div class="flex flex-col">
-                <h2 class="text-2xl md:text-3xl xl:text-4xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6" role="heading" aria-level="2" id="register">
+                <h2 class="text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl uppercase font-bold text-yellow-800 mb-7 font-sans order-1 mt-6" role="heading" aria-level="2" id="register">
                     {{__('login_register.register_title')}}
                 </h2>
             </div>
             <div class="flex flex-1">
-                <a class="hover:text-orange-500 font-sans text-green-700 self-center md:text-xl xl:text-xl font-semibold underline flex-1"
+                <a class="hover:text-orange-500 font-sans text-green-700 self-center md:text-xl xl:text-xl 2xl:text-2xl font-semibold underline flex-1"
                    href="/{{app()->getLocale()}}/user/login">{{__('login_register.login_link')}}</a>
             </div>
             <div class="flex mt-14">
@@ -16,7 +16,7 @@
                     @csrf
                     <div class="xl:flex-row flex-col flex flex-1">
                         <div class="flex flex-1 flex-col xl:mr-10 mb-8">
-                            <label class="text-green-500 @error('name') text-red-400 @enderror text-lg xl:text-2xl" for="name">{{__('login_register.name')}}</label>
+                            <label class="text-green-500 @error('name') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="name">{{__('login_register.name')}}</label>
                             @error('name')
                             <div class="flex gap-1.5 items-center">
                                 <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -30,7 +30,7 @@
                                 placeholder="Caron" dusk="name" name="name" id="name" type="text" value="{{old('name')}}">
                         </div>
                         <div class="flex flex-1 flex-col mb-8">
-                            <label class="text-green-500 @error('firstname') text-red-400 @enderror text-lg xl:text-2xl" for="firstname">{{__('login_register.firstname')}}</label>
+                            <label class="2xl:text-3xl text-green-500 @error('firstname') text-red-400 @enderror text-lg xl:text-2xl" for="firstname">{{__('login_register.firstname')}}</label>
                             @error('firstname')
                             <div class="flex gap-1.5 items-center">
                                 <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 @error('email') text-red-400 @enderror text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>
+                        <label class="2xl:text-3xl text-green-500 @error('email') text-red-400 @enderror text-lg xl:text-2xl" for="email">{{__('login_register.mail')}}</label>
                         @error('email')
                         <div class="flex gap-1.5 items-center">
                             <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,7 +59,7 @@
                             name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value="{{old('email')}}">
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl" for="password">
+                        <label class="2xl:text-3xl text-green-500 @error('password') text-red-400 @enderror text-lg xl:text-2xl" for="password">
                             {{__('login_register.password')}}
                         </label>
                         @error('password')
@@ -84,7 +84,6 @@
                         </svg>
                     </span>
                         </div>
-
                     </div>
                     <div class="flex mb-8 items-center gap-3">
                         <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox"
@@ -118,12 +117,12 @@
                                                       </g>
                                                     </svg>
                                                 </span>
-                        <label class="mt-1 text-green-500 text-lg xl:text-2xl"
+                        <label class="2xl:text-3xl mt-1 text-green-500 text-lg xl:text-2xl"
                                for="newsletter">{{__('login_register.newsletter')}}</label>
                     </div>
                     <div class="flex flex-1 justify-end mt-8 xl:mt-0">
                         <input
-                            class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 md:text-xl xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex-1 xl:flex-initial"
+                            class="2xl:text-3xl hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold xl:border-2 xl:border-green-700 md:text-xl xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl flex-1 xl:flex-initial"
                             type="submit" dusk="register-submit" value="{{__('login_register.register_button')}}">
                     </div>
                 </form>

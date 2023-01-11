@@ -120,7 +120,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
             <picture class="row-span-2">
                 @if($project->srcset_vertical_1 && $project->srcset_vertical_1['vertical_1'])
                     @foreach($project->srcset_vertical_1['vertical_1'] as $size => $path)
-                        <source media="({{$size === '1280' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
                     @endforeach
                 @endif
                 <img
@@ -130,7 +130,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
             <picture class="col-span-2">
                 @if($project->srcset_large && $project->srcset_large['large'])
                     @foreach($project->srcset_large['large'] as $size => $path)
-                        <source media="({{$size === '1280' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
                     @endforeach
                 @endif
                 <img
@@ -141,7 +141,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
             <picture class="row-span-2">
                 @if($project->srcset_vertical_2 && $project->srcset_vertical_2['vertical_2'])
                     @foreach($project->srcset_vertical_2['vertical_2'] as $size => $path)
-                        <source media="({{$size === '1280' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
                     @endforeach
                 @endif
                 <img
@@ -151,7 +151,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
             <picture>
                 @if($project->srcset_small_1 && $project->srcset_small_1['small_1'])
                     @foreach($project->srcset_small_1['small_1'] as $size => $path)
-                        <source media="({{$size === '1280' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
                     @endforeach
                 @endif
                 <img
@@ -161,7 +161,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
             <picture>
                 @if($project->srcset_small_2 && $project->srcset_small_2['small_2'])
                     @foreach($project->srcset_small_2['small_2'] as $size => $path)
-                        <source media="({{$size === '1280' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
                     @endforeach
                 @endif
                 <img

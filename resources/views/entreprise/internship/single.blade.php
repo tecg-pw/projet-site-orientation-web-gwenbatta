@@ -25,8 +25,18 @@
         <div class="flex md:flex-row flex-col md:gap-x-10">
             <div class="flex flex-col gap-16">
                 <article class="xl:even:mt-36 relative xl:mt-48" aria-labelledby="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->slug}}">
-                    <img class="rounded-lg xl:absolute -z-10 xl:bottom-36" src="/{{$offer->partner->translation->where('locale',app()->getLocale())->first()->logo_full}}"
-                         alt="avatar">
+                    <picture class="rounded-lg xl:absolute -z-10 xl:bottom-28">
+                        @if($offer->partner->translation->where('locale',app()->getLocale())->first()->srcset && $offer->partner->translation->where('locale',app()->getLocale())->first()->srcset['full'])
+                            @foreach($offer->partner->translation->where('locale',app()->getLocale())->first()->srcset['full'] as $size => $path)
+                                <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                            @endforeach
+                        @endif
+                        <img
+                            src="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->logos && $offer->partner->translation->where('locale',app()->getLocale())->first()->logos['full'] ? '/' . $offer->partner->translation->where('locale',app()->getLocale())->first()->logos['full'] : '/'.$offer->partner->translation->where('locale',app()->getLocale())->first()->logo}}"
+                            alt="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->title}}" class="xl:mb-16 mb-6 rounded-3xl">
+                    </picture>
+{{--                    <img class="rounded-lg xl:absolute -z-10 xl:bottom-36" src="/{{$offer->partner->translation->where('locale',app()->getLocale())->first()->logo_full}}"--}}
+{{--                         alt="avatar">--}}
                     <div class="relative xl:bg-yellow-100 rounded-xl px-4 py-8 xl:left-10">
                         <h3 id="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="underline font-medium text-xl xl:text-2xl 2xl:text-3xl mb-2">
                             <a class="text-green-700 hover:text-orange-500" href="/{{app()->getLocale()}}/entreprise/partner/{{$offer->partner->translation->where('locale',app()->getLocale())->first()->slug}}">
@@ -136,17 +146,17 @@
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($offers as $other_offer)
                 <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
-                         aria-labelledby="{{$other_offer->translation->where('locale',app()->getLocale())->first()->slug}}">
+                         aria-labelledby="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}">
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">
                             <div class="md:flex-row flex-col flex justify-between">
-                                <h3 id="{{$other_offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="text-lg md:text-xl xl:text-2xl  2xl:text-3xl">{{$other_offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
-                                <p class="xl:text-lg">{{$other_offer->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d M Y')}}</p>
+                                <h3 id="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="text-lg md:text-xl xl:text-2xl  2xl:text-3xl">{{$offer->translation->where('locale',app()->getLocale())->first()->name}}</h3>
+                                <p class="xl:text-lg">{{$offer->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d M Y')}}</p>
                             </div>
                             <div class="mt-1 flex justify-between">
                                 <div class="flex flex-col gap-2 max-w-[80%]">
-                                    <div class="xl:text-lg 2xl:text-2xl 2xl:leading-10">{!!$other_offer->translation->where('locale',app()->getLocale())->first()->description!!}</div>
-                                    <p class="font-medium xl:text-lg  2xl:text-xl">{{$other_offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
+                                    <div class="xl:text-lg 2xl:text-2xl 2xl:leading-10">{!!$offer->translation->where('locale',app()->getLocale())->first()->description!!}</div>
+                                    <p class="font-medium xl:text-lg  2xl:text-xl">{{$offer->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                                 </div>
                                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                                      width="25"
@@ -159,7 +169,7 @@
                         </div>
                     </div>
                     <a class="linkcard underline text-green-700 font-sans font-semibold self-end"
-                       href="/{{app()->getLocale()}}/entreprise/internship/{{$other_offer->translation->where('locale',app()->getLocale())->first()->slug}}">{{__('En savoir plus' . $other_offer->translation->where('locale',app()->getLocale())->first()->slug)}}</a>
+                       href="/{{app()->getLocale()}}/entreprise/internship/{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}">{{__('En savoir plus' . $offer->translation->where('locale',app()->getLocale())->first()->slug)}}</a>
                 </article>
             @endforeach
         </div>

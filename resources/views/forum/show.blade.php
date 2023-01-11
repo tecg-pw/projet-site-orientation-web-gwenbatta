@@ -94,7 +94,7 @@
                         <picture>
                             @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
                                 @foreach($subject->user->srcset['thumbnail'] as $size => $path)
-                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                    <source media="(max-width: {{$size}}px)"
                                             srcset="/{{$path}}">
                                 @endforeach
                             @endif
@@ -111,7 +111,7 @@
                                 {{ucwords($subject->tag->translation->where('locale',app()->getLocale())->first()->name)}}</p>
                             @if($subject->user->id === auth()->id())
                                 <div class="flex justify-end pr-4">
-                                    <a href="/{{app()->getLocale()}}/forum/show/modify/{{$subject->slug}}">
+                                    <a href="/{{app()->getLocale()}}/forum/question/modify/{{$subject->slug}}">
                                         <span class="sr-only">{{__('forum.value__modify')}}</span>
                                         <span><svg class="h-8 w-8 text-green-700" width="24" height="24"
                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -258,7 +258,7 @@
                                         <picture>
                                             @if($comment->user->srcset && $comment->user->srcset['thumbnail'])
                                                 @foreach($comment->user->srcset['thumbnail'] as $size => $path)
-                                                    <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                                    <source media="(max-width: {{$size}}px)"
                                                             srcset="/{{$path}}">
                                                 @endforeach
                                             @endif

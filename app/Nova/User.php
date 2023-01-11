@@ -264,19 +264,19 @@ class User extends Resource
                 Image::make($full_back)->resize(null, 600,function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($full_srcset_back_2560_path);
-                Image::make($full_back)->resize(550, null, function ($constraint) {
+                Image::make($full_back)->resize(null, 550, function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($full_srcset_back_2040_path);
-                Image::make($full_back)->resize(435, null, function ($constraint) {
+                Image::make($full_back)->resize(null,435,  function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($full_srcset_back_1520_path);
-                Image::make($full_back)->resize(367, null, function ($constraint) {
+                Image::make($full_back)->resize(null,367,  function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($full_srcset_back_1280_path);
-                Image::make($full_back)->resize(295, null, function ($constraint) {
+                Image::make($full_back)->resize(null,295,  function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($full_srcset_back_1024_path);
-                Image::make($full_back)->resize(220, null, function ($constraint) {
+                Image::make($full_back)->resize(null,220,  function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($full_srcset_back_768_path);
 

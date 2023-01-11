@@ -29,14 +29,11 @@
     <picture class="-order-2 rounded-t-3xl">
         @if($new_ref->srcset && $new_ref->srcset['thumbnail'])
             @foreach($new_ref->srcset['thumbnail'] as $size => $path)
-                <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)" srcset="/{{$path}}">
+                <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
             @endforeach
         @endif
-{{--            <img--}}
-{{--                src="{{$new_ref->pictures && $new_ref->pictures['thumbnail'] ? '/' . $new_ref->pictures['thumbnail'] : '/'.$new_ref->main_picture}}"--}}
-{{--                alt="{{$new_ref->title}}" class="rounded-t-3xl order-first">--}}
             <img
-                src="{{'/'.$new_ref->main_picture}}"
+                src="{{$new_ref->pictures && $new_ref->pictures['thumbnail'] ? '/' . $new_ref->pictures['thumbnail'] : '/'.$new_ref->main_pictures}}"
                 alt="{{$new_ref->title}}" class="rounded-t-3xl order-first">
     </picture>
 </article>

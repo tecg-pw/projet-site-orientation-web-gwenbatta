@@ -96,9 +96,16 @@
                                 </svg>
                             </div>
                         </div>
-                        <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                             src="{{$subject->user->avatar_thumb}}"
-                             alt="Nom">
+                        <picture>
+                            @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
+                                @foreach($subject->user->srcset['thumbnail'] as $size => $path)
+                                    <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                                @endforeach
+                            @endif
+                            <img
+                                src="{{$subject->user->logos && $subject->user->logos['thumbnail'] ? '/' . $subject->user->logos['thumbnail'] : '/'.$subject->user->logo}}"
+                                alt="{{$subject->user->title}}" class="rounded-full order-first">
+                        </picture>
                     </article>
                 @endforeach
                     {{$subjects->withQueryString()->links()}}

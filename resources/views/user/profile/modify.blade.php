@@ -19,7 +19,7 @@
                 <picture>
                     @if($user->srcset && $user->srcset['full'])
                         @foreach($user->srcset['full'] as $size => $path)
-                            <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                            <source media="(max-width: {{$size}}px)"
                                     srcset="/{{$path}}">
                         @endforeach
                     @endif
@@ -31,7 +31,7 @@
             <picture class="absolute -z-10 top-0 bottom-0 left-0 right-0">
                 @if($user->srcset_back && $user->srcset_back['full'])
                     @foreach($user->srcset_back['full'] as $size => $path)
-                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                        <source media="(max-width: {{$size}}px)"
                                 srcset="/{{$path}}">
                     @endforeach
                 @endif
@@ -97,7 +97,7 @@
                             <picture>
                                 @if($user->srcset && $user->srcset['tiny'])
                                     @foreach($user->srcset['tiny'] as $size => $path)
-                                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                        <source media="(max-width: {{$size}}px)"
                                                 srcset="/{{$path}}">
                                     @endforeach
                                 @endif
@@ -129,7 +129,7 @@
                             <picture>
                                 @if($user->srcset_back && $user->srcset_back['tiny'])
                                     @foreach($user->srcset_back['tiny'] as $size => $path)
-                                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                        <source media="(max-width: {{$size}}px)"
                                                 srcset="/{{$path}}">
                                     @endforeach
                                 @endif

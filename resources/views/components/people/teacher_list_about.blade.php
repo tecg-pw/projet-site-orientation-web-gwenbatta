@@ -3,8 +3,18 @@
     'teacher_ref'
 ])
     <article {{ $attributes->class(['lg:even:mt-36 lg:even:ml-10 xl:even:ml-0 sm:gap-x-4 lg:odd:mt-0 mt-16 sm:flex xl:max-w-[100%] lg:max-w-[87%] lg:block relative group']) }} aria-labelledby="{{$teacher_ref->slug}}">
-        <img class="rounded-lg lg:absolute -z-10 -top-[70%] group-even:-top-[120%] mb-1.5 lg:mb-0" src="/{{$teacher_ref->avatar}}"
-             alt="avatar">
+{{--        <img  src="/{{$teacher_ref->avatar}}"--}}
+{{--             alt="avatar">--}}
+        <picture class="rounded-lg lg:absolute -z-10 -top-[80%] group-even:-top-[140%] mb-1.5 lg:mb-0">
+            @if($teacher_ref->srcset && $teacher_ref->srcset['full'])
+                @foreach($teacher_ref->srcset['full'] as $size => $path)
+                    <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                @endforeach
+            @endif
+            <img
+                src="{{$teacher_ref->logos && $teacher_ref->logos['full'] ? '/' . $teacher_ref->logos['full'] : '/'.$teacher_ref->logo}}"
+                alt="{{$teacher_ref->title}}" class="xl:mb-16 mb-6 rounded-3xl">
+        </picture>
         <div class="relative lg:bg-yellow-100 sm:flex sm:flex-col sm:justify-center lg:block rounded-xl px-4 py-8 lg:left-10">
             <h3 class="font-medium text-xl xl:text-2xl 2xl:text-3xl mb-2 xl:mb-5" id="{{$teacher_ref->slug}}" aria-level="3" role="heading">
                 <a class="hover:text-orange-500"

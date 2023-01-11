@@ -79,7 +79,7 @@
                             <picture>
                                 @if($comment->user->srcset && $comment->user->srcset['thumbnail'])
                                     @foreach($comment->user->srcset['thumbnail'] as $size => $path)
-                                        <source media="({{$size === '640' ? 'max' : 'min'}}-width: {{$size}}px)"
+                                        <source media="(max-width: {{$size}}px)"
                                                 srcset="/{{$path}}">
                                     @endforeach
                                 @endif

@@ -170,9 +170,7 @@ class PersonTranslation extends Resource
 
             Text::make('Mail')
                 ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+                ->rules('required', 'email', 'max:254'),
 
             Text::make('Status')
                 ->sortable()

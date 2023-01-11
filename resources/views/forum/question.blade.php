@@ -1,11 +1,11 @@
 <x-commons.navigation :page="__('forum_question.title')"></x-commons.navigation>
 <main id="content">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
-        <a href="/{{app()->getLocale()}}/forum/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/forum/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{__('nav.nav_navigation.forum')}}
         </a>
         <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/forum/question" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
+        <a href="/{{app()->getLocale()}}/forum/question" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{__('forum_question.title')}}
         </a>
     </div>
@@ -13,21 +13,21 @@
         <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex-1">
             <div class="flex flex-col mb-14 xl:mb-28">
                 <div class="flex flex-col md:flex-row order-1">
-                    <h2 class="xl:text-4xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 font-sans mt-6"
+                    <h2 class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 font-sans mt-6"
                         aria-level="2"
                         role="heading" id="question">
                         {{__('forum_question.title')}}
                     </h2>
-                    <a class="hover:text-orange-500 font-sans mt-3 md:text-xl self-end xl:mt-6 md:text-end text-green-700 xl:text-3xl font-semibold underline flex-1"
+                    <a class="hover:text-orange-500 font-sans mt-3 md:text-xl self-end xl:mt-6 md:text-end text-green-700 xl:text-2xl 2xl:text-3xl font-semibold underline flex-1 2xl:text-3xl"
                        href="/{{app()->getLocale()}}/forum/index">{{__('forum_question.back')}}</a>
                 </div>
             </div>
-            <div class="lg:grid lg:grid-cols-5 flex flex-1 xl:mt-14">
+            <div class="lg:grid lg:grid-cols-5  flex flex-1 xl:mt-14">
                 <form action="/{{app()->getLocale()}}/subject" method="post"
                       class="lg:col-span-3 flex-1 lg:items-center lg:mr-20">
                     @csrf
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-2xl" for="subject">{{__('forum_question.question')}}</label>
+                        <label class="text-green-500 @error('subject') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="subject">{{__('forum_question.question')}}</label>
                         @error('subject')
                         <div class="flex gap-1.5 items-center">
                             <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,7 +40,7 @@
                             name="subject" id="subject" type="text" placeholder="{{__('forum_question.question_placeholder')}}" value="{{old('subject')}}">
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-2xl"
+                        <label class="text-green-500 @error('description') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl"
                                for="description">{{__('forum_question.description')}}</label>
                         @error('description')
                         <div class="flex gap-1.5 items-center">
@@ -57,10 +57,9 @@
                             placeholder="{{__('forum_question.description_placeholder')}}">{{old('description')}}</textarea>
                     </div>
                     <div class="flex flex-col mb-8">
-                        <label class="text-green-500 text-2xl" for="tag_id">{{__('forum_question.tag')}}</label>
-
+                        <label class="text-green-500 @error('tag') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="tag_id">{{__('forum_question.tag')}}</label>
                         <select name="tag_id" id="tag_id"
-                                class="appearance-none max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
+                                class="appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1 2xl:text-xl max-w-[50%]">
                             @foreach($tags as $tag)
                                 <option
                                     value="{{$tag->translation->where('locale',app()->getLocale())->first()->tag_id}}">{{mb_strtoupper($tag->translation->where('locale',app()->getLocale())->first()->name)}}</option>
@@ -69,7 +68,7 @@
                     </div>
                     <div class="flex flex-1 xl:justify-end">
                         <button
-                            class="hover:text-green-700 flex-1 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold mt-4 xl:mt-0 xl:max-w-[40%]"
+                            class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl flex-1 xl:flex-initial"
                             type="submit">{{__('forum_question.button')}}</button>
                     </div>
                 </form>
