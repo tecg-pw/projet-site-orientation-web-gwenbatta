@@ -21,7 +21,16 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
         </div>
         <div class="flex xl:flex-row flex-col mt-20  xl:mt-0">
             <article class="xl:relative xl:block sm:mb-8 xl:mb-0 sm:flex sm:gap-x-4 sm:items-center xl:mt-48" aria-labelledby="{{$person->slug}}">
-                <img class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 2xl:-top-52 mb-2" src="{{str_contains($person->avatar,'http')? $person->avatar : '/'.$person->avatar}}" alt="avatar">
+                <picture>
+                    @if($person->srcset && $person->srcset['full'])
+                        @foreach($person->srcset['full'] as $size => $path)
+                            <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                        @endforeach
+                    @endif
+                    <img
+                        src="{{$person->logos && $person->logos['full'] ? '/' . $person->logos['full'] : '/'.$person->logo}}"
+                        alt="{{$person->title}}" class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 2xl:-top-52 mb-2">
+                </picture>
                 <div class="relative xl:bg-yellow-100 rounded-xl py-4 px-4 xl:py-8 xl:left-10">
                     <h3 id="{{$person->slug}}" aria-level="3" role="heading"
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl 2xl:text-3xl">

@@ -88,8 +88,7 @@ class TutoController extends Controller
             ]);
         }
         $tuto = TutoTranslation::where('tuto_id', $id)->where('locale', $locale)->first();
-
-        return redirect('/' . $locale . '/technical/tuto#' . $tuto->slug);
+        return redirect()->back();
 
     }
 }

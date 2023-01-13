@@ -118,5 +118,36 @@ function handlePassword() {
     });
 }
 
+function  run() {
+    //Ici le DOM est prêt
+    document.documentElement.classList.add('js-enabled');
+    // FADE-IN
+    let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+    }
+
+    let aTargets = document.querySelectorAll('.slide-in');
+    let observer = new IntersectionObserver(callback, options);
+    // @ts-ignore
+    for (const target of aTargets) {
+        observer.observe(target);
+        target.addEventListener('load', (event) => {
+        })
+    }
+    console.log(aTargets)
+
+    function callback(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    };
+}
+
+window.addEventListener('load', () => run())
+
 updateImageModifyBackImage()
 updateImageModifyProfil()

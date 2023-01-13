@@ -14,7 +14,14 @@
         color: #DA953A;
         outline-color: rgba(78, 100, 88, 0.7);
     }
-
+    .js-enabled .slide-in.active {
+        opacity: 1;
+        transform: translateX(0%) scale(1);
+    }
+    .js-enabled .slide-in {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
     .no-js .show-password {
         display: none;
     }

@@ -60,48 +60,7 @@
         </div>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @foreach($tutos as $tuto_ref)
-                <article class="group hover:bg-orange-100 bg-white-100 relative flex flex-col py-6 px-8 rounded-3xl"
-                         aria-labelledby="{{$tuto_ref->slug}}">
-                    <div class="flex justify-between">
-                        <div class="flex-1 flex justify-between">
-                            <h3 id="{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->slug}}"
-                                aria-level="3" role="heading"
-                                class="hover-within:text-orange-500 text-lg font-medium xl:text-2xl 2xl:text-3xl mb-1.5">
-                                {{$tuto_ref->translation->where('locale',app()->getLocale())->first()->name}}
-                            </h3>
-                        </div>
-                            <form
-                                action="/{{app()->getLocale()}}/technical/tuto/favorite/{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->tuto_id}}"
-                                method="post" enctype="multipart/form-data">
-                                @csrf
-                                <button type="submit" class="flex">
-                                    <span class="sr-only">{{__('Enlever des favoris')}}</span>
-                                    <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24"
-                                         width="30px"
-                                         fill="#da953a"><path d="M0 0h24v24H0z" fill="none"/><path
-                                            d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
-                                    </svg>
-                                    </span>
-                                </button>
-                            </form>
-                    </div>
-                    <div class="mb-2.5 xl:mb-6 xl:text-lg 2xl:text-xl">{!!$tuto_ref->translation->where('locale',app()->getLocale())->first()->excerpt!!}</div>
-                    <div class="flex justify-between flex-1 justify-end">
-                        <div class="flex gap-5 flex-1 self-end items-center">
-                            <p class="text-orange-500 font-sans xl:text-lg 2xl:text-xl font-medium">{{ucwords($tuto_ref->translation->where('locale',app()->getLocale())->first()->languages)}}</p>
-                            <p class="xl:text-lg 2xl:text-xl font-medium">{{ucwords($tuto_ref->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d F Y'))}}</p>
-                        </div>
-                        <a class="linkcard text-xl underline text-green-700 font-semibold font-sans"
-                           href="{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->link}}">{{__('tuto_ref.tuto_ref_do')}}</a>
-                        <svg class="mr-4 group-hover:mr-0 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
-                             viewBox="0 0 32 27.417">
-                            <path
-                                d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
-                                transform="translate(-19 -8.001)" fill="#4e6458"/>
-                        </svg>
-                    </div>
-                </article>
+                <x-technical.tuto class="bg-yellow-100" :tuto="$tuto_ref" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
             @if(count($tutos) === 0)
                 <p class="xl:text-xl 2xl:text-2xl text-lg">{{__('user.user_no_favorite')}}</p>
@@ -186,7 +145,7 @@
                                 @endforeach
                             @endif
                             <img
-                                src="{{$subject->user->logos && $subject->user->logos['thumbnail'] ? '/' . $subject->user->logos['thumbnail'] : '/'.$subject->user->logo}}"
+                                src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
                                 alt="{{$subject->user->title}}" class="rounded-full order-first">
                         </picture>
                     </article>
