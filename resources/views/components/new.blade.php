@@ -4,7 +4,7 @@
 ])
 
 @if(isset($new_ref))
-<article {{ $attributes->class(['group hover:bg-orange-100 flex-col sm:max-w-[93%] min-h-full flex bg-yellow-100 rounded-3xl relative']) }}
+<article {{ $attributes->class(['slide-in group hover:bg-orange-100 flex-col sm:max-w-[93%] min-h-full flex bg-yellow-100 rounded-3xl relative']) }}
          aria-labelledby="{{$new_ref->slug}}">
     <div class="flex-col flex px-4 mt-6">
         <div class="flex justify-between items-center mb-3">

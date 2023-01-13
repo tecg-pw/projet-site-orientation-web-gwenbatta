@@ -117,7 +117,7 @@
         <div class="lg:grid lg:grid-cols-2 xl:gap-x-24 lg:gap-x-12 xl:gap-y-8 flex flex-col gap-y-4">
             @if(count($offers) !== 0)
                 @foreach($offers as $offer)
-                    <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
+                    <article class="slide-in group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
                              aria-labelledby="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}">
                         <div class="flex flex-1 items-center">
                             <div class="flex-1 order-2 ml-4">

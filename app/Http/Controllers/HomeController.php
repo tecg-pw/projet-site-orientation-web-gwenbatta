@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index(string $locale = null)
     {
 
-        $subjects = Subject::all();
+        $subjects = Subject::orderBy('created_at','DESC')->take(5)->get();
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $projects = Project::take(3)->get();

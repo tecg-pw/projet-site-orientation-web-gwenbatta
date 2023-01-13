@@ -19,7 +19,7 @@
             </article>
         @endif
         @if(count($results['glossary']) > 0)
-            <article aria-labelledby="list-result-tuto" class="mt-16">
+            <article aria-labelledby="list-result-tuto" class="slide-in mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
                     class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les mots du glossaire trouvés')}}</h3>
                 <p class=""></p>
@@ -98,7 +98,7 @@
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['subjects'] as $subject)
-                        <article class="group hover:bg-orange-100 bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
+                        <article class="slide-in group hover:bg-orange-100 bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
                                  aria-labelledby="{{$subject->slug}}">
                             <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                                 <div class="flex flex-col  xl:gap-4">

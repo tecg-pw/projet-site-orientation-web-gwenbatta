@@ -6,8 +6,7 @@
     $tool = $tool_ref->translation->where('locale',app()->getLocale())->first();
 @endphp
 
-<article
-    aria-labelledby="{{$tool->slug}}" {{ $attributes->class(['group hover:bg-orange-100 relative bg-yellow-100 py-6 px-8 rounded-3xl']) }}>
+<article aria-labelledby="{{$tool->slug}}" {{ $attributes->class(['slide-in group hover:bg-orange-100 relative bg-yellow-100 py-6 px-8 rounded-3xl']) }}>
     <div class="flex justify-between">
         <div>
             <h4 id="{{$tool->slug}}" aria-level="4" role="heading"

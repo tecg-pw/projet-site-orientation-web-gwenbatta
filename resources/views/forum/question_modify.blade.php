@@ -26,7 +26,7 @@
                 <form action="/{{app()->getLocale()}}/subject" method="post"
                       class="lg:col-span-3 flex-1 lg:items-center lg:mr-20">
                     @csrf
-                    <div class="flex flex-col mb-8">
+                    <div class="slide-in flex flex-col mb-8">
                         <label class="text-green-500 @error('subject') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="subject">{{__('forum_question.question')}}</label>
                         @error('subject')
                         <div class="flex gap-1.5 items-center">
@@ -39,7 +39,7 @@
                         <input class="2xl:text-xl border border-orange-500 rounded-xl py-2 px-3  @error('subject') outline outline-3 outline-red-600 @enderror text-gray-700 leading-tight focus:outline focus:outline-2 focus:outline-green-700 border focus:bg-orange-100"
                             name="subject" id="subject" type="text" placeholder="{{__('forum_question.question_placeholder')}}" value="{{old('subject')?:$subject->subject}}">
                     </div>
-                    <div class="flex flex-col mb-8">
+                    <div class="slide-in flex flex-col mb-8">
                         <label class="text-green-500 @error('description') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl"
                                for="description">{{__('forum_question.description')}}</label>
                         @error('description')
@@ -56,7 +56,7 @@
                             name="description" id="description"
                             placeholder="{{__('forum_question.description_placeholder')}}">{{old('description')?:$subject->description}}</textarea>
                     </div>
-                    <div class="flex flex-col mb-8">
+                    <div class="slide-in flex flex-col mb-8">
                         <label class="text-green-500 @error('tag') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="tag_id">{{__('forum_question.tag')}}</label>
                         <select name="tag_id" id="tag_id"
                                 class="appearance-none max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
@@ -66,7 +66,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="flex flex-1 xl:justify-end">
+                    <div class="slide-in flex flex-1 xl:justify-end">
                         <button
                             class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl flex-1 xl:flex-initial"
                             type="submit">{{__('forum_question.button')}}</button>

@@ -31,7 +31,7 @@
                     <p>{{__('forum.no_subject')}}</p>
                     @else
                     @foreach($subjects as $subject)
-                        <article class="group hover:bg-orange-100  bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
+                        <article class="slide-in group hover:bg-orange-100  bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
                                  aria-labelledby="{{$subject->slug}}">
                             <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                                 <div class="flex flex-col  xl:gap-4">

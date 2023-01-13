@@ -186,7 +186,7 @@
                     @else
                         @foreach($subject->comments as $comment)
                             <div id="{{$comment->slug}}"
-                                 class="flex flex-col bg-yellow-100 py-3 px-5 xl:py-6 xl:px-10 rounded-xl">
+                                 class="slide-in flex flex-col bg-yellow-100 py-3 px-5 xl:py-6 xl:px-10 rounded-xl">
                                 @if(\Request::query('edit-comment')===$comment->slug)
                                     <div class="flex flex-col bg-yellow-100 rounded-xl mt-6">
                                         <form

@@ -4,11 +4,17 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
 <x-commons.navigation :page="$project->title"></x-commons.navigation>
 <main id="content">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 mt-20">
-        <a href="/{{app()->getLocale()}}/project/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
+        <a href="/{{app()->getLocale()}}/project/index"
+           class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{__('nav.nav_navigation.project')}}
         </a>
-        <svg class="h-7 w-7 text-green-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="9 6 15 12 9 18" /></svg>
-        <a href="/{{app()->getLocale()}}/project/{{$project->slug}}" class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
+        <svg class="h-7 w-7 text-green-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+             stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z"/>
+            <polyline points="9 6 15 12 9 18"/>
+        </svg>
+        <a href="/{{app()->getLocale()}}/project/{{$project->slug}}"
+           class="underline hover:text-orange-500 text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{$project->title}}
         </a>
     </div>
@@ -20,7 +26,8 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_button')}}</a>
         </div>
         <div class="flex xl:flex-row flex-col mt-20  xl:mt-0">
-            <article class="xl:relative xl:block sm:mb-8 xl:mb-0 sm:flex sm:gap-x-4 sm:items-center xl:mt-48" aria-labelledby="{{$person->slug}}">
+            <article class="xl:relative xl:block sm:mb-8 xl:mb-0 sm:flex sm:gap-x-4 sm:items-center xl:mt-48"
+                     aria-labelledby="{{$person->slug}}">
                 <picture>
                     @if($person->srcset && $person->srcset['full'])
                         @foreach($person->srcset['full'] as $size => $path)
@@ -31,7 +38,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                         src="{{$person->logos && $person->logos['full'] ? '/' . $person->logos['full'] : '/'.$person->logo}}"
                         alt="{{$person->title}}" class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 2xl:-top-52 mb-2">
                 </picture>
-                <div class="relative xl:bg-yellow-100 rounded-xl py-4 px-4 xl:py-8 xl:left-10">
+                <div class="slide-in relative xl:bg-yellow-100 rounded-xl py-4 px-4 xl:py-8 xl:left-10">
                     <h3 id="{{$person->slug}}" aria-level="3" role="heading"
                         class="underline text-green-700 hover:text-orange-500 font-medium text-xl xl:text-2xl 2xl:text-3xl">
                         <a href="/{{app()->getLocale()}}/bottin/{{$person->status === "étudiant"? "student" : $person->status}}/{{$person->slug}}">{{$person->firstname}} {{$person->name}}</a>
@@ -76,38 +83,40 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                 </div>
             </article>
             <div class="xl:ml-28 xl:mt-0">
-                <div class="text-lg xl:text-xl xl:max-w-[85%] 2xl:max-w-[70%] xl:leading-10 2xl:text-2xl 2xl:leading-12 flex flex-col gap-8 leading-8">
+                <div
+                    class="text-lg xl:text-xl xl:max-w-[85%] 2xl:max-w-[70%] xl:leading-10 2xl:text-2xl 2xl:leading-12 flex flex-col gap-8 leading-8">
                     {!!$project->description!!}
                 </div>
                 <div class="mt-6">
                     <div class="flex flex-col xl:gap-2 text-lg xl:text-xl 2xl:text-2xl">
-                        <div class="flex xl:flex-row flex-col xl:gap-3 mb-3">
+                        <div class="slide-in  flex xl:flex-row flex-col xl:gap-3 mb-3">
                             <p>{{__('project.project_make_course')}}</p>
                             @foreach($course as $classe)
                                 <a class=" underline text-green-700 uppercase hover:text-orange-500"
                                    href="/{{app()->getLocale()}}/cours/{{$classe->translation->where('locale',app()->getLocale())->first()->slug}}">{{$classe->translation->where('locale',app()->getLocale())->first()->name}}</a>
+                            @endforeach
                         </div>
-                        <div class="flex xl:flex-row flex-col mb-3 xl:gap-3">
+                        <div class="slide-in flex xl:flex-row flex-col mb-3 xl:gap-3">
                             <p>{{__('project.project_make_with')}}</p>
                             @foreach($teachers as $teacher_ref)
                                 <a class=" underline text-green-700 uppercase hover:text-orange-500"
                                    href="/{{app()->getLocale()}}/bottin/teacher/{{$teacher_ref->translation->where('locale',app()->getLocale())->first()->slug}}">{{$teacher_ref->translation->where('locale',app()->getLocale())->first()->firstname}} {{$teacher_ref->translation->where('locale',app()->getLocale())->first()->name}}</a>
                             @endforeach
                         </div>
-                        <div class="mb-4">
+                        <div class="slide-in mb-4">
                             <p class="flex gap-3"> {{__('project.project_available')}}
                                 @foreach($locales as $locale)
-                                    <a href="/{{$locale}}/project/{{$project->slug}}" class="underline hover:text-orange-500 uppercase text-green-700">{{$locale}}</a>
+                                    <a href="/{{$locale}}/project/{{$project->slug}}"
+                                       class="underline hover:text-orange-500 uppercase text-green-700">{{$locale}}</a>
                                 @endforeach
                             </p>
                         </div>
-                        @endforeach
-                        </div>
-                        <div class="flex flex-col xl:flex-row xl:gap-32 2xl:gap-x-48 mt-4 xl:items-center">
-                            <a href="{{$person->link_portfolio}}"
-                               class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl">{{__('project.project_portfolio')}}</a>
-                            <a class="group hover:text-orange-500 flex font-sans text-green-700 md:text-xl xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end 2xl:text-3xl"
-                               href="{{$project->link_github}}">
+                    </div>
+                    <div class="slide-in flex flex-col xl:flex-row xl:gap-32 2xl:gap-x-48 mt-4 xl:items-center">
+                        <a href="{{$person->link_portfolio}}"
+                           class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl">{{__('project.project_portfolio')}}</a>
+                        <a class="group hover:text-orange-500 flex font-sans text-green-700 md:text-xl xl:text-2xl font-semibold underline px-4 py-6 self-center xl:justify-self-end 2xl:text-3xl"
+                           href="{{$project->link_github}}">
                 <span class="mr-2.5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 38.97 38.005">
                         <path class="group-hover:fill-orange-500" data-name="08774047e75405e5723edc2388e9bc78"
@@ -115,17 +124,18 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                               transform="translate(-1.999 -2.247)" fill="#4e6458"/>
                         </svg>
                     </span>
-                                <span class="xl:mt-0 mt-1.5">{{__('project.project_github')}}</span>
-                            </a>
-                        </div>
+                            <span class="xl:mt-0 mt-1.5">{{__('project.project_github')}}</span>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
 
     </section>
-    <section class="xl:not-sr-only 2xl:px-48 2xl:flex 2xl:justify-center sr-only xl:px-32 lg:px-16 px-10 bg-yellow-600" aria-labelledby="photos">
+    <section class="xl:not-sr-only 2xl:px-48 2xl:flex 2xl:justify-center sr-only xl:px-32 lg:px-16 px-10 bg-yellow-600"
+             aria-labelledby="photos">
         <h2 id="photos" aria-level="2" role="heading" class="sr-only">{{__('project.project_pictures')}}</h2>
-        <figure class="grid grid-cols-4 grid-rows-2 gap-5 py-24 flex-1">
+        <figure class="slide-in grid grid-cols-4 grid-rows-2 gap-5 py-24 flex-1">
             <picture class="row-span-2">
                 @if($project->srcset_vertical_1 && $project->srcset_vertical_1['vertical_1'])
                     @foreach($project->srcset_vertical_1['vertical_1'] as $size => $path)
@@ -188,7 +198,8 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
         </div>
         <div class="md:grid xl:grid-cols-3 md:grid-cols-2 xl:gap-8 2xl:gap-x-5 flex flex-col gap-y-4 justify-center">
             @foreach($projects as $project_ref)
-                <x-project :person="$person" :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
+                <x-project :person="$person"
+                           :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach
             @if(count($projects) === 0)
                 <p>{{__('people.bottin_no_project')}}</p>

@@ -2,9 +2,7 @@
     /** @var \Illuminate\Database\Eloquent\Model */
     'teacher_ref'
 ])
-    <article {{ $attributes->class(['lg:even:mt-36 lg:even:ml-10 xl:even:ml-0 sm:gap-x-4 lg:odd:mt-0 mt-16 sm:flex xl:max-w-[100%] lg:max-w-[87%] lg:block relative group']) }} aria-labelledby="{{$teacher_ref->slug}}">
-{{--        <img  src="/{{$teacher_ref->avatar}}"--}}
-{{--             alt="avatar">--}}
+    <article {{ $attributes->class(['slide-in lg:even:mt-36 lg:even:ml-10 xl:even:ml-0 sm:gap-x-4 lg:odd:mt-0 mt-16 sm:flex xl:max-w-[100%] lg:max-w-[87%] lg:block relative group']) }} aria-labelledby="{{$teacher_ref->slug}}">
         <picture class="rounded-lg lg:absolute -z-10 -top-[80%] group-even:-top-[140%] mb-1.5 lg:mb-0">
             @if($teacher_ref->srcset && $teacher_ref->srcset['full'])
                 @foreach($teacher_ref->srcset['full'] as $size => $path)

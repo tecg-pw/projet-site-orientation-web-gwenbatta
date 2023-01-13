@@ -28,17 +28,17 @@
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-lg xl:text-xl 2xl:text-2xl font-medium mb-5">{{__('actu.actu_single_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
-                        <div class="xl:text-xl 2xl:text-2xl xl:leading-10 2xl:leading-12 leading-8 flex text-lg flex-col gap-10">
+                        <div class="slide-in xl:text-xl 2xl:text-2xl xl:leading-10 2xl:leading-12 leading-8 flex text-lg flex-col gap-10">
                             {!!$new->description!!}
                         </div>
                         <div class="mb-10">
                             <p class="flex text-lg gap-3 xl:text-xl 2xl:text-2xl"> {{__('project.project_available')}}
                                 @foreach($locales as $locale)
-                                    <a href="/{{$locale->locale}}/news/{{$locale->slug}}" class="underline uppercase text-green-700">{{$locale->locale}}</a>
+                                    <a href="/{{$locale->locale}}/news/{{$locale->slug}}" class="slide-in underline uppercase text-green-700">{{$locale->locale}}</a>
                                 @endforeach
                             </p>
                         </div>
-                        <a class="hover:text-orange-500 underline md:text-xl xl:text-2xl 2xl:text-3xl mb-20 text-green-700 font-sans font-semibold "
+                        <a class="slide-in hover:text-orange-500 underline md:text-xl xl:text-2xl 2xl:text-3xl mb-20 text-green-700 font-sans font-semibold "
                            href="{{$new->link}}">{{__('actu.actu_single_more')}}</a>
                     </div>
                 </section>

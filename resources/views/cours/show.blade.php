@@ -24,8 +24,7 @@
         </div>
         <div
             class="xl:px-32 lg:px-16 2xl:px-48 mb-6 xl:mb-0 px-10 flex justify-between sm:justify-start sm:gap-x-10  xl:justify-start xl:gap-20 text-lg xl:text-xl">
-            <p class="uppercase xl:text-xl 2xl:text-2xl">{{$course->bac}}
-                e{{$course->bac===1?'r':''}} {{__('course.course_year')}}</p>
+            <p class="uppercase xl:text-xl 2xl:text-2xl">{{$course->bac}}e{{$course->bac===1?'r':''}} {{__('course.course_year')}}</p>
             <div class="flex flex-wrap sm:gap-x-10 xl:gap-x-24 xl:gap-y-3 max-w-[50%]">
                 @foreach($teachers as $teacher)
                     <a class="underline text-green-700 uppercase hover:text-orange-500 xl:text-xl 2xl:text-2xl"
@@ -39,8 +38,7 @@
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium mb-5">{{__('course.course_subtitle')}}</h3>
-                    <div
-                        class="flex flex-col gap-6text-lg leading-8 xl:text-xl 2xl:text-2xl 2xl:leading-12 xl:leading-10">
+                    <div class="flex flex-col gap-6text-lg leading-8 xl:text-xl 2xl:text-2xl 2xl:leading-12 xl:leading-10">
                         {!!$course->description!!}
                     </div>
                 </section>

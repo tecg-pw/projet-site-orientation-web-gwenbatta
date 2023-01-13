@@ -5,7 +5,7 @@
 ])
 
 <article {{ $attributes->class(['px-7 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-30 lg:px-16 2xl:px-48 pb-28']) }} aria-labelledby="questions">
-    <div class="flex flex-col xl:mt-20 md:flex-row xl:mb-24 mb-12">
+    <div class="slide-in flex flex-col xl:mt-20 md:flex-row xl:mb-24 mb-12">
         <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl xl:max-w-[50%] 2xl:max-w-full uppercase font-bold xl:mb-12 font-sans xl:leading-12 2xl:text-5xl " role="heading" aria-level="2"
             id="questions">{{__('home.forum_title')}}</h2>
         <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl lg:text-end xl:text-2xl 2xl:text-3xl"
@@ -14,7 +14,7 @@
     <div class="lg:grid lg:grid-cols-5 lg:justify-between">
         <div class="lg:col-span-3 mb-10 sm:mb-16 flex flex-col gap-y-4 lg:gap-y-8 lg:pr-14 lg:border-r-2 border-r-orange-500/40">
             @foreach($subjects as $subject)
-                <article class="group hover:bg-orange-100 bg-white-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
+                <article class="slide-in group hover:bg-orange-100 bg-white-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
                          aria-labelledby="{{$subject->slug}}">
                     <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                         <div class="flex flex-col  xl:gap-4">
@@ -80,19 +80,26 @@
                             </svg>
                         </div>
                     </div>
-                    <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                         src="{{$subject->user->avatar_thumb}}"
-                         alt="Nom">
+                    <picture>
+                        @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
+                            @foreach($subject->user->srcset['thumbnail'] as $size => $path)
+                                <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                            @endforeach
+                        @endif
+                        <img
+                            src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
+                            alt="{{$subject->user->title}}" class="rounded-full order-first">
+                    </picture>
                 </article>
             @endforeach
         </div>
         <div class="col-span-2 flex flex-col sm:gap-y-6 lg:pl-14">
-            <article class="lg:border-t-0 border-b-orange-500/40 border-t-2 border-t-orange-500/40 border-b-2 pb-10 pt-10 lg:pt-0" aria-labelledby="latest">
+            <article class="slide-in lg:border-t-0 border-b-orange-500/40 border-t-2 border-t-orange-500/40 border-b-2 pb-10 pt-10 lg:pt-0" aria-labelledby="latest">
                 <h3 id="latest" aria-level="3" role="heading"
                     class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum.latest_subject')}}</h3>
                 <div class="flex flex-col gap-y-4 sm:gap-y-8">
                     @foreach($latests as $latest)
-                        <article class="hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
+                        <article class="slide-in hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
                                  aria-labelledby="{{$latest->slug}}">
                             <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                                 <div class="flex-col flex xl:gap-4">
@@ -161,12 +168,12 @@
                     @endforeach
                 </div>
             </article>
-            <article class="pb-10 mt-8" aria-labelledby="best-rating">
+            <article class="slide-in pb-10 mt-8" aria-labelledby="best-rating">
                 <h3 id="best-rating" aria-level="3" role="heading"
                     class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
                 <div class="flex flex-col gap-y-8">
                     @foreach($ratings as $rating)
-                        <article class="hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
+                        <article class="slide-in hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
                                  aria-labelledby="{{$rating->slug}}">
                             <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                                 <div class="flex-col flex xl:gap-4">

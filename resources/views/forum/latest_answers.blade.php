@@ -29,7 +29,7 @@
         <div class="lg:grid lg:grid-cols-5 mb-36">
             <div class="lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10">
                 @foreach($comments as $comment)
-                    <article class="flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl"
+                    <article class="slide-in flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl"
                              aria-labelledby="{{$comment->slug}}">
                         <div
                             class="hover:bg-orange-100 relative flex mb-5 rounded-xl order-3 bg-white-100 p-3 border-2 border-orange-500 gap-2">

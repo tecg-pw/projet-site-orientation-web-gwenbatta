@@ -22,7 +22,7 @@
                 <p>{{__('search.no_result')}}</p>
             @endif
         </article>
-{{--        {{$alumnis->withQueryString()->links()}}--}}
+        {{$alumnis->withQueryString()->links()}}
         <x-people.testimonials :testimonials="$testimonials"/>
     </section>
 </main>

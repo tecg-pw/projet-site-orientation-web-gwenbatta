@@ -16,7 +16,7 @@
             class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum_aside.latest')}}</h3>
         <div class="flex flex-col gap-y-8">
             @foreach($latests as $latest)
-                <article class="hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
+                <article class="slide-in hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
                          aria-labelledby="{{$latest->slug}}">
                     <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                         <div class="flex-col flex xl:gap-4">
@@ -90,7 +90,7 @@
             class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
         <div class="flex flex-col gap-y-8">
             @foreach($ratings as $rating)
-                <article class="hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
+                <article class="slide-in hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
                          aria-labelledby="{{$rating->slug}}">
                     <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                         <div class="flex-col flex xl:gap-4">

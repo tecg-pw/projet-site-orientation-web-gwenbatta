@@ -35,8 +35,6 @@
                             src="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->logos && $offer->partner->translation->where('locale',app()->getLocale())->first()->logos['full'] ? '/' . $offer->partner->translation->where('locale',app()->getLocale())->first()->logos['full'] : '/'.$offer->partner->translation->where('locale',app()->getLocale())->first()->logo}}"
                             alt="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->title}}" class="xl:mb-16 mb-6 rounded-3xl">
                     </picture>
-{{--                    <img class="rounded-lg xl:absolute -z-10 xl:bottom-36" src="/{{$offer->partner->translation->where('locale',app()->getLocale())->first()->logo_full}}"--}}
-{{--                         alt="avatar">--}}
                     <div class="relative xl:bg-yellow-100 rounded-xl px-4 py-8 xl:left-10">
                         <h3 id="{{$offer->partner->translation->where('locale',app()->getLocale())->first()->slug}}" role="heading" aria-level="3" class="underline font-medium text-xl xl:text-2xl 2xl:text-3xl mb-2">
                             <a class="text-green-700 hover:text-orange-500" href="/{{app()->getLocale()}}/entreprise/partner/{{$offer->partner->translation->where('locale',app()->getLocale())->first()->slug}}">
@@ -145,7 +143,7 @@
         </div>
         <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8 flex flex-col gap-y-4">
             @foreach($offers as $other_offer)
-                <article class="group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
+                <article class="slide-in group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl"
                          aria-labelledby="{{$offer->translation->where('locale',app()->getLocale())->first()->slug}}">
                     <div class="flex flex-1 items-center">
                         <div class="flex-1 order-2 ml-4">

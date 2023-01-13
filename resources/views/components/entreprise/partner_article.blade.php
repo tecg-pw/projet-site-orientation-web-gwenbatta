@@ -4,7 +4,7 @@
 ])
 
 <article
-        {{ $attributes->class(['group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }}
+        {{ $attributes->class(['slide-in group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }}
         aria-labelledby="{{$partner_ref->slug}}">
     <div class="flex flex-1 items-center">
         <div class="flex-1 order-2 ml-4">

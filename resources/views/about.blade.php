@@ -1,7 +1,7 @@
 <x-commons.navigation :page="__('nav.nav_navigation.about')"></x-commons.navigation>
 <main id="content">
     <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex mt-14 mb-36 gap-24 items-center" aria-labelledby="about">
-        <div class="flex-1 ">
+        <div class="slide-in flex-1 ">
             <h2 class="text-2xl leading-8 mb-6 md:text-3xl xl:text-4xl 2xl:text-5xl uppercase font-bold text-yellow-800 xl:mb-16 font-sans"
                 role="heading" aria-level="2"
                 id="about">
@@ -11,7 +11,7 @@
                 {{__('about.about_text')}}
             </p>
         </div>
-        <div class="sr-only lg:not-sr-only flex-1">
+        <div class="slide-in sr-only lg:not-sr-only flex-1">
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
                 <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-878.jpeg"
                      srcset="
@@ -61,15 +61,15 @@
     <section class="bg-yellow-600 mt-20 px-10 py-14 xl:py-20 xl:px-32 lg:px-16 2xl:px-48" aria-labelledby="course">
         <h2 id="course" aria-level="2" role="heading"
             class="text-2xl md:text-3xl mb-10 xl:text-4xl 2xl:text-5xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.course_title')}}</h2>
-        <div class="flex flex-col lg:gap-y-2 xl:gap-y-12 lg:flex-row xl:justify-between">
+        <div class="slide-in flex flex-col lg:gap-y-2 xl:gap-y-12 lg:flex-row xl:justify-between">
             <section class="border-b-2 border-b-orange-500/40 pb-10 lg:border-b-0 lg:border-r-2 lg:pr-16 lg:border-r-orange-500/40"
                 aria-labelledby="first-year">
                 <h3 class="text-xl mb-7 xl:text-2xl 2xl:text-3xl uppercase font-medium xl:mb-14" id="first-year" aria-level="3"
                     role="heading">{{__('about.course_first')}}</h3>
                 <p class="xl:text-lg 2xl:text-xl">{{__('about.course_commons')}}</p>
-                <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="web">
+                <section class="slide-in xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="web">
                     <h4 class="font-semibold 2xl:text-xl" id="web" aria-level="4" role="heading">{{__('about.course_web_title')}}</h4>
-                    <div class="flex justify-between">
+                    <div class="slide-in flex justify-between">
                         <div class="flex flex-1 flex-col xl:gap-2">
                             @foreach($courses as $course)
                                 @if($course->translation->where('locale',app()->getLocale())->first()->bac === 1)
@@ -84,14 +84,14 @@
                 </section>
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="3D">
                     <h4 class="font-semibold 2xl:text-xl" id="3D" aria-level="4" role="heading">{{__('about.course_3D_title')}}</h4>
-                    <div class="flex justify-between">
+                    <div class="slide-in flex justify-between">
                         <div class="flex flex-col xl:gap-2">
                             <p class="2xl:text-xl">{{__('about.course_video')}}</p>
                             <p class="2xl:text-xl">{{__('about.course_photo')}}</p>
                             <p class="2xl:text-xl">{{__('about.course_creation_3d')}}</p>
                             <p class="2xl:text-xl">{{__('about.course_creation_animation_3d')}}</p>
                         </div>
-                        <div class="flex flex-col xl:gap-2">
+                        <div class="slide-in flex flex-col xl:gap-2">
                             <p class="2xl:text-xl">{{__('75H')}}</p>
                             <p class="2xl:text-xl">{{__('30H')}}</p>
                             <p class="2xl:text-xl">{{__('60H')}}</p>
@@ -102,13 +102,13 @@
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="graphic-design">
                     <h4 class="font-semibold 2xl:text-xl" id="graphic-design" aria-level="4"
                         role="heading">{{__('about.course_design_graphique_title')}}</h4>
-                    <div class="flex justify-between">
+                    <div class="slide-in flex justify-between">
                         <div class="flex flex-col xl:gap-2">
                             <p class="2xl:text-xl">{{__('about.course_creation_2d')}}</p>
                             <p class="2xl:text-xl">{{__('about.course_image_argumentation')}}</p>
                             <p class="2xl:text-xl">{{__('about.course_numeric_image')}}</p>
                         </div>
-                        <div class="flex flex-col xl:gap-2">
+                        <div class="slide-in flex flex-col xl:gap-2">
                             <p class="2xl:text-xl">{{__('60H')}}</p>
                             <p class="2xl:text-xl">{{__('30H')}}</p>
                             <p class="2xl:text-xl">{{__('30H')}}</p>
@@ -124,8 +124,8 @@
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="second-web">
                     <h4 class="sr-only font-semibold" id="second-web" aria-level="3"
                         role="heading">{{__('about.course_web_title')}}</h4>
-                    <div class="flex justify-between">
-                        <div class="flex flex-1 flex-col xl:gap-2">
+                    <div class="slide-in flex justify-between">
+                        <div class="slide-in flex flex-1 flex-col xl:gap-2">
                             @foreach($courses as $course)
                                 @if($course->translation->where('locale',app()->getLocale())->first()->bac === 2)
                                     <div class="flex  justify-between">
@@ -146,8 +146,8 @@
                 <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="second-web">
                     <h4 class="sr-only font-semibold" id="second-web" aria-level="3"
                         role="heading">{{__('about.course_web_title')}}</h4>
-                    <div class="flex justify-between">
-                        <div class="flex flex-1 flex-col xl:gap-2">
+                    <div class="slide-in flex justify-between">
+                        <div class="slide-in flex flex-1 flex-col xl:gap-2">
                             @foreach($courses as $course)
                                 @if($course->translation->where('locale',app()->getLocale())->first()->bac === 3)
                                     <div class="flex justify-between">
@@ -163,14 +163,13 @@
         </div>
     </section>
     <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 lg:px-16 mt-14 mb-36 gap-24 items-center" aria-labelledby="profs">
-        <div class="flex-1 flex flex-col md:flex-row mt-36 lg:justify-between">
+        <div class="slide-in flex-1 flex flex-col md:flex-row mt-36 lg:justify-between">
             <h2 class="text-2xl md:text-3xl md:max-w-xl lg:max-w-full md:leading-10 mb-6 xl:text-4xl 2xl:max-w-full uppercase font-bold text-yellow-800 xl:mb-20 font-sans" role="heading"
                 aria-level="2"
                 id="profs">
                 {{__('about.teacher_title')}}
             </h2>
-            <div
-                class="hover:text-orange-500 flex lg:justify-end text-green-700 underline font-sans text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold">
+            <div class="hover:text-orange-500 flex lg:justify-end text-green-700 underline font-sans text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold">
                 <a href="/{{app()->getLocale()}}/bottin/alumni">{{__('about.teacher_button')}}</a>
             </div>
         </div>

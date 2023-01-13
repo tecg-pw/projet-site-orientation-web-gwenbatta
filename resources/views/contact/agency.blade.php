@@ -29,7 +29,7 @@
                     <form action="/{{app()->getLocale()}}/contact/agency" method="post" class="flex-1 px-10 xl:px-0"
                           enctype="multipart/form-data">
                         @csrf
-                        <div class="flex flex-col xl:flex-row flex-1">
+                        <div class="slide-in flex flex-col xl:flex-row flex-1">
                             <div class="flex flex-col flex-1 xl:mr-10 mb-8">
                                 <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                        for="name">{{__('contact_page.agency_name')}}</label>
@@ -68,7 +68,7 @@
                                     placeholder="Toon Van den Bos">
                             </div>
                         </div>
-                        <div class="flex flex-col mb-8">
+                        <div class="slide-in flex flex-col mb-8">
                             <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                    for="email">{{__('contact_page.mail')}}</label>
                             @error('email')
@@ -85,7 +85,7 @@
                                 value="{{old('email')}}"
                                 name="email" id="email" type="email" placeholder="email@example.be">
                         </div>
-                        <div class="flex flex-col mb-8">
+                        <div class="slide-in flex flex-col mb-8">
                             <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                    for="subject">{{__('contact_page.agency_title')}}</label>
                             @error('subject')
@@ -103,7 +103,7 @@
                                 name="subject" id="subject" type="text"
                                 placeholder="{{__('contact_page.agency_title_value')}}">
                         </div>
-                        <div class="flex flex-col mb-8">
+                        <div class="slide-in flex flex-col mb-8">
                             <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl"
                                    for="message">{{__('contact_page.agency_description')}}</label>
                             @error('message')
@@ -120,9 +120,8 @@
                                 name="message" id="message" cols="30" rows="10"
                                 placeholder="{{__('contact_page.agency_description_value')}}">{{old('message')}}</textarea>
                         </div>
-                        <div>
-                        <span
-                            class="text-green-500 text-lg mb-12 xl:text-2xl 2xl:text-3xl">{{__('contact_page.agency_aptitude_value')}}</span>
+                        <div class="slide-in">
+                        <span class="text-green-500 text-lg mb-12 xl:text-2xl 2xl:text-3xl">{{__('contact_page.agency_aptitude_value')}}</span>
                             <div class="flex mt-6 ">
                                 <div class="border-r border-orange-500 pr-20">
                                     <span class="text-green-500 xl:text-xl 2xl:text-2xl mb-4">{{__('contact_page.agency_language')}}</span><br>
@@ -212,7 +211,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col mb-8 mt-10">
+                        <div class="slide-in flex flex-col mb-8 mt-10">
                             <p class="text-green-500 text-lg mb-2 xl:text-2xl 2xl:text-3xl">{{__('contact_page.agency_offer_title')}}</p>
                             <div class="flex items-center justify-center w-full">
                                 <label for="pdf" class="flex flex-col items-center justify-center w-full h-64 border-2 border-orange-500 rounded-lg cursor-pointer bg-yellow-100 hover:bg-gray-100">
@@ -225,7 +224,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="flex flex-1 justify-end mb-20">
+                        <div class="slide-in flex flex-1 justify-end mb-20">
                             <input
                                 class="hover:text-green-700 hover:bg-white-100 text-center rounded-lg px-4 py-2 mb-3 text-white-100 bg-green-700 font-sans font-semibold md:text-xl xl:border-2 xl:border-green-700 xl:mb-0 xl:text-center xl:px-10 xl:py-3 xl:rounded-2xl xl:text-2xl 2xl:text-3xl flex-1 xl:flex-initial"
                                 type="submit" value="{{__('contact_page.contact_button')}}">
