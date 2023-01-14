@@ -162,7 +162,6 @@ class SearchController extends Controller
             $results['projects'] = Project::whereIn('id', $idProjects)->get();
             $results['news'] = Actuality::whereIn('id', $idNews)->get();
         } //OK
-        //return $results;
 
         return view('result_search', compact('results'));
     }

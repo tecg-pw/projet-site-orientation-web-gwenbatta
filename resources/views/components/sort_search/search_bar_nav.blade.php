@@ -9,7 +9,7 @@
             type="search" name="search_bar" id="search_bar"
             placeholder="{{__('search.placeholder')}}"/>
         <fieldset class="relative">
-        <label class="hidden" for="s">{{__('search.button')}}</label>
+        <label class="hidden" >{{__('search.button')}}</label>
         <input class="sr-only" type="submit" id="s" name="s" value="search"/>
         </fieldset>
     </form>
