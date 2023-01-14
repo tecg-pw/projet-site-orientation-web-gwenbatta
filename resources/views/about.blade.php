@@ -61,8 +61,8 @@
     <section class="bg-yellow-600 mt-20 px-10 py-14 xl:py-20 xl:px-32 lg:px-16 2xl:px-48" aria-labelledby="course">
         <h2 id="course" aria-level="2" role="heading"
             class="text-2xl md:text-3xl mb-10 xl:text-4xl 2xl:text-5xl uppercase font-extrabold font-sans xl:mb-20">{{__('about.course_title')}}</h2>
-        <div class="slide-in flex flex-col lg:gap-y-2 xl:gap-y-12 lg:flex-row xl:justify-between">
-            <section class="border-b-2 border-b-orange-500/40 pb-10 lg:border-b-0 lg:border-r-2 lg:pr-16 lg:border-r-orange-500/40"
+        <div class="slide-in flex flex-col lg:gap-y-2 xl:gap-y-12 lg:flex-row xl:justify-between 2xl:justify-center">
+            <section class="2xl:pr-48 border-b-2 border-b-orange-500/40 pb-10 lg:border-b-0 lg:border-r-2 lg:pr-16 lg:border-r-orange-500/40"
                 aria-labelledby="first-year">
                 <h3 class="text-xl mb-7 xl:text-2xl 2xl:text-3xl uppercase font-medium xl:mb-14" id="first-year" aria-level="3"
                     role="heading">{{__('about.course_first')}}</h3>
@@ -116,7 +116,7 @@
                     </div>
                 </section>
             </section>
-            <section class="border-b-2 border-b-orange-500/40 pb-10 mt-10 lg:mt-0 lg:border-b-0 lg:border-r-2 lg:pr-16 lg:pl-10 xl:pl-0 lg:border-r-orange-500/40 2xl:pr-48"
+            <section class="2xl:ml-44 border-b-2 border-b-orange-500/40 pb-10 mt-10 lg:mt-0 lg:border-b-0 lg:border-r-2 lg:pr-16 lg:pl-10 xl:pl-0 lg:border-r-orange-500/40 2xl:pr-48"
                 aria-labelledby="second-year">
                 <h3 class="text-xl mb-7 xl:text-2xl 2xl:text-3xl uppercase font-medium xl:mb-14" id="second-year" aria-level="3"
                     role="heading">{{__('about.course_second')}}</h3>
@@ -138,7 +138,7 @@
                     </div>
                 </section>
             </section>
-            <section class="border-b-2 border-b-orange-500/40 pb-10  mt-10 lg:mt-0  lg:pl-10 xl:pl-0 lg:border-b-0 "
+            <section class="2xl:ml-44 border-b-2 border-b-orange-500/40 pb-10  mt-10 lg:mt-0  lg:pl-10 xl:pl-0 lg:border-b-0 "
                 aria-labelledby="third-year">
                 <h3 class="text-xl mb-7 xl:text-2xl 2xl:text-3xl uppercase font-medium xl:mb-14" id="third-year" aria-level="3"
                     role="heading">{{__('about.course_third')}}</h3>
@@ -173,7 +173,7 @@
                 <a href="/{{app()->getLocale()}}/bottin/alumni">{{__('about.teacher_button')}}</a>
             </div>
         </div>
-        <div class="lg:grid lg:grid-cols-2 flex flex-col lg:gap-y-48 xl:gap-y-60 lg:mt-60 xl:gap-y-40 xl:gap-x-60">
+        <div class="lg:grid lg:grid-cols-2 flex flex-col lg:gap-y-48 xl:gap-y-60 lg:mt-60 xl:gap-y-40 xl:gap-x-60 2xl:gap-y-96 2xl:mb-60">
             @foreach($teachers as $teacher_ref)
                 <x-people.teacher_list_about :teacher_ref="$teacher_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
