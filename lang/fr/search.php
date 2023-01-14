@@ -7,6 +7,18 @@ return [
     'button' => 'Valider',
     'actu_single_back' => 'Retour aux actualités',
     'actu_single_more' => 'En savoir plus',
-    'no_result'=>'Pas de résultat trouvé pour votre recherche'
+    'no_result'=>'Pas de résultat trouvé pour votre recherche',
+    'title_global' => 'Recherche',
+    'title_search' => 'Les résultats de recherche',
+    'tuto_search' => 'Les tutoriels trouvés',
+    'tool_search' => 'Les outils utiles trouvés',
+    'doc_search' => 'Les documentations utiles trouvées',
+    'book_search' => 'Les livres utiles trouvés',
+    'job_search' => 'Les débouchées trouvées',
+    'people_search' => 'Les membres trouvées',
+    'subject_search' => 'Les sujets trouvées',
+    'project_search' => 'Les projets trouvées',
+    'new_search' => 'Les actualités trouvées',
+    'glossary_search' => 'Les mots du glossaire trouvés',
 
 ];

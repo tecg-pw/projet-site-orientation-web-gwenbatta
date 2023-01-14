@@ -1,14 +1,14 @@
-<x-commons.navigation :page="__('Recherche')"></x-commons.navigation>
+<x-commons.navigation :page="__('search.title_global')"></x-commons.navigation>
 <main id="content" class="px-10 2xl:px-48 xl:px-32 lg:px-16">
     <section class="mt-20 mb-32 xl:mb-64" aria-labelledby="search">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="search" role="heading" aria-level="2"
-                class="mb-4 text-2xl xl:text-4xl md:text-3xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('Les résultats de recherche')}}</h2>
+                class="mb-4 text-2xl xl:text-4xl md:text-3xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('search.title_search')}}</h2>
         </div>
         @if(count($results['tuto']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les tutoriels trouvés')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.tuto_search')}}</h3>
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['tuto'] as $tuto)
@@ -21,11 +21,12 @@
         @if(count($results['glossary']) > 0)
             <article aria-labelledby="list-result-tuto" class="slide-in mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les mots du glossaire trouvés')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('')}}</h3>
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['glossary'] as $terme)
-                        <x-technical.term-glossary :terme_ref="$terme->translation->where('locale',app()->getLocale())->first()"/>
+                        <x-technical.term-glossary
+                            :terme_ref="$terme->translation->where('locale',app()->getLocale())->first()"/>
                     @endforeach
                 </div>
             </article>
@@ -34,7 +35,7 @@
         @if(count($results['tool']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les outils utiles trouvés')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.tool_search')}}</h3>
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['tool'] as $tool)
@@ -46,7 +47,7 @@
         @if(count($results['doc']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les documentations utiles trouvées')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.doc_search')}}</h3>
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['doc'] as $doc)
@@ -58,7 +59,7 @@
         @if(count($results['book']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les livres utiles trouvés')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.book_search')}}</h3>
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['book'] as $book)
@@ -70,11 +71,12 @@
         @if(count($results['opportunity']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les débouchées trouvées')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.job_search')}}</h3>
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['opportunity'] as $job)
-                        <x-job_article class="bg-yellow-100" :job_ref="$job->translation->where('locale',app()->getLocale())->first()"/>
+                        <x-job_article class="bg-yellow-100"
+                                       :job_ref="$job->translation->where('locale',app()->getLocale())->first()"/>
                     @endforeach
                 </div>
             </article>
@@ -82,11 +84,12 @@
         @if(count($results['people']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les membres trouvées')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.people_search')}}</h3>
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['people'] as $person)
-                        <x-people.person_article :person_ref="$person->translation->where('locale',app()->getLocale())->first()"/>
+                        <x-people.person_article
+                            :person_ref="$person->translation->where('locale',app()->getLocale())->first()"/>
                     @endforeach
                 </div>
             </article>
@@ -94,12 +97,13 @@
         @if(count($results['subjects']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les membres trouvées')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.subject_search')}}</h3>
                 <p class=""></p>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['subjects'] as $subject)
-                        <article class="slide-in group hover:bg-orange-100 bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
-                                 aria-labelledby="{{$subject->slug}}">
+                        <article
+                            class="slide-in group hover:bg-orange-100 bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
+                            aria-labelledby="{{$subject->slug}}">
                             <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                                 <div class="flex flex-col  xl:gap-4">
                                     <div class="flex gap-2">
@@ -108,9 +112,11 @@
                                             role="heading"
                                             aria-level="3">{{$subject->subject}}</h3>
                                         @if($subject->resolved)
-                                            <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
+                                            <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg"
+                                                 width="25"
                                                  viewBox="0 0 34.194 34.196">
-                                                <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                <g id="Groupe_214" data-name="Groupe 214"
+                                                   transform="translate(-875 -1773)">
                                                     <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
                                                           data-name="106780bf1ed9964c2ffe0eda53fe07ea"
                                                           d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
@@ -123,7 +129,8 @@
                                             </svg>
                                             <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
                                                  viewBox="0 0 34.194 34.196">
-                                                <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
+                                                <g id="Groupe_214" data-name="Groupe 214"
+                                                   transform="translate(-875 -1773)">
                                                     <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
                                                           data-name="106780bf1ed9964c2ffe0eda53fe07ea"
                                                           d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
@@ -147,8 +154,10 @@
                                             {{ucwords($subject->tag->translation->where('locale', app()->getLocale())->first()->name)}}</p>
                                         <p class="md:text-lg sm:text-base">{{__('forum.number_comment').$subject->comments_count}}</p>
                                     </div>
-                                    <a class="linkcard underline text-green-700 font-sans font-semibold" href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
-                                    <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
+                                    <a class="linkcard underline text-green-700 font-sans font-semibold"
+                                       href="/{{app()->getLocale()}}/forum/show/{{$subject->slug}}">{{__('forum.see_subject') . $subject->subject}}</a>
+                                    <svg class="mr-4 sr-only sm:not-sr-only sm:self-end group-hover:mr-0"
+                                         xmlns="http://www.w3.org/2000/svg"
                                          width="25"
                                          viewBox="0 0 32 27.417">
                                         <path
@@ -164,9 +173,16 @@
                                     </svg>
                                 </div>
                             </div>
-                            <img class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full"
-                                 src="{{$subject->user->avatar_thumb}}"
-                                 alt="{{$subject->user->slug}}">
+                            <picture>
+                                @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
+                                    @foreach($subject->user->srcset['thumbnail'] as $size => $path)
+                                        <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
+                                    @endforeach
+                                @endif
+                                <img
+                                    src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
+                                    alt="{{$subject->user->title}}" class="rounded-full order-first">
+                            </picture>
                         </article>
                     @endforeach
                 </div>
@@ -175,7 +191,7 @@
         @if(count($results['projects']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les projets trouvées')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.project_search')}}</h3>
                 <p class=""></p>
                 <div class="md:grid xl:grid-cols-3 md:grid-cols-2 flex sm:items-center flex-col gap-8 justify-center">
                     @foreach($results['projects'] as $project)
@@ -188,11 +204,12 @@
         @if(count($results['news']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('Les actualités trouvées')}}</h3>
+                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.new_search')}}</h3>
                 <p class=""></p>
                 <div class="md:grid xl:grid-cols-3 md:grid-cols-2 flex sm:items-center flex-col gap-8 justify-center">
                     @foreach($results['news'] as $new)
-                        <x-new :new_ref="$new->translation->where('locale',app()->getLocale())->first()"/>                    @endforeach
+                        <x-new :new_ref="$new->translation->where('locale',app()->getLocale())->first()"/>
+                    @endforeach
                 </div>
             </article>
         @endif
