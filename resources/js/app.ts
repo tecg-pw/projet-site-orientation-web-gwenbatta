@@ -1,21 +1,41 @@
 import './bootstrap';
+import {createLogger} from "vite";
 
 window.addEventListener('load', init);
-let buttonSearches = document.getElementsByClassName('test');
-console.log(buttonSearches);
+let buttonSearches = document.getElementsByClassName('filter');
+let searchInputProject = document.querySelector('#project #search') as HTMLInputElement;
+let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
 let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
+let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
 let searchGlobalForm = document.querySelector('#searchGlobalForm') as HTMLFormElement;
+let containerProject = document.getElementById('containerProject')
+let containerNew = document.getElementById('containerNew')
+
 function init() {
     document.body.classList.remove('no-js');
     document.body.classList.add('js-only');
-     handlePassword()
-     burgerMenu()
-     pdfInputTextValue()
+    searchGlobalInput.value = '';
+    searchInputProject.value = '';
+    searchInputNew.value = '';
+    slideInView()
+    handlePassword()
+    burgerMenu()
+    pdfInputTextValue()
 }
 
+const stateSearch = {
+    search: '',
+}
 
 for (let i = 0; i < buttonSearches.length; i++) {
     buttonSearches[i].classList.add('sr-only')
+}
+
+// @ts-ignore
+for (const form of forms) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+    })
 }
 
 function pdfInputTextValue() {
@@ -36,47 +56,47 @@ function updateImageModifyProfil() {
     let avatar = document.getElementById('avatar') as HTMLInputElement;
     let imgAvatar = document.querySelector('#avatarUpdate') as HTMLImageElement;
     let imgSrc = document.querySelector('#avatarSrcset') as HTMLImageElement;
-    console.log(imgAvatar);
     avatar.classList.add('sr-only')
 
-    function showPreview(event){
+    function showPreview(event) {
         imgSrc.classList.add('sr-only')
         imgAvatar.classList.remove('sr-only')
-        if(event.target.files.length > 0){
+        if (event.target.files.length > 0) {
             imgAvatar.src = URL.createObjectURL(event.target.files[0]);
             imgAvatar.style.display = "block";
-            console.log(document.body.clientWidth)
-            if (document.body.clientWidth < 2040){
-            imgAvatar.style.width = '108px'
-            }else{
+            if (document.body.clientWidth < 2040) {
+                imgAvatar.style.width = '108px'
+            } else {
                 imgAvatar.style.width = '140px'
             }
         }
     }
+
     avatar.addEventListener('change', (e) => {
         showPreview(e);
     })
 }
+
 function updateImageModifyBackImage() {
     let backImage = document.getElementById('back_image') as HTMLInputElement;
     let backAvatar = document.querySelector('#backUpdate') as HTMLImageElement;
     let imgSrc = document.querySelector('#backSrcset') as HTMLImageElement;
-
     backImage.classList.add('sr-only')
 
-    function showPreview(event){
+    function showPreview(event) {
         imgSrc.classList.add('sr-only')
         backAvatar.classList.remove('sr-only')
-        if(event.target.files.length > 0){
+        if (event.target.files.length > 0) {
             backAvatar.src = URL.createObjectURL(event.target.files[0]);
             backAvatar.style.display = "block";
-            if (document.body.clientWidth < 2040){
+            if (document.body.clientWidth < 2040) {
                 backAvatar.style.width = '108px'
-            }else{
+            } else {
                 backAvatar.style.width = '140px'
             }
         }
     }
+
     backImage.addEventListener('change', (e) => {
         showPreview(e);
     })
@@ -109,7 +129,7 @@ function handlePassword() {
 
     // @ts-ignore
     Array.from(btns).forEach((btn, index) => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', () => {
             let input = inputs[index] as HTMLInputElement;
             (input.type === 'password') ? input.type = 'text' : input.type = 'password';
             show[index].classList.toggle('hidden');
@@ -118,10 +138,8 @@ function handlePassword() {
     });
 }
 
-function  run() {
-    //Ici le DOM est prêt
+function slideInView() {
     document.documentElement.classList.add('js-enabled');
-    // FADE-IN
     let options = {
         root: null,
         rootMargin: '0px',
@@ -133,21 +151,88 @@ function  run() {
     // @ts-ignore
     for (const target of aTargets) {
         observer.observe(target);
-        target.addEventListener('load', (event) => {
-        })
     }
-    console.log(aTargets)
 
-    function callback(entries, observer) {
+    function callback(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
             }
         });
-    };
+    }
 }
 
-window.addEventListener('load', () => run())
+if (searchInputProject !== null) {
+    searchInputProject.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        makeRequestProject()
+    })
+}
+console.log(searchInputNew)
+if (searchInputNew !== null) {
+    searchInputNew.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        console.log(stateSearch.search)
+        makeRequestNew()
+    })
+}
+
+
+function makeRequestProject() {
+    let locale = window.location.pathname.split('/');
+    let url = `http://tecweb.test/${locale[1]}/project/index/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableProject(data));
+}
+
+function makeRequestNew() {
+    let locale = window.location.pathname.split('/');
+    let url = `http://tecweb.test/${locale[1]}/news/index/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableNew(data));
+}
+
+function updateDataTableProject(data) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    containerProject.innerHTML = data
+    let titles = document.querySelectorAll('h3')
+    let dates = document.querySelectorAll('.datesProject')
+    // @ts-ignore
+    for (const title of titles) {
+        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const date of dates) {
+        date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    slideInView();
+}
+
+function updateDataTableNew(data) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    containerNew.innerHTML = data
+    let titles = document.querySelectorAll('h3')
+    let excerpts = document.querySelectorAll('.excerpt')
+    let dates = document.querySelectorAll('.dates')
+    // @ts-ignore
+    for (const title of titles) {
+        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const excerpt of excerpts) {
+        let str = excerpt.innerHTML.replace(/<[^>]+>/g, '')
+        excerpt.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const date of dates) {
+        date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    slideInView();
+}
 
 updateImageModifyBackImage()
 updateImageModifyProfil()

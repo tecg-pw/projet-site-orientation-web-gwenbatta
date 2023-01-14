@@ -42,6 +42,23 @@ class ProjectController extends Controller
         return view('project.index', compact('projects'));
     }
 
+    public function ajax(string $locale = null){
+        $ids = [];
+        $searchTerm = request()->input('search') ?? '';
+        $references = ProjetTranslation::query()
+            ->where('locale', $locale)
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('title', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('date', 'like', '%' . $searchTerm . '%');
+            })->get();
+
+        foreach ($references as $reference) {
+            $ids [] = $reference->project_id;
+        }
+        $projects = Project::whereIn('id', $ids)->paginate(9);
+        return view('components.container_project', compact('projects'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -54,7 +71,7 @@ class ProjectController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     *·
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */

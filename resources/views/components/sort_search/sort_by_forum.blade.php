@@ -7,7 +7,7 @@
 
 <div {{ $attributes }}>
     <p class="text-green-500 text-xl xl:text-3xl 2xl:text-4xl font-medium mb-2 xl:mb-4">{{__('sort.sort_by')}}</p>
-    <form action="{{$urlAction}}" method="get" class="flex flex-col gap-6 xl:gap-4" >
+    <form action="{{$urlAction}}" method="get" class="forms flex flex-col gap-6 xl:gap-4" >
         <div class="flex md:flex-row flex-col md:gap-x-10 gap-2">
         <div class="flex flex-col">
             <label for="status" class="text-lg text-green-500 mb-2 xl:text-xl 2xl:text-2xl">{{__('sort.status')}}</label>
@@ -51,7 +51,7 @@
         </div>
         </div>
         <button type="submit"
-                class="hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold  xl:max-w-[27%] lg:max-w-[50%] 2xl:max-w-[48%] md:max-w-[70%]">
+                class="filter hover:text-green-700 hover:bg-white-100 border-2 border-green-700 font-sans text-center text-white-100 bg-green-700 px-6 py-3 rounded-2xl text-xl font-semibold  xl:max-w-[27%] lg:max-w-[50%] 2xl:max-w-[48%] md:max-w-[70%]">
             {{__('search.button')}}
         </button>
     </form>

@@ -6,12 +6,12 @@
     <article class="slide-in group hover:bg-orange-100 flex-col min-h-full flex sm:max-w-[93%] flex bg-yellow-100 rounded-3xl relative"
         aria-labelledby="{{$project_ref->slug}}">
         <div class="flex-col flex-1 flex px-4 mt-4 xl:mt-6">
-            <h3 class="text-xl mb-1.5 xl:text-3xl xl:mb-3 truncate" role="heading" aria-level="3"
+            <h3 class="capitalize text-xl mb-1.5 xl:text-3xl xl:mb-3 truncate" role="heading" aria-level="3"
                 id="{{$project_ref->slug}}">{{$project_ref->title}}</h3>
             <div class="flex-1 flex flex-col justify-end">
                 <p class="xl:text-xl relative z-30">{{$person->firstname}} {{$person->name}}</p>
                 <div class="flex justify-between justify-self-end mb-4">
-                    <p class="xl:text-xl">{{ucwords($project_ref->date->translatedFormat('F Y'))}}</p>
+                    <p class="datesProject xl:text-xl">{{ucwords($project_ref->date->translatedFormat('F Y'))}}</p>
                     <svg class="group-hover:mr-0 mr-2 self-end " xmlns="http://www.w3.org/2000/svg" width="25"
                          viewBox="0 0 32 27.417">
                         <path

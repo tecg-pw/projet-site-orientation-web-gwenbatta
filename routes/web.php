@@ -34,6 +34,8 @@ use App\Http\Controllers\TechnicalController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\TutoController;
 use App\Http\Controllers\UserController;
+use App\Models\Project;
+use App\Models\ProjetTranslation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,12 +58,14 @@ Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('locale')
 
 Route::get('/{locale?}/legals',[LegalController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/search',[SearchController::class, 'index'])->middleware('locale');
+//Route::get('/{locale?}/search/ajax',[SearchController::class, 'index'])->middleware('locale');
 
 
 Route::get('/{locale?}/about', [AboutController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/about/job/{job:slug}', [JobController::class, 'show'])->middleware('locale');
 
 Route::get('/{locale?}/project/index', [ProjectController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/project/index/ajax', [ProjectController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/project/{project:slug}', [ProjectController::class, 'show'])->middleware('locale');
 
 Route::get('/{locale?}/technical/index', [TechnicalController::class, 'index'])->middleware('locale');
@@ -132,4 +136,5 @@ Route::post('/{locale?}/forum/show/{subject:slug}/comment/like/{comment:id}', [C
 
 
 Route::get('/{locale?}/news/index', [ActualityController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/news/index/ajax', [ActualityController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/news/{new:slug}', [ActualityController::class, 'show'])->middleware('locale');

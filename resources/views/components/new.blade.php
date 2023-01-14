@@ -10,10 +10,10 @@
         <div class="flex justify-between items-center mb-3">
             <h3 class="text-xl md:text-2xl xl:text-3xl truncate" role="heading" aria-level="3"
                 id="{{$new_ref->slug}}">{{$new_ref->name}}</h3>
-            <p class="xl:text-xl md:text-lg relative z-30">{{ucwords($new_ref->date->translatedFormat('d/m/Y '))}}</p>
+            <p class="dates xl:text-xl md:text-lg relative z-30">{{ucwords($new_ref->date->translatedFormat('d/m/Y '))}}</p>
         </div>
         <div class="flex justify-between mb-4">
-            <div class="max-w-[80%] text-start wrapping">
+            <div class="excerpt max-w-[80%] text-start wrapping">
                 {!!__($new_ref->excerpt)!!}
             </div>
             <svg class="group-hover:mr-0 mr-2 self-end " xmlns="http://www.w3.org/2000/svg" width="25"

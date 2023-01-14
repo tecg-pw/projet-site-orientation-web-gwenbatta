@@ -22,8 +22,8 @@ class ActualityController extends Controller
                 ->where('locale', $locale)
                 ->where(function ($query) use ($searchTerm) {
                     $query->where('name', 'like', '%' . $searchTerm . '%')
-                          ->orWhere('excerpt', 'like', '%' . $searchTerm . '%')
-                          ->orWhere('date', 'like', '%' . $searchTerm . '%');
+                        ->orWhere('excerpt', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('date', 'like', '%' . $searchTerm . '%');
                 })->get();
 
             foreach ($references as $reference) {
@@ -31,12 +31,30 @@ class ActualityController extends Controller
             }
             $news = Actuality::whereIn('id', $ids)->paginate(9);
 
-        }
-        else{
+        } else {
             $news = Actuality::latest()->paginate(9);
         }
 
         return view('news.index', compact('news'));
+    }
+
+    public function ajax(string $locale = null)
+    {
+        $ids = [];
+        $searchTerm = request()->input('search') ?? '';
+        $references = ActualityTranslation::query()
+            ->where('locale', $locale)
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('name', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('excerpt', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('date', 'like', '%' . $searchTerm . '%');
+            })->get();
+
+        foreach ($references as $reference) {
+            $ids [] = $reference->actuality_id;
+        }
+        $news = Actuality::whereIn('id', $ids)->paginate(9);
+        return view('components.container_new', compact('news'));
     }
 
     /**
@@ -52,7 +70,7 @@ class ActualityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -63,28 +81,28 @@ class ActualityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $new
+     * @param int $new
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(string $locale=null, ActualityTranslation $new)
+    public function show(string $locale = null, ActualityTranslation $new)
     {
         $locales = [];
 
         $new = Actuality::find($new->actuality_id);
 
-        foreach ($new->translation as $new_ref){
+        foreach ($new->translation as $new_ref) {
             $locales[] = $new_ref;
         }
-        $new = $new->translation->where('locale',$locale)->first();
+        $new = $new->translation->where('locale', $locale)->first();
         //$new =  ActualityTranslation::where('locale',$locale)->get();
 
-        return view('news.single', compact('new','locales'));
+        return view('news.single', compact('new', 'locales'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -95,8 +113,8 @@ class ActualityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -107,7 +125,7 @@ class ActualityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
