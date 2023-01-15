@@ -21,10 +21,12 @@
                href="/{{app()->getLocale()}}/forum/index#forum">{{__('forum.latest_subject')}}</a>
             <a class="rounded-lg bg-orange-100 2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/{{app()->getLocale()}}/forum/latest-answers#forum">{{__('forum.latest_answer')}}</a>
-            <a class="2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-               href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
-            <a class="2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
-               href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
+            @auth()
+                <a class="2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
+                   href="/{{app()->getLocale()}}/forum/my-subject#forum">{{__('forum.my_subject')}}</a>
+                <a class="2xl:text-2xl xl:text-xl text-lg hover:text-orange-500 text-center underline text-green-700 font-semibold  font-sans px-5 py-2"
+                   href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
+            @endauth
         </div>
         <div class="lg:grid lg:grid-cols-5 mb-36">
             <div class="lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10">
@@ -33,19 +35,19 @@
                              aria-labelledby="{{$comment->slug}}">
                         <div
                             class="hover:bg-orange-100 relative flex mb-5 rounded-xl order-3 bg-white-100 p-3 border-2 border-orange-500 gap-2">
-                            <h3 id="{{$comment->subject->slug}}" aria-level="3" role="heading"
+                            <h3 id="{{$comment->slug}}" aria-level="3" role="heading"
                                 class="order-2 font-medium xl:text-xl">
                                 {{$comment->subject->subject}}
                             </h3>
                             @if($comment->subject->resolved)
                                 <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
                                      viewBox="0 0 34.194 34.196">
-                                    <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
-                                        <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                    <g  data-name="Groupe 214" transform="translate(-875 -1773)">
+                                        <path
                                               data-name="106780bf1ed9964c2ffe0eda53fe07ea"
                                               d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
                                               transform="translate(873 1771)" fill="#da953a"/>
-                                        <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                        <path
                                               data-name="846e0b1f246b76024f36d97f9864a9c8"
                                               d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
                                               transform="translate(875.711 1774.888)" fill="#da953a"/>
@@ -53,12 +55,12 @@
                                 </svg>
                                 <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
                                      viewBox="0 0 34.194 34.196">
-                                    <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
-                                        <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                    <g  data-name="Groupe 214" transform="translate(-875 -1773)">
+                                        <path
                                               data-name="106780bf1ed9964c2ffe0eda53fe07ea"
                                               d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
                                               transform="translate(873 1771)" fill="#da953a"/>
-                                        <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                        <path
                                               data-name="846e0b1f246b76024f36d97f9864a9c8"
                                               d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
                                               transform="translate(875.711 1774.888)" fill="#da953a"/>
@@ -96,13 +98,13 @@
                                 action="/{{app()->getLocale()}}/forum/{{$comment->subject->slug}}/comment/like/{{$comment->id}}"
                                 method="post">
                                 @csrf
-                                <label class="sr-only" for="like">Liker</label>
-                                <button name="like" id="like" type="submit">
+                                <label class="sr-only" for="like{{$comment->id}}">Liker</label>
+                                <button name="like" id="like{{$comment->id}}" type="submit">
                                     <span class="sr-only">Liker</span>
                                     <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20"
                                                          viewBox="0 0 24.998 25">
-                                                        <path id="_55875de67f0001d7695d7cadee652fba"
+                                                        <path
                                                               data-name="55875de67f0001d7695d7cadee652fba"
                                                               d="M26.125,12.1a3.75,3.75,0,0,0-2.875-1.35h-5.7l.7-1.787A5.162,5.162,0,0,0,13.387,2a1.25,1.25,0,0,0-1.137.737L8.687,10.75H5.75A3.75,3.75,0,0,0,2,14.5v8.75A3.75,3.75,0,0,0,5.75,27H21.662a3.75,3.75,0,0,0,3.687-3.075l1.587-8.75A3.75,3.75,0,0,0,26.125,12.1ZM8.25,24.5H5.75A1.25,1.25,0,0,1,4.5,23.25V14.5a1.25,1.25,0,0,1,1.25-1.25h2.5ZM24.5,14.725l-1.587,8.75a1.25,1.25,0,0,1-1.25,1.025H10.75V12.262l3.4-7.65a2.637,2.637,0,0,1,1.725,3.475l-.663,1.787A2.5,2.5,0,0,0,17.55,13.25h5.7a1.276,1.276,0,0,1,1.25,1.475Z"
                                                               transform="translate(-2 -2)" fill="#da953a"/>

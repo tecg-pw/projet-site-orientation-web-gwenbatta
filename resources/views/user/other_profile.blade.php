@@ -90,12 +90,12 @@
                                 @if($subject->resolved)
                                     <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="25"
                                          viewBox="0 0 34.194 34.196">
-                                        <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
-                                            <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                        <g  data-name="Groupe 214" transform="translate(-875 -1773)">
+                                            <path
                                                   data-name="106780bf1ed9964c2ffe0eda53fe07ea"
                                                   d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
                                                   transform="translate(873 1771)" fill="#da953a"/>
-                                            <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                            <path
                                                   data-name="846e0b1f246b76024f36d97f9864a9c8"
                                                   d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
                                                   transform="translate(875.711 1774.888)" fill="#da953a"/>
@@ -103,12 +103,12 @@
                                     </svg>
                                     <svg class="xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="20"
                                          viewBox="0 0 34.194 34.196">
-                                        <g id="Groupe_214" data-name="Groupe 214" transform="translate(-875 -1773)">
-                                            <path id="_106780bf1ed9964c2ffe0eda53fe07ea"
+                                        <g  data-name="Groupe 214" transform="translate(-875 -1773)">
+                                            <path
                                                   data-name="106780bf1ed9964c2ffe0eda53fe07ea"
                                                   d="M31.186,7.009a17.1,17.1,0,1,0,0,24.179,17.094,17.094,0,0,0,0-24.179ZM28.775,28.775a13.678,13.678,0,1,1,4-9.677A13.678,13.678,0,0,1,28.775,28.775Z"
                                                   transform="translate(873 1771)" fill="#da953a"/>
-                                            <path id="_846e0b1f246b76024f36d97f9864a9c8"
+                                            <path
                                                   data-name="846e0b1f246b76024f36d97f9864a9c8"
                                                   d="M27.269,7.394a1.623,1.623,0,0,0-2.305,0L12.87,19.5l-5.081-5.1a1.659,1.659,0,1,0-2.305,2.386l6.233,6.233a1.623,1.623,0,0,0,2.305,0L27.269,9.781a1.623,1.623,0,0,0,0-2.386Z"
                                                   transform="translate(875.711 1774.888)" fill="#da953a"/>

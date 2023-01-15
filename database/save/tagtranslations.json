@@ -248,7 +248,7 @@
     {
         "id": 42,
         "name": "flutter",
-        "locale": "de",
+        "locale": "nl",
         "tag_id": 9
     },
     {
@@ -260,7 +260,7 @@
     {
         "id": 44,
         "name": "Project voor de voltooiing van de studies",
-        "locale": "de",
+        "locale": "nl",
         "tag_id": 11
     }
 ]

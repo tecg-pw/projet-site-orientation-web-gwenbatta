@@ -1,13 +1,13 @@
 <x-commons.navigation
     :page="$user->firstname .' '.$user->name .' – '. __('user.user_modify_title')"></x-commons.navigation>
 <main id="content">
-    <section class="flex flex-col relative mb-32" aria-labelledby="name">
+    <section class="flex flex-col relative mb-32" aria-labelledby="headsection">
         <div class="relative">
             <div
                 class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48">
                 <div class="order-2 flex-1  ml-8 mt-32">
                     <div>
-                        <h2 role="heading" id="name" aria-level="2"
+                        <h2 role="heading" id="headsection" aria-level="2"
                             class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mb-3">{{$user->firstname}} {{$user->name}}</h2>
                         <p class="uppercase text-lg xl:text-2xl 2xl:text-3xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
                     </div>
@@ -132,7 +132,7 @@
                                     alt="{{$user->title}}" class="rounded-full -order-2">
                             </picture>
                             <img id="avatarUpdate"
-                                 src=""
+                                 src="{{'/'.$user->avatar}}"
                                  alt="" class="sr-only rounded-full -order-2">
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                                     alt="{{$user->title}}" class="rounded-full -order-2">
                             </picture>
                             <img id="backUpdate"
-                                 src=""
+                                 src="{{'/'.$user->back_image}}"
                                  alt="" class="sr-only rounded-full -order-2">
                         </div>
                     </div>

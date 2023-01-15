@@ -80,9 +80,9 @@
             @endforeach
         </div>
     </article>
-    <article class="xl:px-32 lg:px-16 px-10 mt-36 mb-36">
+    <article class="xl:px-32 lg:px-16 px-10 mt-36 mb-36" aria-labelledby="docs">
         <div class="flex flex-col mb-8 md:flex-row justify-between">
-            <h2 id="tutos" aria-level="2" role="heading"
+            <h2 id="docs" aria-level="2" role="heading"
                 class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl uppercase font-bold text-yellow-800 mb-4 xl:mb-16 font-sans">{{__('technicals.doc_title')}}</h2>
             <a class="hover:text-orange-500  font-sans text-green-700 xl:text-2xl 2xl:text-3xl font-semibold underline md:text-xl xl:px-4"
                href="/{{app()->getLocale()}}/technical/docandtool/doc">{{__('technicals.doc_button')}}</a>

@@ -19,7 +19,7 @@
             <x-sort_search.search id="tuto" class="min-w-[20%]" :urlAction="$urlAction"/>
         </div>
         <p class="mb-7 md:leading-8 xl:max-w-[55%] xl:text-xl 2xl:text-2xl 2xl:leading-12 xl:leading-10">{{__('tuto.tuto_text')}}</p>
-        <x-sort_search.sort_by_tutos :urlAction="'/'"  :languages="$languages" :date="$date" class="mb-14"></x-sort_search.sort_by_tutos>
+        <x-sort_search.sort_by_tutos  :languages="$languages" :date="$date" class="mb-14"></x-sort_search.sort_by_tutos>
         <article aria-labelledby="list-tutos">
             <h3 id="list-tutos" role="heading" aria-level="3" class="sr-only">{{__('tuto.tuto_list_title')}}</h3>
             <x-tuto_paginated :tutos="$tutos"/>
