@@ -72,15 +72,19 @@ Route::get('/{locale?}/technical/index', [TechnicalController::class, 'index'])-
 Route::get('/{locale?}/technical/books/{book:slug}', [BookController::class, 'show'])->middleware('locale');
 
 Route::get('/{locale?}/technical/glossary', [GlossaryController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/technical/glossary/ajax', [GlossaryController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/technical/tuto', [TutoController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/technical/tuto/ajax', [TutoController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/technical/docandtool/doc', [DocController::class, 'index', BookController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/technical/docandtool/tool', [ToolController::class, 'index', BookController::class, 'index'] )->middleware('locale');
 Route::post('/{locale?}/technical/tuto/favorite/{tuto:id}', [TutoController::class, 'favorite'])->middleware(['locale','auth']);
 
 
 Route::get('/{locale?}/entreprise/partner', [PartnerController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/entreprise/partner/ajax', [PartnerController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/entreprise/partner/{partner:slug}', [PartnerController::class, 'show'])->middleware('locale');
 Route::get('/{locale?}/entreprise/internship', [OfferController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/entreprise/internship/ajax', [OfferController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/entreprise/internship/{offer:slug}', [OfferController::class, 'show'])->middleware('locale');
 
 

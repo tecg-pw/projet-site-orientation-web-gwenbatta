@@ -5,11 +5,16 @@ window.addEventListener('load', init);
 let buttonSearches = document.getElementsByClassName('filter');
 let searchInputProject = document.querySelector('#project #search') as HTMLInputElement;
 let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
+let searchInputOffer = document.querySelector('#offer #search') as HTMLInputElement;
+let searchInputPartner = document.querySelector('#partner #search') as HTMLInputElement;
+let searchInputGlossary = document.querySelector('#glossary #search') as HTMLInputElement;
 let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
 let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
-let searchGlobalForm = document.querySelector('#searchGlobalForm') as HTMLFormElement;
 let containerProject = document.getElementById('containerProject')
 let containerNew = document.getElementById('containerNew')
+let containerOffer = document.getElementById('containerOffer')
+let containerPartner = document.getElementById('containerPartner')
+let containerGlossary = document.getElementById('containerGlossary')
 
 function init() {
     document.body.classList.remove('no-js');
@@ -17,6 +22,9 @@ function init() {
     searchGlobalInput.value = '';
     searchInputProject.value = '';
     searchInputNew.value = '';
+    searchInputOffer.value = '';
+    searchInputPartner.value = '';
+    searchInputGlossary.value = '';
     slideInView()
     handlePassword()
     burgerMenu()
@@ -168,7 +176,6 @@ if (searchInputProject !== null) {
         makeRequestProject()
     })
 }
-console.log(searchInputNew)
 if (searchInputNew !== null) {
     searchInputNew.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
@@ -176,7 +183,29 @@ if (searchInputNew !== null) {
         makeRequestNew()
     })
 }
+if (searchInputOffer !== null) {
+    searchInputOffer.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        console.log(stateSearch.search)
+        makeRequestOffer()
+    })
+}
 
+if (searchInputPartner !== null) {
+    searchInputPartner.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        console.log(stateSearch.search)
+        makeRequestPartner()
+    })
+}
+
+if (searchInputGlossary !== null) {
+    searchInputGlossary.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        console.log(stateSearch.search)
+        makeRequestGlossary()
+    })
+}
 
 function makeRequestProject() {
     let locale = window.location.pathname.split('/');
@@ -186,7 +215,6 @@ function makeRequestProject() {
         .then((response) => response.text())
         .then((data) => updateDataTableProject(data));
 }
-
 function makeRequestNew() {
     let locale = window.location.pathname.split('/');
     let url = `http://tecweb.test/${locale[1]}/news/index/ajax?` + new URLSearchParams(stateSearch);
@@ -194,6 +222,32 @@ function makeRequestNew() {
     fetch(url)
         .then((response) => response.text())
         .then((data) => updateDataTableNew(data));
+}
+function makeRequestOffer() {
+    let locale = window.location.pathname.split('/');
+    let url = `http://tecweb.test/${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableOffer(data));
+}
+
+function makeRequestPartner() {
+    let locale = window.location.pathname.split('/');
+    let url = `http://tecweb.test/${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTablePartner(data));
+}
+
+function makeRequestGlossary() {
+    let locale = window.location.pathname.split('/');
+    let url = `http://tecweb.test/${locale[1]}/technical/glossary/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableGlossary(data));
 }
 
 function updateDataTableProject(data) {
@@ -217,7 +271,7 @@ function updateDataTableNew(data) {
     containerNew.innerHTML = data
     let titles = document.querySelectorAll('h3')
     let excerpts = document.querySelectorAll('.excerpt')
-    let dates = document.querySelectorAll('.dates')
+    let dates = document.querySelectorAll('.datesNew')
     // @ts-ignore
     for (const title of titles) {
         title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
@@ -230,6 +284,73 @@ function updateDataTableNew(data) {
     // @ts-ignore
     for (const date of dates) {
         date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    slideInView();
+}
+
+function updateDataTableOffer(data) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    containerOffer.innerHTML = data
+    let titles = document.querySelectorAll('h3')
+    let descriptions = document.querySelectorAll('.description')
+    let partners = document.querySelectorAll('.partner')
+    // @ts-ignore
+    for (const title of titles) {
+        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const description of descriptions) {
+        let str = description.innerHTML.replace(/<[^>]+>/g, '')
+        description.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const partner of partners) {
+        partner.innerHTML = partner.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+
+    slideInView();
+}
+
+function updateDataTablePartner(data) {
+    console.log(data)
+    let match = new RegExp(stateSearch.search, 'gi')
+    containerPartner.innerHTML = data
+    let titles = document.querySelectorAll('h3')
+    let adresses = document.querySelectorAll('.adresse')
+    let localities = document.querySelectorAll('.locality')
+    let localitiesNum = document.querySelectorAll('.localityNumber')
+    // @ts-ignore
+    for (const title of titles) {
+        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const adresse of adresses) {
+        adresse.innerHTML = adresse.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const locality of localities) {
+        locality.innerHTML = locality.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const localityNum of localitiesNum) {
+        localityNum.innerHTML = localityNum.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    slideInView();
+}
+
+function updateDataTableGlossary(data) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    containerGlossary.innerHTML = data
+    let titles = document.querySelectorAll('h3')
+    let definitions = document.querySelectorAll('.definition')
+    // @ts-ignore
+    for (const title of titles) {
+        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const definition of definitions) {
+        let str = definition.innerHTML.replace(/<[^>]+>/g, '')
+        definition.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
 }

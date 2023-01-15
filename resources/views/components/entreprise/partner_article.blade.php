@@ -3,17 +3,20 @@
     'partner_ref'
 ])
 
-<article
-        {{ $attributes->class(['slide-in group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }}
+<article {{ $attributes->class(['slide-in group hover:bg-orange-100 relative flex flex-col bg-white-100 py-4 px-4 xl:py-6 xl:px-8 rounded-3xl']) }}
         aria-labelledby="{{$partner_ref->slug}}">
     <div class="flex flex-1 items-center">
         <div class="flex-1 order-2 ml-4">
             <h3 id="{{$partner_ref->slug}}" role="heading" aria-level="3"
-                class="text-lg xl:text-2xl 2xl:text-3xl">{{$partner_ref->name}}</h3>
+                class="capitalize text-lg xl:text-2xl 2xl:text-3xl">{{$partner_ref->name}}</h3>
             <div class="mt-1 flex justify-between">
                 <div class="flex flex-col xl:flex-row xl:gap-2">
-                    <p class="xl:text-lg 2xl:text-xl">{{$partner_ref->adresse}},</p>
-                    <p class="uppercase xl:text-lg 2xl:text-xl">{{$partner_ref->locality_number}} {{$partner_ref->locality}}</p>
+                    <p class="adresse capitalize xl:text-lg 2xl:text-xl">{{$partner_ref->adresse}},</p>
+                    <p class="uppercase xl:text-lg 2xl:text-xl">
+                        <span class="localityNumber">
+                            {{$partner_ref->locality_number}}
+                        </span>
+                         <span class="locality">{{$partner_ref->locality}}</span></p>
                 </div>
                 <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg" width="25"
                      viewBox="0 0 32 27.417">

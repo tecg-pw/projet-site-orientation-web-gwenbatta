@@ -23,17 +23,17 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tecweb.be/">
+    <meta property="og:url" content="{{config('app.url')}}">
     <meta property="og:title" content="{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}">
     <meta property="og:description" content="Site de l'option web infographique de la HEPL à Seraing">
-    <meta property="og:image" content="/img/tecweb_overview.png">
+    <meta property="og:image" content="{{config('app.url')}}/img/tecweb_overview.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://tecweb.be/">
+    <meta property="twitter:url" content="{{config('app.url')}}">
     <meta property="twitter:title" content="{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}">
     <meta property="twitter:description" content="Site de l'option web infographique de la HEPL à Seraing">
-    <meta property="twitter:image" content="/img/tecweb_overview.png">
+    <meta property="twitter:image" content="{{config('app.url')}}/img/tecweb_overview.png">
 
     @vite('resources/css/app.css')
     @vite('resources/js/app.ts')

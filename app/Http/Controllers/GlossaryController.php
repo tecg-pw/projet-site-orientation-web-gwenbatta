@@ -12,7 +12,7 @@ class GlossaryController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index(string $locale=null)
+    public function index(string $locale = null)
     {
         $searchTerm = request()->input('search') ?? '';
         $ids = [];
@@ -29,10 +29,27 @@ class GlossaryController extends Controller
             }
             $termes = Glossary::whereIn('id', $ids)->paginate(9);
 
-        }
-        else {
+        } else {
             $termes = Glossary::paginate(8);
         }
         return view('technical.glossary', compact('termes'));
+    }
+
+    public function ajax(string $locale = null)
+    {
+        $searchTerm = request()->input('search') ?? '';
+        $ids = [];
+            $references = GlossaryTranslation::query()
+                ->where('locale', $locale)
+                ->where(function ($query) use ($searchTerm) {
+                    $query->where('name', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('definition', 'like', '%' . $searchTerm . '%');
+                })->get();
+
+            foreach ($references as $reference) {
+                $ids [] = $reference->glossary_id;
+            }
+            $termes = Glossary::whereIn('id', $ids)->paginate(9);
+        return view('components.container_glossary', compact('termes'));
     }
 }

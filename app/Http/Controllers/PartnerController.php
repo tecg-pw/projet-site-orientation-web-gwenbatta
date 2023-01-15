@@ -15,13 +15,13 @@ class PartnerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(string  $locale=null)
+    public function index(string $locale = null)
     {
         $searchTerm = request()->input('search') ?? '';
         $sortCities = request()->input('cities') ?? 'all';
         $sortAgency = request()->input('agency') ?? 'all';
         $ids = [];
-        if ($searchTerm){
+        if ($searchTerm) {
             $references = PartnerTranslation::query()
                 ->where('locale', $locale)
                 ->where(function ($query) use ($searchTerm) {
@@ -34,11 +34,9 @@ class PartnerController extends Controller
                 $ids [] = $reference->partner_id;
             };
             $partners = Partner::whereIn('id', $ids)->paginate(8);
-        }
-        elseif ($sortCities === 'all' && $sortAgency === 'all') {
+        } elseif ($sortCities === 'all' && $sortAgency === 'all') {
             $partners = Partner::paginate(8);
-        }
-        elseif ($sortCities === 'all') {
+        } elseif ($sortCities === 'all') {
             $references = PartnerTranslation::query()
                 ->where('locale', $locale)
                 ->where('name', $sortAgency)->get();
@@ -67,8 +65,7 @@ class PartnerController extends Controller
                 $ids [] = $reference->partner_id;
             };
             $partners = Partner::whereIn('id', $ids)->paginate(8);
-        }
-        else{
+        } else {
             $partners = Partner::paginate(8);
         }
 
@@ -76,6 +73,28 @@ class PartnerController extends Controller
         $agencies = PartnerTranslation::select('name')->groupBy('name')->get();
 
         return view('entreprise.partner', compact('partners', 'cities', 'agencies'));
+    }
+
+    public function ajax(string $locale = null)
+    {
+        $searchTerm = request()->input('search') ?? '';
+        $ids = [];
+        $references = PartnerTranslation::query()
+            ->where('locale', $locale)
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('name', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('locality', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('locality_number', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('adresse', 'like', '%' . $searchTerm . '%');
+            })->get();
+        foreach ($references as $reference) {
+            $ids [] = $reference->partner_id;
+        }
+        $partners = Partner::whereIn('id', $ids)->paginate(8);
+        $cities = PartnerTranslation::select('locality')->groupBy('locality')->get();
+        $agencies = PartnerTranslation::select('name')->groupBy('name')->get();
+
+        return view('components.container_partner', compact('partners', 'cities', 'agencies'));
     }
 
     /**
@@ -91,7 +110,7 @@ class PartnerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -102,22 +121,22 @@ class PartnerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(string $locale=null, PartnerTranslation $partner)
+    public function show(string $locale = null, PartnerTranslation $partner)
     {
 
         $offers = Offer::where('partner_id', $partner->partner_id)->get();
         $alumnis = PartnerTranslation::find($partner->id)->person()->get();
         $partner = Partner::find($partner->partner_id);
-        return view('entreprise.partner.single', compact('partner','offers','alumnis'));
+        return view('entreprise.partner.single', compact('partner', 'offers', 'alumnis'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -128,8 +147,8 @@ class PartnerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -140,7 +159,7 @@ class PartnerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
