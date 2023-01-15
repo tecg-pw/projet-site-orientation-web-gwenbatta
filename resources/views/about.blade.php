@@ -143,8 +143,8 @@
                 <h3 class="text-xl mb-7 xl:text-2xl 2xl:text-3xl uppercase font-medium xl:mb-14" id="third-year" aria-level="3"
                     role="heading">{{__('about.course_third')}}</h3>
                 <p class="xl:text-lg 2xl:text-xl">{{__('about.course_commons')}}</p>
-                <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="second-web">
-                    <h4 class="sr-only font-semibold" id="second-web" aria-level="3"
+                <section class="xl:text-lg xl:mt-8 gap-2 mt-4" aria-labelledby="third-web">
+                    <h4 class="sr-only font-semibold" id="third-web" aria-level="3"
                         role="heading">{{__('about.course_web_title')}}</h4>
                     <div class="slide-in flex justify-between">
                         <div class="slide-in flex flex-1 flex-col xl:gap-2">

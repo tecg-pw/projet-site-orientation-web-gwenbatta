@@ -55,7 +55,7 @@ class ProjectController extends Controller
         foreach ($references as $reference) {
             $ids [] = $reference->project_id;
         }
-        $projects = Project::whereIn('id', $ids)->paginate(9);
+        $projects = Project::whereIn('id', $ids)->paginate(2);
         return view('components.container_project', compact('projects'));
     }
 

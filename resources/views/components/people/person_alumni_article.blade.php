@@ -9,21 +9,31 @@
         <div class="flex flex-1 items-center">
             <div class="flex-1 order-2 ml-4">
                 <h4 id="{{$person_ref->slug}}" role="heading" aria-level="4"
-                    class="text-xl xl:text-2xl 2xl:text-3xl">{{$person_ref->firstname}} {{$person_ref->name}}</h4>
+                    class="capitalize text-xl xl:text-2xl 2xl:text-3xl">
+                    <span class="firstname">{{$person_ref->firstname}} </span>
+                    <span class="name">{{$person_ref->name}}</span>
+                </h4>
                 <div class="mt-1 flex justify-between">
                     <div class="flex flex-col xl:flex-row xl:gap-4">
-                        @if($person_ref->status === 'teachalumni')
-                            <p class="uppercase xl:text-lg 2xl:text-xl">{{__('people.teachalumni_status')}}</p>
-                        @else
-                            <p class="uppercase xl:text-lg 2xl:text-xl">{{$person_ref->status}}</p>
-                        @endif
-                        @if($person_ref->end === null)
-                            <p class="xl:text-lg 2xl:text-xl">{{$person_ref->begin->format('Y')}}
-                                - {{__('people.bottin_today')}}</p>
-                        @else
-                            <p class="uppercase xl:text-lg 2xl:text-xl">{{$person_ref->begin->format('Y')}}
-                                -{{$person_ref->end->format('Y')}}</p>
-                        @endif
+                        <div class="status xl:text-lg 2xl:text-xl uppercase">
+                            @if($person_ref->status === 'teachalumni')
+                                <p>{{__('people.teachalumni_status')}}</p>
+                            @else
+                                <p>{{$person_ref->status}}</p>
+                            @endif
+                        </div>
+                        <div>
+                            @if($person_ref->end === null)
+                                <div class="xl:text-lg 2xl:text-xl flex">
+                                    <p class="begin">{{$person_ref->begin->format('Y')}}</p>
+                                    - {{__('people.bottin_today')}}</div>
+                            @else
+                                <div class="uppercase xl:text-lg 2xl:text-xl flex">
+                                    <p class="begin">{{$person_ref->begin->format('Y')}}</p>-<p
+                                        class="end">{{$person_ref->end->format('Y')}}</p>
+                                </div>
+                            @endif
+                        </div>
                     </div>
                     <svg class="self-end mr-4 group-hover:mr-0" xmlns="http://www.w3.org/2000/svg"
                          width="25"

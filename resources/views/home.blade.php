@@ -98,7 +98,7 @@
             <div class="slide-in  group relative flex flex-col pt-7 justify-self-center pb-12 ">
                 <p class="group-hover:text-orange-500 text-xl xl:text-2xl font-light text-green-700 underline mb-4 xl:mb-6 2xl:text-3xl">{{__('home.teacher_title')}}</p>
                 <p class="xl:leading-8 text-lg xl:text-xl 2xl:text-2xl 2xl:leading-12">{{__('home.teacher_text')}}</p>
-                <svg class="group-hover:mr-0  self-end mr-4" xmlns="http://www.w3.org/2000/svg" width="32" height="27.417"·
+                <svg class="group-hover:mr-0  self-end mr-4" xmlns="http://www.w3.org/2000/svg" width="32" height="27.417"
                      viewBox="0 0 32 27.417">
                     <path d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
                         transform="translate(-19 -8.001)" fill="#4e6458"/>

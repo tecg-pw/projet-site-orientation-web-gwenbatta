@@ -35,8 +35,7 @@ class TutoController extends Controller
         } //OK
         elseif ($sortLanguages === 'all' && $sortDate === 'all') {
             $tutos = Tuto::paginate(8);
-        }
-        elseif ($sortLanguages === 'all') {
+        } elseif ($sortLanguages === 'all') {
             $references = TutoTranslation::query()
                 ->where('locale', $locale)
                 ->where('created_at', $sortDate)->get();
@@ -72,6 +71,27 @@ class TutoController extends Controller
         $date = TutoTranslation::select('created_at')->where('locale', $locale)->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at', 'DESC')->get();
 
         return view('technical.tuto', compact('tutos', 'languages', 'date'));
+    }
+
+    public function ajax(string $locale = null)
+    {
+        $searchTerm = request()->input('search') ?? '';
+        $ids = [];
+        $references = TutoTranslation::query()
+            ->where('locale', $locale)
+            ->where(function ($query) use ($searchTerm) {
+                $query->where('name', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('languages', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('excerpt', 'like', '%' . $searchTerm . '%');
+            })->get();
+        foreach ($references as $reference) {
+            $ids [] = $reference->tuto_id;
+        };
+        $tutos = Tuto::whereIn('id', $ids)->paginate(8);
+        $languages = TutoTranslation::select('languages')->where('locale', $locale)->groupBy('languages')->get();
+        $date = TutoTranslation::select('created_at')->where('locale', $locale)->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at', 'DESC')->get();
+
+        return view('components.container_tuto', compact('tutos', 'languages', 'date'));
     }
 
     public function favorite(string $locale = null, TutoUserRequest $request, $id)

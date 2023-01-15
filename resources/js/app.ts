@@ -8,6 +8,9 @@ let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
 let searchInputOffer = document.querySelector('#offer #search') as HTMLInputElement;
 let searchInputPartner = document.querySelector('#partner #search') as HTMLInputElement;
 let searchInputGlossary = document.querySelector('#glossary #search') as HTMLInputElement;
+let searchInputTuto = document.querySelector('#tuto #search') as HTMLInputElement;
+let searchInputBottin = document.querySelector('#bottin #search') as HTMLInputElement;
+let searchInputAlumni = document.querySelector('#alumni #search') as HTMLInputElement;
 let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
 let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
 let containerProject = document.getElementById('containerProject')
@@ -15,6 +18,19 @@ let containerNew = document.getElementById('containerNew')
 let containerOffer = document.getElementById('containerOffer')
 let containerPartner = document.getElementById('containerPartner')
 let containerGlossary = document.getElementById('containerGlossary')
+let containerTuto = document.getElementById('containerTuto')
+let containerAlumni = document.getElementById('containerAlumni')
+let containerBottin = document.getElementById('containerBottin')
+let paginations = document.querySelectorAll('.page') as NodeList;
+let pdf = document.getElementById('pdf') as HTMLInputElement;
+let textInput = document.querySelector('.textInput');
+pdf.classList.add('sr-only')
+pdf.addEventListener('change', () => {
+    if (pdf.value) {
+        // @ts-ignore
+        textInput.innerHTML = `<p class="text-sm">${pdf.value}</p>`;
+    }
+})
 
 function init() {
     document.body.classList.remove('no-js');
@@ -25,14 +41,16 @@ function init() {
     searchInputOffer.value = '';
     searchInputPartner.value = '';
     searchInputGlossary.value = '';
-    slideInView()
-    handlePassword()
-    burgerMenu()
-    pdfInputTextValue()
+    searchInputTuto.value = '';
+    slideInView();
+    handlePassword();
+    burgerMenu();
+    handlepagination();
 }
 
 const stateSearch = {
     search: '',
+    page:1,
 }
 
 for (let i = 0; i < buttonSearches.length; i++) {
@@ -43,20 +61,6 @@ for (let i = 0; i < buttonSearches.length; i++) {
 for (const form of forms) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-    })
-}
-
-function pdfInputTextValue() {
-    let pdf = document.getElementById('pdf') as HTMLInputElement;
-    let textInput = document.querySelector('.textInput');
-
-    pdf.classList.add('sr-only')
-    pdf.addEventListener('change', () => {
-
-        if (pdf.value) {
-            // @ts-ignore
-            textInput.innerHTML = `<p class="text-sm">${pdf.value}</p>`;
-        }
     })
 }
 
@@ -173,12 +177,14 @@ function slideInView() {
 if (searchInputProject !== null) {
     searchInputProject.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
         makeRequestProject()
     })
 }
 if (searchInputNew !== null) {
     searchInputNew.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
         console.log(stateSearch.search)
         makeRequestNew()
     })
@@ -186,29 +192,55 @@ if (searchInputNew !== null) {
 if (searchInputOffer !== null) {
     searchInputOffer.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
         console.log(stateSearch.search)
         makeRequestOffer()
     })
 }
-
 if (searchInputPartner !== null) {
     searchInputPartner.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
         console.log(stateSearch.search)
         makeRequestPartner()
     })
 }
-
 if (searchInputGlossary !== null) {
     searchInputGlossary.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
         console.log(stateSearch.search)
         makeRequestGlossary()
+    })
+}
+if (searchInputTuto !== null) {
+    searchInputTuto.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
+        console.log(stateSearch.search)
+        makeRequestTuto()
+    })
+}
+if (searchInputBottin !== null) {
+    searchInputBottin.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
+        console.log(stateSearch.search)
+        makeRequestBottin()
+    })
+}
+if (searchInputAlumni !== null) {
+    searchInputAlumni.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
+        console.log(stateSearch.search)
+        makeRequestAlumni()
     })
 }
 
 function makeRequestProject() {
     let locale = window.location.pathname.split('/');
+    // @ts-ignore
     let url = `http://tecweb.test/${locale[1]}/project/index/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
@@ -217,6 +249,7 @@ function makeRequestProject() {
 }
 function makeRequestNew() {
     let locale = window.location.pathname.split('/');
+    // @ts-ignore
     let url = `http://tecweb.test/${locale[1]}/news/index/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
@@ -225,29 +258,57 @@ function makeRequestNew() {
 }
 function makeRequestOffer() {
     let locale = window.location.pathname.split('/');
+    // @ts-ignore
     let url = `http://tecweb.test/${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
         .then((data) => updateDataTableOffer(data));
 }
-
 function makeRequestPartner() {
     let locale = window.location.pathname.split('/');
+    // @ts-ignore
     let url = `http://tecweb.test/${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
         .then((data) => updateDataTablePartner(data));
 }
-
 function makeRequestGlossary() {
     let locale = window.location.pathname.split('/');
+    // @ts-ignore
     let url = `http://tecweb.test/${locale[1]}/technical/glossary/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
         .then((data) => updateDataTableGlossary(data));
+}
+function makeRequestTuto() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/technical/tuto/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableTuto(data));
+}
+function makeRequestBottin() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/bottin/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableBottin(data, containerBottin));
+}
+function makeRequestAlumni() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/bottin/alumni/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableBottin(data, containerAlumni));
 }
 
 function updateDataTableProject(data) {
@@ -264,8 +325,8 @@ function updateDataTableProject(data) {
         date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
+    handlepagination()
 }
-
 function updateDataTableNew(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerNew.innerHTML = data
@@ -286,8 +347,8 @@ function updateDataTableNew(data) {
         date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
+    handlepagination();
 }
-
 function updateDataTableOffer(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerOffer.innerHTML = data
@@ -309,8 +370,8 @@ function updateDataTableOffer(data) {
     }
 
     slideInView();
+    handlepagination();
 }
-
 function updateDataTablePartner(data) {
     console.log(data)
     let match = new RegExp(stateSearch.search, 'gi')
@@ -336,8 +397,8 @@ function updateDataTablePartner(data) {
         localityNum.innerHTML = localityNum.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
+    handlepagination();
 }
-
 function updateDataTableGlossary(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerGlossary.innerHTML = data
@@ -353,6 +414,76 @@ function updateDataTableGlossary(data) {
         definition.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
+    handlepagination();
+}
+function updateDataTableTuto(data) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    containerTuto.innerHTML = data
+    let titles = document.querySelectorAll('h3 a')
+    let excerpts = document.querySelectorAll('.excerpt')
+    // @ts-ignore
+    for (const title of titles) {
+        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const excerpt of excerpts) {
+        let str = excerpt.innerHTML.replace(/<[^>]+>/g, '')
+        excerpt.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    slideInView();
+    handlepagination();
+}
+function updateDataTableBottin(data, container) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    container.innerHTML = data
+    let names = document.querySelectorAll('.name')
+    let firstnames = document.querySelectorAll('.firstname')
+    let status = document.querySelectorAll('.status')
+    let begins = document.querySelectorAll('.begin')
+    let ends = document.querySelectorAll('.end')
+    // @ts-ignore
+    for (const name of names) {
+        name.innerHTML = name.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const firstname of firstnames) {
+        firstname.innerHTML = firstname.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const statusElement of status) {
+        let str = statusElement.innerHTML.replace(/<[^>]+>/g, '')
+        statusElement.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const begin of begins) {
+        begin.innerHTML = begin.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const end of ends) {
+        end.innerHTML = end.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+
+    slideInView();
+    handlepagination();
+}
+
+
+
+function handlepagination(){
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestProject()
+        })
+    }
 }
 
 updateImageModifyBackImage()

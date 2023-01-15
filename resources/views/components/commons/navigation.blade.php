@@ -19,7 +19,6 @@
     <!-- Primary Meta Tags -->
     <title>{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}</title>
     <meta name="title" content="{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}">
-    <meta name="description" content="Site de l'option web infographique de la HEPL à Seraing">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -90,17 +89,17 @@
             <div class="group ml-4 group relative">
                 <svg class="xl:not-sr-only sr-only" xmlns="http://www.w3.org/2000/svg" width="170.001" height="77.656"
                      viewBox="0 0 170.001 77.656">
-                    <g id="Groupe_284" data-name="Groupe 284" transform="translate(-230.999 -70.345)">
-                        <path id="Soustraction_1" data-name="Soustraction 1"
+                    <g  data-name="Groupe 284" transform="translate(-230.999 -70.345)">
+                        <path data-name="Soustraction 1"
                               d="M4116.213,11516.657h-48.141a12.468,12.468,0,0,1-4.4-.723,3.3,3.3,0,0,1-2.414-3.093,2.349,2.349,0,0,1,.648-1.733c.956-.958,2.789-1.09,4.628-1.09.287,0,.581,0,.818.006l.208,0,.513,0h20.255v-6.63h-29.886a14.443,14.443,0,0,1-14.443-14.443v-35.513a14.443,14.443,0,0,1,14.443-14.442h67.4a14.33,14.33,0,0,1,8.646,2.871,14.562,14.562,0,0,1,5.151,7.285h-6.012a9.381,9.381,0,0,0-7.784-4.529h-67.4a9.642,9.642,0,0,0-5.324,1.756,7.99,7.99,0,0,0-2.4,2.7,9.666,9.666,0,0,0-1.092,4.361v35.513a8.727,8.727,0,0,0,2.232,6.449,9.375,9.375,0,0,0,6.58,2.366h67.4a10.458,10.458,0,0,0,3.925-.761,7.37,7.37,0,0,0,3.823-3.493h5.96a14.449,14.449,0,0,1-13.708,9.882h-29.885v6.63h20.255a17.816,17.816,0,0,1,4.405.409c1.6.432,2.41,1.24,2.41,2.4,0,1.5-1.311,2.407-2.411,2.905A11.38,11.38,0,0,1,4116.213,11516.657Z"
                               transform="translate(-3813 -11368.656)" fill="rgba(111, 112, 77, 0.3)"/>
-                        <g id="Groupe_251" data-name="Groupe 251" transform="translate(0 63)">
-                            <text class="group-hover:fill-green-700" id="TecWeb_" data-name="TecWeb "
+                        <g data-name="Groupe 251" transform="translate(0 63)">
+                            <text class="group-hover:fill-green-700" data-name="TecWeb "
                                   transform="translate(242 47)" fill="#da953a" font-size="35"
                                   font-family="Montserrat-Bold, Montserrat" font-weight="700">
                                 <tspan x="0" y="0">TecWeb</tspan>
                             </text>
-                            <text class="group-hover:fill-green-700" id="Le_site_de_l_option_web_de_la_HEPL"
+                            <text class="group-hover:fill-green-700"
                                   data-name="Le site de l’option web de la HEPL" transform="translate(242 58)"
                                   fill="#da953a" font-size="11" font-family="Hind-Regular, Hind">
                                 <tspan x="0" y="0">Le site de l’option web de la HEPL</tspan>
@@ -111,17 +110,17 @@
                 <svg class="lg:not-sr-only sr-only xl:sr-only" xmlns="http://www.w3.org/2000/svg" width="140.001"
                      height="77.656"
                      viewBox="0 0 170.001 77.656">
-                    <g id="Groupe_284" data-name="Groupe 284" transform="translate(-230.999 -70.345)">
-                        <path id="Soustraction_1" data-name="Soustraction 1"
+                    <g  data-name="Groupe 284" transform="translate(-230.999 -70.345)">
+                        <path data-name="Soustraction 1"
                               d="M4116.213,11516.657h-48.141a12.468,12.468,0,0,1-4.4-.723,3.3,3.3,0,0,1-2.414-3.093,2.349,2.349,0,0,1,.648-1.733c.956-.958,2.789-1.09,4.628-1.09.287,0,.581,0,.818.006l.208,0,.513,0h20.255v-6.63h-29.886a14.443,14.443,0,0,1-14.443-14.443v-35.513a14.443,14.443,0,0,1,14.443-14.442h67.4a14.33,14.33,0,0,1,8.646,2.871,14.562,14.562,0,0,1,5.151,7.285h-6.012a9.381,9.381,0,0,0-7.784-4.529h-67.4a9.642,9.642,0,0,0-5.324,1.756,7.99,7.99,0,0,0-2.4,2.7,9.666,9.666,0,0,0-1.092,4.361v35.513a8.727,8.727,0,0,0,2.232,6.449,9.375,9.375,0,0,0,6.58,2.366h67.4a10.458,10.458,0,0,0,3.925-.761,7.37,7.37,0,0,0,3.823-3.493h5.96a14.449,14.449,0,0,1-13.708,9.882h-29.885v6.63h20.255a17.816,17.816,0,0,1,4.405.409c1.6.432,2.41,1.24,2.41,2.4,0,1.5-1.311,2.407-2.411,2.905A11.38,11.38,0,0,1,4116.213,11516.657Z"
                               transform="translate(-3813 -11368.656)" fill="rgba(111, 112, 77, 0.3)"/>
-                        <g id="Groupe_251" data-name="Groupe 251" transform="translate(0 63)">
-                            <text class="group-hover:fill-green-700" id="TecWeb_" data-name="TecWeb "
+                        <g data-name="Groupe 251" transform="translate(0 63)">
+                            <text class="group-hover:fill-green-700" data-name="TecWeb "
                                   transform="translate(242 47)" fill="#da953a" font-size="35"
                                   font-family="Montserrat-Bold, Montserrat" font-weight="700">
                                 <tspan x="0" y="0">TecWeb</tspan>
                             </text>
-                            <text class="group-hover:fill-green-700" id="Le_site_de_l_option_web_de_la_HEPL"
+                            <text class="group-hover:fill-green-700"
                                   data-name="Le site de l’option web de la HEPL" transform="translate(242 58)"
                                   fill="#da953a" font-size="11" font-family="Hind-Regular, Hind">
                                 <tspan x="0" y="0">Le site de l’option web de la HEPL</tspan>
@@ -130,17 +129,17 @@
                     </g>
                 </svg>
                 <svg class="lg:sr-only" xmlns="http://www.w3.org/2000/svg" width="80" viewBox="0 0 170.001 77.656">
-                    <g id="Groupe_284" data-name="Groupe 284" transform="translate(-230.999 -70.345)">
-                        <path id="Soustraction_1" data-name="Soustraction 1"
+                    <g  data-name="Groupe 284" transform="translate(-230.999 -70.345)">
+                        <path data-name="Soustraction 1"
                               d="M4116.213,11516.657h-48.141a12.468,12.468,0,0,1-4.4-.723,3.3,3.3,0,0,1-2.414-3.093,2.349,2.349,0,0,1,.648-1.733c.956-.958,2.789-1.09,4.628-1.09.287,0,.581,0,.818.006l.208,0,.513,0h20.255v-6.63h-29.886a14.443,14.443,0,0,1-14.443-14.443v-35.513a14.443,14.443,0,0,1,14.443-14.442h67.4a14.33,14.33,0,0,1,8.646,2.871,14.562,14.562,0,0,1,5.151,7.285h-6.012a9.381,9.381,0,0,0-7.784-4.529h-67.4a9.642,9.642,0,0,0-5.324,1.756,7.99,7.99,0,0,0-2.4,2.7,9.666,9.666,0,0,0-1.092,4.361v35.513a8.727,8.727,0,0,0,2.232,6.449,9.375,9.375,0,0,0,6.58,2.366h67.4a10.458,10.458,0,0,0,3.925-.761,7.37,7.37,0,0,0,3.823-3.493h5.96a14.449,14.449,0,0,1-13.708,9.882h-29.885v6.63h20.255a17.816,17.816,0,0,1,4.405.409c1.6.432,2.41,1.24,2.41,2.4,0,1.5-1.311,2.407-2.411,2.905A11.38,11.38,0,0,1,4116.213,11516.657Z"
                               transform="translate(-3813 -11368.656)" fill="rgba(111, 112, 77, 0.3)"/>
-                        <g id="Groupe_251" data-name="Groupe 251" transform="translate(0 63)">
-                            <text class="group-hover:fill-green-700" id="TecWeb_" data-name="TecWeb "
+                        <g data-name="Groupe 251" transform="translate(0 63)">
+                            <text class="group-hover:fill-green-700" data-name="TecWeb "
                                   transform="translate(242 47)" fill="#da953a" font-size="35"
                                   font-family="Montserrat-Bold, Montserrat" font-weight="700">
                                 <tspan x="0" y="0">TecWeb</tspan>
                             </text>
-                            <text class="group-hover:fill-green-700" id="Le_site_de_l_option_web_de_la_HEPL"
+                            <text class="group-hover:fill-green-700"
                                   data-name="Le site de l’option web de la HEPL" transform="translate(242 58)"
                                   fill="#da953a" font-size="11" font-family="Hind-Regular, Hind">
                                 <tspan x="0" y="0">Le site de l’option web de la HEPL</tspan>
@@ -302,9 +301,10 @@
                                     d="M51,21.715a1.956,1.956,0,0,1-.56,1.355l-.012.023-11.75,11.75a1.958,1.958,0,1,1-2.769-2.769l8.405-8.409H20.958a1.958,1.958,0,0,1,0-3.917H44.314l-8.405-8.405a1.958,1.958,0,1,1,2.769-2.769l11.75,11.75.012.02A1.968,1.968,0,0,1,51,21.707Z"
                                     transform="translate(-19 -8.001)" fill="#ffffff"/>
                             </svg>
-                        </a></li>
-                    <span><x-sort_search.search :urlAction="$urlAction"
-                                                class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-sort_search.search></span>
+                        </a>
+                    </li>
+                    <li><x-sort_search.search_nav_burger :urlAction="$urlAction"
+                                                class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-sort_search.search_nav_burger></li>
                 </ul>
             </div>
         </div>

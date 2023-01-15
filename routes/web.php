@@ -89,7 +89,9 @@ Route::get('/{locale?}/entreprise/internship/{offer:slug}', [OfferController::cl
 
 
 Route::get('/{locale?}/bottin', [PersonController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/bottin/ajax', [PersonController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/bottin/alumni', [AlumniController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/bottin/alumni/ajax', [AlumniController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/bottin/alumni/{alumni:slug}', [AlumniController::class, 'show'])->middleware('locale');
 Route::get('/{locale?}/bottin/teacher/{teacher:slug}', [TeacherController::class, 'show'])->middleware('locale');
 Route::get('/{locale?}/bottin/teachalumni/{teachalumni:slug}', [TeachAlumniController::class, 'show'])->middleware('locale');

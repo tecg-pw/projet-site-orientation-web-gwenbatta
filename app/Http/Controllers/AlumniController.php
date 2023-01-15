@@ -111,6 +111,35 @@ class AlumniController extends Controller
         return view('bottin.alumni', compact('alumnis', 'status', 'years_end', 'testimonials'));
     }
 
+    public function ajax(string $locale = null)
+    {
+        $searchTerm = request()->input('search') ?? '';
+        $ids = [];
+
+        $references = PersonTranslation::query()
+            ->where('locale', $locale)
+            ->where('name', 'like', '%' . $searchTerm . '%')
+            ->orWhere('firstname', 'like', '%' . $searchTerm . '%')
+            ->where('locale', $locale)
+            ->orWhere('status', 'like', '%' . $searchTerm . '%')
+            ->where('locale', $locale)
+            ->orWhere('begin', 'like', '%' . $searchTerm . '%')
+            ->where('locale', $locale)
+            ->orWhere('end', 'like', '%' . $searchTerm . '%')
+            ->where('locale', $locale)
+            ->paginate(8);
+
+        foreach ($references as $reference) {
+            if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
+                $ids [] = $reference->people_id;
+            }
+        }
+        $alumnis = People::whereIn('id', $ids)->paginate(8);
+        $testimonials = Testimonial::take(4)->orderBy('created_at')->get();
+        $status = PersonTranslation::select('status')->where('locale', $locale)->groupBy('status')->get();
+        $years_end = PersonTranslation::select('end')->where('locale', $locale)->whereNot('end', null)->groupBy('end')->orderBy('end', 'DESC')->get();
+        return view('components.container_alumni', compact('alumnis', 'status', 'years_end', 'testimonials'));
+    }
     /**
      * Show the form for creating a new resource.
      *

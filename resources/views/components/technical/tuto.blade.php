@@ -6,7 +6,7 @@
     {{ $attributes->class(['slide-in relative py-6 px-8 rounded-3xl']) }} aria-labelledby="{{$tuto_ref->slug}}">
     <div class="flex justify-between">
         <div class="flex-1 flex justify-between">
-            <h3 id="{{$tuto_ref->slug}}" aria-level="3" role="heading" class="hover-within:text-orange-500 text-lg font-medium xl:text-2xl mb-1.5 2xl:text-3xl">
+            <h3 id="{{$tuto_ref->slug}}" aria-level="3" role="heading" class="capitalize hover-within:text-orange-500 text-lg font-medium xl:text-2xl mb-1.5 2xl:text-3xl">
                 <a class="hover:text-orange-500" href="{{$tuto_ref->link}}">
                 {{$tuto_ref->name}}
                 </a>
@@ -36,7 +36,7 @@
                 @endif
         @endauth
     </div>
-    <div class="mb-2.5 xl:mb-6 xl:text-lg  2xl:text-xl">{!!$tuto_ref->excerpt!!}</div>
+    <div class="excerpt mb-2.5 xl:mb-6 xl:text-lg  2xl:text-xl">{!!$tuto_ref->excerpt!!}</div>
     <div class="flex justify-between">
         <div class="flex gap-5 items-center">
             <p class="text-orange-500 font-sans xl:text-lg 2xl:text-xl font-medium">{{ucwords($tuto_ref->languages)}}</p>

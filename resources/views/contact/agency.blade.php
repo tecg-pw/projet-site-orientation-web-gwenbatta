@@ -140,10 +140,10 @@
                                                         <rect width="24" height="24" rx="6" stroke="none"/>
                                                         <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" fill="none"/>
                                                       </g>
-                                                      <path id="d62ff70270774c6e6e679f7a8c643f83"
+                                                      <path
                                                             d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z"
                                                             transform="translate(-2 -2)" fill="#da953a"/>
-                                                      <path id="d62ff70270774c6e6e679f7a8c643f83-2" data-name="d62ff70270774c6e6e679f7a8c643f83"
+                                                      <path  data-name="d62ff70270774c6e6e679f7a8c643f83"
                                                             d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z"
                                                             transform="translate(-2 -2)" fill="#da953a"/>
                                                     </svg>
@@ -198,8 +198,8 @@
                                                           <rect width="24" height="24" rx="6" stroke="none"/>
                                                           <rect x="0.5" y="0.5" width="23" height="23" rx="5.5" fill="none"/>
                                                         </g>
-                                                        <path id="d62ff70270774c6e6e679f7a8c643f83" d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#da953a" stroke="#da953a" stroke-width="1"/>
-                                                        <path id="d62ff70270774c6e6e679f7a8c643f83-2" data-name="d62ff70270774c6e6e679f7a8c643f83" d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#fff" stroke="#da953a" stroke-width="1"/>
+                                                        <path  d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#da953a" stroke="#da953a" stroke-width="1"/>
+                                                        <path  data-name="d62ff70270774c6e6e679f7a8c643f83" d="M11.852,17.3a1.2,1.2,0,0,0,1.7,0l4.9-4.9a1.2,1.2,0,1,0-1.7-1.7L12.7,14.756l-1.452-1.464a1.2,1.2,0,0,0-1.7,1.7ZM24.8,2H3.2A1.2,1.2,0,0,0,2,3.2V24.8A1.2,1.2,0,0,0,3.2,26H24.8A1.2,1.2,0,0,0,26,24.8V3.2A1.2,1.2,0,0,0,24.8,2ZM23.6,23.6H4.4V4.4H23.6Z" transform="translate(-2 -2)" fill="#fff" stroke="#da953a" stroke-width="1"/>
                                                       </g>
                                                     </svg>
                                                 </span>
@@ -215,11 +215,11 @@
                             <p class="text-green-500 text-lg mb-2 xl:text-2xl 2xl:text-3xl">{{__('contact_page.agency_offer_title')}}</p>
                             <div class="flex items-center justify-center w-full">
                                 <label for="pdf" class="flex flex-col items-center justify-center w-full h-64 border-2 border-orange-500 rounded-lg cursor-pointer bg-yellow-100 hover:bg-gray-100">
-                                    <div class=" flex flex-col items-center justify-center pt-5 pb-6">
+                                    <span class=" flex flex-col items-center justify-center pt-5 pb-6">
                                         <svg aria-hidden="true" class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                        <p class="mb-2 text-sm text-green-700"><span class="font-semibold">{{__('contact_page.agency_offer')}}</p>
-                                        <div class="textInput"></div>
-                                    </div>
+                                        <span class="mb-2 text-sm text-green-700"><span class="font-semibold">{{__('contact_page.agency_offer')}}</span></span>
+                                        <span class="textInput"></span>
+                                    </span>
                                     <input id="pdf" name="pdf" type="file"/>
                                 </label>
                             </div>
