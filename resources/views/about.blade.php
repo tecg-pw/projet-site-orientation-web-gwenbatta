@@ -13,48 +13,33 @@
         </div>
         <div class="slide-in sr-only lg:not-sr-only flex-1">
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
-                <img class="rounded-3xl row-span-2 min-h-full" src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-878.jpeg"
-                     srcset="
-                    /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-481.jpeg 1024w,
-                     /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-534.jpeg 1250w,
-                     /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-588.jpeg 1520w,
-                     /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-733.jpeg 2040w,
-                     /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-878.jpeg 2560w"
-                     sizes="
-                         (min-width : 1024px) 1024w,
-                         (min-width : 1250px) 1250w,
-                         (min-width : 1520px) 1520w,
-                         (min-width : 2040px) 2040w,
-                         2560w"
-                     alt="">
-                <img class="rounded-3xl"
-                     srcset="
-                    /img-redimensions/ux-gc7de3d904_1920-274.jpg 1024w,
-                     /img-redimensions/ux-gc7de3d904_1920-302.jpg 1250w,
-                     /img-redimensions/ux-gc7de3d904_1920-330.jpg 1520w,
-                     /img-redimensions/ux-gc7de3d904_1920-417.jpg 2040w,
-                     /img-redimensions/ux-gc7de3d904_1920-504.jpg 2560w"
-                     sizes="
-                         (min-width : 1024px) 1024w,
-                         (min-width : 1250px) 1250w,
-                         (min-width : 1520px) 1520w,
-                         (min-width : 2040px) 2040w,
-                         2560w"
-                     src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-504.jpg" alt="">
-                <img class="rounded-3xl" src="/img-redimensions/pexels-pixabay-270373-504.jpg"
-                     srcset="
-                    /img-redimensions/pexels-pixabay-270373-274.jpg 1024w,
-                     /img-redimensions/pexels-pixabay-270373-302.jpg 1250w,
-                     /img-redimensions/pexels-pixabay-270373-330.jpg 1520w,
-                     /img-redimensions/pexels-pixabay-270373-417.jpg 2040w,
-                     /img-redimensions/pexels-pixabay-270373-504.jpg 2560w"
-                     sizes="
-                         (min-width : 1024px) 1024w,
-                         (min-width : 1250px) 1250w,
-                         (min-width : 1520px) 1520w,
-                         (min-width : 2040px) 2040w,
-                         2560w"
-                     alt="">
+                <picture class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full">
+                    <source media="(max-width: 1024px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-481.jpeg">
+                    <source media="(max-width: 1250px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-524.jpeg">
+                    <source media="(max-width: 1520px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-588.jpeg">
+                    <source media="(max-width: 2040px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-733.jpeg">
+                    <source media="(max-width: 2560px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-878.jpeg">
+                    <img src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-878.jpeg"
+                         alt="" class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full">
+                </picture>
+                <picture class="sr-only lg:not-sr-only lg:rounded-3xl">
+                    <source media="(max-width: 1024px)" srcset="/img-redimensions/ux-gc7de3d904_1920-274.jpg">
+                    <source media="(max-width: 1250px)" srcset="/img-redimensions/ux-gc7de3d904_1920-302.jpg">
+                    <source media="(max-width: 1520px)" srcset="/img-redimensions/ux-gc7de3d904_1920-330.jpg">
+                    <source media="(max-width: 2040px)" srcset="/img-redimensions/ux-gc7de3d904_1920-417.jpg">
+                    <source media="(max-width: 2560px)" srcset="/img-redimensions/ux-gc7de3d904_1920-504.jpg">
+                    <img src="/img-redimensions/ux-gc7de3d904_1920-504.jpg"
+                         alt="" class="sr-only lg:not-sr-only lg:rounded-3xl">
+                </picture>
+                <picture class="sr-only lg:not-sr-only lg:rounded-3xl">
+                    <source media="(max-width: 1024px)" srcset="/img-redimensions/pexels-pixabay-270373-274.jpg">
+                    <source media="(max-width: 1250px)" srcset="/img-redimensions/pexels-pixabay-270373-302.jpg">
+                    <source media="(max-width: 1520px)" srcset="/img-redimensions/pexels-pixabay-270373-330.jpg">
+                    <source media="(max-width: 2040px)" srcset="/img-redimensions/pexels-pixabay-270373-417.jpg">
+                    <source media="(max-width: 2560px)" srcset="/img-redimensions/pexels-pixabay-270373-504.jpg">
+                    <img src="/img-redimensions/student-g0a8698c9e_1920-504.jpg"
+                         alt="" class="sr-only lg:not-sr-only lg:rounded-3xl">
+                </picture>
             </figure>
         </div>
     </section>
