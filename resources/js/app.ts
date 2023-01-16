@@ -24,24 +24,26 @@ let containerBottin = document.getElementById('containerBottin')
 let paginations = document.querySelectorAll('.page') as NodeList;
 let pdf = document.getElementById('pdf') as HTMLInputElement;
 let textInput = document.querySelector('.textInput');
-pdf.classList.add('sr-only')
-pdf.addEventListener('change', () => {
-    if (pdf.value) {
-        // @ts-ignore
-        textInput.innerHTML = `<p class="text-sm">${pdf.value}</p>`;
-    }
-})
+let avatar = document.getElementById('avatar') as HTMLInputElement;
+let imgAvatar = document.querySelector('#avatarUpdate') as HTMLImageElement;
+let imgSrc = document.querySelector('#avatarSrcset') as HTMLImageElement;
+let backImage = document.getElementById('back_image') as HTMLInputElement;
+let backAvatar = document.querySelector('#backUpdate') as HTMLImageElement;
+let imgSrcBack = document.querySelector('#backSrcset') as HTMLImageElement;
+if (pdf !== null) {
+    pdf.classList.add('sr-only')
+    pdf.addEventListener('change', () => {
+        if (pdf.value) {
+            // @ts-ignore
+            textInput.innerHTML = `<p class="text-sm">${pdf.value}</p>`;
+        }
+    })
+}
 
 function init() {
     document.body.classList.remove('no-js');
     document.body.classList.add('js-only');
     searchGlobalInput.value = '';
-    searchInputProject.value = '';
-    searchInputNew.value = '';
-    searchInputOffer.value = '';
-    searchInputPartner.value = '';
-    searchInputGlossary.value = '';
-    searchInputTuto.value = '';
     slideInView();
     handlePassword();
     burgerMenu();
@@ -65,9 +67,7 @@ for (const form of forms) {
 }
 
 function updateImageModifyProfil() {
-    let avatar = document.getElementById('avatar') as HTMLInputElement;
-    let imgAvatar = document.querySelector('#avatarUpdate') as HTMLImageElement;
-    let imgSrc = document.querySelector('#avatarSrcset') as HTMLImageElement;
+
     avatar.classList.add('sr-only')
 
     function showPreview(event) {
@@ -90,13 +90,11 @@ function updateImageModifyProfil() {
 }
 
 function updateImageModifyBackImage() {
-    let backImage = document.getElementById('back_image') as HTMLInputElement;
-    let backAvatar = document.querySelector('#backUpdate') as HTMLImageElement;
-    let imgSrc = document.querySelector('#backSrcset') as HTMLImageElement;
+
     backImage.classList.add('sr-only')
 
     function showPreview(event) {
-        imgSrc.classList.add('sr-only')
+        imgSrcBack.classList.add('sr-only')
         backAvatar.classList.remove('sr-only')
         if (event.target.files.length > 0) {
             backAvatar.src = URL.createObjectURL(event.target.files[0]);
@@ -175,6 +173,7 @@ function slideInView() {
 }
 
 if (searchInputProject !== null) {
+    searchInputProject.value = '';
     searchInputProject.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
@@ -182,6 +181,7 @@ if (searchInputProject !== null) {
     })
 }
 if (searchInputNew !== null) {
+    searchInputNew.value = '';
     searchInputNew.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
@@ -190,6 +190,7 @@ if (searchInputNew !== null) {
     })
 }
 if (searchInputOffer !== null) {
+    searchInputOffer.value = '';
     searchInputOffer.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
@@ -198,6 +199,7 @@ if (searchInputOffer !== null) {
     })
 }
 if (searchInputPartner !== null) {
+    searchInputPartner.value = '';
     searchInputPartner.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
@@ -206,6 +208,7 @@ if (searchInputPartner !== null) {
     })
 }
 if (searchInputGlossary !== null) {
+    searchInputGlossary.value = '';
     searchInputGlossary.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
@@ -214,6 +217,7 @@ if (searchInputGlossary !== null) {
     })
 }
 if (searchInputTuto !== null) {
+    searchInputTuto.value = '';
     searchInputTuto.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
@@ -222,6 +226,7 @@ if (searchInputTuto !== null) {
     })
 }
 if (searchInputBottin !== null) {
+    searchInputBottin.value = '';
     searchInputBottin.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
@@ -230,6 +235,7 @@ if (searchInputBottin !== null) {
     })
 }
 if (searchInputAlumni !== null) {
+    searchInputAlumni.value = '';
     searchInputAlumni.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
@@ -486,5 +492,9 @@ function handlepagination(){
     }
 }
 
-updateImageModifyBackImage()
+if (avatar !== null){
 updateImageModifyProfil()
+}
+if (backImage !==null){
+updateImageModifyBackImage()
+}
