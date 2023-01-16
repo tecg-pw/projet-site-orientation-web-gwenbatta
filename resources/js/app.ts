@@ -23,6 +23,9 @@ let searchInputLatestSubject = document.querySelector('#latestsubject #search') 
 let searchInputLatestAnswer = document.querySelector('#latestanswer #search') as HTMLInputElement;
 let searchInputMySubject = document.querySelector('#mysubject #search') as HTMLInputElement;
 let searchInputMyAnswer = document.querySelector('#mytalks #search') as HTMLInputElement;
+let sortSelectTagForum = document.querySelector('#tags') as HTMLSelectElement;
+let sortSelectDateForum = document.querySelector('.year-forum') as HTMLSelectElement;
+let sortSelectStatusForum = document.querySelector('.status-forum') as HTMLSelectElement;
 let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
 let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
 let containerProject = document.getElementById('containerProject')
@@ -87,6 +90,12 @@ const stateSortPartner = {
 const stateSortOffer = {
     jobs: 'all',
     agency: 'all',
+    page: 1
+}
+const stateSortForum = {
+    tags: 'all',
+    status: 'all',
+    year: 'all',
     page: 1
 }
 
@@ -363,7 +372,6 @@ function makeRequestBottin() {
         .then((response) => response.text())
         .then((data) => updateDataTableBottin(data, containerBottin));
 }
-
 function makeRequestAlumni() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -890,7 +898,78 @@ function makeRequestAlumniSort() {
         .then((data) => updateDataTableBottin(data, containerAlumni));
 }
 
+if (sortSelectStatusForum !== null) {
+    sortSelectStatusForum.value = 'all';
+    sortSelectStatusForum.addEventListener('change', (e) => {
+        stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestLatestSubjectSort()
+        makeRequestLatestAnswerSort()
+        makeRequestMySubjectSort()
+        makeRequestMyAnswerSort()
 
+    })
+}
+if (sortSelectTagForum !== null) {
+    sortSelectTagForum.value = 'all';
+    sortSelectTagForum.addEventListener('change', (e) => {
+        stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestLatestSubjectSort()
+        makeRequestLatestAnswerSort()
+        makeRequestMySubjectSort()
+        makeRequestMyAnswerSort()
+    })
+}
+if (sortSelectDateForum !== null) {
+    sortSelectDateForum.value = 'all';
+    sortSelectDateForum.addEventListener('change', (e) => {
+        stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestLatestSubjectSort()
+        makeRequestLatestAnswerSort()
+        makeRequestMySubjectSort()
+        makeRequestMyAnswerSort()
+    })
+}
+function makeRequestLatestSubjectSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/forum/index/ajax?` + new URLSearchParams(stateSortForum);
+    history.pushState(stateSortForum, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableSubject(data,containerLatestSubject));
+}
+
+function makeRequestLatestAnswerSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/forum/latest-answers/ajax?` + new URLSearchParams(stateSortForum);
+    history.pushState(stateSortForum, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableSubject(data,containerLatestAnswer));
+}
+function makeRequestMySubjectSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/forum/my-subject/ajax?` + new URLSearchParams(stateSortForum);
+    history.pushState(stateSortForum, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableSubject(data,containerMySubject));
+}
+
+function makeRequestMyAnswerSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/forum/my-talks/ajax?` + new URLSearchParams(stateSortForum);
+    history.pushState(stateSortForum, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableSubject(data,containerMyAnswer));
+}
 if (avatar !== null) {
     updateImageModifyProfil()
 }

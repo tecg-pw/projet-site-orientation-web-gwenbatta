@@ -4,7 +4,7 @@
 ])
 
 @foreach($comments as $comment)
-    <article {{ $attributes->class(['slide-in flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl']) }}
+    <article {{ $attributes->class(['slide-in mb-7 flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-10 rounded-xl']) }}
              aria-labelledby="{{$comment->slug}}">
         <div class="hover:bg-orange-100 relative flex mb-5 rounded-xl order-3 bg-white-100 p-3 border-2 border-orange-500 gap-2">
             <h3 id="{{$comment->subject->slug}}" aria-level="3" role="heading"

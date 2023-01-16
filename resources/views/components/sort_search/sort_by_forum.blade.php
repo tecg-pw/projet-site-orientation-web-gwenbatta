@@ -13,7 +13,7 @@
             <label for="status" class="text-lg text-green-500 mb-2 xl:text-xl 2xl:text-2xl">{{__('sort.status')}}</label>
             <select id="status"
                     name="status"
-                    class="appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1 2xl:text-xl">
+                    class="status-forum appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1 2xl:text-xl">
                 <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
                     <option value="1">
                         {{mb_strtoupper(__('Résolu'))}}
@@ -39,7 +39,7 @@
         </div>
         <div class="flex flex-col xl:ml-16">
             <label for="year" class="text-lg text-green-500 mb-2 xl:text-xl 2xl:text-2xl">{{__('sort.year')}}</label>
-            <select class="appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1 2xl:text-xl" id="year"
+            <select class="year-forum appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1 2xl:text-xl" id="year"
                     name="year">
                 <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
             @foreach($created as $filter)

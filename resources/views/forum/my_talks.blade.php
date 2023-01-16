@@ -27,7 +27,7 @@
                href="/{{app()->getLocale()}}/forum/my-talks#forum">{{__('forum.my_talks')}}</a>
         </div>
         <div class="lg:grid lg:grid-cols-5 mb-36">
-            <x-mytalks_paginated :comments="$comments"/>
+            <x-mytalks_paginated class="lg:col-span-3 flex flex-col xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10" :comments="$comments"/>
             <x-aside_forum id="mytalks" :urlAction="$urlAction" :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>
     </section>

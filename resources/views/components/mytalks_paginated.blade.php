@@ -4,7 +4,7 @@
 ])
 
 <div
-    id="containerMyTalks" {{ $attributes->class(['lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10']) }}>
+    id="containerMyTalks" {{ $attributes }}>
     @if(count($comments)===0)
         <p>Vous n'avez aucun sujet</p>
     @else

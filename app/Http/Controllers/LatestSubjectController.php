@@ -83,11 +83,59 @@ class LatestSubjectController extends Controller
     public function ajax(string $locale = null)
     {
         $searchTerm = request()->input('search') ?? '';
+        $sortStatus = request()->input('status') ?? 'all';
+        $sortTags = request()->input('tags') ?? 'all';
+        $sortYear = request()->input('year') ?? 'all';
 
-        $subjects = Subject::query()
-            ->where('subject', 'like', '%' . $searchTerm . '%')
-            ->paginate(7);
-
+        if ($searchTerm) {
+            $subjects = Subject::query()
+                ->where('subject', 'like', '%' . $searchTerm . '%')
+                ->paginate(8);
+        } //OK
+        elseif ($sortStatus === 'all' && $sortTags == 'all' && $sortYear === 'all') {
+            $subjects = Subject::query()->paginate(8);
+        } //OK
+        elseif ($sortYear === 'all' && $sortTags == 'all') {
+            $subjects = Subject::query()
+                ->where('resolved', $sortStatus)
+                ->paginate(8);
+        } //OK
+        elseif ($sortStatus === 'all' && $sortTags == 'all') {
+            $subjects = Subject::query()
+                ->where('created_at', $sortYear)
+                ->paginate(8);
+        } //OK
+        elseif ($sortYear === 'all' && $sortStatus === 'all') {
+            $subjects = Subject::query()
+                ->where('tag_id', $sortTags)
+                ->paginate(8);
+        } //OK
+        elseif ($sortStatus === 'all') {
+            $subjects = Subject::query()
+                ->where('tag_id', $sortTags)
+                ->where('created_at', $sortYear)
+                ->paginate(8);
+        } //OK
+        elseif ($sortYear === 'all') {
+            $subjects = Subject::query()
+                ->where('tag_id', $sortTags)
+                ->where('resolved', $sortStatus)
+                ->paginate(8);
+        } //OK
+        elseif ($sortTags === 'all') {
+            $subjects = Subject::query()
+                ->where('created_at', $sortYear)
+                ->where('resolved', $sortStatus)
+                ->paginate(8);
+        } elseif ($sortStatus && $sortTags && $sortYear) {
+            $subjects = Subject::query()
+                ->where('resolved', $sortStatus)
+                ->where('tag_id', $sortTags)
+                ->where('created_at', $sortYear)
+                ->paginate(7);
+        } else {
+            $subjects = Subject::query()->paginate(8);
+        } //OK
         $recurrings = Recurring::all();
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();

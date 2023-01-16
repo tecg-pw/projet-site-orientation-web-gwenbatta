@@ -3,7 +3,7 @@
     'comments'
 ])
 
-<div id="containerLatestAnswer" {{ $attributes->class(['lg:col-span-3 flex flex-col gap-y-8 xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10']) }}>
+<div id="containerLatestAnswer" {{ $attributes}}>
     <x-container_latestanswer :comments="$comments"/>
     <x-pagination_latestanswer :comments="$comments"/>
 </div>

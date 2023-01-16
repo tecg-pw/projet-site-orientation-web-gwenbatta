@@ -29,7 +29,7 @@
             @endauth
         </div>
         <div class="lg:grid lg:grid-cols-5 mb-36">
-            <x-latestanswer_paginated :comments="$comments"/>
+            <x-latestanswer_paginated class="lg:col-span-3 flex flex-col xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10" :comments="$comments"/>
             <x-aside_forum id="latestanswer" :urlAction="$urlAction" :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>
     </section>
