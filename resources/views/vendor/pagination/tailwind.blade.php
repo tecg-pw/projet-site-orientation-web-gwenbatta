@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
-    <nav role="navigation" aria-label="pagination" class="mt-20 flex items-center justify-between">
-        <h3 class="sr-only" aria-labelledby="pagination" aria-level="3" role="heading">{{ __('Pagination-Navigation') }}</h3>
+    <nav role="navigation" aria-labelledby="pagination-head" class="mt-20 flex items-center justify-between">
+        <h3 class="sr-only" id="pagination-head" aria-level="3" role="heading">{{ __('Pagination Navigation') }}</h3>
         <div class="flex justify-between flex-1 sm:hidden bg-red-500">
             @if ($paginator->onFirstPage())
                 <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 rounded-md">
