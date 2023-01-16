@@ -25,6 +25,7 @@ class MyAnswerController extends Controller
         if ($searchTerm) {
             $comments = Comment::query()
                 ->where('comments.content', 'like', '%' . $searchTerm . '%')
+                ->where('comments.user_id',auth()->user()->id)
                 ->join('subjects','subjects.id','=','subject_id')
                 ->orWhere('subjects.subject','like', '%' . $searchTerm . '%')
                 ->where('comments.user_id',auth()->user()->id)
@@ -89,12 +90,32 @@ class MyAnswerController extends Controller
         }
 
         $recurrings = Recurring::all();
-        //$comments = Comment::where('user_id',auth()->user()->id)->orderBy('created_at')->paginate(8);
         $latests = Subject::latest()->take(2)->get();
         $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
         $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
         $tags = Tag::all();
         $created = Subject::select('created_at')->groupBy('created_at')->get();
         return view('forum.my_talks', compact('recurrings', 'comments', 'latests', 'status', 'tags', 'created', 'ratings'));
+    }
+
+    public function ajax(){
+        $searchTerm = request()->input('search') ?? '';
+
+            $comments = Comment::query()
+                ->where('comments.content', 'like', '%' . $searchTerm . '%')
+                ->where('comments.user_id',auth()->user()->id)
+                ->join('subjects','subjects.id','=','subject_id')
+                ->orWhere('subjects.subject','like', '%' . $searchTerm . '%')
+                ->where('comments.user_id',auth()->user()->id)
+                ->paginate(3);
+
+        $recurrings = Recurring::all();
+        $latests = Subject::latest()->take(2)->get();
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
+        $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
+        $tags = Tag::all();
+        $created = Subject::select('created_at')->groupBy('created_at')->get();
+        return view('components.mytalks_paginated', compact('recurrings', 'comments', 'latests', 'status', 'tags', 'created', 'ratings'));
+
     }
 }

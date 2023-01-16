@@ -44,7 +44,7 @@ class ProjectController extends Controller
 
     public function ajax(string $locale = null){
         $ids = [];
-        $searchTerm = request()->input('search') ?? '';
+       $searchTerm = request()->input('search') ?? '';
         $references = ProjetTranslation::query()
             ->where('locale', $locale)
             ->where(function ($query) use ($searchTerm) {
@@ -55,8 +55,8 @@ class ProjectController extends Controller
         foreach ($references as $reference) {
             $ids [] = $reference->project_id;
         }
-        $projects = Project::whereIn('id', $ids)->paginate(2);
-        return view('components.container_project', compact('projects'));
+        $projects = Project::whereIn('id', $ids)->paginate(9);
+        return view('components.project_paginated', compact('projects'));
     }
 
     /**

@@ -122,9 +122,13 @@ Route::post('/{locale?}/contact/agency', [AgencyContactController::class, 'store
 
 
 Route::get('/{locale?}/forum/index', [LatestSubjectController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/index/ajax', [LatestSubjectController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/forum/latest-answers', [LatestAnswerController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/latest-answers/ajax', [LatestAnswerController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/forum/my-subject', [MySubjectController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/my-subject/ajax', [MySubjectController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/forum/my-talks', [MyAnswerController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/forum/my-talks/ajax', [MyAnswerController::class, 'ajax'])->middleware('locale');
 Route::get('/{locale?}/forum/show/{subject:slug}', [ForumController::class, 'show'])->middleware('locale');
 Route::get('/{locale?}/forum/question', [ForumController::class, 'create'])->middleware(['auth','locale']);
 Route::get('/{locale?}/forum/question/modify/{subject:slug}', [ForumController::class, 'edit'])->middleware(['auth','locale']);

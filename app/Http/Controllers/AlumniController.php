@@ -113,32 +113,97 @@ class AlumniController extends Controller
 
     public function ajax(string $locale = null)
     {
+        $sortStatus = request()->input('status') ?? 'all';
+        $sortYear = request()->input('year') ?? 'all';
         $searchTerm = request()->input('search') ?? '';
         $ids = [];
 
-        $references = PersonTranslation::query()
-            ->where('locale', $locale)
-            ->where('name', 'like', '%' . $searchTerm . '%')
-            ->orWhere('firstname', 'like', '%' . $searchTerm . '%')
-            ->where('locale', $locale)
-            ->orWhere('status', 'like', '%' . $searchTerm . '%')
-            ->where('locale', $locale)
-            ->orWhere('begin', 'like', '%' . $searchTerm . '%')
-            ->where('locale', $locale)
-            ->orWhere('end', 'like', '%' . $searchTerm . '%')
-            ->where('locale', $locale)
-            ->paginate(8);
+        if ($searchTerm) {
+            $references = PersonTranslation::query()
+                ->where('locale', $locale)
+                ->where(function ($query) use ($searchTerm) {
+                    $query->where('name', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('firstname', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('status', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('begin', 'like', '%' . $searchTerm . '%')
+                        ->orWhere('end', 'like', '%' . $searchTerm . '%');
+                })->paginate(8);
 
-        foreach ($references as $reference) {
-            if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
-                $ids [] = $reference->people_id;
+            foreach ($references as $reference) {
+                if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
+                    $ids [] = $reference->people_id;
+                }
             }
+            $alumnis = People::whereIn('id', $ids)->paginate(8);
+
         }
-        $alumnis = People::whereIn('id', $ids)->paginate(8);
+        elseif ($sortStatus === 'all' && $sortYear === 'all') {
+            $references = PersonTranslation::all();
+            foreach ($references as $reference) {
+                if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
+                    $ids [] = $reference->people_id;
+                }
+            }
+            $alumnis = People::whereIn('id', $ids)->paginate(8);
+        }
+        elseif ($sortStatus === 'all') {
+            $references = PersonTranslation::query()
+                ->where('end', $sortYear)
+                ->get();
+
+            foreach ($references as $reference) {
+                if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
+                    $ids [] = $reference->people_id;
+                }
+            }
+            $alumnis = People::whereIn('id', $ids)->paginate(8);
+        }
+        elseif ($sortYear === 'all') {
+            $references = PersonTranslation::query()
+                ->where('status', $sortStatus)
+                ->get();
+
+            foreach ($references as $reference) {
+                if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
+                    $ids [] = $reference->people_id;
+                }
+            }
+            $alumnis = People::whereIn('id', $ids)->paginate(8);
+        }
+        elseif ($sortYear && $sortStatus) {
+            $references = PersonTranslation::query()
+                ->where('status', $sortStatus)
+                ->where('end', $sortYear)
+                ->get();
+
+            foreach ($references as $reference) {
+                if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
+                    $ids [] = $reference->people_id;
+                }
+            }
+            $alumnis = People::whereIn('id', $ids)->paginate(8);
+        }
+        else {
+            $references = PersonTranslation::all();
+            foreach ($references as $reference) {
+                if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
+                    $ids [] = $reference->people_id;
+                }
+            }
+            $alumnis = People::whereIn('id', $ids)->paginate(8);
+        }
+
         $testimonials = Testimonial::take(4)->orderBy('created_at')->get();
-        $status = PersonTranslation::select('status')->where('locale', $locale)->groupBy('status')->get();
+
+        $status = PersonTranslation::select('status')->where('locale', $locale)
+            ->where(function ($query){
+                $query->where('status','ancien')
+                    ->orWhere('status','alumni')
+                    ->orWhere('status','teachalumni');
+            })
+            ->groupBy('status')->get();
         $years_end = PersonTranslation::select('end')->where('locale', $locale)->whereNot('end', null)->groupBy('end')->orderBy('end', 'DESC')->get();
-        return view('components.container_alumni', compact('alumnis', 'status', 'years_end', 'testimonials'));
+        return view('components.alumni_paginated', compact('alumnis', 'status', 'years_end', 'testimonials'));
     }
     /**
      * Show the form for creating a new resource.

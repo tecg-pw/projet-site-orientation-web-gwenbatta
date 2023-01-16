@@ -1,0 +1,6 @@
+@props([
+    /** @var \mixed */
+    'projects'
+])
+
+

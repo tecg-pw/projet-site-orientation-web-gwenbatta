@@ -10,11 +10,11 @@
                 <label for="languages" class="text-lg text-green-500 mb-2 xl:text-xl 2xl:text-2xl">{{__('sort.languages')}}</label>
                 <select id="languages"
                         name="languages"
-                        class="appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1 2xl:text-xl">
+                        class="appearance-none bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1 2xl:text-xl uppercase">
                     <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
                     @foreach($languages as $filter)
                         <option value="{{$filter->languages}}">
-                            {{$filter->languages}}
+                            {{mb_strtoupper($filter->languages)}}
                         </option>
                     @endforeach
                 </select>

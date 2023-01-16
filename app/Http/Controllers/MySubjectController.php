@@ -20,7 +20,7 @@ class MySubjectController extends Controller
         $sortStatus = request()->input('status') ?? 'all';
         $sortTags = request()->input('tags') ?? 'all';
         $sortYear = request()->input('year') ?? 'all';
-        
+
 
         //OK
         if ($searchTerm) {
@@ -82,5 +82,22 @@ class MySubjectController extends Controller
         $created = Subject::select('created_at')->groupBy('created_at')->get();
 
         return view('forum.my_subject', compact('recurrings', 'subjects', 'latests', 'status', 'tags', 'created', 'ratings'));
+    }
+    public function ajax(string $locale=null){
+        $searchTerm = request()->input('search') ?? '';
+
+            $subjects = Subject::query()->where('user_id',auth()->user()->id)
+                ->where('subject', 'like', '%' . $searchTerm . '%')
+                ->paginate(8);
+
+        $recurrings = Recurring::all();
+        $latests = Subject::latest()->take(2)->get();
+        $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
+        $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
+        $tags = Tag::all();
+        $created = Subject::select('created_at')->groupBy('created_at')->get();
+
+        return view('components.mysubject_paginated', compact('recurrings', 'subjects', 'latests', 'status', 'tags', 'created', 'ratings'));
+
     }
 }

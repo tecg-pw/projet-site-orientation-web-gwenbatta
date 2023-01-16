@@ -87,4 +87,22 @@ class LatestAnswerController extends Controller
         $created = Subject::select('created_at')->groupBy('created_at')->get();
         return view('forum.latest_answers', compact('recurrings', 'comments', 'latests', 'status', 'tags', 'created', 'ratings'));
     }
+
+    public function ajax(){
+        $searchTerm = request()->input('search') ?? '';
+
+            $comments = Comment::query()
+                ->where('content', 'like', '%' . $searchTerm . '%')
+                ->join('subjects','subjects.id','=','subject_id')
+                ->orWhere('subjects.subject','like', '%' . $searchTerm . '%')
+                ->paginate(3);
+            $recurrings = Recurring::all();
+            $latests = Subject::latest()->take(2)->get();
+            $ratings = Subject::orderBy('comments_count', 'DESC')->take(2)->get();
+            $status = Subject::select('resolved')->whereNot('resolved', null)->groupBy('resolved')->get();
+            $tags = Tag::all();
+            $created = Subject::select('created_at')->groupBy('created_at')->get();
+        return view('components.latestanswer_paginated', compact('recurrings', 'comments', 'latests', 'status', 'tags', 'created', 'ratings'));
+
+    }
 }

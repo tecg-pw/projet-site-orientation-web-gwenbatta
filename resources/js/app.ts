@@ -7,10 +7,21 @@ let searchInputProject = document.querySelector('#project #search') as HTMLInput
 let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
 let searchInputOffer = document.querySelector('#offer #search') as HTMLInputElement;
 let searchInputPartner = document.querySelector('#partner #search') as HTMLInputElement;
+let sortSelectCityEntreprise = document.querySelector('#cities') as HTMLSelectElement;
+let sortSelectAgencyEntreprise = document.querySelector('#agency') as HTMLSelectElement;
+let sortSelectJobsEntreprise = document.querySelector('#jobs') as HTMLSelectElement;
 let searchInputGlossary = document.querySelector('#glossary #search') as HTMLInputElement;
 let searchInputTuto = document.querySelector('#tuto #search') as HTMLInputElement;
+let sortSelectLanguageTuto = document.querySelector('#languages') as HTMLSelectElement;
+let sortSelectDateTuto = document.querySelector('#date') as HTMLSelectElement;
 let searchInputBottin = document.querySelector('#bottin #search') as HTMLInputElement;
+let sortSelectStatusBottin = document.querySelector('#status') as HTMLSelectElement;
+let sortSelectDateBottin = document.querySelector('#year') as HTMLSelectElement;
 let searchInputAlumni = document.querySelector('#alumni #search') as HTMLInputElement;
+let searchInputLatestSubject = document.querySelector('#latestsubject #search') as HTMLInputElement;
+let searchInputLatestAnswer = document.querySelector('#latestanswer #search') as HTMLInputElement;
+let searchInputMySubject = document.querySelector('#mysubject #search') as HTMLInputElement;
+let searchInputMyAnswer = document.querySelector('#mytalks #search') as HTMLInputElement;
 let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
 let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
 let containerProject = document.getElementById('containerProject')
@@ -21,6 +32,11 @@ let containerGlossary = document.getElementById('containerGlossary')
 let containerTuto = document.getElementById('containerTuto')
 let containerAlumni = document.getElementById('containerAlumni')
 let containerBottin = document.getElementById('containerBottin')
+let containerLatestSubject = document.getElementById('containerLatestSubject')
+let containerLatestAnswer = document.getElementById('containerLatestAnswer')
+let containerMySubject = document.getElementById('containerMySubject')
+let containerMyAnswer = document.getElementById('containerMyTalks')
+
 let paginations = document.querySelectorAll('.page') as NodeList;
 let pdf = document.getElementById('pdf') as HTMLInputElement;
 let textInput = document.querySelector('.textInput');
@@ -47,12 +63,31 @@ function init() {
     slideInView();
     handlePassword();
     burgerMenu();
-    handlepagination();
 }
 
 const stateSearch = {
     search: '',
-    page:1,
+    page: 1,
+}
+const stateSortTutos = {
+    date: 'all',
+    languages: 'all',
+    page: 1
+}
+const stateSortPeople = {
+    status: 'all',
+    year: 'all',
+    page: 1
+}
+const stateSortPartner = {
+    cities: 'all',
+    agency: 'all',
+    page: 1
+}
+const stateSortOffer = {
+    jobs: 'all',
+    agency: 'all',
+    page: 1
 }
 
 for (let i = 0; i < buttonSearches.length; i++) {
@@ -185,7 +220,6 @@ if (searchInputNew !== null) {
     searchInputNew.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
-        console.log(stateSearch.search)
         makeRequestNew()
     })
 }
@@ -194,7 +228,6 @@ if (searchInputOffer !== null) {
     searchInputOffer.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
-        console.log(stateSearch.search)
         makeRequestOffer()
     })
 }
@@ -203,7 +236,6 @@ if (searchInputPartner !== null) {
     searchInputPartner.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
-        console.log(stateSearch.search)
         makeRequestPartner()
     })
 }
@@ -212,7 +244,6 @@ if (searchInputGlossary !== null) {
     searchInputGlossary.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
-        console.log(stateSearch.search)
         makeRequestGlossary()
     })
 }
@@ -221,7 +252,6 @@ if (searchInputTuto !== null) {
     searchInputTuto.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
-        console.log(stateSearch.search)
         makeRequestTuto()
     })
 }
@@ -230,7 +260,6 @@ if (searchInputBottin !== null) {
     searchInputBottin.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
-        console.log(stateSearch.search)
         makeRequestBottin()
     })
 }
@@ -239,8 +268,40 @@ if (searchInputAlumni !== null) {
     searchInputAlumni.addEventListener('input', (e) => {
         stateSearch.search = (e.currentTarget as HTMLInputElement).value;
         stateSearch.page = 1;
-        console.log(stateSearch.search)
         makeRequestAlumni()
+    })
+}
+if (searchInputLatestSubject !== null) {
+    searchInputLatestSubject.value = '';
+    searchInputLatestSubject.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
+        makeRequestLatestSubject()
+    })
+}
+if (searchInputLatestAnswer !== null) {
+    searchInputLatestAnswer.value = '';
+    searchInputLatestAnswer.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
+        makeRequestLatestAnswer()
+    })
+}
+
+if (searchInputMySubject !== null) {
+    searchInputMySubject.value = '';
+    searchInputMySubject.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
+        makeRequestMySubject()
+    })
+}
+if (searchInputMyAnswer !== null) {
+    searchInputMyAnswer.value = '';
+    searchInputMyAnswer.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
+        makeRequestMyAnswer()
     })
 }
 
@@ -253,6 +314,7 @@ function makeRequestProject() {
         .then((response) => response.text())
         .then((data) => updateDataTableProject(data));
 }
+
 function makeRequestNew() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -262,6 +324,7 @@ function makeRequestNew() {
         .then((response) => response.text())
         .then((data) => updateDataTableNew(data));
 }
+
 function makeRequestOffer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -271,6 +334,7 @@ function makeRequestOffer() {
         .then((response) => response.text())
         .then((data) => updateDataTableOffer(data));
 }
+
 function makeRequestPartner() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -280,6 +344,7 @@ function makeRequestPartner() {
         .then((response) => response.text())
         .then((data) => updateDataTablePartner(data));
 }
+
 function makeRequestGlossary() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -289,6 +354,7 @@ function makeRequestGlossary() {
         .then((response) => response.text())
         .then((data) => updateDataTableGlossary(data));
 }
+
 function makeRequestTuto() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -298,6 +364,7 @@ function makeRequestTuto() {
         .then((response) => response.text())
         .then((data) => updateDataTableTuto(data));
 }
+
 function makeRequestBottin() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -307,6 +374,7 @@ function makeRequestBottin() {
         .then((response) => response.text())
         .then((data) => updateDataTableBottin(data, containerBottin));
 }
+
 function makeRequestAlumni() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -315,6 +383,46 @@ function makeRequestAlumni() {
     fetch(url)
         .then((response) => response.text())
         .then((data) => updateDataTableBottin(data, containerAlumni));
+}
+
+function makeRequestLatestSubject() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/forum/index/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableSubject(data, containerLatestSubject));
+}
+
+function makeRequestLatestAnswer() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/forum/latest-answers/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableAnswer(data, containerLatestAnswer));
+}
+
+function makeRequestMySubject() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/forum/my-subject/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableSubject(data, containerMySubject));
+}
+
+function makeRequestMyAnswer() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/forum/my-talks/ajax?` + new URLSearchParams(stateSearch);
+    history.pushState(stateSearch, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableAnswer(data, containerMyAnswer));
 }
 
 function updateDataTableProject(data) {
@@ -331,8 +439,9 @@ function updateDataTableProject(data) {
         date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
-    handlepagination()
+    handlepaginationProject()
 }
+
 function updateDataTableNew(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerNew.innerHTML = data
@@ -353,8 +462,9 @@ function updateDataTableNew(data) {
         date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
-    handlepagination();
+    handlepaginationNew();
 }
+
 function updateDataTableOffer(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerOffer.innerHTML = data
@@ -376,10 +486,10 @@ function updateDataTableOffer(data) {
     }
 
     slideInView();
-    handlepagination();
+    handlepaginationOffer();
 }
+
 function updateDataTablePartner(data) {
-    console.log(data)
     let match = new RegExp(stateSearch.search, 'gi')
     containerPartner.innerHTML = data
     let titles = document.querySelectorAll('h3')
@@ -403,8 +513,9 @@ function updateDataTablePartner(data) {
         localityNum.innerHTML = localityNum.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
-    handlepagination();
+    handlepaginationPartner();
 }
+
 function updateDataTableGlossary(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerGlossary.innerHTML = data
@@ -420,8 +531,9 @@ function updateDataTableGlossary(data) {
         definition.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
-    handlepagination();
+    handlepaginationGlossary();
 }
+
 function updateDataTableTuto(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerTuto.innerHTML = data
@@ -437,8 +549,9 @@ function updateDataTableTuto(data) {
         excerpt.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
     }
     slideInView();
-    handlepagination();
+    handlepaginationTuto();
 }
+
 function updateDataTableBottin(data, container) {
     let match = new RegExp(stateSearch.search, 'gi')
     container.innerHTML = data
@@ -470,12 +583,44 @@ function updateDataTableBottin(data, container) {
     }
 
     slideInView();
-    handlepagination();
+    handlepaginationBottin();
+}
+
+function updateDataTableSubject(data, container) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    container.innerHTML = data
+    let titles = document.querySelectorAll('.search-title')
+
+    // @ts-ignore
+    for (const title of titles) {
+        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    slideInView();
+    handlepaginationSubject();
+}
+
+function updateDataTableAnswer(data, container) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    container.innerHTML = data
+    let titles = document.querySelectorAll('.search-title')
+    let comments = document.querySelectorAll('.search-comment')
+    // @ts-ignore
+    for (const title of titles) {
+        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const comment of comments) {
+        let str = comment.innerHTML.replace(/<[^>]+>/g, '')
+        comment.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    slideInView();
+    handlepaginationAnswer();
 }
 
 
-
-function handlepagination(){
+function handlepaginationProject() {
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -492,9 +637,277 @@ function handlepagination(){
     }
 }
 
-if (avatar !== null){
-updateImageModifyProfil()
+function handlepaginationNew() {
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestNew()
+        })
+    }
 }
-if (backImage !==null){
-updateImageModifyBackImage()
+
+function handlepaginationOffer() {
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestOffer()
+        })
+    }
+}
+
+function handlepaginationPartner() {
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestPartner()
+        })
+    }
+}
+
+function handlepaginationGlossary() {
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestGlossary()
+        })
+    }
+}
+
+function handlepaginationTuto() {
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestTuto()
+        })
+    }
+}
+
+function handlepaginationBottin() {
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestBottin()
+        })
+    }
+}
+
+function handlepaginationSubject() {
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestLatestSubject()
+            makeRequestMySubject()
+        })
+    }
+}
+
+function handlepaginationAnswer() {
+    // @ts-ignore
+    for (const pagination of paginations) {
+        pagination.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('previous')) {
+                stateSearch.page -= 1
+            } else if (e.currentTarget.classList.contains('next')) {
+                stateSearch.page += 1
+            } else {
+                stateSearch.page = parseInt(e.currentTarget.dataset.page)
+            }
+            makeRequestLatestAnswer()
+            makeRequestMyAnswer()
+        })
+    }
+}
+
+
+if (sortSelectDateTuto !== null) {
+    sortSelectDateTuto.value = 'all';
+    sortSelectDateTuto.addEventListener('change', (e) => {
+        stateSortTutos.date = (e.currentTarget as HTMLSelectElement).value;
+        stateSortTutos.page = 1;
+        makeRequestTutoSort()
+    })
+}
+if (sortSelectLanguageTuto !== null) {
+    sortSelectLanguageTuto.value = 'all';
+    sortSelectLanguageTuto.addEventListener('change', (e) => {
+        stateSortTutos.languages = (e.currentTarget as HTMLSelectElement).value;
+        stateSortTutos.page = 1;
+        makeRequestTutoSort()
+    })
+}
+
+function makeRequestTutoSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/technical/tuto/ajax?` + new URLSearchParams(stateSortTutos);
+    history.pushState(stateSortTutos, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableTuto(data));
+}
+
+if (sortSelectCityEntreprise !== null) {
+    sortSelectCityEntreprise.value = 'all';
+    sortSelectCityEntreprise.addEventListener('change', (e) => {
+        stateSortPartner.cities = (e.currentTarget as HTMLSelectElement).value;
+        stateSortPartner.page = 1;
+        makeRequestPartnerSort()
+    })
+}
+if (sortSelectAgencyEntreprise !== null) {
+    sortSelectAgencyEntreprise.value = 'all';
+    sortSelectAgencyEntreprise.addEventListener('change', (e) => {
+        stateSortPartner.agency = (e.currentTarget as HTMLSelectElement).value;
+        stateSortPartner.page = 1;
+        makeRequestPartnerSort()
+    })
+}
+if (sortSelectJobsEntreprise !== null) {
+    sortSelectJobsEntreprise.value = 'all';
+    sortSelectJobsEntreprise.addEventListener('change', (e) => {
+        stateSortOffer.jobs = (e.currentTarget as HTMLSelectElement).value;
+        console.log(sortSelectJobsEntreprise.value)
+        stateSortOffer.page = 1;
+        makeRequestOfferSort()
+    })
+}
+
+function makeRequestPartnerSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSortPartner);
+    history.pushState(stateSortPartner, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTablePartner(data));
+}
+
+function makeRequestOfferSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/entreprise/intership/ajax?` + new URLSearchParams(stateSortOffer);
+    history.pushState(stateSortOffer, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTablePartner(data));
+}
+
+
+if (sortSelectDateBottin !== null) {
+    sortSelectDateBottin.value = 'all';
+    sortSelectDateBottin.addEventListener('change', (e) => {
+        stateSortPeople.year = (e.currentTarget as HTMLSelectElement).value;
+        stateSortPeople.page = 1;
+        makeRequestBottinSort()
+    })
+}
+if (sortSelectStatusBottin !== null) {
+    sortSelectStatusBottin.value = 'all';
+    sortSelectStatusBottin.addEventListener('change', (e) => {
+        stateSortPeople.status = (e.currentTarget as HTMLSelectElement).value;
+        stateSortPeople.page = 1;
+        makeRequestBottinSort()
+    })
+}
+
+function makeRequestBottinSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/bottin/ajax?` + new URLSearchParams(stateSortPeople);
+    history.pushState(stateSortPeople, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableBottin(data, containerBottin));
+}
+
+if (sortSelectDateBottin !== null) {
+    sortSelectDateBottin.value = 'all';
+    sortSelectDateBottin.addEventListener('change', (e) => {
+        stateSortPeople.year = (e.currentTarget as HTMLSelectElement).value;
+        stateSortPeople.page = 1;
+        makeRequestAlumniSort()
+    })
+}
+if (sortSelectStatusBottin !== null) {
+    sortSelectStatusBottin.value = 'all';
+    sortSelectStatusBottin.addEventListener('change', (e) => {
+        stateSortPeople.status = (e.currentTarget as HTMLSelectElement).value;
+        stateSortPeople.page = 1;
+        makeRequestAlumniSort()
+    })
+}
+
+function makeRequestAlumniSort() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/bottin/alumni/ajax?` + new URLSearchParams(stateSortPeople);
+    history.pushState(stateSortPeople, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableBottin(data, containerAlumni));
+}
+
+
+if (avatar !== null) {
+    updateImageModifyProfil()
+}
+if (backImage !== null) {
+    updateImageModifyBackImage()
 }

@@ -54,7 +54,7 @@ class ActualityController extends Controller
             $ids [] = $reference->actuality_id;
         }
         $news = Actuality::whereIn('id', $ids)->paginate(9);
-        return view('components.container_new', compact('news'));
+        return view('components.new_paginated', compact('news'));
     }
 
     /**

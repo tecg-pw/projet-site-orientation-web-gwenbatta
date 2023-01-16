@@ -1,5 +1,6 @@
 @props([
-    'projects'
+    'projects',
+
 ])
 <div id="containerProject">
     <x-container_project :projects="$projects"/>
