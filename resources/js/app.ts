@@ -23,9 +23,18 @@ let searchInputLatestSubject = document.querySelector('#latestsubject #search') 
 let searchInputLatestAnswer = document.querySelector('#latestanswer #search') as HTMLInputElement;
 let searchInputMySubject = document.querySelector('#mysubject #search') as HTMLInputElement;
 let searchInputMyAnswer = document.querySelector('#mytalks #search') as HTMLInputElement;
-let sortSelectTagForum = document.querySelector('#tags') as HTMLSelectElement;
-let sortSelectDateForum = document.querySelector('.year-forum') as HTMLSelectElement;
-let sortSelectStatusForum = document.querySelector('.status-forum') as HTMLSelectElement;
+let sortSelectTagLatestSubject = document.querySelector('#sortlatestsubject #tags') as HTMLSelectElement;
+let sortSelectDateLatestSubject = document.querySelector('#sortlatestsubject .year-forum') as HTMLSelectElement;
+let sortSelectStatusLatestSubject = document.querySelector('#sortlatestsubject .status-forum') as HTMLSelectElement;
+let sortSelectTagLatestAnswer = document.querySelector('#sortlatestanswers #tags') as HTMLSelectElement;
+let sortSelectDateLatestAnswer = document.querySelector('#sortlatestanswers .year-forum') as HTMLSelectElement;
+let sortSelectStatusLatestAnswer = document.querySelector('#sortlatestanswers .status-forum') as HTMLSelectElement;
+let sortSelectTagMySubject = document.querySelector('#sortmysubject #tags') as HTMLSelectElement;
+let sortSelectDateMySubject = document.querySelector('#sortmysubject .year-forum') as HTMLSelectElement;
+let sortSelectStatusMySubject = document.querySelector('#sortmysubject .status-forum') as HTMLSelectElement;
+let sortSelectTagMyAnswer = document.querySelector('#sortmyanswers #tags') as HTMLSelectElement;
+let sortSelectDateMyAnswer = document.querySelector('#sortmyanswers .year-forum') as HTMLSelectElement;
+let sortSelectStatusMyAnswer = document.querySelector('#sortmyanswers .status-forum') as HTMLSelectElement;
 let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
 let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
 let containerProject = document.getElementById('containerProject')
@@ -898,40 +907,111 @@ function makeRequestAlumniSort() {
         .then((data) => updateDataTableBottin(data, containerAlumni));
 }
 
-if (sortSelectStatusForum !== null) {
-    sortSelectStatusForum.value = 'all';
-    sortSelectStatusForum.addEventListener('change', (e) => {
+if (sortSelectStatusLatestSubject !== null) {
+    sortSelectStatusLatestSubject.value = 'all';
+    sortSelectStatusLatestSubject.addEventListener('change', (e) => {
         stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
         stateSortForum.page = 1;
         makeRequestLatestSubjectSort()
+
+    })
+}
+if (sortSelectTagLatestSubject !== null) {
+    sortSelectTagLatestSubject.value = 'all';
+    sortSelectTagLatestSubject.addEventListener('change', (e) => {
+        stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestLatestSubjectSort()
+    })
+}
+if (sortSelectDateLatestSubject !== null) {
+    sortSelectDateLatestSubject.value = 'all';
+    sortSelectDateLatestSubject.addEventListener('change', (e) => {
+        stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestLatestSubjectSort()
+    })
+}
+
+if (sortSelectStatusLatestAnswer !== null) {
+    sortSelectStatusLatestAnswer.value = 'all';
+    sortSelectStatusLatestAnswer.addEventListener('change', (e) => {
+        stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
         makeRequestLatestAnswerSort()
+
+    })
+}
+if (sortSelectTagLatestAnswer !== null) {
+    sortSelectTagLatestAnswer.value = 'all';
+    sortSelectTagLatestAnswer.addEventListener('change', (e) => {
+        stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestLatestAnswerSort()
+    })
+}
+if (sortSelectDateLatestAnswer !== null) {
+    sortSelectDateLatestAnswer.value = 'all';
+    sortSelectDateLatestAnswer.addEventListener('change', (e) => {
+        stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestLatestAnswerSort()
+    })
+}
+
+if (sortSelectStatusMySubject !== null) {
+    sortSelectStatusMySubject.value = 'all';
+    sortSelectStatusMySubject.addEventListener('change', (e) => {
+        stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
         makeRequestMySubjectSort()
+
+    })
+}
+if (sortSelectTagMySubject !== null) {
+    sortSelectTagMySubject.value = 'all';
+    sortSelectTagMySubject.addEventListener('change', (e) => {
+        stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestMySubjectSort()
+    })
+}
+if (sortSelectDateMySubject !== null) {
+    sortSelectDateMySubject.value = 'all';
+    sortSelectDateMySubject.addEventListener('change', (e) => {
+        stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
+        makeRequestMySubjectSort()
+    })
+}
+
+if (sortSelectStatusMyAnswer !== null) {
+    sortSelectStatusMyAnswer.value = 'all';
+    sortSelectStatusMyAnswer.addEventListener('change', (e) => {
+        stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
+        stateSortForum.page = 1;
         makeRequestMyAnswerSort()
 
     })
 }
-if (sortSelectTagForum !== null) {
-    sortSelectTagForum.value = 'all';
-    sortSelectTagForum.addEventListener('change', (e) => {
+if (sortSelectTagMyAnswer !== null) {
+    sortSelectTagMyAnswer.value = 'all';
+    sortSelectTagMyAnswer.addEventListener('change', (e) => {
         stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
         stateSortForum.page = 1;
-        makeRequestLatestSubjectSort()
-        makeRequestLatestAnswerSort()
-        makeRequestMySubjectSort()
         makeRequestMyAnswerSort()
     })
 }
-if (sortSelectDateForum !== null) {
-    sortSelectDateForum.value = 'all';
-    sortSelectDateForum.addEventListener('change', (e) => {
+if (sortSelectDateMyAnswer !== null) {
+    sortSelectDateMyAnswer.value = 'all';
+    sortSelectDateMyAnswer.addEventListener('change', (e) => {
         stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
         stateSortForum.page = 1;
-        makeRequestLatestSubjectSort()
-        makeRequestLatestAnswerSort()
-        makeRequestMySubjectSort()
         makeRequestMyAnswerSort()
     })
 }
+
+
 function makeRequestLatestSubjectSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -941,7 +1021,6 @@ function makeRequestLatestSubjectSort() {
         .then((response) => response.text())
         .then((data) => updateDataTableSubject(data,containerLatestSubject));
 }
-
 function makeRequestLatestAnswerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -960,7 +1039,6 @@ function makeRequestMySubjectSort() {
         .then((response) => response.text())
         .then((data) => updateDataTableSubject(data,containerMySubject));
 }
-
 function makeRequestMyAnswerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
