@@ -8,7 +8,8 @@ let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
 let searchInputOffer = document.querySelector('#offer #search') as HTMLInputElement;
 let searchInputPartner = document.querySelector('#partner #search') as HTMLInputElement;
 let sortSelectCityEntreprise = document.querySelector('#cities') as HTMLSelectElement;
-let sortSelectAgencyEntreprise = document.querySelector('#agency') as HTMLSelectElement;
+let sortSelectAgencyPartner = document.querySelector('.agency-partner') as HTMLSelectElement;
+let sortSelectAgencyOffer = document.querySelector('.agency-offer') as HTMLSelectElement;
 let sortSelectJobsEntreprise = document.querySelector('#jobs') as HTMLSelectElement;
 let searchInputGlossary = document.querySelector('#glossary #search') as HTMLInputElement;
 let searchInputTuto = document.querySelector('#tuto #search') as HTMLInputElement;
@@ -37,7 +38,6 @@ let containerLatestAnswer = document.getElementById('containerLatestAnswer')
 let containerMySubject = document.getElementById('containerMySubject')
 let containerMyAnswer = document.getElementById('containerMyTalks')
 
-let paginations = document.querySelectorAll('.page') as NodeList;
 let pdf = document.getElementById('pdf') as HTMLInputElement;
 let textInput = document.querySelector('.textInput');
 let avatar = document.getElementById('avatar') as HTMLInputElement;
@@ -123,7 +123,6 @@ function updateImageModifyProfil() {
         showPreview(e);
     })
 }
-
 function updateImageModifyBackImage() {
 
     backImage.classList.add('sr-only')
@@ -146,7 +145,6 @@ function updateImageModifyBackImage() {
         showPreview(e);
     })
 }
-
 function burgerMenu() {
     let checkbox = document.getElementById('burger') as HTMLInputElement;
     let deleteElement = document.querySelector('.delete-element') as HTMLDivElement;
@@ -165,7 +163,6 @@ function burgerMenu() {
         body.classList.add('overflow-hidden')
     }
 }
-
 function handlePassword() {
     let inputs = document.getElementsByClassName('password') as HTMLCollection;
     let btns = document.getElementsByClassName('show-password') as HTMLCollection;
@@ -182,7 +179,6 @@ function handlePassword() {
         });
     });
 }
-
 function slideInView() {
     document.documentElement.classList.add('js-enabled');
     let options = {
@@ -287,7 +283,6 @@ if (searchInputLatestAnswer !== null) {
         makeRequestLatestAnswer()
     })
 }
-
 if (searchInputMySubject !== null) {
     searchInputMySubject.value = '';
     searchInputMySubject.addEventListener('input', (e) => {
@@ -314,7 +309,6 @@ function makeRequestProject() {
         .then((response) => response.text())
         .then((data) => updateDataTableProject(data));
 }
-
 function makeRequestNew() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -324,7 +318,6 @@ function makeRequestNew() {
         .then((response) => response.text())
         .then((data) => updateDataTableNew(data));
 }
-
 function makeRequestOffer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -334,7 +327,6 @@ function makeRequestOffer() {
         .then((response) => response.text())
         .then((data) => updateDataTableOffer(data));
 }
-
 function makeRequestPartner() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -344,7 +336,6 @@ function makeRequestPartner() {
         .then((response) => response.text())
         .then((data) => updateDataTablePartner(data));
 }
-
 function makeRequestGlossary() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -354,7 +345,6 @@ function makeRequestGlossary() {
         .then((response) => response.text())
         .then((data) => updateDataTableGlossary(data));
 }
-
 function makeRequestTuto() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -364,7 +354,6 @@ function makeRequestTuto() {
         .then((response) => response.text())
         .then((data) => updateDataTableTuto(data));
 }
-
 function makeRequestBottin() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -384,7 +373,6 @@ function makeRequestAlumni() {
         .then((response) => response.text())
         .then((data) => updateDataTableBottin(data, containerAlumni));
 }
-
 function makeRequestLatestSubject() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -394,7 +382,6 @@ function makeRequestLatestSubject() {
         .then((response) => response.text())
         .then((data) => updateDataTableSubject(data, containerLatestSubject));
 }
-
 function makeRequestLatestAnswer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -404,7 +391,6 @@ function makeRequestLatestAnswer() {
         .then((response) => response.text())
         .then((data) => updateDataTableAnswer(data, containerLatestAnswer));
 }
-
 function makeRequestMySubject() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -414,7 +400,6 @@ function makeRequestMySubject() {
         .then((response) => response.text())
         .then((data) => updateDataTableSubject(data, containerMySubject));
 }
-
 function makeRequestMyAnswer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -441,7 +426,6 @@ function updateDataTableProject(data) {
     slideInView();
     handlepaginationProject()
 }
-
 function updateDataTableNew(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerNew.innerHTML = data
@@ -464,31 +448,31 @@ function updateDataTableNew(data) {
     slideInView();
     handlepaginationNew();
 }
-
 function updateDataTableOffer(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
     containerOffer.innerHTML = data
     let titles = document.querySelectorAll('h3')
     let descriptions = document.querySelectorAll('.description')
     let partners = document.querySelectorAll('.partner')
-    // @ts-ignore
-    for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const description of descriptions) {
-        let str = description.innerHTML.replace(/<[^>]+>/g, '')
-        description.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const partner of partners) {
-        partner.innerHTML = partner.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    if (stateSearch.search !==''){
+    let match = new RegExp(stateSearch.search, 'gi')
+        // @ts-ignore
+        for (const title of titles) {
+            title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        }
+        // @ts-ignore
+        for (const description of descriptions) {
+            let str = description.innerHTML.replace(/<[^>]+>/g, '')
+            description.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        }
+        // @ts-ignore
+        for (const partner of partners) {
+            partner.innerHTML = partner.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        }
     }
 
     slideInView();
     handlepaginationOffer();
 }
-
 function updateDataTablePartner(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerPartner.innerHTML = data
@@ -515,7 +499,6 @@ function updateDataTablePartner(data) {
     slideInView();
     handlepaginationPartner();
 }
-
 function updateDataTableGlossary(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerGlossary.innerHTML = data
@@ -533,7 +516,6 @@ function updateDataTableGlossary(data) {
     slideInView();
     handlepaginationGlossary();
 }
-
 function updateDataTableTuto(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerTuto.innerHTML = data
@@ -551,7 +533,6 @@ function updateDataTableTuto(data) {
     slideInView();
     handlepaginationTuto();
 }
-
 function updateDataTableBottin(data, container) {
     let match = new RegExp(stateSearch.search, 'gi')
     container.innerHTML = data
@@ -585,7 +566,6 @@ function updateDataTableBottin(data, container) {
     slideInView();
     handlepaginationBottin();
 }
-
 function updateDataTableSubject(data, container) {
     let match = new RegExp(stateSearch.search, 'gi')
     container.innerHTML = data
@@ -599,7 +579,6 @@ function updateDataTableSubject(data, container) {
     slideInView();
     handlepaginationSubject();
 }
-
 function updateDataTableAnswer(data, container) {
     let match = new RegExp(stateSearch.search, 'gi')
     container.innerHTML = data
@@ -619,10 +598,11 @@ function updateDataTableAnswer(data, container) {
     handlepaginationAnswer();
 }
 
-
 function handlepaginationProject() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
+        console.log(pagination)
         pagination.addEventListener('click', (e) => {
             e.preventDefault();
             if (e.currentTarget.classList.contains('previous')) {
@@ -636,8 +616,8 @@ function handlepaginationProject() {
         })
     }
 }
-
 function handlepaginationNew() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -653,8 +633,8 @@ function handlepaginationNew() {
         })
     }
 }
-
 function handlepaginationOffer() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -670,8 +650,8 @@ function handlepaginationOffer() {
         })
     }
 }
-
 function handlepaginationPartner() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -687,8 +667,9 @@ function handlepaginationPartner() {
         })
     }
 }
-
 function handlepaginationGlossary() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
+    console.log(paginations)
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -704,8 +685,8 @@ function handlepaginationGlossary() {
         })
     }
 }
-
 function handlepaginationTuto() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -721,8 +702,8 @@ function handlepaginationTuto() {
         })
     }
 }
-
 function handlepaginationBottin() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -738,8 +719,8 @@ function handlepaginationBottin() {
         })
     }
 }
-
 function handlepaginationSubject() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -756,8 +737,8 @@ function handlepaginationSubject() {
         })
     }
 }
-
 function handlepaginationAnswer() {
+    let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -775,7 +756,6 @@ function handlepaginationAnswer() {
     }
 }
 
-
 if (sortSelectDateTuto !== null) {
     sortSelectDateTuto.value = 'all';
     sortSelectDateTuto.addEventListener('change', (e) => {
@@ -792,7 +772,6 @@ if (sortSelectLanguageTuto !== null) {
         makeRequestTutoSort()
     })
 }
-
 function makeRequestTutoSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -811,24 +790,14 @@ if (sortSelectCityEntreprise !== null) {
         makeRequestPartnerSort()
     })
 }
-if (sortSelectAgencyEntreprise !== null) {
-    sortSelectAgencyEntreprise.value = 'all';
-    sortSelectAgencyEntreprise.addEventListener('change', (e) => {
+if (sortSelectAgencyPartner !== null) {
+    sortSelectAgencyPartner.value = 'all';
+    sortSelectAgencyPartner.addEventListener('change', (e) => {
         stateSortPartner.agency = (e.currentTarget as HTMLSelectElement).value;
         stateSortPartner.page = 1;
         makeRequestPartnerSort()
     })
 }
-if (sortSelectJobsEntreprise !== null) {
-    sortSelectJobsEntreprise.value = 'all';
-    sortSelectJobsEntreprise.addEventListener('change', (e) => {
-        stateSortOffer.jobs = (e.currentTarget as HTMLSelectElement).value;
-        console.log(sortSelectJobsEntreprise.value)
-        stateSortOffer.page = 1;
-        makeRequestOfferSort()
-    })
-}
-
 function makeRequestPartnerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -839,14 +808,31 @@ function makeRequestPartnerSort() {
         .then((data) => updateDataTablePartner(data));
 }
 
+if (sortSelectJobsEntreprise !== null) {
+    sortSelectJobsEntreprise.value = 'all';
+    sortSelectJobsEntreprise.addEventListener('change', (e) => {
+        stateSortOffer.jobs = (e.currentTarget as HTMLSelectElement).value;
+        console.log(sortSelectJobsEntreprise.value)
+        stateSortOffer.page = 1;
+        makeRequestOfferSort()
+    })
+}
+if (sortSelectAgencyOffer !== null) {
+    sortSelectAgencyOffer.value = 'all';
+    sortSelectAgencyOffer.addEventListener('change', (e) => {
+        stateSortOffer.agency = (e.currentTarget as HTMLSelectElement).value;
+        stateSortOffer.page = 1;
+        makeRequestOfferSort()
+    })
+}
 function makeRequestOfferSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/entreprise/intership/ajax?` + new URLSearchParams(stateSortOffer);
+    let url = `http://tecweb.test/${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSortOffer);
     history.pushState(stateSortOffer, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTablePartner(data));
+        .then((data) => updateDataTableOffer(data));
 }
 
 

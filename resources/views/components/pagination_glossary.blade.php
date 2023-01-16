@@ -1,7 +1,7 @@
 @props([
     /** @var \mixed */
-    'projects'
+    'termes'
 ])
 <div id="pagination">
-    {{$projects->withQueryString()->links()}}
+    {{$termes->withQueryString()->links()}}
 </div>

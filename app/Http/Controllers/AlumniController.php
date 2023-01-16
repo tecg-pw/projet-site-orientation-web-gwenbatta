@@ -31,7 +31,7 @@ class AlumniController extends Controller
                         ->orWhere('status', 'like', '%' . $searchTerm . '%')
                         ->orWhere('begin', 'like', '%' . $searchTerm . '%')
                         ->orWhere('end', 'like', '%' . $searchTerm . '%');
-                })->paginate(8);
+                })->get();
 
             foreach ($references as $reference) {
                 if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){
@@ -127,7 +127,7 @@ class AlumniController extends Controller
                         ->orWhere('status', 'like', '%' . $searchTerm . '%')
                         ->orWhere('begin', 'like', '%' . $searchTerm . '%')
                         ->orWhere('end', 'like', '%' . $searchTerm . '%');
-                })->paginate(8);
+                })->get();
 
             foreach ($references as $reference) {
                 if ($reference->status === 'ancien'||$reference->status === 'alumni'||$reference->status === 'teachalumni'){

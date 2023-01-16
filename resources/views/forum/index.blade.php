@@ -30,7 +30,7 @@
             @endauth
         </div>
         <div class="lg:grid lg:grid-cols-5 mb-36">
-            <x-latestsubject_paginated :subjects="$subjects"/>
+            <x-latestsubject_paginated class="lg:col-span-3 flex flex-col xl:pr-14 lg:pr-7 2xl:pl-48 xl:px-32 lg:px-16 px-10" :subjects="$subjects"/>
             <x-aside_forum id="latestsubject" :urlAction="$urlAction" :latests="$latests" :ratings="$ratings"></x-aside_forum>
         </div>
     </section>

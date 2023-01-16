@@ -4,6 +4,7 @@
 
 <div id="containerGlossary">
     <x-container_glossary :termes="$termes"/>
-    {{$termes->withQueryString()->links()}}
+    <x-pagination_glossary :termes="$termes"/>
 </div>
+
 

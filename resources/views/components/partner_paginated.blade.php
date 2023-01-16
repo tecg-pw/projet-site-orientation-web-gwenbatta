@@ -3,5 +3,5 @@
 ])
 <div id="containerPartner">
     <x-container_partner :partners="$partners"/>
-    {{$partners->withQueryString()->links()}}
+    <x-pagination_partner :partners="$partners"/>
 </div>

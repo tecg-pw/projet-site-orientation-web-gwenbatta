@@ -8,7 +8,7 @@
         <p>{{__('forum.no_subject')}}</p>
     @else
         <x-container_mysubject :subjects="$subjects"/>
-        {{$subjects->withQueryString()->links()}}
+    <x-pagination_mysubject :subjects="$subjects"/>
     @endif
 
 </div>

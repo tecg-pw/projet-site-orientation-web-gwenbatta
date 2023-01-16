@@ -3,6 +3,6 @@
 ])
 <div id="containerOffer">
     <x-container_offer :offers="$offers"/>
-    {{$offers->withQueryString()->links()}}
+    <x-pagination_offer :offers="$offers"/>
 </div>
 

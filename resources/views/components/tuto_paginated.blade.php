@@ -3,6 +3,6 @@
 ])
 <div id="containerTuto">
     <x-container_tuto :tutos="$tutos"/>
-    {{$tutos->withQueryString()->links()}}
+    <x-pagination_tuto :tutos="$tutos"/>
 </div>
 

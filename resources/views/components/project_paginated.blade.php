@@ -4,6 +4,6 @@
 ])
 <div id="containerProject">
     <x-container_project :projects="$projects"/>
-    {{$projects->withQueryString()->links()}}
+    <x-pagination_project :projects="$projects"/>
 </div>
 

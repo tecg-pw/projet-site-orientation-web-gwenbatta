@@ -66,7 +66,7 @@ class LatestSubjectController extends Controller
                 ->where('resolved', $sortStatus)
                 ->where('tag_id', $sortTags)
                 ->where('created_at', $sortYear)
-                ->paginate(8);
+                ->paginate(7);
         } else {
             $subjects = Subject::query()->paginate(8);
         } //OK
@@ -86,7 +86,7 @@ class LatestSubjectController extends Controller
 
         $subjects = Subject::query()
             ->where('subject', 'like', '%' . $searchTerm . '%')
-            ->paginate(8);
+            ->paginate(7);
 
         $recurrings = Recurring::all();
         $latests = Subject::latest()->take(2)->get();

@@ -27,7 +27,7 @@ class GlossaryController extends Controller
             foreach ($references as $reference) {
                 $ids [] = $reference->glossary_id;
             }
-            $termes = Glossary::whereIn('id', $ids)->paginate(9);
+            $termes = Glossary::whereIn('id', $ids)->paginate(8);
 
         } else {
             $termes = Glossary::paginate(8);
@@ -49,7 +49,7 @@ class GlossaryController extends Controller
             foreach ($references as $reference) {
                 $ids [] = $reference->glossary_id;
             }
-            $termes = Glossary::whereIn('id', $ids)->paginate(9);
-        return view('components.container_glossary', compact('termes'));
+            $termes = Glossary::whereIn('id', $ids)->paginate(8);
+        return view('components.glossary_paginated', compact('termes'));
     }
 }

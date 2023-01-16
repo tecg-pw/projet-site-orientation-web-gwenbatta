@@ -34,7 +34,7 @@ class PersonController extends Controller
                 ->where('locale', $locale)
                 ->orWhere('end', 'like', '%' . $searchTerm . '%')
                 ->where('locale', $locale)
-                ->paginate(8);
+                ->get();
 
             foreach ($references as $reference) {
                 $ids [] = $reference->people_id;
@@ -105,7 +105,7 @@ class PersonController extends Controller
                 ->where('locale', $locale)
                 ->orWhere('end', 'like', '%' . $searchTerm . '%')
                 ->where('locale', $locale)
-                ->paginate(8);
+                ->get();
 
             foreach ($references as $reference) {
                 $ids [] = $reference->people_id;
@@ -150,6 +150,7 @@ class PersonController extends Controller
         else {
             $people = People::paginate(8);
         }
+
         $testimonials = Testimonial::take(4)->orderBy('created_at')->get();
         $status = PersonTranslation::select('status')->where('locale', $locale)->groupBy('status')->get();
         $years_end = PersonTranslation::select('end')->where('locale', $locale)->whereNot('end', null)->groupBy('end')->orderBy('end', 'DESC')->get();

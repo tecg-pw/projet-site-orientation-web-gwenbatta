@@ -23,7 +23,7 @@
             </fieldset>
             <fieldset class="flex flex-col ml-16">
                 <label for="agency" class="text-lg xl:text-xl 2xl:text-2xl text-green-500 mb-2">{{__('sort.agency')}}</label>
-                <select class="appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1 2xl:text-xl"
+                <select class="agency-partner appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1 2xl:text-xl"
                         id="agency"
                         name="agency">
                     <option value="all">{{mb_strtoupper(__('sort.all'))}}</option>
