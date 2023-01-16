@@ -44,72 +44,51 @@
             </div>
             <div class="lg:not-sr-only sr-only col-span-5">
                 <figure class="grid grid-rows-1 grid-cols-3 gap-6 ">
-                    <img class="rounded-3xl row-span-2"
-                         srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-323.jpeg 1024w,
-             /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-392.jpeg 1250w,
-             /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-460.jpeg 1520w,
-             /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-710.jpeg 2040w,
-             /img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-844.jpeg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w"
-                         src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-844.jpg" alt="">
-                    <img class="rounded-3xl col-span-2 order-1"
-                         srcset="/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-330.jpeg 1024w,
-             /img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-330.jpeg 1250w,
-             /img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-384.jpeg 1520w,
-             /img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-537.jpeg 2040w,
-             /img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-690.jpeg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w"
-                         src="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-690.jpeg" alt="">
-
-                    <img class="rounded-3xl order-2" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-135.jpeg 1024w,
-             /img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-158.jpeg 1250w,
-             /img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-180.jpeg 1520w,
-             /img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-273.jpeg 2040w,
-             /img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-333.jpeg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w"
-                         src="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-333.jpeg"
-                         alt="">
-                    <img class="rounded-3xl order-3"
-                         srcset="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-135.jpeg 1024w,
-             /img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-158.jpeg 1250w,
-             /img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-180.jpeg 1520w,
-             /img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-273.jpeg 2040w,
-             /img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-333.jpeg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w"
-                         src="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-333.jpeg"
-                         alt="">
-                    <img class="col-span-3 rounded-3xl order-4 min-w-full" srcset="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-452.jpeg 1024w,
-             /img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-512.jpeg 1250w,
-             /img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-572.jpeg 1520w,
-             /img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-736.jpg 2040w,
-             /img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-900.jpg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w"
-                         src="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-452.jpeg" alt="">
+                    <picture class="rounded-3xl min-w-full row-span-2 ">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-323.jpeg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-392.jpeg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-460.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-572.jpeg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-844.jpeg">
+                        <img src="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-844.jpeg"
+                             alt="" class="rounded-3xl min-w-full row-span-2 ">
+                    </picture>
+                    <picture class="rounded-3xl col-span-2  order-1">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-330.jpeg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-330.jpeg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-384.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-537.jpeg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-690.jpeg">
+                        <img src="/img-redimensions/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-690.jpeg"
+                             alt="" class="rounded-3xl col-span-2 min-h-full order-1">
+                    </picture>
+                    <picture class="rounded-3xl order-2 ">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-135.jpeg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-158.jpeg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-180.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-273.jpeg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-333.jpeg">
+                        <img src="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-333.jpeg"
+                             alt="" class="rounded-3xl order-2 ">
+                    </picture>
+                    <picture class="rounded-3xl order-3">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-135.jpeg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-158.jpeg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-180.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-273.jpeg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-333.jpeg">
+                        <img src="/img-redimensions/rachel-moenning-zjxYwd4HOu0-unsplash-333.jpeg"
+                             alt="" class="rounded-3xl order-3">
+                    </picture>
+                    <picture class="col-span-3 rounded-3xl order-4 min-w-full">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-452.jpeg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-512.jpeg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-572.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-736.jpg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-900.jpg">
+                        <img src="/img-redimensions/brooke-cagle-g1Kr4Ozfoac-unsplash-900.jpg"
+                             alt="" class="col-span-3 rounded-3xl order-4 min-w-full">
+                    </picture>
                 </figure>
             </div>
         </div>

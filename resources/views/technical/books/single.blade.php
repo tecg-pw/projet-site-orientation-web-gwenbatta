@@ -50,73 +50,51 @@
             </div>
             <div class="lg:not-sr-only sr-only col-span-5">
                 <figure class="grid grid-rows-1 grid-cols-3 gap-6 ">
-                    <img class="rounded-3xl row-span-2 min-h-full"
-                         src="/img-redimensions/girl-on-computer-526.jpg"
-                         srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-1-1024.jpeg 1024w,
-             /img-redimensions/windows-VMPhyAoVqqk-unsplash-1-1250.jpeg 1250w,
-             /img-redimensions/windows-VMPhyAoVqqk-unsplash-1-1520.jpeg 1520w,
-             /img-redimensions/windows-VMPhyAoVqqk-unsplash-1-2040.jpeg 2040w,
-             /img-redimensions/windows-VMPhyAoVqqk-unsplash-1-2560.jpeg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w" alt="">
-                    <img class="rounded-3xl col-span-2 order-1"
-                         srcset="
-                    /img-redimensions/ux-gc7de3d904_1920-1024.jpeg 1024w,
-                     /img-redimensions/ux-gc7de3d904_1920-1250.jpeg 1250w,
-                     /img-redimensions/ux-gc7de3d904_1920-1520.jpeg 1520w,
-                     /img-redimensions/ux-gc7de3d904_1920-2040.jpeg 2040w,
-                     /img-redimensions/ux-gc7de3d904_1920-2560.jpeg 2560w"
-                         sizes="
-                         (min-width : 1024px) 1024w,
-                         (min-width : 1250px) 1250w,
-                         (min-width : 1520px) 1520w,
-                         (min-width : 2040px) 2040w,
-                         2560w"
-                         src="/img-redimensions/ux-gc7de3d904_1920-2560.jpeg" alt="">
-                    <img class="rounded-3xl order-2" src="/img-redimensions/coding-picture.jpg"
-                         srcset="/img-redimensions/pexels-pixabay-270373-1716-274.jpg 1024w,
-             /img-redimensions/pexels-pixabay-270373-1716-302.jpg 1250w,
-             /img-redimensions/pexels-pixabay-270373-1716-330.jpg 1520w,
-             /img-redimensions/pexels-pixabay-270373-1716-417.jpg 2040w,
-             /img-redimensions/pexels-pixabay-270373-1716-504.jpg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w"
-                         alt="">
-                    <img class="rounded-3xl order-3"
-                         srcset="/img-redimensions/student-g0a8698c9e_1920-274.jpg 1024w,
-             /img-redimensions/student-g0a8698c9e_1920-1280-302.jpg 1250w,
-             /img-redimensions/student-g0a8698c9e_1920-1280-330.jpg 1520w,
-             /img-redimensions/student-g0a8698c9e_1920-1280-417.jpg 2040w,
-             /img-redimensions/student-g0a8698c9e_1920-1280-504.jpg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w"
-                         src="/img-redimensions/student-g0a8698c9e_1920-2560.jpeg"
-                         alt="">
-                    <img class="col-span-3 rounded-3xl order-4" src="/img-redimensions/class-group.jpg"
-                         srcset="/img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-1040.jpeg 1024w,
-             /img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-1250.jpeg 1250w,
-             /img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-1520.jpeg 1520w,
-             /img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-2040.jpeg 2040w,
-             /img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-2560.jpeg 2560w"
-                         sizes="
-                        (min-width : 1024px) 1024w,
-                     (min-width : 1250px) 1250w,
-                     (min-width : 1520px) 1520w,
-                     (min-width : 2040px) 2040w,
-                     2560w"
-                         alt="">
+                    <picture class="rounded-3xl row-span-2 min-h-full">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-1-1024.jpeg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-1-1280.jpeg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-1-1520.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-1-2040.jpeg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-1-2560.jpeg">
+                        <img src="/img-redimensions/windows-VMPhyAoVqqk-unsplash-1-2560.jpeg"
+                             alt="" class="rounded-3xl row-span-2 min-h-full">
+                    </picture>
+                    <picture class="rounded-3xl col-span-2 order-1">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/ux-gc7de3d904_1920-1024.jpeg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/ux-gc7de3d904_1920-1280.jpeg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/ux-gc7de3d904_1920-1520.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/ux-gc7de3d904_1920-2040.jpeg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/ux-gc7de3d904_1920-2560.jpeg">
+                        <img src="/img-redimensions/ux-gc7de3d904_1920-2560.jpeg"
+                             alt="" class="rounded-3xl col-span-2 min-w-full order-1">
+                    </picture>
+                    <picture class="rounded-3xl order-2">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/pexels-pixabay-270373-1716-274.jpg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/pexels-pixabay-270373-1716-302.jpg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/pexels-pixabay-270373-1716-330.jpg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/pexels-pixabay-270373-1716-417.jpg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/pexels-pixabay-270373-1716-504.jpg">
+                        <img src="/img-redimensions/pexels-pixabay-270373-1716-504.jpg"
+                             alt="" class="rounded-3xl order-2">
+                    </picture>
+                    <picture class="rounded-3xl order-3">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/student-g0a8698c9e_1920-1280-274.jpg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/student-g0a8698c9e_1920-1280-302.jpg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/student-g0a8698c9e_1920-1280-330.jpg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/student-g0a8698c9e_1920-1280-417.jpg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/student-g0a8698c9e_1920-1280-504.jpg">
+                        <img src="/img-redimensions/student-g0a8698c9e_1920-1280-504.jpg"
+                             alt="" class="rounded-3xl order-3">
+                    </picture>
+                    <picture class="col-span-3 rounded-3xl order-4">
+                        <source media="(max-width: 1024px)" srcset="/img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-1040.jpeg">
+                        <source media="(max-width: 1250px)" srcset="/img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-1250.jpeg">
+                        <source media="(max-width: 1520px)" srcset="/img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-1520.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-2040.jpeg">
+                        <source media="(max-width: 2560px)" srcset="/img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-2560.jpeg">
+                        <img src="/img-redimensions/kenny-eliason-1-aA2Fadydc-unsplash-2560.jpeg"
+                             alt="" class="col-span-3 rounded-3xl order-4 min-w-full">
+                    </picture>
                 </figure>
             </div>
         </div>
