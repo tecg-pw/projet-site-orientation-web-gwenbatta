@@ -49,6 +49,7 @@ let containerLatestSubject = document.getElementById('containerLatestSubject')
 let containerLatestAnswer = document.getElementById('containerLatestAnswer')
 let containerMySubject = document.getElementById('containerMySubject')
 let containerMyAnswer = document.getElementById('containerMyTalks')
+let containerGlobal = document.getElementById('containerGlobal')
 
 let pdf = document.getElementById('pdf') as HTMLInputElement;
 let textInput = document.querySelector('.textInput');
@@ -79,6 +80,10 @@ function init() {
 
 const stateSearch = {
     search: '',
+    page: 1,
+}
+const stateSearchGlobal = {
+    search_bar: '',
     page: 1,
 }
 const stateSortTutos = {
@@ -1048,9 +1053,46 @@ function makeRequestMyAnswerSort() {
         .then((response) => response.text())
         .then((data) => updateDataTableSubject(data,containerMyAnswer));
 }
+
 if (avatar !== null) {
     updateImageModifyProfil()
 }
 if (backImage !== null) {
     updateImageModifyBackImage()
+}
+
+
+if (searchGlobalInput !== null) {
+    searchGlobalInput.value = '';
+    searchGlobalInput.addEventListener('input', (e) => {
+        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
+        stateSearch.page = 1;
+        makeRequestGlobal()
+    })
+}
+function makeRequestGlobal() {
+    let locale = window.location.pathname.split('/');
+    // @ts-ignore
+    let url = `http://tecweb.test/${locale[1]}/search/ajax?` + new URLSearchParams(stateSearchGlobal);
+    history.pushState(stateSearchGlobal, '', url.replace('/ajax', ''))
+    fetch(url)
+        .then((response) => response.text())
+        .then((data) => updateDataTableGlobal(data));
+}
+
+function updateDataTableGlobal(data) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    containerGlobal.innerHTML = data
+    // let titles = document.querySelectorAll('h3')
+    // let dates = document.querySelectorAll('.datesProject')
+    // // @ts-ignore
+    // for (const title of titles) {
+    //     title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    // }
+    // // @ts-ignore
+    // for (const date of dates) {
+    //     date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    // }
+    slideInView();
+    handlepaginationProject()
 }

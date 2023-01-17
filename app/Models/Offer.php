@@ -33,7 +33,7 @@ class Offer extends Model
     }
     public function software(): BelongsToMany
     {
-        return $this->belongsToMany(Language::class,'offer_software','offer_id','software_id');
+        return $this->belongsToMany(Software::class,'offer_software','offer_id','software_id');
     }
 
 }

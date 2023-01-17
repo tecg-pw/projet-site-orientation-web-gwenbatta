@@ -58,7 +58,7 @@ Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('locale')
 
 Route::get('/{locale?}/legals',[LegalController::class, 'index'])->middleware('locale');
 Route::get('/{locale?}/search',[SearchController::class, 'index'])->middleware('locale');
-//Route::get('/{locale?}/search/ajax',[SearchController::class, 'index'])->middleware('locale');
+Route::get('/{locale?}/search/ajax',[SearchController::class, 'ajax'])->middleware('locale');
 
 
 Route::get('/{locale?}/about', [AboutController::class, 'index'])->middleware('locale');

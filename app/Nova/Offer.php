@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -92,6 +93,9 @@ class Offer extends Resource
             Text::make('Traductions', function () {
                 return $this->translationList();
             })->textAlign('right'),
+
+            BelongsToMany::make('Logiciels', 'software', 'App\Nova\Software'),
+            BelongsToMany::make('Langages', 'language', 'App\Nova\Language')
         ];
     }
 

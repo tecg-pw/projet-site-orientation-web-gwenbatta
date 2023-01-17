@@ -101,6 +101,7 @@
                             <h4 id="languages" role="heading" aria-level="4"
                                 class="text-green-500 mb-4 text-lg xl:text-xl 2xl:text-2xl">{{__('contact_page.agency_language')}}</h4>
                             <ul class="flex flex-col gap-2 list-disc">
+
                                 @foreach($offer->language as $language)
                                     <li class="flex items-center gap-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7">
