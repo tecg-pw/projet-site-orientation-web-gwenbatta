@@ -1,5 +1,5 @@
 <x-commons.navigation :page="$teacher->firstname.' '.$teacher->name"></x-commons.navigation>
-<main id="content" class="">
+<main id="content">
     <div class="flex items-center px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20">
         <a href="/{{app()->getLocale()}}/bottin" class="2xl:text-2xl hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl">
             {{__('nav.nav_navigation.people')}}

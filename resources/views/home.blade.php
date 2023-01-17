@@ -1,5 +1,5 @@
 <x-commons.navigation :page="__('nav.nav_link_home')"></x-commons.navigation>
-<main id="content" >
+<main id="content">
     <section class="relative mt-14 px-10 2xl:px-48 xl:px-32 lg:px-16 lg:flex xl:mt-14 xl:mb-36 lg:gap-x-12 xl:gap-24 xl:items-center" aria-labelledby="intro">
         <div class="slide-in lg:flex-1">
             <h2 class="text-2xl leading-8 mb-6 uppercase font-bold text-yellow-800 font-sans md:text-3xl xl:text-4xl xl:mb-16  xl:leading-12 2xl:text-5xl" role="heading" aria-level="2"

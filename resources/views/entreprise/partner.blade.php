@@ -3,7 +3,7 @@
 @endphp
 
 <x-commons.navigation :page="__('agency.partner_link')"></x-commons.navigation>
-<main id="content" class="">
+<main id="content">
     <section class="xl:px-32 lg:px-16 2xl:px-48 px-10 mt-20" aria-labelledby="company">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="company" role="heading" aria-level="2"

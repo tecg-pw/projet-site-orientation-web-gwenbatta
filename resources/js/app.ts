@@ -1,5 +1,4 @@
 import './bootstrap';
-import {createLogger} from "vite";
 
 window.addEventListener('load', init);
 let buttonSearches = document.getElementsByClassName('filter');
@@ -49,7 +48,7 @@ let containerLatestSubject = document.getElementById('containerLatestSubject')
 let containerLatestAnswer = document.getElementById('containerLatestAnswer')
 let containerMySubject = document.getElementById('containerMySubject')
 let containerMyAnswer = document.getElementById('containerMyTalks')
-let containerGlobal = document.getElementById('containerGlobal')
+let containerGlobal = document.getElementById('content')
 
 let pdf = document.getElementById('pdf') as HTMLInputElement;
 let textInput = document.querySelector('.textInput');
@@ -146,6 +145,7 @@ function updateImageModifyProfil() {
         showPreview(e);
     })
 }
+
 function updateImageModifyBackImage() {
 
     backImage.classList.add('sr-only')
@@ -168,6 +168,7 @@ function updateImageModifyBackImage() {
         showPreview(e);
     })
 }
+
 function burgerMenu() {
     let checkbox = document.getElementById('burger') as HTMLInputElement;
     let deleteElement = document.querySelector('.delete-element') as HTMLDivElement;
@@ -186,6 +187,7 @@ function burgerMenu() {
         body.classList.add('overflow-hidden')
     }
 }
+
 function handlePassword() {
     let inputs = document.getElementsByClassName('password') as HTMLCollection;
     let btns = document.getElementsByClassName('show-password') as HTMLCollection;
@@ -202,6 +204,7 @@ function handlePassword() {
         });
     });
 }
+
 function slideInView() {
     document.documentElement.classList.add('js-enabled');
     let options = {
@@ -332,6 +335,7 @@ function makeRequestProject() {
         .then((response) => response.text())
         .then((data) => updateDataTableProject(data));
 }
+
 function makeRequestNew() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -341,6 +345,7 @@ function makeRequestNew() {
         .then((response) => response.text())
         .then((data) => updateDataTableNew(data));
 }
+
 function makeRequestOffer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -350,6 +355,7 @@ function makeRequestOffer() {
         .then((response) => response.text())
         .then((data) => updateDataTableOffer(data));
 }
+
 function makeRequestPartner() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -359,6 +365,7 @@ function makeRequestPartner() {
         .then((response) => response.text())
         .then((data) => updateDataTablePartner(data));
 }
+
 function makeRequestGlossary() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -368,6 +375,7 @@ function makeRequestGlossary() {
         .then((response) => response.text())
         .then((data) => updateDataTableGlossary(data));
 }
+
 function makeRequestTuto() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -377,6 +385,7 @@ function makeRequestTuto() {
         .then((response) => response.text())
         .then((data) => updateDataTableTuto(data));
 }
+
 function makeRequestBottin() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -386,6 +395,7 @@ function makeRequestBottin() {
         .then((response) => response.text())
         .then((data) => updateDataTableBottin(data, containerBottin));
 }
+
 function makeRequestAlumni() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -395,6 +405,7 @@ function makeRequestAlumni() {
         .then((response) => response.text())
         .then((data) => updateDataTableBottin(data, containerAlumni));
 }
+
 function makeRequestLatestSubject() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -404,6 +415,7 @@ function makeRequestLatestSubject() {
         .then((response) => response.text())
         .then((data) => updateDataTableSubject(data, containerLatestSubject));
 }
+
 function makeRequestLatestAnswer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -413,6 +425,7 @@ function makeRequestLatestAnswer() {
         .then((response) => response.text())
         .then((data) => updateDataTableAnswer(data, containerLatestAnswer));
 }
+
 function makeRequestMySubject() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -422,6 +435,7 @@ function makeRequestMySubject() {
         .then((response) => response.text())
         .then((data) => updateDataTableSubject(data, containerMySubject));
 }
+
 function makeRequestMyAnswer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -439,15 +453,16 @@ function updateDataTableProject(data) {
     let dates = document.querySelectorAll('.datesProject')
     // @ts-ignore
     for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const date of dates) {
-        date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        date.innerHTML = date.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     slideInView();
     handlepaginationProject()
 }
+
 function updateDataTableNew(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerNew.innerHTML = data
@@ -456,45 +471,47 @@ function updateDataTableNew(data) {
     let dates = document.querySelectorAll('.datesNew')
     // @ts-ignore
     for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const excerpt of excerpts) {
         let str = excerpt.innerHTML.replace(/<[^>]+>/g, '')
-        excerpt.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        excerpt.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const date of dates) {
-        date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        date.innerHTML = date.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     slideInView();
     handlepaginationNew();
 }
+
 function updateDataTableOffer(data) {
     containerOffer.innerHTML = data
     let titles = document.querySelectorAll('h3')
     let descriptions = document.querySelectorAll('.description')
     let partners = document.querySelectorAll('.partner')
-    if (stateSearch.search !==''){
-    let match = new RegExp(stateSearch.search, 'gi')
+    if (stateSearch.search !== '') {
+        let match = new RegExp(stateSearch.search, 'gi')
         // @ts-ignore
         for (const title of titles) {
-            title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+            title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
         }
         // @ts-ignore
         for (const description of descriptions) {
             let str = description.innerHTML.replace(/<[^>]+>/g, '')
-            description.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+            description.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
         }
         // @ts-ignore
         for (const partner of partners) {
-            partner.innerHTML = partner.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+            partner.innerHTML = partner.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
         }
     }
 
     slideInView();
     handlepaginationOffer();
 }
+
 function updateDataTablePartner(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerPartner.innerHTML = data
@@ -504,23 +521,24 @@ function updateDataTablePartner(data) {
     let localitiesNum = document.querySelectorAll('.localityNumber')
     // @ts-ignore
     for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const adresse of adresses) {
-        adresse.innerHTML = adresse.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        adresse.innerHTML = adresse.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const locality of localities) {
-        locality.innerHTML = locality.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        locality.innerHTML = locality.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const localityNum of localitiesNum) {
-        localityNum.innerHTML = localityNum.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        localityNum.innerHTML = localityNum.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     slideInView();
     handlepaginationPartner();
 }
+
 function updateDataTableGlossary(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerGlossary.innerHTML = data
@@ -528,16 +546,17 @@ function updateDataTableGlossary(data) {
     let definitions = document.querySelectorAll('.definition')
     // @ts-ignore
     for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const definition of definitions) {
         let str = definition.innerHTML.replace(/<[^>]+>/g, '')
-        definition.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        definition.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     slideInView();
     handlepaginationGlossary();
 }
+
 function updateDataTableTuto(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerTuto.innerHTML = data
@@ -545,16 +564,17 @@ function updateDataTableTuto(data) {
     let excerpts = document.querySelectorAll('.excerpt')
     // @ts-ignore
     for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const excerpt of excerpts) {
         let str = excerpt.innerHTML.replace(/<[^>]+>/g, '')
-        excerpt.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        excerpt.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     slideInView();
     handlepaginationTuto();
 }
+
 function updateDataTableBottin(data, container) {
     let match = new RegExp(stateSearch.search, 'gi')
     container.innerHTML = data
@@ -565,29 +585,30 @@ function updateDataTableBottin(data, container) {
     let ends = document.querySelectorAll('.end')
     // @ts-ignore
     for (const name of names) {
-        name.innerHTML = name.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        name.innerHTML = name.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const firstname of firstnames) {
-        firstname.innerHTML = firstname.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        firstname.innerHTML = firstname.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const statusElement of status) {
         let str = statusElement.innerHTML.replace(/<[^>]+>/g, '')
-        statusElement.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        statusElement.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const begin of begins) {
-        begin.innerHTML = begin.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        begin.innerHTML = begin.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const end of ends) {
-        end.innerHTML = end.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        end.innerHTML = end.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
 
     slideInView();
     handlepaginationBottin();
 }
+
 function updateDataTableSubject(data, container) {
     let match = new RegExp(stateSearch.search, 'gi')
     container.innerHTML = data
@@ -595,12 +616,13 @@ function updateDataTableSubject(data, container) {
 
     // @ts-ignore
     for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     slideInView();
     handlepaginationSubject();
 }
+
 function updateDataTableAnswer(data, container) {
     let match = new RegExp(stateSearch.search, 'gi')
     container.innerHTML = data
@@ -608,12 +630,12 @@ function updateDataTableAnswer(data, container) {
     let comments = document.querySelectorAll('.search-comment')
     // @ts-ignore
     for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     for (const comment of comments) {
         let str = comment.innerHTML.replace(/<[^>]+>/g, '')
-        comment.innerHTML = str.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+        comment.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
     }
     // @ts-ignore
     slideInView();
@@ -638,6 +660,7 @@ function handlepaginationProject() {
         })
     }
 }
+
 function handlepaginationNew() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
@@ -655,6 +678,7 @@ function handlepaginationNew() {
         })
     }
 }
+
 function handlepaginationOffer() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
@@ -672,6 +696,7 @@ function handlepaginationOffer() {
         })
     }
 }
+
 function handlepaginationPartner() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
@@ -689,6 +714,7 @@ function handlepaginationPartner() {
         })
     }
 }
+
 function handlepaginationGlossary() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     console.log(paginations)
@@ -707,6 +733,7 @@ function handlepaginationGlossary() {
         })
     }
 }
+
 function handlepaginationTuto() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
@@ -724,6 +751,7 @@ function handlepaginationTuto() {
         })
     }
 }
+
 function handlepaginationBottin() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
@@ -741,6 +769,7 @@ function handlepaginationBottin() {
         })
     }
 }
+
 function handlepaginationSubject() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
@@ -759,6 +788,7 @@ function handlepaginationSubject() {
         })
     }
 }
+
 function handlepaginationAnswer() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
@@ -794,6 +824,7 @@ if (sortSelectLanguageTuto !== null) {
         makeRequestTutoSort()
     })
 }
+
 function makeRequestTutoSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -820,6 +851,7 @@ if (sortSelectAgencyPartner !== null) {
         makeRequestPartnerSort()
     })
 }
+
 function makeRequestPartnerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -847,6 +879,7 @@ if (sortSelectAgencyOffer !== null) {
         makeRequestOfferSort()
     })
 }
+
 function makeRequestOfferSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -1024,8 +1057,9 @@ function makeRequestLatestSubjectSort() {
     history.pushState(stateSortForum, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data,containerLatestSubject));
+        .then((data) => updateDataTableSubject(data, containerLatestSubject));
 }
+
 function makeRequestLatestAnswerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -1033,8 +1067,9 @@ function makeRequestLatestAnswerSort() {
     history.pushState(stateSortForum, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data,containerLatestAnswer));
+        .then((data) => updateDataTableSubject(data, containerLatestAnswer));
 }
+
 function makeRequestMySubjectSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -1042,8 +1077,9 @@ function makeRequestMySubjectSort() {
     history.pushState(stateSortForum, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data,containerMySubject));
+        .then((data) => updateDataTableSubject(data, containerMySubject));
 }
+
 function makeRequestMyAnswerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
@@ -1051,7 +1087,7 @@ function makeRequestMyAnswerSort() {
     history.pushState(stateSortForum, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data,containerMyAnswer));
+        .then((data) => updateDataTableSubject(data, containerMyAnswer));
 }
 
 if (avatar !== null) {
@@ -1065,13 +1101,16 @@ if (backImage !== null) {
 if (searchGlobalInput !== null) {
     searchGlobalInput.value = '';
     searchGlobalInput.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
+        stateSearchGlobal.search_bar = (e.currentTarget as HTMLInputElement).value;
+        stateSearchGlobal.page = 1;
         makeRequestGlobal()
+
     })
 }
+
 function makeRequestGlobal() {
     let locale = window.location.pathname.split('/');
+    //window.location.href = `http://tecweb.test/${locale[1]}/search`
     // @ts-ignore
     let url = `http://tecweb.test/${locale[1]}/search/ajax?` + new URLSearchParams(stateSearchGlobal);
     history.pushState(stateSearchGlobal, '', url.replace('/ajax', ''))
@@ -1081,18 +1120,19 @@ function makeRequestGlobal() {
 }
 
 function updateDataTableGlobal(data) {
+    // let locale = window.location.pathname.split('/');
+    // // @ts-ignore
+    // window.location.href = `http://tecweb.test/${locale[1]}/search?`+ new URLSearchParams(stateSearchGlobal)
+
     let match = new RegExp(stateSearch.search, 'gi')
     containerGlobal.innerHTML = data
-    // let titles = document.querySelectorAll('h3')
-    // let dates = document.querySelectorAll('.datesProject')
+    console.log(data)
+    // let titles = document.querySelectorAll('h4')
     // // @ts-ignore
     // for (const title of titles) {
-    //     title.innerHTML = title.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
+    //     title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearchGlobal.search_bar}</mark>`)
     // }
-    // // @ts-ignore
-    // for (const date of dates) {
-    //     date.innerHTML = date.innerHTML.replace(match, `<mark class="text-orange-500">${stateSearch.search}</mark>`)
-    // }
+
     slideInView();
     handlepaginationProject()
 }

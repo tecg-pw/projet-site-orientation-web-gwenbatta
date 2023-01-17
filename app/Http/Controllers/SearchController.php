@@ -151,16 +151,37 @@ class SearchController extends Controller
 
 
 
-            $results['tuto'] = Tuto::whereIn('id', $idTutos)->get();
-            $results['glossary'] = Glossary::whereIn('id', $idGlossaries)->get();
-            $results['tool'] = Tool::whereIn('id', $idTools)->get();
-            $results['book'] = Book::whereIn('id', $idBooks)->get();
-            $results['doc'] = Doc::whereIn('id', $idDocs)->get();
-            $results['opportunity'] = Opportunity::whereIn('id', $idOpportunities)->get();
-            $results['people'] = People::whereIn('id', $idPeople)->get();
-            $results['subjects'] = Subject::whereIn('id', $idSubjects)->get();
-            $results['projects'] = Project::whereIn('id', $idProjects)->get();
-            $results['news'] = Actuality::whereIn('id', $idNews)->get();
+            if (count($idTutos)>0){
+                $results['tuto'] = Tuto::whereIn('id', $idTutos)->get();
+            }
+            if (count($idGlossaries)>0) {
+                $results['glossary'] = Glossary::whereIn('id', $idGlossaries)->get();
+            }
+            if (count($idTools)>0) {
+                $results['tool'] = Tool::whereIn('id', $idTools)->get();
+            }
+            if (count($idBooks)>0) {
+                $results['book'] = Book::whereIn('id', $idBooks)->get();
+            }
+            if (count($idDocs)>0) {
+                $results['doc'] = Doc::whereIn('id', $idDocs)->get();
+            }
+            if (count($idOpportunities)>0) {
+                $results['opportunity'] = Opportunity::whereIn('id', $idOpportunities)->get();
+            }
+            if (count($idPeople)>0) {
+                $results['people'] = People::whereIn('id', $idPeople)->get();
+            }
+            if (count($idSubjects)>0) {
+                $results['subjects'] = Subject::whereIn('id', $idSubjects)->get();
+            }
+            if (count($idProjects)>0) {
+                $results['projects'] = Project::whereIn('id', $idProjects)->get();
+            }
+            if (count($idNews)>0) {
+                $results['news'] = Actuality::whereIn('id', $idNews)->get();
+            }
+
         } //OK
 
         return view('result_search', compact('results'));
@@ -288,20 +309,41 @@ class SearchController extends Controller
                 $idNews [] = $referenceActuality->actuality_id;
             }
 
-
-
+            if (count($idTutos)>0){
             $results['tuto'] = Tuto::whereIn('id', $idTutos)->get();
-            $results['glossary'] = Glossary::whereIn('id', $idGlossaries)->get();
-            $results['tool'] = Tool::whereIn('id', $idTools)->get();
-            $results['book'] = Book::whereIn('id', $idBooks)->get();
-            $results['doc'] = Doc::whereIn('id', $idDocs)->get();
-            $results['opportunity'] = Opportunity::whereIn('id', $idOpportunities)->get();
-            $results['people'] = People::whereIn('id', $idPeople)->get();
-            $results['subjects'] = Subject::whereIn('id', $idSubjects)->get();
-            $results['projects'] = Project::whereIn('id', $idProjects)->get();
-            $results['news'] = Actuality::whereIn('id', $idNews)->get();
+            }
+            if (count($idGlossaries)>0) {
+                $results['glossary'] = Glossary::whereIn('id', $idGlossaries)->get();
+            }
+            if (count($idTools)>0) {
+                $results['tool'] = Tool::whereIn('id', $idTools)->get();
+            }
+            if (count($idBooks)>0) {
+                $results['book'] = Book::whereIn('id', $idBooks)->get();
+            }
+            if (count($idDocs)>0) {
+                $results['doc'] = Doc::whereIn('id', $idDocs)->get();
+            }
+            if (count($idOpportunities)>0) {
+                $results['opportunity'] = Opportunity::whereIn('id', $idOpportunities)->get();
+            }
+            if (count($idPeople)>0) {
+                $results['people'] = People::whereIn('id', $idPeople)->get();
+            }
+            if (count($idSubjects)>0) {
+                $results['subjects'] = Subject::whereIn('id', $idSubjects)->get();
+            }
+            if (count($idProjects)>0) {
+                $results['projects'] = Project::whereIn('id', $idProjects)->get();
+            }
+            if (count($idNews)>0) {
+                $results['news'] = Actuality::whereIn('id', $idNews)->get();
+            }
         } //OK
 
+//        else{
+//
+//        }
         return view('components.container_globale', compact('results'));
     }
 }

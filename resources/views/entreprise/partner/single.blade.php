@@ -3,7 +3,7 @@
     $partner->members = json_decode($partner->members);
 @endphp
 <x-commons.navigation :page="$partner->name"></x-commons.navigation>
-<main id="content" class="">
+<main id="content">
     <div class="flex items-center px-10 xl:px-32 lg:px-16 2xl:px-48 mt-20">
         <a href="/{{app()->getLocale()}}/entreprise/partner" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{__('nav.nav_navigation.partner')}}

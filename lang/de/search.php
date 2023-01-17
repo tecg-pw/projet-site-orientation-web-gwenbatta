@@ -20,5 +20,11 @@ return [
     'project_search' => 'Die gefundenen Projekte',
     'new_search' => 'Nachrichten gefunden',
     'glossary_search' => 'Gefundene Wörter im Glossar',
+    'help_search' => 'Lösungen, die Ihnen helfen',
+    'list_help_search' => [
+            'term' => 'Versuchen Sie einen anderen Suchbegriff',
+            'orthograph' => 'Überprüfe die Rechtschreibung des Suchbegriffs',
+            'characters' => 'Löschen Sie Anführungszeichen oder andere Sonderzeichen'
+    ]
 
 ];

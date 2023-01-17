@@ -7,7 +7,6 @@ return [
     'button' => 'Valider',
     'actu_single_back' => 'Retour aux actualités',
     'actu_single_more' => 'En savoir plus',
-    'no_result'=>'Pas de résultat trouvé pour votre recherche',
     'title_global' => 'Recherche',
     'title_search' => 'Les résultats de recherche',
     'tuto_search' => 'Les tutoriels trouvés',
@@ -20,5 +19,12 @@ return [
     'project_search' => 'Les projets trouvées',
     'new_search' => 'Les actualités trouvées',
     'glossary_search' => 'Les mots du glossaire trouvés',
+    'no_result' => 'Aucun résultat ne correspond à votre recherche',
+    'help_search' => 'Solutions pour vous aider',
+    'list_help_search' => [
+        'term' => 'Essayer un autre terme recherche',
+        'orthograph' => 'Vérifier l\'orthographe du terme de recherche',
+        'characters' => 'Supprimez les guillemets ou tout autres caractères spéciaux'
+    ]
 
 ];

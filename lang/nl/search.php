@@ -7,7 +7,6 @@ return [
     'button' => 'Bevestig',
     'actu_single_back' => 'Terug naar nieuws',
     'actu_single_more' => 'Meer lezen',
-    'no_result'=>'Geen resultaten gevonden voor uw zoekopdracht',
     'title_global' => 'Zoek op',
     'title_search' => 'Zoekresultaten',
     'tuto_search' => 'Tutorials gevonden',
@@ -20,5 +19,11 @@ return [
     'project_search' => 'De gevonden projecten',
     'new_search' => 'Nieuws gevonden',
     'glossary_search' => 'Gevonden woordenlijst',
-
+    'no_result' => "Geen resultaten die overeenkomen met uw zoekopdracht",
+    "help_search" => "Oplossingen om u te helpen",
+    'list_help_search' => [
+        "term" => "Probeer een andere zoekterm",
+        'orthograph' => "Controleer de spelling van de zoekterm",
+        'characters' => "Remove inverted commas or any other special characters",
+    ]
 ];

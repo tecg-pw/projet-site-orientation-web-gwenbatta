@@ -2,8 +2,8 @@
     $urlAction = "/".app()->getLocale()."/technical/glossary"
 @endphp
 <x-commons.navigation :page="__('glossary.glossary_title')"></x-commons.navigation>
-<main id="content" class="px-10 2xl:px-48 xl:px-32 lg:px-16">
-    <div class="flex items-center mt-20">
+<main id="content">
+    <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex items-center mt-20">
         <a href="/{{app()->getLocale()}}/technical/index" class="hover:text-orange-500 underline text-green-500 mt-0.5 text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl">
             {{__('nav.nav_navigation.technical')}}
         </a>
@@ -12,7 +12,7 @@
             {{__('glossary.glossary_title')}}
         </a>
     </div>
-    <section class="mt-20 mb-32 xl:mb-64" aria-labelledby="glossarySection">
+    <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20 mb-32 xl:mb-64" aria-labelledby="glossarySection">
         <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
             <h2 id="glossarySection" role="heading" aria-level="2"
                 class="mb-4 text-2xl xl:text-4xl md:text-3xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('glossary.glossary_title')}}</h2>
