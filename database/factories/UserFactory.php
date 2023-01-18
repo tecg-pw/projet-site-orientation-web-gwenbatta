@@ -35,7 +35,7 @@ class UserFactory extends Factory
             'srcset_back' => json_encode(''),
             "is_admin" => 0,
             "newsletter" => 0,
-            "status_id"=>0
+            "status_id"=>'2'
         ];
     }
 

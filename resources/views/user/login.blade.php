@@ -10,7 +10,7 @@
                 </h2>
             </div>
             <div class="flex flex-1">
-                <a class="hover:text-orange-500 font-sans text-green-700 self-center md:text-xl xl:text-xl 2xl:text-2xl font-semibold underline flex-1"
+                <a class="hover:text-orange-500 font-sans text-green-700 self-center md:text-xl xl:text-xl 2xl:text-2xl font-semibold underline flex-1" dusk="@register-link"
                    href="/{{app()->getLocale()}}/user/register">{{__('login_register.register_link')}}</a>
             </div>
             <div class="flex mt-14">

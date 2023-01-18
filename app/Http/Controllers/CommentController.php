@@ -60,7 +60,6 @@ class CommentController extends Controller
 
     public function like(string $locale = null, LikeCommentRequest $request, $slug ,$id)
     {
-
         $data_comment = $request->safe()->only('like');
         $data_comment['comment_id'] = $id;
         $data_comment['user_id'] = auth()->user()->id;

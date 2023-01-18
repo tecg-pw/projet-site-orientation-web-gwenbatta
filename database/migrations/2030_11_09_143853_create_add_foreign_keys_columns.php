@@ -153,23 +153,26 @@ return new class extends Migration
 
 
         Schema::table('comments', function (Blueprint $table) {
-            $table->$table->dropConstrainedForeignId('subject_id');
+            $table->dropConstrainedForeignId('subject_id');
+        });
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('status_id');
         });
         Schema::table('comments', function (Blueprint $table) {
             $table->dropConstrainedForeignId('user_id');
         });
         Schema::table('offers', function (Blueprint $table) {
-            $table->$table->dropConstrainedForeignId('partner_id');
+            $table->dropConstrainedForeignId('partner_id');
         });
-        Schema::table('projecttranslations',function (Blueprint $table){
+        Schema::table('projects', function (Blueprint $table) {
             $table->dropConstrainedForeignId('person_id');
         });
         Schema::table('subjects', function (Blueprint $table) {
             $table->dropConstrainedForeignId('user_id');
             $table->dropConstrainedForeignId('tag_id');
         });
-        Schema::table('testimonialtranslations', function (Blueprint $table) {
-            $table->dropConstrainedForeignId('person_id');
+        Schema::table('testimonials', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('people_id');
         });
 
 
@@ -218,9 +221,22 @@ return new class extends Migration
         Schema::table('glossarytranslations', function (Blueprint $table) {
             $table->dropConstrainedForeignId('glossary_id');
         });
+        Schema::table('languagetranslations', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('language_id');
+        });
+        Schema::table('softwaretranslations', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('software_id');
+        });
+        Schema::table('statustranslations', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('status_id');
+        });
         Schema::table('opportunitytranslations', function (Blueprint $table) {
             $table->dropConstrainedForeignId('opportunity_id');
         });
+
+
+
+
 
         Schema::table('book_course', function (Blueprint $table) {
             $table->dropConstrainedForeignId('book_id');
@@ -246,8 +262,20 @@ return new class extends Migration
             $table->dropConstrainedForeignId('people_id');
             $table->dropConstrainedForeignId('partner_id');
         });
+        Schema::table('language_offer', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('language_id');
+            $table->dropConstrainedForeignId('offer_id');
+        });
+        Schema::table('offer_software', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('software_id');
+            $table->dropConstrainedForeignId('offer_id');
+        });
         Schema::table('tuto_user', function (Blueprint $table) {
             $table->dropConstrainedForeignId('tuto_id');
+            $table->dropConstrainedForeignId('user_id');
+        });
+        Schema::table('comment_user', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('comment_id');
             $table->dropConstrainedForeignId('user_id');
         });
     }

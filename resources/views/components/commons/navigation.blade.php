@@ -67,7 +67,7 @@
                 @endforeach
             </ul>
             @guest()
-                <a class="-order-2 hover:text-orange-500"
+                <a class="-order-2 hover:text-orange-500" dusk="@login-link"
                    href="/{{app()->getLocale()}}/user/login">{{__('nav.connexion')}}</a>
             @endguest
             @auth()

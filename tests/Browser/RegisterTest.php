@@ -23,7 +23,8 @@ class RegisterTest extends DuskTestCase
         $firstname = 'Titi';
 
         $this->browse(function (Browser $browser) use ($password,$email,$name,$firstname){
-            $browser->visit('/')
+            $browser
+                ->visit('/')
                 ->clickLink('Connexion')
                 ->assertSee('CONNEXION À VOTRE COMPTE')
                 ->assertUrlIs('http://tecweb.test/fr/user/login')
@@ -33,7 +34,7 @@ class RegisterTest extends DuskTestCase
                 ->type('@firstname', $firstname)
                 ->type('@email', $email)
                 ->type('@password', $password)
-                ->click('@register-submit')
+                ->press('@register-submit')
                 ->assertUrlIs('http://tecweb.test/')
                 ->assertSeeIn('@logged-user-name',$firstname.' '.$name);
         });

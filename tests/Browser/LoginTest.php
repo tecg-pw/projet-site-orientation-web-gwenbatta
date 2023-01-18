@@ -18,6 +18,7 @@ class LoginTest extends DuskTestCase
      */
     public function testItIsPossibleToLoginForARegisteredUser()
     {
+        $this->seed([\Database\Seeders\StatusSeeder::class, \Database\Seeders\StatusTranslationSeeder::class]);
         $email = 'toto@titi.com';
         $password = 'totoisthebest';
         $toto = User::create([
@@ -25,7 +26,8 @@ class LoginTest extends DuskTestCase
             'firstname' => 'Titi',
             'slug' => 'toto-titi',
             'email' => $email,
-            'isAdmin' => true,
+            'is_admin' => true,
+            'status_id' =>1,
             'password' => bcrypt($password),
         ]);
 

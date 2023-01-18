@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="lg:grid lg:grid-cols-5 flex flex-1 xl:mt-14">
-                <form action="/{{app()->getLocale()}}/subject" method="post"
+                <form action="/{{app()->getLocale()}}/modify/{{$subject->slug}}" method="post"
                       class="lg:col-span-3 flex-1 lg:items-center lg:mr-20">
                     @csrf
                     <div class="slide-in flex flex-col mb-8">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ActualityController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgencyContactController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AuthenticatedSessionController;
@@ -53,7 +54,7 @@ Route::get('/', function () {
     $locale = substr(Request::server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
     return redirect('/' . $locale);
 });
-Route::get('/admin', \App\Http\Controllers\AdminController::class);
+Route::get('/admin', AdminController::class)->name('admin');
 Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('locale');
 
 Route::get('/{locale?}/legals',[LegalController::class, 'index'])->middleware('locale');
@@ -132,7 +133,7 @@ Route::get('/{locale?}/forum/my-talks/ajax', [MyAnswerController::class, 'ajax']
 Route::get('/{locale?}/forum/show/{subject:slug}', [ForumController::class, 'show'])->middleware('locale');
 Route::get('/{locale?}/forum/question', [ForumController::class, 'create'])->middleware(['auth','locale']);
 Route::get('/{locale?}/forum/question/modify/{subject:slug}', [ForumController::class, 'edit'])->middleware(['auth','locale']);
-Route::get('/{locale?}/modify', [ForumController::class, 'update'])->middleware(['auth','locale']);
+Route::post('/{locale?}/modify/{subject:slug}', [ForumController::class, 'update'])->middleware(['auth','locale']);
 Route::post('/{locale?}/subject', [ForumController::class, 'store'])->middleware(['auth','locale']);
 Route::post('/{locale?}/forum/subject/destroy/{subject:id}', [ForumController::class, 'destroy'])->middleware(['auth','locale']);
 
