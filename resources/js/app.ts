@@ -15,8 +15,10 @@ let searchInputTuto = document.querySelector('#tuto #search') as HTMLInputElemen
 let sortSelectLanguageTuto = document.querySelector('#languages') as HTMLSelectElement;
 let sortSelectDateTuto = document.querySelector('#date') as HTMLSelectElement;
 let searchInputBottin = document.querySelector('#bottin #search') as HTMLInputElement;
-let sortSelectStatusBottin = document.querySelector('#status') as HTMLSelectElement;
-let sortSelectDateBottin = document.querySelector('#year') as HTMLSelectElement;
+let sortSelectStatusBottin = document.querySelector('#bottin_sort #status') as HTMLSelectElement;
+let sortSelectDateBottin = document.querySelector('#bottin_sort #year') as HTMLSelectElement;
+let sortSelectStatusAlumni = document.querySelector('#alumni_sort #status') as HTMLSelectElement;
+let sortSelectDateAlumni = document.querySelector('#alumni_sort #year') as HTMLSelectElement;
 let searchInputAlumni = document.querySelector('#alumni #search') as HTMLInputElement;
 let searchInputLatestSubject = document.querySelector('#latestsubject #search') as HTMLInputElement;
 let searchInputLatestAnswer = document.querySelector('#latestanswer #search') as HTMLInputElement;
@@ -393,7 +395,7 @@ function makeRequestBottin() {
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTableBottin(data, containerBottin));
+        .then((data) => updateDataTableBottin(data));
 }
 
 function makeRequestAlumni() {
@@ -403,7 +405,7 @@ function makeRequestAlumni() {
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTableBottin(data, containerAlumni));
+        .then((data) => updateDataTableAlumni(data));
 }
 
 function makeRequestLatestSubject() {
@@ -575,9 +577,43 @@ function updateDataTableTuto(data) {
     handlepaginationTuto();
 }
 
-function updateDataTableBottin(data, container) {
+function updateDataTableBottin(data) {
     let match = new RegExp(stateSearch.search, 'gi')
-    container.innerHTML = data
+    containerBottin.innerHTML = data
+    let names = document.querySelectorAll('.name')
+    let firstnames = document.querySelectorAll('.firstname')
+    let status = document.querySelectorAll('.status')
+    let begins = document.querySelectorAll('.begin')
+    let ends = document.querySelectorAll('.end')
+    // @ts-ignore
+    for (const name of names) {
+        name.innerHTML = name.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const firstname of firstnames) {
+        firstname.innerHTML = firstname.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const statusElement of status) {
+        let str = statusElement.innerHTML.replace(/<[^>]+>/g, '')
+        statusElement.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const begin of begins) {
+        begin.innerHTML = begin.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
+    }
+    // @ts-ignore
+    for (const end of ends) {
+        end.innerHTML = end.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
+    }
+
+    slideInView();
+    handlepaginationBottin();
+}
+
+function updateDataTableAlumni(data) {
+    let match = new RegExp(stateSearch.search, 'gi')
+    containerAlumni.innerHTML = data
     let names = document.querySelectorAll('.name')
     let firstnames = document.querySelectorAll('.firstname')
     let status = document.querySelectorAll('.status')
@@ -915,20 +951,20 @@ function makeRequestBottinSort() {
     history.pushState(stateSortPeople, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTableBottin(data, containerBottin));
+        .then((data) => updateDataTableBottin(data));
 }
 
-if (sortSelectDateBottin !== null) {
-    sortSelectDateBottin.value = 'all';
-    sortSelectDateBottin.addEventListener('change', (e) => {
+if(sortSelectDateAlumni !== null) {
+  sortSelectDateAlumni.value = 'all';
+  sortSelectDateAlumni.addEventListener('change', (e) => {
         stateSortPeople.year = (e.currentTarget as HTMLSelectElement).value;
         stateSortPeople.page = 1;
         makeRequestAlumniSort()
     })
 }
-if (sortSelectStatusBottin !== null) {
-    sortSelectStatusBottin.value = 'all';
-    sortSelectStatusBottin.addEventListener('change', (e) => {
+if (sortSelectStatusAlumni !== null) {
+    sortSelectStatusAlumni.value = 'all';
+    sortSelectStatusAlumni.addEventListener('change', (e) => {
         stateSortPeople.status = (e.currentTarget as HTMLSelectElement).value;
         stateSortPeople.page = 1;
         makeRequestAlumniSort()
@@ -942,7 +978,7 @@ function makeRequestAlumniSort() {
     history.pushState(stateSortPeople, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
-        .then((data) => updateDataTableBottin(data, containerAlumni));
+        .then((data) => updateDataTableAlumni(data));
 }
 
 if (sortSelectStatusLatestSubject !== null) {

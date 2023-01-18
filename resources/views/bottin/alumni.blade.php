@@ -11,7 +11,7 @@
             <x-sort_search.search id="alumni" class="min-w-[20%]" :urlAction="$urlAction"/>
         </div>
         <p class="px-10 xl:pl-32 lg:px-16 2xl:pl-48 mb-7 xl:max-w-[47%] xl:text-xl 2xl:text-2xl 2xl:leading-12 xl:leading-10">{{__('people.alumni_text')}}</p>
-        <x-sort_search.sort_by_people :urlAction="$urlAction" :status="$status" :years_end="$years_end"/>
+        <x-sort_search.sort_by_people id="alumni_sort" :urlAction="$urlAction" :status="$status" :years_end="$years_end"/>
         <x-alumni_paginated :alumnis="$alumnis"/>
         <x-people.testimonials :testimonials="$testimonials"/>
     </section>
