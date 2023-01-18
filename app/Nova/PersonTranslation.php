@@ -209,6 +209,8 @@ class PersonTranslation extends Resource
             Select::make('Langues','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
+                'de'=> 'de',
+                'nl'=>'nl'
             ])->displayUsingLabels(),
 
 //            HasMany::make('Projects'),

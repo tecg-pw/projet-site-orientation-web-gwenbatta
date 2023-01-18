@@ -198,6 +198,8 @@ class PartnerTranslation extends Resource
             Select::make('Langues', 'locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
+                'de'=> 'de',
+                'nl'=>'nl'
             ])->displayUsingLabels(),
 
             BelongsTo::make('Partenaires', 'partner', 'App\Nova\Partner'),

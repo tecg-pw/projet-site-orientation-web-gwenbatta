@@ -55,6 +55,8 @@ class TagTranslation extends Resource
             Select::make('Langues','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
+                'de'=> 'de',
+                'nl'=>'nl'
             ])->displayUsingLabels(),
 
             BelongsTo::make('Tags','tag','App\Nova\Tag')

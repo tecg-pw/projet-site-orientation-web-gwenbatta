@@ -68,6 +68,8 @@ class CourseTranslation extends Resource
             Select::make('Langue','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
+                'de'=> 'de',
+                'nl'=>'nl'
             ])->displayUsingLabels(),
 
             Trix::make('Description')->rules('required'),

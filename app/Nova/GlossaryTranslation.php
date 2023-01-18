@@ -59,6 +59,8 @@ class GlossaryTranslation extends Resource
             Select::make('Langues','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
+                'de'=> 'de',
+                'nl'=>'nl'
             ])->displayUsingLabels(),
 
             Trix::make('Definition')->rules('required'),

@@ -61,6 +61,8 @@ class TutoTranslation extends Resource
             Select::make('Langue','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
+                'de'=> 'de',
+                'nl'=>'nl'
             ])->displayUsingLabels(),
 
             Text::make('Lien','link')

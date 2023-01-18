@@ -56,6 +56,8 @@ class SoftwareTranslation extends Resource
             Select::make('Langue','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
+                'de'=> 'de',
+                'nl'=>'nl'
             ])->displayUsingLabels(),
         ];
     }

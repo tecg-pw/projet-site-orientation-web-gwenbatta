@@ -51,6 +51,8 @@ class TestimonialTranslation extends Resource
             Select::make('Langues','locale')->options([
                 'fr' => 'fr',
                 'en' => 'en',
+                'de'=> 'de',
+                'nl'=>'nl'
             ])->displayUsingLabels(),
 
             BelongsTo::make('Testimonial','testimonial','App\Nova\Testimonial'),
