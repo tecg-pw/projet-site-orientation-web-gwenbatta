@@ -19,7 +19,7 @@ class PartnerTranslation extends Model
         'srcset' => 'array',
     ];
     protected $fillable = [
-        'name', 'slug' ,'locale', 'mail', 'logo', 'adresse', 'locality','locality_number', 'description', 'site_link', 'link_facebook','link_linkedin','link_instagram','members'
+        'name', 'slug' ,'locale', 'mail', 'logo', 'adresse', 'locality','locality_number', 'description', 'site_link', 'link_facebook','link_linkedin','link_instagram','members','partner_id'
     ];
     public function person(): BelongsToMany
     {
