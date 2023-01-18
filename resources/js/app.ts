@@ -1120,10 +1120,6 @@ function makeRequestGlobal() {
 }
 
 function updateDataTableGlobal(data) {
-    // let locale = window.location.pathname.split('/');
-    // // @ts-ignore
-    // window.location.href = `http://tecweb.test/${locale[1]}/search?`+ new URLSearchParams(stateSearchGlobal)
-
     let match = new RegExp(stateSearch.search, 'gi')
     containerGlobal.innerHTML = data
     console.log(data)

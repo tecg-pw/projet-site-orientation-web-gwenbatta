@@ -53,7 +53,7 @@ Route::get('/', function () {
     $locale = substr(Request::server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
     return redirect('/' . $locale);
 });
-
+Route::get('/admin', \App\Http\Controllers\AdminController::class);
 Route::get('/{locale?}', [HomeController::class, 'index'])->middleware('locale');
 
 Route::get('/{locale?}/legals',[LegalController::class, 'index'])->middleware('locale');

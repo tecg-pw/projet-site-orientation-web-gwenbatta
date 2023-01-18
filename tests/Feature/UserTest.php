@@ -22,6 +22,6 @@ it('is possible for a authenticated user to access the dashboard',function (){
     $user= User::create(compact('first_name','last_name','name','email','password'));
 
     actingAs($user)
-        ->get('/dashboard')
-        ->assertSee('<h1>Dashboard</h1>',false);
+        ->get('/nova/dashboard')
+        ->assertSee('<h1>Laravel Nova</h1>',false);
 });
