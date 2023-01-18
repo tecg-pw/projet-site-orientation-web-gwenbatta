@@ -3,13 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\OfferCreated;
-use App\Events\SubjectCreated;
-use App\Models\User;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
 
-class SendEmailToAdminWarningHimSubjectInForumHasBeenCreated
+class SendEmailToAdminToNotifyAnOfferHasBeenCreated
 {
     /**
      * Create the event listener.
@@ -24,7 +20,7 @@ class SendEmailToAdminWarningHimSubjectInForumHasBeenCreated
     /**
      * Handle the event.
      *
-     * @param  \App\Events\SubjectCreated  $event
+     * @param  \App\Events\OfferCreated  $event
      * @return void
      */
     public function handle(OfferCreated $event)

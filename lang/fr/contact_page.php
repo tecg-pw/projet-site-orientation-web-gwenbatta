@@ -14,7 +14,7 @@ return [
     'student_message_value' => 'Mon message',
     'contact_button' => 'Envoyer',
     'agency_name' => 'Nom de l\'entreprise',
-    'agency_supervisor_name' => 'Nom du maître du stage',
+    'agency_supervisor_name' => 'Nom du superviseur',
     'agency_title' => 'Titre',
     'agency_title_value' => 'Je propose un stage',
     'agency_description' => 'Description de l\'offre',

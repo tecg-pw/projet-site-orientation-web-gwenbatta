@@ -9,9 +9,9 @@
                 </h2>
             </div>
             <div class="flex flex-1 justify-between px-10 xl:px-0">
-                <a class="font-sans text-green-700 xl:text-xl 2xl:text-2xl text-lg rounded-lg font-semibold underline  py-2.5 px-6"
+                <a class="font-sans text-green-700 xl:text-2xl 2xl:text-3xl text-xl rounded-lg font-semibold underline  py-2.5 px-6"
                    href="/{{app()->getLocale()}}/contact/student">{{__('contact_page.student_link')}}</a>
-                <a class="hover:text-orange-500 bg-orange-200 rounded-lg py-2.5 px-6 font-sans text-green-700 text-en xl:text-start self-center xl:text-xl 2xl:text-2xl text-lg font-semibold underline py-2.5 "
+                <a class="hover:text-orange-500 bg-orange-200 rounded-lg py-2.5 px-6 font-sans text-green-700 text-en xl:text-start self-center xl:text-2xl 2xl:text-3xl font-semibold underline py-2.5 "
                    href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             @if(session('success'))

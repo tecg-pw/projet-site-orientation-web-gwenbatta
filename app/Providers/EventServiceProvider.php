@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Events\OfferCreated;
+use App\Listeners\SendEmailToAdminToNotifyAnOfferHasBeenCreated;
 use App\Listeners\SendEmailToAgencyToConfirmHisOfferHasBeenCreated;
 use App\Models\Actuality;
 use App\Models\Offer;
@@ -36,9 +37,10 @@ class EventServiceProvider extends ServiceProvider
 //        SubjectCreated::class => [
 //            SendEmailToAdminWarningHimSubjectInForumHasBeenCreated::class
 //        ],
-//        OfferCreated::class => [
-//            SendEmailToAgencyToConfirmHisOfferHasBeenCreated::class
-//        ],
+        OfferCreated::class => [
+            SendEmailToAgencyToConfirmHisOfferHasBeenCreated::class,
+            SendEmailToAdminToNotifyAnOfferHasBeenCreated::class
+        ],
     ];
 
     /**

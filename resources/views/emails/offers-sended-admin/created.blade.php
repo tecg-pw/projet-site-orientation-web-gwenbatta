@@ -4,9 +4,9 @@
 <x-mail::message>
 # Offre de stage envoyée
 
-Nous avons bien reçu votre offre de stage et nous vous en remercions.<br>
+Une nouvelle offre de stage vient d'être envoyée via {{ config('app.name') }}.<br>
 
-#Voici le récapitulatif de votre offre de stage :
+## Voici le récapitulatif de l'offre de stage proposée par: {{$offer->name}}
 
 Nom de l'entreprise : {{$offer->name}} ;<br>
 Nom du superviseur : {{$offer->name_supervisor}} ;<br>
@@ -23,7 +23,7 @@ Les logiciels requis : {{str_replace($escapeCharaters," ",$offer->softwares)}}<b
 Les langages requis : {{str_replace($escapeCharaters," ",$offer->languages)}}<br>
 @endif
 
-Nous la traiterons le plus vite possible
+En attente de votre réponse
 
 
 Bien à vous,<br>

@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class OfferSended extends Mailable
+class OfferSendedAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -33,7 +33,7 @@ class OfferSended extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Votre offre de stage nous a bien été envoyée',
+            subject: 'Une nouvelle offre d\'emploi vient d\'être envoyée',
         );
     }
 
@@ -45,7 +45,7 @@ class OfferSended extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'emails.offers-sended.created',
+            markdown: 'emails.offers-sended-admin.created',
         );
     }
 
