@@ -16,14 +16,14 @@ class RegisterSessionController extends Controller
 
     public function store(string $locale = null,RegisterRequest $request)
     {
+
         $validated = $request->validated();
         $validated['slug'] = \Str::slug($validated['firstname'].$validated['name']);
         $validated['status_id'] = 1;
+        $validated['newsletter'] = 0;
 
         if ($validated['newsletter'] === 'on'){
             $validated['newsletter'] = 1;
-        }else{
-            $validated['newsletter'] = 0;
         }
         $validated['password'] = password_hash($validated['password'],PASSWORD_DEFAULT);
 

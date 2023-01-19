@@ -169,6 +169,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'name',
+        'firstname'=> 'vorname',
+        'subject' => 'betreff',
+        'name_supervisor' => 'vorgesetzter',
+        'password' => 'kennwort'
+    ],
 
 ];

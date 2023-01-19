@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('job')->nullable();
             $table->string('job_slug')->nullable();
             $table->timestamps();
-            $table->timestamp('begin');
+            $table->timestamp('begin')->nullable();
             $table->timestamp('end')->nullable();
             $table->softDeletes();
         });

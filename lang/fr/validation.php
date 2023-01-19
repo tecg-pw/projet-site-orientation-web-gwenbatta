@@ -170,6 +170,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'nom',
+        'firstname'=> 'prénom',
+        'subject' => 'objet',
+        'name_supervisor' => 'superviseur',
+        'password' => 'mot de passe'
+    ],
 
 ];
