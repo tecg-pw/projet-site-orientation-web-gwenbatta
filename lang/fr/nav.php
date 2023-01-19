@@ -9,7 +9,7 @@ return [
     'nav_footer_nav' => 'Navigation',
     'nav_footer_socials' => 'Réseaux sociaux',
     'nav_burger' => 'Checkbox Burger Menu',
-    'nav_link_home' => 'Acceuil de TecWeb',
+    'nav_link_home' => 'Accueil de TecWeb',
     'nav_footer_copyright' => 'Copyright © 2022 Tout droit réservé',
     'nav_footer_legals' => 'Mentions légales',
     'nav_footer_generales' => 'Conditions générales',

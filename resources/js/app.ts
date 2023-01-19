@@ -1,6 +1,7 @@
 import './bootstrap';
 
 window.addEventListener('load', init);
+const siteUrl = 'http://tecweb.test/';
 let buttonSearches = document.getElementsByClassName('filter');
 let searchInputProject = document.querySelector('#project #search') as HTMLInputElement;
 let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
@@ -331,7 +332,7 @@ if (searchInputMyAnswer !== null) {
 function makeRequestProject() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/project/index/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/project/index/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -341,7 +342,7 @@ function makeRequestProject() {
 function makeRequestNew() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/news/index/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/news/index/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -351,7 +352,7 @@ function makeRequestNew() {
 function makeRequestOffer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -361,7 +362,7 @@ function makeRequestOffer() {
 function makeRequestPartner() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -371,7 +372,7 @@ function makeRequestPartner() {
 function makeRequestGlossary() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/technical/glossary/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/technical/glossary/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -381,7 +382,7 @@ function makeRequestGlossary() {
 function makeRequestTuto() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/technical/tuto/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/technical/tuto/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -391,7 +392,7 @@ function makeRequestTuto() {
 function makeRequestBottin() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/bottin/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/bottin/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -401,7 +402,7 @@ function makeRequestBottin() {
 function makeRequestAlumni() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/bottin/alumni/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/bottin/alumni/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -411,7 +412,7 @@ function makeRequestAlumni() {
 function makeRequestLatestSubject() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/forum/index/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/forum/index/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -421,7 +422,7 @@ function makeRequestLatestSubject() {
 function makeRequestLatestAnswer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/forum/latest-answers/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/forum/latest-answers/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -431,7 +432,7 @@ function makeRequestLatestAnswer() {
 function makeRequestMySubject() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/forum/my-subject/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/forum/my-subject/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -441,7 +442,7 @@ function makeRequestMySubject() {
 function makeRequestMyAnswer() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/forum/my-talks/ajax?` + new URLSearchParams(stateSearch);
+    let url = `${siteUrl}${locale[1]}/forum/my-talks/ajax?` + new URLSearchParams(stateSearch);
     history.pushState(stateSearch, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -682,7 +683,6 @@ function handlepaginationProject() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
     // @ts-ignore
     for (const pagination of paginations) {
-        console.log(pagination)
         pagination.addEventListener('click', (e) => {
             e.preventDefault();
             if (e.currentTarget.classList.contains('previous')) {
@@ -753,7 +753,6 @@ function handlepaginationPartner() {
 
 function handlepaginationGlossary() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    console.log(paginations)
     // @ts-ignore
     for (const pagination of paginations) {
         pagination.addEventListener('click', (e) => {
@@ -864,7 +863,7 @@ if (sortSelectLanguageTuto !== null) {
 function makeRequestTutoSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/technical/tuto/ajax?` + new URLSearchParams(stateSortTutos);
+    let url = `${siteUrl}${locale[1]}/technical/tuto/ajax?` + new URLSearchParams(stateSortTutos);
     history.pushState(stateSortTutos, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -891,7 +890,7 @@ if (sortSelectAgencyPartner !== null) {
 function makeRequestPartnerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSortPartner);
+    let url = `${siteUrl}${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSortPartner);
     history.pushState(stateSortPartner, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -902,7 +901,6 @@ if (sortSelectJobsEntreprise !== null) {
     sortSelectJobsEntreprise.value = 'all';
     sortSelectJobsEntreprise.addEventListener('change', (e) => {
         stateSortOffer.jobs = (e.currentTarget as HTMLSelectElement).value;
-        console.log(sortSelectJobsEntreprise.value)
         stateSortOffer.page = 1;
         makeRequestOfferSort()
     })
@@ -919,7 +917,7 @@ if (sortSelectAgencyOffer !== null) {
 function makeRequestOfferSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSortOffer);
+    let url = `${siteUrl}${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSortOffer);
     history.pushState(stateSortOffer, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -947,7 +945,7 @@ if (sortSelectStatusBottin !== null) {
 function makeRequestBottinSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/bottin/ajax?` + new URLSearchParams(stateSortPeople);
+    let url = `${siteUrl}${locale[1]}/bottin/ajax?` + new URLSearchParams(stateSortPeople);
     history.pushState(stateSortPeople, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -974,7 +972,7 @@ if (sortSelectStatusAlumni !== null) {
 function makeRequestAlumniSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/bottin/alumni/ajax?` + new URLSearchParams(stateSortPeople);
+    let url = `${siteUrl}${locale[1]}/bottin/alumni/ajax?` + new URLSearchParams(stateSortPeople);
     history.pushState(stateSortPeople, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -1089,7 +1087,7 @@ if (sortSelectDateMyAnswer !== null) {
 function makeRequestLatestSubjectSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/forum/index/ajax?` + new URLSearchParams(stateSortForum);
+    let url = `${siteUrl}${locale[1]}/forum/index/ajax?` + new URLSearchParams(stateSortForum);
     history.pushState(stateSortForum, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -1099,7 +1097,7 @@ function makeRequestLatestSubjectSort() {
 function makeRequestLatestAnswerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/forum/latest-answers/ajax?` + new URLSearchParams(stateSortForum);
+    let url = `${siteUrl}${locale[1]}/forum/latest-answers/ajax?` + new URLSearchParams(stateSortForum);
     history.pushState(stateSortForum, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -1109,7 +1107,7 @@ function makeRequestLatestAnswerSort() {
 function makeRequestMySubjectSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/forum/my-subject/ajax?` + new URLSearchParams(stateSortForum);
+    let url = `${siteUrl}${locale[1]}/forum/my-subject/ajax?` + new URLSearchParams(stateSortForum);
     history.pushState(stateSortForum, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -1119,7 +1117,7 @@ function makeRequestMySubjectSort() {
 function makeRequestMyAnswerSort() {
     let locale = window.location.pathname.split('/');
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/forum/my-talks/ajax?` + new URLSearchParams(stateSortForum);
+    let url = `${siteUrl}${locale[1]}/forum/my-talks/ajax?` + new URLSearchParams(stateSortForum);
     history.pushState(stateSortForum, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -1146,9 +1144,9 @@ if (searchGlobalInput !== null) {
 
 function makeRequestGlobal() {
     let locale = window.location.pathname.split('/');
-    //window.location.href = `http://tecweb.test/${locale[1]}/search`
+    //window.location.href = `${siteUrl}${locale[1]}/search`
     // @ts-ignore
-    let url = `http://tecweb.test/${locale[1]}/search/ajax?` + new URLSearchParams(stateSearchGlobal);
+    let url = `${siteUrl}${locale[1]}/search/ajax?` + new URLSearchParams(stateSearchGlobal);
     history.pushState(stateSearchGlobal, '', url.replace('/ajax', ''))
     fetch(url)
         .then((response) => response.text())
@@ -1158,7 +1156,6 @@ function makeRequestGlobal() {
 function updateDataTableGlobal(data) {
     let match = new RegExp(stateSearch.search, 'gi')
     containerGlobal.innerHTML = data
-    console.log(data)
     // let titles = document.querySelectorAll('h4')
     // // @ts-ignore
     // for (const title of titles) {

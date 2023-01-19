@@ -31,12 +31,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-//        Registered::class => [
-//            SendEmailVerificationNotification::class,
-//        ],
-//        SubjectCreated::class => [
-//            SendEmailToAdminWarningHimSubjectInForumHasBeenCreated::class
-//        ],
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        SubjectCreated::class => [
+            SendEmailToAdminWarningHimSubjectInForumHasBeenCreated::class
+        ],
         OfferCreated::class => [
             SendEmailToAgencyToConfirmHisOfferHasBeenCreated::class,
             SendEmailToAdminToNotifyAnOfferHasBeenCreated::class
@@ -50,11 +50,11 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        Subject::observe(ResolvedSubjectObserver::class);
-//        Subject::observe(SubjectCreatedObserver::class);
-//        ActualityTranslation::observe(ActualityCreatedObserver::class);
-//        ProjetTranslation::observe(ProjectCreatedObserver::class);
-//        OfferTranslation::observe(OfferCreatedObserver::class);
+        Subject::observe(ResolvedSubjectObserver::class);
+        Subject::observe(SubjectCreatedObserver::class);
+        ActualityTranslation::observe(ActualityCreatedObserver::class);
+        ProjetTranslation::observe(ProjectCreatedObserver::class);
+        OfferTranslation::observe(OfferCreatedObserver::class);
     }
 
     /**
