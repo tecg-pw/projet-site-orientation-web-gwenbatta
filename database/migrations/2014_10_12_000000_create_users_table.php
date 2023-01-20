@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('firstname');
             $table->string('slug')->unique();
-            $table->string('avatar')->default("https://placehold.jp/276x276.png");
+            $table->string('avatar')->default("img-redimensions/person-180x180.png");
             $table->json('avatars')->nullable();
             $table->json('srcset')->nullable();
-            $table->string('back_image')->default("https://placehold.jp/1920x500.png");
+            $table->string('back_image')->default("img-redimensions/dummy_2560x600_ffffff_cccccc.png");
             $table->json('srcset_back')->nullable();
             $table->json('back_images')->nullable();
             $table->string('email')->unique();

@@ -21,7 +21,7 @@
             <figure class=" lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:gap-6 xl:gap-8">
                 <picture class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full">
                     <source media="(max-width: 1024px)" srcset="/img-redimensions/pexels-buro-millennial-1438072-481.jpg">
-                    <source media="(max-width: 1250px)" srcset="/img-redimensions/pexels-buro-millennial-1438072-524.jpg">
+                    <source media="(max-width: 1250px)" srcset="/img-redimensions/pexels-buro-millennial-1438072-534.jpg">
                     <source media="(max-width: 1520px)" srcset="/img-redimensions/pexels-buro-millennial-1438072-588.jpg">
                     <source media="(max-width: 2040px)" srcset="/img-redimensions/pexels-buro-millennial-1438072-733.jpg">
                     <source media="(max-width: 2560px)" srcset="/img-redimensions/pexels-buro-millennial-1438072-878.jpg">
@@ -131,7 +131,7 @@
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
                 <picture class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full">
                     <source media="(max-width: 1024px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-481.jpg">
-                    <source media="(max-width: 1250px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-524.jpg">
+                    <source media="(max-width: 1250px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-534.jpg">
                     <source media="(max-width: 1520px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-588.jpg">
                     <source media="(max-width: 2040px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-733.jpg">
                     <source media="(max-width: 2560px)" srcset="/img-redimensions/windows-VMPhyAoVqqk-unsplash-878.jpg">

@@ -25,9 +25,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        SubjectCreated::class => [
-            SendEmailToAdminWarningHimSubjectInForumHasBeenCreated::class
-        ],
+//        SubjectCreated::class => [
+//            SendEmailToAdminWarningHimSubjectInForumHasBeenCreated::class
+//        ],
         OfferCreated::class => [
             SendEmailToAgencyToConfirmHisOfferHasBeenCreated::class,
             SendEmailToAdminToNotifyAnOfferHasBeenCreated::class

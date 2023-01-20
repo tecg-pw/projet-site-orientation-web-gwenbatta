@@ -5,7 +5,7 @@
 <x-commons.navigation :page="__('agency.offer_link')"></x-commons.navigation>
 <main id="content">
     <section class="2xl:px-48 xl:px-32 px-10 mt-20" aria-labelledby="company">
-        <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
+        <div class="flex flex-col md:flex-row justify-between mb-7 xl:items-center">
             <h2 id="company" role="heading" aria-level="2" class="mb-4 text-2xl md:text-3xl xl:text-4xl  2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('agency.agency_title')}}</h2>
             <x-sort_search.search id="offer" class="min-w-[20%]" :urlAction="$urlAction"/>
         </div>

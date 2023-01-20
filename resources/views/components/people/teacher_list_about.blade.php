@@ -3,7 +3,7 @@
     'teacher_ref'
 ])
 <article {{ $attributes->class(['slide-in lg:even:mt-36 lg:even:ml-10 xl:even:ml-0 sm:gap-x-4 lg:odd:mt-0 mt-16 sm:flex xl:max-w-[100%] lg:max-w-[87%] lg:block relative group']) }} aria-labelledby="{{$teacher_ref->slug}}">
-    <picture class="rounded-lg lg:absolute -z-10 -top-[80%] group-even:-top-[140%] mb-1.5 lg:mb-0 2xl:mb-2">
+    <picture class="rounded-lg lg:absolute -z-10 -top-[80%] group-even:-top-[140%] lg:group-even:-top-[120%] xl:group-even:-top-[140%] mb-1.5 lg:mb-0 2xl:mb-2">
         @if($teacher_ref->srcset && $teacher_ref->srcset['full'])
             @foreach($teacher_ref->srcset['full'] as $size => $path)
                 <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
@@ -20,7 +20,7 @@
         </h3>
         <a class="hover:text-orange-500 text-lg xl:text-xl 2xl:text-2xl underline text-green-700"
            href="mailto:{{$teacher_ref->mail}}">{{$teacher_ref->mail}}</a>
-        <div class="flex lg:flex-row flex-col gap-y-3 {{$teacher_ref->status === 'teachalumni'? 'xl:gap-40 lg:gap-24 2xl:gap-72': 'xl:gap-60 lg:gap-44 2xl:gap-96'}} lg:items-center mt-4 ">
+        <div class="flex lg:flex-row flex-col gap-y-3 {{$teacher_ref->status === 'teachalumni'? 'xl:gap-40 lg:gap-24 2xl:gap-72': 'lg:gap-44 2xl:gap-96'}} lg:items-center mt-4 ">
             <div class="flex gap-3">
                 <div class="relative hover:scale-110">
                     <svg class="2xl:w-[35px]" xmlns="http://www.w3.org/2000/svg" width="25"

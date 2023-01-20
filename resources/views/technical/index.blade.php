@@ -15,7 +15,7 @@
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
                 <picture class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full">
                     <source media="(max-width: 1024px)" srcset="/img-redimensions/windows-97pJ_0CkVEY-unsplash-481.jpeg">
-                    <source media="(max-width: 1250px)" srcset="/img-redimensions/windows-97pJ_0CkVEY-unsplash-524.jpeg">
+                    <source media="(max-width: 1250px)" srcset="/img-redimensions/windows-97pJ_0CkVEY-unsplash-534.jpeg">
                     <source media="(max-width: 1520px)" srcset="/img-redimensions/windows-97pJ_0CkVEY-unsplash-588.jpeg">
                     <source media="(max-width: 2040px)" srcset="/img-redimensions/windows-97pJ_0CkVEY-unsplash-733.jpeg">
                     <source media="(max-width: 2560px)" srcset="/img-redimensions/windows-97pJ_0CkVEY-unsplash-878.jpeg">

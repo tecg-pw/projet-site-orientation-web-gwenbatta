@@ -97,7 +97,7 @@ class ProjetTranslation extends Resource
                 Image::make($thumbnail)->resize(405, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($thumbnail_srcset_1024_path);
-                Image::make($thumbnail)->resize(308, null, function ($constraint) {
+                Image::make($thumbnail)->resize(526, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })->save($thumbnail_srcset_768_path);
                 Image::make($thumbnail)->resize(520, null, function ($constraint) {

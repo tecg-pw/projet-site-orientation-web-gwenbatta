@@ -13,7 +13,7 @@
         </a>
     </div>
     <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20 mb-32 xl:mb-64" aria-labelledby="glossarySection">
-        <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
+        <div class="flex flex-col md:flex-row justify-between mb-7 xl:items-center">
             <h2 id="glossarySection" role="heading" aria-level="2"
                 class="mb-4 text-2xl xl:text-4xl md:text-3xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('glossary.glossary_title')}}</h2>
             <x-sort_search.search id="glossary" class="min-w-[20%]" :urlAction="$urlAction"/>

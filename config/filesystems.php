@@ -71,6 +71,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('img-redimensions') => storage_path('app/public/img-redimensions'),
         public_path('img-redimensions/avatars') => storage_path('app/public/img-redimensions/avatars'),
         public_path('img-redimensions/back') => storage_path('app/public/img-redimensions/back'),
         public_path('img-redimensions/logo') => storage_path('app/public/img-redimensions/logo'),

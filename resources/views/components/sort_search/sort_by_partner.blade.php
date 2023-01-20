@@ -7,7 +7,7 @@
 <div {{ $attributes->class(['xl:mb-20 mb-8 flex flex-col']) }}>
     <p class="text-green-500 text-xl xl:text-3xl 2xl:text-4xl font-medium mb-2 xl:mb-4">{{__('sort.sort_by')}}</p>
     <form action="{{$urlAction}}" method="get" class="forms flex flex-col gap-4">
-        <div class="flex justify-between flex-col lg:flex-row sm:justify-start xl:justify-start gap-y-4">
+        <div class="flex justify-between flex-col md:flex-row sm:justify-start xl:justify-start gap-y-4">
             <div class="flex flex-col">
                 <label for="cities" class="text-lg xl:text-xl 2xl:text-2xl text-green-500 mb-2">{{__('sort.city')}}</label>
                 <select id="cities"
@@ -21,7 +21,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="flex flex-col lg:ml-16">
+            <div class="flex flex-col md:ml-16">
                 <label for="agency" class="text-lg xl:text-xl 2xl:text-2xl text-green-500 mb-2">{{__('sort.agency')}}</label>
                 <select class="agency-partner appearance-none rounded-lg bg-green-700 text-white-100 font-sans uppercase font-semibold px-2 py-1 2xl:text-xl"
                         id="agency"

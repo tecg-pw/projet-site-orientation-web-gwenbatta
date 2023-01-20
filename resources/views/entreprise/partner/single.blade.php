@@ -86,7 +86,7 @@
                     </div>
                 @endif
             </div>
-            <div class="lg:min-w-[345px]">
+            <div class="lg:min-w-[345px] md:min-w-[290px] sm:min-w-full">
                 <picture>
                     @if($partner->srcset && $partner->srcset['full'])
                         @foreach($partner->srcset['full'] as $size => $path)

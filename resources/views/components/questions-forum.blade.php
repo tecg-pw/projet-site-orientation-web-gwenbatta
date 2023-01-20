@@ -99,18 +99,18 @@
                 </article>
             @endforeach
         </div>
-        <div class="col-span-2 flex flex-col sm:gap-y-6 lg:pl-14">
+        <div class="col-span-2 flex flex-col gap-y-4 lg:pl-14">
             <article
                 class="slide-in lg:border-t-0 border-b-orange-500/40 border-t-2 border-t-orange-500/40 border-b-2 pb-10 pt-10 lg:pt-0"
                 aria-labelledby="latest">
                 <h3 id="latest" aria-level="3" role="heading"
                     class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum.latest_subject')}}</h3>
-                <div class="flex flex-col gap-y-4 sm:gap-y-8">
+                <div class="flex flex-col gap-y-4 gap-y-4">
                     @foreach($latests as $latest)
                         <article
                             class="slide-in hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
                             aria-labelledby="{{$latest->slug}}latest">
-                            <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
+                            <div class="order-2 flex-1 flex flex-col justify-center gap-y-2 xl:gap-4">
                                 <div class="flex-col flex xl:gap-4">
                                     <div class="flex gap-2">
                                         <h4 class="order-2 font-medium sm:text-lg xl:text-xl 2xl:text-2xl"
@@ -183,11 +183,11 @@
             <article class="slide-in lg:border-t-0  pb-10 pt-10 lg:pt-0" aria-labelledby="best-rating">
                 <h3 id="best-rating" aria-level="3" role="heading"
                     class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
-                <div class="flex flex-col gap-y-8">
+                <div class="flex flex-col gap-y-4">
                     @foreach($ratings as $rating)
                         <article class="slide-in hover:bg-orange-100 group bg-white-100 relative flex p-2 sm:p-4 xl:p-6 rounded-xl"
                             aria-labelledby="{{$rating->slug}}rating">
-                            <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
+                            <div class="order-2 flex-1 flex flex-col justify-center gap-y-2 xl:gap-4">
                                 <div class="flex-col flex xl:gap-4">
                                     <div class="flex gap-2">
                                         <h4 class="order-2 font-medium sm:text-lg xl:text-xl 2xl:text-2xl"
