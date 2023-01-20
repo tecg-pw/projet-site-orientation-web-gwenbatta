@@ -74,15 +74,15 @@
                 </svg>
             </div>
         </div>
-        <picture>
+        <picture class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
             @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
                 @foreach($subject->user->srcset['thumbnail'] as $size => $path)
                     <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
                 @endforeach
             @endif
             <img
-                    src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
-                    alt="{{$subject->user->title}}" class="rounded-full order-first">
+                src="{{$subject->user->avatars && $subject->user->avatars['thumbnail'] ? '/' . $subject->user->avatars['thumbnail'] : '/'.$subject->user->avatar}}"
+                alt="{{$subject->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
         </picture>
     </article>
 @endforeach

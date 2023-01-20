@@ -74,7 +74,7 @@
                 </svg>
             </div>
         </div>
-        <picture>
+        <picture class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
             @if($subject->user->srcset && $subject->user->srcset['thumbnail'])
                 @foreach($subject->user->srcset['thumbnail'] as $size => $path)
                     <source media="(max-width: {{$size}}px)"

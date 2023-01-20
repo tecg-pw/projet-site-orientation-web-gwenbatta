@@ -52,7 +52,7 @@
                    class="text-base hover:text-orange-500 uppercase self-end">{{$comment->user->firstname}} {{$comment->user->name}} </a>
                 <p class="xl:text-base">{{$comment->created_at-> format('d M. Y')}}</p>
             </div>
-            <picture>
+            <picture class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
                 @if($comment->user->srcset && $comment->user->srcset['tiny'])
                     @foreach($comment->user->srcset['tiny'] as $size => $path)
                         <source media="(max-width: {{$size}}px)"
