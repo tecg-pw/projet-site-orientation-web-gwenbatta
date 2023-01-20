@@ -2,21 +2,12 @@
 
 namespace App\Providers;
 
+use App\Events\ContactCreated;
 use App\Events\OfferCreated;
+use App\Listeners\SendEmailToAdminToNotifyAMessageHasBeenSended;
 use App\Listeners\SendEmailToAdminToNotifyAnOfferHasBeenCreated;
 use App\Listeners\SendEmailToAgencyToConfirmHisOfferHasBeenCreated;
-use App\Models\Actuality;
-use App\Models\Offer;
-use App\Models\OfferTranslation;
-use App\Models\Project;
-use App\Models\ProjetTranslation;
-use App\Models\Subject;
-use App\Models\ActualityTranslation;
-use App\Observers\ActualityCreatedObserver;
-use App\Observers\OfferCreatedObserver;
-use App\Observers\ProjectCreatedObserver;
-use App\Observers\SubjectCreatedObserver;
-use App\Observers\ResolvedSubjectObserver;
+use App\Listeners\SendEmailToPeopleToConfirmHisMessageHasBeenCreated;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -41,6 +32,10 @@ class EventServiceProvider extends ServiceProvider
             SendEmailToAgencyToConfirmHisOfferHasBeenCreated::class,
             SendEmailToAdminToNotifyAnOfferHasBeenCreated::class
         ],
+        ContactCreated::class => [
+            SendEmailToPeopleToConfirmHisMessageHasBeenCreated::class,
+            SendEmailToAdminToNotifyAMessageHasBeenSended::class
+        ]
     ];
 
     /**

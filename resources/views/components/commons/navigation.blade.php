@@ -312,8 +312,6 @@
                             </svg>
                         </a>
                     </li>
-                    <li><x-sort_search.search_nav_burger :urlAction="$urlAction"
-                                                class="text-sm font-medium font-body xl:justify-self-end lg:sr-only"></x-sort_search.search_nav_burger></li>
                 </ul>
             </div>
         </div>

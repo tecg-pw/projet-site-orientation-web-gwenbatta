@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Http\Uploads\HandlesBackImagesUploads;
+use App\Http\Uploads\HandlesImagesUploads;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 
 class RegisterSessionController extends Controller
 {
+    use HandlesImagesUploads, HandlesBackImagesUploads;
     public function create(string $locale = null)
     {
 
