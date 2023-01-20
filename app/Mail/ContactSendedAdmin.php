@@ -34,7 +34,7 @@ class ContactSendedAdmin extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Une nouvelle offre d\'emploi vient d\'être envoyée',
+            subject: 'Un nouveau message vient d\'être envoyée',
         );
     }
 

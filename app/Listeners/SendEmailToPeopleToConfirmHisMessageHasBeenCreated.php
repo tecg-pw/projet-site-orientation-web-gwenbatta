@@ -26,7 +26,7 @@ class SendEmailToPeopleToConfirmHisMessageHasBeenCreated
      */
     public function handle(ContactCreated $event)
     {
-        Mail::to($event->offer->email)
+        Mail::to($event->contact->email)
             ->queue(new ContactSended($event->contact));
     }
 }
