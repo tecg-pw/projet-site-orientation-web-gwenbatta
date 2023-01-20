@@ -32,7 +32,7 @@
 
         </div>
         <div class="xl:mt-20 mt-10 xl:px-36 2xl:px-48 px-10 lg:grid lg:grid-cols-10 items-center mb-36 lg:gap-x-10 xl:gap-x-20 2xl:items-start">
-            <div class="mb-7 col-span-5 max-w-full 2xl:mt-32">
+            <div class="mb-7 col-span-5 max-w-full 4xl:mt-32">
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium mb-5">{{__('technicals.book_subtitle')}}</h3>

@@ -7,10 +7,10 @@
 <article
     {{ $attributes->class(['px-7 pt-20 mt-24 xl:mt-40 bg-yellow-600 xl:px-30 lg:px-16 2xl:px-48 pb-28']) }} aria-labelledby="questions">
     <div class="slide-in flex flex-col xl:mt-20 md:flex-row xl:mb-24 mb-12">
-        <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl xl:max-w-[50%] 2xl:max-w-full uppercase font-bold xl:mb-12 font-sans xl:leading-12 2xl:text-5xl "
+        <h2 class="text-2xl md:text-3xl md:max-w-xl md:leading-10 mb-6 xl:text-4xl xl:max-w-[50%] 2xl:max-w-[70%] uppercase font-bold xl:mb-12 font-sans xl:leading-12 2xl:text-5xl "
             role="heading" aria-level="2"
             id="questions">{{__('home.forum_title')}}</h2>
-        <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl lg:text-end xl:text-2xl 2xl:text-3xl"
+        <a class="hover:text-orange-500 font-sans  text-green-700  font-semibold underline flex-1 md:text-xl lg:text-end xl:text-2xl 2xl:text-3xl "
            href="/{{app()->getLocale()}}/forum/index">{{__('home.forum_link')}}</a>
     </div>
     <div class="lg:grid lg:grid-cols-5 lg:justify-between">

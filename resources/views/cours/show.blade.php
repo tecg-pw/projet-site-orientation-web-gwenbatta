@@ -32,8 +32,8 @@
                 @endforeach
             </div>
         </div>
-        <div class="xl:px-32 lg:px-16 2xl:px-48 xl:mt-6 px-10 lg:grid lg:grid-cols-10 items-center mb-36 gap-x-10 xl:gap-x-20 2xl:items-start">
-            <div class="mb-7 2xl:mt-32 col-span-5 max-w-full">
+        <div class="xl:mt-20 2xl:px-48 mt-10 px-10 xl:px-32 lg:grid lg:grid-cols-10 xl:items-center mb-36 lg:gap-x-10 xl:gap-x-20 2xl:items-start">
+            <div class="mb-7 4xl:mt-32 col-span-5 max-w-full">
                 <section aria-labelledby="description">
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium mb-5">{{__('course.course_subtitle')}}</h3>

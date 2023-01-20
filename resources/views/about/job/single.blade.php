@@ -23,7 +23,7 @@
                href="/{{app()->getLocale()}}/about#jobs">{{__('job.job_back')}}</a>
         </div>
         <div class="xl:mt-20 2xl:px-48 mt-10 px-10 xl:px-32 lg:grid lg:grid-cols-10 xl:items-center mb-36 lg:gap-x-10 xl:gap-x-20 2xl:items-start">
-            <div class="mb-7 col-span-5 max-w-full mt-32">
+            <div class="mb-7 col-span-5 max-w-full 4xl:mt-32">
                 <section aria-labelledby="description">
                     <h3 class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5" id="description"
                         aria-level="2"
@@ -65,7 +65,7 @@
                         <source media="(max-width: 1024px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-135.jpeg">
                         <source media="(max-width: 1250px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-158.jpeg">
                         <source media="(max-width: 1520px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-180.jpeg">
-                        <source media="(max-width: 2040px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-273.jpeg">
+                        <source media="(max-width: 2040px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-257.jpeg">
                         <source media="(max-width: 2560px)" srcset="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-333.jpeg">
                         <img src="/img-redimensions/brett-jordan-LPZy4da9aRo-unsplash-333.jpeg"
                              alt="" class="rounded-3xl order-2 ">

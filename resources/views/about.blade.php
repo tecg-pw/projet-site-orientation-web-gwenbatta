@@ -147,9 +147,9 @@
             </section>
         </div>
     </section>
-    <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 lg:px-16 mt-14 mb-36 gap-24 items-center" aria-labelledby="profs">
+    <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 lg:px-16 mt-14 mb-36 gap-24 items-center 4xl:mb-80" aria-labelledby="profs">
         <div class="slide-in flex-1 flex flex-col md:flex-row mt-36 lg:justify-between">
-            <h2 class="text-2xl md:text-3xl md:max-w-xl lg:max-w-full md:leading-10 mb-6 xl:text-4xl 2xl:max-w-full uppercase font-bold text-yellow-800 xl:mb-20 font-sans" role="heading"
+            <h2 class="text-2xl leading-8 mb-6 md:text-3xl xl:text-4xl 2xl:text-5xl uppercase font-bold text-yellow-800 xl:mb-16 font-sans" role="heading"
                 aria-level="2"
                 id="profs">
                 {{__('about.teacher_title')}}
@@ -158,7 +158,7 @@
                 <a href="/{{app()->getLocale()}}/bottin/alumni">{{__('about.teacher_button')}}</a>
             </div>
         </div>
-        <div class="lg:grid lg:grid-cols-2 flex flex-col lg:gap-y-48 xl:gap-y-60 lg:mt-60 xl:gap-y-40 xl:gap-x-60 2xl:gap-y-96 2xl:mb-60">
+        <div class="lg:grid lg:grid-cols-2 flex flex-col lg:gap-y-48 xl:gap-y-60 lg:mt-60 xl:gap-y-40 xl:gap-x-60 2xl:gap-y-96 3xl:gap-x-24 4xl:gap-x-52 2xl:mb-60">
             @foreach($teachers as $teacher_ref)
                 <x-people.teacher_list_about :teacher_ref="$teacher_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach

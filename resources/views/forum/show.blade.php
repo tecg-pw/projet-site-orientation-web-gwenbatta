@@ -60,7 +60,7 @@
             class="xl:px-32 lg:px-16 2xl:px-48 mt-20 px-10 flex flex-col md:flex-row gap-5 mb-7 justify-between xl:items-center">
             <div class="flex gap-5 md:max-w-lg xl:max-w-[50%] 2xl:max-w-full xl:mb-5 xl:items-center">
                 <h2 role="heading" id="sujetSection" aria-level="2"
-                    class="xl:text-4xl 2xl:text-5xl  2xl:max-w-full md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12">{{$subject->subject}}</h2>
+                    class="xl:text-4xl 2xl:text-5xl 3xl:max-w-[80%] 4xl:max-w-full md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12">{{$subject->subject}}</h2>
                 @if($subject->resolved)
                     <svg class="xl:not-sr-only sr-only -order-1" xmlns="http://www.w3.org/2000/svg" width="40"
                          viewBox="0 0 34.194 34.196">
