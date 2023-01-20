@@ -180,7 +180,7 @@
                     @endforeach
                 </div>
             </article>
-            <article class="slide-in lg:border-t-0 border-b-orange-500/40 border-t-2 border-t-orange-500/40 border-b-2 pb-10 pt-10 lg:pt-0" aria-labelledby="best-rating">
+            <article class="slide-in lg:border-t-0  pb-10 pt-10 lg:pt-0" aria-labelledby="best-rating">
                 <h3 id="best-rating" aria-level="3" role="heading"
                     class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-green-700 underline mb-6">{{__('forum_aside.rating')}}</h3>
                 <div class="flex flex-col gap-y-8">

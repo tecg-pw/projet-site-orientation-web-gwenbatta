@@ -27,15 +27,13 @@ class SendEmailToAdminWarningHimSubjectInForumHasBeenCreated
      * @param  \App\Events\SubjectCreated  $event
      * @return void
      */
-    public function handle(OfferCreated $event)
+    public function handle(SubjectCreated $event)
     {
-//        $admins = User::where('is_admin',1)->get();
-//        foreach ($admins as $admin){
-//        Mail::to($admin->email)
-//            ->queue(new \App\Mail\SubjectCreated($event->subject));
-//        }
+        $admins = User::where('is_admin',1)->get();
+        foreach ($admins as $admin){
+        Mail::to($admin->email)
+            ->queue(new \App\Mail\SubjectCreated($event->subject));
+        }
 
-        Mail::to('gwenaellebatta@gmail.com')
-            ->send(new \App\Mail\OfferSendedAdmin($event->offer));
     }
 }

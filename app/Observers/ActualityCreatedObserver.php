@@ -20,7 +20,7 @@ class ActualityCreatedObserver
         $users= User::where('newsletter',true)->get();
             foreach ($users as $user) {
                 Mail::to($user->email)
-                    ->send(new \App\Mail\ActualityCreated($actuality));
+                    ->queue(new \App\Mail\ActualityCreated($actuality));
 
             }
     }

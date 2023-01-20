@@ -5,7 +5,6 @@
             class="rounded-full w-8 h-8 mr-3"
         />
     @endisset
-
     <span class="text-90">
         {{$user->email ?? __('Nova User') }}
     </span>

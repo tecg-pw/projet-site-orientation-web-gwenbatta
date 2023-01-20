@@ -21,7 +21,7 @@ class OfferCreatedObserver
         $users= User::where('newsletter',true)->get();
             foreach ($users as $user) {
                 Mail::to($user->email)
-                    ->send(new \App\Mail\OfferCreated($offer));
+                    ->queue(new \App\Mail\OfferCreated($offer));
 
             }
     }

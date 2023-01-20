@@ -21,7 +21,7 @@ class ProjectCreatedObserver
         $users= User::where('newsletter',true)->get();
             foreach ($users as $user) {
                 Mail::to($user->email)
-                    ->send(new \App\Mail\ProjectCreated($project));
+                    ->queue(new \App\Mail\ProjectCreated($project));
 
             }
     }

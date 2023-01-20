@@ -15,12 +15,9 @@ class AdminController extends Controller
      */
     public function __invoke(Request $request)
     {
-        if (Auth::check()){
             if (auth()->user()->is_admin){
                 return redirect('/admin/nova');
             }
             return redirect('/');
-        }
-        return redirect(app()->getLocale().'/user/login');
     }
 }

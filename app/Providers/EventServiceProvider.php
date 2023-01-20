@@ -50,11 +50,11 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Subject::observe(ResolvedSubjectObserver::class);
-        Subject::observe(SubjectCreatedObserver::class);
-        ActualityTranslation::observe(ActualityCreatedObserver::class);
-        ProjetTranslation::observe(ProjectCreatedObserver::class);
-        OfferTranslation::observe(OfferCreatedObserver::class);
+//        Subject::observe(ResolvedSubjectObserver::class);
+//        Subject::observe(SubjectCreatedObserver::class);
+//        ActualityTranslation::observe(ActualityCreatedObserver::class);
+//        ProjetTranslation::observe(ProjectCreatedObserver::class);
+//        OfferTranslation::observe(OfferCreatedObserver::class);
     }
 
     /**

@@ -25,8 +25,7 @@ class SendEmailToAgencyToConfirmHisOfferHasBeenCreated
      */
     public function handle(OfferCreated $event)
     {
-
         Mail::to($event->offer->email)
-            ->send(new \App\Mail\OfferSended($event->offer));
+            ->queue(new \App\Mail\OfferSended($event->offer));
     }
 }

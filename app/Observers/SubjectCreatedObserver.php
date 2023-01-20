@@ -21,7 +21,7 @@ class SubjectCreatedObserver
 
         foreach ($users as $user){
             Mail::to($user->email)
-                ->send(new \App\Mail\SubjectCreated($subject));
+                ->queue(new \App\Mail\SubjectCreated($subject));
 
         }
     }
