@@ -76,12 +76,12 @@
                         </ul>
                     </section>
                 </div>
-                @if(strip_tags($partner->description) === null)
-                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl xl:leading-10">
+                @if(strip_tags($partner->description) === "")
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl 2xl:text-2xl xl:leading-10">
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <div class="flex flex-col gap-6 text-lg leading-8 xl:text-xl  2xl:text-2xl xl:leading-10  2xl:leading-12 ">
+                    <div class="flex flex-col gap-6 text-lg leading-8 2xl:text-2xl 2xl:leading-12 xl:text-xl xl:leading-10 xl:max-w-[80%]">
                         {!!$partner->description!!}
                     </div>
                 @endif
@@ -163,7 +163,7 @@
                 <x-people.alumni_article :alumni_ref="$alumni_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
                 @if(count($alumnis)===0)
-                    <p>{{__('agency.partner_alumni_no')}}</p>
+                    <p class="flex flex-col gap-6 text-lg leading-8 xl:text-xl 2xl:text-2xl xl:leading-10">{{__('agency.partner_alumni_no')}}</p>
                 @endif
         </div>
     </article>

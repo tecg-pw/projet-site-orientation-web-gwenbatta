@@ -5,14 +5,14 @@
 <section class="px-10 2xl:px-48 xl:px-32 lg:px-16 mt-20 mb-32 xl:mb-64" aria-labelledby="search">
     <div class="flex flex-col xl:flex-row justify-between mb-7 xl:items-center">
         <h2 id="search" role="heading" aria-level="2"
-            class="mb-4 text-2xl xl:text-4xl md:text-3xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('search.title_search')}}</h2>
+            class="xl:text-4xl 2xl:text-5xl  2xl:max-w-full md:text-2xl text-xl uppercase font-extrabold text-yellow-800 font-sans xl:leading-12">{{__('search.title_search')}}</h2>
     </div>
 <div  {{ $attributes }}>
     @if(count($results) > 0)
         @if(array_key_exists('tuto',$results) && count($results['tuto']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.tuto_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.tuto_search')}}</h3>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['tuto'] as $tuto)
                         <x-technical.tuto_search class="bg-yellow-100" :tuto="$tuto"
@@ -24,7 +24,7 @@
         @if(array_key_exists('glossary',$results) && count($results['glossary']) > 0)
             <article aria-labelledby="list-result-tuto" class="slide-in mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.glossary_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.glossary_search')}}</h3>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['glossary'] as $terme)
                         <x-technical.term-glossary_search
@@ -36,7 +36,7 @@
         @if(array_key_exists('tool',$results) && count($results['tool']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.tool_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.tool_search')}}</h3>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['tool'] as $tool)
                         <x-technical.tool_search_single :tool_ref="$tool"/>
@@ -47,7 +47,7 @@
         @if(array_key_exists('doc',$results) && count($results['doc']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.doc_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.doc_search')}}</h3>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['doc'] as $doc)
                         <x-technical.doc_search_single :doc_ref="$doc"/>
@@ -58,7 +58,7 @@
         @if(array_key_exists('book',$results) && count($results['book']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.book_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.book_search')}}</h3>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['book'] as $book)
                         <x-technical.book_search_single class="bg-yellow-100" :book_ref="$book"/>
@@ -69,7 +69,7 @@
         @if(array_key_exists('opportunity',$results) && count($results['opportunity']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.job_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.job_search')}}</h3>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['opportunity'] as $job)
                         <x-job_article_search class="bg-yellow-100"
@@ -81,7 +81,7 @@
         @if(array_key_exists('people',$results) && count($results['people']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.people_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.people_search')}}</h3>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['people'] as $person)
                         <x-people.person_article
@@ -93,7 +93,7 @@
         @if(array_key_exists('subject',$results) && count($results['subjects']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.subject_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.subject_search')}}</h3>
                 <div class="lg:grid lg:grid-cols-2 flex flex-col gap-y-4 lg:gap-x-12 xl:gap-x-24 xl:gap-y-8">
                     @foreach($results['subjects'] as $subject)
                         <article
@@ -186,7 +186,7 @@
         @if(array_key_exists('project',$results) && count($results['projects']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.project_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.project_search')}}</h3>
                 <div class="md:grid xl:grid-cols-3 md:grid-cols-2 flex sm:items-center flex-col gap-8 justify-center">
                     @foreach($results['projects'] as $project)
                         <x-project_search :person="$project->person->translation->where('locale', app()->getLocale())->first()"
@@ -198,7 +198,7 @@
         @if(array_key_exists('news',$results) && count($results['news']) > 0)
             <article aria-labelledby="list-result-tuto" class="mt-16">
                 <h3 id="list-result-tuto" role="heading" aria-level="3"
-                    class="font-sans text-lg xl:text-2xl md:text-xl font-medium mb-8">{{__('search.new_search')}}</h3>
+                    class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5">{{__('search.new_search')}}</h3>
                 <div class="md:grid xl:grid-cols-3 md:grid-cols-2 flex sm:items-center flex-col gap-8 justify-center">
                     @foreach($results['news'] as $new)
                         <x-new_search :new_ref="$new->translation->where('locale',app()->getLocale())->first()"/>

@@ -36,7 +36,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                     @endif
                     <img
                         src="{{$person->logos && $person->logos['full'] ? '/' . $person->logos['full'] : '/'.$person->logo}}"
-                        alt="{{$person->title}}" class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 2xl:-top-52 mb-2">
+                        alt="{{$person->title}}" class="rounded-lg xl:absolute -z-10 xl:bottom-3/4 mb-2">
                 </picture>
                 <div class="slide-in relative xl:bg-yellow-100 rounded-xl py-4 px-4 xl:py-8 xl:left-10">
                     <h3 id="{{$person->slug}}" aria-level="3" role="heading"

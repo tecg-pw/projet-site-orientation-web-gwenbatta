@@ -44,7 +44,7 @@
         </figure>
     </div>
     <section class="bg-yellow-600 lg:pl-24 mb-20" aria-labelledby="coordinate">
-        <h3 class="font-sans text-xl mt-16 mb-12" role="heading" aria-level="3"
+        <h3 class="font-sans text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium mt-16 mb-12" role="heading" aria-level="3"
             id="coordinate">{{__('contact_page.aside_title')}}</h3>
         <div class="flex gap-24 mb-24">
             @foreach($coordinates as $coordinate_ref)

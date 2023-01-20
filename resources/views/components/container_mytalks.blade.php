@@ -48,9 +48,9 @@
         <p class="text-green-500 font-medium xl:text-lg mt-4 mb-0.5 xl:mb-2">{{__('forum.latest_comment')}}</p>
         <div class="flex -order-1 items-center ">
             <div class="order-2 ml-2 mt-1 xl:ml-4 xl:mt-0">
-                <a href="/{{app()->getLocale()}}/user/profile/{{$comment->user->slug}}"
-                   class="text-base hover:text-orange-500 uppercase self-end">{{$comment->user->firstname}} {{$comment->user->name}} </a>
-                <p class="xl:text-base">{{$comment->created_at-> format('d M. Y')}}</p>
+                <p class="md:text-base sm:text-sm text-base uppercase self-end 2xl:text-lg"
+                >{{$comment->user->firstname}} {{$comment->user->name}} </p>
+                <p class="md:text-base sm:text-sm self-end 2xl:text-lg">{{$comment->created_at-> format('d M. Y')}}</p>
             </div>
             <picture class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
                 @if($comment->user->srcset && $comment->user->srcset['tiny'])

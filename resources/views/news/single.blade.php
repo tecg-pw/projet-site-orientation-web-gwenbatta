@@ -22,9 +22,9 @@
             @endif
             <p>{{$new->lieu}}</p>
         </div>
-        <div class="xl:px-32 lg:px-16 2xl:px-48 px-10 lg:grid lg:grid-cols-10 items-center mb-30 lg:px-16 lg:gap-x-10 xl:gap-x-20">
-            <div class="mb-7 col-span-5 max-w-full">
-                <section aria-labelledby="description">
+        <div class="xl:px-32 lg:px-16 2xl:px-48 px-10 lg:grid lg:grid-cols-10 items-center mb-30 lg:px-16 lg:gap-x-10 xl:gap-x-20 2xl:items-start">
+            <div class="mb-7 col-span-5 max-w-full 2xl:mt-32">
+                <section aria-labelledby="description" class="justify-self-start">
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-lg xl:text-xl 2xl:text-2xl font-medium mb-5">{{__('actu.actu_single_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">

@@ -22,9 +22,8 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl 2xl:text-3xl font-semibold"
                href="/{{app()->getLocale()}}/about#jobs">{{__('job.job_back')}}</a>
         </div>
-        <div
-            class="xl:mt-20 2xl:px-48 mt-10 px-10 xl:px-32 lg:grid lg:grid-cols-10 xl:items-center mb-36 lg:gap-x-10 xl:gap-x-20">
-            <div class="mb-7 col-span-5 max-w-full">
+        <div class="xl:mt-20 2xl:px-48 mt-10 px-10 xl:px-32 lg:grid lg:grid-cols-10 xl:items-center mb-36 lg:gap-x-10 xl:gap-x-20 2xl:items-start">
+            <div class="mb-7 col-span-5 max-w-full mt-32">
                 <section aria-labelledby="description">
                     <h3 class="font-sans text-lg xl:text-2xl 2xl:text-3xl md:text-xl font-medium mb-5" id="description"
                         aria-level="2"

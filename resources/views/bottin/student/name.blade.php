@@ -68,7 +68,6 @@
                         {!!$student->description!!}
                     </div>
                 @endif
-
             </div>
             <div class="xl:min-w-[345px] md:min-w-[250px] flex flex-col 2xl:min-w-[500px]">
                 <picture>

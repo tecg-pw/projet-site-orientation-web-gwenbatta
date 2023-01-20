@@ -217,7 +217,7 @@
                                 <label for="pdf" class="flex flex-col items-center justify-center w-full h-64 border-2 border-orange-500 rounded-lg cursor-pointer bg-yellow-100 hover:bg-gray-100">
                                     <span class=" flex flex-col items-center justify-center pt-5 pb-6">
                                         <svg aria-hidden="true" class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                        <span class="mb-2 text-sm text-green-700"><span class="font-semibold">{{__('contact_page.agency_offer')}}</span></span>
+                                        <span class="mb-2 text-sm text-green-700"><span class="font-semibold xl:text-lg 2xl:text-xl">{{__('contact_page.agency_offer')}}</span></span>
                                         <span class="textInput"></span>
                                     </span>
                                     <input id="pdf" name="pdf" type="file"/>

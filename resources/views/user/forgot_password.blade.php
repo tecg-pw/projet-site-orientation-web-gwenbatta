@@ -22,7 +22,7 @@
                     <p class="mt-1 text-green-700 text-xl">{{session('status')}}</p>
                 </div>
             @else
-            <div class="flex mt-14 min-w-[500px]">
+            <div class="flex mt-14 min-w-[500px] ">
                 <form action="/{{app()->getLocale()}}/user/password" method="post" class="flex flex-col xl:block min-w-full">
                     @csrf
                     <div class="flex flex-col mb-4">
@@ -37,7 +37,7 @@
                         </div>
                         @enderror
                         <input
-                            class="2xl:text-xl border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
+                            class=" 2xl:text-xl border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight @error('email') outline-red-600 @enderror focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
                             name="email" dusk="email-field" id="email" type="email" placeholder="email@example.be" value="{{old('email')}}">
                     </div>
                     <div class="flex flex-1 justify-end mt-10  xl:mt-0">

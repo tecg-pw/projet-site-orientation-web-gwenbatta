@@ -105,7 +105,7 @@
                                 alt="{{$subject->user->title}}" class="sr-only xl:not-sr-only order-1 row-span-3 order-1 justify-self-center row-span-2 rounded-full">
                         </picture>
                         <div class="flex mr-4 sm:mr-0 flex-1 flex-col">
-                            <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 xl:text-xl text-lg mb-2 2xl:text-2xl">{{$subject->user->firstname}} {{$subject->user->name}}</a>
+                            <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 uppercase xl:text-xl text-lg mb-2 2xl:text-2xl">{{$subject->user->firstname}} {{$subject->user->name}}</a>
                             <p class="xl:text-lg 2xl:text-xl">{{$subject->created_at->format('d M. Y')}}</p>
                         </div>
                         <div>
@@ -258,8 +258,8 @@
                                     @endif
                                     <div class="flex -order-1 items-center">
                                         <div class="order-2 sm:ml-2 xl:ml-4">
-                                            <a href="/{{app()->getLocale()}}/user/profile/{{$subject->user->slug}}" class="hover:text-orange-500 text-lg uppercase">{{$comment->user->firstname}} {{$comment->user->name}}</a>
-                                            <p class="">{{$comment->created_at->format('d M. Y')}}</p>
+                                            <a href="/{{app()->getLocale()}}/user/profile/{{$comment->user->slug}}" class="hover:text-orange-500 uppercase md:text-base sm:text-sm self-end 2xl:text-lg">{{$comment->user->firstname}} {{$comment->user->name}}</a>
+                                            <p class="md:text-base sm:text-sm self-end 2xl:text-lg">{{$comment->created_at->format('d M. Y')}}</p>
                                         </div>
                                         <picture>
                                             @if($comment->user->srcset && $comment->user->srcset['thumbnail'])

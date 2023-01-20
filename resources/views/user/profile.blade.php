@@ -10,14 +10,14 @@
                         <p class="uppercase text-lg xl:text-2xl 2xl:text-3xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
                     </div>
                     @if(session('status'))
-                    <div class="mb-4 bg-orange-200 rounded-lg flex  items-center gap-x-2 px-4 py-2.5">
+                    <div class="mb-4 bg-orange-200 rounded-lg flex items-center gap-x-2 px-4 py-2.5">
                         <svg class="h-8 w-8 text-green-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                              stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z"/>
                             <circle cx="12" cy="12" r="9"/>
                             <path d="M9 12l2 2l4 -4"/>
                         </svg>
-                        <p class="mt-1 text-green-700 text-xl">{{session('status')}}</p>
+                        <p class="mt-1 text-green-700 text-lg xl:text-xl 2xl:text-2xl">{{session('status')}}</p>
                     </div>
                     @else
                         <div class="text-end">
