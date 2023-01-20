@@ -26,7 +26,7 @@
         <a class="self-end linkcard"
            href="/{{app()->getLocale()}}/news/{{$new_ref->slug}}">{{__('actu.actu_link')}}</a>
     </div>
-    <picture class="-order-2 rounded-t-3xl">
+    <picture class="-order-2 rounded-t-3xl min-w-full">
         @if($new_ref->srcset && $new_ref->srcset['thumbnail'])
             @foreach($new_ref->srcset['thumbnail'] as $size => $path)
                 <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
@@ -34,7 +34,7 @@
         @endif
             <img
                 src="{{$new_ref->pictures && $new_ref->pictures['thumbnail'] ? '/' . $new_ref->pictures['thumbnail'] : '/'.$new_ref->main_pictures}}"
-                alt="{{$new_ref->title}}" class="rounded-t-3xl order-first">
+                alt="{{$new_ref->title}}" class="rounded-t-3xl order-firstmin-w-full">
     </picture>
 </article>
 @endif

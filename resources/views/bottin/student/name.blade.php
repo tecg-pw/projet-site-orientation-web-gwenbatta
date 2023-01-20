@@ -106,7 +106,7 @@
             <a class="hover:text-orange-500 text-green-700 underline font-sans md:text-xl xl:text-2xl 2xl:text-3xl font-semibold"
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
-        <div class="md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8 flex flex-col items-center gap-y-4 justify-center">
+        <div class="md:grid md:grid-cols-2 xl:grid-cols-3 gap-8 flex flex-col items-center justify-center">
             @foreach($projects as $project_ref)
                 <x-project :person="$student" :project_ref="$project_ref->translation->where('locale',app()->getLocale())->first()"></x-project>
             @endforeach

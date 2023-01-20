@@ -21,9 +21,9 @@
                 </div>
             </div>
             <a class="self-end linkcard"
-               href="/{{app()->getLocale()}}/project/{{$project_ref->slug}}">{{__('project_ref.project_ref_view'). $project_ref->title}}</a>
+               href="/{{app()->getLocale()}}/project/{{$project_ref->slug}}">{{__('project.project_view'). $project_ref->title}}</a>
         </div>
-        <picture class="order-first">
+        <picture class="min-w-full order-first">
             @if($project_ref->srcset && $project_ref->srcset['thumbnail'])
                 @foreach($project_ref->srcset['thumbnail'] as $size => $path)
                     <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
@@ -31,7 +31,7 @@
             @endif
             <img
                 src="{{$project_ref->pictures && $project_ref->pictures['thumbnail'] ? '/' . $project_ref->pictures['thumbnail'] : '/'.$project_ref->main_picture}}"
-                alt="{{$project_ref->title}}" class="rounded-t-3xl order-first">
+                alt="{{$project_ref->title}}" class="rounded-t-3xl order-first min-w-full">
         </picture>
     </article>
 @endif

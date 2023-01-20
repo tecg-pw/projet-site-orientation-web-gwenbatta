@@ -119,7 +119,7 @@
                href="/{{app()->getLocale()}}/project/index">{{__('project.project_see_all')}}</a>
         </div>
         <div
-            class="md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8 flex flex-col {{count($projects) !== 0 ? 'items-center' : ''}} gap-y-4 justify-center">
+            class="md:grid md:grid-cols-2 xl:grid-cols-3 gap-8 flex flex-col {{count($projects) !== 0 ? 'items-center' : ''}} justify-center">
             @foreach($projects as $project)
                 <x-project :person="$alumni"
                            :project_ref="$project->translation->where('locale',app()->getLocale())->first()"></x-project>

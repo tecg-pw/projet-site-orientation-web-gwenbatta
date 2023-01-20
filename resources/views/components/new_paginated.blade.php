@@ -2,7 +2,7 @@
     'news'
 ])
 
-<div id="containerNew" {{ $attributes->class([' md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8 flex flex-col items-center gap-6 xl:justify-center']) }}>
+<div id="containerNew" >
     <x-container_new :news="$news"/>
     <x-pagination_new :news="$news"/>
 </div>
