@@ -4,6 +4,9 @@ import {News} from "./Models/News";
 import {Tutos} from "./Models/Tutos";
 import {Glossaries} from "./Models/Glossaries";
 import {Offers} from "./Models/Offers";
+import {Partners} from "./Models/Partners";
+import {People} from "./Models/People";
+import {Alumnis} from "./Models/Alumnis";
 
 window.addEventListener('load', init);
 const siteUrl = 'http://tecweb.test/';
@@ -45,11 +48,7 @@ let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElemen
 let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
 let searchInputProject = document.querySelector('#project #search') as HTMLInputElement;
 let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
-let containerOffer = document.getElementById('containerOffer')
-let containerPartner = document.getElementById('containerPartner')
-
 let containerAlumni = document.getElementById('containerAlumni')
-let containerBottin = document.getElementById('containerBottin')
 let containerLatestSubject = document.getElementById('containerLatestSubject')
 let containerLatestAnswer = document.getElementById('containerLatestAnswer')
 let containerMySubject = document.getElementById('containerMySubject')
@@ -86,15 +85,21 @@ function init() {
     if (searchInputOffer !== null || sortSelectAgencyOffer !== null || sortSelectJobsEntreprise !== null) {
      new Offers(siteUrl,slideInView);
     }
-    // new Partners(siteUrl,slideInView);
+    if (searchInputPartner !== null || sortSelectAgencyPartner !== null || sortSelectCityEntreprise !== null) {
+        new Partners(siteUrl,slideInView);
+    }
     if (searchInputTuto !== null || sortSelectDateTuto !== null || sortSelectLanguageTuto !== null) {
         new Tutos(siteUrl, slideInView);
+    }
+    if (searchInputBottin !== null || sortSelectDateBottin !== null || sortSelectStatusBottin !== null) {
+         new People(siteUrl,slideInView);
     }
     if (searchInputGlossary !== null) {
         new Glossaries(siteUrl, slideInView);
     }
-    // new People(siteUrl,slideInView);
-    // new Alumnis(siteUrl,slideInView);
+    if (searchInputAlumni !== null || sortSelectDateAlumni !== null || sortSelectStatusAlumni !== null) {
+        new Alumnis(siteUrl,slideInView);
+    }
     // new Subjects(siteUrl,slideInView);
     // new Answers(siteUrl,slideInView);
     slideInView();
@@ -115,11 +120,7 @@ const stateSortPeople = {
     year: 'all',
     page: 1
 }
-const stateSortPartner = {
-    cities: 'all',
-    agency: 'all',
-    page: 1
-}
+
 const stateSortOffer = {
     jobs: 'all',
     agency: 'all',
@@ -249,32 +250,11 @@ function slideInView() {
     }
 }
 
-if (searchInputOffer !== null) {
-    searchInputOffer.value = '';
-    searchInputOffer.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestOffer()
-    })
-}
-if (searchInputPartner !== null) {
-    searchInputPartner.value = '';
-    searchInputPartner.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestPartner()
-    })
-}
 
 
-if (searchInputBottin !== null) {
-    searchInputBottin.value = '';
-    searchInputBottin.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestBottin()
-    })
-}
+
+
+
 if (searchInputAlumni !== null) {
     searchInputAlumni.value = '';
     searchInputAlumni.addEventListener('input', (e) => {
@@ -317,38 +297,12 @@ if (searchInputMyAnswer !== null) {
 }
 
 
-function makeRequestOffer() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableOffer(data));
-}
-
-function makeRequestPartner() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTablePartner(data));
-}
 
 
 
 
-function makeRequestBottin() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/bottin/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableBottin(data));
-}
+
+
 
 function makeRequestAlumni() {
     let locale = window.location.pathname.split('/');
@@ -401,95 +355,12 @@ function makeRequestMyAnswer() {
 }
 
 
-function updateDataTableOffer(data) {
-    containerOffer.innerHTML = data
-    let titles = document.querySelectorAll('h3')
-    let descriptions = document.querySelectorAll('.description')
-    let partners = document.querySelectorAll('.partner')
-    if (stateSearch.search !== '') {
-        let match = new RegExp(stateSearch.search, 'gi')
-        // @ts-ignore
-        for (const title of titles) {
-            title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-        }
-        // @ts-ignore
-        for (const description of descriptions) {
-            let str = description.innerHTML.replace(/<[^>]+>/g, '')
-            description.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
-        }
-        // @ts-ignore
-        for (const partner of partners) {
-            partner.innerHTML = partner.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-        }
-    }
-
-    slideInView();
-    handlepaginationOffer();
-}
-
-function updateDataTablePartner(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    containerPartner.innerHTML = data
-    let titles = document.querySelectorAll('h3')
-    let adresses = document.querySelectorAll('.adresse')
-    let localities = document.querySelectorAll('.locality')
-    let localitiesNum = document.querySelectorAll('.localityNumber')
-    // @ts-ignore
-    for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const adresse of adresses) {
-        adresse.innerHTML = adresse.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const locality of localities) {
-        locality.innerHTML = locality.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const localityNum of localitiesNum) {
-        localityNum.innerHTML = localityNum.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    slideInView();
-    handlepaginationPartner();
-}
 
 
 
 
-function updateDataTableBottin(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    containerBottin.innerHTML = data
-    let names = document.querySelectorAll('.name')
-    let firstnames = document.querySelectorAll('.firstname')
-    let status = document.querySelectorAll('.status')
-    let begins = document.querySelectorAll('.begin')
-    let ends = document.querySelectorAll('.end')
-    // @ts-ignore
-    for (const name of names) {
-        name.innerHTML = name.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const firstname of firstnames) {
-        firstname.innerHTML = firstname.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const statusElement of status) {
-        let str = statusElement.innerHTML.replace(/<[^>]+>/g, '')
-        statusElement.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const begin of begins) {
-        begin.innerHTML = begin.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const end of ends) {
-        end.innerHTML = end.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
 
-    slideInView();
-    handlepaginationBottin();
-}
+
 
 function updateDataTableAlumni(data) {
     let match = new RegExp(stateSearch.search, 'gi')
@@ -522,7 +393,7 @@ function updateDataTableAlumni(data) {
     }
 
     slideInView();
-    handlepaginationBottin();
+    //handlepaginationBottin();
 }
 
 function updateDataTableSubject(data, container) {
@@ -559,62 +430,11 @@ function updateDataTableAnswer(data, container) {
 }
 
 
-function handlepaginationOffer() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestOffer()
-        })
-    }
-}
-
-function handlepaginationPartner() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestPartner()
-        })
-    }
-}
 
 
 
 
-function handlepaginationBottin() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestBottin()
-        })
-    }
-}
+
 
 function handlepaginationSubject() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
@@ -655,87 +475,9 @@ function handlepaginationAnswer() {
 }
 
 
-if (sortSelectCityEntreprise !== null) {
-    sortSelectCityEntreprise.value = 'all';
-    sortSelectCityEntreprise.addEventListener('change', (e) => {
-        stateSortPartner.cities = (e.currentTarget as HTMLSelectElement).value;
-        stateSortPartner.page = 1;
-        makeRequestPartnerSort()
-    })
-}
-if (sortSelectAgencyPartner !== null) {
-    sortSelectAgencyPartner.value = 'all';
-    sortSelectAgencyPartner.addEventListener('change', (e) => {
-        stateSortPartner.agency = (e.currentTarget as HTMLSelectElement).value;
-        stateSortPartner.page = 1;
-        makeRequestPartnerSort()
-    })
-}
-
-function makeRequestPartnerSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/entreprise/partner/ajax?` + new URLSearchParams(stateSortPartner);
-    history.pushState(stateSortPartner, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTablePartner(data));
-}
-
-if (sortSelectJobsEntreprise !== null) {
-    sortSelectJobsEntreprise.value = 'all';
-    sortSelectJobsEntreprise.addEventListener('change', (e) => {
-        stateSortOffer.jobs = (e.currentTarget as HTMLSelectElement).value;
-        stateSortOffer.page = 1;
-        makeRequestOfferSort()
-    })
-}
-if (sortSelectAgencyOffer !== null) {
-    sortSelectAgencyOffer.value = 'all';
-    sortSelectAgencyOffer.addEventListener('change', (e) => {
-        stateSortOffer.agency = (e.currentTarget as HTMLSelectElement).value;
-        stateSortOffer.page = 1;
-        makeRequestOfferSort()
-    })
-}
-
-function makeRequestOfferSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/entreprise/internship/ajax?` + new URLSearchParams(stateSortOffer);
-    history.pushState(stateSortOffer, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableOffer(data));
-}
 
 
-if (sortSelectDateBottin !== null) {
-    sortSelectDateBottin.value = 'all';
-    sortSelectDateBottin.addEventListener('change', (e) => {
-        stateSortPeople.year = (e.currentTarget as HTMLSelectElement).value;
-        stateSortPeople.page = 1;
-        makeRequestBottinSort()
-    })
-}
-if (sortSelectStatusBottin !== null) {
-    sortSelectStatusBottin.value = 'all';
-    sortSelectStatusBottin.addEventListener('change', (e) => {
-        stateSortPeople.status = (e.currentTarget as HTMLSelectElement).value;
-        stateSortPeople.page = 1;
-        makeRequestBottinSort()
-    })
-}
 
-function makeRequestBottinSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/bottin/ajax?` + new URLSearchParams(stateSortPeople);
-    history.pushState(stateSortPeople, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableBottin(data));
-}
 
 if (sortSelectDateAlumni !== null) {
     sortSelectDateAlumni.value = 'all';
