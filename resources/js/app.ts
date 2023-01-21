@@ -1,10 +1,14 @@
 import './bootstrap';
+import {Projects} from "./Models/Projects";
+import {News} from "./Models/News";
+import {Tutos} from "./Models/Tutos";
+import {Glossaries} from "./Models/Glossaries";
+import {Offers} from "./Models/Offers";
 
 window.addEventListener('load', init);
 const siteUrl = 'http://tecweb.test/';
 let buttonSearches = document.getElementsByClassName('filter');
-let searchInputProject = document.querySelector('#project #search') as HTMLInputElement;
-let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
+
 let searchInputOffer = document.querySelector('#offer #search') as HTMLInputElement;
 let searchInputPartner = document.querySelector('#partner #search') as HTMLInputElement;
 let sortSelectCityEntreprise = document.querySelector('#cities') as HTMLSelectElement;
@@ -39,12 +43,11 @@ let sortSelectDateMyAnswer = document.querySelector('#sortmyanswers .year-forum'
 let sortSelectStatusMyAnswer = document.querySelector('#sortmyanswers .status-forum') as HTMLSelectElement;
 let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElement;
 let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
-let containerProject = document.getElementById('containerProject')
-let containerNew = document.getElementById('containerNew')
+let searchInputProject = document.querySelector('#project #search') as HTMLInputElement;
+let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
 let containerOffer = document.getElementById('containerOffer')
 let containerPartner = document.getElementById('containerPartner')
-let containerGlossary = document.getElementById('containerGlossary')
-let containerTuto = document.getElementById('containerTuto')
+
 let containerAlumni = document.getElementById('containerAlumni')
 let containerBottin = document.getElementById('containerBottin')
 let containerLatestSubject = document.getElementById('containerLatestSubject')
@@ -52,7 +55,6 @@ let containerLatestAnswer = document.getElementById('containerLatestAnswer')
 let containerMySubject = document.getElementById('containerMySubject')
 let containerMyAnswer = document.getElementById('containerMyTalks')
 let containerGlobal = document.getElementById('content')
-
 let pdf = document.getElementById('pdf') as HTMLInputElement;
 let textInput = document.querySelector('.textInput');
 let avatar = document.getElementById('avatar') as HTMLInputElement;
@@ -75,6 +77,26 @@ function init() {
     document.body.classList.remove('no-js');
     document.body.classList.add('js-only');
     searchGlobalInput.value = '';
+    if (searchInputProject !== null) {
+        new Projects(siteUrl, slideInView);
+    }
+    if (searchInputNew !== null) {
+        new News(siteUrl, slideInView);
+    }
+    if (searchInputOffer !== null || sortSelectAgencyOffer !== null || sortSelectJobsEntreprise !== null) {
+     new Offers(siteUrl,slideInView);
+    }
+    // new Partners(siteUrl,slideInView);
+    if (searchInputTuto !== null || sortSelectDateTuto !== null || sortSelectLanguageTuto !== null) {
+        new Tutos(siteUrl, slideInView);
+    }
+    if (searchInputGlossary !== null) {
+        new Glossaries(siteUrl, slideInView);
+    }
+    // new People(siteUrl,slideInView);
+    // new Alumnis(siteUrl,slideInView);
+    // new Subjects(siteUrl,slideInView);
+    // new Answers(siteUrl,slideInView);
     slideInView();
     handlePassword();
     burgerMenu();
@@ -87,11 +109,6 @@ const stateSearch = {
 const stateSearchGlobal = {
     search_bar: '',
     page: 1,
-}
-const stateSortTutos = {
-    date: 'all',
-    languages: 'all',
-    page: 1
 }
 const stateSortPeople = {
     status: 'all',
@@ -232,22 +249,6 @@ function slideInView() {
     }
 }
 
-if (searchInputProject !== null) {
-    searchInputProject.value = '';
-    searchInputProject.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestProject()
-    })
-}
-if (searchInputNew !== null) {
-    searchInputNew.value = '';
-    searchInputNew.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestNew()
-    })
-}
 if (searchInputOffer !== null) {
     searchInputOffer.value = '';
     searchInputOffer.addEventListener('input', (e) => {
@@ -264,22 +265,8 @@ if (searchInputPartner !== null) {
         makeRequestPartner()
     })
 }
-if (searchInputGlossary !== null) {
-    searchInputGlossary.value = '';
-    searchInputGlossary.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestGlossary()
-    })
-}
-if (searchInputTuto !== null) {
-    searchInputTuto.value = '';
-    searchInputTuto.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestTuto()
-    })
-}
+
+
 if (searchInputBottin !== null) {
     searchInputBottin.value = '';
     searchInputBottin.addEventListener('input', (e) => {
@@ -329,25 +316,6 @@ if (searchInputMyAnswer !== null) {
     })
 }
 
-function makeRequestProject() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/project/index/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableProject(data));
-}
-
-function makeRequestNew() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/news/index/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableNew(data));
-}
 
 function makeRequestOffer() {
     let locale = window.location.pathname.split('/');
@@ -369,25 +337,8 @@ function makeRequestPartner() {
         .then((data) => updateDataTablePartner(data));
 }
 
-function makeRequestGlossary() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/technical/glossary/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableGlossary(data));
-}
 
-function makeRequestTuto() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/technical/tuto/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableTuto(data));
-}
+
 
 function makeRequestBottin() {
     let locale = window.location.pathname.split('/');
@@ -449,45 +400,6 @@ function makeRequestMyAnswer() {
         .then((data) => updateDataTableAnswer(data, containerMyAnswer));
 }
 
-function updateDataTableProject(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    containerProject.innerHTML = data
-    let titles = document.querySelectorAll('h3')
-    let dates = document.querySelectorAll('.datesProject')
-    // @ts-ignore
-    for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const date of dates) {
-        date.innerHTML = date.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    slideInView();
-    handlepaginationProject()
-}
-
-function updateDataTableNew(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    containerNew.innerHTML = data
-    let titles = document.querySelectorAll('h3')
-    let excerpts = document.querySelectorAll('.excerpt')
-    let dates = document.querySelectorAll('.datesNew')
-    // @ts-ignore
-    for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const excerpt of excerpts) {
-        let str = excerpt.innerHTML.replace(/<[^>]+>/g, '')
-        excerpt.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const date of dates) {
-        date.innerHTML = date.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    slideInView();
-    handlepaginationNew();
-}
 
 function updateDataTableOffer(data) {
     containerOffer.innerHTML = data
@@ -542,41 +454,8 @@ function updateDataTablePartner(data) {
     handlepaginationPartner();
 }
 
-function updateDataTableGlossary(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    containerGlossary.innerHTML = data
-    let titles = document.querySelectorAll('h3')
-    let definitions = document.querySelectorAll('.definition')
-    // @ts-ignore
-    for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const definition of definitions) {
-        let str = definition.innerHTML.replace(/<[^>]+>/g, '')
-        definition.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    slideInView();
-    handlepaginationGlossary();
-}
 
-function updateDataTableTuto(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    containerTuto.innerHTML = data
-    let titles = document.querySelectorAll('h3 a')
-    let excerpts = document.querySelectorAll('.excerpt')
-    // @ts-ignore
-    for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const excerpt of excerpts) {
-        let str = excerpt.innerHTML.replace(/<[^>]+>/g, '')
-        excerpt.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    slideInView();
-    handlepaginationTuto();
-}
+
 
 function updateDataTableBottin(data) {
     let match = new RegExp(stateSearch.search, 'gi')
@@ -679,41 +558,6 @@ function updateDataTableAnswer(data, container) {
     handlepaginationAnswer();
 }
 
-function handlepaginationProject() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestProject()
-        })
-    }
-}
-
-function handlepaginationNew() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestNew()
-        })
-    }
-}
 
 function handlepaginationOffer() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
@@ -751,41 +595,8 @@ function handlepaginationPartner() {
     }
 }
 
-function handlepaginationGlossary() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestGlossary()
-        })
-    }
-}
 
-function handlepaginationTuto() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestTuto()
-        })
-    }
-}
+
 
 function handlepaginationBottin() {
     let paginations = document.querySelectorAll('#pagination a') as NodeList;
@@ -843,32 +654,6 @@ function handlepaginationAnswer() {
     }
 }
 
-if (sortSelectDateTuto !== null) {
-    sortSelectDateTuto.value = 'all';
-    sortSelectDateTuto.addEventListener('change', (e) => {
-        stateSortTutos.date = (e.currentTarget as HTMLSelectElement).value;
-        stateSortTutos.page = 1;
-        makeRequestTutoSort()
-    })
-}
-if (sortSelectLanguageTuto !== null) {
-    sortSelectLanguageTuto.value = 'all';
-    sortSelectLanguageTuto.addEventListener('change', (e) => {
-        stateSortTutos.languages = (e.currentTarget as HTMLSelectElement).value;
-        stateSortTutos.page = 1;
-        makeRequestTutoSort()
-    })
-}
-
-function makeRequestTutoSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/technical/tuto/ajax?` + new URLSearchParams(stateSortTutos);
-    history.pushState(stateSortTutos, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableTuto(data));
-}
 
 if (sortSelectCityEntreprise !== null) {
     sortSelectCityEntreprise.value = 'all';
@@ -952,9 +737,9 @@ function makeRequestBottinSort() {
         .then((data) => updateDataTableBottin(data));
 }
 
-if(sortSelectDateAlumni !== null) {
-  sortSelectDateAlumni.value = 'all';
-  sortSelectDateAlumni.addEventListener('change', (e) => {
+if (sortSelectDateAlumni !== null) {
+    sortSelectDateAlumni.value = 'all';
+    sortSelectDateAlumni.addEventListener('change', (e) => {
         stateSortPeople.year = (e.currentTarget as HTMLSelectElement).value;
         stateSortPeople.page = 1;
         makeRequestAlumniSort()
@@ -1163,5 +948,5 @@ function updateDataTableGlobal(data) {
     // }
 
     slideInView();
-    handlepaginationProject()
+    // handlepaginationProject()
 }
