@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class OpportunityTranslation extends Resource
 {
@@ -62,9 +63,9 @@ class OpportunityTranslation extends Resource
                 'nl'=>'nl'
             ])->displayUsingLabels(),
 
-            Trix::make('Résumé','excerpt')->rules('required'),
+            TinymceEditor::make('Résumé','excerpt')->rules(['required']),
 
-            Trix::make('Description')->rules('required'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             BelongsTo::make('Opportunity','opportunity', 'App\Nova\Opportunity')->hideFromIndex(),
         ];

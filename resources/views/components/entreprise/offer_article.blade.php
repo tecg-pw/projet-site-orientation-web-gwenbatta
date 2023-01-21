@@ -16,7 +16,7 @@
                 <p class="xl:text-lg">{{ucwords($offer->created_at->translatedFormat('d F Y'))}}</p>
             </div>
             <div class="mt-1 flex justify-between">
-                <div class="description flex flex-col gap-2 max-w-[80%] xl:text-lg 2xl:text-2xl">
+                <div class="wysiwyg description flex flex-col gap-2 max-w-[80%] xl:text-lg 2xl:text-2xl">
                     {!!$offer->description!!}
                     <p class="partner font-medium xl:text-lg 2xl:text-2xl">{{$offer_ref->partner->translation->where('locale',app()->getLocale())->first()->name}}</p>
                 </div>

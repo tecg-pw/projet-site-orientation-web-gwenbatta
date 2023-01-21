@@ -13,7 +13,7 @@
                 class="font-medium md:text-xl text-lg xl:text-2xl 2xl:text-3xl mb-2">{{$book->name}}</h3>
         </div>
     </div>
-    <div class="mb-4 xl:mb-10 xl:text-lg 2xl:text-xl">{!!$book->excerpt!!}</div>
+    <div class="wysiwyg mb-4 xl:mb-10 xl:text-lg 2xl:text-xl">{!!$book->excerpt!!}</div>
     <div class="flex justify-between">
         <p class="xl:text-lg 2xl:text-xl flex gap-x-3 font-medium">
             {{__('technicals.doc_course')}}

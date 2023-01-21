@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class RecurringTranslation extends Resource
 {
@@ -62,7 +63,7 @@ class RecurringTranslation extends Resource
                 'nl'=>'nl'
             ])->displayUsingLabels(),
 
-            Trix::make('Description')->rules('required'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             BelongsTo::make('Questions récurrentes','recurring','App\Nova\Recurring'),
         ];

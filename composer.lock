@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd86c25f67df4b70668a63eff1fc835c",
+    "content-hash": "edf3712eb6af54feaa03a05aafc9bf30",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -2790,6 +2790,57 @@
                 }
             ],
             "time": "2022-07-24T11:55:47+00:00"
+        },
+        {
+            "name": "murdercode/nova4-tinymce-editor",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/murdercode/Nova4-TinymceEditor.git",
+                "reference": "72ef7454bfd3117c8aeaca1df1d0efa5f72baca0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/murdercode/Nova4-TinymceEditor/zipball/72ef7454bfd3117c8aeaca1df1d0efa5f72baca0",
+                "reference": "72ef7454bfd3117c8aeaca1df1d0efa5f72baca0",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Murdercode\\TinymceEditor\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Murdercode\\TinymceEditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Boost your Laravel Nova with the TinyMCE editor.",
+            "keywords": [
+                "editor",
+                "laravel",
+                "nova",
+                "tinymce"
+            ],
+            "support": {
+                "issues": "https://github.com/murdercode/Nova4-TinymceEditor/issues",
+                "source": "https://github.com/murdercode/Nova4-TinymceEditor/tree/v1.0.2"
+            },
+            "time": "2022-10-24T06:53:05+00:00"
         },
         {
             "name": "nesbot/carbon",

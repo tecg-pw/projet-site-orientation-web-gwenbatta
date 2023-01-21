@@ -37,7 +37,7 @@
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium mb-5">{{__('technicals.book_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
-                        <div class="slide-in text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl 2xl:leading-12">{!!$book->description!!}</div>
+                        <div class="wysiwyg slide-in text-lg leading-8 xl:leading-10 xl:text-xl 2xl:text-2xl 2xl:leading-12">{!!$book->description!!}</div>
                     </div>
                     <div class="mt-8">
                         <p class="slide-in flex gap-3 text-lg xl:text-xl 2xl:text-2xl"> {{__('project.project_available')}}

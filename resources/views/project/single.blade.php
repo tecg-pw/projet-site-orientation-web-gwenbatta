@@ -83,8 +83,7 @@ $person = $person->translation->where('locale', app()->getLocale())->first();
                 </div>
             </article>
             <div class="xl:ml-28 xl:mt-0">
-                <div
-                    class="text-lg xl:text-xl xl:max-w-[85%] 2xl:max-w-[70%] xl:leading-10 2xl:text-2xl 2xl:leading-12 flex flex-col gap-8 leading-8">
+                <div class="wysiwyg  text-lg xl:text-xl xl:max-w-[85%] 2xl:max-w-[70%] xl:leading-10 2xl:text-2xl 2xl:leading-12 flex flex-col gap-8 leading-8">
                     {!!$project->description!!}
                 </div>
                 <div class="mt-6">

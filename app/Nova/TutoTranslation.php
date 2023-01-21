@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class TutoTranslation extends Resource
 {
@@ -56,7 +57,7 @@ class TutoTranslation extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Trix::make('Résumé','excerpt')->rules('required'),
+            TinymceEditor::make('Résumé','excerpt')->rules(['required']),
 
             Select::make('Langue','locale')->options([
                 'fr' => 'fr',

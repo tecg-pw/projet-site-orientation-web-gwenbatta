@@ -36,7 +36,7 @@
                 @endif
         @endauth
     </div>
-    <div class="excerpt mb-2.5 xl:mb-6 xl:text-lg  2xl:text-xl">{!!$tuto_ref->excerpt!!}</div>
+    <div class="wysiwyg  excerpt mb-2.5 xl:mb-6 xl:text-lg  2xl:text-xl">{!!$tuto_ref->excerpt!!}</div>
     <div class="flex justify-between">
         <div class="flex gap-5 items-center">
             <p class="uppercase text-orange-500 font-sans xl:text-lg 2xl:text-xl font-medium">{{ucwords($tuto_ref->languages)}}</p>

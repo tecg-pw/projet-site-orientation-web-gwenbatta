@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class PartnerTranslation extends Resource
 {
@@ -193,7 +194,7 @@ class PartnerTranslation extends Resource
 
             Text::make('Membre de l\'équipe', 'members')->hideFromIndex(),
 
-            Trix::make('Description'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             Select::make('Langues', 'locale')->options([
                 'fr' => 'fr',

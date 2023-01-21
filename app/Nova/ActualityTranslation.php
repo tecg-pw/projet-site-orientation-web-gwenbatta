@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class ActualityTranslation extends Resource
 {
@@ -67,10 +68,9 @@ class ActualityTranslation extends Resource
                 'de'=> 'de',
                 'nl'=>'nl'
             ])->displayUsingLabels(),
+            TinymceEditor::make('Résumé','excerpt')->rules(['required']),
 
-            Trix::make('Résumé','excerpt')->rules('required'),
-
-            Trix::make('Description')->rules('required'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             Text::make('Lieu')
                 ->sortable()

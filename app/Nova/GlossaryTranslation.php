@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class GlossaryTranslation extends Resource
 {
@@ -63,7 +64,7 @@ class GlossaryTranslation extends Resource
                 'nl'=>'nl'
             ])->displayUsingLabels(),
 
-            Trix::make('Definition')->rules('required'),
+            TinymceEditor::make('Definition')->rules(['required']),
 
             BelongsTo::make('Glossary', 'glossary', 'App\Nova\Glossary')
         ];

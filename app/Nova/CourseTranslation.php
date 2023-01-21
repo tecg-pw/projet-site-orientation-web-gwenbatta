@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class CourseTranslation extends Resource
 {
@@ -72,7 +73,7 @@ class CourseTranslation extends Resource
                 'nl'=>'nl'
             ])->displayUsingLabels(),
 
-            Trix::make('Description')->rules('required'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             BelongsTo::make('Cours', 'course', 'App\Nova\Course')
         ];

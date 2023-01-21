@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 
 class DocTranslation extends Resource
@@ -63,7 +64,7 @@ class DocTranslation extends Resource
                 'nl'=>'nl'
             ])->displayUsingLabels(),
 
-            Trix::make('Résumé','excerpt')->rules('required'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             Text::make('Lien','link')
                 ->sortable()

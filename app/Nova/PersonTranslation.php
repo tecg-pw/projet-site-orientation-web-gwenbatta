@@ -17,6 +17,7 @@ use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class PersonTranslation extends Resource
 {
@@ -176,7 +177,7 @@ class PersonTranslation extends Resource
                 ->sortable()
                 ->rules('required','max:255'),
 
-            Trix::make('Description'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             Text::make('Lien du Portfolio','link_Portfolio')
                 ->hideFromIndex()

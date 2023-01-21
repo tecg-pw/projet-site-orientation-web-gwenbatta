@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class OfferTranslation extends Resource
 {
@@ -70,7 +71,7 @@ class OfferTranslation extends Resource
                 'nl'=>'nl'
             ])->displayUsingLabels(),
 
-            Trix::make('Description')->rules('required'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             BelongsTo::make('Offres','offer', 'App\Nova\Offer')->hideFromIndex(),
         ];

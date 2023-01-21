@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class ProjetTranslation extends Resource
 {
@@ -332,7 +333,7 @@ class ProjetTranslation extends Resource
 
             Date::make('Date'),
 
-            Trix::make('Description'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             BelongsTo::make('Projet', 'project', 'App\Nova\Project')
                 ->onlyOnDetail(),

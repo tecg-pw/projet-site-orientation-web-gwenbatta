@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class Subject extends Resource
 {
@@ -52,7 +53,7 @@ class Subject extends Resource
 
             Slug::make('Slug')->from('subject')->hideFromIndex(),
 
-            Trix::make('Description'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             BelongsTo::make('User'),
 

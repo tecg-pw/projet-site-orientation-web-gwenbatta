@@ -28,7 +28,7 @@
                     <h3 id="description" aria-level="3" role="heading"
                         class="font-sans text-lg xl:text-xl 2xl:text-2xl font-medium mb-5">{{__('actu.actu_single_subtitle')}}</h3>
                     <div class="flex flex-col gap-6">
-                        <div class="slide-in xl:text-xl 2xl:text-2xl xl:leading-10 2xl:leading-12 leading-8 flex text-lg flex-col gap-10">
+                        <div class="wysiwyg slide-in xl:text-xl 2xl:text-2xl xl:leading-10 2xl:leading-12 leading-8 flex text-lg flex-col gap-10">
                             {!!$new->description!!}
                         </div>
                         <div class="mb-10">

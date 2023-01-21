@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Trix;
+use Murdercode\TinymceEditor\TinymceEditor;
 
 class TestimonialTranslation extends Resource
 {
@@ -46,7 +47,7 @@ class TestimonialTranslation extends Resource
         return [
             ID::make(__('ID'), 'id')->hideFromIndex(),
 
-            Trix::make('Description'),
+            TinymceEditor::make('Description')->rules(['required']),
 
             Select::make('Langues','locale')->options([
                 'fr' => 'fr',

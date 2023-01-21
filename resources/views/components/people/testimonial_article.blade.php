@@ -11,5 +11,5 @@
         </div>
         <img class="order-1 rounded-full" width="78" src="{{str_contains($author->avatar,'http')? $author->avatar: '/'.$author->avatar}} " alt="avatar">
     </div>
-    <div class="mt-3 xl:mt-5 xl:text-lg 2xl:text-xl">{!!$testimonial_ref->description!!}</div>
+    <div class="wysiwyg mt-3 xl:mt-5 xl:text-lg 2xl:text-xl">{!!$testimonial_ref->description!!}</div>
 </article>

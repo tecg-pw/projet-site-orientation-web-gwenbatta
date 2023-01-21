@@ -64,7 +64,7 @@
                         {{__('people.bottin_no_description')}}
                     </p>
                 @else
-                    <div class="flex flex-col gap-6 text-lg leading-8 2xl:text-2xl 2xl:leading-12 xl:text-xl xl:leading-10 xl:max-w-[80%]">
+                    <div class="wysiwyg flex flex-col gap-6 text-lg leading-8 2xl:text-2xl 2xl:leading-12 xl:text-xl xl:leading-10 xl:max-w-[80%]">
                         {!!$student->description!!}
                     </div>
                 @endif

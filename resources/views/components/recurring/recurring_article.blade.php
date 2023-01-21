@@ -21,7 +21,7 @@
         </div>
     @endif
     @if(request()->has('show-reponse-'.$recurring_ref->slug))
-        <div class="mt-8 text-lg 2xl:text-2xl leading-8 xl:text-xl xl:mr-36">{!! $recurring_ref->description !!}</div>
+        <div class="wysiwyg mt-8 text-lg 2xl:text-2xl leading-8 xl:text-xl xl:mr-36">{!! $recurring_ref->description !!}</div>
         <div class="flex justify-end">
             <a href="/{{app()->getLocale()}}/forum/index#{{$recurring_ref->slug}}"
                class="justify-self-end">
