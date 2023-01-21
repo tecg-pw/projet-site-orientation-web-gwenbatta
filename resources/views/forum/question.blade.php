@@ -41,7 +41,7 @@
                     </div>
                     <div class="slide-in flex flex-col mb-8">
                         <label class="text-green-500 @error('description') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl"
-                               for="description">{{__('forum_question.description')}}</label>
+                               for="wysiwyg">{{__('forum_question.description')}}</label>
                         @error('description')
                         <div class="flex gap-1.5 items-center">
                             <svg class="h-7 w-7 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,11 +50,7 @@
                             <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                         </div>
                         @enderror
-                        <textarea
-                            cols="30" rows="10"
-                            class="2xl:text-xl border border-orange-500 rounded-xl @error('description') outline outline-3 outline-red-600 @enderror py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                            name="description" id="description"
-                            placeholder="{{__('forum_question.description_placeholder')}}">{{old('description')}}</textarea>
+                        <x-forms.tinymce-editor :name="'description'" :placeholder="'forum_question.description_placeholder'">{!! old('description') !!}</x-forms.tinymce-editor>
                     </div>
                     <div class="slide-in flex flex-col mb-8">
                         <label class="text-green-500 @error('tag') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="tag_id">{{__('forum_question.tag')}}</label>

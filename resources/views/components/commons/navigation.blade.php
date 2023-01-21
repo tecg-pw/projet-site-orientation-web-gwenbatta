@@ -42,7 +42,7 @@
     <meta property="twitter:title" content="{{__('TecWeb – '. htmlspecialchars_decode ($page , $flags= ENT_QUOTES))}}">
     <meta property="twitter:description" content="Site de l'option web infographique de la HEPL à Seraing">
     <meta property="twitter:image" content="{{config('app.url')}}/img/tecweb_overview.png">
-
+    <x-head.tinymce-config/>
     @vite('resources/css/app.css')
     @vite('resources/js/app.ts')
 </head>

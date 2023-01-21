@@ -9,6 +9,9 @@
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
+    strong{
+        font-weight: 700;
+    }
     *:focus {
         padding: 0.1em;
         color: #DA953A;
@@ -80,6 +83,13 @@
     .wrapping *{
         display: flex;
         flex-wrap: wrap;
+    }
+    .wysiwyg ul {
+         @apply list-disc list-inside
+     }
+
+    .wysiwyg ol {
+        @apply list-decimal list-inside
     }
     @media screen and (min-width: 1000px){
         .js-enabled .slide-in {

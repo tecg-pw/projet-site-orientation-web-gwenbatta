@@ -91,7 +91,7 @@
                             <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                         </div>
                         @enderror
-                        <textarea class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100" name="message" id="message" cols="30" rows="10" placeholder="{{__('contact_page.student_message_value')}}">{{old('message')}}</textarea>
+                        <x-forms.tinymce-editor :name="'message'" :placeholder="'contact_page.student_message_value'">{{old('message')}}</x-forms.tinymce-editor>
                     </div>
                     <div class="slide-in flex flex-1 justify-end mb-20">
                         <input

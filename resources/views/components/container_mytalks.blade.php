@@ -42,9 +42,9 @@
             <a class="cursor-pointer linkcard"
                href="/{{app()->getLocale()}}/forum/show/{{$comment->subject->slug}}">{{__('forum.see_subject') . $comment->subject->name}}</a>
         </div>
-        <p class="search-comment first-letter:uppercase xl:leading-8 xl:mt-6 mt-4">
-            {{$comment->content}}
-        </p>
+        <div class="wysiwyg search-comment first-letter:uppercase xl:leading-8 xl:mt-6 mt-4">
+            {!! $comment->content !!}
+        </div>
         <p class="text-green-500 font-medium xl:text-lg mt-4 mb-0.5 xl:mb-2">{{__('forum.latest_comment')}}</p>
         <div class="flex -order-1 items-center ">
             <div class="order-2 ml-2 mt-1 xl:ml-4 xl:mt-0">

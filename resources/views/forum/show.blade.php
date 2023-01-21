@@ -140,9 +140,9 @@
                             @endif
                         </div>
                     </div>
-                    <p class="leading-8 md:leading-9 xl:leading-10 xl:text-xl 2xl:text-2xl 2xl:leading-12 md:text-lg xl:mt-7 mt-6">
-                        {{$subject->description}}
-                    </p>
+                    <div class="wysiwyg leading-8 md:leading-9 xl:leading-10 xl:text-xl 2xl:text-2xl 2xl:leading-12 md:text-lg xl:mt-7 mt-6">
+                        {!!$subject->description!!}
+                    </div>
                 </div>
                 <article class="flex flex-col gap-y-8 " aria-labelledby="add-comment">
                     <div class="flex md:flex-row flex-col justify-between xl:items-center">
@@ -174,10 +174,7 @@
                                             <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                                         </div>
                                         @enderror
-                                        <textarea
-                                            class="focus:outline-3 focus:outline focus:outline-green-700  @error('content') outline outline-3 outline-red-600 @enderror text-black border focus:bg-orange-100 rounded-xl border-2 border-orange-500"
-                                            name="content" id="content"
-                                            cols="55" rows="7"></textarea>
+                                        <x-forms.tinymce-editor :name="'content'" :placeholder="''">{!! old('content') !!}</x-forms.tinymce-editor>
                                     </div>
                                     <button type="submit"
                                             class="text-white-100 bg-green-700 px-6 mt-4 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl xl:text-2xl  font-sans font-semibold">{{__('forum.value__add')}}</button>
@@ -215,18 +212,15 @@
                                                         <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                                                     </div>
                                                     @enderror
-                                                    <textarea
-                                                        class="focus:outline-3 focus:outline focus:outline-green-700  @error('content') outline outline-3 outline-red-600 @enderror text-black border focus:bg-orange-100 mt-4 rounded-xl border-2 border-orange-500"
-                                                        name="content" id="content"
-                                                        cols="55" rows="7">{{$comment->content}}</textarea>
+                                                    <x-forms.tinymce-editor :name="'content'" :placeholder="''">{!! old('content')?? $comment->content!!}</x-forms.tinymce-editor>
                                                 </div>
                                                 <button type="submit" class="text-white-100 bg-green-700 px-6 mt-4 border-2 border-green-700 hover:bg-white-100 hover:text-green-700 py-2 rounded-lg text-xl font-sans font-semibold 2xl:text-2xl">{{__('forum.value__modify')}}</button>
                                             </form>
                                         </div>
                                     @else
-                                        <p class="sm:leading-8 mt-3 sm:mt-6 leading-6 text-sm xl:text-base 2xl:text-lg sm:text-base">
-                                            {{$comment->content}}
-                                        </p>
+                                        <div class="wysiwyg sm:leading-8 mt-3 sm:mt-6 leading-6 text-sm xl:text-base 2xl:text-lg sm:text-base">
+                                            {!!$comment->content!!}
+                                        </div>
                                     @endif
                                 @endauth
                                 <div class="flex -order-1 justify-between ">
