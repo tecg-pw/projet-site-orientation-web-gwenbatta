@@ -15,7 +15,7 @@
             <figure class="grid grid-rows-2 grid-cols-2 gap-8">
                 <picture class="sr-only lg:not-sr-only lg:rounded-3xl lg:row-span-2 lg:min-h-full">
                     <source media="(max-width: 1024px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-481.jpeg">
-                    <source media="(max-width: 1250px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-524.jpeg">
+                    <source media="(max-width: 1250px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-534.jpeg">
                     <source media="(max-width: 1520px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-588.jpeg">
                     <source media="(max-width: 2040px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-733.jpeg">
                     <source media="(max-width: 2560px)" srcset="/img-redimensions/procreator-ux-design-studio-VzJjPuk53sk-unsplash-878.jpeg">
@@ -155,7 +155,7 @@
                 {{__('about.teacher_title')}}
             </h2>
             <div class="hover:text-orange-500 flex lg:justify-end text-green-700 underline font-sans text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold">
-                <a href="/{{app()->getLocale()}}/bottin/alumni">{{__('about.teacher_button')}}</a>
+                <a href="/{{app()->getLocale()}}/bottin">{{__('about.teacher_button')}}</a>
             </div>
         </div>
         <div class="lg:grid lg:grid-cols-2 flex flex-col lg:gap-y-48 xl:gap-y-60 lg:mt-60 xl:gap-y-40 xl:gap-x-60 2xl:gap-y-96 3xl:gap-x-24 4xl:gap-x-52 2xl:mb-60">

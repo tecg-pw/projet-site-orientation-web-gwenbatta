@@ -73,7 +73,7 @@
         <div class="col-span-3 flex flex-col xl:pr-14 ">
             @foreach($subjects as $subject)
                 <article
-                    class="slide-in mb-7 group hover:bg-orange-100  bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
+                    class="md:slide-in mb-7 group hover:bg-orange-100  bg-yellow-100 p-2 sm:p-4 relative flex xl:p-6 rounded-xl"
                     aria-labelledby="{{$subject->slug}}">
                     <div class="order-2 flex-1 flex flex-col xl:ml-4 justify-center gap-y-2 xl:gap-4">
                         <div class="flex flex-col  xl:gap-4">

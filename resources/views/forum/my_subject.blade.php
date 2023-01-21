@@ -6,7 +6,7 @@
 <main id="content">
     <x-recurring.recurrent_questions :recurrings="$recurrings"></x-recurring.recurrent_questions>
     <section class="mt-20" aria-labelledby="forum">
-        <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex justify-between mb-8 xl:mb-24 items-center">
+        <div class="px-10 2xl:px-48 xl:px-32 lg:px-16 flex md:flex-row flex-col justify-between mb-8 xl:mb-24 xl:items-center">
             <h2 id="forum" aria-level="2" role="heading"
                 class="text-2xl md:text-3xl md:self-center xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans xl:text-center">{{__('forum.index_title')}}</h2>
             @auth()

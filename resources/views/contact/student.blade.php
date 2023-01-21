@@ -8,10 +8,10 @@
                     {{__('contact_page.contact_title')}}
                 </h2>
             </div>
-            <div class="flex flex-1 justify-between px-10 xl:px-0">
+            <div class="flex flex-1 flex-col gap-4 md:gap-0 md:flex-row justify-between px-10 xl:px-0">
                 <a class="hover:text-orange-500 bg-orange-200 rounded-lg font-sans text-green-700 text-xl rounded-lg font-semibold underline  py-2.5 px-6 xl:text-2xl 2xl:text-3xl"
                    href="/{{app()->getLocale()}}/contact/student">{{__('contact_page.student_link')}}</a>
-                <a class=" font-sans text-green-700 text-en xl:text-start self-center text-xl font-semibold underline py-2.5 xl:text-2xl 2xl:text-3xl"
+                <a class=" font-sans text-green-700 text-en xl:text-start md:self-center text-xl font-semibold underline py-2.5 px-6 xl:text-2xl 2xl:text-3xl"
                    href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             @if(session('success'))
@@ -91,12 +91,7 @@
                             <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                         </div>
                         @enderror
-                        <textarea
-                            class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                            name="message" id="message" cols="30" rows="10"
-                            placeholder="{{__('contact_page.student_message_value')}}">
-                            {{old('message')}}
-                        </textarea>
+                        <textarea class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100" name="message" id="message" cols="30" rows="10" placeholder="{{__('contact_page.student_message_value')}}">{{old('message')}}</textarea>
                     </div>
                     <div class="slide-in flex flex-1 justify-end mb-20">
                         <input

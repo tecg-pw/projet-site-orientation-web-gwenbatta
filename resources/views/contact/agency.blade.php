@@ -8,10 +8,10 @@
                     {{__('contact_page.contact_title')}}
                 </h2>
             </div>
-            <div class="flex flex-1 justify-between px-10 xl:px-0">
+            <div class="flex flex-1 flex-col gap-4 md:gap-0 md:flex-row justify-between px-10 xl:px-0">
                 <a class="font-sans text-green-700 xl:text-2xl 2xl:text-3xl text-xl rounded-lg font-semibold underline  py-2.5 px-6"
                    href="/{{app()->getLocale()}}/contact/student">{{__('contact_page.student_link')}}</a>
-                <a class="hover:text-orange-500 bg-orange-200 rounded-lg py-2.5 px-6 font-sans text-green-700 text-en xl:text-start self-center xl:text-2xl 2xl:text-3xl text-xl font-semibold underline py-2.5 "
+                <a class="hover:text-orange-500 bg-orange-200 rounded-lg py-2.5 px-6 font-sans text-green-700 text-en xl:text-start md:self-center xl:text-2xl 2xl:text-3xl text-xl font-semibold underline py-2.5 "
                    href="/{{app()->getLocale()}}/contact/agency">{{__('contact_page.agency_link')}}</a>
             </div>
             @if(session('success'))
@@ -25,7 +25,7 @@
                     <p class="mt-1 text-green-700 text-xl">{{session('success')}}</p>
                 </div>
             @else
-                <div class="flex  mt-14">
+                <div class="flex mt-14">
                     <form action="/{{app()->getLocale()}}/contact/agency" method="post" class="flex-1 px-10 xl:px-0"
                           enctype="multipart/form-data">
                         @csrf
@@ -115,15 +115,12 @@
                                 <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                             </div>
                             @enderror
-                            <textarea
-                                class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100"
-                                name="message" id="message" cols="30" rows="10"
-                                placeholder="{{__('contact_page.agency_description_value')}}">{{old('message')}}</textarea>
+                            <textarea class="border border-orange-500 rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-3 focus:outline-green-700 border focus:bg-orange-100" name="message" id="message" cols="30" rows="10" placeholder="{{__('contact_page.agency_description_value')}}">{{old('message')}}</textarea>
                         </div>
                         <div class="slide-in">
                         <span class="text-green-500 text-lg mb-12 xl:text-2xl 2xl:text-3xl">{{__('contact_page.agency_aptitude_value')}}</span>
-                            <div class="flex mt-6 ">
-                                <div class="border-r border-orange-500 pr-20">
+                            <div class="flex flex-col md:flex-row mt-6 ">
+                                <div class="border-b pb-10 md:border-r md:border-b-0 border-orange-500 md:pr-20 md:pb-0">
                                     <span class="text-green-500 xl:text-xl 2xl:text-2xl mb-4">{{__('contact_page.agency_language')}}</span><br>
                                     <div class="flex flex-col mt-4">
                                         @foreach($languages as $language)
@@ -166,7 +163,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="pl-20">
+                                <div class="mt-10 md:mt-0 md:pl-20">
                                     <span class="text-green-500 xl:text-xl 2xl:text-2xl">{{__('contact_page.agency_software')}}</span><br>
                                     <div class="flex flex-col mt-4">
                                         @foreach($softwares as $software)

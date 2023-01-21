@@ -10,7 +10,7 @@
             <x-sort_search.search id="offer" class="min-w-[20%]" :urlAction="$urlAction"/>
         </div>
         <x-sort_search.sort_by_offer  :urlAction="$urlAction" :jobs="$jobs" :agencies="$agencies"/>
-        <div class="flex xl:gap-20 md:justify-start md:gap-x-10 mb-12 justify-between xl:justify-start">
+        <div class="flex md:flex-row flex-col xl:gap-20 md:justify-start md:gap-x-10 mb-12 justify-between xl:justify-start">
             <a class="hover:text-orange-500 xl:text-xl  2xl:text-2xl text-lg underline text-green-700 font-semibold font-sans px-5 py-2"
                href="/{{app()->getLocale()}}/entreprise/partner">{{__('agency.partner_link')}}</a>
             <a class=" xl:text-xl text-lg underline  2xl:text-2xl text-green-700 bg-orange-100 rounded-lg font-semibold font-sans px-5 py-2"

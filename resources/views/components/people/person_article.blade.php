@@ -8,7 +8,7 @@
 @endphp
 
 <article
-    {{ $attributes->class(['slide-in hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl']) }}
+    {{ $attributes->class(['md:slide-in hover:bg-orange-100 group relative flex flex-col bg-yellow-100 py-3 px-4 xl:py-6 xl:px-8 rounded-3xl']) }}
     aria-labelledby="{{$person_ref->slug}}">
     <div class="flex flex-1 items-center">
         <div class="flex-1 order-2 ml-4">

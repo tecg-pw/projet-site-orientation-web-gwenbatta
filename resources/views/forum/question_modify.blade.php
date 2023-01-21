@@ -18,7 +18,7 @@
                         role="heading" id="question">
                         {{__('forum_question.title_modify')}}
                     </h2>
-                    <a class="hover:text-orange-500 font-sans mt-3 md:text-xl self-end xl:mt-6 md:text-end text-green-700 xl:text-2xl 2xl:text-3xl font-semibold underline flex-1 2xl:text-3xl"
+                    <a class="hover:text-orange-500 font-sans mt-3 md:text-xl md:self-end xl:mt-6 md:text-end text-green-700 xl:text-2xl 2xl:text-3xl font-semibold underline flex-1 2xl:text-3xl"
                        href="/{{app()->getLocale()}}/forum/index">{{__('forum_question.back')}}</a>
                 </div>
             </div>
