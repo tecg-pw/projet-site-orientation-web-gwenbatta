@@ -3,24 +3,24 @@
     'teacher_ref'
 ])
 <article {{ $attributes->class(['slide-in lg:even:mt-36 lg:even:ml-10 xl:even:ml-0 sm:gap-x-4 lg:odd:mt-0 mt-16 sm:flex xl:max-w-[100%] lg:max-w-[87%] lg:block relative group']) }} aria-labelledby="{{$teacher_ref->slug}}">
-    <picture class="rounded-lg lg:absolute -z-10 -top-[80%] group-even:-top-[140%] lg:group-even:-top-[120%] xl:group-even:-top-[140%] mb-1.5 lg:mb-0 2xl:mb-2">
+    <picture class="rounded-lg lg:absolute -z-10 -top-[80%] group-even:-top-[140%] lg:group-even:-top-[150%] xl:group-even:-top-[140%] 2xl:group-even:-top-[90%] 2xl:-top-[50%] mb-1.5 lg:mb-0 2xl:mb-2 3xl:group-even:-top-[140%] 3xl:-top-[80%]">
         @if($teacher_ref->srcset && $teacher_ref->srcset['full'])
             @foreach($teacher_ref->srcset['full'] as $size => $path)
                 <source media="(max-width: {{$size}}px)" srcset="/{{$path}}">
             @endforeach
         @endif
         <img
-            src="{{$teacher_ref->logos && $teacher_ref->logos['full'] ? '/' . $teacher_ref->logos['full'] : '/'.$teacher_ref->logo}}"
+            src="{{$teacher_ref->avatars && $teacher_ref->avatars['full'] ? '/' . $teacher_ref->avatars['full'] : '/'.$teacher_ref->avatar}}"
             alt="{{$teacher_ref->title}}" class="xl:mb-16 mb-6 rounded-3xl">
     </picture>
-    <div class="2xl:-bottom-32 2xl:max-w-[80%] relative lg:bg-yellow-100 sm:flex sm:flex-col sm:justify-center lg:block rounded-xl px-4 py-8 lg:left-10">
+    <div class="2xl:-bottom-32 relative lg:bg-yellow-100 sm:flex sm:flex-col sm:justify-center lg:block rounded-xl px-4 py-8 lg:left-10">
         <h3 class="font-medium text-xl xl:text-2xl 2xl:text-3xl mb-2 xl:mb-5" id="{{$teacher_ref->slug}}" aria-level="3" role="heading">
             <a class="hover:text-orange-500"
                href="/{{app()->getLocale()}}/bottin/{{$teacher_ref->status === 'teachalumni'? 'teachalumni':'teacher'}}/{{$teacher_ref->slug}}">{{$teacher_ref->firstname}} {{$teacher_ref->name}}</a>
         </h3>
         <a class="hover:text-orange-500 text-lg xl:text-xl 2xl:text-2xl underline text-green-700"
            href="mailto:{{$teacher_ref->mail}}">{{$teacher_ref->mail}}</a>
-        <div class="flex lg:flex-row flex-col gap-y-3 {{$teacher_ref->status === 'teachalumni'? 'xl:gap-40 lg:gap-24 2xl:gap-72': 'lg:gap-44 2xl:gap-96'}} lg:items-center mt-4 ">
+        <div class="flex lg:flex-row flex-col gap-y-3 {{$teacher_ref->status === 'teachalumni'? 'xl:gap-24 lg:gap-24 2xl:gap-48': 'lg:gap-44 2xl:gap-52'}} lg:items-center mt-4 ">
             <div class="flex gap-3">
                 <div class="relative hover:scale-110">
                     <svg class="2xl:w-[35px]" xmlns="http://www.w3.org/2000/svg" width="25"
