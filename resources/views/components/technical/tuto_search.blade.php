@@ -3,7 +3,7 @@
     'tuto'
 ])
 <article
-    {{ $attributes->class(['md:slide-in relative py-6 px-8 rounded-3xl']) }} aria-labelledby="{{$tuto_ref->slug}}">
+    {{ $attributes->class(['slide-in relative py-6 px-8 rounded-3xl']) }} aria-labelledby="{{$tuto_ref->slug}}">
     <div class="flex justify-between">
         <div class="flex-1 flex justify-between">
             <h4 id="{{$tuto_ref->slug}}" aria-level="4" role="heading" class="first-letter:uppercase hover-within:text-orange-500 text-lg font-medium xl:text-2xl mb-1.5 2xl:text-3xl">

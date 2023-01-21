@@ -16,68 +16,14 @@ class TutoController extends Controller
      */
     public function index(string $locale = null)
     {
-        $searchTerm = request()->input('search') ?? '';
-        $sortLanguages = request()->input('languages') ?? 'all';
-        $sortDate = request()->input('date') ?? 'all';
-        $ids = [];
-        if ($searchTerm) {
-            $references = TutoTranslation::query()
-                ->where('locale', $locale)
-                ->where(function ($query) use ($searchTerm) {
-                    $query->where('name', 'like', '%' . $searchTerm . '%')
-                        ->orWhere('languages', 'like', '%' . $searchTerm . '%')
-                        ->orWhere('excerpt', 'like', '%' . $searchTerm . '%');
-                })->get();
-            foreach ($references as $reference) {
-                $ids [] = $reference->tuto_id;
-            };
-            $tutos = Tuto::whereIn('id', $ids)->paginate(8);
-        } //OK
-        elseif ($sortLanguages === 'all' && $sortDate === 'all') {
-            $tutos = Tuto::paginate(8);
-        }
-        elseif ($sortLanguages === 'all') {
-            $references = TutoTranslation::query()
-                ->where('locale', $locale)
-                ->where('created_at', $sortDate)->get();
-            foreach ($references as $reference) {
-                $ids [] = $reference->tuto_id;
-            };
-            $tutos = Tuto::whereIn('id', $ids)->paginate(8);
-        }
-        elseif ($sortDate === 'all') {
-            $references = TutoTranslation::query()
-                ->where('locale', $locale)
-                ->where('languages', $sortLanguages)
-                ->get();
-            foreach ($references as $reference) {
-                $ids [] = $reference->tuto_id;
-            };
-            $tutos = Tuto::whereIn('id', $ids)->paginate(8);
-
-        }
-        elseif ($sortLanguages && $sortDate) {
-            $references = TutoTranslation::query()
-                ->where('locale', $locale)
-                ->where('languages', $sortLanguages)
-                ->where('created_at', $sortDate)
-                ->get();
-
-            foreach ($references as $reference) {
-                $ids [] = $reference->tuto_id;
-            };
-            $tutos = Tuto::whereIn('id', $ids)->paginate(8);
-        } else {
-            $tutos = Tuto::paginate(8);
-        }
+        $tutos = $this->getTutos($locale);
         $languages = TutoTranslation::select('languages')->where('locale', $locale)->groupBy('languages')->get();
         $date = TutoTranslation::select('created_at')->where('locale', $locale)->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at', 'DESC')->get();
 
         return view('technical.tuto', compact('tutos', 'languages', 'date'));
     }
 
-    public function ajax(string $locale = null)
-    {
+    private function getTutos(string $locale = null){
         $searchTerm = request()->input('search') ?? '';
         $sortLanguages = request()->input('languages') ?? 'all';
         $sortDate = request()->input('date') ?? 'all';
@@ -132,7 +78,12 @@ class TutoController extends Controller
         } else {
             $tutos = Tuto::paginate(8);
         }
+        return $tutos;
+    }
 
+    public function ajax(string $locale = null)
+    {
+        $tutos = $this->getTutos($locale);
         $languages = TutoTranslation::select('languages')->where('locale', $locale)->groupBy('languages')->get();
         $date = TutoTranslation::select('created_at')->where('locale', $locale)->whereNot('created_at', null)->groupBy('created_at')->orderBy('created_at', 'DESC')->get();
 

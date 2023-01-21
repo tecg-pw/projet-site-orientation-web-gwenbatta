@@ -17,76 +17,14 @@ class PersonController extends Controller
      */
     public function index(string $locale = null)
     {
-        $sortStatus = request()->input('status') ?? 'all';
-        $sortYear = request()->input('year') ?? 'all';
-        $searchTerm = request()->input('search') ?? '';
-        $ids = [];
-
-        if ($searchTerm) {
-            $references = PersonTranslation::query()
-                ->where('locale', $locale)
-                ->where('name', 'like', '%' . $searchTerm . '%')
-                ->orWhere('firstname', 'like', '%' . $searchTerm . '%')
-                ->where('locale', $locale)
-                ->orWhere('status', 'like', '%' . $searchTerm . '%')
-                ->where('locale', $locale)
-                ->orWhere('begin', 'like', '%' . $searchTerm . '%')
-                ->where('locale', $locale)
-                ->orWhere('end', 'like', '%' . $searchTerm . '%')
-                ->where('locale', $locale)
-                ->get();
-
-            foreach ($references as $reference) {
-                $ids [] = $reference->people_id;
-            }
-            $people = People::whereIn('id', $ids)->paginate(8);
-
-        }
-        elseif ($sortStatus === 'all' && $sortYear === 'all') {
-            $people = People::paginate(8);
-        }
-        elseif ($sortStatus === 'all') {
-            $references = PersonTranslation::query()
-                ->where('end', $sortYear)
-                ->get();
-
-            foreach ($references as $reference) {
-                $ids [] = $reference->people_id;
-            }
-            $people = People::whereIn('id', $ids)->paginate(8);
-        }
-        elseif ($sortYear === 'all') {
-            $references = PersonTranslation::query()
-                ->where('status', $sortStatus)
-                ->get();
-
-            foreach ($references as $reference) {
-                $ids [] = $reference->people_id;
-            }
-            $people = People::whereIn('id', $ids)->paginate(8);
-        }
-        elseif ($sortYear && $sortStatus) {
-            $references = PersonTranslation::query()
-                ->where('status', $sortStatus)
-                ->where('end', $sortYear)
-                ->get();
-
-            foreach ($references as $reference) {
-                $ids [] = $reference->people_id;
-            }
-            $people = People::whereIn('id', $ids)->paginate(8);
-        }
-        else {
-            $people = People::paginate(8);
-        }
-
+        $people = $this->getPeople($locale);
         $testimonials = Testimonial::take(4)->orderBy('created_at')->get();
         $status = PersonTranslation::select('status')->where('locale', $locale)->groupBy('status')->get();
         $years_end = PersonTranslation::select('end')->where('locale', $locale)->whereNot('end', null)->groupBy('end')->orderBy('end', 'DESC')->get();
         return view('bottin', compact('people', 'status', 'years_end', 'testimonials'));
     }
 
-    public function ajax(string $locale = null)
+    private function getPeople(string $locale = null)
     {
         $sortStatus = request()->input('status') ?? 'all';
         $sortYear = request()->input('year') ?? 'all';
@@ -112,11 +50,9 @@ class PersonController extends Controller
             }
             $people = People::whereIn('id', $ids)->paginate(8);
 
-        }
-        elseif ($sortStatus === 'all' && $sortYear === 'all') {
+        } elseif ($sortStatus === 'all' && $sortYear === 'all') {
             $people = People::paginate(8);
-        }
-        elseif ($sortStatus === 'all') {
+        } elseif ($sortStatus === 'all') {
             $references = PersonTranslation::query()
                 ->where('end', $sortYear)
                 ->get();
@@ -125,8 +61,7 @@ class PersonController extends Controller
                 $ids [] = $reference->people_id;
             }
             $people = People::whereIn('id', $ids)->paginate(8);
-        }
-        elseif ($sortYear === 'all') {
+        } elseif ($sortYear === 'all') {
             $references = PersonTranslation::query()
                 ->where('status', $sortStatus)
                 ->get();
@@ -135,8 +70,7 @@ class PersonController extends Controller
                 $ids [] = $reference->people_id;
             }
             $people = People::whereIn('id', $ids)->paginate(8);
-        }
-        elseif ($sortYear && $sortStatus) {
+        } elseif ($sortYear && $sortStatus) {
             $references = PersonTranslation::query()
                 ->where('status', $sortStatus)
                 ->where('end', $sortYear)
@@ -146,11 +80,15 @@ class PersonController extends Controller
                 $ids [] = $reference->people_id;
             }
             $people = People::whereIn('id', $ids)->paginate(8);
-        }
-        else {
+        } else {
             $people = People::paginate(8);
         }
+        return $people;
+    }
 
+    public function ajax(string $locale = null)
+    {
+        $people = $this->getPeople($locale);
         $testimonials = Testimonial::take(4)->orderBy('created_at')->get();
         $status = PersonTranslation::select('status')->where('locale', $locale)->groupBy('status')->get();
         $years_end = PersonTranslation::select('end')->where('locale', $locale)->whereNot('end', null)->groupBy('end')->orderBy('end', 'DESC')->get();
@@ -224,4 +162,6 @@ class PersonController extends Controller
     {
         //
     }
+
+
 }
