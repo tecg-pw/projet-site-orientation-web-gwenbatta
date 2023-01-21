@@ -14,6 +14,8 @@ import {MyAnswers} from "./Models/MyAnswers";
 window.addEventListener('load', init);
 const siteUrl = 'http://tecweb.test/';
 let buttonSearches = document.getElementsByClassName('filter');
+let nav = document.querySelector('[aria-labelledby="navigation"]') as HTMLElement;
+let burger = document.querySelector('.burger_position') as HTMLDivElement;
 let searchInputOffer = document.querySelector('#offer #search') as HTMLInputElement;
 let searchInputPartner = document.querySelector('#partner #search') as HTMLInputElement;
 let sortSelectCityEntreprise = document.querySelector('#cities') as HTMLSelectElement;
@@ -114,7 +116,10 @@ function init() {
     handlePassword();
     burgerMenu();
 }
-
+window.addEventListener('resize', ()=>{
+    let test = window.innerHeight - nav.clientHeight
+    burger.style.height = test + 'px';
+})
 const stateSearchGlobal = {
     search_bar: '',
     page: 1,
@@ -184,6 +189,8 @@ function burgerMenu() {
     let body = document.body as HTMLBodyElement;
 
     checkbox.addEventListener('change', (e) => {
+        let test = window.innerHeight - nav.clientHeight
+        burger.style.height = test + 'px';
         // @ts-ignore
         if (e.currentTarget.checked) {
             body.classList.add('overflow-hidden')

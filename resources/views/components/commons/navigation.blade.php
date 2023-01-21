@@ -5,7 +5,7 @@
     $urlAction = "/"
 @endphp
 <!doctype html>
-<html lang="{{app()->getLocale()}}">
+<html lang="{{app()->getLocale()}}" class="relative">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -51,7 +51,7 @@
     <h1 class="sr-only" aria-level="1" role="heading"
         id="body">{{__('nav.main_title')}}</h1>
     <a href="/{{app()->getLocale()}}/#content" class="sr-only">{{__('nav.nav_avoid content')}}</a>
-    <nav class="flex flex-col relative fixed" aria-labelledby="navigation">
+    <nav class="flex flex-col" aria-labelledby="navigation">
         <h2 class="sr-only" id="navigation" role="heading" aria-level="2">{{__('nav.nav_title')}}</h2>
         <div class="bg-green-700 text-white-100 font-sans flex gap-x-10 justify-between lg:px-16 xl:px-32 2xl:px-48 px-2.5 py-2 xl:py-4 font-semibold text-lg xl:text-xl 2xl:text-2xl">
             <ul class="flex gap-x-1">
@@ -183,7 +183,7 @@
                     <div class="w-8 h-0.5 bg-green-700"></div>
                 </div>
             </div>
-            <div class="burger_position bg-green-200 min-w-full min-h-full z-20 ">
+            <div class="burger_position bg-green-200 min-w-full z-20 ">
                 <ul class="xl:max-w-[30%] flex-1 bg-green-700 font-sans text-lg xl:text-xl 2xl:text-2xl text-white-100 font-semibold flex flex-col justify-between py-6 gap-4 xl:gap-6 xl:py-7 2xl:py-10 px-5 h-full">
                     <li class="border-b-2 border-b-white-100/40 pb-0.5 xl:pb-2">
                         <a class="group flex flex-1 justify-between" href="/{{app()->getLocale()}}/project/index">

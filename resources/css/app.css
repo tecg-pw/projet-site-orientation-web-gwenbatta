@@ -63,8 +63,10 @@
     #burger:checked ~ .burger_position {
         position: absolute;
         top: 100%;
-        left: 0px;
-        min-height: 100%;
+        left: 0;
+        bottom: 0;
+        height: max-content;
+        /*min-height: 100%;*/
     }
     .isCheck{
         display: none;
