@@ -7,11 +7,13 @@ import {Offers} from "./Models/Offers";
 import {Partners} from "./Models/Partners";
 import {People} from "./Models/People";
 import {Alumnis} from "./Models/Alumnis";
-
+import {LatestSubjects} from "./Models/LatestSubjects";
+import {MySubjects} from "./Models/MySubjects";
+import {LatestAnswers} from "./Models/LatestAnswers";
+import {MyAnswers} from "./Models/MyAnswers";
 window.addEventListener('load', init);
 const siteUrl = 'http://tecweb.test/';
 let buttonSearches = document.getElementsByClassName('filter');
-
 let searchInputOffer = document.querySelector('#offer #search') as HTMLInputElement;
 let searchInputPartner = document.querySelector('#partner #search') as HTMLInputElement;
 let sortSelectCityEntreprise = document.querySelector('#cities') as HTMLSelectElement;
@@ -48,11 +50,6 @@ let searchGlobalInput = document.querySelector('#search_bar') as HTMLInputElemen
 let forms = document.querySelectorAll('.forms') as NodeListOf<HTMLFormElement>;
 let searchInputProject = document.querySelector('#project #search') as HTMLInputElement;
 let searchInputNew = document.querySelector('#new #search') as HTMLInputElement;
-let containerAlumni = document.getElementById('containerAlumni')
-let containerLatestSubject = document.getElementById('containerLatestSubject')
-let containerLatestAnswer = document.getElementById('containerLatestAnswer')
-let containerMySubject = document.getElementById('containerMySubject')
-let containerMyAnswer = document.getElementById('containerMyTalks')
 let containerGlobal = document.getElementById('content')
 let pdf = document.getElementById('pdf') as HTMLInputElement;
 let textInput = document.querySelector('.textInput');
@@ -83,55 +80,46 @@ function init() {
         new News(siteUrl, slideInView);
     }
     if (searchInputOffer !== null || sortSelectAgencyOffer !== null || sortSelectJobsEntreprise !== null) {
-     new Offers(siteUrl,slideInView);
+        new Offers(siteUrl, slideInView);
     }
     if (searchInputPartner !== null || sortSelectAgencyPartner !== null || sortSelectCityEntreprise !== null) {
-        new Partners(siteUrl,slideInView);
+        new Partners(siteUrl, slideInView);
     }
     if (searchInputTuto !== null || sortSelectDateTuto !== null || sortSelectLanguageTuto !== null) {
         new Tutos(siteUrl, slideInView);
     }
     if (searchInputBottin !== null || sortSelectDateBottin !== null || sortSelectStatusBottin !== null) {
-         new People(siteUrl,slideInView);
+        new People(siteUrl, slideInView);
     }
     if (searchInputGlossary !== null) {
         new Glossaries(siteUrl, slideInView);
     }
     if (searchInputAlumni !== null || sortSelectDateAlumni !== null || sortSelectStatusAlumni !== null) {
-        new Alumnis(siteUrl,slideInView);
+        new Alumnis(siteUrl, slideInView);
     }
-    // new Subjects(siteUrl,slideInView);
-    // new Answers(siteUrl,slideInView);
+    if (searchInputLatestSubject !== null || sortSelectDateLatestSubject !== null || sortSelectStatusLatestSubject !== null || sortSelectTagLatestSubject !== null) {
+        new LatestSubjects(siteUrl, slideInView);
+    }
+    if (searchInputMySubject !== null || sortSelectDateMySubject !== null || sortSelectStatusMySubject !== null || sortSelectTagMySubject !== null) {
+        new MySubjects(siteUrl, slideInView);
+    }
+    if (searchInputLatestAnswer !== null || sortSelectDateLatestAnswer !== null || sortSelectStatusLatestAnswer !== null || sortSelectTagLatestAnswer !== null) {
+        new LatestAnswers(siteUrl, slideInView);
+    }
+    if (searchInputMyAnswer !== null || sortSelectDateMyAnswer !== null || sortSelectStatusMyAnswer !== null || sortSelectTagMyAnswer !== null) {
+        new MyAnswers(siteUrl, slideInView);
+    }
+
     slideInView();
     handlePassword();
     burgerMenu();
 }
 
-const stateSearch = {
-    search: '',
-    page: 1,
-}
 const stateSearchGlobal = {
     search_bar: '',
     page: 1,
 }
-const stateSortPeople = {
-    status: 'all',
-    year: 'all',
-    page: 1
-}
 
-const stateSortOffer = {
-    jobs: 'all',
-    agency: 'all',
-    page: 1
-}
-const stateSortForum = {
-    tags: 'all',
-    status: 'all',
-    year: 'all',
-    page: 1
-}
 
 for (let i = 0; i < buttonSearches.length; i++) {
     buttonSearches[i].classList.add('sr-only')
@@ -251,406 +239,6 @@ function slideInView() {
 }
 
 
-
-
-
-
-if (searchInputAlumni !== null) {
-    searchInputAlumni.value = '';
-    searchInputAlumni.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestAlumni()
-    })
-}
-if (searchInputLatestSubject !== null) {
-    searchInputLatestSubject.value = '';
-    searchInputLatestSubject.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestLatestSubject()
-    })
-}
-if (searchInputLatestAnswer !== null) {
-    searchInputLatestAnswer.value = '';
-    searchInputLatestAnswer.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestLatestAnswer()
-    })
-}
-if (searchInputMySubject !== null) {
-    searchInputMySubject.value = '';
-    searchInputMySubject.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestMySubject()
-    })
-}
-if (searchInputMyAnswer !== null) {
-    searchInputMyAnswer.value = '';
-    searchInputMyAnswer.addEventListener('input', (e) => {
-        stateSearch.search = (e.currentTarget as HTMLInputElement).value;
-        stateSearch.page = 1;
-        makeRequestMyAnswer()
-    })
-}
-
-
-
-
-
-
-
-
-
-function makeRequestAlumni() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/bottin/alumni/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableAlumni(data));
-}
-
-function makeRequestLatestSubject() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/forum/index/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data, containerLatestSubject));
-}
-
-function makeRequestLatestAnswer() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/forum/latest-answers/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableAnswer(data, containerLatestAnswer));
-}
-
-function makeRequestMySubject() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/forum/my-subject/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data, containerMySubject));
-}
-
-function makeRequestMyAnswer() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/forum/my-talks/ajax?` + new URLSearchParams(stateSearch);
-    history.pushState(stateSearch, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableAnswer(data, containerMyAnswer));
-}
-
-
-
-
-
-
-
-
-
-function updateDataTableAlumni(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    containerAlumni.innerHTML = data
-    let names = document.querySelectorAll('.name')
-    let firstnames = document.querySelectorAll('.firstname')
-    let status = document.querySelectorAll('.status')
-    let begins = document.querySelectorAll('.begin')
-    let ends = document.querySelectorAll('.end')
-    // @ts-ignore
-    for (const name of names) {
-        name.innerHTML = name.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const firstname of firstnames) {
-        firstname.innerHTML = firstname.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const statusElement of status) {
-        let str = statusElement.innerHTML.replace(/<[^>]+>/g, '')
-        statusElement.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const begin of begins) {
-        begin.innerHTML = begin.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const end of ends) {
-        end.innerHTML = end.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-
-    slideInView();
-    //handlepaginationBottin();
-}
-
-function updateDataTableSubject(data, container) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    container.innerHTML = data
-    let titles = document.querySelectorAll('.search-title')
-
-    // @ts-ignore
-    for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    slideInView();
-    handlepaginationSubject();
-}
-
-function updateDataTableAnswer(data, container) {
-    let match = new RegExp(stateSearch.search, 'gi')
-    container.innerHTML = data
-    let titles = document.querySelectorAll('.search-title')
-    let comments = document.querySelectorAll('.search-comment')
-    // @ts-ignore
-    for (const title of titles) {
-        title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    for (const comment of comments) {
-        let str = comment.innerHTML.replace(/<[^>]+>/g, '')
-        comment.innerHTML = str.replace(match, `<mark>${stateSearch.search}</mark>`)
-    }
-    // @ts-ignore
-    slideInView();
-    handlepaginationAnswer();
-}
-
-
-
-
-
-
-
-
-function handlepaginationSubject() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestLatestSubject()
-            makeRequestMySubject()
-        })
-    }
-}
-
-function handlepaginationAnswer() {
-    let paginations = document.querySelectorAll('#pagination a') as NodeList;
-    // @ts-ignore
-    for (const pagination of paginations) {
-        pagination.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (e.currentTarget.classList.contains('previous')) {
-                stateSearch.page -= 1
-            } else if (e.currentTarget.classList.contains('next')) {
-                stateSearch.page += 1
-            } else {
-                stateSearch.page = parseInt(e.currentTarget.dataset.page)
-            }
-            makeRequestLatestAnswer()
-            makeRequestMyAnswer()
-        })
-    }
-}
-
-
-
-
-
-
-if (sortSelectDateAlumni !== null) {
-    sortSelectDateAlumni.value = 'all';
-    sortSelectDateAlumni.addEventListener('change', (e) => {
-        stateSortPeople.year = (e.currentTarget as HTMLSelectElement).value;
-        stateSortPeople.page = 1;
-        makeRequestAlumniSort()
-    })
-}
-if (sortSelectStatusAlumni !== null) {
-    sortSelectStatusAlumni.value = 'all';
-    sortSelectStatusAlumni.addEventListener('change', (e) => {
-        stateSortPeople.status = (e.currentTarget as HTMLSelectElement).value;
-        stateSortPeople.page = 1;
-        makeRequestAlumniSort()
-    })
-}
-
-function makeRequestAlumniSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/bottin/alumni/ajax?` + new URLSearchParams(stateSortPeople);
-    history.pushState(stateSortPeople, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableAlumni(data));
-}
-
-if (sortSelectStatusLatestSubject !== null) {
-    sortSelectStatusLatestSubject.value = 'all';
-    sortSelectStatusLatestSubject.addEventListener('change', (e) => {
-        stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestLatestSubjectSort()
-
-    })
-}
-if (sortSelectTagLatestSubject !== null) {
-    sortSelectTagLatestSubject.value = 'all';
-    sortSelectTagLatestSubject.addEventListener('change', (e) => {
-        stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestLatestSubjectSort()
-    })
-}
-if (sortSelectDateLatestSubject !== null) {
-    sortSelectDateLatestSubject.value = 'all';
-    sortSelectDateLatestSubject.addEventListener('change', (e) => {
-        stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestLatestSubjectSort()
-    })
-}
-
-if (sortSelectStatusLatestAnswer !== null) {
-    sortSelectStatusLatestAnswer.value = 'all';
-    sortSelectStatusLatestAnswer.addEventListener('change', (e) => {
-        stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestLatestAnswerSort()
-
-    })
-}
-if (sortSelectTagLatestAnswer !== null) {
-    sortSelectTagLatestAnswer.value = 'all';
-    sortSelectTagLatestAnswer.addEventListener('change', (e) => {
-        stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestLatestAnswerSort()
-    })
-}
-if (sortSelectDateLatestAnswer !== null) {
-    sortSelectDateLatestAnswer.value = 'all';
-    sortSelectDateLatestAnswer.addEventListener('change', (e) => {
-        stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestLatestAnswerSort()
-    })
-}
-
-if (sortSelectStatusMySubject !== null) {
-    sortSelectStatusMySubject.value = 'all';
-    sortSelectStatusMySubject.addEventListener('change', (e) => {
-        stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestMySubjectSort()
-
-    })
-}
-if (sortSelectTagMySubject !== null) {
-    sortSelectTagMySubject.value = 'all';
-    sortSelectTagMySubject.addEventListener('change', (e) => {
-        stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestMySubjectSort()
-    })
-}
-if (sortSelectDateMySubject !== null) {
-    sortSelectDateMySubject.value = 'all';
-    sortSelectDateMySubject.addEventListener('change', (e) => {
-        stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestMySubjectSort()
-    })
-}
-
-if (sortSelectStatusMyAnswer !== null) {
-    sortSelectStatusMyAnswer.value = 'all';
-    sortSelectStatusMyAnswer.addEventListener('change', (e) => {
-        stateSortForum.status = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestMyAnswerSort()
-
-    })
-}
-if (sortSelectTagMyAnswer !== null) {
-    sortSelectTagMyAnswer.value = 'all';
-    sortSelectTagMyAnswer.addEventListener('change', (e) => {
-        stateSortForum.tags = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestMyAnswerSort()
-    })
-}
-if (sortSelectDateMyAnswer !== null) {
-    sortSelectDateMyAnswer.value = 'all';
-    sortSelectDateMyAnswer.addEventListener('change', (e) => {
-        stateSortForum.year = (e.currentTarget as HTMLSelectElement).value;
-        stateSortForum.page = 1;
-        makeRequestMyAnswerSort()
-    })
-}
-
-
-function makeRequestLatestSubjectSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/forum/index/ajax?` + new URLSearchParams(stateSortForum);
-    history.pushState(stateSortForum, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data, containerLatestSubject));
-}
-
-function makeRequestLatestAnswerSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/forum/latest-answers/ajax?` + new URLSearchParams(stateSortForum);
-    history.pushState(stateSortForum, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data, containerLatestAnswer));
-}
-
-function makeRequestMySubjectSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/forum/my-subject/ajax?` + new URLSearchParams(stateSortForum);
-    history.pushState(stateSortForum, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data, containerMySubject));
-}
-
-function makeRequestMyAnswerSort() {
-    let locale = window.location.pathname.split('/');
-    // @ts-ignore
-    let url = `${siteUrl}${locale[1]}/forum/my-talks/ajax?` + new URLSearchParams(stateSortForum);
-    history.pushState(stateSortForum, '', url.replace('/ajax', ''))
-    fetch(url)
-        .then((response) => response.text())
-        .then((data) => updateDataTableSubject(data, containerMyAnswer));
-}
-
 if (avatar !== null) {
     updateImageModifyProfil()
 }
@@ -671,7 +259,6 @@ if (searchGlobalInput !== null) {
 
 function makeRequestGlobal() {
     let locale = window.location.pathname.split('/');
-    //window.location.href = `${siteUrl}${locale[1]}/search`
     // @ts-ignore
     let url = `${siteUrl}${locale[1]}/search/ajax?` + new URLSearchParams(stateSearchGlobal);
     history.pushState(stateSearchGlobal, '', url.replace('/ajax', ''))
@@ -681,14 +268,6 @@ function makeRequestGlobal() {
 }
 
 function updateDataTableGlobal(data) {
-    let match = new RegExp(stateSearch.search, 'gi')
     containerGlobal.innerHTML = data
-    // let titles = document.querySelectorAll('h4')
-    // // @ts-ignore
-    // for (const title of titles) {
-    //     title.innerHTML = title.innerHTML.replace(match, `<mark>${stateSearchGlobal.search_bar}</mark>`)
-    // }
-
     slideInView();
-    // handlepaginationProject()
 }
