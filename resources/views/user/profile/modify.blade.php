@@ -1,19 +1,14 @@
 <x-commons.navigation
     :page="$user->firstname .' '.$user->name .' – '. __('user.user_modify_title')"></x-commons.navigation>
 <main id="content">
-    <section class="flex flex-col relative mb-32" aria-labelledby="headsection">
-        <div class="relative">
-            <div
-                class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48">
-                <div class="order-2 flex-1  ml-8 mt-32">
-                    <div>
-                        <h2 role="heading" id="headsection" aria-level="2"
-                            class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mb-3">{{$user->firstname}} {{$user->name}}</h2>
+    <section class="flex flex-col relative mb-14 md:mb-32" aria-labelledby="name">
+        <div class="relative flex-1">
+            <div class="flex flex-1 flex-col sm:flex-row items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48 px-10 lg:px-16 xl:px-32 2xl:px-48 mt-10">
+                <div class="order-2 flex-1 flex-col flex ml-8 ">
+                    <div class="flex-1">
+                        <h2 role="heading" id="name" aria-level="2"
+                            class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mt-4 md:mb-3 md:mt-0">{{$user->firstname}} {{$user->name}}</h2>
                         <p class="uppercase text-lg xl:text-2xl 2xl:text-3xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
-                    </div>
-                    <div class="text-end">
-                        <a href="/{{app()->getLocale()}}/user/profile/{{$user->slug}}"
-                           class="hhover:text-orange-500  font-sans text-green-700 text-lg md:text-xl xl:text-3xl font-semibold underline px-4">{{__('user.user_back')}}</a>
                     </div>
                 </div>
                 <picture>
@@ -37,20 +32,20 @@
                 @endif
                 <img
                     src="{{$user->back_images && $user->back_images['full'] ? '/' . $user->back_images['full'] : '/'.$user->back_image}}"
-                    alt="{{$user->title}}" class="">
+                    alt="{{$user->title}}" class="min-w-full">
             </picture>
         </div>
     </section>
     <section class="xl:px-32 lg:px-16 2xl:px-48 px-10 mb-32" aria-labelledby="modify">
         <h2 role="heading" id="modify" aria-level="2"
             class="text-2xl md:text-3xl md:self-center xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans mb-20">{{__('user.user_modify_title')}}</h2>
-        <div class="flex  mt-14">
+        <div class="flex flex-col md:flex-row mt-14">
             <form action="/{{app()->getLocale()}}/user/modify" method="post" enctype="multipart/form-data"
-                  class="flex-1 flex flex-col lg:flex-row lg:gap-20 xl:gap-24">
+                  class="flex-1 flex flex-col md:flex-row md:gap-12 lg:gap-20 xl:gap-24">
                 @csrf
                 <div class="flex-1">
-                    <div class="flex flex-1">
-                        <div class="flex flex-col flex-1 mr-10 mb-8">
+                    <div class="flex flex-col lg:flex-row flex-1">
+                        <div class="flex flex-col flex-1 md:mr-5 ld:mr-10 mb-8">
                             <label class="text-green-500 @error('name') text-red-400 @enderror text-lg xl:text-2xl 2xl:text-3xl" for="name">{{__('user.user_modify_name')}}</label>
                             @error('name')
                             <div class="flex gap-1.5 items-center">
@@ -113,7 +108,7 @@
                             <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                         </div>
                         @enderror
-                        <div class="flex gap-4 items-center">
+                        <div class="flex flex-col lg:flex-row gap-4 lg:items-center">
                             <label for="avatar"
                                    class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
                                 <span class="flex flex-col justify-center items-center py-5 px-32">
@@ -147,7 +142,7 @@
                             <p class="text-red-500 text-lg font-semibold mt-2">{{ $message }}</p>
                         </div>
                         @enderror
-                        <div class="flex gap-4 items-center">
+                        <div class="flex flex-col lg:flex-row gap-4 lg:items-center">
                             <label for="back_image"
                                    class="px-3 order-3 text-grey-200 flex flex-col justify-center items-center bg-gray-50 rounded-lg border border-orange-500 cursor-pointer">
                                 <span class="flex flex-col justify-center items-center py-5 px-32">
@@ -162,9 +157,8 @@
                                                 srcset="/{{$path}}">
                                     @endforeach
                                 @endif
-                                <img id="backSrcset"
-                                    src="{{$user->back_images && $user->back_images['tiny'] ? '/' . $user->back_images['tiny'] : '/'.$user->back_image}}"
-                                    alt="{{$user->title}}" class="rounded-full -order-2">
+                                <img id="backSrcset" src="{{$user->back_images && $user->back_images['tiny'] ? '/' . $user->back_images['tiny'] : '/'.$user->back_image}}"
+                                     alt="{{$user->title}}" class="rounded-full -order-2">
                             </picture>
                             <img id="backUpdate"
                                  src="{{'/'.$user->back_image}}"
@@ -176,7 +170,7 @@
                     <div class="flex flex-col mb-8">
                         <label class="text-green-500 text-lg xl:text-2xl 2xl:text-3xl" for="status_id">{{__('user.user_modify_status')}}</label>
                         <select name="status_id" id="status_id"
-                                class="2xl:text-xl appearance-none max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
+                                class="2xl:text-xl appearance-none md:max-w-[50%] bg-green-700 text-white-100 font-sans rounded-lg uppercase font-semibold pl-2 pr-4 py-1">
                             @foreach($status as $status_ref)
                                 <option @selected($status_ref->id === $user->status_id)
                                         value="{{$status_ref->id}}">{{mb_strtoupper($status_ref->translation->where('locale',app()->getLocale())->first()->name)}}</option>

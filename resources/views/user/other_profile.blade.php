@@ -1,14 +1,30 @@
 <x-commons.navigation :page="$user->firstname .' '.$user->name"></x-commons.navigation>
 <main id="content">
-    <section class="flex flex-col relative mb-32" aria-labelledby="name">
-        <div class="relative">
-            <div class="flex items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48">
-                <div class="order-2 flex-1 flex-col flex ml-8 mt-32">
-                    <div>
+    <section class="flex flex-col relative mb-14 md:mb-32" aria-labelledby="name">
+        <div class="relative flex-1">
+            <div class="flex flex-1 flex-col sm:flex-row items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48 px-10 lg:px-16 xl:px-32 2xl:px-48 mt-10">
+                <div class="order-2 flex-1 flex-col flex ml-8 ">
+                    <div class="flex-1">
                         <h2 role="heading" id="name" aria-level="2"
-                            class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mb-3">{{$user->firstname}} {{$user->name}}</h2>
+                            class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mt-4 md:mb-3 md:mt-0">{{$user->firstname}} {{$user->name}}</h2>
                         <p class="uppercase text-lg xl:text-2xl 2xl:text-3xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
                     </div>
+                    @if(session('status'))
+                        <div class="mb-4 bg-orange-200 rounded-lg flex items-center gap-x-2 px-4 py-2.5">
+                            <svg class="h-8 w-8 text-green-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M9 12l2 2l4 -4"/>
+                            </svg>
+                            <p class="mt-1 text-green-700 text-lg xl:text-xl 2xl:text-2xl">{{session('status')}}</p>
+                        </div>
+                    @else
+                        <div class="md:text-end mt-4 md:mt-0 flex-1">
+                            <a href="/{{app()->getLocale()}}/user/profile/modify/form"
+                               class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold mb-32">{{__('user.user_modify')}}</a>
+                        </div>
+                    @endif
                 </div>
                 <picture>
                     @if($user->srcset && $user->srcset['full'])
@@ -31,51 +47,29 @@
                 @endif
                 <img
                     src="{{$user->back_images && $user->back_images['full'] ? '/' . $user->back_images['full'] : '/'.$user->back_image}}"
-                    alt="{{$user->title}}" class="">
+                    alt="{{$user->title}}" class="min-w-full">
             </picture>
         </div>
     </section>
     <article class="bg-yellow-600 px-10 lg:px-16 xl:px-32 2xl:px-48 pb-36 pt-20" aria-labelledby="tutos">
-        <div class="flex justify-between">
+        <div class="flex flex-col md:flex-row justify-between">
             <h2 role="heading" id="tutos" aria-level="2"
-                class="xl:text-4xl 2xl:text-5xl text-2xl md:text-3xl uppercase font-extrabold font-sans mb-20">{{__('user.user_favorite_guest')}}</h2>
-            <a class="hover:text-orange-500  font-sans text-green-700 text-lg md:text-xl xl:text-3xl font-semibold underline px-4"
+                class="xl:text-4xl 2xl:text-5xl text-2xl md:text-3xl uppercase font-extrabold font-sans mb-4 md:mb-20">{{__('user.user_favorite_auth')}}</h2>
+            <a class="hover:text-orange-500  font-sans text-green-700 text-lg md:text-xl xl:text-3xl font-semibold underline md:px-4"
                href="/{{app()->getLocale()}}/technical/tuto">{{__('user.tuto_back')}}</a>
         </div>
         <div class="grid grid-cols-2 gap-x-24 gap-y-8">
             @foreach($tutos as $tuto_ref)
-                <article class="bg-white-100 relative flex flex-col py-6 px-8 rounded-3xl"
-                         aria-labelledby="{{$tuto_ref->slug}}">
-                    <div class="flex justify-between">
-                        <div class="flex-1 flex justify-between">
-                            <h3 id="{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->slug}}"
-                                aria-level="3" role="heading"
-                                class="hover-within:text-orange-500 text-lg font-medium xl:text-2xl 2xl:text-3xl mb-1.5">
-                                <a class="hover:text-orange-500"
-                                   href="{{$tuto_ref->translation->where('locale',app()->getLocale())->first()->link}}">
-                                    {{$tuto_ref->translation->where('locale',app()->getLocale())->first()->name}}
-                                </a>
-
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="mb-2.5 xl:mb-6 xl:text-lg 2xl:text-xl">{!!$tuto_ref->translation->where('locale',app()->getLocale())->first()->excerpt!!}</div>
-                    <div class="flex justify-between flex-1 justify-end">
-                        <div class="flex gap-5 flex-1 self-end items-center">
-                            <p class="text-orange-500 font-sans xl:text-lg 2xl:text-xl font-medium">{{ucwords($tuto_ref->translation->where('locale',app()->getLocale())->first()->languages)}}</p>
-                            <p class="xl:text-lg 2xl:text-xl font-medium">{{ucwords($tuto_ref->translation->where('locale',app()->getLocale())->first()->created_at->translatedFormat('d F Y'))}}</p>
-                        </div>
-                    </div>
-                </article>
+                <x-technical.tuto class="bg-yellow-100" :tuto="$tuto_ref" :tuto_ref="$tuto_ref->translation->where('locale',app()->getLocale())->first()"/>
             @endforeach
             @if(count($tutos) === 0)
-                <p class="xl:text-xl 2xl:text-2xl text-lg">{{__('user.user_no_favorite')}}</p>
+                <p class="xl:text-xl 2xl:text-2xl text-lg col-span-2 mt-3">{{__('user.user_no_favorite')}}</p>
             @endif
         </div>
     </article>
-    <section class="px-10 lg:px-16 xl:px-32 2xl:px-48 mt-36 mb-36" aria-labelledby="questions">
+    <section class="px-10 lg:px-16 xl:px-32 2xl:px-48 mt-20 md:mt-32 mb-36" aria-labelledby="questions">
         <h2 role="heading" id="questions" aria-level="2"
-            class="text-2xl md:text-3xl md:self-center xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans mb-20">{{__('user.user_question_title_guest')}}</h2>
+            class="text-2xl md:text-3xl md:self-center xl:text-4xl 2xl:text-5xl uppercase font-extrabold text-yellow-800 font-sans md:mb-20 mb-4">{{__('user.user_question_title_auth')}}</h2>
         <div class="col-span-3 flex flex-col xl:pr-14 ">
             @foreach($subjects as $subject)
                 <article

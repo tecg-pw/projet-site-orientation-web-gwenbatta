@@ -54,13 +54,13 @@ trait HandlesBackImagesUploads
         $full_srcset_back_2040_path = 'img-redimensions/back/srcset/' . 'full-2040-' . $name_back . '.' . $ext_back;
         $full_srcset_back_2560_path = 'img-redimensions/back/srcset/' . 'full-2560-' . $name_back . '.' . $ext_back;
 
-        Image::make($img)->fit( 640, 185)->save($full_srcset_back_640_path);
-        Image::make($img)->fit(2560, 600)->save($full_srcset_back_2560_path);
-        Image::make($img)->fit(2040, 550)->save($full_srcset_back_2040_path);
-        Image::make($img)->fit(1520,435)->save($full_srcset_back_1520_path);
-        Image::make($img)->fit(1280,367)->save($full_srcset_back_1280_path);
-        Image::make($img)->fit(1024,295)->save($full_srcset_back_1024_path);
-        Image::make($img)->fit(758,220)->save($full_srcset_back_768_path);
+        Image::make($img)->fit( 640, 200)->save($full_srcset_back_640_path);
+        Image::make($img)->fit(2560, 500)->save($full_srcset_back_2560_path);
+        Image::make($img)->fit(2040, 414)->save($full_srcset_back_2040_path);
+        Image::make($img)->fit(1520,314)->save($full_srcset_back_1520_path);
+        Image::make($img)->fit(1280,280)->save($full_srcset_back_1280_path);
+        Image::make($img)->fit(1024,245)->save($full_srcset_back_1024_path);
+        Image::make($img)->fit(758,225)->save($full_srcset_back_768_path);
 
         return [
             '640' => $full_srcset_back_640_path,
