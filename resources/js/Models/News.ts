@@ -37,16 +37,16 @@ export class News {
         let dates = document.querySelectorAll('.datesNew')
         // @ts-ignore
         for (const title of titles) {
-            title.innerHTML = title.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            title.innerHTML = title.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const excerpt of excerpts) {
-            let str = excerpt.innerHTML.replace(/<[^>]+>/g, '')
+            let str = excerpt.textContent.innerHTML.replace(/<[^>]+>/g, '')
             excerpt.innerHTML = str.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const date of dates) {
-            date.innerHTML = date.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            date.innerHTML = date.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
         }
         this.slideInView();
         this.handlepaginationNew(state);

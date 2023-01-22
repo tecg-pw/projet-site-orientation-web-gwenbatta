@@ -37,11 +37,11 @@ export class Glossaries {
         let definitions = document.querySelectorAll('.definition')
         // @ts-ignore
         for (const title of titles) {
-            title.innerHTML = title.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            title.innerHTML = title.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const definition of definitions) {
-            let str = definition.innerHTML.replace(/<[^>]+>/g, '')
+            let str = definition.textContent.innerHTML.replace(/<[^>]+>/g, '')
             definition.innerHTML = str.replace(match, `<mark>${state.search}</mark>`)
         }
         this.slideInView();

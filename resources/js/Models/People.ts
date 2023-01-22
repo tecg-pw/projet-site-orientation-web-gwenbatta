@@ -82,24 +82,24 @@ export class People {
         let ends = document.querySelectorAll('.end')
         // @ts-ignore
         for (const name of names) {
-            name.innerHTML = name.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            name.innerHTML = name.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const firstname of firstnames) {
-            firstname.innerHTML = firstname.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            firstname.innerHTML = firstname.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const statusElement of status) {
-            let str = statusElement.innerHTML.replace(/<[^>]+>/g, '')
+            let str = statusElement.textContent.innerHTML.replace(/<[^>]+>/g, '')
             statusElement.innerHTML = str.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const begin of begins) {
-            begin.innerHTML = begin.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            begin.innerHTML = begin.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const end of ends) {
-            end.innerHTML = end.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            end.innerHTML = end.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
         }
 
         this.slideInView();
