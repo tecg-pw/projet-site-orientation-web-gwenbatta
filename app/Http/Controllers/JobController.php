@@ -32,7 +32,6 @@ class JobController extends Controller
             $alumnis [] = People::find($alumni->people_id);
         }
 
-//        $alumnis = People::all();
         $jobs = Opportunity::where('id','<>', $job->opportunity_id)->take(4)->get();
         return view('about.job.single', compact('job', 'jobs', 'locales','alumnis'));
     }
