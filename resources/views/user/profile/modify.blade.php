@@ -242,7 +242,7 @@
                     <div class="flex flex-col mb-8 ">
                         <label class="2xl:text-3xl text-green-500 text-2xl"
                                for="description">{{__('user.user_modify_description')}}</label>
-                        <x-forms.tinymce-editor :name="'description'" :placeholder="'user.user_modify_description'">{{old('description')?:$user->description}}}</x-forms.tinymce-editor>
+                        <x-forms.tinymce-editor :name="'description'" :placeholder="'user.user_modify_description'">{{old('description')?:$user->description}}</x-forms.tinymce-editor>
                     </div>
                     <div class="flex mb-8 items-center gap-3">
                         <input class="checkbox mb-1 absolute cursor-pointer opacity-0 z-30 w-6 h-6" type="checkbox"  @if($user->newsletter) checked @endif
