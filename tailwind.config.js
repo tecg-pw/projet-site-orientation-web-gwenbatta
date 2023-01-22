@@ -11,6 +11,9 @@ module.exports = {
                 "3xl": "2040px",
                 "4xl": "2520px"
             },
+            margin:{
+                '74px' :' 300px'
+            },
             fontFamily: {
                 body: ['Hind', 'sans-serif'],
                 sans: ['Montserrat', 'sans-serif']

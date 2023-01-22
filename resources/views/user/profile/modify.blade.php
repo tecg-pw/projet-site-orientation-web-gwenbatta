@@ -3,7 +3,7 @@
 <main id="content">
     <section class="flex flex-col relative mb-14 md:mb-32" aria-labelledby="name">
         <div class="relative flex-1">
-            <div class="flex flex-1 flex-col sm:flex-row items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-80 2xl:mt-96 px-10 lg:px-16 xl:px-32 2xl:px-48 3xl:mt-[30rem] px-10 lg:px-16 xl:px-32 2xl:px-48 mt-10">
+            <div class="flex flex-1 flex-col sm:flex-row items-center justify-self-end sm:mt-24 md:mt-36 lg:mt-52 xl:mt-64 2xl:mt-80 px-10 lg:px-16 xl:px-32 2xl:px-48 3xl:mt-[30rem] px-10 lg:px-16 xl:px-32 2xl:px-48 mt-10">
                 <div class="order-2 flex-1 flex-col flex ml-8 ">
                     <div class="flex-1">
                         <h2 role="heading" id="name" aria-level="2"

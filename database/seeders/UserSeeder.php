@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
                 "newsletter" => $value->newsletter,
                 "is_admin" => $value->is_admin,
                 "email_verified_at" => $value->email_verified_at,
-                "password" => password_hash('change_this',PASSWORD_DEFAULT),
+                "password" => password_hash('rThR3GxL6nYd9vy',PASSWORD_DEFAULT),
                 "status_id"=>$value->status_id
             ]);
         }
