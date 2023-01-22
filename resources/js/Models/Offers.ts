@@ -77,16 +77,16 @@ export class Offers {
             let match = new RegExp(state.search, 'gi')
             // @ts-ignore
             for (const title of titles) {
-                title.innerHTML = title.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+                title.innerHTML = title.textContent.replace(match, `<mark>${state.search}</mark>`)
             }
             // @ts-ignore
             for (const description of descriptions) {
-                let str = description.textContent.innerHTML.replace(/<[^>]+>/g, '')
+                let str = description.textContent.replace(/<[^>]+>/g, '')
                 description.innerHTML = str.replace(match, `<mark>${state.search}</mark>`)
             }
             // @ts-ignore
             for (const partner of partners) {
-                partner.innerHTML = partner.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+                partner.innerHTML = partner.textContent.replace(match, `<mark>${state.search}</mark>`)
             }
         }
 

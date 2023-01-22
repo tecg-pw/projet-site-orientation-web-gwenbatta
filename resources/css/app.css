@@ -1,4 +1,5 @@
-@import url("https://use.typekit.net/wnp6cof.css");
+/*noinspection CssUnknownTarget*/
+@import url(https://use.typekit.net/wnp6cof.css);
 
 @tailwind base;
 @tailwind components;

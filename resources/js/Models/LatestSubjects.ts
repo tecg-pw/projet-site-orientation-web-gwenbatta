@@ -88,7 +88,7 @@ export class LatestSubjects {
 
         // @ts-ignore
         for (const title of titles) {
-            title.innerHTML = title.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            title.innerHTML = title.textContent.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         this.slideInView();

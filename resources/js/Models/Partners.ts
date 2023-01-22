@@ -79,19 +79,19 @@ export class Partners {
         let localitiesNum = document.querySelectorAll('.localityNumber')
         // @ts-ignore
         for (const title of titles) {
-            title.innerHTML = title.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            title.innerHTML = title.textContent.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const adresse of adresses) {
-            adresse.innerHTML = adresse.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            adresse.innerHTML = adresse.textContent.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const locality of localities) {
-            locality.innerHTML = locality.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            locality.innerHTML = locality.textContent.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const localityNum of localitiesNum) {
-            localityNum.innerHTML = localityNum.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            localityNum.innerHTML = localityNum.textContent.replace(match, `<mark>${state.search}</mark>`)
         }
         this.slideInView();
         this.handlepaginationPartner(state);

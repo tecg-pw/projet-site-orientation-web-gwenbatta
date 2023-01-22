@@ -88,11 +88,11 @@ export class LatestAnswers {
         let comments = document.querySelectorAll('.search-comment')
         // @ts-ignore
         for (const title of titles) {
-            title.innerHTML = title.textContent.innerHTML.replace(match, `<mark>${state.search}</mark>`)
+            title.innerHTML = title.textContent.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
         for (const comment of comments) {
-            let str = comment.textContent.innerHTML.replace(/<[^>]+>/g, '')
+            let str = comment.textContent.replace(/<[^>]+>/g, '')
             comment.innerHTML = str.replace(match, `<mark>${state.search}</mark>`)
         }
         // @ts-ignore
