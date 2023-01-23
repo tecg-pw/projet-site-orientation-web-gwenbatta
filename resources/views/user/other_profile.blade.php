@@ -9,22 +9,6 @@
                             class="xl:text-4xl 2xl:text-5xl md:text-3xl text-2xl text-yellow-800 font-extrabold font-sans mt-4 md:mb-3 md:mt-0">{{$user->firstname}} {{$user->name}}</h2>
                         <p class="uppercase text-lg xl:text-2xl 2xl:text-3xl">{{$user->status->translation->where('locale',app()->getLocale())->first()->name}}</p>
                     </div>
-                    @if(session('status'))
-                        <div class="mb-4 bg-orange-200 rounded-lg flex items-center gap-x-2 px-4 py-2.5">
-                            <svg class="h-8 w-8 text-green-700" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"/>
-                                <circle cx="12" cy="12" r="9"/>
-                                <path d="M9 12l2 2l4 -4"/>
-                            </svg>
-                            <p class="mt-1 text-green-700 text-lg xl:text-xl 2xl:text-2xl">{{session('status')}}</p>
-                        </div>
-                    @else
-                        <div class="md:text-end mt-4 md:mt-0 flex-1">
-                            <a href="/{{app()->getLocale()}}/user/profile/modify/form"
-                               class="border-2 border-green-700 hover:text-green-700 hover:bg-white-100 font-sans text-center text-white-100 bg-green-700 px-10 py-3 rounded-2xl text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-semibold mb-32">{{__('user.user_modify')}}</a>
-                        </div>
-                    @endif
                 </div>
                 <picture>
                     @if($user->srcset && $user->srcset['full'])
